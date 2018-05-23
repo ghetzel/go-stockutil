@@ -8,14 +8,9 @@ import (
 
 	"github.com/ghetzel/go-stockutil/typeutil"
 	multierror "github.com/hashicorp/go-multierror"
-	"github.com/op/go-logging"
 )
 
-var backend *logging.LogBackend
-var formatted logging.Backend
-var leveled logging.LeveledBackend
-
-var defaultLogger *logging.Logger
+var defaultLogger *Logger
 var ModuleName = ``
 
 type Loggable interface {
@@ -52,18 +47,7 @@ var LogLevel Level = func() Level {
 
 func initLogging() {
 	if defaultLogger == nil {
-		backend = logging.NewLogBackend(os.Stderr, ``, 0)
-
-		formatted = logging.NewBackendFormatter(backend, logging.MustStringFormatter(
-			fmt.Sprintf(
-				`[%%{time:15:04:05} %%{id:04d}] %%{color:bold}%%{level:.4s}%%{color:reset} %%{message}`,
-			),
-		))
-
-		leveled = logging.AddModuleLevel(formatted)
-		logging.SetBackend(leveled)
-
-		defaultLogger = logging.MustGetLogger(ModuleName)
+		defaultLogger = NewLogger(``)
 		SetLevel(LogLevel)
 	}
 }
@@ -72,7 +56,7 @@ func Debugging() bool {
 	return (LogLevel == DEBUG)
 }
 
-func Logger() Loggable {
+func DefaultLogger() Loggable {
 	initLogging()
 	return defaultLogger
 }
@@ -84,63 +68,19 @@ func SetLevelString(level string, modules ...string) {
 func SetLevel(level Level, modules ...string) {
 	initLogging()
 
-	if lvl, err := logging.LogLevel(level.String()); err == nil {
-		if len(modules) == 0 {
-			leveled.SetLevel(lvl, ``)
-		} else {
-			for _, module := range modules {
-				leveled.SetLevel(lvl, module)
-			}
-		}
-	} else {
-		fmt.Printf("[INVALID LEVEL %v] ", level)
+	if err := defaultLogger.SetLevel(level); err == nil {
+		LogLevel = level
 	}
 }
 
 func Logf(level Level, format string, args ...interface{}) {
 	initLogging()
-
-	switch level {
-	case PANIC:
-		defaultLogger.Panicf(format, args...)
-	case FATAL:
-		defaultLogger.Fatalf(format, args...)
-	case CRITICAL:
-		defaultLogger.Criticalf(format, args...)
-	case ERROR:
-		defaultLogger.Errorf(format, args...)
-	case WARNING:
-		defaultLogger.Warningf(format, args...)
-	case NOTICE:
-		defaultLogger.Noticef(format, args...)
-	case INFO:
-		defaultLogger.Infof(format, args...)
-	default:
-		defaultLogger.Debugf(format, args...)
-	}
+	defaultLogger.Logf(level, format, args...)
 }
 
 func Log(level Level, args ...interface{}) {
 	initLogging()
-
-	switch level {
-	case PANIC:
-		defaultLogger.Panic(args...)
-	case FATAL:
-		defaultLogger.Fatal(args...)
-	case CRITICAL:
-		defaultLogger.Critical(args...)
-	case ERROR:
-		defaultLogger.Error(args...)
-	case WARNING:
-		defaultLogger.Warning(args...)
-	case NOTICE:
-		defaultLogger.Notice(args...)
-	case INFO:
-		defaultLogger.Info(args...)
-	default:
-		defaultLogger.Debug(args...)
-	}
+	defaultLogger.Log(level, args...)
 }
 
 func Critical(args ...interface{}) {
