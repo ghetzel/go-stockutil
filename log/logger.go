@@ -4,17 +4,22 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"sync/atomic"
+	"time"
 
 	"github.com/ghetzel/go-stockutil/typeutil"
 	logging "github.com/op/go-logging"
 )
 
+const defaultFormat = `[%{time:15:04:05} %{id:04d}] %{color:bold}%{level:.4s}%{color:reset} %{message}`
+
 type Logger struct {
 	module    string
-	backend   *logging.LogBackend
-	formatted logging.Backend
-	leveled   logging.LeveledBackend
-	logger    *logging.Logger
+	dest      io.Writer
+	format    string
+	sequence  uint64
+	level     Level
+	formatter logging.Formatter
 }
 
 func NewLogger(module string) *Logger {
@@ -23,71 +28,54 @@ func NewLogger(module string) *Logger {
 
 func NewLoggerWriter(module string, w io.Writer) *Logger {
 	logger := &Logger{
-		module:  module,
-		backend: logging.NewLogBackend(w, ``, 0),
+		module: module,
+		level:  DEBUG,
 	}
 
-	logger.formatted = logging.NewBackendFormatter(logger.backend, logging.MustStringFormatter(
-		fmt.Sprintf(
-			`[%%{time:15:04:05} %%{id:04d}] %%{color:bold}%%{level:.4s}%%{color:reset} %%{message}`,
-		),
-	))
-
-	logger.leveled = logging.AddModuleLevel(logger.formatted)
-	logger.logger = logging.MustGetLogger(module)
+	if err := logger.SetFormat(defaultFormat); err != nil {
+		panic(err.Error())
+	}
 
 	return logger
 }
 
-func (self *Logger) SetLevel(level Level) error {
-	if lvl, err := logging.LogLevel(level.String()); err == nil {
-		self.leveled.SetLevel(lvl, self.module)
+func (self *Logger) SetFormat(format string) error {
+	if f, err := logging.NewStringFormatter(format); err == nil {
+		self.formatter = f
 		return nil
 	} else {
-		return fmt.Errorf("[INVALID LEVEL %v] ", level)
+		return err
+	}
+}
+
+func (self *Logger) SetLevel(level Level) {
+	self.level = level
+}
+
+func (self *Logger) ShouldLog(level Level) bool {
+	if level <= self.level {
+		return true
+	} else {
+		return false
 	}
 }
 
 func (self *Logger) Logf(level Level, format string, args ...interface{}) {
-	switch level {
-	case PANIC:
-		self.logger.Panicf(format, args...)
-	case FATAL:
-		self.logger.Fatalf(format, args...)
-	case CRITICAL:
-		self.logger.Criticalf(format, args...)
-	case ERROR:
-		self.logger.Errorf(format, args...)
-	case WARNING:
-		self.logger.Warningf(format, args...)
-	case NOTICE:
-		self.logger.Noticef(format, args...)
-	case INFO:
-		self.logger.Infof(format, args...)
-	default:
-		self.logger.Debugf(format, args...)
+	if self.ShouldLog(level) {
+		message := fmt.Sprintf(format, args...)
+
+		self.formatter.Format(0, &logging.Record{
+			ID:     atomic.AddUint64(&self.sequence, 1),
+			Time:   time.Now(),
+			Module: self.module,
+			Level:  logging.Level(level),
+			Args:   []interface{}{message},
+		}, self.dest)
 	}
 }
 
 func (self *Logger) Log(level Level, args ...interface{}) {
-	switch level {
-	case PANIC:
-		self.logger.Panic(args...)
-	case FATAL:
-		self.logger.Fatal(args...)
-	case CRITICAL:
-		self.logger.Critical(args...)
-	case ERROR:
-		self.logger.Error(args...)
-	case WARNING:
-		self.logger.Warning(args...)
-	case NOTICE:
-		self.logger.Notice(args...)
-	case INFO:
-		self.logger.Info(args...)
-	default:
-		self.logger.Debug(args...)
-	}
+	Logf(level, "%v", args...)
 }
 
 func (self *Logger) Critical(args ...interface{}) {

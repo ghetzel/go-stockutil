@@ -67,10 +67,8 @@ func SetLevelString(level string, modules ...string) {
 
 func SetLevel(level Level, modules ...string) {
 	initLogging()
-
-	if err := defaultLogger.SetLevel(level); err == nil {
-		LogLevel = level
-	}
+	defaultLogger.SetLevel(level)
+	LogLevel = level
 }
 
 func Logf(level Level, format string, args ...interface{}) {
