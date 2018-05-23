@@ -18,6 +18,25 @@ var leveled logging.LeveledBackend
 var defaultLogger *logging.Logger
 var ModuleName = ``
 
+type Loggable interface {
+	Critical(args ...interface{})
+	Criticalf(format string, args ...interface{})
+	Debug(args ...interface{})
+	Debugf(format string, args ...interface{})
+	Error(args ...interface{})
+	Errorf(format string, args ...interface{})
+	Fatal(args ...interface{})
+	Fatalf(format string, args ...interface{})
+	Info(args ...interface{})
+	Infof(format string, args ...interface{})
+	Notice(args ...interface{})
+	Noticef(format string, args ...interface{})
+	Panic(args ...interface{})
+	Panicf(format string, args ...interface{})
+	Warning(args ...interface{})
+	Warningf(format string, args ...interface{})
+}
+
 type LogFunc func(args ...interface{})
 type FormattedLogFunc func(format string, args ...interface{})
 
@@ -53,7 +72,7 @@ func Debugging() bool {
 	return (LogLevel == DEBUG)
 }
 
-func Logger() *logging.Logger {
+func Logger() Loggable {
 	initLogging()
 	return defaultLogger
 }
