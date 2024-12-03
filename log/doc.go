@@ -1,14 +1,14 @@
 /*
 Package log package provides convenient and flexible utilities for logging messages.
 
-Overview
+# Overview
 
 Logging is done by calling functions in this package that correspond to the
 severity of the log message being output.  At the package level, a minimum
 severity can be set.  Messages less severe than this minimum logging level will
 not be output.
 
-Color Expressions
+# Color Expressions
 
 In addition to the standard printf-style formatting options (as defined in the
 standard fmt package), this package supports inline expressions that control the
@@ -29,6 +29,7 @@ ${expr}.  The general format for color expressions is:
 	foregroundColor[+attributes[:backgroundColor[+attributes]]]
 
 Colors (foreground and background):
+
 	black
 	red
 	green
@@ -41,6 +42,7 @@ Colors (foreground and background):
 	reset: Reset all color and graphics attributes to their defaults
 
 Foreground Attributes:
+
 	b: bold text
 	B: blinking text
 	h: high-intensity (bright text)
@@ -49,13 +51,12 @@ Foreground Attributes:
 	u: underline
 
 Background Attributes:
+
 	h: high-intensity (bright text)
 
-
-Examples
+# Examples
 
 Below are some examples showing various formatting options for logs.
-
 
 	log.Info("Hello, world!")
 	// [11:22:33 0001] INFO Hello, world!
@@ -68,7 +69,7 @@ Below are some examples showing various formatting options for logs.
 	//                                   ^^^^^              ^^^^^^^^^^^^^
 	//                                   red text           blue text on white background
 
-Log Interception
+# Log Interception
 
 It is sometimes useful to be able to act on logs as they are emitted, especially in cases where this
 package is used in other projects that are imported.  Log Interceptors are called before each log
@@ -85,7 +86,7 @@ from.
 		}
 	})
 
-Writable Logger
+# Writable Logger
 
 The WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from
 various sources and the log package.  This is frequently useful in situations like parsing the

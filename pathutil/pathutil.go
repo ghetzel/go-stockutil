@@ -18,29 +18,28 @@ import (
 // Compile creates Glob for given pattern and strings (if any present after pattern) as separators.
 // The pattern syntax is:
 //
-//    pattern:
-//        { term }
+//	pattern:
+//	    { term }
 //
-//    term:
-//        `*`         matches any sequence of non-separator characters
-//        `**`        matches any sequence of characters
-//        `?`         matches any single non-separator character
-//        `[` [ `!` ] { character-range } `]`
-//                    character class (must be non-empty)
-//        `{` pattern-list `}`
-//                    pattern alternatives
-//        c           matches character c (c != `*`, `**`, `?`, `\`, `[`, `{`, `}`)
-//        `\` c       matches character c
+//	term:
+//	    `*`         matches any sequence of non-separator characters
+//	    `**`        matches any sequence of characters
+//	    `?`         matches any single non-separator character
+//	    `[` [ `!` ] { character-range } `]`
+//	                character class (must be non-empty)
+//	    `{` pattern-list `}`
+//	                pattern alternatives
+//	    c           matches character c (c != `*`, `**`, `?`, `\`, `[`, `{`, `}`)
+//	    `\` c       matches character c
 //
-//    character-range:
-//        c           matches character c (c != `\\`, `-`, `]`)
-//        `\` c       matches character c
-//        lo `-` hi   matches character c for lo <= c <= hi
+//	character-range:
+//	    c           matches character c (c != `\\`, `-`, `]`)
+//	    `\` c       matches character c
+//	    lo `-` hi   matches character c for lo <= c <= hi
 //
-//    pattern-list:
-//        pattern { `,` pattern }
-//                    comma-separated (without spaces) patterns
-//
+//	pattern-list:
+//	    pattern { `,` pattern }
+//	                comma-separated (without spaces) patterns
 func MatchPath(pattern string, path string) bool {
 	if g, err := glob.Compile(pattern); err == nil {
 		return g.Match(path)

@@ -13,7 +13,6 @@ type IterationFunc func(i int, value interface{}) error
 // Iterate through each element of the given array, slice or channel; calling
 // iterFn exactly once for each element.  Otherwise, call iterFn one time
 // with the given input as the argument.
-//
 func SliceEach(slice interface{}, iterFn IterationFunc, preserve ...reflect.Kind) error {
 	if iterFn == nil {
 		return nil

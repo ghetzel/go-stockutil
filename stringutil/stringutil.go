@@ -27,7 +27,6 @@ var DefaultDecimalSeparator = `.`
 // Fallback and formatting values are still supported, as the determination of value emptiness is made after parsing
 // the sequence.  This is to avoid unset environment variables resulting in the escape sequences being erased, which is often
 // the case when running ExpandEnv() against various shell languages (Bash, et. al)
-//
 var ExpandEnvPreserveIfEmpty = false
 var ExpandEnvTempDelimiterOpen = "\u3018"  // LEFT WHITE TORTOISE SHELL BRACKET (U+3018, Ps): 〘
 var ExpandEnvTempDelimiterClose = "\u3019" // RIGHT WHITE TORTOISE SHELL BRACKET (U+3019, Pe): 〙
@@ -450,7 +449,6 @@ func Snakeify(in interface{}, separator rune) string {
 
 // Returns whether the letters (Unicode Catgeory 'L') in a given string are
 // homogenous in case (all upper-case or all lower-case).
-//
 func IsMixedCase(in string) bool {
 	var hasLower bool
 	var hasUpper bool
@@ -479,7 +477,6 @@ func IsMixedCase(in string) bool {
 // Returns whether the given string is a hexadecimal number. If the string is
 // prefixed with "0x", the prefix is removed first. If length is greater than 0,
 // the length of the input (excluding prefix) is checked as well.
-//
 func IsHexadecimal(in string, length int) bool {
 	in = strings.TrimPrefix(in, `0x`)
 

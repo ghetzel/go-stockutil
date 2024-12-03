@@ -20,18 +20,17 @@ var HttpDefaultTimeout = 10 * time.Second
 //
 // Supported Context Values:
 //
-//  insecure:
-//    (bool) specify that strict TLS validation should be optional.
+//	insecure:
+//	  (bool) specify that strict TLS validation should be optional.
 //
-//  method:
-//    (string) the HTTP method to use, defaults to GET.
+//	method:
+//	  (string) the HTTP method to use, defaults to GET.
 //
-//  metadata:
-//    (map[string]interface{}) a key-value set of HTTP request headers to include.
+//	metadata:
+//	  (map[string]interface{}) a key-value set of HTTP request headers to include.
 //
-//  safeResponseCodes:
-//    ([]int) a list of one or more HTTP status codes that are considered successful for this request.
-//
+//	safeResponseCodes:
+//	  ([]int) a list of one or more HTTP status codes that are considered successful for this request.
 func RetrieveViaHTTP(ctx context.Context, u *url.URL) (io.ReadCloser, error) {
 	ctx, timeout := ctxToTimeout(ctx, HttpDefaultTimeout)
 

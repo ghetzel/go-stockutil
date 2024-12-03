@@ -360,7 +360,6 @@ func MustWriteTempFile(input interface{}, prefix string) string {
 //
 // If either source or destination implements io.Closer, thee files will be closed before this
 // function returns.
-//
 func CopyFile(source interface{}, destination interface{}) error {
 	var sreader io.Reader
 	var dwriter io.Writer

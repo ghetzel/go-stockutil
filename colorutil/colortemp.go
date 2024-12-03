@@ -3,11 +3,13 @@ package colorutil
 import "math"
 
 // These values were derived by Neil Bartlett (c) 2019
-// 	https://www.zombieprototypes.com/?p=210
-// 	see also: https://github.com/neilbartlett/color-temperature
+//
+//	https://www.zombieprototypes.com/?p=210
+//	see also: https://github.com/neilbartlett/color-temperature
 //
 // Based on original work by Tanner Helland (c) 2014
-//	 http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
+//
+//	http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
 var hellandBartlettOverEq6600K_RedA float64 = 351.97690566805693
 var hellandBartlettOverEq6600K_RedB float64 = 0.114206453784165
 var hellandBartlettOverEq6600K_RedC float64 = -40.25366309332127

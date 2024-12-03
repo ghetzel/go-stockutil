@@ -36,7 +36,6 @@ var RelaxedEqualityCompare = func(_ int, first interface{}, second interface{}) 
 
 // Return whether the given slice contains the given value.  If a comparator is provided, it will
 // be used to compare the elements.
-//
 func Contains(in interface{}, value interface{}, comparators ...CompareFunc) bool {
 	if len(comparators) == 0 {
 		comparators = []CompareFunc{StrictEqualityCompare}
@@ -135,7 +134,6 @@ func Difference(first interface{}, second interface{}) []interface{} {
 //
 // The zero values of any other type are not considered empty and will remain in
 // the return value.
-//
 func Compact(in interface{}) []interface{} {
 	if in == nil {
 		return nil
@@ -329,7 +327,6 @@ func Last(in interface{}) interface{} {
 // Iterate through each element of the given array or slice, calling
 // iterFn exactly once for each element.  Otherwise, call iterFn one time
 // with the given input as the argument.
-//
 func Each(slice interface{}, iterFn IterationFunc) error {
 	return utils.SliceEach(slice, iterFn)
 }
@@ -344,11 +341,10 @@ func Sliceify(in interface{}) []interface{} {
 // given for the from and/or to values, the index will be treated as being relative to the end of the
 // given slice. For example:
 //
-// 	Slice([]interface{}{1,2,3,4,5}, -5, -1)  // returns []interface{}{1, 2, 3, 4, 5}
-// 	Slice([]interface{}{1,2,3,4,5}, -2, -1)  // returns []interface{}{4, 5}
-// 	Slice([]interface{}{1,2,3,4,5}, -1, -1)  // returns []interface{}{5}
-// 	Slice([]interface{}{1,2,3,4,5}, -4, -2)  // returns []interface{}{2, 3, 4}
-//
+//	Slice([]interface{}{1,2,3,4,5}, -5, -1)  // returns []interface{}{1, 2, 3, 4, 5}
+//	Slice([]interface{}{1,2,3,4,5}, -2, -1)  // returns []interface{}{4, 5}
+//	Slice([]interface{}{1,2,3,4,5}, -1, -1)  // returns []interface{}{5}
+//	Slice([]interface{}{1,2,3,4,5}, -4, -2)  // returns []interface{}{2, 3, 4}
 func Slice(slice interface{}, from int, to int) []interface{} {
 	sliceS := Sliceify(slice)
 

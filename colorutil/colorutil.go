@@ -320,9 +320,10 @@ func Equals(first interface{}, second interface{}) bool {
 }
 
 // adjust the a property of given color by a specified factor:
-// 	Hue: add/subtract the given number of degrees on the HSL color wheel
-//  Saturation: saturate/desaturate the color by the given amount
-//  Lightness: lighten/darken the color by the given amount
+//
+//		Hue: add/subtract the given number of degrees on the HSL color wheel
+//	 Saturation: saturate/desaturate the color by the given amount
+//	 Lightness: lighten/darken the color by the given amount
 func adjust(what adjustment, in interface{}, factor float64) (Color, error) {
 	if sample, err := Parse(in); err == nil {
 		h, s, l := sample.HSL()

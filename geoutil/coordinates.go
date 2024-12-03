@@ -97,7 +97,6 @@ func (self *Location) CardinalDirection() CardinalDirection {
 // this Location and another.  Since this (incorrectly) assumes the Earth to be a true
 // sphere, this is only reasonably accurate for short-ish distances (is only accurate to
 // within ~0.5%).
-//
 func (self *Location) HaversineDistance(other Locatable) Distance {
 	lat, lng, _ := other.GetCoordinates()
 

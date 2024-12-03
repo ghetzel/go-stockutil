@@ -21,7 +21,7 @@ import (
 
 type SshHostKeyCallbackFunc = func(hostname string, remote net.Addr, key ssh.PublicKey) error
 
-var SshPrivateKey = MustExpandUser(`~/.ssh/id_rsa`)
+var SshPrivateKey, _ = ExpandUser(`~/.ssh/id_rsa`)
 var SshVerifyHostFunc ssh.HostKeyCallback
 var SshDefaultTimeout = 10 * time.Second
 
@@ -35,22 +35,26 @@ var SshDefaultTimeout = 10 * time.Second
 // Supported Context Values:
 //
 // username:
-//   (string) the username to login with. can be overriden by a username specified in the URL.
+//
+//	(string) the username to login with. can be overriden by a username specified in the URL.
 //
 // password:
-//   (string) the password to login with. can be overriden by a password specified in the URL.
+//
+//	(string) the password to login with. can be overriden by a password specified in the URL.
 //
 // passphrase:
-//   (string) context value specifies a plaintext passphrase used to unlock the local private keyfile.
+//
+//	(string) context value specifies a plaintext passphrase used to unlock the local private keyfile.
 //
 // insecure:
-//   (bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.
+//
+//	(bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.
 //
 // verifyHostFunc:
-//   (SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will
-//   be called to verify the remote SSH host key in a manner of the function's choosing.  The default
-//   behavior is to accept all remote hostkeys as valid.
 //
+//	(SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will
+//	be called to verify the remote SSH host key in a manner of the function's choosing.  The default
+//	behavior is to accept all remote hostkeys as valid.
 func RetrieveViaSSH(ctx context.Context, u *url.URL) (io.ReadCloser, error) {
 	ctx, timeout := ctxToTimeout(ctx, SshDefaultTimeout)
 

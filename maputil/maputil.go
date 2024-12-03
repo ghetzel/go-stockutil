@@ -215,7 +215,6 @@ func Split(input string, innerJoiner string, outerJoiner string) map[string]inte
 
 // Take a flat (non-nested) map keyed with fields joined on fieldJoiner and return a
 // deeply-nested map
-//
 func DiffuseMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error) {
 	rv, _ := DiffuseMapTyped(data, fieldJoiner, "")
 	return rv, nil
@@ -223,7 +222,6 @@ func DiffuseMap(data map[string]interface{}, fieldJoiner string) (map[string]int
 
 // Take a flat (non-nested) map keyed with fields joined on fieldJoiner and return a
 // deeply-nested map
-//
 func DiffuseMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error) {
 	var errs = make([]error, 0)
 	var output = make(map[string]interface{})
@@ -262,14 +260,12 @@ func DiffuseMapTyped(data map[string]interface{}, fieldJoiner string, typePrefix
 }
 
 // Take a deeply-nested map and return a flat (non-nested) map with keys whose intermediate tiers are joined with fieldJoiner
-//
 func CoalesceMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error) {
 	return deepGetValues([]string{}, fieldJoiner, data), nil
 }
 
 // Take a deeply-nested map and return a flat (non-nested) map with keys whose intermediate tiers are joined with fieldJoiner
 // Additionally, values will be converted to strings and keys will be prefixed with the datatype of the value
-//
 func CoalesceMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error) {
 	var errs = make([]error, 0)
 	var rv = make(map[string]interface{})

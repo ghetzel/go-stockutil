@@ -59,7 +59,6 @@ func MediaType(req *http.Request) string {
 // The mediaTypes arguments may be either complete media types (e.g.: "text/html", "application/javascript")
 // or major type classes (e.g.: "text/", "video/").  The trailing slash (/) indicates that any media type
 // that begins with that text will match.
-//
 func IsMediaType(req *http.Request, mediaTypes ...string) bool {
 	mediaType := MediaType(req)
 

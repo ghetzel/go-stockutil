@@ -71,7 +71,6 @@ func NewMap() *Map {
 // any value with a reflect.Kind of reflect.Map, sync.Map, another maputil.Map, url.Values,
 // http.Header, or a string or []byte which will be decoded using json.Unmarshal if and only if the
 // string begins with "{" and ends with "}".
-//
 func M(data interface{}) *Map {
 	if dataV, ok := data.(typeutil.Variant); ok {
 		data = dataV.Value

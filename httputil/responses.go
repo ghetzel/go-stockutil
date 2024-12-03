@@ -37,7 +37,6 @@ func SetContentTypeParser(contentType string, parser RequestParseFunc) {
 // a status is given, that will be used as the HTTP response status.  If data is an error, and no
 // status is given, the status will be "500 Internal Server Error"; if data is nil, the status will
 // be "204 No Content".  The Content-Type of the response is "application/json".
-//
 func RespondJSON(w http.ResponseWriter, data interface{}, status ...int) {
 	w.Header().Set(`Content-Type`, `application/json`)
 

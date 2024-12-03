@@ -38,7 +38,6 @@ func IsZero(value interface{}) bool {
 // are considered empty, as are arrays, slices, and maps containing only empty
 // values (called recursively). Finally, strings are trimmed of whitespace and
 // considered empty if the result is zero-length.
-//
 func IsEmpty(value interface{}) bool {
 	valueV := reflect.ValueOf(value)
 
@@ -98,7 +97,6 @@ func IsEmpty(value interface{}) bool {
 // Return the concrete value pointed to by a pointer type, or within an
 // interface type.  Allows functions receiving pointers to supported types
 // to work with those types without doing reflection.
-//
 func ResolveValue(in interface{}) interface{} {
 	if inV, ok := in.(Variant); ok {
 		in = inV.Value
@@ -115,7 +113,6 @@ func IsKind(in interface{}, kinds ...reflect.Kind) bool {
 
 // Return whether the given input is a discrete scalar value (ints, floats, bools,
 // strings), otherwise known as "primitive types" in some other languages.
-//
 func IsScalar(in interface{}) bool {
 	if !IsKind(in, utils.CompoundTypes...) {
 		return true
