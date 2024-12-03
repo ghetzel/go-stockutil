@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.10.12
+                            v1.12.0
                         </li>
                     </ul>
                     
@@ -151,14 +151,14 @@
 
 <p>Package log package provides convenient and flexible utilities for logging messages.</p>
 
-<p>Overview</p>
+<h1>Overview</h1>
 
 <p>Logging is done by calling functions in this package that correspond to the
 severity of the log message being output.  At the package level, a minimum
 severity can be set.  Messages less severe than this minimum logging level will
 not be output.</p>
 
-<p>Color Expressions</p>
+<h1>Color Expressions</h1>
 
 <p>In addition to the standard printf-style formatting options (as defined in the
 standard fmt package), this package supports inline expressions that control the
@@ -179,30 +179,36 @@ ${expr}.  The general format for color expressions is:</p>
 <pre><code>foregroundColor[+attributes[:backgroundColor[+attributes]]]
 </code></pre>
 
-<p>Colors (foreground and background):
-	black
-	red
-	green
-	yellow
-	blue
-	magenta
-	cyan
-	white
-	[0-255]: numeric 8-bit color (for 256 color terminals)
-	reset: Reset all color and graphics attributes to their defaults</p>
+<p>Colors (foreground and background):</p>
 
-<p>Foreground Attributes:
-	b: bold text
-	B: blinking text
-	h: high-intensity (bright text)
-	i: inverted/reverse colors
-	s: strikethrough
-	u: underline</p>
+<pre><code>black
+red
+green
+yellow
+blue
+magenta
+cyan
+white
+[0-255]: numeric 8-bit color (for 256 color terminals)
+reset: Reset all color and graphics attributes to their defaults
+</code></pre>
 
-<p>Background Attributes:
-	h: high-intensity (bright text)</p>
+<p>Foreground Attributes:</p>
 
-<p>Examples</p>
+<pre><code>b: bold text
+B: blinking text
+h: high-intensity (bright text)
+i: inverted/reverse colors
+s: strikethrough
+u: underline
+</code></pre>
+
+<p>Background Attributes:</p>
+
+<pre><code>h: high-intensity (bright text)
+</code></pre>
+
+<h1>Examples</h1>
 
 <p>Below are some examples showing various formatting options for logs.</p>
 
@@ -218,7 +224,7 @@ log.Errorf(&#34;There was an ${red}error${reset} opening file ${blue+b:white}%s$
 //                                   red text           blue text on white background
 </code></pre>
 
-<p>Log Interception</p>
+<h1>Log Interception</h1>
 
 <p>It is sometimes useful to be able to act on logs as they are emitted, especially in cases where this
 package is used in other projects that are imported.  Log Interceptors are called before each log
@@ -236,7 +242,7 @@ log.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){
 })
 </code></pre>
 
-<p>Writable Logger</p>
+<h1>Writable Logger</h1>
 
 <p>The WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from
 various sources and the log package.  This is frequently useful in situations like parsing the

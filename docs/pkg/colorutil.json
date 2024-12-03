@@ -7,22 +7,32 @@
     "Synopsis": "Utilities for parsing and manipulating colors.\n",
     "MainFunction": false,
     "CommentWordCount": 498,
-    "LineCount": 1189,
-    "SourceLineCount": 897,
-    "FunctionCount": 26,
+    "LineCount": 1364,
+    "SourceLineCount": 1059,
+    "FunctionCount": 27,
     "TypeCount": 1,
     "ConstantCount": 4,
-    "VariableCount": 0,
+    "VariableCount": 1,
     "Statistics": {
-        "Mean": 0.8074,
-        "StdDev": 0.3867,
-        "GeometricMean": 1,
-        "HarmonicMean": 1,
+        "Mean": 0.7517,
+        "StdDev": 0.4256,
+        "GeometricMean": 0,
+        "HarmonicMean": 0,
         "Median": 1,
         "Minimum": 0,
         "Maximum": 1
     },
     "Files": [
+        {
+            "Name": "colors.go",
+            "Size": 5060,
+            "LineCount": 144,
+            "SourceLineCount": 142,
+            "FunctionCount": 0,
+            "TypeCount": 0,
+            "ConstantCount": 0,
+            "VariableCount": 1
+        },
         {
             "Name": "colortemp.go",
             "Imports": [
@@ -31,8 +41,8 @@
                     "Alias": "math"
                 }
             ],
-            "Size": 3451,
-            "LineCount": 122,
+            "Size": 3454,
+            "LineCount": 124,
             "SourceLineCount": 88,
             "FunctionCount": 1,
             "TypeCount": 0,
@@ -103,10 +113,10 @@
                     "Alias": "json"
                 }
             ],
-            "Size": 14910,
-            "LineCount": 620,
-            "SourceLineCount": 463,
-            "FunctionCount": 24,
+            "Size": 15138,
+            "LineCount": 630,
+            "SourceLineCount": 470,
+            "FunctionCount": 25,
             "TypeCount": 1,
             "ConstantCount": 4,
             "VariableCount": 0
@@ -131,9 +141,9 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 11987,
-            "LineCount": 358,
-            "SourceLineCount": 270,
+            "Size": 12418,
+            "LineCount": 377,
+            "SourceLineCount": 283,
             "FunctionCount": 0,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -158,6 +168,11 @@
             "Type": "lmodel",
             "Immutable": true,
             "Expression": "iota"
+        }
+    ],
+    "Variables": [
+        {
+            "Name": "ColorNames"
         }
     ],
     "Functions": [
@@ -326,6 +341,18 @@
             "IsPackageLevel": true
         },
         {
+            "Name": "TestColorNames",
+            "Arguments": [
+                {
+                    "Name": "t",
+                    "Type": "*testing.T"
+                }
+            ],
+            "Signature": "TestColorNames(t *testing.T)",
+            "Source": "ewoJcmVxdWlyZS5UcnVlKHQsIE11c3RQYXJzZShgcmVkYCkuRXF1YWxzKGAjZmYwMDAwYCkpCglyZXF1aXJlLlRydWUodCwgTXVzdFBhcnNlKGBncmVlbmApLkVxdWFscyhgIzAwODAwMGApKQoJcmVxdWlyZS5UcnVlKHQsIE11c3RQYXJzZShgYmx1ZWApLkVxdWFscyhgIzAwMDBmZmApKQoJQ29sb3JOYW1lc1tgX3Rlc3RpbmdgXSA9IGAjMTIzNDU2YAoJcmVxdWlyZS5UcnVlKHQsIE11c3RQYXJzZShgX3Rlc3RpbmdgKS5FcXVhbHMoYCMxMjM0NTZgKSkKfQ==",
+            "IsPackageLevel": true
+        },
+        {
             "Name": "TestColorStringers",
             "Arguments": [
                 {
@@ -371,6 +398,18 @@
             ],
             "Signature": "TestHsvToRgbFloat(t *testing.T)",
             "Source": "ewoJYXNzZXJ0SHN2VG9SZ2IodCwgMCwgMCwgMCwgMCwgMCwgMCkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDAsIDAuMSwgMC4xLCAwLjEsIDAuMSkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDAsIDAuNSwgMC41LCAwLjUsIDAuNSkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDAsIDAuNzUsIDAuNzUsIDAuNzUsIDAuNzUpCglhc3NlcnRIc3ZUb1JnYih0LCAwLCAwLCAxLCAxLCAxLCAxKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMCwgMSwgMSwgMSwgMCwgMCkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDEsIDAuNzUsIDAuNzUsIDAsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAwLCAxLCAwLjUsIDAuNSwgMCwgMCkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDEsIDAuMDEsIDAuMDEsIDAsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAxMjAsIDEsIDEsIDAsIDEsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAxMjAsIDEsIDAuNzUsIDAsIDAuNzUsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAxMjAsIDEsIDAuNSwgMCwgMC41LCAwKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMTIwLCAxLCAwLjAxLCAwLCAwLjAxLCAwKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMjQwLCAxLCAxLCAwLCAwLCAxKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMjQwLCAxLCAwLjc1LCAwLCAwLCAwLjc1KQoJYXNzZXJ0SHN2VG9SZ2IodCwgMjQwLCAxLCAwLjUsIDAsIDAsIDAuNSkKCWFzc2VydEhzdlRvUmdiKHQsIDI0MCwgMSwgMC4wMSwgMCwgMCwgMC4wMSkKfQ==",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "TestIsZero",
+            "Arguments": [
+                {
+                    "Name": "t",
+                    "Type": "*testing.T"
+                }
+            ],
+            "Signature": "TestIsZero(t *testing.T)",
+            "Source": "ewoJdmFyIGMgQ29sb3IKCXJlcXVpcmUuVHJ1ZSh0LCBjLklzWmVybygpKQoJYyA9IE11c3RQYXJzZShgZmYwMGNjYCkKCXJlcXVpcmUuRmFsc2UodCwgYy5Jc1plcm8oKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -536,6 +575,17 @@
                     "IsPackageLevel": false
                 },
                 {
+                    "Name": "IsZero",
+                    "ReceiverName": "self",
+                    "Returns": [
+                        {
+                            "Type": "bool"
+                        }
+                    ],
+                    "Signature": "IsZero() bool",
+                    "IsPackageLevel": false
+                },
+                {
                     "Name": "MarshalJSON",
                     "ReceiverName": "self",
                     "Returns": [
@@ -673,7 +723,7 @@
                         }
                     ],
                     "Signature": "Parse(value interface{}) (Color, error)",
-                    "Source": "ewoJdmFyIGNvbG9yQyBDb2xvcgoJY29sb3JDLmEgPSAxCglpZiBjLCBvayA6PSB2YWx1ZS4oQ29sb3IpOyBvayB7CgkJcmV0dXJuIGMsIG5pbAoJfSBlbHNlIHsKCQljb2xvclMgOj0gZm10LlNwcmludGYoIiV2IiwgdmFsdWUpCgkJY29sb3JTID0gc3RyaW5ncy5UcmltU3BhY2UoY29sb3JTKQoJCWlmIHJnYmEgOj0gcnh1dGlsLk1hdGNoKHJnYmFQYXR0ZXJuLCBjb2xvclMpOyByZ2JhICE9IG5pbCB7CgkJCWZvciB2LCBmYWN0b3JTIDo9IHJhbmdlIHJnYmEuTmFtZWRDYXB0dXJlcygpIHsKCQkJCXZhciBkZW5vbSBmbG9hdDY0ID0gMHhGRgoJCQkJaWYgc3RyaW5ncy5IYXNTdWZmaXgoZmFjdG9yUywgYCVgKSB7CgkJCQkJZGVub20gPSAxMDAKCQkJCQlmYWN0b3JTID0gZmFjdG9yU1s6bGVuKGZhY3RvclMpLTFdCgkJCQl9CgkJCQlpZiBmYWN0b3JGLCBlcnIgOj0gc3RyaW5ndXRpbC5Db252ZXJ0VG9GbG9hdChmYWN0b3JTKTsgZXJyID09IG5pbCB7CgkJCQkJaWYgdiAhPSBgYWAgJiYgZmFjdG9yRiA+IDEgewoJCQkJCQlmYWN0b3JGID0gKGZhY3RvckYgLyBkZW5vbSkKCQkJCQl9CgkJCQkJc3dpdGNoIHYgewoJCQkJCWNhc2UgYHJgOgoJCQkJCQljb2xvckMuciA9IGZhY3RvckYKCQkJCQljYXNlIGBnYDoKCQkJCQkJY29sb3JDLmcgPSBmYWN0b3JGCgkJCQkJY2FzZSBgYmA6CgkJCQkJCWNvbG9yQy5iID0gZmFjdG9yRgoJCQkJCWNhc2UgYGFgOgoJCQkJCQlpZiBmYWN0b3JTICE9IGBgIHsKCQkJCQkJCWlmIGZhY3RvckYgPiAxIHsKCQkJCQkJCQlmYWN0b3JGID0gKGZhY3RvckYgLyBkZW5vbSkKCQkJCQkJCX0KCQkJCQkJCWNvbG9yQy5hID0gZmFjdG9yRgoJCQkJCQl9CgkJCQkJfQoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCByZ2JhKCkgdmFsdWUgaW4gJyV2JyBwb3NpdGlvbjogJXYiLCB2LCBlcnIpCgkJCQl9CgkJCX0KCQl9IGVsc2UgaWYgaHNsYSA6PSByeHV0aWwuTWF0Y2goaHNsYVBhdHRlcm4sIGNvbG9yUyk7IGhzbGEgIT0gbmlsIHsKCQkJdmFyIGgsIHMsIGx2IGZsb2F0NjQKCQkJdmFyIGlzSFNWIGJvb2wKCQkJaWYgaHNsYS5Hcm91cChgTG9yVmApID09IGB2YCB7CgkJCQlpc0hTViA9IHRydWUKCQkJfQoJCQlmb3IgdiwgZmFjdG9yUyA6PSAvLyBoYW5kbGVzIGhzbCgpLCBoc2xhKCksIGhzdigpLCBoc3ZhKCkgcGF0dGVybnMKCQkJcmFuZ2UgaHNsYS5OYW1lZENhcHR1cmVzKCkgewoJCQkJaWYgdiA9PSBgTG9yVmAgewoJCQkJCWNvbnRpbnVlCgkJCQl9CgkJCQl2YXIgZGVub20gZmxvYXQ2NCA9IDEKCQkJCWlmIHN0cmluZ3MuSGFzU3VmZml4KGZhY3RvclMsIGAlYCkgewoJCQkJCWRlbm9tID0gMTAwCgkJCQkJZmFjdG9yUyA9IHN0cmluZ3MuVHJpbVN1ZmZpeChmYWN0b3JTLCBgJWApCgkJCQl9CgkJCQlpZiBmYWN0b3JGLCBlcnIgOj0gc3RyaW5ndXRpbC5Db252ZXJ0VG9GbG9hdChmYWN0b3JTKTsgZXJyID09IG5pbCB7CgkJCQkJaWYgZmFjdG9yRiA+IDEgJiYgZGVub20gPT0gMSB7CgkJCQkJCWRlbm9tID0gMHhGRgoJCQkJCX0KCQkJCQlzd2l0Y2ggdiB7CgkJCQkJY2FzZSBgaGA6CgkJCQkJCWggPSBmYWN0b3JGCgkJCQkJY2FzZSBgc2A6CgkJCQkJCXMgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCWNhc2UgYGx2YDoKCQkJCQkJbHYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCWNhc2UgYGFgOgoJCQkJCQlpZiBmYWN0b3JTICE9IGBgIHsKCQkJCQkJCWlmIGZhY3RvckYgPiAxIHsKCQkJCQkJCQlmYWN0b3JGID0gKGZhY3RvckYgLyBkZW5vbSkKCQkJCQkJCX0KCQkJCQkJCWNvbG9yQy5hID0gZmFjdG9yRgoJCQkJCQl9CgkJCQkJfQoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCByZ2JhKCkgdmFsdWUgaW4gJyV2JyBwb3NpdGlvbjogJXYiLCB2LCBlcnIpCgkJCQl9CgkJCX0KCQkJaWYgaXNIU1YgewoJCQkJY29sb3JDLnIsIGNvbG9yQy5nLCBjb2xvckMuYiA9IGhzdjJyZ2IoaCwgcywgbHYpCgkJCX0gZWxzZSB7CgkJCQljb2xvckMuciwgY29sb3JDLmcsIGNvbG9yQy5iID0gaHNsMnJnYihoLCBzLCBsdikKCQkJfQoJCX0gZWxzZSBpZiBoZXhhIDo9IHJ4dXRpbC5NYXRjaChoZXhQYXR0ZXJuLCBjb2xvclMpOyBoZXhhICE9IG5pbCB7CgkJCWZvciB2LCBoZXhieXRlIDo9IHJhbmdlIGhleGEuTmFtZWRDYXB0dXJlcygpIHsKCQkJCWlmIGhleGJ5dGUgIT0gYGAgewoJCQkJCWlmIHZCLCBlcnIgOj0gaGV4LkRlY29kZVN0cmluZyhoZXhieXRlKTsgZXJyID09IG5pbCB7CgkJCQkJCWlmIGxlbih2QikgPT0gMSB7CgkJCQkJCQlzd2l0Y2ggdiB7CgkJCQkJCQljYXNlIGByYDoKCQkJCQkJCQljb2xvckMuciA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQljYXNlIGBnYDoKCQkJCQkJCQljb2xvckMuZyA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQljYXNlIGBiYDoKCQkJCQkJCQljb2xvckMuYiA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQljYXNlIGBhYDoKCQkJCQkJCQljb2xvckMuYSA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQl9CgkJCQkJCX0gZWxzZSB7CgkJCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCBoZXggYnl0ZSAnJXYnIiwgdkIpCgkJCQkJCX0KCQkJCQl9IGVsc2UgewoJCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCBoZXggdmFsdWUgJyV2JyIsIGhleGJ5dGUpCgkJCQkJfQoJCQkJfQoJCQl9CgkJfQoJfQoJcmV0dXJuIGNvbG9yQywgbmlsCn0=",
+                    "Source": "ewoJdmFyIGNvbG9yQyBDb2xvcgoJY29sb3JDLmEgPSAxCglpZiBjLCBvayA6PSB2YWx1ZS4oQ29sb3IpOyBvayB7CgkJcmV0dXJuIGMsIG5pbAoJfSBlbHNlIHsKCQljb2xvclMgOj0gZm10LlNwcmludGYoIiV2IiwgdmFsdWUpCgkJY29sb3JTID0gc3RyaW5ncy5UcmltU3BhY2UoY29sb3JTKQoJCWNvbG9yUyA9IHN0cmluZ3MuVG9Mb3dlcihjb2xvclMpCgkJaWYgYywgb2sgOj0gQ29sb3JOYW1lc1tjb2xvclNdOyBvayAmJiBzdHJpbmdzLlRyaW1TcGFjZShjKSAhPSBgYCB7CgkJCWNvbG9yUyA9IGMKCQl9CgkJaWYgcmdiYSA6PSByeHV0aWwuTWF0Y2gocmdiYVBhdHRlcm4sIGNvbG9yUyk7IHJnYmEgIT0gbmlsIHsKCQkJZm9yIHYsIGZhY3RvclMgOj0gcmFuZ2UgcmdiYS5OYW1lZENhcHR1cmVzKCkgewoJCQkJdmFyIGRlbm9tIGZsb2F0NjQgPSAweEZGCgkJCQlpZiBzdHJpbmdzLkhhc1N1ZmZpeChmYWN0b3JTLCBgJWApIHsKCQkJCQlkZW5vbSA9IDEwMAoJCQkJCWZhY3RvclMgPSBmYWN0b3JTWzpsZW4oZmFjdG9yUyktMV0KCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiB2ICE9IGBhYCAmJiBmYWN0b3JGID4gMSB7CgkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCX0KCQkJCQlzd2l0Y2ggdiB7CgkJCQkJY2FzZSBgcmA6CgkJCQkJCWNvbG9yQy5yID0gZmFjdG9yRgoJCQkJCWNhc2UgYGdgOgoJCQkJCQljb2xvckMuZyA9IGZhY3RvckYKCQkJCQljYXNlIGBiYDoKCQkJCQkJY29sb3JDLmIgPSBmYWN0b3JGCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCX0gZWxzZSBpZiBoc2xhIDo9IHJ4dXRpbC5NYXRjaChoc2xhUGF0dGVybiwgY29sb3JTKTsgaHNsYSAhPSBuaWwgewoJCQl2YXIgaCwgcywgbHYgZmxvYXQ2NAoJCQl2YXIgaXNIU1YgYm9vbAoJCQlpZiBoc2xhLkdyb3VwKGBMb3JWYCkgPT0gYHZgIHsKCQkJCWlzSFNWID0gdHJ1ZQoJCQl9CgkJCWZvciB2LCBmYWN0b3JTIDo9IC8vIGhhbmRsZXMgaHNsKCksIGhzbGEoKSwgaHN2KCksIGhzdmEoKSBwYXR0ZXJucwoJCQlyYW5nZSBoc2xhLk5hbWVkQ2FwdHVyZXMoKSB7CgkJCQlpZiB2ID09IGBMb3JWYCB7CgkJCQkJY29udGludWUKCQkJCX0KCQkJCXZhciBkZW5vbSBmbG9hdDY0ID0gMQoJCQkJaWYgc3RyaW5ncy5IYXNTdWZmaXgoZmFjdG9yUywgYCVgKSB7CgkJCQkJZGVub20gPSAxMDAKCQkJCQlmYWN0b3JTID0gc3RyaW5ncy5UcmltU3VmZml4KGZhY3RvclMsIGAlYCkKCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiBmYWN0b3JGID4gMSAmJiBkZW5vbSA9PSAxIHsKCQkJCQkJZGVub20gPSAweEZGCgkJCQkJfQoJCQkJCXN3aXRjaCB2IHsKCQkJCQljYXNlIGBoYDoKCQkJCQkJaCA9IGZhY3RvckYKCQkJCQljYXNlIGBzYDoKCQkJCQkJcyA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgbHZgOgoJCQkJCQlsdiA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCQlpZiBpc0hTViB7CgkJCQljb2xvckMuciwgY29sb3JDLmcsIGNvbG9yQy5iID0gaHN2MnJnYihoLCBzLCBsdikKCQkJfSBlbHNlIHsKCQkJCWNvbG9yQy5yLCBjb2xvckMuZywgY29sb3JDLmIgPSBoc2wycmdiKGgsIHMsIGx2KQoJCQl9CgkJfSBlbHNlIGlmIGhleGEgOj0gcnh1dGlsLk1hdGNoKGhleFBhdHRlcm4sIGNvbG9yUyk7IGhleGEgIT0gbmlsIHsKCQkJZm9yIHYsIGhleGJ5dGUgOj0gcmFuZ2UgaGV4YS5OYW1lZENhcHR1cmVzKCkgewoJCQkJaWYgaGV4Ynl0ZSAhPSBgYCB7CgkJCQkJaWYgdkIsIGVyciA6PSBoZXguRGVjb2RlU3RyaW5nKGhleGJ5dGUpOyBlcnIgPT0gbmlsIHsKCQkJCQkJaWYgbGVuKHZCKSA9PSAxIHsKCQkJCQkJCXN3aXRjaCB2IHsKCQkJCQkJCWNhc2UgYHJgOgoJCQkJCQkJCWNvbG9yQy5yID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGdgOgoJCQkJCQkJCWNvbG9yQy5nID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGJgOgoJCQkJCQkJCWNvbG9yQy5iID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGFgOgoJCQkJCQkJCWNvbG9yQy5hID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCX0KCQkJCQkJfSBlbHNlIHsKCQkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCBieXRlICcldiciLCB2QikKCQkJCQkJfQoJCQkJCX0gZWxzZSB7CgkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCB2YWx1ZSAnJXYnIiwgaGV4Ynl0ZSkKCQkJCQl9CgkJCQl9CgkJCX0KCQl9Cgl9CglyZXR1cm4gY29sb3JDLCBuaWwKfQ==",
                     "IsPackageLevel": true
                 },
                 {

@@ -7,7 +7,7 @@
     "Synopsis": "Utilities for converting, manipulating, and iterating over maps\n",
     "MainFunction": false,
     "CommentWordCount": 1441,
-    "LineCount": 4601,
+    "LineCount": 4596,
     "SourceLineCount": 3517,
     "FunctionCount": 82,
     "TypeCount": 14,
@@ -319,8 +319,8 @@
                     "Alias": "utilutil"
                 }
             ],
-            "Size": 15971,
-            "LineCount": 679,
+            "Size": 15968,
+            "LineCount": 678,
             "SourceLineCount": 490,
             "FunctionCount": 45,
             "TypeCount": 6,
@@ -447,8 +447,8 @@
                     "Alias": "mapstructure"
                 }
             ],
-            "Size": 28066,
-            "LineCount": 1086,
+            "Size": 28054,
+            "LineCount": 1082,
             "SourceLineCount": 795,
             "FunctionCount": 37,
             "TypeCount": 5,

@@ -6,8 +6,8 @@
     "URL": "https://github.com/ghetzel/go-stockutil",
     "Synopsis": "Helpers for working with files and filesystems\n",
     "MainFunction": false,
-    "CommentWordCount": 1484,
-    "LineCount": 3159,
+    "CommentWordCount": 1493,
+    "LineCount": 3161,
     "SourceLineCount": 2515,
     "FunctionCount": 79,
     "TypeCount": 18,
@@ -183,8 +183,8 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 1958,
-            "LineCount": 90,
+            "Size": 1947,
+            "LineCount": 89,
             "SourceLineCount": 63,
             "FunctionCount": 1,
             "TypeCount": 0,
@@ -291,8 +291,8 @@
                     "Alias": "ssh"
                 }
             ],
-            "Size": 5127,
-            "LineCount": 181,
+            "Size": 5124,
+            "LineCount": 185,
             "SourceLineCount": 127,
             "FunctionCount": 1,
             "TypeCount": 1,
@@ -615,8 +615,8 @@
                     "Alias": "isatty"
                 }
             ],
-            "Size": 13492,
-            "LineCount": 527,
+            "Size": 13489,
+            "LineCount": 526,
             "SourceLineCount": 408,
             "FunctionCount": 25,
             "TypeCount": 0,
@@ -1103,7 +1103,7 @@
         },
         {
             "Name": "SshPrivateKey",
-            "Expression": "MustExpandUser(`~/.ssh/id_rsa`)"
+            "Expression": "ExpandUser(`~/.ssh/id_rsa`)"
         },
         {
             "Name": "SshVerifyHostFunc",
@@ -1837,7 +1837,7 @@
         },
         {
             "Name": "RetrieveViaHTTP",
-            "Comment": "Retrieve a file via HTTP or HTTPS.\n\nSupported Context Values:\n\n insecure:\n   (bool) specify that strict TLS validation should be optional.\n\n method:\n   (string) the HTTP method to use, defaults to GET.\n\n metadata:\n   (map[string]interface{}) a key-value set of HTTP request headers to include.\n\n safeResponseCodes:\n   ([]int) a list of one or more HTTP status codes that are considered successful for this request.",
+            "Comment": "Retrieve a file via HTTP or HTTPS.\n\nSupported Context Values:\n\n\tinsecure:\n\t  (bool) specify that strict TLS validation should be optional.\n\n\tmethod:\n\t  (string) the HTTP method to use, defaults to GET.\n\n\tmetadata:\n\t  (map[string]interface{}) a key-value set of HTTP request headers to include.\n\n\tsafeResponseCodes:\n\t  ([]int) a list of one or more HTTP status codes that are considered successful for this request.",
             "Arguments": [
                 {
                     "Name": "ctx",
@@ -1862,7 +1862,7 @@
         },
         {
             "Name": "RetrieveViaSSH",
-            "Comment": "Retrieve a file via SFTP (SSH file transfer).  The given URL should resemble the\nprototype: ssh://[user:password@]hostname[:22]/path/relative/to/homedir\n\nThis function will honor any authentication details from a running SSH agent,\nas well as utilize the private key located in the path indicated by SshPrivateKey\nor via the `privateKey` context value.\n\nSupported Context Values:\n\nusername:\n  (string) the username to login with. can be overriden by a username specified in the URL.\n\npassword:\n  (string) the password to login with. can be overriden by a password specified in the URL.\n\npassphrase:\n  (string) context value specifies a plaintext passphrase used to unlock the local private keyfile.\n\ninsecure:\n  (bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.\n\nverifyHostFunc:\n  (SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will\n  be called to verify the remote SSH host key in a manner of the function's choosing.  The default\n  behavior is to accept all remote hostkeys as valid.",
+            "Comment": "Retrieve a file via SFTP (SSH file transfer).  The given URL should resemble the\nprototype: ssh://[user:password@]hostname[:22]/path/relative/to/homedir\n\nThis function will honor any authentication details from a running SSH agent,\nas well as utilize the private key located in the path indicated by SshPrivateKey\nor via the `privateKey` context value.\n\nSupported Context Values:\n\nusername:\n\n\t(string) the username to login with. can be overriden by a username specified in the URL.\n\npassword:\n\n\t(string) the password to login with. can be overriden by a password specified in the URL.\n\npassphrase:\n\n\t(string) context value specifies a plaintext passphrase used to unlock the local private keyfile.\n\ninsecure:\n\n\t(bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.\n\nverifyHostFunc:\n\n\t(SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will\n\tbe called to verify the remote SSH host key in a manner of the function's choosing.  The default\n\tbehavior is to accept all remote hostkeys as valid.",
             "Arguments": [
                 {
                     "Name": "ctx",

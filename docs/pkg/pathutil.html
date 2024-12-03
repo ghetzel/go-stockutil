@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.10.12
+                            v1.12.0
                         </li>
                     </ul>
                     
@@ -658,7 +658,7 @@
 </div>
 
 
-<p><p>Returns whether a given path matches a glob pattern.<br><br>via github.com/gobwas/glob:<br><br>Compile creates Glob for given pattern and strings (if any present after pattern) as separators.<br>The pattern syntax is:<br><br>   pattern:<br>       { term }<br><br>   term:<br>       <code>*</code>         matches any sequence of non-separator characters<br>       <code>**</code>        matches any sequence of characters<br>       <code>?</code>         matches any single non-separator character<br>       <code>[</code> [ <code>!</code> ] { character-range } <code>]</code><br>                   character class (must be non-empty)<br>       <code>{</code> pattern-list <code>}</code><br>                   pattern alternatives<br>       c           matches character c (c != <code>*</code>, <code>**</code>, <code>?</code>, <code>\</code>, <code>[</code>, <code>{</code>, <code>}</code>)<br>       <code>\</code> c       matches character c<br><br>   character-range:<br>       c           matches character c (c != <code>\\</code>, <code>-</code>, <code>]</code>)<br>       <code>\</code> c       matches character c<br>       lo <code>-</code> hi   matches character c for lo &lt;= c &lt;= hi<br><br>   pattern-list:<br>       pattern { <code>,</code> pattern }<br>                   comma-separated (without spaces) patterns</p>
+<p><p>Returns whether a given path matches a glob pattern.<br><br>via github.com/gobwas/glob:<br><br>Compile creates Glob for given pattern and strings (if any present after pattern) as separators.<br>The pattern syntax is:<br><br>	pattern:<br>	    { term }<br><br>	term:<br>	    <code>*</code>         matches any sequence of non-separator characters<br>	    <code>**</code>        matches any sequence of characters<br>	    <code>?</code>         matches any single non-separator character<br>	    <code>[</code> [ <code>!</code> ] { character-range } <code>]</code><br>	                character class (must be non-empty)<br>	    <code>{</code> pattern-list <code>}</code><br>	                pattern alternatives<br>	    c           matches character c (c != <code>*</code>, <code>**</code>, <code>?</code>, <code>\</code>, <code>[</code>, <code>{</code>, <code>}</code>)<br>	    <code>\</code> c       matches character c<br><br>	character-range:<br>	    c           matches character c (c != <code>\\</code>, <code>-</code>, <code>]</code>)<br>	    <code>\</code> c       matches character c<br>	    lo <code>-</code> hi   matches character c for lo &lt;= c &lt;= hi<br><br>	pattern-list:<br>	    pattern { <code>,</code> pattern }<br>	                comma-separated (without spaces) patterns</p>
 </p>
 
 

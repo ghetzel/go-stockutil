@@ -7,7 +7,7 @@
     "Synopsis": "",
     "MainFunction": false,
     "CommentWordCount": 355,
-    "LineCount": 1529,
+    "LineCount": 1528,
     "SourceLineCount": 1240,
     "FunctionCount": 46,
     "TypeCount": 4,
@@ -219,8 +219,8 @@
                     "Alias": "reflect"
                 }
             ],
-            "Size": 2971,
-            "LineCount": 153,
+            "Size": 2968,
+            "LineCount": 152,
             "SourceLineCount": 126,
             "FunctionCount": 2,
             "TypeCount": 1,

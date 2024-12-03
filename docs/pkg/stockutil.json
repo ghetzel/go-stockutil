@@ -25,7 +25,7 @@
     "Files": [
         {
             "Name": "version.go",
-            "Size": 45,
+            "Size": 44,
             "LineCount": 4,
             "SourceLineCount": 2,
             "FunctionCount": 0,
@@ -38,8 +38,8 @@
         {
             "Name": "Version",
             "Immutable": true,
-            "Expression": "`1.10.12`",
-            "Value": "1.10.12"
+            "Expression": "`1.12.0`",
+            "Value": "1.12.0"
         }
     ],
     "Packages": [
@@ -52,22 +52,32 @@
             "Synopsis": "Utilities for parsing and manipulating colors.\n",
             "MainFunction": false,
             "CommentWordCount": 498,
-            "LineCount": 1189,
-            "SourceLineCount": 897,
-            "FunctionCount": 26,
+            "LineCount": 1364,
+            "SourceLineCount": 1059,
+            "FunctionCount": 27,
             "TypeCount": 1,
             "ConstantCount": 4,
-            "VariableCount": 0,
+            "VariableCount": 1,
             "Statistics": {
-                "Mean": 0.8074,
-                "StdDev": 0.3867,
-                "GeometricMean": 1,
-                "HarmonicMean": 1,
+                "Mean": 0.7517,
+                "StdDev": 0.4256,
+                "GeometricMean": 0,
+                "HarmonicMean": 0,
                 "Median": 1,
                 "Minimum": 0,
                 "Maximum": 1
             },
             "Files": [
+                {
+                    "Name": "colors.go",
+                    "Size": 5060,
+                    "LineCount": 144,
+                    "SourceLineCount": 142,
+                    "FunctionCount": 0,
+                    "TypeCount": 0,
+                    "ConstantCount": 0,
+                    "VariableCount": 1
+                },
                 {
                     "Name": "colortemp.go",
                     "Imports": [
@@ -76,8 +86,8 @@
                             "Alias": "math"
                         }
                     ],
-                    "Size": 3451,
-                    "LineCount": 122,
+                    "Size": 3454,
+                    "LineCount": 124,
                     "SourceLineCount": 88,
                     "FunctionCount": 1,
                     "TypeCount": 0,
@@ -148,10 +158,10 @@
                             "Alias": "json"
                         }
                     ],
-                    "Size": 14910,
-                    "LineCount": 620,
-                    "SourceLineCount": 463,
-                    "FunctionCount": 24,
+                    "Size": 15138,
+                    "LineCount": 630,
+                    "SourceLineCount": 470,
+                    "FunctionCount": 25,
                     "TypeCount": 1,
                     "ConstantCount": 4,
                     "VariableCount": 0
@@ -176,9 +186,9 @@
                             "Alias": "require"
                         }
                     ],
-                    "Size": 11987,
-                    "LineCount": 358,
-                    "SourceLineCount": 270,
+                    "Size": 12418,
+                    "LineCount": 377,
+                    "SourceLineCount": 283,
                     "FunctionCount": 0,
                     "TypeCount": 0,
                     "ConstantCount": 0,
@@ -203,6 +213,11 @@
                     "Type": "lmodel",
                     "Immutable": true,
                     "Expression": "iota"
+                }
+            ],
+            "Variables": [
+                {
+                    "Name": "ColorNames"
                 }
             ],
             "Functions": [
@@ -371,6 +386,18 @@
                     "IsPackageLevel": true
                 },
                 {
+                    "Name": "TestColorNames",
+                    "Arguments": [
+                        {
+                            "Name": "t",
+                            "Type": "*testing.T"
+                        }
+                    ],
+                    "Signature": "TestColorNames(t *testing.T)",
+                    "Source": "ewoJcmVxdWlyZS5UcnVlKHQsIE11c3RQYXJzZShgcmVkYCkuRXF1YWxzKGAjZmYwMDAwYCkpCglyZXF1aXJlLlRydWUodCwgTXVzdFBhcnNlKGBncmVlbmApLkVxdWFscyhgIzAwODAwMGApKQoJcmVxdWlyZS5UcnVlKHQsIE11c3RQYXJzZShgYmx1ZWApLkVxdWFscyhgIzAwMDBmZmApKQoJQ29sb3JOYW1lc1tgX3Rlc3RpbmdgXSA9IGAjMTIzNDU2YAoJcmVxdWlyZS5UcnVlKHQsIE11c3RQYXJzZShgX3Rlc3RpbmdgKS5FcXVhbHMoYCMxMjM0NTZgKSkKfQ==",
+                    "IsPackageLevel": true
+                },
+                {
                     "Name": "TestColorStringers",
                     "Arguments": [
                         {
@@ -416,6 +443,18 @@
                     ],
                     "Signature": "TestHsvToRgbFloat(t *testing.T)",
                     "Source": "ewoJYXNzZXJ0SHN2VG9SZ2IodCwgMCwgMCwgMCwgMCwgMCwgMCkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDAsIDAuMSwgMC4xLCAwLjEsIDAuMSkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDAsIDAuNSwgMC41LCAwLjUsIDAuNSkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDAsIDAuNzUsIDAuNzUsIDAuNzUsIDAuNzUpCglhc3NlcnRIc3ZUb1JnYih0LCAwLCAwLCAxLCAxLCAxLCAxKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMCwgMSwgMSwgMSwgMCwgMCkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDEsIDAuNzUsIDAuNzUsIDAsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAwLCAxLCAwLjUsIDAuNSwgMCwgMCkKCWFzc2VydEhzdlRvUmdiKHQsIDAsIDEsIDAuMDEsIDAuMDEsIDAsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAxMjAsIDEsIDEsIDAsIDEsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAxMjAsIDEsIDAuNzUsIDAsIDAuNzUsIDApCglhc3NlcnRIc3ZUb1JnYih0LCAxMjAsIDEsIDAuNSwgMCwgMC41LCAwKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMTIwLCAxLCAwLjAxLCAwLCAwLjAxLCAwKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMjQwLCAxLCAxLCAwLCAwLCAxKQoJYXNzZXJ0SHN2VG9SZ2IodCwgMjQwLCAxLCAwLjc1LCAwLCAwLCAwLjc1KQoJYXNzZXJ0SHN2VG9SZ2IodCwgMjQwLCAxLCAwLjUsIDAsIDAsIDAuNSkKCWFzc2VydEhzdlRvUmdiKHQsIDI0MCwgMSwgMC4wMSwgMCwgMCwgMC4wMSkKfQ==",
+                    "IsPackageLevel": true
+                },
+                {
+                    "Name": "TestIsZero",
+                    "Arguments": [
+                        {
+                            "Name": "t",
+                            "Type": "*testing.T"
+                        }
+                    ],
+                    "Signature": "TestIsZero(t *testing.T)",
+                    "Source": "ewoJdmFyIGMgQ29sb3IKCXJlcXVpcmUuVHJ1ZSh0LCBjLklzWmVybygpKQoJYyA9IE11c3RQYXJzZShgZmYwMGNjYCkKCXJlcXVpcmUuRmFsc2UodCwgYy5Jc1plcm8oKSkKfQ==",
                     "IsPackageLevel": true
                 },
                 {
@@ -581,6 +620,17 @@
                             "IsPackageLevel": false
                         },
                         {
+                            "Name": "IsZero",
+                            "ReceiverName": "self",
+                            "Returns": [
+                                {
+                                    "Type": "bool"
+                                }
+                            ],
+                            "Signature": "IsZero() bool",
+                            "IsPackageLevel": false
+                        },
+                        {
                             "Name": "MarshalJSON",
                             "ReceiverName": "self",
                             "Returns": [
@@ -718,7 +768,7 @@
                                 }
                             ],
                             "Signature": "Parse(value interface{}) (Color, error)",
-                            "Source": "ewoJdmFyIGNvbG9yQyBDb2xvcgoJY29sb3JDLmEgPSAxCglpZiBjLCBvayA6PSB2YWx1ZS4oQ29sb3IpOyBvayB7CgkJcmV0dXJuIGMsIG5pbAoJfSBlbHNlIHsKCQljb2xvclMgOj0gZm10LlNwcmludGYoIiV2IiwgdmFsdWUpCgkJY29sb3JTID0gc3RyaW5ncy5UcmltU3BhY2UoY29sb3JTKQoJCWlmIHJnYmEgOj0gcnh1dGlsLk1hdGNoKHJnYmFQYXR0ZXJuLCBjb2xvclMpOyByZ2JhICE9IG5pbCB7CgkJCWZvciB2LCBmYWN0b3JTIDo9IHJhbmdlIHJnYmEuTmFtZWRDYXB0dXJlcygpIHsKCQkJCXZhciBkZW5vbSBmbG9hdDY0ID0gMHhGRgoJCQkJaWYgc3RyaW5ncy5IYXNTdWZmaXgoZmFjdG9yUywgYCVgKSB7CgkJCQkJZGVub20gPSAxMDAKCQkJCQlmYWN0b3JTID0gZmFjdG9yU1s6bGVuKGZhY3RvclMpLTFdCgkJCQl9CgkJCQlpZiBmYWN0b3JGLCBlcnIgOj0gc3RyaW5ndXRpbC5Db252ZXJ0VG9GbG9hdChmYWN0b3JTKTsgZXJyID09IG5pbCB7CgkJCQkJaWYgdiAhPSBgYWAgJiYgZmFjdG9yRiA+IDEgewoJCQkJCQlmYWN0b3JGID0gKGZhY3RvckYgLyBkZW5vbSkKCQkJCQl9CgkJCQkJc3dpdGNoIHYgewoJCQkJCWNhc2UgYHJgOgoJCQkJCQljb2xvckMuciA9IGZhY3RvckYKCQkJCQljYXNlIGBnYDoKCQkJCQkJY29sb3JDLmcgPSBmYWN0b3JGCgkJCQkJY2FzZSBgYmA6CgkJCQkJCWNvbG9yQy5iID0gZmFjdG9yRgoJCQkJCWNhc2UgYGFgOgoJCQkJCQlpZiBmYWN0b3JTICE9IGBgIHsKCQkJCQkJCWlmIGZhY3RvckYgPiAxIHsKCQkJCQkJCQlmYWN0b3JGID0gKGZhY3RvckYgLyBkZW5vbSkKCQkJCQkJCX0KCQkJCQkJCWNvbG9yQy5hID0gZmFjdG9yRgoJCQkJCQl9CgkJCQkJfQoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCByZ2JhKCkgdmFsdWUgaW4gJyV2JyBwb3NpdGlvbjogJXYiLCB2LCBlcnIpCgkJCQl9CgkJCX0KCQl9IGVsc2UgaWYgaHNsYSA6PSByeHV0aWwuTWF0Y2goaHNsYVBhdHRlcm4sIGNvbG9yUyk7IGhzbGEgIT0gbmlsIHsKCQkJdmFyIGgsIHMsIGx2IGZsb2F0NjQKCQkJdmFyIGlzSFNWIGJvb2wKCQkJaWYgaHNsYS5Hcm91cChgTG9yVmApID09IGB2YCB7CgkJCQlpc0hTViA9IHRydWUKCQkJfQoJCQlmb3IgdiwgZmFjdG9yUyA6PSAvLyBoYW5kbGVzIGhzbCgpLCBoc2xhKCksIGhzdigpLCBoc3ZhKCkgcGF0dGVybnMKCQkJcmFuZ2UgaHNsYS5OYW1lZENhcHR1cmVzKCkgewoJCQkJaWYgdiA9PSBgTG9yVmAgewoJCQkJCWNvbnRpbnVlCgkJCQl9CgkJCQl2YXIgZGVub20gZmxvYXQ2NCA9IDEKCQkJCWlmIHN0cmluZ3MuSGFzU3VmZml4KGZhY3RvclMsIGAlYCkgewoJCQkJCWRlbm9tID0gMTAwCgkJCQkJZmFjdG9yUyA9IHN0cmluZ3MuVHJpbVN1ZmZpeChmYWN0b3JTLCBgJWApCgkJCQl9CgkJCQlpZiBmYWN0b3JGLCBlcnIgOj0gc3RyaW5ndXRpbC5Db252ZXJ0VG9GbG9hdChmYWN0b3JTKTsgZXJyID09IG5pbCB7CgkJCQkJaWYgZmFjdG9yRiA+IDEgJiYgZGVub20gPT0gMSB7CgkJCQkJCWRlbm9tID0gMHhGRgoJCQkJCX0KCQkJCQlzd2l0Y2ggdiB7CgkJCQkJY2FzZSBgaGA6CgkJCQkJCWggPSBmYWN0b3JGCgkJCQkJY2FzZSBgc2A6CgkJCQkJCXMgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCWNhc2UgYGx2YDoKCQkJCQkJbHYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCWNhc2UgYGFgOgoJCQkJCQlpZiBmYWN0b3JTICE9IGBgIHsKCQkJCQkJCWlmIGZhY3RvckYgPiAxIHsKCQkJCQkJCQlmYWN0b3JGID0gKGZhY3RvckYgLyBkZW5vbSkKCQkJCQkJCX0KCQkJCQkJCWNvbG9yQy5hID0gZmFjdG9yRgoJCQkJCQl9CgkJCQkJfQoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCByZ2JhKCkgdmFsdWUgaW4gJyV2JyBwb3NpdGlvbjogJXYiLCB2LCBlcnIpCgkJCQl9CgkJCX0KCQkJaWYgaXNIU1YgewoJCQkJY29sb3JDLnIsIGNvbG9yQy5nLCBjb2xvckMuYiA9IGhzdjJyZ2IoaCwgcywgbHYpCgkJCX0gZWxzZSB7CgkJCQljb2xvckMuciwgY29sb3JDLmcsIGNvbG9yQy5iID0gaHNsMnJnYihoLCBzLCBsdikKCQkJfQoJCX0gZWxzZSBpZiBoZXhhIDo9IHJ4dXRpbC5NYXRjaChoZXhQYXR0ZXJuLCBjb2xvclMpOyBoZXhhICE9IG5pbCB7CgkJCWZvciB2LCBoZXhieXRlIDo9IHJhbmdlIGhleGEuTmFtZWRDYXB0dXJlcygpIHsKCQkJCWlmIGhleGJ5dGUgIT0gYGAgewoJCQkJCWlmIHZCLCBlcnIgOj0gaGV4LkRlY29kZVN0cmluZyhoZXhieXRlKTsgZXJyID09IG5pbCB7CgkJCQkJCWlmIGxlbih2QikgPT0gMSB7CgkJCQkJCQlzd2l0Y2ggdiB7CgkJCQkJCQljYXNlIGByYDoKCQkJCQkJCQljb2xvckMuciA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQljYXNlIGBnYDoKCQkJCQkJCQljb2xvckMuZyA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQljYXNlIGBiYDoKCQkJCQkJCQljb2xvckMuYiA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQljYXNlIGBhYDoKCQkJCQkJCQljb2xvckMuYSA9IChmbG9hdDY0KHZCWzBdKSAvIDB4RkYpCgkJCQkJCQl9CgkJCQkJCX0gZWxzZSB7CgkJCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCBoZXggYnl0ZSAnJXYnIiwgdkIpCgkJCQkJCX0KCQkJCQl9IGVsc2UgewoJCQkJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigiSW52YWxpZCBoZXggdmFsdWUgJyV2JyIsIGhleGJ5dGUpCgkJCQkJfQoJCQkJfQoJCQl9CgkJfQoJfQoJcmV0dXJuIGNvbG9yQywgbmlsCn0=",
+                            "Source": "ewoJdmFyIGNvbG9yQyBDb2xvcgoJY29sb3JDLmEgPSAxCglpZiBjLCBvayA6PSB2YWx1ZS4oQ29sb3IpOyBvayB7CgkJcmV0dXJuIGMsIG5pbAoJfSBlbHNlIHsKCQljb2xvclMgOj0gZm10LlNwcmludGYoIiV2IiwgdmFsdWUpCgkJY29sb3JTID0gc3RyaW5ncy5UcmltU3BhY2UoY29sb3JTKQoJCWNvbG9yUyA9IHN0cmluZ3MuVG9Mb3dlcihjb2xvclMpCgkJaWYgYywgb2sgOj0gQ29sb3JOYW1lc1tjb2xvclNdOyBvayAmJiBzdHJpbmdzLlRyaW1TcGFjZShjKSAhPSBgYCB7CgkJCWNvbG9yUyA9IGMKCQl9CgkJaWYgcmdiYSA6PSByeHV0aWwuTWF0Y2gocmdiYVBhdHRlcm4sIGNvbG9yUyk7IHJnYmEgIT0gbmlsIHsKCQkJZm9yIHYsIGZhY3RvclMgOj0gcmFuZ2UgcmdiYS5OYW1lZENhcHR1cmVzKCkgewoJCQkJdmFyIGRlbm9tIGZsb2F0NjQgPSAweEZGCgkJCQlpZiBzdHJpbmdzLkhhc1N1ZmZpeChmYWN0b3JTLCBgJWApIHsKCQkJCQlkZW5vbSA9IDEwMAoJCQkJCWZhY3RvclMgPSBmYWN0b3JTWzpsZW4oZmFjdG9yUyktMV0KCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiB2ICE9IGBhYCAmJiBmYWN0b3JGID4gMSB7CgkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCX0KCQkJCQlzd2l0Y2ggdiB7CgkJCQkJY2FzZSBgcmA6CgkJCQkJCWNvbG9yQy5yID0gZmFjdG9yRgoJCQkJCWNhc2UgYGdgOgoJCQkJCQljb2xvckMuZyA9IGZhY3RvckYKCQkJCQljYXNlIGBiYDoKCQkJCQkJY29sb3JDLmIgPSBmYWN0b3JGCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCX0gZWxzZSBpZiBoc2xhIDo9IHJ4dXRpbC5NYXRjaChoc2xhUGF0dGVybiwgY29sb3JTKTsgaHNsYSAhPSBuaWwgewoJCQl2YXIgaCwgcywgbHYgZmxvYXQ2NAoJCQl2YXIgaXNIU1YgYm9vbAoJCQlpZiBoc2xhLkdyb3VwKGBMb3JWYCkgPT0gYHZgIHsKCQkJCWlzSFNWID0gdHJ1ZQoJCQl9CgkJCWZvciB2LCBmYWN0b3JTIDo9IC8vIGhhbmRsZXMgaHNsKCksIGhzbGEoKSwgaHN2KCksIGhzdmEoKSBwYXR0ZXJucwoJCQlyYW5nZSBoc2xhLk5hbWVkQ2FwdHVyZXMoKSB7CgkJCQlpZiB2ID09IGBMb3JWYCB7CgkJCQkJY29udGludWUKCQkJCX0KCQkJCXZhciBkZW5vbSBmbG9hdDY0ID0gMQoJCQkJaWYgc3RyaW5ncy5IYXNTdWZmaXgoZmFjdG9yUywgYCVgKSB7CgkJCQkJZGVub20gPSAxMDAKCQkJCQlmYWN0b3JTID0gc3RyaW5ncy5UcmltU3VmZml4KGZhY3RvclMsIGAlYCkKCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiBmYWN0b3JGID4gMSAmJiBkZW5vbSA9PSAxIHsKCQkJCQkJZGVub20gPSAweEZGCgkJCQkJfQoJCQkJCXN3aXRjaCB2IHsKCQkJCQljYXNlIGBoYDoKCQkJCQkJaCA9IGZhY3RvckYKCQkJCQljYXNlIGBzYDoKCQkJCQkJcyA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgbHZgOgoJCQkJCQlsdiA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCQlpZiBpc0hTViB7CgkJCQljb2xvckMuciwgY29sb3JDLmcsIGNvbG9yQy5iID0gaHN2MnJnYihoLCBzLCBsdikKCQkJfSBlbHNlIHsKCQkJCWNvbG9yQy5yLCBjb2xvckMuZywgY29sb3JDLmIgPSBoc2wycmdiKGgsIHMsIGx2KQoJCQl9CgkJfSBlbHNlIGlmIGhleGEgOj0gcnh1dGlsLk1hdGNoKGhleFBhdHRlcm4sIGNvbG9yUyk7IGhleGEgIT0gbmlsIHsKCQkJZm9yIHYsIGhleGJ5dGUgOj0gcmFuZ2UgaGV4YS5OYW1lZENhcHR1cmVzKCkgewoJCQkJaWYgaGV4Ynl0ZSAhPSBgYCB7CgkJCQkJaWYgdkIsIGVyciA6PSBoZXguRGVjb2RlU3RyaW5nKGhleGJ5dGUpOyBlcnIgPT0gbmlsIHsKCQkJCQkJaWYgbGVuKHZCKSA9PSAxIHsKCQkJCQkJCXN3aXRjaCB2IHsKCQkJCQkJCWNhc2UgYHJgOgoJCQkJCQkJCWNvbG9yQy5yID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGdgOgoJCQkJCQkJCWNvbG9yQy5nID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGJgOgoJCQkJCQkJCWNvbG9yQy5iID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGFgOgoJCQkJCQkJCWNvbG9yQy5hID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCX0KCQkJCQkJfSBlbHNlIHsKCQkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCBieXRlICcldiciLCB2QikKCQkJCQkJfQoJCQkJCX0gZWxzZSB7CgkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCB2YWx1ZSAnJXYnIiwgaGV4Ynl0ZSkKCQkJCQl9CgkJCQl9CgkJCX0KCQl9Cgl9CglyZXR1cm4gY29sb3JDLCBuaWwKfQ==",
                             "IsPackageLevel": true
                         },
                         {
@@ -915,11 +965,11 @@
             "Synopsis": "",
             "MainFunction": false,
             "CommentWordCount": 0,
-            "LineCount": 580,
-            "SourceLineCount": 496,
+            "LineCount": 590,
+            "SourceLineCount": 507,
             "FunctionCount": 15,
             "TypeCount": 4,
-            "ConstantCount": 49,
+            "ConstantCount": 55,
             "VariableCount": 1,
             "Statistics": {
                 "Mean": 0,
@@ -971,9 +1021,9 @@
                             "Alias": "assert"
                         }
                     ],
-                    "Size": 2478,
-                    "LineCount": 64,
-                    "SourceLineCount": 49,
+                    "Size": 2570,
+                    "LineCount": 66,
+                    "SourceLineCount": 51,
                     "FunctionCount": 0,
                     "TypeCount": 0,
                     "ConstantCount": 0,
@@ -995,12 +1045,12 @@
                             "Alias": "typeutil"
                         }
                     ],
-                    "Size": 2690,
-                    "LineCount": 120,
-                    "SourceLineCount": 101,
+                    "Size": 3022,
+                    "LineCount": 128,
+                    "SourceLineCount": 110,
                     "FunctionCount": 5,
                     "TypeCount": 2,
-                    "ConstantCount": 30,
+                    "ConstantCount": 36,
                     "VariableCount": 0
                 },
                 {
@@ -1219,6 +1269,39 @@
                     "Expression": "-12"
                 },
                 {
+                    "Name": "Quecto",
+                    "Immutable": true,
+                    "Expression": "-30"
+                },
+                {
+                    "Name": "Quetta",
+                    "Type": "SIExponents",
+                    "Immutable": true,
+                    "Expression": "30"
+                },
+                {
+                    "Name": "Quettabyte",
+                    "Type": "Bytes",
+                    "Immutable": true,
+                    "Expression": "1267650600228229401496703205376"
+                },
+                {
+                    "Name": "Ronna",
+                    "Immutable": true,
+                    "Expression": "27"
+                },
+                {
+                    "Name": "Ronnabyte",
+                    "Type": "Bytes",
+                    "Immutable": true,
+                    "Expression": "1237940039285380274899124224"
+                },
+                {
+                    "Name": "Ronto",
+                    "Immutable": true,
+                    "Expression": "-27"
+                },
+                {
                     "Name": "SpeedUnits",
                     "Immutable": true
                 },
@@ -1244,7 +1327,6 @@
                 },
                 {
                     "Name": "Yotta",
-                    "Type": "SIExponents",
                     "Immutable": true,
                     "Expression": "24"
                 },
@@ -1395,7 +1477,7 @@
                         }
                     ],
                     "Signature": "TestByteStringer(t *testing.T)",
-                    "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbChgMUJgLCBCeXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxS0JgLCBLaWxvYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMU1CYCwgTWVnYWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFHQmAsIEdpZ2FieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxVEJgLCBUZXJhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVBCYCwgUGV0YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFFQmAsIEV4YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFaQmAsIFpldHRhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVlCYCwgWW90dGFieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxQkJgLCBCcm9udG9ieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJCYCwgKDUxMiAqIEJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJLQmAsICg1MTIgKiBLaWxvYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMk1CYCwgKDUxMiAqIE1lZ2FieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyR0JgLCAoNTEyICogR2lnYWJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJUQmAsICg1MTIgKiBUZXJhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMlBCYCwgKDUxMiAqIFBldGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyRUJgLCAoNTEyICogRXhhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMlpCYCwgKDUxMiAqIFpldHRhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMllCYCwgKDUxMiAqIFlvdHRhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMkJCYCwgKDUxMiAqIEJyb250b2J5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAwLjVLQmAsIEJ5dGVzKDUxMikuVG8oS2lsb2J5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDVNQmAsIEJ5dGVzKDUxMikuVG8oTWVnYWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDVHQmAsIEJ5dGVzKDUxMikuVG8oR2lnYWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDAwMDVUQmAsIEJ5dGVzKDUxMikuVG8oVGVyYWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDAwMDAwMDVQQmAsIEJ5dGVzKDUxMikuVG8oUGV0YWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDAwMDAwMDAwMDRFQmAsIEJ5dGVzKDUxMikuVG8oRXhhYnl0ZSkpCn0=",
+                    "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbChgMUJgLCBCeXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxS0JgLCBLaWxvYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMU1CYCwgTWVnYWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFHQmAsIEdpZ2FieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxVEJgLCBUZXJhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVBCYCwgUGV0YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFFQmAsIEV4YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFaQmAsIFpldHRhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVlCYCwgWW90dGFieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxUkJgLCBSb25uYWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFRQmAsIFF1ZXR0YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMkJgLCAoNTEyICogQnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMktCYCwgKDUxMiAqIEtpbG9ieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyTUJgLCAoNTEyICogTWVnYWJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJHQmAsICg1MTIgKiBHaWdhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMlRCYCwgKDUxMiAqIFRlcmFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyUEJgLCAoNTEyICogUGV0YWJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJFQmAsICg1MTIgKiBFeGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyWkJgLCAoNTEyICogWmV0dGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyWUJgLCAoNTEyICogWW90dGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyUkJgLCAoNTEyICogUm9ubmFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyUUJgLCAoNTEyICogUXVldHRhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDAuNUtCYCwgQnl0ZXMoNTEyKS5UbyhLaWxvYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwNU1CYCwgQnl0ZXMoNTEyKS5UbyhNZWdhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwNUdCYCwgQnl0ZXMoNTEyKS5UbyhHaWdhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwMDAwNVRCYCwgQnl0ZXMoNTEyKS5UbyhUZXJhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwMDAwMDAwNVBCYCwgQnl0ZXMoNTEyKS5UbyhQZXRhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwMDAwMDAwMDAwNEVCYCwgQnl0ZXMoNTEyKS5UbyhFeGFieXRlKSkKfQ==",
                     "IsPackageLevel": true
                 },
                 {
@@ -1612,7 +1694,7 @@
             "MainFunction": false,
             "CommentWordCount": 710,
             "LineCount": 1083,
-            "SourceLineCount": 819,
+            "SourceLineCount": 818,
             "FunctionCount": 44,
             "TypeCount": 4,
             "ConstantCount": 0,
@@ -1727,9 +1809,9 @@
                             "Alias": "assert"
                         }
                     ],
-                    "Size": 3445,
+                    "Size": 3448,
                     "LineCount": 135,
-                    "SourceLineCount": 110,
+                    "SourceLineCount": 109,
                     "FunctionCount": 0,
                     "TypeCount": 0,
                     "ConstantCount": 0,
@@ -2449,7 +2531,7 @@
                         }
                     ],
                     "Signature": "TestExecReadWriteCloser(t *testing.T)",
-                    "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW91dGlsLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgcmVycikKCWFzc2VydC5FcXVhbCh0LCBieXRlcy5SZXBlYXQocGF5bG9hZCwgYyksIGRhdGEpCglhc3NlcnQuTm9FcnJvcih0LCBjbWQuQ2xvc2UoKSkKfQ==",
+                    "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW91dGlsLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgcmVycikKCWFzc2VydC5FcXVhbCh0LCBieXRlcy5SZXBlYXQocGF5bG9hZCwgYyksIGRhdGEpCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -2943,8 +3025,8 @@
             "URL": "https://github.com/ghetzel/go-stockutil",
             "Synopsis": "Helpers for working with files and filesystems\n",
             "MainFunction": false,
-            "CommentWordCount": 1484,
-            "LineCount": 3159,
+            "CommentWordCount": 1493,
+            "LineCount": 3161,
             "SourceLineCount": 2515,
             "FunctionCount": 79,
             "TypeCount": 18,
@@ -3120,8 +3202,8 @@
                             "Alias": "typeutil"
                         }
                     ],
-                    "Size": 1958,
-                    "LineCount": 90,
+                    "Size": 1947,
+                    "LineCount": 89,
                     "SourceLineCount": 63,
                     "FunctionCount": 1,
                     "TypeCount": 0,
@@ -3228,8 +3310,8 @@
                             "Alias": "ssh"
                         }
                     ],
-                    "Size": 5127,
-                    "LineCount": 181,
+                    "Size": 5124,
+                    "LineCount": 185,
                     "SourceLineCount": 127,
                     "FunctionCount": 1,
                     "TypeCount": 1,
@@ -3552,8 +3634,8 @@
                             "Alias": "isatty"
                         }
                     ],
-                    "Size": 13492,
-                    "LineCount": 527,
+                    "Size": 13489,
+                    "LineCount": 526,
                     "SourceLineCount": 408,
                     "FunctionCount": 25,
                     "TypeCount": 0,
@@ -4040,7 +4122,7 @@
                 },
                 {
                     "Name": "SshPrivateKey",
-                    "Expression": "MustExpandUser(`~/.ssh/id_rsa`)"
+                    "Expression": "ExpandUser(`~/.ssh/id_rsa`)"
                 },
                 {
                     "Name": "SshVerifyHostFunc",
@@ -4774,7 +4856,7 @@
                 },
                 {
                     "Name": "RetrieveViaHTTP",
-                    "Comment": "Retrieve a file via HTTP or HTTPS.\n\nSupported Context Values:\n\n insecure:\n   (bool) specify that strict TLS validation should be optional.\n\n method:\n   (string) the HTTP method to use, defaults to GET.\n\n metadata:\n   (map[string]interface{}) a key-value set of HTTP request headers to include.\n\n safeResponseCodes:\n   ([]int) a list of one or more HTTP status codes that are considered successful for this request.",
+                    "Comment": "Retrieve a file via HTTP or HTTPS.\n\nSupported Context Values:\n\n\tinsecure:\n\t  (bool) specify that strict TLS validation should be optional.\n\n\tmethod:\n\t  (string) the HTTP method to use, defaults to GET.\n\n\tmetadata:\n\t  (map[string]interface{}) a key-value set of HTTP request headers to include.\n\n\tsafeResponseCodes:\n\t  ([]int) a list of one or more HTTP status codes that are considered successful for this request.",
                     "Arguments": [
                         {
                             "Name": "ctx",
@@ -4799,7 +4881,7 @@
                 },
                 {
                     "Name": "RetrieveViaSSH",
-                    "Comment": "Retrieve a file via SFTP (SSH file transfer).  The given URL should resemble the\nprototype: ssh://[user:password@]hostname[:22]/path/relative/to/homedir\n\nThis function will honor any authentication details from a running SSH agent,\nas well as utilize the private key located in the path indicated by SshPrivateKey\nor via the `privateKey` context value.\n\nSupported Context Values:\n\nusername:\n  (string) the username to login with. can be overriden by a username specified in the URL.\n\npassword:\n  (string) the password to login with. can be overriden by a password specified in the URL.\n\npassphrase:\n  (string) context value specifies a plaintext passphrase used to unlock the local private keyfile.\n\ninsecure:\n  (bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.\n\nverifyHostFunc:\n  (SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will\n  be called to verify the remote SSH host key in a manner of the function's choosing.  The default\n  behavior is to accept all remote hostkeys as valid.",
+                    "Comment": "Retrieve a file via SFTP (SSH file transfer).  The given URL should resemble the\nprototype: ssh://[user:password@]hostname[:22]/path/relative/to/homedir\n\nThis function will honor any authentication details from a running SSH agent,\nas well as utilize the private key located in the path indicated by SshPrivateKey\nor via the `privateKey` context value.\n\nSupported Context Values:\n\nusername:\n\n\t(string) the username to login with. can be overriden by a username specified in the URL.\n\npassword:\n\n\t(string) the password to login with. can be overriden by a password specified in the URL.\n\npassphrase:\n\n\t(string) context value specifies a plaintext passphrase used to unlock the local private keyfile.\n\ninsecure:\n\n\t(bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.\n\nverifyHostFunc:\n\n\t(SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will\n\tbe called to verify the remote SSH host key in a manner of the function's choosing.  The default\n\tbehavior is to accept all remote hostkeys as valid.",
                     "Arguments": [
                         {
                             "Name": "ctx",
@@ -5873,7 +5955,7 @@
             "Synopsis": "Types and functions for working with Geospatial Data\n",
             "MainFunction": false,
             "CommentWordCount": 135,
-            "LineCount": 2587,
+            "LineCount": 2586,
             "SourceLineCount": 2453,
             "FunctionCount": 29,
             "TypeCount": 9,
@@ -5917,8 +5999,8 @@
                             "Alias": "geo"
                         }
                     ],
-                    "Size": 4129,
-                    "LineCount": 158,
+                    "Size": 4126,
+                    "LineCount": 157,
                     "SourceLineCount": 119,
                     "FunctionCount": 10,
                     "TypeCount": 3,
@@ -8457,7 +8539,7 @@
             "Synopsis": "Utilities for extracting and formatting data encountered in HTTP requests\n",
             "MainFunction": false,
             "CommentWordCount": 1258,
-            "LineCount": 2052,
+            "LineCount": 2050,
             "SourceLineCount": 1458,
             "FunctionCount": 78,
             "TypeCount": 14,
@@ -8467,7 +8549,7 @@
                 "Mean": 0.6593,
                 "StdDev": 0.4504,
                 "GeometricMean": 0,
-                "HarmonicMean": 0,
+                "HarmonicMean": 1,
                 "Median": 1,
                 "Minimum": 0,
                 "Maximum": 1
@@ -8967,8 +9049,8 @@
                             "Alias": "stringutil"
                         }
                     ],
-                    "Size": 5086,
-                    "LineCount": 177,
+                    "Size": 5083,
+                    "LineCount": 176,
                     "SourceLineCount": 126,
                     "FunctionCount": 12,
                     "TypeCount": 1,
@@ -9071,8 +9153,8 @@
                             "Alias": "typeutil"
                         }
                     ],
-                    "Size": 4495,
-                    "LineCount": 159,
+                    "Size": 4492,
+                    "LineCount": 158,
                     "SourceLineCount": 123,
                     "FunctionCount": 6,
                     "TypeCount": 0,
@@ -11132,10 +11214,10 @@
             "ImportPath": "log",
             "ParentPackage": "stockutil",
             "URL": "https://github.com/ghetzel/go-stockutil",
-            "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\nOverview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\nColor Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\th: high-intensity (bright text)\n\nExamples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\nLog Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\nWritable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"github.com/ghetzel/go-stockutil/log\"\n\t)\n\n\twr := log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tls := exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
+            "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"github.com/ghetzel/go-stockutil/log\"\n\t)\n\n\twr := log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tls := exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
             "MainFunction": false,
-            "CommentWordCount": 1134,
-            "LineCount": 1045,
+            "CommentWordCount": 1139,
+            "LineCount": 1046,
             "SourceLineCount": 794,
             "FunctionCount": 59,
             "TypeCount": 10,
@@ -11241,8 +11323,8 @@
                 },
                 {
                     "Name": "doc.go",
-                    "Size": 4097,
-                    "LineCount": 120,
+                    "Size": 4108,
+                    "LineCount": 121,
                     "SourceLineCount": 84,
                     "FunctionCount": 0,
                     "TypeCount": 0,
@@ -12556,7 +12638,7 @@
             "Synopsis": "Utilities for converting, manipulating, and iterating over maps\n",
             "MainFunction": false,
             "CommentWordCount": 1441,
-            "LineCount": 4601,
+            "LineCount": 4596,
             "SourceLineCount": 3517,
             "FunctionCount": 82,
             "TypeCount": 14,
@@ -12868,8 +12950,8 @@
                             "Alias": "utilutil"
                         }
                     ],
-                    "Size": 15971,
-                    "LineCount": 679,
+                    "Size": 15968,
+                    "LineCount": 678,
                     "SourceLineCount": 490,
                     "FunctionCount": 45,
                     "TypeCount": 6,
@@ -12996,8 +13078,8 @@
                             "Alias": "mapstructure"
                         }
                     ],
-                    "Size": 28066,
-                    "LineCount": 1086,
+                    "Size": 28054,
+                    "LineCount": 1082,
                     "SourceLineCount": 795,
                     "FunctionCount": 37,
                     "TypeCount": 5,
@@ -16802,8 +16884,8 @@
             "URL": "https://github.com/ghetzel/go-stockutil",
             "Synopsis": "Additional helpers for working with file paths and filesystem information\n",
             "MainFunction": false,
-            "CommentWordCount": 353,
-            "LineCount": 313,
+            "CommentWordCount": 368,
+            "LineCount": 312,
             "SourceLineCount": 218,
             "FunctionCount": 23,
             "TypeCount": 0,
@@ -16847,8 +16929,8 @@
                             "Alias": "glob"
                         }
                     ],
-                    "Size": 5056,
-                    "LineCount": 211,
+                    "Size": 4996,
+                    "LineCount": 210,
                     "SourceLineCount": 132,
                     "FunctionCount": 23,
                     "TypeCount": 0,
@@ -17275,7 +17357,7 @@
                 },
                 {
                     "Name": "MatchPath",
-                    "Comment": "Returns whether a given path matches a glob pattern.\n\nvia github.com/gobwas/glob:\n\nCompile creates Glob for given pattern and strings (if any present after pattern) as separators.\nThe pattern syntax is:\n\n   pattern:\n       { term }\n\n   term:\n       `*`         matches any sequence of non-separator characters\n       `**`        matches any sequence of characters\n       `?`         matches any single non-separator character\n       `[` [ `!` ] { character-range } `]`\n                   character class (must be non-empty)\n       `{` pattern-list `}`\n                   pattern alternatives\n       c           matches character c (c != `*`, `**`, `?`, `\\`, `[`, `{`, `}`)\n       `\\` c       matches character c\n\n   character-range:\n       c           matches character c (c != `\\\\`, `-`, `]`)\n       `\\` c       matches character c\n       lo `-` hi   matches character c for lo \u003c= c \u003c= hi\n\n   pattern-list:\n       pattern { `,` pattern }\n                   comma-separated (without spaces) patterns",
+                    "Comment": "Returns whether a given path matches a glob pattern.\n\nvia github.com/gobwas/glob:\n\nCompile creates Glob for given pattern and strings (if any present after pattern) as separators.\nThe pattern syntax is:\n\n\tpattern:\n\t    { term }\n\n\tterm:\n\t    `*`         matches any sequence of non-separator characters\n\t    `**`        matches any sequence of characters\n\t    `?`         matches any single non-separator character\n\t    `[` [ `!` ] { character-range } `]`\n\t                character class (must be non-empty)\n\t    `{` pattern-list `}`\n\t                pattern alternatives\n\t    c           matches character c (c != `*`, `**`, `?`, `\\`, `[`, `{`, `}`)\n\t    `\\` c       matches character c\n\n\tcharacter-range:\n\t    c           matches character c (c != `\\\\`, `-`, `]`)\n\t    `\\` c       matches character c\n\t    lo `-` hi   matches character c for lo \u003c= c \u003c= hi\n\n\tpattern-list:\n\t    pattern { `,` pattern }\n\t                comma-separated (without spaces) patterns",
                     "Arguments": [
                         {
                             "Name": "pattern",
@@ -17342,7 +17424,7 @@
                 "Mean": 0.3545,
                 "StdDev": 0.4707,
                 "GeometricMean": 0,
-                "HarmonicMean": 1,
+                "HarmonicMean": 0,
                 "Median": 0,
                 "Minimum": 0,
                 "Maximum": 1
@@ -17753,7 +17835,7 @@
             "Synopsis": "Utilities for converting, manipulating, and iterating over slices\n",
             "MainFunction": false,
             "CommentWordCount": 745,
-            "LineCount": 1024,
+            "LineCount": 1020,
             "SourceLineCount": 761,
             "FunctionCount": 32,
             "TypeCount": 4,
@@ -17797,8 +17879,8 @@
                             "Alias": "go-intersect"
                         }
                     ],
-                    "Size": 11624,
-                    "LineCount": 490,
+                    "Size": 11608,
+                    "LineCount": 486,
                     "SourceLineCount": 333,
                     "FunctionCount": 32,
                     "TypeCount": 4,
@@ -18845,7 +18927,7 @@
             "Synopsis": "Utilities for converting and manipulating data to and from strings\n",
             "MainFunction": false,
             "CommentWordCount": 838,
-            "LineCount": 2611,
+            "LineCount": 2608,
             "SourceLineCount": 1997,
             "FunctionCount": 86,
             "TypeCount": 6,
@@ -19073,8 +19155,8 @@
                             "Alias": "tokenize"
                         }
                     ],
-                    "Size": 24779,
-                    "LineCount": 1023,
+                    "Size": 24770,
+                    "LineCount": 1020,
                     "SourceLineCount": 769,
                     "FunctionCount": 73,
                     "TypeCount": 3,
@@ -22081,7 +22163,7 @@
             "Synopsis": "Utilities for messing with time.\n",
             "MainFunction": false,
             "CommentWordCount": 135,
-            "LineCount": 192,
+            "LineCount": 191,
             "SourceLineCount": 130,
             "FunctionCount": 5,
             "TypeCount": 0,
@@ -22117,8 +22199,8 @@
                             "Alias": "utils"
                         }
                     ],
-                    "Size": 1586,
-                    "LineCount": 60,
+                    "Size": 1577,
+                    "LineCount": 59,
                     "SourceLineCount": 34,
                     "FunctionCount": 5,
                     "TypeCount": 0,
@@ -22221,7 +22303,7 @@
                 },
                 {
                     "Name": "ParseDuration",
-                    "Comment": "Provides an API-compatible version of time.ParseDuration that accepts additional\nformats for parsing durations:\n\n  1y, 3year, 5years: Expands to (n*24*365) hours\n  1w, 3weeks, 5wks:  Expands to (n*24*7) hours\n  1d, 1day, 5days:   Expands to (n*24) hours",
+                    "Comment": "Provides an API-compatible version of time.ParseDuration that accepts additional\nformats for parsing durations:\n\n\t1y, 3year, 5years: Expands to (n*24*365) hours\n\t1w, 3weeks, 5wks:  Expands to (n*24*7) hours\n\t1d, 1day, 5days:   Expands to (n*24) hours",
                     "Arguments": [
                         {
                             "Name": "in",
@@ -22359,7 +22441,7 @@
             "Synopsis": "Helpers for type inflection and simplifying working with Golang generic interface types\n",
             "MainFunction": false,
             "CommentWordCount": 1137,
-            "LineCount": 2834,
+            "LineCount": 2831,
             "SourceLineCount": 2301,
             "FunctionCount": 99,
             "TypeCount": 4,
@@ -22491,8 +22573,8 @@
                             "Alias": "utils"
                         }
                     ],
-                    "Size": 10688,
-                    "LineCount": 427,
+                    "Size": 10679,
+                    "LineCount": 424,
                     "SourceLineCount": 303,
                     "FunctionCount": 25,
                     "TypeCount": 1,
@@ -24707,7 +24789,7 @@
             "Synopsis": "",
             "MainFunction": false,
             "CommentWordCount": 355,
-            "LineCount": 1529,
+            "LineCount": 1528,
             "SourceLineCount": 1240,
             "FunctionCount": 46,
             "TypeCount": 4,
@@ -24919,8 +25001,8 @@
                             "Alias": "reflect"
                         }
                     ],
-                    "Size": 2971,
-                    "LineCount": 153,
+                    "Size": 2968,
+                    "LineCount": 152,
                     "SourceLineCount": 126,
                     "FunctionCount": 2,
                     "TypeCount": 1,

@@ -7,7 +7,7 @@
     "Synopsis": "Utilities for extracting and formatting data encountered in HTTP requests\n",
     "MainFunction": false,
     "CommentWordCount": 1258,
-    "LineCount": 2052,
+    "LineCount": 2050,
     "SourceLineCount": 1458,
     "FunctionCount": 78,
     "TypeCount": 14,
@@ -17,7 +17,7 @@
         "Mean": 0.6593,
         "StdDev": 0.4504,
         "GeometricMean": 0,
-        "HarmonicMean": 0,
+        "HarmonicMean": 1,
         "Median": 1,
         "Minimum": 0,
         "Maximum": 1
@@ -517,8 +517,8 @@
                     "Alias": "stringutil"
                 }
             ],
-            "Size": 5086,
-            "LineCount": 177,
+            "Size": 5083,
+            "LineCount": 176,
             "SourceLineCount": 126,
             "FunctionCount": 12,
             "TypeCount": 1,
@@ -621,8 +621,8 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 4495,
-            "LineCount": 159,
+            "Size": 4492,
+            "LineCount": 158,
             "SourceLineCount": 123,
             "FunctionCount": 6,
             "TypeCount": 0,

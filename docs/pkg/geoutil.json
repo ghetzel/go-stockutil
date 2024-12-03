@@ -7,7 +7,7 @@
     "Synopsis": "Types and functions for working with Geospatial Data\n",
     "MainFunction": false,
     "CommentWordCount": 135,
-    "LineCount": 2587,
+    "LineCount": 2586,
     "SourceLineCount": 2453,
     "FunctionCount": 29,
     "TypeCount": 9,
@@ -51,8 +51,8 @@
                     "Alias": "geo"
                 }
             ],
-            "Size": 4129,
-            "LineCount": 158,
+            "Size": 4126,
+            "LineCount": 157,
             "SourceLineCount": 119,
             "FunctionCount": 10,
             "TypeCount": 3,

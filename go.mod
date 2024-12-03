@@ -5,10 +5,12 @@ go 1.22.0
 toolchain go1.23.1
 
 require (
+	github.com/alecthomas/assert v1.0.0
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc
 	github.com/dsnet/compress v0.0.1
 	github.com/fatih/structs v1.1.0
 	github.com/ghetzel/go-defaults v1.2.0
+	github.com/ghetzel/testify v1.4.1
 	github.com/ghetzel/uuid v0.0.0-20171129191014-dec09d789f3d
 	github.com/gobwas/glob v0.2.3
 	github.com/grandcat/zeroconf v1.0.0
@@ -38,12 +40,10 @@ require (
 )
 
 require (
-	github.com/alecthomas/assert v1.0.0 // indirect
 	github.com/alecthomas/colour v0.1.0 // indirect
 	github.com/alecthomas/repr v0.0.0-20210801044451-80ca428c5142 // indirect
 	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5 // indirect
-	github.com/ghetzel/testify v1.4.1 // indirect
 	github.com/hashicorp/errwrap v1.0.0 // indirect
 	github.com/kr/fs v0.1.0 // indirect
 	github.com/kylelemons/go-gypsy v1.0.0 // indirect

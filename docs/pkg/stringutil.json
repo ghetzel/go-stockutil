@@ -7,7 +7,7 @@
     "Synopsis": "Utilities for converting and manipulating data to and from strings\n",
     "MainFunction": false,
     "CommentWordCount": 838,
-    "LineCount": 2611,
+    "LineCount": 2608,
     "SourceLineCount": 1997,
     "FunctionCount": 86,
     "TypeCount": 6,
@@ -235,8 +235,8 @@
                     "Alias": "tokenize"
                 }
             ],
-            "Size": 24779,
-            "LineCount": 1023,
+            "Size": 24770,
+            "LineCount": 1020,
             "SourceLineCount": 769,
             "FunctionCount": 73,
             "TypeCount": 3,

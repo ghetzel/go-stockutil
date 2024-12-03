@@ -7,7 +7,7 @@
     "Synopsis": "Helpers for type inflection and simplifying working with Golang generic interface types\n",
     "MainFunction": false,
     "CommentWordCount": 1137,
-    "LineCount": 2834,
+    "LineCount": 2831,
     "SourceLineCount": 2301,
     "FunctionCount": 99,
     "TypeCount": 4,
@@ -139,8 +139,8 @@
                     "Alias": "utils"
                 }
             ],
-            "Size": 10688,
-            "LineCount": 427,
+            "Size": 10679,
+            "LineCount": 424,
             "SourceLineCount": 303,
             "FunctionCount": 25,
             "TypeCount": 1,

@@ -7,7 +7,7 @@
     "Synopsis": "Utilities for converting, manipulating, and iterating over slices\n",
     "MainFunction": false,
     "CommentWordCount": 745,
-    "LineCount": 1024,
+    "LineCount": 1020,
     "SourceLineCount": 761,
     "FunctionCount": 32,
     "TypeCount": 4,
@@ -51,8 +51,8 @@
                     "Alias": "go-intersect"
                 }
             ],
-            "Size": 11624,
-            "LineCount": 490,
+            "Size": 11608,
+            "LineCount": 486,
             "SourceLineCount": 333,
             "FunctionCount": 32,
             "TypeCount": 4,

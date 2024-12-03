@@ -14,6 +14,7 @@ GO111MODULE = on
 all: fmt deps test docs
 
 deps:
+	which peg || go install github.com/pointlander/peg@latest
 	go generate -x ./...
 	go get ./...
 	-go mod tidy

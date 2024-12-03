@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.10.12
+                            v1.12.0
                         </li>
                     </ul>
                     
@@ -1496,7 +1496,7 @@ var <span id="LinkExists">LinkExists              </span> = pathutil.LinkExists
 var <span id="NullReadCloser">NullReadCloser          </span> = ioutil.NopCloser(bytes.NewBuffer(nil))
 var <span id="SkipToken">SkipToken               </span> = errors.New(`skip token`)
 var <span id="SshDefaultTimeout">SshDefaultTimeout       </span> = 10 * time.Second
-var <span id="SshPrivateKey">SshPrivateKey           </span> = MustExpandUser(`~/.ssh/id_rsa`)
+var <span id="SshPrivateKey">SshPrivateKey           </span> = ExpandUser(`~/.ssh/id_rsa`)
 var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> = 
 </pre>
 </div>
@@ -1995,7 +1995,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </div>
 
 
-<p><p>Retrieve a file via HTTP or HTTPS.<br><br>Supported Context Values:<br><br> insecure:<br>   (bool) specify that strict TLS validation should be optional.<br><br> method:<br>   (string) the HTTP method to use, defaults to GET.<br><br> metadata:<br>   (map[string]interface{}) a key-value set of HTTP request headers to include.<br><br> safeResponseCodes:<br>   ([]int) a list of one or more HTTP status codes that are considered successful for this request.</p>
+<p><p>Retrieve a file via HTTP or HTTPS.<br><br>Supported Context Values:<br><br>	insecure:<br>	  (bool) specify that strict TLS validation should be optional.<br><br>	method:<br>	  (string) the HTTP method to use, defaults to GET.<br><br>	metadata:<br>	  (map[string]interface{}) a key-value set of HTTP request headers to include.<br><br>	safeResponseCodes:<br>	  ([]int) a list of one or more HTTP status codes that are considered successful for this request.</p>
 </p>
 
 
@@ -2009,7 +2009,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </div>
 
 
-<p><p>Retrieve a file via SFTP (SSH file transfer).  The given URL should resemble the<br>prototype: ssh://[user:password@]hostname[:22]/path/relative/to/homedir<br><br>This function will honor any authentication details from a running SSH agent,<br>as well as utilize the private key located in the path indicated by SshPrivateKey<br>or via the <code>privateKey</code> context value.<br><br>Supported Context Values:<br><br>username:<br>  (string) the username to login with. can be overriden by a username specified in the URL.<br><br>password:<br>  (string) the password to login with. can be overriden by a password specified in the URL.<br><br>passphrase:<br>  (string) context value specifies a plaintext passphrase used to unlock the local private keyfile.<br><br>insecure:<br>  (bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.<br><br>verifyHostFunc:<br>  (SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will<br>  be called to verify the remote SSH host key in a manner of the function’s choosing.  The default<br>  behavior is to accept all remote hostkeys as valid.</p>
+<p><p>Retrieve a file via SFTP (SSH file transfer).  The given URL should resemble the<br>prototype: ssh://[user:password@]hostname[:22]/path/relative/to/homedir<br><br>This function will honor any authentication details from a running SSH agent,<br>as well as utilize the private key located in the path indicated by SshPrivateKey<br>or via the <code>privateKey</code> context value.<br><br>Supported Context Values:<br><br>username:<br><br>	(string) the username to login with. can be overriden by a username specified in the URL.<br><br>password:<br><br>	(string) the password to login with. can be overriden by a password specified in the URL.<br><br>passphrase:<br><br>	(string) context value specifies a plaintext passphrase used to unlock the local private keyfile.<br><br>insecure:<br><br>	(bool) whether to ignore remote hostkey checks.  Does not work if verifyHostFunc is set.<br><br>verifyHostFunc:<br><br>	(SshHostKeyCallbackFunc) context value, if it is convertible to the ssh.HostKeyCallback type, will<br>	be called to verify the remote SSH host key in a manner of the function’s choosing.  The default<br>	behavior is to accept all remote hostkeys as valid.</p>
 </p>
 
 

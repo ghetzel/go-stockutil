@@ -6,8 +6,8 @@
     "URL": "https://github.com/ghetzel/go-stockutil",
     "Synopsis": "Additional helpers for working with file paths and filesystem information\n",
     "MainFunction": false,
-    "CommentWordCount": 353,
-    "LineCount": 313,
+    "CommentWordCount": 368,
+    "LineCount": 312,
     "SourceLineCount": 218,
     "FunctionCount": 23,
     "TypeCount": 0,
@@ -51,8 +51,8 @@
                     "Alias": "glob"
                 }
             ],
-            "Size": 5056,
-            "LineCount": 211,
+            "Size": 4996,
+            "LineCount": 210,
             "SourceLineCount": 132,
             "FunctionCount": 23,
             "TypeCount": 0,
@@ -479,7 +479,7 @@
         },
         {
             "Name": "MatchPath",
-            "Comment": "Returns whether a given path matches a glob pattern.\n\nvia github.com/gobwas/glob:\n\nCompile creates Glob for given pattern and strings (if any present after pattern) as separators.\nThe pattern syntax is:\n\n   pattern:\n       { term }\n\n   term:\n       `*`         matches any sequence of non-separator characters\n       `**`        matches any sequence of characters\n       `?`         matches any single non-separator character\n       `[` [ `!` ] { character-range } `]`\n                   character class (must be non-empty)\n       `{` pattern-list `}`\n                   pattern alternatives\n       c           matches character c (c != `*`, `**`, `?`, `\\`, `[`, `{`, `}`)\n       `\\` c       matches character c\n\n   character-range:\n       c           matches character c (c != `\\\\`, `-`, `]`)\n       `\\` c       matches character c\n       lo `-` hi   matches character c for lo \u003c= c \u003c= hi\n\n   pattern-list:\n       pattern { `,` pattern }\n                   comma-separated (without spaces) patterns",
+            "Comment": "Returns whether a given path matches a glob pattern.\n\nvia github.com/gobwas/glob:\n\nCompile creates Glob for given pattern and strings (if any present after pattern) as separators.\nThe pattern syntax is:\n\n\tpattern:\n\t    { term }\n\n\tterm:\n\t    `*`         matches any sequence of non-separator characters\n\t    `**`        matches any sequence of characters\n\t    `?`         matches any single non-separator character\n\t    `[` [ `!` ] { character-range } `]`\n\t                character class (must be non-empty)\n\t    `{` pattern-list `}`\n\t                pattern alternatives\n\t    c           matches character c (c != `*`, `**`, `?`, `\\`, `[`, `{`, `}`)\n\t    `\\` c       matches character c\n\n\tcharacter-range:\n\t    c           matches character c (c != `\\\\`, `-`, `]`)\n\t    `\\` c       matches character c\n\t    lo `-` hi   matches character c for lo \u003c= c \u003c= hi\n\n\tpattern-list:\n\t    pattern { `,` pattern }\n\t                comma-separated (without spaces) patterns",
             "Arguments": [
                 {
                     "Name": "pattern",

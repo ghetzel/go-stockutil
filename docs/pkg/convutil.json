@@ -7,11 +7,11 @@
     "Synopsis": "",
     "MainFunction": false,
     "CommentWordCount": 0,
-    "LineCount": 580,
-    "SourceLineCount": 496,
+    "LineCount": 590,
+    "SourceLineCount": 507,
     "FunctionCount": 15,
     "TypeCount": 4,
-    "ConstantCount": 49,
+    "ConstantCount": 55,
     "VariableCount": 1,
     "Statistics": {
         "Mean": 0,
@@ -63,9 +63,9 @@
                     "Alias": "assert"
                 }
             ],
-            "Size": 2478,
-            "LineCount": 64,
-            "SourceLineCount": 49,
+            "Size": 2570,
+            "LineCount": 66,
+            "SourceLineCount": 51,
             "FunctionCount": 0,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -87,12 +87,12 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 2690,
-            "LineCount": 120,
-            "SourceLineCount": 101,
+            "Size": 3022,
+            "LineCount": 128,
+            "SourceLineCount": 110,
             "FunctionCount": 5,
             "TypeCount": 2,
-            "ConstantCount": 30,
+            "ConstantCount": 36,
             "VariableCount": 0
         },
         {
@@ -311,6 +311,39 @@
             "Expression": "-12"
         },
         {
+            "Name": "Quecto",
+            "Immutable": true,
+            "Expression": "-30"
+        },
+        {
+            "Name": "Quetta",
+            "Type": "SIExponents",
+            "Immutable": true,
+            "Expression": "30"
+        },
+        {
+            "Name": "Quettabyte",
+            "Type": "Bytes",
+            "Immutable": true,
+            "Expression": "1267650600228229401496703205376"
+        },
+        {
+            "Name": "Ronna",
+            "Immutable": true,
+            "Expression": "27"
+        },
+        {
+            "Name": "Ronnabyte",
+            "Type": "Bytes",
+            "Immutable": true,
+            "Expression": "1237940039285380274899124224"
+        },
+        {
+            "Name": "Ronto",
+            "Immutable": true,
+            "Expression": "-27"
+        },
+        {
             "Name": "SpeedUnits",
             "Immutable": true
         },
@@ -336,7 +369,6 @@
         },
         {
             "Name": "Yotta",
-            "Type": "SIExponents",
             "Immutable": true,
             "Expression": "24"
         },
@@ -487,7 +519,7 @@
                 }
             ],
             "Signature": "TestByteStringer(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbChgMUJgLCBCeXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxS0JgLCBLaWxvYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMU1CYCwgTWVnYWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFHQmAsIEdpZ2FieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxVEJgLCBUZXJhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVBCYCwgUGV0YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFFQmAsIEV4YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFaQmAsIFpldHRhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVlCYCwgWW90dGFieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxQkJgLCBCcm9udG9ieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJCYCwgKDUxMiAqIEJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJLQmAsICg1MTIgKiBLaWxvYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMk1CYCwgKDUxMiAqIE1lZ2FieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyR0JgLCAoNTEyICogR2lnYWJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJUQmAsICg1MTIgKiBUZXJhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMlBCYCwgKDUxMiAqIFBldGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyRUJgLCAoNTEyICogRXhhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMlpCYCwgKDUxMiAqIFpldHRhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMllCYCwgKDUxMiAqIFlvdHRhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMkJCYCwgKDUxMiAqIEJyb250b2J5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAwLjVLQmAsIEJ5dGVzKDUxMikuVG8oS2lsb2J5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDVNQmAsIEJ5dGVzKDUxMikuVG8oTWVnYWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDVHQmAsIEJ5dGVzKDUxMikuVG8oR2lnYWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDAwMDVUQmAsIEJ5dGVzKDUxMikuVG8oVGVyYWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDAwMDAwMDVQQmAsIEJ5dGVzKDUxMikuVG8oUGV0YWJ5dGUpKQoJYXNzZXJ0LkVxdWFsKGAwLjAwMDAwMDAwMDAwMDAwMDRFQmAsIEJ5dGVzKDUxMikuVG8oRXhhYnl0ZSkpCn0=",
+            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbChgMUJgLCBCeXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxS0JgLCBLaWxvYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMU1CYCwgTWVnYWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFHQmAsIEdpZ2FieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxVEJgLCBUZXJhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVBCYCwgUGV0YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFFQmAsIEV4YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFaQmAsIFpldHRhYnl0ZS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgMVlCYCwgWW90dGFieXRlLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGAxUkJgLCBSb25uYWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDFRQmAsIFF1ZXR0YWJ5dGUuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMkJgLCAoNTEyICogQnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMktCYCwgKDUxMiAqIEtpbG9ieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyTUJgLCAoNTEyICogTWVnYWJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJHQmAsICg1MTIgKiBHaWdhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDUxMlRCYCwgKDUxMiAqIFRlcmFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyUEJgLCAoNTEyICogUGV0YWJ5dGUpLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGA1MTJFQmAsICg1MTIgKiBFeGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyWkJgLCAoNTEyICogWmV0dGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyWUJgLCAoNTEyICogWW90dGFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyUkJgLCAoNTEyICogUm9ubmFieXRlKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgNTEyUUJgLCAoNTEyICogUXVldHRhYnl0ZSkuU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYDAuNUtCYCwgQnl0ZXMoNTEyKS5UbyhLaWxvYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwNU1CYCwgQnl0ZXMoNTEyKS5UbyhNZWdhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwNUdCYCwgQnl0ZXMoNTEyKS5UbyhHaWdhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwMDAwNVRCYCwgQnl0ZXMoNTEyKS5UbyhUZXJhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwMDAwMDAwNVBCYCwgQnl0ZXMoNTEyKS5UbyhQZXRhYnl0ZSkpCglhc3NlcnQuRXF1YWwoYDAuMDAwMDAwMDAwMDAwMDAwNEVCYCwgQnl0ZXMoNTEyKS5UbyhFeGFieXRlKSkKfQ==",
             "IsPackageLevel": true
         },
         {

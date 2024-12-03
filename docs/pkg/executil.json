@@ -8,7 +8,7 @@
     "MainFunction": false,
     "CommentWordCount": 710,
     "LineCount": 1083,
-    "SourceLineCount": 819,
+    "SourceLineCount": 818,
     "FunctionCount": 44,
     "TypeCount": 4,
     "ConstantCount": 0,
@@ -123,9 +123,9 @@
                     "Alias": "assert"
                 }
             ],
-            "Size": 3445,
+            "Size": 3448,
             "LineCount": 135,
-            "SourceLineCount": 110,
+            "SourceLineCount": 109,
             "FunctionCount": 0,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -845,7 +845,7 @@
                 }
             ],
             "Signature": "TestExecReadWriteCloser(t *testing.T)",
-            "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW91dGlsLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgcmVycikKCWFzc2VydC5FcXVhbCh0LCBieXRlcy5SZXBlYXQocGF5bG9hZCwgYyksIGRhdGEpCglhc3NlcnQuTm9FcnJvcih0LCBjbWQuQ2xvc2UoKSkKfQ==",
+            "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW91dGlsLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgcmVycikKCWFzc2VydC5FcXVhbCh0LCBieXRlcy5SZXBlYXQocGF5bG9hZCwgYyksIGRhdGEpCn0=",
             "IsPackageLevel": true
         },
         {

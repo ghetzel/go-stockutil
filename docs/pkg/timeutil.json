@@ -7,7 +7,7 @@
     "Synopsis": "Utilities for messing with time.\n",
     "MainFunction": false,
     "CommentWordCount": 135,
-    "LineCount": 192,
+    "LineCount": 191,
     "SourceLineCount": 130,
     "FunctionCount": 5,
     "TypeCount": 0,
@@ -43,8 +43,8 @@
                     "Alias": "utils"
                 }
             ],
-            "Size": 1586,
-            "LineCount": 60,
+            "Size": 1577,
+            "LineCount": 59,
             "SourceLineCount": 34,
             "FunctionCount": 5,
             "TypeCount": 0,
@@ -147,7 +147,7 @@
         },
         {
             "Name": "ParseDuration",
-            "Comment": "Provides an API-compatible version of time.ParseDuration that accepts additional\nformats for parsing durations:\n\n  1y, 3year, 5years: Expands to (n*24*365) hours\n  1w, 3weeks, 5wks:  Expands to (n*24*7) hours\n  1d, 1day, 5days:   Expands to (n*24) hours",
+            "Comment": "Provides an API-compatible version of time.ParseDuration that accepts additional\nformats for parsing durations:\n\n\t1y, 3year, 5years: Expands to (n*24*365) hours\n\t1w, 3weeks, 5wks:  Expands to (n*24*7) hours\n\t1d, 1day, 5days:   Expands to (n*24) hours",
             "Arguments": [
                 {
                     "Name": "in",
