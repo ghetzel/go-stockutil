@@ -2,6 +2,7 @@ package httputil
 
 import (
 	"bytes"
+	"context"
 	"crypto/tls"
 	"crypto/x509"
 	"fmt"
@@ -382,6 +383,18 @@ func (self *Client) Request(
 	params map[string]interface{},
 	headers map[string]interface{},
 ) (*http.Response, error) {
+	return self.RequestWithContext(context.Background(), method, path, body, params, headers)
+}
+
+// Perform an HTTP request using the given context
+func (self *Client) RequestWithContext(
+	ctx context.Context,
+	method Method,
+	path string,
+	body interface{},
+	params map[string]interface{},
+	headers map[string]interface{},
+) (*http.Response, error) {
 	if !self.firstRequestSent {
 		if self.firstRequestHook != nil {
 			if err := self.firstRequestHook(); err != nil {
@@ -442,7 +455,8 @@ func (self *Client) Request(
 			}
 		}
 
-		if request, err := http.NewRequest(
+		if request, err := http.NewRequestWithContext(
+			ctx,
 			strings.ToUpper(string(method)),
 			reqUrl.String(),
 			payload,
