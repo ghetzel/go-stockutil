@@ -261,3 +261,9 @@ func TestVariantIsFunction(t *testing.T) {
 	require.True(t, V(func(_ string) error { return nil }).IsFunction(`func(any) any`))
 	require.True(t, V(func(_ string) (int, error) { return 0, nil }).IsFunction(`func(string) (int, error)`))
 }
+
+func TestSlices(t *testing.T) {
+	require.Len(t, Slice(nil), 0)
+	require.Len(t, Slice(1), 1)
+	require.Len(t, Slice([]int{1, 2, 3}), 3)
+}

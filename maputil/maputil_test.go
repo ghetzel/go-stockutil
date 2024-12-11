@@ -203,6 +203,30 @@ func TestSprintfFormatTime(t *testing.T) {
 	)
 }
 
+func TestSliceOfMaps(t *testing.T) {
+	require.Len(t, SliceOfMaps(nil), 0)
+	require.Len(t, SliceOfMaps([]int{1}), 1)
+
+	var sm1 = SliceOfMaps([]map[string]interface{}{
+		{`id`: `one`},
+		{`id`: `two`},
+		{`id`: `three`},
+	})
+
+	require.Len(t, sm1, 3)
+
+	for i, m := range sm1 {
+		switch i {
+		case 0:
+			require.True(t, m.String(`id`) == `one`)
+		case 1:
+			require.True(t, m.String(`id`) == `two`)
+		case 2:
+			require.True(t, m.String(`id`) == `three`)
+		}
+	}
+}
+
 func TestJSONPath(t *testing.T) {
 	var fn = func(query string) interface{} {
 		var out, err = JSONPath(testJsonPathData, query)

@@ -1000,6 +1000,15 @@ func DeepCopyStruct(input interface{}) map[string]interface{} {
 	return apply(true, input, nil)
 }
 
+// Convert the given value to a slice using typeutil.Slice, then return each element as a Map.
+func SliceOfMaps(input interface{}) (maps []*Map) {
+	for _, v := range typeutil.Slice(input) {
+		maps = append(maps, M(v))
+	}
+
+	return
+}
+
 func returnSkipOrErr(err error) error {
 	if err == SkipDescendants {
 		return nil
