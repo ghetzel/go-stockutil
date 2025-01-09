@@ -194,6 +194,27 @@ func CompactString(in []string) []string {
 	return rv
 }
 
+// Splits the given string by a delimiter, then eliminates any zero-length items.
+func SplitCompact(in string, delimiter string) (out []string) {
+	out = strings.Split(in, delimiter)
+	out = CompactString(out)
+	return
+}
+
+// Splits the given string by a delimiter, trims the space around each item,
+// then eliminates any zero-length results.
+func SplitTrimSpaceCompact(in string, delimiter string) (out []string) {
+	out = strings.Split(in, delimiter)
+
+	for i, v := range out {
+		out[i] = strings.TrimSpace(v)
+	}
+
+	out = CompactString(out)
+	
+	return
+}
+
 // Converts all elements of the given interface slice to strings using the "%v"
 // format string via the fmt package.
 func Stringify(in interface{}) []string {

@@ -531,3 +531,26 @@ func TestFirstNonZero(t *testing.T) {
 	assert.Equal(t, 8, FirstNonZero([]int{0, 0, 0}, 8, []int{69}))
 	assert.Equal(t, 84, FirstNonZero([]int{0, 0, 0}, 0, []int{84}))
 }
+
+
+func TestSplitCompact(t *testing.T) {
+	assert.Equal(t, []string{}, SplitCompact(``, `,`))
+	assert.Equal(t, []string{` `}, SplitCompact(` `, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,b,c`, `,`))
+	assert.Equal(t, []string{` a `,`  b  `,`   c   `}, SplitCompact(` a ,  b  ,   c   `, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,,b,c`, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,,b,c,`, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`,,,a,,,b,,,,,c,,,`, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,,,b,,,,,c`, `,`))
+}
+
+func TestSplitTrimSpaceCompact(t *testing.T) {
+	assert.Equal(t, []string{}, SplitTrimSpaceCompact(``, `,`))
+	assert.Equal(t, []string{}, SplitTrimSpaceCompact(` `, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,b,c`, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(` a ,  b  ,   c   `, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,,b,c`, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,,b,c,`, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`,,,a,,,b,,,,,c,,,`, `,`))
+	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,,,b,,,,,c`, `,`))
+}
