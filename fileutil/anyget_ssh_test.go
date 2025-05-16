@@ -2,7 +2,7 @@ package fileutil
 
 import (
 	"context"
-	"io/ioutil"
+	"io"
 	"net"
 	"net/url"
 	"os"
@@ -45,8 +45,8 @@ func TestRetrieveViaSSH_SFTP(t *testing.T) {
 
 			assert.NoError(t, err)
 
-			data, err := ioutil.ReadAll(d)
-
+			data, err := io.ReadAll(d)
+			assert.NoError(t, err)
 			assert.NoError(t, d.Close())
 			assert.Equal(t, "HELLO THERE\n", string(data))
 		}
@@ -85,8 +85,9 @@ func TestRetrieveViaSSH_SSH(t *testing.T) {
 
 			assert.NoError(t, err)
 
-			data, err := ioutil.ReadAll(d)
+			data, err := io.ReadAll(d)
 
+			assert.NoError(t, err)
 			assert.NoError(t, d.Close())
 			assert.Equal(t, u.Hostname()+"\n", string(data))
 		}

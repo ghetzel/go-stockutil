@@ -41,7 +41,7 @@
                     "Alias": "math"
                 }
             ],
-            "Size": 3454,
+            "Size": 3481,
             "LineCount": 124,
             "SourceLineCount": 88,
             "FunctionCount": 1,
@@ -65,7 +65,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 2493,
+            "Size": 2496,
             "LineCount": 89,
             "SourceLineCount": 76,
             "FunctionCount": 1,
@@ -113,7 +113,7 @@
                     "Alias": "json"
                 }
             ],
-            "Size": 15138,
+            "Size": 15045,
             "LineCount": 630,
             "SourceLineCount": 470,
             "FunctionCount": 25,
@@ -141,7 +141,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 12418,
+            "Size": 12443,
             "LineCount": 377,
             "SourceLineCount": 283,
             "FunctionCount": 0,
@@ -195,11 +195,11 @@
             "Arguments": [
                 {
                     "Name": "first",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "second",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -207,7 +207,7 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "Equals(first interface{}, second interface{}) bool",
+            "Signature": "Equals(first any, second any) bool",
             "Source": "ewoJaWYgZmlyc3QgIT0gbmlsICYmIHNlY29uZCAhPSBuaWwgewoJCWlmIGZpcnN0QywgZXJyIDo9IFBhcnNlKGZpcnN0KTsgZXJyID09IG5pbCB7CgkJCXJldHVybiBmaXJzdEMuRXF1YWxzKHNlY29uZCkKCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
             "IsPackageLevel": true
         },
@@ -291,7 +291,7 @@
                 }
             ],
             "Signature": "KelvinToColor(kelvin int) color Color",
-            "Source": "ewoJY29sb3IuYSA9IDEuMAoJdmFyIHJBLCByQiwgckMsIHJYIGZsb2F0NjQKCXZhciBnMUEsIGcxQiwgZzFDLCBnMVggZmxvYXQ2NAoJdmFyIGcyQSwgZzJCLCBnMkMsIGcyWCBmbG9hdDY0Cgl2YXIgYkEsIGJCLCBiQywgYlggZmxvYXQ2NAoJckEgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRBCglyQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX1JlZEIKCXJDID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfUmVkQwoJclggPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRYCglnMUEgPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuQQoJZzFCID0gaGVsbGFuZEJhcnRsZXR0VW5kZXI2NjAwS19HcmVlbkIKCWcxQyA9IGhlbGxhbmRCYXJ0bGV0dFVuZGVyNjYwMEtfR3JlZW5DCglnMVggPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuWAoJZzJBID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5BCglnMkIgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19HcmVlbkIKCWcyQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX0dyZWVuQwoJZzJYID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5YCgliQSA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVBCgliQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVCCgliQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVDCgliWCA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVYCgl0ZW1wIDo9IGZsb2F0NjQoa2VsdmluKSAvIDEwMC4wCglpZiB0ZW1wIDwgNjYgewoJCWNvbG9yLnIgPSAxLjAKCX0gZWxzZSB7CgkJeCA6PSAodGVtcCArIHJYKQoJCXIyNTUgOj0gKHJBICsgKHJCICogeCkgKyAockMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgcjI1NSA8IDAgewoJCQlyMjU1ID0gMAoJCX0gZWxzZSBpZiByMjU1ID4gMjU1IHsKCQkJcjI1NSA9IDI1NQoJCX0KCQljb2xvci5yID0gcjI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8IDY2IHsKCQl4IDo9ICh0ZW1wICsgZzFYKQoJCWcyNTUgOj0gKGcxQSArIChnMUIgKiB4KSArIChnMUMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfSBlbHNlIHsKCQl4IDo9ICh0ZW1wICsgZzJYKQoJCWcyNTUgOj0gKGcyQSArIChnMkIgKiB4KSArIChnMkMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8PSAyMCB7CgkJY29sb3IuYiA9IDAKCX0gZWxzZSBpZiB0ZW1wID49IDY2IHsKCQljb2xvci5iID0gMS4wCgl9IGVsc2UgewoJCXggOj0gKHRlbXAgKyBiWCkKCQliMjU1IDo9IChiQSArIChiQiAqIHgpICsgKGJDICogbWF0aC5Mb2coeCkpKQoJCWlmIGIyNTUgPCAwIHsKCQkJYjI1NSA9IDAKCQl9IGVsc2UgaWYgYjI1NSA+IDI1NSB7CgkJCWIyNTUgPSAyNTUKCQl9CgkJY29sb3IuYiA9IGIyNTUgLyAyNTUKCX0KCXJldHVybgp9",
+            "Source": "ewoJY29sb3IuYSA9IDEuMAoJdmFyIHJBLCByQiwgckMsIHJYIGZsb2F0NjQKCXZhciBnMUEsIGcxQiwgZzFDLCBnMVggZmxvYXQ2NAoJdmFyIGcyQSwgZzJCLCBnMkMsIGcyWCBmbG9hdDY0Cgl2YXIgYkEsIGJCLCBiQywgYlggZmxvYXQ2NAoJckEgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRBCglyQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX1JlZEIKCXJDID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfUmVkQwoJclggPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRYCglnMUEgPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuQQoJZzFCID0gaGVsbGFuZEJhcnRsZXR0VW5kZXI2NjAwS19HcmVlbkIKCWcxQyA9IGhlbGxhbmRCYXJ0bGV0dFVuZGVyNjYwMEtfR3JlZW5DCglnMVggPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuWAoJZzJBID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5BCglnMkIgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19HcmVlbkIKCWcyQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX0dyZWVuQwoJZzJYID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5YCgliQSA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVBCgliQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVCCgliQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVDCgliWCA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVYCgl2YXIgdGVtcCA9IGZsb2F0NjQoa2VsdmluKSAvIDEwMC4wCglpZiB0ZW1wIDwgNjYgewoJCWNvbG9yLnIgPSAxLjAKCX0gZWxzZSB7CgkJdmFyIHggPSAodGVtcCArIHJYKQoJCXZhciByMjU1ID0gKHJBICsgKHJCICogeCkgKyAockMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgcjI1NSA8IDAgewoJCQlyMjU1ID0gMAoJCX0gZWxzZSBpZiByMjU1ID4gMjU1IHsKCQkJcjI1NSA9IDI1NQoJCX0KCQljb2xvci5yID0gcjI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8IDY2IHsKCQl2YXIgeCA9ICh0ZW1wICsgZzFYKQoJCXZhciBnMjU1ID0gKGcxQSArIChnMUIgKiB4KSArIChnMUMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfSBlbHNlIHsKCQl2YXIgeCA9ICh0ZW1wICsgZzJYKQoJCXZhciBnMjU1ID0gKGcyQSArIChnMkIgKiB4KSArIChnMkMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8PSAyMCB7CgkJY29sb3IuYiA9IDAKCX0gZWxzZSBpZiB0ZW1wID49IDY2IHsKCQljb2xvci5iID0gMS4wCgl9IGVsc2UgewoJCXZhciB4ID0gKHRlbXAgKyBiWCkKCQl2YXIgYjI1NSA9IChiQSArIChiQiAqIHgpICsgKGJDICogbWF0aC5Mb2coeCkpKQoJCWlmIGIyNTUgPCAwIHsKCQkJYjI1NSA9IDAKCQl9IGVsc2UgaWYgYjI1NSA+IDI1NSB7CgkJCWIyNTUgPSAyNTUKCQl9CgkJY29sb3IuYiA9IGIyNTUgLyAyNTUKCX0KCXJldHVybgp9Ly8gc2NhbGUgdGhlIHZhbHVlIHRvIG1ha2Ugd29ya2luZyB3aXRoIHNvbWUgb2YgdGhpcyBlYXNpZXIKLy8gYSArIGIqeCArIGMqbG4oeCkK",
             "IsPackageLevel": true
         },
         {
@@ -361,7 +361,7 @@
                 }
             ],
             "Signature": "TestColorStringers(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoYCNGRjAwQ0NgLCBNdXN0UGFyc2UoYCNGRjAwQ0NgKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgI0ZGMDBDQ2AsIE11c3RQYXJzZShgcmdiKDI1NSwwLDIwNClgKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgI0ZGMDBDQ2AsIE11c3RQYXJzZShgaHNsKDMxMiwgMTAwJSwgNTAlKWApLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGByZ2IoMjU1LCAwLCAyMDQpYCwgTXVzdFBhcnNlKGAjRkYwMENDYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LkVxdWFsKGByZ2IoMjU1LCAwLCAyMDQpYCwgTXVzdFBhcnNlKGByZ2IoMjU1LDAsMjA0KWApLlN0cmluZ1JHQkEoKSkKCWFzc2VydC5FcXVhbChgcmdiKDI1NSwgMCwgMjA0KWAsIE11c3RQYXJzZShgaHNsKDMxMiwgMTAwJSwgNTAlKWApLlN0cmluZ1JHQkEoKSkKCWFzc2VydC5FcXVhbChgcmdiKDI1NSwgMCwgMjA0KWAsIE11c3RQYXJzZShgI0ZGMDBDQ0ZGYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LkVxdWFsKGByZ2JhKDI1NSwgMCwgMjA0LCAxMjgpYCwgTXVzdFBhcnNlKGAjRkYwMENDODBgKS5TdHJpbmdSR0JBKCkpCglhc3NlcnQuRXF1YWwoYHJnYmEoMjU1LCAwLCAyMDQsIDY0KWAsIE11c3RQYXJzZShgI0ZGMDBDQzQwYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LkVxdWFsKGByZ2JhKDI1NSwgMCwgMjA0LCAxKWAsIE11c3RQYXJzZShgI0ZGMDBDQzAxYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LlRydWUoYGhzbCgzMTIsIDEwMCUsIDUwJSlgID09IE11c3RQYXJzZShgI0ZGMDBDQ0ZGYCkuU3RyaW5nSFNMQSgpKQoJYXNzZXJ0LlRydWUoYGhzbGEoMzEyLCAxMDAlLCA1MCUsIDAuNSlgID09IE11c3RQYXJzZShgI0ZGMDBDQzgwYCkuU3RyaW5nSFNMQSgpKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoYCNGRjAwQ0NgLCBNdXN0UGFyc2UoYCNGRjAwQ0NgKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgI0ZGMDBDQ2AsIE11c3RQYXJzZShgcmdiKDI1NSwwLDIwNClgKS5TdHJpbmcoKSkKCWFzc2VydC5FcXVhbChgI0ZGMDBDQ2AsIE11c3RQYXJzZShgaHNsKDMxMiwgMTAwJSwgNTAlKWApLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKGByZ2IoMjU1LCAwLCAyMDQpYCwgTXVzdFBhcnNlKGAjRkYwMENDYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LkVxdWFsKGByZ2IoMjU1LCAwLCAyMDQpYCwgTXVzdFBhcnNlKGByZ2IoMjU1LDAsMjA0KWApLlN0cmluZ1JHQkEoKSkKCWFzc2VydC5FcXVhbChgcmdiKDI1NSwgMCwgMjA0KWAsIE11c3RQYXJzZShgaHNsKDMxMiwgMTAwJSwgNTAlKWApLlN0cmluZ1JHQkEoKSkKCWFzc2VydC5FcXVhbChgcmdiKDI1NSwgMCwgMjA0KWAsIE11c3RQYXJzZShgI0ZGMDBDQ0ZGYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LkVxdWFsKGByZ2JhKDI1NSwgMCwgMjA0LCAxMjgpYCwgTXVzdFBhcnNlKGAjRkYwMENDODBgKS5TdHJpbmdSR0JBKCkpCglhc3NlcnQuRXF1YWwoYHJnYmEoMjU1LCAwLCAyMDQsIDY0KWAsIE11c3RQYXJzZShgI0ZGMDBDQzQwYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LkVxdWFsKGByZ2JhKDI1NSwgMCwgMjA0LCAxKWAsIE11c3RQYXJzZShgI0ZGMDBDQzAxYCkuU3RyaW5nUkdCQSgpKQoJYXNzZXJ0LlRydWUoYGhzbCgzMTIsIDEwMCUsIDUwJSlgID09IE11c3RQYXJzZShgI0ZGMDBDQ0ZGYCkuU3RyaW5nSFNMQSgpKQoJYXNzZXJ0LlRydWUoYGhzbGEoMzEyLCAxMDAlLCA1MCUsIDAuNSlgID09IE11c3RQYXJzZShgI0ZGMDBDQzgwYCkuU3RyaW5nSFNMQSgpKQp9",
             "IsPackageLevel": true
         },
         {
@@ -373,7 +373,7 @@
                 }
             ],
             "Signature": "TestEquals(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuVHJ1ZShFcXVhbHMoYCMyYkYxYzlgLCBgIzJCRjFDOWApKQoJYXNzZXJ0LlRydWUoRXF1YWxzKGAjRkZGRkZGYCwgYCNGRkZGRkZgKSkKCWFzc2VydC5UcnVlKEVxdWFscyhgI0ZGRkZGRmAsIGByZ2IoMjU1LDI1NSwyNTUpYCkpCglhc3NlcnQuVHJ1ZShFcXVhbHMoYCNGRkZGRkY4MGAsIGByZ2JhKDI1NSwyNTUsMjU1LDAuNSlgKSkKCWFzc2VydC5UcnVlKEVxdWFscyhgIzAwQUEwMGAsIGByZ2IoMCwxNzAsMClgKSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuVHJ1ZShFcXVhbHMoYCMyYkYxYzlgLCBgIzJCRjFDOWApKQoJYXNzZXJ0LlRydWUoRXF1YWxzKGAjRkZGRkZGYCwgYCNGRkZGRkZgKSkKCWFzc2VydC5UcnVlKEVxdWFscyhgI0ZGRkZGRmAsIGByZ2IoMjU1LDI1NSwyNTUpYCkpCglhc3NlcnQuVHJ1ZShFcXVhbHMoYCNGRkZGRkY4MGAsIGByZ2JhKDI1NSwyNTUsMjU1LDAuNSlgKSkKCWFzc2VydC5UcnVlKEVxdWFscyhgIzAwQUEwMGAsIGByZ2IoMCwxNzAsMClgKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -421,7 +421,7 @@
                 }
             ],
             "Signature": "TestKelvinToColor(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglmb3IgaywgcmdiYSA6PSByYW5nZSBtYXBbaW50XVszXXVpbnQ4ezE4NTA6IFszXXVpbnQ4ezI1NSwgMTMwLCAwfSwgMTk5OTogWzNddWludDh7MjU1LCAxMzksIDB9LCAyMDAwOiBbM111aW50OHsyNTUsIDEzOSwgMH0sIDI1MDA6IFszXXVpbnQ4ezI1NSwgMTYyLCA3MX0sIDMwMDA6IFszXXVpbnQ4ezI1NSwgMTgwLCAxMDh9LCAzNTAwOiBbM111aW50OHsyNTUsIDE5NSwgMTM4fSwgNDAwMDogWzNddWludDh7MjU1LCAyMDgsIDE2NH0sIDQ1MDA6IFszXXVpbnQ4ezI1NSwgMjE5LCAxODV9LCA1MDAwOiBbM111aW50OHsyNTUsIDIyOCwgMjA1fSwgNTUwMDogWzNddWludDh7MjU1LCAyMzYsIDIyM30sIDYwMDA6IFszXXVpbnQ4ezI1NSwgMjQzLCAyMzl9LCA2NTAwOiBbM111aW50OHsyNTUsIDI1MCwgMjU0fSwgNjU5OTogWzNddWludDh7MjU1LCAyNTEsIDI1NX0sIDY2MDA6IFszXXVpbnQ4ezI1NSwgMjQ5LCAyNTV9LCA3MDAwOiBbM111aW50OHsyNDUsIDI0MywgMjU1fSwgNzUwMDogWzNddWludDh7MjM0LCAyMzcsIDI1NX0sIDgwMDA6IFszXXVpbnQ4ezIyNSwgMjMyLCAyNTV9LCA4NTAwOiBbM111aW50OHsyMTgsIDIyOCwgMjU1fSwgOTAwMDogWzNddWludDh7MjEzLCAyMjUsIDI1NX0sIDkwMDE6IFszXXVpbnQ4ezIxMywgMjI1LCAyNTV9fSB7CgkJdmFyIHIsIGcsIGIsIGEgdWludDgKCQlyLCBnLCBiLCBhID0gS2VsdmluVG9Db2xvcihrKS5SR0JBMjU1KCkKCQlhc3NlcnQuRXF1YWxWYWx1ZXMociwgcmdiYVswXSwgZm10LlNwcmludGYoInI6JWRLIiwgaykpCgkJYXNzZXJ0LkVxdWFsVmFsdWVzKGcsIHJnYmFbMV0sIGZtdC5TcHJpbnRmKCJnOiVkSyIsIGspKQoJCWFzc2VydC5FcXVhbFZhbHVlcyhiLCByZ2JhWzJdLCBmbXQuU3ByaW50ZigiYjolZEsiLCBrKSkKCQlhc3NlcnQuRXF1YWxWYWx1ZXMoYSwgMjU1LCBmbXQuU3ByaW50ZigiYTolZEsiLCBrKSkKCX0KfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglmb3IgaywgcmdiYSA6PSByYW5nZSBtYXBbaW50XVszXXVpbnQ4ezE4NTA6IFszXXVpbnQ4ezI1NSwgMTMwLCAwfSwgMTk5OTogWzNddWludDh7MjU1LCAxMzksIDB9LCAyMDAwOiBbM111aW50OHsyNTUsIDEzOSwgMH0sIDI1MDA6IFszXXVpbnQ4ezI1NSwgMTYyLCA3MX0sIDMwMDA6IFszXXVpbnQ4ezI1NSwgMTgwLCAxMDh9LCAzNTAwOiBbM111aW50OHsyNTUsIDE5NSwgMTM4fSwgNDAwMDogWzNddWludDh7MjU1LCAyMDgsIDE2NH0sIDQ1MDA6IFszXXVpbnQ4ezI1NSwgMjE5LCAxODV9LCA1MDAwOiBbM111aW50OHsyNTUsIDIyOCwgMjA1fSwgNTUwMDogWzNddWludDh7MjU1LCAyMzYsIDIyM30sIDYwMDA6IFszXXVpbnQ4ezI1NSwgMjQzLCAyMzl9LCA2NTAwOiBbM111aW50OHsyNTUsIDI1MCwgMjU0fSwgNjU5OTogWzNddWludDh7MjU1LCAyNTEsIDI1NX0sIDY2MDA6IFszXXVpbnQ4ezI1NSwgMjQ5LCAyNTV9LCA3MDAwOiBbM111aW50OHsyNDUsIDI0MywgMjU1fSwgNzUwMDogWzNddWludDh7MjM0LCAyMzcsIDI1NX0sIDgwMDA6IFszXXVpbnQ4ezIyNSwgMjMyLCAyNTV9LCA4NTAwOiBbM111aW50OHsyMTgsIDIyOCwgMjU1fSwgOTAwMDogWzNddWludDh7MjEzLCAyMjUsIDI1NX0sIDkwMDE6IFszXXVpbnQ4ezIxMywgMjI1LCAyNTV9fSB7CgkJdmFyIHIsIGcsIGIsIGEgdWludDgKCQlyLCBnLCBiLCBhID0gS2VsdmluVG9Db2xvcihrKS5SR0JBMjU1KCkKCQlhc3NlcnQuRXF1YWxWYWx1ZXMociwgcmdiYVswXSwgZm10LlNwcmludGYoInI6JWRLIiwgaykpCgkJYXNzZXJ0LkVxdWFsVmFsdWVzKGcsIHJnYmFbMV0sIGZtdC5TcHJpbnRmKCJnOiVkSyIsIGspKQoJCWFzc2VydC5FcXVhbFZhbHVlcyhiLCByZ2JhWzJdLCBmbXQuU3ByaW50ZigiYjolZEsiLCBrKSkKCQlhc3NlcnQuRXF1YWxWYWx1ZXMoYSwgMjU1LCBmbXQuU3ByaW50ZigiYTolZEsiLCBrKSkKCX0KfQ==",
             "IsPackageLevel": true
         },
         {
@@ -433,7 +433,7 @@
                 }
             ],
             "Signature": "TestLightenDarken(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCXZhciBjb2xvciBDb2xvcgoJdmFyIGVyciBlcnJvcgoJY29sb3IsIGVyciA9IERhcmtlbihgIzgwMDAwMGAsIDEwMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgIzAwMDAwMGApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCgljb2xvciwgZXJyID0gRGFya2VuKGAjODAwMDAwYCwgMjApCglhc3NlcnQuTm9FcnJvcihlcnIpCglhc3NlcnQuVHJ1ZShjb2xvci5FcXVhbHMoYCMxQTAwMDBgKSwgZm10LlNwcmludGYoIiV2IiwgY29sb3IpKQoJY29sb3IsIGVyciA9IExpZ2h0ZW4oYCM4MDAwMDBgLCAyMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgI0U2MDAwMGApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IGFzc2VydC5OZXcodCkKCXZhciBjb2xvciBDb2xvcgoJdmFyIGVyciBlcnJvcgoJY29sb3IsIGVyciA9IERhcmtlbihgIzgwMDAwMGAsIDEwMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgIzAwMDAwMGApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCgljb2xvciwgZXJyID0gRGFya2VuKGAjODAwMDAwYCwgMjApCglhc3NlcnQuTm9FcnJvcihlcnIpCglhc3NlcnQuVHJ1ZShjb2xvci5FcXVhbHMoYCMxQTAwMDBgKSwgZm10LlNwcmludGYoIiV2IiwgY29sb3IpKQoJY29sb3IsIGVyciA9IExpZ2h0ZW4oYCM4MDAwMDBgLCAyMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgI0U2MDAwMGApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -445,7 +445,7 @@
                 }
             ],
             "Signature": "TestMix(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCXZhciBtaXhlZCBDb2xvcgoJdmFyIGVyciBlcnJvcgoJbWl4ZWQsIGVyciA9IE1peE4oYCNhZDQwMzhgLCBgIzAwMDBmZmAsIDAuOCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKG1peGVkLkVxdWFscyhgIzhhMzM2MGApLCBmbXQuU3ByaW50ZigiJXYiLCBtaXhlZCkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IGFzc2VydC5OZXcodCkKCXZhciBtaXhlZCBDb2xvcgoJdmFyIGVyciBlcnJvcgoJbWl4ZWQsIGVyciA9IE1peE4oYCNhZDQwMzhgLCBgIzAwMDBmZmAsIDAuOCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKG1peGVkLkVxdWFscyhgIzhhMzM2MGApLCBmbXQuU3ByaW50ZigiJXYiLCBtaXhlZCkpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -481,7 +481,7 @@
                 }
             ],
             "Signature": "TestRgbToHslSymmetry(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaCwgcywgbCBmbG9hdDY0Cgl2YXIgciwgZywgYiB1aW50OAoJaCwgcywgbCA9IFJnYlRvSHNsKDI1NSwgMCwgMjA0KQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMzEyKSwgaCkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDEpLCBzKQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMC41KSwgbCkKCXIsIGcsIGIgPSBIc2xUb1JnYihoLCBzLCBsKQoJYXNzZXJ0LkVxdWFsKHVpbnQ4KDI1NSksIHIpCglhc3NlcnQuRXF1YWwodWludDgoMCksIGcpCglhc3NlcnQuRXF1YWwodWludDgoMjA0KSwgYikKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaCwgcywgbCBmbG9hdDY0Cgl2YXIgciwgZywgYiB1aW50OAoJaCwgcywgbCA9IFJnYlRvSHNsKDI1NSwgMCwgMjA0KQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMzEyKSwgaCkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDEpLCBzKQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMC41KSwgbCkKCXIsIGcsIGIgPSBIc2xUb1JnYihoLCBzLCBsKQoJYXNzZXJ0LkVxdWFsKHVpbnQ4KDI1NSksIHIpCglhc3NlcnQuRXF1YWwodWludDgoMCksIGcpCglhc3NlcnQuRXF1YWwodWludDgoMjA0KSwgYikKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -493,7 +493,7 @@
                 }
             ],
             "Signature": "TestSaturateDesaturate(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCXZhciBjb2xvciBDb2xvcgoJdmFyIGVyciBlcnJvcgoJY29sb3IsIGVyciA9IERlc2F0dXJhdGUoYCM4MDAwMDBgLCAxMDApCglhc3NlcnQuTm9FcnJvcihlcnIpCglhc3NlcnQuVHJ1ZShjb2xvci5FcXVhbHMoYCM0MDQwNDBgKSwgZm10LlNwcmludGYoIiV2IiwgY29sb3IpKQoJY29sb3IsIGVyciA9IERlc2F0dXJhdGUoYCNhZDQwMzhgLCAyMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgIzk2NTQ0ZmApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCgljb2xvciwgZXJyID0gU2F0dXJhdGUoYCNhZDQwMzhgLCAyMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgI2M0MmIyMWApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IGFzc2VydC5OZXcodCkKCXZhciBjb2xvciBDb2xvcgoJdmFyIGVyciBlcnJvcgoJY29sb3IsIGVyciA9IERlc2F0dXJhdGUoYCM4MDAwMDBgLCAxMDApCglhc3NlcnQuTm9FcnJvcihlcnIpCglhc3NlcnQuVHJ1ZShjb2xvci5FcXVhbHMoYCM0MDQwNDBgKSwgZm10LlNwcmludGYoIiV2IiwgY29sb3IpKQoJY29sb3IsIGVyciA9IERlc2F0dXJhdGUoYCNhZDQwMzhgLCAyMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgIzk2NTQ0ZmApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCgljb2xvciwgZXJyID0gU2F0dXJhdGUoYCNhZDQwMzhgLCAyMCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5UcnVlKGNvbG9yLkVxdWFscyhgI2M0MmIyMWApLCBmbXQuU3ByaW50ZigiJXYiLCBjb2xvcikpCn0=",
             "IsPackageLevel": true
         }
     ],
@@ -509,7 +509,7 @@
                     "Arguments": [
                         {
                             "Name": "other",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -517,7 +517,7 @@
                             "Type": "bool"
                         }
                     ],
-                    "Signature": "Equals(other interface{}) bool",
+                    "Signature": "Equals(other any) bool",
                     "IsPackageLevel": false
                 },
                 {
@@ -693,7 +693,7 @@
                     "Arguments": [
                         {
                             "Name": "value",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -701,7 +701,7 @@
                             "Type": "Color"
                         }
                     ],
-                    "Signature": "MustParse(value interface{}) Color",
+                    "Signature": "MustParse(value any) Color",
                     "Source": "ewoJaWYgY29sb3IsIGVyciA6PSBQYXJzZSh2YWx1ZSk7IGVyciA9PSBuaWwgewoJCXJldHVybiBjb2xvcgoJfSBlbHNlIHsKCQlwYW5pYyhlcnIpCgl9Cn0=",
                     "IsPackageLevel": true
                 },
@@ -711,7 +711,7 @@
                     "Arguments": [
                         {
                             "Name": "value",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -722,8 +722,8 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "Parse(value interface{}) (Color, error)",
-                    "Source": "ewoJdmFyIGNvbG9yQyBDb2xvcgoJY29sb3JDLmEgPSAxCglpZiBjLCBvayA6PSB2YWx1ZS4oQ29sb3IpOyBvayB7CgkJcmV0dXJuIGMsIG5pbAoJfSBlbHNlIHsKCQljb2xvclMgOj0gZm10LlNwcmludGYoIiV2IiwgdmFsdWUpCgkJY29sb3JTID0gc3RyaW5ncy5UcmltU3BhY2UoY29sb3JTKQoJCWNvbG9yUyA9IHN0cmluZ3MuVG9Mb3dlcihjb2xvclMpCgkJaWYgYywgb2sgOj0gQ29sb3JOYW1lc1tjb2xvclNdOyBvayAmJiBzdHJpbmdzLlRyaW1TcGFjZShjKSAhPSBgYCB7CgkJCWNvbG9yUyA9IGMKCQl9CgkJaWYgcmdiYSA6PSByeHV0aWwuTWF0Y2gocmdiYVBhdHRlcm4sIGNvbG9yUyk7IHJnYmEgIT0gbmlsIHsKCQkJZm9yIHYsIGZhY3RvclMgOj0gcmFuZ2UgcmdiYS5OYW1lZENhcHR1cmVzKCkgewoJCQkJdmFyIGRlbm9tIGZsb2F0NjQgPSAweEZGCgkJCQlpZiBzdHJpbmdzLkhhc1N1ZmZpeChmYWN0b3JTLCBgJWApIHsKCQkJCQlkZW5vbSA9IDEwMAoJCQkJCWZhY3RvclMgPSBmYWN0b3JTWzpsZW4oZmFjdG9yUyktMV0KCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiB2ICE9IGBhYCAmJiBmYWN0b3JGID4gMSB7CgkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCX0KCQkJCQlzd2l0Y2ggdiB7CgkJCQkJY2FzZSBgcmA6CgkJCQkJCWNvbG9yQy5yID0gZmFjdG9yRgoJCQkJCWNhc2UgYGdgOgoJCQkJCQljb2xvckMuZyA9IGZhY3RvckYKCQkJCQljYXNlIGBiYDoKCQkJCQkJY29sb3JDLmIgPSBmYWN0b3JGCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCX0gZWxzZSBpZiBoc2xhIDo9IHJ4dXRpbC5NYXRjaChoc2xhUGF0dGVybiwgY29sb3JTKTsgaHNsYSAhPSBuaWwgewoJCQl2YXIgaCwgcywgbHYgZmxvYXQ2NAoJCQl2YXIgaXNIU1YgYm9vbAoJCQlpZiBoc2xhLkdyb3VwKGBMb3JWYCkgPT0gYHZgIHsKCQkJCWlzSFNWID0gdHJ1ZQoJCQl9CgkJCWZvciB2LCBmYWN0b3JTIDo9IC8vIGhhbmRsZXMgaHNsKCksIGhzbGEoKSwgaHN2KCksIGhzdmEoKSBwYXR0ZXJucwoJCQlyYW5nZSBoc2xhLk5hbWVkQ2FwdHVyZXMoKSB7CgkJCQlpZiB2ID09IGBMb3JWYCB7CgkJCQkJY29udGludWUKCQkJCX0KCQkJCXZhciBkZW5vbSBmbG9hdDY0ID0gMQoJCQkJaWYgc3RyaW5ncy5IYXNTdWZmaXgoZmFjdG9yUywgYCVgKSB7CgkJCQkJZGVub20gPSAxMDAKCQkJCQlmYWN0b3JTID0gc3RyaW5ncy5UcmltU3VmZml4KGZhY3RvclMsIGAlYCkKCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiBmYWN0b3JGID4gMSAmJiBkZW5vbSA9PSAxIHsKCQkJCQkJZGVub20gPSAweEZGCgkJCQkJfQoJCQkJCXN3aXRjaCB2IHsKCQkJCQljYXNlIGBoYDoKCQkJCQkJaCA9IGZhY3RvckYKCQkJCQljYXNlIGBzYDoKCQkJCQkJcyA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgbHZgOgoJCQkJCQlsdiA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCQlpZiBpc0hTViB7CgkJCQljb2xvckMuciwgY29sb3JDLmcsIGNvbG9yQy5iID0gaHN2MnJnYihoLCBzLCBsdikKCQkJfSBlbHNlIHsKCQkJCWNvbG9yQy5yLCBjb2xvckMuZywgY29sb3JDLmIgPSBoc2wycmdiKGgsIHMsIGx2KQoJCQl9CgkJfSBlbHNlIGlmIGhleGEgOj0gcnh1dGlsLk1hdGNoKGhleFBhdHRlcm4sIGNvbG9yUyk7IGhleGEgIT0gbmlsIHsKCQkJZm9yIHYsIGhleGJ5dGUgOj0gcmFuZ2UgaGV4YS5OYW1lZENhcHR1cmVzKCkgewoJCQkJaWYgaGV4Ynl0ZSAhPSBgYCB7CgkJCQkJaWYgdkIsIGVyciA6PSBoZXguRGVjb2RlU3RyaW5nKGhleGJ5dGUpOyBlcnIgPT0gbmlsIHsKCQkJCQkJaWYgbGVuKHZCKSA9PSAxIHsKCQkJCQkJCXN3aXRjaCB2IHsKCQkJCQkJCWNhc2UgYHJgOgoJCQkJCQkJCWNvbG9yQy5yID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGdgOgoJCQkJCQkJCWNvbG9yQy5nID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGJgOgoJCQkJCQkJCWNvbG9yQy5iID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGFgOgoJCQkJCQkJCWNvbG9yQy5hID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCX0KCQkJCQkJfSBlbHNlIHsKCQkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCBieXRlICcldiciLCB2QikKCQkJCQkJfQoJCQkJCX0gZWxzZSB7CgkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCB2YWx1ZSAnJXYnIiwgaGV4Ynl0ZSkKCQkJCQl9CgkJCQl9CgkJCX0KCQl9Cgl9CglyZXR1cm4gY29sb3JDLCBuaWwKfQ==",
+                    "Signature": "Parse(value any) (Color, error)",
+                    "Source": "ewoJdmFyIGNvbG9yQyBDb2xvcgoJY29sb3JDLmEgPSAxCglpZiBjLCBvayA6PSB2YWx1ZS4oQ29sb3IpOyBvayB7CgkJcmV0dXJuIGMsIG5pbAoJfSBlbHNlIHsKCQl2YXIgY29sb3JTID0gZm10LlNwcmludGYoIiV2IiwgdmFsdWUpCgkJY29sb3JTID0gc3RyaW5ncy5UcmltU3BhY2UoY29sb3JTKQoJCWNvbG9yUyA9IHN0cmluZ3MuVG9Mb3dlcihjb2xvclMpCgkJaWYgYywgb2sgOj0gQ29sb3JOYW1lc1tjb2xvclNdOyBvayAmJiBzdHJpbmdzLlRyaW1TcGFjZShjKSAhPSBgYCB7CgkJCWNvbG9yUyA9IGMKCQl9CgkJaWYgcmdiYSA6PSByeHV0aWwuTWF0Y2gocmdiYVBhdHRlcm4sIGNvbG9yUyk7IHJnYmEgIT0gbmlsIHsKCQkJZm9yIHYsIGZhY3RvclMgOj0gcmFuZ2UgcmdiYS5OYW1lZENhcHR1cmVzKCkgewoJCQkJdmFyIGRlbm9tIGZsb2F0NjQgPSAweEZGCgkJCQlpZiBzdHJpbmdzLkhhc1N1ZmZpeChmYWN0b3JTLCBgJWApIHsKCQkJCQlkZW5vbSA9IDEwMAoJCQkJCWZhY3RvclMgPSBmYWN0b3JTWzpsZW4oZmFjdG9yUyktMV0KCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiB2ICE9IGBhYCAmJiBmYWN0b3JGID4gMSB7CgkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCX0KCQkJCQlzd2l0Y2ggdiB7CgkJCQkJY2FzZSBgcmA6CgkJCQkJCWNvbG9yQy5yID0gZmFjdG9yRgoJCQkJCWNhc2UgYGdgOgoJCQkJCQljb2xvckMuZyA9IGZhY3RvckYKCQkJCQljYXNlIGBiYDoKCQkJCQkJY29sb3JDLmIgPSBmYWN0b3JGCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCX0gZWxzZSBpZiBoc2xhIDo9IHJ4dXRpbC5NYXRjaChoc2xhUGF0dGVybiwgY29sb3JTKTsgaHNsYSAhPSBuaWwgewoJCQl2YXIgaCwgcywgbHYgZmxvYXQ2NAoJCQl2YXIgaXNIU1YgYm9vbAoJCQlpZiBoc2xhLkdyb3VwKGBMb3JWYCkgPT0gYHZgIHsKCQkJCWlzSFNWID0gdHJ1ZQoJCQl9CgkJCWZvciB2LCBmYWN0b3JTIDo9IC8vIGhhbmRsZXMgaHNsKCksIGhzbGEoKSwgaHN2KCksIGhzdmEoKSBwYXR0ZXJucwoJCQlyYW5nZSBoc2xhLk5hbWVkQ2FwdHVyZXMoKSB7CgkJCQlpZiB2ID09IGBMb3JWYCB7CgkJCQkJY29udGludWUKCQkJCX0KCQkJCXZhciBkZW5vbSBmbG9hdDY0ID0gMQoJCQkJaWYgc3RyaW5ncy5IYXNTdWZmaXgoZmFjdG9yUywgYCVgKSB7CgkJCQkJZGVub20gPSAxMDAKCQkJCQlmYWN0b3JTID0gc3RyaW5ncy5UcmltU3VmZml4KGZhY3RvclMsIGAlYCkKCQkJCX0KCQkJCWlmIGZhY3RvckYsIGVyciA6PSBzdHJpbmd1dGlsLkNvbnZlcnRUb0Zsb2F0KGZhY3RvclMpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiBmYWN0b3JGID4gMSAmJiBkZW5vbSA9PSAxIHsKCQkJCQkJZGVub20gPSAweEZGCgkJCQkJfQoJCQkJCXN3aXRjaCB2IHsKCQkJCQljYXNlIGBoYDoKCQkJCQkJaCA9IGZhY3RvckYKCQkJCQljYXNlIGBzYDoKCQkJCQkJcyA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgbHZgOgoJCQkJCQlsdiA9IChmYWN0b3JGIC8gZGVub20pCgkJCQkJY2FzZSBgYWA6CgkJCQkJCWlmIGZhY3RvclMgIT0gYGAgewoJCQkJCQkJaWYgZmFjdG9yRiA+IDEgewoJCQkJCQkJCWZhY3RvckYgPSAoZmFjdG9yRiAvIGRlbm9tKQoJCQkJCQkJfQoJCQkJCQkJY29sb3JDLmEgPSBmYWN0b3JGCgkJCQkJCX0KCQkJCQl9CgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIHJnYmEoKSB2YWx1ZSBpbiAnJXYnIHBvc2l0aW9uOiAldiIsIHYsIGVycikKCQkJCX0KCQkJfQoJCQlpZiBpc0hTViB7CgkJCQljb2xvckMuciwgY29sb3JDLmcsIGNvbG9yQy5iID0gaHN2MnJnYihoLCBzLCBsdikKCQkJfSBlbHNlIHsKCQkJCWNvbG9yQy5yLCBjb2xvckMuZywgY29sb3JDLmIgPSBoc2wycmdiKGgsIHMsIGx2KQoJCQl9CgkJfSBlbHNlIGlmIGhleGEgOj0gcnh1dGlsLk1hdGNoKGhleFBhdHRlcm4sIGNvbG9yUyk7IGhleGEgIT0gbmlsIHsKCQkJZm9yIHYsIGhleGJ5dGUgOj0gcmFuZ2UgaGV4YS5OYW1lZENhcHR1cmVzKCkgewoJCQkJaWYgaGV4Ynl0ZSAhPSBgYCB7CgkJCQkJaWYgdkIsIGVyciA6PSBoZXguRGVjb2RlU3RyaW5nKGhleGJ5dGUpOyBlcnIgPT0gbmlsIHsKCQkJCQkJaWYgbGVuKHZCKSA9PSAxIHsKCQkJCQkJCXN3aXRjaCB2IHsKCQkJCQkJCWNhc2UgYHJgOgoJCQkJCQkJCWNvbG9yQy5yID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGdgOgoJCQkJCQkJCWNvbG9yQy5nID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGJgOgoJCQkJCQkJCWNvbG9yQy5iID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCWNhc2UgYGFgOgoJCQkJCQkJCWNvbG9yQy5hID0gKGZsb2F0NjQodkJbMF0pIC8gMHhGRikKCQkJCQkJCX0KCQkJCQkJfSBlbHNlIHsKCQkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCBieXRlICcldiciLCB2QikKCQkJCQkJfQoJCQkJCX0gZWxzZSB7CgkJCQkJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJJbnZhbGlkIGhleCB2YWx1ZSAnJXYnIiwgaGV4Ynl0ZSkKCQkJCQl9CgkJCQl9CgkJCX0KCQl9Cgl9CglyZXR1cm4gY29sb3JDLCBuaWwKfQ==",
                     "IsPackageLevel": true
                 },
                 {
@@ -732,7 +732,7 @@
                     "Arguments": [
                         {
                             "Name": "in",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "percent",
@@ -747,7 +747,7 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "Darken(in interface{}, percent int) (Color, error)",
+                    "Signature": "Darken(in any, percent int) (Color, error)",
                     "Source": "ewoJcmV0dXJuIGFkanVzdChsaWdodG5lc3MsIGluLCAtMSooZmxvYXQ2NChwZXJjZW50KS8xMDAuMCkpCn0=",
                     "IsPackageLevel": true
                 },
@@ -757,7 +757,7 @@
                     "Arguments": [
                         {
                             "Name": "in",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "percent",
@@ -772,7 +772,7 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "Lighten(in interface{}, percent int) (Color, error)",
+                    "Signature": "Lighten(in any, percent int) (Color, error)",
                     "Source": "ewoJcmV0dXJuIGFkanVzdChsaWdodG5lc3MsIGluLCBmbG9hdDY0KHBlcmNlbnQpLzEwMC4wKQp9",
                     "IsPackageLevel": true
                 },
@@ -782,7 +782,7 @@
                     "Arguments": [
                         {
                             "Name": "in",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "percent",
@@ -797,7 +797,7 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "Saturate(in interface{}, percent int) (Color, error)",
+                    "Signature": "Saturate(in any, percent int) (Color, error)",
                     "Source": "ewoJcmV0dXJuIGFkanVzdChzYXR1cmF0aW9uLCBpbiwgZmxvYXQ2NChwZXJjZW50KS8xMDAuMCkKfQ==",
                     "IsPackageLevel": true
                 },
@@ -807,7 +807,7 @@
                     "Arguments": [
                         {
                             "Name": "in",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "percent",
@@ -822,7 +822,7 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "Desaturate(in interface{}, percent int) (Color, error)",
+                    "Signature": "Desaturate(in any, percent int) (Color, error)",
                     "Source": "ewoJcmV0dXJuIGFkanVzdChzYXR1cmF0aW9uLCBpbiwgLTEqKGZsb2F0NjQocGVyY2VudCkvMTAwLjApKQp9",
                     "IsPackageLevel": true
                 },
@@ -832,7 +832,7 @@
                     "Arguments": [
                         {
                             "Name": "in",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "degrees",
@@ -847,7 +847,7 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "AdjustHue(in interface{}, degrees float64) (Color, error)",
+                    "Signature": "AdjustHue(in any, degrees float64) (Color, error)",
                     "Source": "ewoJcmV0dXJuIGFkanVzdChodWUsIGluLCBkZWdyZWVzKQp9",
                     "IsPackageLevel": true
                 },
@@ -857,11 +857,11 @@
                     "Arguments": [
                         {
                             "Name": "first",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "second",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "weight",
@@ -876,8 +876,8 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "MixN(first interface{}, second interface{}, weight float64) (Color, error)",
-                    "Source": "ewoJaWYgZmlyc3RDLCBlcnIgOj0gUGFyc2UoZmlyc3QpOyBlcnIgPT0gbmlsIHsKCQlpZiBzZWNvbmRDLCBlcnIgOj0gUGFyc2Uoc2Vjb25kKTsgZXJyID09IG5pbCB7CgkJCWZhY3RvciA6PSAyKndlaWdodCAtIDEKCQkJYWxwaGEgOj0gZmlyc3RDLmEgLSBzZWNvbmRDLmEKCQkJdmFyIHdlaWdodDEsIHdlaWdodDIgZmxvYXQ2NAoJCQlpZiBmYWN0b3IqYWxwaGEgPT0gLTEgewoJCQkJd2VpZ2h0MSA9IGZhY3RvcgoJCQl9IGVsc2UgewoJCQkJd2VpZ2h0MSA9ICgoZmFjdG9yICsgYWxwaGEpIC8gKDEgKyBmYWN0b3IqYWxwaGEpKSArIDEKCQkJfQoJCQl3ZWlnaHQxID0gd2VpZ2h0MSAvIDIKCQkJd2VpZ2h0MiA9IDEgLSB3ZWlnaHQxCgkJCW1peGVkIDo9IENvbG9ye3I6ICh3ZWlnaHQxICogZmlyc3RDLnIpICsgKHdlaWdodDIgKiBzZWNvbmRDLnIpLCBnOiAod2VpZ2h0MSAqIGZpcnN0Qy5nKSArICh3ZWlnaHQyICogc2Vjb25kQy5nKSwgYjogKHdlaWdodDEgKiBmaXJzdEMuYikgKyAod2VpZ2h0MiAqIHNlY29uZEMuYiksIGE6IChmaXJzdEMuYSAqIHdlaWdodCkgKyAoc2Vjb25kQy5hICogKDEgLSB3ZWlnaHQpKX0KCQkJcmV0dXJuIG1peGVkLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigic2Vjb25kIGNvbG9yOiAldiIsIGVycikKCQl9Cgl9IGVsc2UgewoJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJmaXJzdCBjb2xvcjogJXYiLCBlcnIpCgl9Cn0=",
+                    "Signature": "MixN(first any, second any, weight float64) (Color, error)",
+                    "Source": "ewoJaWYgZmlyc3RDLCBlcnIgOj0gUGFyc2UoZmlyc3QpOyBlcnIgPT0gbmlsIHsKCQlpZiBzZWNvbmRDLCBlcnIgOj0gUGFyc2Uoc2Vjb25kKTsgZXJyID09IG5pbCB7CgkJCXZhciBmYWN0b3IgPSAyKndlaWdodCAtIDEKCQkJdmFyIGFscGhhID0gZmlyc3RDLmEgLSBzZWNvbmRDLmEKCQkJdmFyIHdlaWdodDEsIHdlaWdodDIgZmxvYXQ2NAoJCQlpZiBmYWN0b3IqYWxwaGEgPT0gLTEgewoJCQkJd2VpZ2h0MSA9IGZhY3RvcgoJCQl9IGVsc2UgewoJCQkJd2VpZ2h0MSA9ICgoZmFjdG9yICsgYWxwaGEpIC8gKDEgKyBmYWN0b3IqYWxwaGEpKSArIDEKCQkJfQoJCQl3ZWlnaHQxID0gd2VpZ2h0MSAvIDIKCQkJd2VpZ2h0MiA9IDEgLSB3ZWlnaHQxCgkJCXZhciBtaXhlZCA9IENvbG9ye3I6ICh3ZWlnaHQxICogZmlyc3RDLnIpICsgKHdlaWdodDIgKiBzZWNvbmRDLnIpLCBnOiAod2VpZ2h0MSAqIGZpcnN0Qy5nKSArICh3ZWlnaHQyICogc2Vjb25kQy5nKSwgYjogKHdlaWdodDEgKiBmaXJzdEMuYikgKyAod2VpZ2h0MiAqIHNlY29uZEMuYiksIGE6IChmaXJzdEMuYSAqIHdlaWdodCkgKyAoc2Vjb25kQy5hICogKDEgLSB3ZWlnaHQpKX0KCQkJcmV0dXJuIG1peGVkLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gQ29sb3J7fSwgZm10LkVycm9yZigic2Vjb25kIGNvbG9yOiAldiIsIGVycikKCQl9Cgl9IGVsc2UgewoJCXJldHVybiBDb2xvcnt9LCBmbXQuRXJyb3JmKCJmaXJzdCBjb2xvcjogJXYiLCBlcnIpCgl9Cn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -886,11 +886,11 @@
                     "Arguments": [
                         {
                             "Name": "first",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "second",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -901,7 +901,7 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "Mix(first interface{}, second interface{}) (Color, error)",
+                    "Signature": "Mix(first any, second any) (Color, error)",
                     "Source": "ewoJcmV0dXJuIE1peE4oZmlyc3QsIHNlY29uZCwgMC41KQp9",
                     "IsPackageLevel": true
                 }

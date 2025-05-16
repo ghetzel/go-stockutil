@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net"
 	"net/url"
 	"os/user"
@@ -149,7 +148,7 @@ func RetrieveViaSSH(ctx context.Context, u *url.URL) (io.ReadCloser, error) {
 				if scmd, err := client.Command(argv[0], argv[1:]...); err == nil {
 					if out, err := scmd.StdoutPipe(); err == nil {
 						if err := scmd.Start(); err == nil {
-							readCloser = NewPostReadCloser(ioutil.NopCloser(out), func(rc io.ReadCloser) error {
+							readCloser = NewPostReadCloser(io.NopCloser(out), func(rc io.ReadCloser) error {
 								defer client.Close()
 								return scmd.Wait()
 							})

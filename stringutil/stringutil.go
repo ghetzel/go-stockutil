@@ -105,35 +105,35 @@ func ParseType(name string) ConvertType {
 	}
 }
 
-func IsInteger(in interface{}) bool {
+func IsInteger(in any) bool {
 	return utils.IsInteger(in)
 }
 
-func IsFloat(in interface{}) bool {
+func IsFloat(in any) bool {
 	return utils.IsFloat(in)
 }
 
-func IsNumeric(in interface{}) bool {
+func IsNumeric(in any) bool {
 	return utils.IsNumeric(in)
 }
 
-func IsBoolean(in interface{}) bool {
+func IsBoolean(in any) bool {
 	return utils.IsBoolean(in)
 }
 
-func IsBooleanTrue(in interface{}) bool {
+func IsBooleanTrue(in any) bool {
 	return utils.IsBooleanTrue(in)
 }
 
-func IsBooleanFalse(in interface{}) bool {
+func IsBooleanFalse(in any) bool {
 	return utils.IsBooleanFalse(in)
 }
 
-func IsTime(in interface{}) bool {
+func IsTime(in any) bool {
 	return utils.IsTime(in)
 }
 
-func IsSurroundedBy(inI interface{}, prefix string, suffix string) bool {
+func IsSurroundedBy(inI any, prefix string, suffix string) bool {
 	if in, err := ToString(inI); err == nil {
 		if strings.HasPrefix(in, prefix) && strings.HasSuffix(in, suffix) {
 			return true
@@ -147,11 +147,11 @@ func DetectTimeFormat(in string) string {
 	return utils.DetectTimeFormat(in)
 }
 
-func ToString(in interface{}) (string, error) {
+func ToString(in any) (string, error) {
 	return utils.ToString(in)
 }
 
-func MustString(in interface{}, fallbackOpt ...string) string {
+func MustString(in any, fallbackOpt ...string) string {
 	if v, err := ToString(in); err == nil {
 		return v
 	} else if len(fallbackOpt) > 0 {
@@ -161,7 +161,7 @@ func MustString(in interface{}, fallbackOpt ...string) string {
 	}
 }
 
-func MustInteger(in interface{}, fallbackOpt ...int64) int64 {
+func MustInteger(in any, fallbackOpt ...int64) int64 {
 	if v, err := ConvertToInteger(in); err == nil {
 		return v
 	} else if len(fallbackOpt) > 0 {
@@ -171,7 +171,7 @@ func MustInteger(in interface{}, fallbackOpt ...int64) int64 {
 	}
 }
 
-func MustFloat(in interface{}, fallbackOpt ...float64) float64 {
+func MustFloat(in any, fallbackOpt ...float64) float64 {
 	if v, err := ConvertToFloat(in); err == nil {
 		return v
 	} else if len(fallbackOpt) > 0 {
@@ -181,7 +181,7 @@ func MustFloat(in interface{}, fallbackOpt ...float64) float64 {
 	}
 }
 
-func MustBool(in interface{}, fallbackOpt ...bool) bool {
+func MustBool(in any, fallbackOpt ...bool) bool {
 	if v, err := ConvertToBool(in); err == nil {
 		return v
 	} else if len(fallbackOpt) > 0 {
@@ -191,7 +191,7 @@ func MustBool(in interface{}, fallbackOpt ...bool) bool {
 	}
 }
 
-func MustTime(in interface{}, fallbackOpt ...time.Time) time.Time {
+func MustTime(in any, fallbackOpt ...time.Time) time.Time {
 	if v, err := ConvertToTime(in); err == nil {
 		return v
 	} else if len(fallbackOpt) > 0 {
@@ -201,15 +201,15 @@ func MustTime(in interface{}, fallbackOpt ...time.Time) time.Time {
 	}
 }
 
-func ToStringSlice(in interface{}) ([]string, error) {
-	values := make([]string, 0)
+func ToStringSlice(in any) ([]string, error) {
+	var values = make([]string, 0)
 
 	if in != nil {
 		if v, ok := in.([]string); ok {
 			return v, nil
 		}
 
-		inV := reflect.ValueOf(in)
+		var inV = reflect.ValueOf(in)
 
 		if inV.IsValid() {
 			if inV.Kind() == reflect.Ptr {
@@ -250,12 +250,12 @@ func ToStringSlice(in interface{}) ([]string, error) {
 	return values, nil
 }
 
-func ToByteString(in interface{}, formatString ...string) (string, error) {
+func ToByteString(in any, formatString ...string) (string, error) {
 	if asBytes, err := ConvertToInteger(in); err == nil {
 		for i := 0; i < 9; i++ {
 			if converted := (float64(asBytes) / math.Pow(1024, float64(i))); converted < 1024 {
-				prefix := SiPrefix(i)
-				f := `%g`
+				var prefix = SiPrefix(i)
+				var f = `%g`
 
 				if len(formatString) > 0 {
 					f = formatString[0]
@@ -321,35 +321,35 @@ func ToBytes(input string) (float64, error) {
 	}
 }
 
-func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
+func ConvertTo(toType ConvertType, inI any) (any, error) {
 	return utils.ConvertTo(toType, inI)
 }
 
-func ConvertToInteger(in interface{}) (int64, error) {
+func ConvertToInteger(in any) (int64, error) {
 	return utils.ConvertToInteger(in)
 }
 
-func ConvertToFloat(in interface{}) (float64, error) {
+func ConvertToFloat(in any) (float64, error) {
 	return utils.ConvertToFloat(in)
 }
 
-func ConvertToString(in interface{}) (string, error) {
+func ConvertToString(in any) (string, error) {
 	return utils.ConvertToString(in)
 }
 
-func ConvertToBool(in interface{}) (bool, error) {
+func ConvertToBool(in any) (bool, error) {
 	return utils.ConvertToBool(in)
 }
 
-func ConvertToTime(in interface{}) (time.Time, error) {
+func ConvertToTime(in any) (time.Time, error) {
 	return utils.ConvertToTime(in)
 }
 
-func ConvertToBytes(in interface{}) ([]byte, error) {
+func ConvertToBytes(in any) ([]byte, error) {
 	return utils.ConvertToBytes(in)
 }
 
-func Autotype(in interface{}) interface{} {
+func Autotype(in any) any {
 	return utils.Autotype(in)
 }
 
@@ -380,11 +380,11 @@ func IsSeparator(r rune) bool {
 func TokenizeFunc(in string, tokenizer func(rune) bool, partfn func(part string) []string) []string {
 	// split on word-separating characters (and discard them), or on capital
 	// letters (preserving them)
-	parts := strings.FieldsFunc(in, tokenizer)
-	out := make([]string, 0)
+	var parts = strings.FieldsFunc(in, tokenizer)
+	var out = make([]string, 0)
 
 	for _, part := range parts {
-		partOut := partfn(part)
+		var partOut = partfn(part)
 
 		if partOut != nil {
 			for _, v := range partOut {
@@ -398,7 +398,7 @@ func TokenizeFunc(in string, tokenizer func(rune) bool, partfn func(part string)
 	return out
 }
 
-func Camelize(in interface{}) string {
+func Camelize(in any) string {
 	return strings.Join(TokenizeFunc(MustString(in), IsSeparator, func(part string) []string {
 		part = strings.TrimSpace(part)
 		part = strings.Title(part)
@@ -406,16 +406,16 @@ func Camelize(in interface{}) string {
 	}), ``)
 }
 
-func Underscore(in interface{}) string {
+func Underscore(in any) string {
 	return Snakeify(in, '_')
 }
 
-func Hyphenate(in interface{}) string {
+func Hyphenate(in any) string {
 	return Snakeify(in, '-')
 }
 
-func Snakeify(in interface{}, separator rune) string {
-	inS := strings.Map(func(r rune) rune {
+func Snakeify(in any, separator rune) string {
+	var inS = strings.Map(func(r rune) rune {
 		if unicode.IsSpace(r) {
 			return separator
 		} else if unicode.IsPunct(r) && separator != r {
@@ -425,10 +425,10 @@ func Snakeify(in interface{}, separator rune) string {
 		}
 	}, MustString(in))
 
-	out := make([]rune, 0)
-	runes := []rune(inS)
+	var out = make([]rune, 0)
+	var runes = []rune(inS)
 
-	sepfn := func(i int) bool {
+	var sepfn = func(i int) bool {
 		return i >= 0 && i < len(runes) && unicode.IsLower(runes[i])
 	}
 
@@ -495,7 +495,7 @@ func IsHexadecimal(in string, length int) bool {
 	return false
 }
 
-func Thousandify(in interface{}, separator string, decimal string) string {
+func Thousandify(in any, separator string, decimal string) string {
 	if separator == `` {
 		separator = DefaultThousandsSeparator
 	}
@@ -508,14 +508,14 @@ func Thousandify(in interface{}, separator string, decimal string) string {
 		if IsNumeric(in) {
 			var buffer []rune
 
-			lastIndexBeforeDecimal := strings.Index(inStr, decimal) - 1
-			decimalAndAfter := strings.Index(inStr, decimal)
+			var lastIndexBeforeDecimal = strings.Index(inStr, decimal) - 1
+			var decimalAndAfter = strings.Index(inStr, decimal)
 
 			if lastIndexBeforeDecimal < 0 {
 				lastIndexBeforeDecimal = len(inStr) - 1
 			}
 
-			j := 0
+			var j = 0
 
 			for i := lastIndexBeforeDecimal; i >= 0; i-- {
 				j++
@@ -543,8 +543,8 @@ func Thousandify(in interface{}, separator string, decimal string) string {
 }
 
 func LongestCommonPrefix(inputs []string) string {
-	output := ``
-	shortestInputLen := 0
+	var output = ``
+	var shortestInputLen = 0
 
 	for _, in := range inputs {
 		if shortestInputLen == 0 || len(in) < shortestInputLen {
@@ -576,7 +576,7 @@ LCPLoop:
 	return output
 }
 
-func RelaxedEqual(first interface{}, second interface{}) (bool, error) {
+func RelaxedEqual(first any, second any) (bool, error) {
 	if reflect.DeepEqual(first, second) {
 		return true, nil
 	} else if IsNumeric(first) && IsNumeric(second) {
@@ -617,7 +617,7 @@ func RelaxedEqual(first interface{}, second interface{}) (bool, error) {
 }
 
 // A case insensitive, single return version of RelaxedEqual that trims leading and trailing whitespace from strings before comparison.
-func SoftEqual(first interface{}, second interface{}) bool {
+func SoftEqual(first any, second any) bool {
 	if typeutil.IsKindOfString(first) {
 		first = strings.TrimSpace(strings.ToLower(typeutil.String(first)))
 	}
@@ -636,7 +636,7 @@ func SoftEqual(first interface{}, second interface{}) bool {
 // Split the given string into two parts.  If there is only one resulting part,
 // that part will be the first return value and the second return value will be empty.
 func SplitPair(in string, delimiter string) (string, string) {
-	parts := strings.Split(in, delimiter)
+	var parts = strings.Split(in, delimiter)
 
 	switch len(parts) {
 	case 1:
@@ -657,14 +657,14 @@ func SplitPairTrimSpace(in string, delimiter string) (string, string) {
 }
 
 // Identical to SplitPair, but returns the result of passing the second value in the pair to Autotype()
-func SplitPairAuto(in string, delimiter string) (string, interface{}) {
+func SplitPairAuto(in string, delimiter string) (string, any) {
 	var a, b = SplitPair(in, delimiter)
 
 	return a, Autotype(b)
 }
 
 // Identical to SplitPairTrimSpace, but returns the result of passing the second value in the pair to Autotype()
-func SplitPairTrimSpaceAuto(in string, delimiter string) (string, interface{}) {
+func SplitPairTrimSpaceAuto(in string, delimiter string) (string, any) {
 	var a, b = SplitPairTrimSpace(in, delimiter)
 
 	return a, Autotype(b)
@@ -685,7 +685,7 @@ func SplitPairTrailing(in string, delimiter string) (string, string) {
 // Split the given string into two parts from the right. If there is only one resulting part,
 // that part will be the first return value and the second return value will be empty.
 func SplitPairRight(in string, delimiter string) (string, string) {
-	parts := strings.Split(in, delimiter)
+	var parts = strings.Split(in, delimiter)
 
 	switch len(parts) {
 	case 1:
@@ -708,7 +708,7 @@ func SplitPairRightTrailing(in string, delimiter string) (string, string) {
 }
 
 func SplitTriple(in string, delimiter string) (string, string, string) {
-	parts := strings.Split(in, delimiter)
+	var parts = strings.Split(in, delimiter)
 
 	switch len(parts) {
 	case 1:
@@ -798,7 +798,7 @@ func WrapIf(in string, prefix string, suffix string) string {
 
 // Wrap each element in the given string slice with prefix and suffix.
 func WrapEach(in []string, prefix string, suffix string) []string {
-	out := make([]string, len(in))
+	var out = make([]string, len(in))
 
 	for i, v := range in {
 		out[i] = Wrap(v, prefix, suffix)
@@ -818,7 +818,7 @@ func SuffixEach(in []string, prefix string, suffix string) []string {
 }
 
 // Split the given input into lines.
-func SplitLines(in interface{}, delimiter string) []string {
+func SplitLines(in any, delimiter string) []string {
 	var blob string
 
 	if b, ok := in.([]byte); ok {
@@ -832,8 +832,8 @@ func SplitLines(in interface{}, delimiter string) []string {
 
 // Split the given string into words.
 func SplitWords(in string) []string {
-	tokenizer := tokenize.NewTreebankWordTokenizer()
-	out := make([]string, 0)
+	var tokenizer = tokenize.NewTreebankWordTokenizer()
+	var out = make([]string, 0)
 
 	for _, word := range tokenizer.Tokenize(in) {
 		out = append(out, word)
@@ -862,8 +862,8 @@ func ElideRight(in string, charcount int, leader ...string) string {
 
 // Truncate the given string to a certain number of words.
 func ElideWords(in string, wordcount int) string {
-	words := SplitWords(in)
-	wc := len(words)
+	var words = SplitWords(in)
+	var wc = len(words)
 
 	if wc == 0 {
 		return ``
@@ -883,7 +883,7 @@ type OnlySqueezeFunc func(r rune) bool
 // Return the given string with sequences of characters matching the given function
 // replaced with a single instance of that character.
 func SqueezeFunc(in string, fn OnlySqueezeFunc) string {
-	out := make([]rune, 0)
+	var out = make([]rune, 0)
 	var previous rune
 
 	for _, char := range in {
@@ -932,7 +932,7 @@ func ExpandEnv(in string) string {
 					format = `%v`
 				}
 
-				var typed interface{}
+				var typed any
 
 				if val := os.Getenv(varname); val != `` {
 					typed = Autotype(val)
@@ -975,8 +975,8 @@ func ExpandEnv(in string) string {
 }
 
 // Takes the given string, splits it into lines, and prefixes each line with the given prefix string.
-func PrefixLines(in interface{}, prefix string) string {
-	lines := SplitLines(in, "\n")
+func PrefixLines(in any, prefix string) string {
+	var lines = SplitLines(in, "\n")
 
 	for i, line := range lines {
 		lines[i] = prefix + line
@@ -986,8 +986,8 @@ func PrefixLines(in interface{}, prefix string) string {
 }
 
 // Takes the given string, splits it into lines, and suffixes each line with the given suffix string.
-func SuffixLines(in interface{}, suffix string) string {
-	lines := SplitLines(in, "\n")
+func SuffixLines(in any, suffix string) string {
+	var lines = SplitLines(in, "\n")
 
 	for i, line := range lines {
 		lines[i] = line + suffix

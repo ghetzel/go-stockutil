@@ -45,7 +45,7 @@ package httputil
 // }
 
 // func read(in io.Reader) []byte {
-// 	out, err := ioutil.ReadAll(in)
+// 	out, err := io.ReadAll(in)
 
 // 	if err != nil {
 // 		panic(err.Error())

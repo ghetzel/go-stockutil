@@ -32,7 +32,7 @@ func SetRootCABundle(client *http.Client, caBundle string) error {
 // Loads certificates from the given file and returns a usable x509.CertPool
 func LoadCertPool(filename string) (*x509.CertPool, error) {
 	if data, err := fileutil.ReadAll(filename); err == nil {
-		pool := x509.NewCertPool()
+		var pool = x509.NewCertPool()
 
 		if pool.AppendCertsFromPEM(data) {
 			return pool, nil
@@ -46,7 +46,7 @@ func LoadCertPool(filename string) (*x509.CertPool, error) {
 
 // Returns the media type from the request's Content-Type.
 func MediaType(req *http.Request) string {
-	contentType := req.Header.Get(`Content-Type`)
+	var contentType = req.Header.Get(`Content-Type`)
 
 	if mediaType, _, err := mime.ParseMediaType(contentType); err == nil {
 		return mediaType
@@ -60,7 +60,7 @@ func MediaType(req *http.Request) string {
 // or major type classes (e.g.: "text/", "video/").  The trailing slash (/) indicates that any media type
 // that begins with that text will match.
 func IsMediaType(req *http.Request, mediaTypes ...string) bool {
-	mediaType := MediaType(req)
+	var mediaType = MediaType(req)
 
 	for _, mt := range mediaTypes {
 		if strings.HasSuffix(mt, `/`) {
@@ -80,7 +80,7 @@ func IsMediaType(req *http.Request, mediaTypes ...string) bool {
 // be replaced with new ones, except for repeated keys (e.g.: ?x=1&x=2&x=3).  In this case, the new values will
 // be added to the existing ones.  The *url.URL returned from this function is a copy, and the original URL (if
 // one is provided) will not be modified in any way.
-func UrlPathJoin(baseurl interface{}, path string) (*url.URL, error) {
+func UrlPathJoin(baseurl any, path string) (*url.URL, error) {
 	var in *url.URL
 	var out *url.URL
 

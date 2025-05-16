@@ -9,7 +9,7 @@ import (
 )
 
 func TestExpandUser(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 	var v string
 	var err error
 

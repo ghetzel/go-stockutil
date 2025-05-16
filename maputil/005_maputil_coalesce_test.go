@@ -7,8 +7,8 @@ import (
 func TestCoalesceOneTierScalar(t *testing.T) {
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["id"] = "test"
 	input["enabled"] = true
@@ -34,14 +34,14 @@ func TestCoalesceOneTierScalar(t *testing.T) {
 func TestCoalesceMultiTierScalar(t *testing.T) {
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["id"] = "top"
-	input["nested"] = make(map[string]interface{})
-	input["nested"].(map[string]interface{})["data"] = true
-	input["nested"].(map[string]interface{})["value"] = 4.9
-	input["nested"].(map[string]interface{})["awesome"] = "very yes"
+	input["nested"] = make(map[string]any)
+	input["nested"].(map[string]any)["data"] = true
+	input["nested"].(map[string]any)["value"] = 4.9
+	input["nested"].(map[string]any)["awesome"] = "very yes"
 
 	if output, err = CoalesceMap(input, "."); err != nil {
 		t.Errorf("%s\n", err)
@@ -67,10 +67,10 @@ func TestCoalesceMultiTierScalar(t *testing.T) {
 func TestCoalesceTopLevelArray(t *testing.T) {
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
-	numbers := make([]interface{}, 0)
+	var numbers = make([]any, 0)
 	numbers = append(numbers, 1)
 	numbers = append(numbers, 2)
 	numbers = append(numbers, 3)
@@ -97,21 +97,21 @@ func TestCoalesceTopLevelArray(t *testing.T) {
 func TestCoalesceArrayWithNestedMap(t *testing.T) {
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
-	numbers := make([]interface{}, 0)
-	numbers = append(numbers, map[string]interface{}{
+	var numbers = make([]any, 0)
+	numbers = append(numbers, map[string]any{
 		"name":  "test",
 		"count": 2,
 	})
 
-	numbers = append(numbers, map[string]interface{}{
+	numbers = append(numbers, map[string]any{
 		"name":  "test2",
 		"count": 4,
 	})
 
-	numbers = append(numbers, map[string]interface{}{
+	numbers = append(numbers, map[string]any{
 		"name":  "test3",
 		"count": 8,
 	})

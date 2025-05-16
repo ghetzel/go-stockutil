@@ -18,7 +18,7 @@ import (
 func DecodeResponse(response *http.Response) (io.Reader, error) {
 	var output io.Reader = response.Body
 
-	contentEncodings := strings.Split(response.Header.Get(`Content-Encoding`), `,`)
+	var contentEncodings = strings.Split(response.Header.Get(`Content-Encoding`), `,`)
 
 	for _, enc := range contentEncodings {
 		enc = strings.TrimSpace(enc)

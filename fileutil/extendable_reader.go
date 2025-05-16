@@ -14,58 +14,58 @@ type ExtendableReader struct {
 	current io.ReadCloser
 }
 
-func (self *ExtendableReader) AppendSource(rc io.ReadCloser) {
+func (xreader *ExtendableReader) AppendSource(rc io.ReadCloser) {
 	if rc != nil {
-		self.srclock.Lock()
-		self.sources.PushBack(rc)
-		self.srclock.Unlock()
+		xreader.srclock.Lock()
+		xreader.sources.PushBack(rc)
+		xreader.srclock.Unlock()
 	}
 }
 
-func (self *ExtendableReader) Read(b []byte) (int, error) {
-	if err := self.closeAndAdvanceSources(); err != nil {
+func (xreader *ExtendableReader) Read(b []byte) (int, error) {
+	if err := xreader.closeAndAdvanceSources(); err != nil {
 		return 0, err
 	}
 
-	if self.current == nil {
+	if xreader.current == nil {
 		return 0, io.EOF
-	} else if n, err := self.current.Read(b); err == nil {
+	} else if n, err := xreader.current.Read(b); err == nil {
 		return n, nil
 	} else if err == io.EOF {
-		return self.Read(b)
+		return xreader.Read(b)
 	} else {
 		return n, err
 	}
 }
 
-func (self *ExtendableReader) Close() error {
+func (xreader *ExtendableReader) Close() error {
 	var merr error
 
-	self.srclock.Lock()
-	defer self.srclock.Unlock()
+	xreader.srclock.Lock()
+	defer xreader.srclock.Unlock()
 
-	for e := self.sources.Front(); e != nil; e = e.Next() {
+	for e := xreader.sources.Front(); e != nil; e = e.Next() {
 		merr = log.AppendError(merr, e.Value.(io.ReadCloser).Close())
-		self.sources.Remove(e)
+		xreader.sources.Remove(e)
 	}
 
 	return merr
 }
 
-func (self *ExtendableReader) closeAndAdvanceSources() error {
-	if self.current != nil {
-		if err := self.current.Close(); err != nil {
+func (xreader *ExtendableReader) closeAndAdvanceSources() error {
+	if xreader.current != nil {
+		if err := xreader.current.Close(); err != nil {
 			return err
 		}
 	}
 
-	self.srclock.Lock()
-	defer self.srclock.Unlock()
+	xreader.srclock.Lock()
+	defer xreader.srclock.Unlock()
 
-	if self.sources.Len() > 0 {
-		if el := self.sources.Front(); el != nil {
-			self.current = el.Value.(io.ReadCloser)
-			self.sources.Remove(el)
+	if xreader.sources.Len() > 0 {
+		if el := xreader.sources.Front(); el != nil {
+			xreader.current = el.Value.(io.ReadCloser)
+			xreader.sources.Remove(el)
 
 			return nil
 		}

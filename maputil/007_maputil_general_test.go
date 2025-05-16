@@ -15,13 +15,13 @@ type MyTestThing struct {
 }
 
 func TestMapJoin(t *testing.T) {
-	input := map[string]interface{}{
+	var input = map[string]any{
 		`key1`: `value1`,
 		`key2`: true,
 		`key3`: 3,
 	}
 
-	output := Join(input, `=`, `&`)
+	var output = Join(input, `=`, `&`)
 
 	if output == `` {
 		t.Error("Output should not be empty")
@@ -41,21 +41,21 @@ func TestMapJoin(t *testing.T) {
 }
 
 func TestStringKeys(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	i1 := map[string]interface{}{
+	var i1 = map[string]any{
 		`1`: 1,
 		`2`: true,
 		`3`: `three`,
 	}
 
-	i2 := map[string]bool{
+	var i2 = map[string]bool{
 		`1`: true,
 		`2`: false,
 		`3`: true,
 	}
 
-	i3 := map[string]MyTestThing{
+	var i3 = map[string]MyTestThing{
 		`1`: MyTestThing{},
 		`2`: MyTestThing{},
 		`3`: MyTestThing{},
@@ -67,7 +67,7 @@ func TestStringKeys(t *testing.T) {
 	i4.Store(`2`, 2)
 	i4.Store(`3`, 3.14)
 
-	output := []string{`1`, `2`, `3`}
+	var output = []string{`1`, `2`, `3`}
 
 	assert.Empty(StringKeys(nil))
 
@@ -82,9 +82,9 @@ func TestStringKeys(t *testing.T) {
 }
 
 func TestMapSplit(t *testing.T) {
-	input := `key1=value1&key2=true&key3=3`
+	var input = `key1=value1&key2=true&key3=3`
 
-	output := Split(input, `=`, `&`)
+	var output = Split(input, `=`, `&`)
 
 	if len(output) == 0 {
 		t.Error("Output should not be empty")
@@ -115,7 +115,7 @@ type MyStructTester struct {
 	Subtype2              *SubtypeTester `maputil:"subtype2"`
 	TimeTest              time.Duration
 	IntTest               int32
-	Properties            map[string]interface{}
+	Properties            map[string]any
 	StrSliceTest          []string
 	InterfaceStrSliceTest []string
 	StructSliceTest       []SubtypeTester
@@ -146,16 +146,16 @@ func TestStructFromMapEmbedded(t *testing.T) {
 		Active bool   `potato:"ACTIVE"`
 	}
 
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var tgt tUser
 
-	assert.NoError(TaggedStructFromMap(map[string]interface{}{
+	assert.NoError(TaggedStructFromMap(map[string]any{
 		`Name`:   `Rusty Shackleford`,
 		`age`:    420,
 		`email`:  `none+of@your.biz`,
 		`ACTIVE`: true,
-		`Address`: map[string]interface{}{
+		`Address`: map[string]any{
 			`Number`:   350,
 			`Street`:   `Fifth Avenue`,
 			`city`:     `New York`,
@@ -177,31 +177,31 @@ func TestStructFromMapEmbedded(t *testing.T) {
 }
 
 func TestStructFromMap(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := map[string]interface{}{
+	var input = map[string]any{
 		`Name`:           `Foo Bar`,
 		`active`:         true,
 		`should_not_set`: 4,
-		`subtype2`: map[string]interface{}{
+		`subtype2`: map[string]any{
 			`A`: 3,
 			`b`: 4,
 		},
 		`TimeTest`: 15000000000,
-		`Subtype1`: map[string]interface{}{
+		`Subtype1`: map[string]any{
 			`A`: 1111,
 			`b`: 2222,
 		},
 		`IntTest`: int64(5),
-		`Properties`: map[string]interface{}{
+		`Properties`: map[string]any{
 			`first`:  1,
 			`second`: true,
 			`third`:  `three`,
 		},
 		`StrSliceTest`:          []string{`one`, `two`, `three`},
-		`InterfaceStrSliceTest`: []interface{}{`one`, `two`, `three`},
+		`InterfaceStrSliceTest`: []any{`one`, `two`, `three`},
 		`StructSliceTest`:       []SubtypeTester{{10, 11}, {12, 13}, {14, 15}},
-		`StructSliceTest2`: []map[string]interface{}{
+		`StructSliceTest2`: []map[string]any{
 			{
 				`A`: 10,
 				`b`: 11,
@@ -215,25 +215,25 @@ func TestStructFromMap(t *testing.T) {
 				`b`: 15,
 			},
 		},
-		`StructSliceTest3`: []interface{}{
-			map[string]interface{}{
+		`StructSliceTest3`: []any{
+			map[string]any{
 				`A`: 10,
 				`b`: 11,
 			},
-			map[string]interface{}{
+			map[string]any{
 				`A`: 12,
 				`b`: 13,
 			},
-			map[string]interface{}{
+			map[string]any{
 				`A`: 14,
 				`b`: 15,
 			},
 		},
 	}
 
-	output := MyStructTester{}
+	var output = MyStructTester{}
 
-	err := StructFromMap(input, &output)
+	var err = StructFromMap(input, &output)
 	assert.NoError(err)
 
 	assert.Equal(`Foo Bar`, output.Name)
@@ -302,56 +302,56 @@ func TestStructFromMap(t *testing.T) {
 }
 
 func TestMapAppend(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	assert.Equal(map[string]interface{}{}, Append())
+	assert.Equal(map[string]any{}, Append())
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
-	}, Append(map[string]interface{}{
+	}, Append(map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
 	}))
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
-	}, Append(nil, map[string]interface{}{
+	}, Append(nil, map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
 	}, nil))
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
 		`d`: 4,
 		`e`: false,
 		`f`: 6.1,
-	}, Append(map[string]interface{}{
+	}, Append(map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
-	}, map[string]interface{}{
+	}, map[string]any{
 		`d`: 4,
 		`e`: false,
 		`f`: 6.1,
 	}))
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Five`,
-	}, Append(map[string]interface{}{
+	}, Append(map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
-	}, map[string]interface{}{
+	}, map[string]any{
 		`c`: `Five`,
 	}))
 }
@@ -359,7 +359,7 @@ func TestMapAppend(t *testing.T) {
 // func TestMapValues(t *testing.T) {
 // 	assert := require.New(t)
 
-// 	assert.Equal([]interface{}{
+// 	assert.Equal([]any{
 // 		1, 3, 5,
 // 	}, MapValues(map[string]int{
 // 		`first`:  1,
@@ -369,17 +369,17 @@ func TestMapAppend(t *testing.T) {
 // }
 
 func TestApply(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`a`: 10,
 		`b`: 20,
 		`c`: 30,
-	}, Apply(map[string]interface{}{
+	}, Apply(map[string]any{
 		`a`: 1,
 		`b`: 2,
 		`c`: 3,
-	}, func(_ []string, value interface{}) (interface{}, bool) {
+	}, func(_ []string, value any) (any, bool) {
 		return value.(int) * 10, true
 	}))
 }

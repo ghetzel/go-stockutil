@@ -9,38 +9,38 @@ import (
 )
 
 func TestDeepSetNothing(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	output := make(map[string]interface{})
-	output = DeepSet(output, []string{}, "yay").(map[string]interface{})
+	var output = make(map[string]any)
+	output = DeepSet(output, []string{}, "yay").(map[string]any)
 
 	assert.Empty(output)
 }
 
 func TestDeepSetReplace(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	output := map[string]interface{}{
-		`this`: map[string]interface{}{
+	var output = map[string]any{
+		`this`: map[string]any{
 			`test`: `1`,
 		},
 	}
 
 	DeepSet(output, []string{"this", "test"}, `2`)
-	assert.Equal(map[string]interface{}{
-		`this`: map[string]interface{}{
+	assert.Equal(map[string]any{
+		`this`: map[string]any{
 			`test`: `2`,
 		},
 	}, output)
 }
 
 func TestDeepSetString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	output := make(map[string]interface{})
-	testValue := "test-string"
+	var output = make(map[string]any)
+	var testValue = "test-string"
 
-	output = DeepSet(output, []string{"str"}, testValue).(map[string]interface{})
+	output = DeepSet(output, []string{"str"}, testValue).(map[string]any)
 
 	value, ok := output["str"]
 	assert.True(ok)
@@ -48,12 +48,12 @@ func TestDeepSetString(t *testing.T) {
 }
 
 func TestDeepSetBool(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	output := make(map[string]interface{})
-	testValue := true
+	var output = make(map[string]any)
+	var testValue = true
 
-	output = DeepSet(output, []string{"bool"}, testValue).(map[string]interface{})
+	output = DeepSet(output, []string{"bool"}, testValue).(map[string]any)
 
 	value, ok := output["bool"]
 	assert.True(ok)
@@ -61,16 +61,16 @@ func TestDeepSetBool(t *testing.T) {
 }
 
 func TestDeepSetArray(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	output := make(map[string]interface{})
-	testValues := []string{"first", "second"}
+	var output = make(map[string]any)
+	var testValues = []string{"first", "second"}
 
 	for i, tv := range testValues {
-		output = DeepSet(output, []string{"top-array", fmt.Sprint(i)}, tv).(map[string]interface{})
+		output = DeepSet(output, []string{"top-array", fmt.Sprint(i)}, tv).(map[string]any)
 	}
 
-	// output = DeepSet(output, []string{"top-array"}, 3.4).(map[string]interface{})
+	// output = DeepSet(output, []string{"top-array"}, 3.4).(map[string]any)
 
 	// fmt.Println(typeutil.Dump(output))
 	topArray, ok := output["top-array"]
@@ -80,10 +80,10 @@ func TestDeepSetArray(t *testing.T) {
 }
 
 func TestDeepSetArrayIndices(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := map[string]interface{}{
-		`things`: map[string]interface{}{
+	var input = map[string]any{
+		`things`: map[string]any{
 			`type1`: []string{
 				`first`,
 				`second`,
@@ -94,16 +94,16 @@ func TestDeepSetArrayIndices(t *testing.T) {
 				`second`,
 				`third`,
 			},
-			`type3`: []interface{}{
-				map[string]interface{}{
+			`type3`: []any{
+				map[string]any{
 					`name`:  `first`,
 					`index`: 0,
 				},
-				map[string]interface{}{
+				map[string]any{
 					`name`:  `first`,
 					`index`: 1,
 				},
-				map[string]interface{}{
+				map[string]any{
 					`name`:  `first`,
 					`index`: 2,
 				},
@@ -111,50 +111,50 @@ func TestDeepSetArrayIndices(t *testing.T) {
 		},
 	}
 
-	output := DeepSet(input, []string{`things`, `type1`, `0`}, `First`)
+	var output = DeepSet(input, []string{`things`, `type1`, `0`}, `First`)
 	DeepSet(output, []string{`things`, `type1`, `2`}, `Third`)
 	DeepSet(output, []string{`things`, `type2`, `1`}, `Second`)
 	DeepSet(output, []string{`things`, `type2`, `2`}, nil)
 	DeepSet(output, []string{`things`, `type2`, `3`}, `third`)
-	DeepSet(output, []string{`things`, `type3`, `0`, `index`}, map[string]interface{}{
+	DeepSet(output, []string{`things`, `type3`, `0`, `index`}, map[string]any{
 		`num`: 0,
 	})
-	DeepSet(output, []string{`things`, `type3`, `1`, `index`}, map[string]interface{}{
+	DeepSet(output, []string{`things`, `type3`, `1`, `index`}, map[string]any{
 		`num`: 1,
 	})
-	DeepSet(output, []string{`things`, `type3`, `2`, `index`}, map[string]interface{}{
+	DeepSet(output, []string{`things`, `type3`, `2`, `index`}, map[string]any{
 		`num`: 2,
 	})
 
-	assert.Equal(map[string]interface{}{
-		`things`: map[string]interface{}{
-			`type1`: []interface{}{
+	assert.Equal(map[string]any{
+		`things`: map[string]any{
+			`type1`: []any{
 				`First`,
 				`second`,
 				`Third`,
 			},
-			`type2`: []interface{}{
+			`type2`: []any{
 				`first`,
 				`Second`,
 				nil,
 				`third`,
 			},
-			`type3`: []interface{}{
-				map[string]interface{}{
+			`type3`: []any{
+				map[string]any{
 					`name`: `first`,
-					`index`: map[string]interface{}{
+					`index`: map[string]any{
 						`num`: 0,
 					},
 				},
-				map[string]interface{}{
+				map[string]any{
 					`name`: `first`,
-					`index`: map[string]interface{}{
+					`index`: map[string]any{
 						`num`: 1,
 					},
 				},
-				map[string]interface{}{
+				map[string]any{
 					`name`: `first`,
-					`index`: map[string]interface{}{
+					`index`: map[string]any{
 						`num`: 2,
 					},
 				},
@@ -164,21 +164,21 @@ func TestDeepSetArrayIndices(t *testing.T) {
 }
 
 func TestDeepSetNestedMapCreation(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	output := make(map[string]interface{})
-	output = DeepSet(output, []string{"deeply", "nested", "map"}, true).(map[string]interface{})
-	output = DeepSet(output, []string{"deeply", "nested", "count"}, 2).(map[string]interface{})
+	var output = make(map[string]any)
+	output = DeepSet(output, []string{"deeply", "nested", "map"}, true).(map[string]any)
+	output = DeepSet(output, []string{"deeply", "nested", "count"}, 2).(map[string]any)
 
 	deeply, ok := output["deeply"]
 	assert.True(ok)
 
-	deeplyMap := deeply.(map[string]interface{})
+	var deeplyMap = deeply.(map[string]any)
 
 	nested, ok := deeplyMap["nested"]
 	assert.True(ok)
 
-	nestedMap := nested.(map[string]interface{})
+	var nestedMap = nested.(map[string]any)
 
 	_, ok = nestedMap["map"]
 	assert.True(ok)
@@ -188,7 +188,7 @@ func TestDeepSetNestedMapCreation(t *testing.T) {
 }
 
 func TestDeepSetStructField(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 	type testStructDeepSet struct {
 		String string
 		Int    int
@@ -210,9 +210,9 @@ func TestDeepSetStructField(t *testing.T) {
 }
 
 func TestDiffuseMap(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	output := make(map[string]interface{})
+	var output = make(map[string]any)
 
 	output["name"] = "test.thing.name"
 	output["enabled"] = true
@@ -248,7 +248,7 @@ func TestDiffuseMap(t *testing.T) {
 
 	assert.Len(v, 4)
 
-	vArray := v.([]interface{})
+	var vArray = v.([]any)
 
 	assert.Equal("base", vArray[0])
 	assert.Equal("other", vArray[1])
@@ -257,8 +257,8 @@ func TestDiffuseMap(t *testing.T) {
 }
 
 func TestDelete(t *testing.T) {
-	assert := require.New(t)
-	in := map[string]interface{}{
+	var assert = require.New(t)
+	var in = map[string]any{
 		`a`: 1,
 		`b`: 2,
 		`c`: 3,
@@ -266,7 +266,7 @@ func TestDelete(t *testing.T) {
 
 	assert.NoError(Delete(in, `b`))
 
-	assert.EqualValues(map[string]interface{}{
+	assert.EqualValues(map[string]any{
 		`a`: 1,
 		`c`: 3,
 	}, in)

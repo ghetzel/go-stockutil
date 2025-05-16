@@ -3,7 +3,6 @@ package pathutil
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 	"os/user"
 	"strings"
@@ -51,7 +50,7 @@ func MatchPath(pattern string, path string) bool {
 // ExpandUser replaces the tilde (~) in a path into the current user's home directory.
 func ExpandUser(path string) (string, error) {
 	if u, err := user.Current(); err == nil {
-		fullTilde := fmt.Sprintf("~%s", u.Name)
+		var fullTilde = fmt.Sprintf("~%s", u.Name)
 
 		if strings.HasPrefix(path, `~/`) || path == `~` {
 			return strings.Replace(path, `~`, u.HomeDir, 1), nil
@@ -90,7 +89,7 @@ func IsNonemptyFile(path string) bool {
 // Returns true if the given path is a directory with items in it.
 func IsNonemptyDir(path string) bool {
 	if DirExists(path) {
-		if entries, err := ioutil.ReadDir(path); err == nil && len(entries) > 0 {
+		if entries, err := os.ReadDir(path); err == nil && len(entries) > 0 {
 			return true
 		}
 	}

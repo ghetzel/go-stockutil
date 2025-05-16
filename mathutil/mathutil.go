@@ -39,7 +39,7 @@ func RoundPlaces(x float64, places int) float64 {
 	if places <= 0 {
 		return Round(x)
 	} else {
-		multi := math.Pow(10, Clamp(float64(places), 0, 16))
+		var multi = math.Pow(10, Clamp(float64(places), 0, 16))
 		return (Round(x*multi) / multi)
 	}
 }

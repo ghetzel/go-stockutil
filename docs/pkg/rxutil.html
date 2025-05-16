@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -173,19 +173,19 @@
 	
     <li>
 		
-		<a href="#IsMatchString">func IsMatchString(pattern interface{}, source string) bool</a>
+		<a href="#IsMatchString">func IsMatchString(pattern any, source string) bool</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Split">func Split(pattern interface{}, s string) []string</a>
+		<a href="#Split">func Split(pattern any, s string) []string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#SplitN">func SplitN(pattern interface{}, s string, n int) []string</a>
+		<a href="#SplitN">func SplitN(pattern any, s string, n int) []string</a>
 		</strong>
 	</li>
 	
@@ -210,7 +210,7 @@
 			<li>
 				<strong>
 				<a href="#MatchResult.Match">
-					func Match(pattern interface{}, source string) *MatchResult
+					func Match(pattern any, source string) *MatchResult
 				</a>
 				</strong>
 			</li>
@@ -253,7 +253,7 @@
 				<a href="#MatchResult.Group">
 					func
 					(self *MatchResult)
-					Group(nameOrIndex interface{}) string
+					Group(nameOrIndex any) string
 				</a>
 				</strong>
 			</li>
@@ -279,7 +279,7 @@
 				<a href="#MatchResult.ReplaceGroup">
 					func
 					(self *MatchResult)
-					ReplaceGroup(nameOrIndex interface{}, repl string) string
+					ReplaceGroup(nameOrIndex any, repl string) string
 				</a>
 				</strong>
 			</li>
@@ -319,7 +319,7 @@
 			<a href="functions.go">functions.go</a>
 			
 		</td>
-		<td class="text-right">527B</td>
+		<td class="text-right">511B</td>
 		<td class="text-right">14</td>
 		<td class="text-right">2</td>
 		<td class="text-right"></td>
@@ -424,7 +424,7 @@ var <span id="Whitespace">Whitespace         </span> = regexp.MustCompile(`\s&#4
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func IsMatchString(pattern interface{}, source string) bool</pre>
+	<pre>func IsMatchString(pattern any, source string) bool</pre>
 </div>
 
 
@@ -435,7 +435,7 @@ var <span id="Whitespace">Whitespace         </span> = regexp.MustCompile(`\s&#4
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Split(pattern interface{}, s string) []string</pre>
+	<pre>func Split(pattern any, s string) []string</pre>
 </div>
 
 
@@ -449,7 +449,7 @@ var <span id="Whitespace">Whitespace         </span> = regexp.MustCompile(`\s&#4
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func SplitN(pattern interface{}, s string, n int) []string</pre>
+	<pre>func SplitN(pattern any, s string, n int) []string</pre>
 </div>
 
 
@@ -493,7 +493,7 @@ var <span id="Whitespace">Whitespace         </span> = regexp.MustCompile(`\s&#4
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Match(pattern interface{}, source string) *MatchResult</pre>
+	<pre>func Match(pattern any, source string) *MatchResult</pre>
 </div>
 
 <p><p>Returns a MatchResult object representing the leftmost match of pattern against<br>source, or nil if no matches were found.  Pattern can be a string or a<br>previously-compiled *regexp.Regexp.</p>
@@ -554,7 +554,7 @@ var <span id="Whitespace">Whitespace         </span> = regexp.MustCompile(`\s&#4
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *MatchResult) Group(nameOrIndex interface{}) string</pre>
+	<pre>func (self *MatchResult) Group(nameOrIndex any) string</pre>
 </div>
 
 <p><p>Return the value of the numbered capture group (if given an int), or the<br>named capture group (if given a string).  Returns an empty string if the<br>given group name or index does not exist.</p>
@@ -592,7 +592,7 @@ var <span id="Whitespace">Whitespace         </span> = regexp.MustCompile(`\s&#4
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *MatchResult) ReplaceGroup(nameOrIndex interface{}, repl string) string</pre>
+	<pre>func (self *MatchResult) ReplaceGroup(nameOrIndex any, repl string) string</pre>
 </div>
 
 <p><p>Return a copy of source string with the given numbered or named group replaced<br>with repl.</p>

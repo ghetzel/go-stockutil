@@ -10,7 +10,7 @@ import (
 )
 
 func TestToBytes(t *testing.T) {
-	expected := map[string]map[string]float64{
+	var expected = map[string]map[string]float64{
 		//  numeric passthrough (no suffix)
 		``: map[string]float64{
 			`-1`:                   -1,
@@ -115,7 +115,7 @@ func TestToBytes(t *testing.T) {
 		},
 	}
 
-	testExpectations := func(expectedValues map[string]float64, appendToInput string) {
+	var testExpectations = func(expectedValues map[string]float64, appendToInput string) {
 		for in, out := range expectedValues {
 			in = in + appendToInput
 
@@ -155,9 +155,9 @@ func TestToBytes(t *testing.T) {
 }
 
 func TestCamelize(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	tests := map[string]string{
+	var tests = map[string]string{
 		`Test`:        `Test`,
 		`test`:        `Test`,
 		`test_value`:  `TestValue`,
@@ -175,9 +175,9 @@ func TestCamelize(t *testing.T) {
 }
 
 func TestUnderscore(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	tests := map[string]string{
+	var tests = map[string]string{
 		`Test`:       `test`,
 		`test`:       `test`,
 		`test_value`: `test_value`,
@@ -194,9 +194,9 @@ func TestUnderscore(t *testing.T) {
 }
 
 func TestHyphenate(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	tests := map[string]string{
+	var tests = map[string]string{
 		`Test`:       `test`,
 		`test`:       `test`,
 		`test_value`: `test-value`,
@@ -213,9 +213,9 @@ func TestHyphenate(t *testing.T) {
 }
 
 func TestSnakeify(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	tests := map[string]string{
+	var tests = map[string]string{
 		`Test`:       `test`,
 		`test`:       `test`,
 		`test_value`: `test:value`,
@@ -232,7 +232,7 @@ func TestSnakeify(t *testing.T) {
 }
 
 func TestIsMixedCase(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsMixedCase(``))
 	assert.False(IsMixedCase(`0123456789`))
@@ -250,7 +250,7 @@ func TestIsMixedCase(t *testing.T) {
 }
 
 func TestIsHexadecimal(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for i := 0; i < 16; i++ {
 		assert.True(IsHexadecimal(fmt.Sprintf("%x", i), -1))
@@ -277,7 +277,7 @@ func TestIsHexadecimal(t *testing.T) {
 }
 
 func TestThousandify(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(``, Thousandify(``, ``, ``))
 	assert.Equal(`0`, Thousandify(`0`, ``, ``))
@@ -303,7 +303,7 @@ func TestThousandify(t *testing.T) {
 }
 
 func TestLongestCommonPrefix(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(``, LongestCommonPrefix(nil))
 	assert.Equal(`interstellar`, LongestCommonPrefix([]string{
@@ -332,7 +332,7 @@ func TestLongestCommonPrefix(t *testing.T) {
 }
 
 func TestRelaxedEqual(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	eq, err := RelaxedEqual(nil, nil)
 	assert.NoError(err)
@@ -400,7 +400,7 @@ func TestRelaxedEqual(t *testing.T) {
 }
 
 func TestSplitWords(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal([]string{
 		`Goldenrod-adorned`,
@@ -417,7 +417,7 @@ func TestSplitWords(t *testing.T) {
 }
 
 func TestElide(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(`hello there`, Elide(`hello there`, 100))
 	assert.Equal(`hello there`, ElideRight(`hello there`, 100))
@@ -431,7 +431,7 @@ func TestElide(t *testing.T) {
 }
 
 func TestElideWords(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(``, ElideWords(``, 0))
 	assert.Equal(`.`, ElideWords(`.`, 1))
@@ -447,7 +447,7 @@ func TestElideWords(t *testing.T) {
 }
 
 func TestSplitPairFamily(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 	var first, rest string
 
 	// ---------------------------------------------------------------------------------------------
@@ -549,7 +549,7 @@ func TestSplitPairFamily(t *testing.T) {
 }
 
 func TestSqueezes(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Empty(Squeeze(``))
 	assert.Equal(` `, Squeeze(`     `))
@@ -560,7 +560,7 @@ func TestSqueezes(t *testing.T) {
 }
 
 func TestExpandEnv(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.NoError(os.Setenv(`GOSTOCKUTIL_TEST_INT`, `42`))
 	assert.NoError(os.Setenv(`GOSTOCKUTIL_TEST_FLOAT`, `3.141597625`))
@@ -593,21 +593,21 @@ func TestExpandEnv(t *testing.T) {
 }
 
 func TestPrefixLines(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal("...1\n...2\n...3", PrefixLines("1\n2\n3", `...`))
 	assert.Equal("...1\n...2\n...3\n...", PrefixLines("1\n2\n3\n", `...`))
 }
 
 func TestSuffixLines(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal("1<<<\n2<<<\n3<<<", SuffixLines("1\n2\n3", `<<<`))
 	assert.Equal("1<<<\n2<<<\n3<<<\n<<<", SuffixLines("1\n2\n3\n", `<<<`))
 }
 
 func TestSplitTrimSpace(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal([]string{}, SplitTrimSpace(``, ``))
 	assert.Equal([]string{`a`, `b`, `c`}, SplitTrimSpace(`a:b:c`, `:`))
@@ -616,7 +616,7 @@ func TestSplitTrimSpace(t *testing.T) {
 }
 
 func TestSplitTrim(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal([]string{}, SplitTrim(``, ``, ``))
 	assert.Equal([]string{`a`, `b`, `c`}, SplitTrim(`a:b:c`, `:`, ``))

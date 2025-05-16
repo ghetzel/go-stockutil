@@ -12,10 +12,10 @@ import (
 
 type TestFileSystem map[string]http.File
 
-func (self TestFileSystem) Open(name string) (http.File, error) {
+func (testfs TestFileSystem) Open(name string) (http.File, error) {
 	fmt.Printf("Opening %q\n", name)
 
-	if file, ok := self[name]; ok {
+	if file, ok := testfs[name]; ok {
 		return file, nil
 	}
 
@@ -23,10 +23,10 @@ func (self TestFileSystem) Open(name string) (http.File, error) {
 }
 
 func TestRewriteFileSystem(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	// ------------------------------------------------------------------------
-	rwfs := RewriteFileSystem{
+	var rwfs = RewriteFileSystem{
 		FileSystem: TestFileSystem{
 			`/test`: nil,
 		},

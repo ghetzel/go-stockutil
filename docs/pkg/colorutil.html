@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -181,7 +181,7 @@
 	
     <li>
 		<strong>
-		<a href="#Equals">func Equals(first interface{}, second interface{}) bool</a>
+		<a href="#Equals">func Equals(first any, second any) bool</a>
 		</strong>
 	</li>
 	
@@ -248,7 +248,7 @@
 			<li>
 				<strong>
 				<a href="#Color.MustParse">
-					func MustParse(value interface{}) Color
+					func MustParse(value any) Color
 				</a>
 				</strong>
 			</li>
@@ -259,7 +259,7 @@
 			<li>
 				<strong>
 				<a href="#Color.Parse">
-					func Parse(value interface{}) (Color, error)
+					func Parse(value any) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -270,7 +270,7 @@
 			<li>
 				<strong>
 				<a href="#Color.Darken">
-					func Darken(in interface{}, percent int) (Color, error)
+					func Darken(in any, percent int) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -281,7 +281,7 @@
 			<li>
 				<strong>
 				<a href="#Color.Lighten">
-					func Lighten(in interface{}, percent int) (Color, error)
+					func Lighten(in any, percent int) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -292,7 +292,7 @@
 			<li>
 				<strong>
 				<a href="#Color.Saturate">
-					func Saturate(in interface{}, percent int) (Color, error)
+					func Saturate(in any, percent int) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -303,7 +303,7 @@
 			<li>
 				<strong>
 				<a href="#Color.Desaturate">
-					func Desaturate(in interface{}, percent int) (Color, error)
+					func Desaturate(in any, percent int) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -314,7 +314,7 @@
 			<li>
 				<strong>
 				<a href="#Color.AdjustHue">
-					func AdjustHue(in interface{}, degrees float64) (Color, error)
+					func AdjustHue(in any, degrees float64) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -325,7 +325,7 @@
 			<li>
 				<strong>
 				<a href="#Color.MixN">
-					func MixN(first interface{}, second interface{}, weight float64) (Color, error)
+					func MixN(first any, second any, weight float64) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -336,7 +336,7 @@
 			<li>
 				<strong>
 				<a href="#Color.Mix">
-					func Mix(first interface{}, second interface{}) (Color, error)
+					func Mix(first any, second any) (Color, error)
 				</a>
 				</strong>
 			</li>
@@ -351,7 +351,7 @@
 				<a href="#Color.Equals">
 					func
 					(self Color)
-					Equals(other interface{}) bool
+					Equals(other any) bool
 				</a>
 				</strong>
 			</li>
@@ -665,7 +665,7 @@ var <span id="ColorNames">ColorNames</span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Equals(first interface{}, second interface{}) bool</pre>
+	<pre>func Equals(first any, second any) bool</pre>
 </div>
 
 
@@ -783,7 +783,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustParse(value interface{}) Color</pre>
+	<pre>func MustParse(value any) Color</pre>
 </div>
 
 <p><p>Parse the given value into a Color or panic.</p>
@@ -799,7 +799,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Parse(value interface{}) (Color, error)</pre>
+	<pre>func Parse(value any) (Color, error)</pre>
 </div>
 
 <p><p>Parse the given value into a Color or return an error.</p>
@@ -815,7 +815,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Darken(in interface{}, percent int) (Color, error)</pre>
+	<pre>func Darken(in any, percent int) (Color, error)</pre>
 </div>
 
 <p><p>Darken the given color by a certain percent.  Consistent with the results of the<br>Sass darken() function.</p>
@@ -831,7 +831,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Lighten(in interface{}, percent int) (Color, error)</pre>
+	<pre>func Lighten(in any, percent int) (Color, error)</pre>
 </div>
 
 <p><p>Lighten the given color by a certain percent.  Consistent with the results of the<br>Sass lighten() function.</p>
@@ -847,7 +847,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Saturate(in interface{}, percent int) (Color, error)</pre>
+	<pre>func Saturate(in any, percent int) (Color, error)</pre>
 </div>
 
 <p><p>Saturate the given color by a certain percent.  Consistent with the results of the<br>Sass saturate() function.</p>
@@ -863,7 +863,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Desaturate(in interface{}, percent int) (Color, error)</pre>
+	<pre>func Desaturate(in any, percent int) (Color, error)</pre>
 </div>
 
 <p><p>Desaturate the given color by a certain percent.  Consistent with the results of the<br>Sass desaturate() function.</p>
@@ -879,7 +879,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func AdjustHue(in interface{}, degrees float64) (Color, error)</pre>
+	<pre>func AdjustHue(in any, degrees float64) (Color, error)</pre>
 </div>
 
 <p><p>Adjust the hue of the given color by the specified number of degrees.</p>
@@ -895,7 +895,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MixN(first interface{}, second interface{}, weight float64) (Color, error)</pre>
+	<pre>func MixN(first any, second any, weight float64) (Color, error)</pre>
 </div>
 
 <p><p>Mix two colors, producing a third.  The weight value specifies how much of the first color<br>should be included.  Consistent with the results of the Sass mix() function.</p>
@@ -911,7 +911,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Mix(first interface{}, second interface{}) (Color, error)</pre>
+	<pre>func Mix(first any, second any) (Color, error)</pre>
 </div>
 
 <p><p>Mix two colors in equal parts, producing a third.</p>
@@ -932,7 +932,7 @@ var <span id="ColorNames">ColorNames</span> =
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self Color) Equals(other interface{}) bool</pre>
+	<pre>func (self Color) Equals(other any) bool</pre>
 </div>
 
 <p><p>Return whether the given color is equal to this one in the 24-bit RGB (RGB255) color space</p>

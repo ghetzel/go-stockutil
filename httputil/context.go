@@ -8,9 +8,9 @@ import (
 )
 
 // attach an arbitrary value to the context of a given request.
-func RequestSetValue(req *http.Request, key string, value interface{}) {
-	parent := req.Context()
-	withValue := context.WithValue(parent, key, value)
+func RequestSetValue(req *http.Request, key string, value any) {
+	var parent = req.Context()
+	var withValue = context.WithValue(parent, key, value)
 	*req = *req.WithContext(withValue)
 }
 

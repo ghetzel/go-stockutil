@@ -2,7 +2,7 @@ package executil
 
 import (
 	"bytes"
-	"io/ioutil"
+	"io"
 	"testing"
 
 	"github.com/ghetzel/go-stockutil/stringutil"
@@ -99,7 +99,7 @@ func TestShellOut(t *testing.T) {
 
 func TestExecReadCloser(t *testing.T) {
 	var cmd = Command(`echo`, `hello`)
-	var data, err = ioutil.ReadAll(cmd)
+	var data, err = io.ReadAll(cmd)
 
 	assert.NoError(t, err)
 	assert.Equal(t, "hello\n", string(data))
@@ -127,7 +127,7 @@ func TestExecReadWriteCloser(t *testing.T) {
 
 	assert.NoError(t, cmd.CloseInput())
 
-	var data, rerr = ioutil.ReadAll(cmd)
+	var data, rerr = io.ReadAll(cmd)
 	assert.NoError(t, rerr)
 	assert.Equal(t, bytes.Repeat(payload, c), data)
 	// assert.NoError(t, cmd.Close())

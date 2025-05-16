@@ -11,7 +11,7 @@ import (
 func assertHslToRgb(t *testing.T, h, s, l, r, g, b float64) {
 	var r1, g1, b1 float64
 
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	r1, g1, b1 = hsl2rgb(h, s, l)
 
@@ -23,7 +23,7 @@ func assertHslToRgb(t *testing.T, h, s, l, r, g, b float64) {
 func assertHsvToRgb(t *testing.T, h, s, v, r, g, b float64) {
 	var r1, g1, b1 float64
 
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	r1, g1, b1 = hsv2rgb(h, s, v)
 
@@ -35,7 +35,7 @@ func assertHsvToRgb(t *testing.T, h, s, v, r, g, b float64) {
 func assertRgbToHsl(t *testing.T, r, g, b, h, s, l float64) {
 	var h1, s1, l1 float64
 
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	h1, s1, l1 = rgb2lhs(HSL, r, g, b)
 
@@ -45,7 +45,7 @@ func assertRgbToHsl(t *testing.T, r, g, b, h, s, l float64) {
 }
 
 func assertColor(t *testing.T, in string, rIn uint8, gIn uint8, bIn uint8, aIn uint8) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	var color Color
 	var err error
@@ -61,8 +61,8 @@ func assertColor(t *testing.T, in string, rIn uint8, gIn uint8, bIn uint8, aIn u
 	assert.Equal(aIn, a, fmt.Sprintf("%v: alpha", in))
 }
 
-func adjustHue(t *testing.T, in interface{}, adjustAmount float64, wantedColor string) {
-	assert := assert.New(t)
+func adjustHue(t *testing.T, in any, adjustAmount float64, wantedColor string) {
+	var assert = assert.New(t)
 
 	var color Color
 	var err error
@@ -179,7 +179,7 @@ func TestHsvToRgbFloat(t *testing.T) {
 }
 
 func TestRgbToHslSymmetry(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 	var h, s, l float64
 	var r, g, b uint8
 
@@ -266,7 +266,7 @@ func TestParse(t *testing.T) {
 }
 
 func TestEquals(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.True(Equals(`#2bF1c9`, `#2BF1C9`))
 	assert.True(Equals(`#FFFFFF`, `#FFFFFF`))
@@ -276,7 +276,7 @@ func TestEquals(t *testing.T) {
 }
 
 func TestLightenDarken(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	var color Color
 	var err error
@@ -298,7 +298,7 @@ func TestLightenDarken(t *testing.T) {
 }
 
 func TestSaturateDesaturate(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	var color Color
 	var err error
@@ -320,7 +320,7 @@ func TestSaturateDesaturate(t *testing.T) {
 }
 
 func TestMix(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	var mixed Color
 	var err error
@@ -331,7 +331,7 @@ func TestMix(t *testing.T) {
 }
 
 func TestColorStringers(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(`#FF00CC`, MustParse(`#FF00CC`).String())
 	assert.Equal(`#FF00CC`, MustParse(`rgb(255,0,204)`).String())

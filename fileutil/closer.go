@@ -24,15 +24,15 @@ func NewPostReadCloser(upstream io.ReadCloser, closer CloserFunc) *PostReadClose
 	}
 }
 
-func (self *PostReadCloser) Read(b []byte) (int, error) {
-	return self.upstream.Read(b)
+func (postcloser *PostReadCloser) Read(b []byte) (int, error) {
+	return postcloser.upstream.Read(b)
 }
 
-func (self *PostReadCloser) Close() error {
-	if fn := self.closer; fn != nil {
-		return fn(self.upstream)
+func (postcloser *PostReadCloser) Close() error {
+	if fn := postcloser.closer; fn != nil {
+		return fn(postcloser.upstream)
 	} else {
-		return self.upstream.Close()
+		return postcloser.upstream.Close()
 	}
 }
 
@@ -46,8 +46,8 @@ func NewMultiCloser(closers ...io.Closer) *MultiCloser {
 	}
 }
 
-func (self *MultiCloser) Close() (merr error) {
-	for _, closer := range self.closers {
+func (multicloser *MultiCloser) Close() (merr error) {
+	for _, closer := range multicloser.closers {
 		if closer != nil {
 			merr = log.AppendError(merr, closer.Close())
 		}

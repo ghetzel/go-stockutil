@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"hash"
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
@@ -75,7 +74,7 @@ func IsTerminal() bool {
 
 // Takes the given string filename, []byte, io.Reader, or io.ReadCloser and returns
 // the bytes therein.
-func ReadAll(file interface{}) ([]byte, error) {
+func ReadAll(file any) ([]byte, error) {
 	var rc io.ReadCloser
 
 	if b, ok := file.([]byte); ok {
@@ -83,7 +82,7 @@ func ReadAll(file interface{}) ([]byte, error) {
 	} else if r, ok := file.(io.ReadCloser); ok {
 		rc = r
 	} else if r, ok := file.(io.Reader); ok {
-		rc = ioutil.NopCloser(r)
+		rc = io.NopCloser(r)
 	} else if filename, ok := file.(string); ok {
 		if f, err := os.Open(filename); err == nil {
 			rc = f
@@ -95,11 +94,11 @@ func ReadAll(file interface{}) ([]byte, error) {
 	}
 
 	defer rc.Close()
-	return ioutil.ReadAll(rc)
+	return io.ReadAll(rc)
 }
 
 // A string version of ReadAll.
-func ReadAllString(file interface{}) (string, error) {
+func ReadAllString(file any) (string, error) {
 	if data, err := ReadAll(file); err == nil {
 		return string(data), nil
 	} else {
@@ -108,7 +107,7 @@ func ReadAllString(file interface{}) (string, error) {
 }
 
 // Attempt to call ReadAllString, but will return an empty string if there is an error.  Does not panic.
-func Cat(file interface{}) string {
+func Cat(file any) string {
 	if data, err := ReadAllString(file); err == nil {
 		return data
 	} else {
@@ -117,7 +116,7 @@ func Cat(file interface{}) string {
 }
 
 // Read all lines of text from the given file and return them as a slice.
-func ReadAllLines(file interface{}) ([]string, error) {
+func ReadAllLines(file any) ([]string, error) {
 	if data, err := ReadAllString(file); err == nil {
 		return strings.Split(data, "\n"), nil
 	} else {
@@ -126,7 +125,7 @@ func ReadAllLines(file interface{}) ([]string, error) {
 }
 
 // A panicky version of ReadAllLines.
-func MustReadAllLines(file interface{}) []string {
+func MustReadAllLines(file any) []string {
 	if lines, err := ReadAllLines(file); err == nil {
 		return lines
 	} else {
@@ -135,7 +134,7 @@ func MustReadAllLines(file interface{}) []string {
 }
 
 // Attempts to call ReadAllLines, but will return an empty slice if there is an error.  Does not panic.
-func ShouldReadAllLines(file interface{}) []string {
+func ShouldReadAllLines(file any) []string {
 	if lines, err := ReadAllLines(file); err == nil {
 		return lines
 	} else {
@@ -144,7 +143,7 @@ func ShouldReadAllLines(file interface{}) []string {
 }
 
 // Attempt to return the nth line (starting from 1) in the given file or reader.
-func GetNthLine(file interface{}, number int) (string, error) {
+func GetNthLine(file any, number int) (string, error) {
 	if lines, err := ReadAllLines(file); err == nil {
 		if number < 1 {
 			return ``, fmt.Errorf("line number must be >= 1")
@@ -161,7 +160,7 @@ func GetNthLine(file interface{}, number int) (string, error) {
 }
 
 // A panicky version of GetNthLine.
-func MustGetNthLine(file interface{}, number int) string {
+func MustGetNthLine(file any, number int) string {
 	if line, err := GetNthLine(file, number); err == nil {
 		return line
 	} else {
@@ -170,7 +169,7 @@ func MustGetNthLine(file interface{}, number int) string {
 }
 
 // Attempts to call GetNthLine, but will return an empty string if there is an error.  Does not panic.
-func ShouldGetNthLine(file interface{}, number int) string {
+func ShouldGetNthLine(file any, number int) string {
 	if line, err := GetNthLine(file, number); err == nil {
 		return line
 	} else {
@@ -178,7 +177,7 @@ func ShouldGetNthLine(file interface{}, number int) string {
 	}
 }
 
-func ReadFirstLine(file interface{}) (string, error) {
+func ReadFirstLine(file any) (string, error) {
 	if lines, err := ReadAllLines(file); err == nil {
 		return lines[0], nil
 	} else {
@@ -186,7 +185,7 @@ func ReadFirstLine(file interface{}) (string, error) {
 	}
 }
 
-func MustReadAll(file interface{}) []byte {
+func MustReadAll(file any) []byte {
 	if data, err := ReadAll(file); err == nil {
 		return data
 	} else {
@@ -194,7 +193,7 @@ func MustReadAll(file interface{}) []byte {
 	}
 }
 
-func MustReadAllString(file interface{}) string {
+func MustReadAllString(file any) string {
 	if data, err := ReadAllString(file); err == nil {
 		return data
 	} else {
@@ -202,7 +201,7 @@ func MustReadAllString(file interface{}) string {
 	}
 }
 
-func ChecksumFile(filename string, fn interface{}) ([]byte, error) {
+func ChecksumFile(filename string, fn any) ([]byte, error) {
 	var hash crypto.Hash
 
 	if h, ok := fn.(crypto.Hash); ok {
@@ -248,18 +247,18 @@ func ChecksumFile(filename string, fn interface{}) ([]byte, error) {
 		case `blake2b_512`:
 			hash = crypto.BLAKE2b_512
 		default:
-			return nil, fmt.Errorf("Unknown hash function %q", fn)
+			return nil, fmt.Errorf("unknown hash function %q", fn)
 		}
 	}
 
 	if hash.Available() {
-		hasher := hash.New()
+		var hasher = hash.New()
 
 		if file, err := os.Open(filename); err == nil {
 			defer file.Close()
 
 			if _, err := io.Copy(hasher, file); err == nil {
-				sum := hasher.Sum(nil)
+				var sum = hasher.Sum(nil)
 				return sum, nil
 			} else {
 				return nil, err
@@ -268,7 +267,7 @@ func ChecksumFile(filename string, fn interface{}) ([]byte, error) {
 			return nil, err
 		}
 	} else {
-		return nil, fmt.Errorf("Hash function %v is not available", hash)
+		return nil, fmt.Errorf("hash function %v is not available", hash)
 	}
 }
 
@@ -276,7 +275,7 @@ func ChecksumFile(filename string, fn interface{}) ([]byte, error) {
 // Filename paths containing tilde (~) will automatically expand to the current
 // user's home directory, and all intermediate parent directories will be automatically
 // created.  Will return the number of bytes written, or an error.
-func WriteFile(input interface{}, filename string) (int64, error) {
+func WriteFile(input any, filename string) (int64, error) {
 	var reader io.Reader
 
 	if r, ok := input.(io.Reader); ok {
@@ -286,11 +285,11 @@ func WriteFile(input interface{}, filename string) (int64, error) {
 	} else if s, ok := input.(string); ok {
 		reader = bytes.NewBufferString(s)
 	} else {
-		return 0, fmt.Errorf("Cannot use %T as input", input)
+		return 0, fmt.Errorf("cannot use %T as input", input)
 	}
 
 	if expanded, err := ExpandUser(filename); err == nil {
-		parent := filepath.Dir(expanded)
+		var parent = filepath.Dir(expanded)
 
 		// create parent directory automatically
 		if !DirExists(parent) {
@@ -312,7 +311,7 @@ func WriteFile(input interface{}, filename string) (int64, error) {
 }
 
 // Same as WriteFile, but will panic if the file cannot be written.
-func MustWriteFile(input interface{}, filename string) int64 {
+func MustWriteFile(input any, filename string) int64 {
 	if n, err := WriteFile(input, filename); err == nil {
 		return n
 	} else {
@@ -322,8 +321,8 @@ func MustWriteFile(input interface{}, filename string) int64 {
 
 // Same as WriteFile, but writes the given input to a temporary file, returning
 // the filename.
-func WriteTempFile(input interface{}, pattern string) (string, error) {
-	if tmp, err := ioutil.TempFile(``, pattern); err == nil {
+func WriteTempFile(input any, pattern string) (string, error) {
+	if tmp, err := os.CreateTemp(``, pattern); err == nil {
 		defer tmp.Close()
 
 		if _, err := WriteFile(input, tmp.Name()); err == nil {
@@ -340,7 +339,7 @@ func WriteTempFile(input interface{}, pattern string) (string, error) {
 
 // Same as MustWriteFile, but writes the given input to a temporary file, returning
 // the filename.  The function will panic if the file cannot be written.
-func MustWriteTempFile(input interface{}, prefix string) string {
+func MustWriteTempFile(input any, prefix string) string {
 	if n, err := WriteTempFile(input, prefix); err == nil {
 		return n
 	} else {
@@ -360,7 +359,7 @@ func MustWriteTempFile(input interface{}, prefix string) string {
 //
 // If either source or destination implements io.Closer, thee files will be closed before this
 // function returns.
-func CopyFile(source interface{}, destination interface{}) error {
+func CopyFile(source any, destination any) error {
 	var sreader io.Reader
 	var dwriter io.Writer
 
@@ -374,7 +373,7 @@ func CopyFile(source interface{}, destination interface{}) error {
 	} else if sr, ok := source.(io.Reader); ok {
 		sreader = sr
 	} else {
-		return fmt.Errorf("Unsupported source %T", source)
+		return fmt.Errorf("unsupported source %T", source)
 	}
 
 	// open the destination for writing
@@ -387,7 +386,7 @@ func CopyFile(source interface{}, destination interface{}) error {
 	} else if dw, ok := destination.(io.Writer); ok {
 		dwriter = dw
 	} else {
-		return fmt.Errorf("Unsupported source %T", source)
+		return fmt.Errorf("unsupported source %T", source)
 	}
 
 	// defer closing of both source and destination if they support it
@@ -454,11 +453,11 @@ func CompareReaders(a io.Reader, b io.Reader, hasher ...hash.Hash) int {
 	}
 
 	if _, err := io.Copy(h, a); err == nil {
-		s1 := h.Sum(nil)
+		var s1 = h.Sum(nil)
 		h.Reset()
 
 		if _, err := io.Copy(h, b); err == nil {
-			s2 := h.Sum(nil)
+			var s2 = h.Sum(nil)
 
 			return bytes.Compare(s1, s2)
 		}
@@ -471,7 +470,7 @@ func CompareReaders(a io.Reader, b io.Reader, hasher ...hash.Hash) int {
 // path.  If os.FileInfo is given for either file, it will be passed to os.SameFile directly.  If either file is an
 // io.Reader, the contents of both files will be read and hashed using CompareHasher.  If the hashes are identical, the
 // files are considered the same.  Any error encountered and this function will return false.
-func SameFile(first interface{}, second interface{}) bool {
+func SameFile(first any, second any) bool {
 	if first == second {
 		return true
 	}
@@ -522,4 +521,15 @@ func SameFile(first interface{}, second interface{}) bool {
 	}
 
 	return (CompareReaders(r1, r2, CompareHasher) == 0)
+}
+
+func IsHiddenFile(filename string) bool {
+	filename = filepath.Base(filename)
+
+	switch filename {
+	case ``, `.`, `..`:
+		return false
+	default:
+		return strings.HasPrefix(filename, `.`)
+	}
 }

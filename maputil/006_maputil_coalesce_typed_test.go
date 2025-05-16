@@ -7,12 +7,12 @@ import (
 )
 
 func TestCoalesceTypedOneTierScalar(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var errs []error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["id"] = "test"
 	input["enabled"] = true
@@ -30,15 +30,15 @@ func TestCoalesceTypedOneTierScalar(t *testing.T) {
 }
 
 func TestCoalesceTypedMultiTierScalar(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var errs []error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["id"] = "top"
-	input["nested"] = map[string]interface{}{
+	input["nested"] = map[string]any{
 		`data`:    true,
 		`value`:   4.9,
 		`awesome`: "very yes",
@@ -59,10 +59,10 @@ func TestCoalesceTypedMultiTierScalar(t *testing.T) {
 func TestCoalesceTypedTopLevelArray(t *testing.T) {
 	var errs []error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
-	numbers := make([]interface{}, 0)
+	var numbers = make([]any, 0)
 	numbers = append(numbers, 1)
 	numbers = append(numbers, 2)
 	numbers = append(numbers, 3)
@@ -91,21 +91,21 @@ func TestCoalesceTypedTopLevelArray(t *testing.T) {
 func TestCoalesceTypedArrayWithNestedMap(t *testing.T) {
 	var errs []error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
-	numbers := make([]interface{}, 0)
-	numbers = append(numbers, map[string]interface{}{
+	var numbers = make([]any, 0)
+	numbers = append(numbers, map[string]any{
 		"name":  "test",
 		"count": 2,
 	})
 
-	numbers = append(numbers, map[string]interface{}{
+	numbers = append(numbers, map[string]any{
 		"name":  "test2",
 		"count": 4,
 	})
 
-	numbers = append(numbers, map[string]interface{}{
+	numbers = append(numbers, map[string]any{
 		"name":  "test3",
 		"count": 8,
 	})

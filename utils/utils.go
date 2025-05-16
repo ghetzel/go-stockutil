@@ -14,15 +14,15 @@ import (
 
 var ReferenceTime time.Time = time.Date(2006, 1, 2, 15, 4, 5, 999999999, time.FixedZone("MST", -7*60*60))
 
-func GenericMarshalJSON(in interface{}, extraData ...map[string]interface{}) ([]byte, error) {
-	sval := structs.New(in)
-	output := make(map[string]interface{})
+func GenericMarshalJSON(in any, extraData ...map[string]any) ([]byte, error) {
+	var sval = structs.New(in)
+	var output = make(map[string]any)
 
 FieldLoop:
 	for _, field := range sval.Fields() {
 		if field.IsExported() {
-			key := field.Name()
-			value := field.Value()
+			var key = field.Name()
+			var value = field.Value()
 
 			// perform type conversions because encoding/json won't Do The Right Thing in all cases.
 			if vTime, ok := value.(time.Time); ok {
@@ -78,7 +78,7 @@ func AppendError(base error, err error) error {
 
 // Performs a JSONPath query against the given object and returns the results.
 // JSONPath description, syntax, and examples are available at http://goessner.net/articles/JsonPath/.
-func JSONPath(data interface{}, query string, autowrap bool) (interface{}, error) {
+func JSONPath(data any, query string, autowrap bool) (any, error) {
 	if reflect.TypeOf(data).Kind() == reflect.Map && query != `` {
 		for _, line := range strings.Split(query, "\n") {
 			line = strings.TrimSpace(line)
@@ -94,7 +94,7 @@ func JSONPath(data interface{}, query string, autowrap bool) (interface{}, error
 			var jp = jsonpath.New(``).AllowMissingKeys(true)
 
 			if err := jp.Parse(line); err == nil {
-				var values []interface{}
+				var values []any
 
 				if results, err := jp.FindResults(data); err == nil {
 					for _, pair := range results {

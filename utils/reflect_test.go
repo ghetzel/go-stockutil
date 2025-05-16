@@ -8,7 +8,7 @@ import (
 )
 
 func TestIsKind(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsKind(nil, reflect.String))
 	assert.False(IsKind(reflect.ValueOf(nil), reflect.String))

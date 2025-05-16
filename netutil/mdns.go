@@ -95,13 +95,13 @@ func ZeroconfDiscover(options *ZeroconfOptions, fn ServiceFunc) error {
 		options.Context = context.Background()
 	}
 
-	found := 0
+	var found = 0
 
 	// setup mDNS resolver
 	if resolver, err := zeroconf.NewResolver(
 		zeroconf.SelectIPTraffic(zeroconf.IPv4AndIPv6),
 	); err == nil {
-		entries := make(chan *zeroconf.ServiceEntry)
+		var entries = make(chan *zeroconf.ServiceEntry)
 		ctx, cancel := context.WithTimeout(options.Context, options.Timeout)
 		defer cancel()
 
@@ -110,10 +110,10 @@ func ZeroconfDiscover(options *ZeroconfOptions, fn ServiceFunc) error {
 			for entry := range results {
 				if isEntryMatch(options, entry) {
 					found += 1
-					addrs := make([]net.IP, 0)
+					var addrs = make([]net.IP, 0)
 					addrs = append(addrs, entry.AddrIPv4...)
 					addrs = append(addrs, entry.AddrIPv6...)
-					addr := ``
+					var addr = ``
 
 					if len(addrs) > 0 {
 						addr = fmt.Sprintf("%v:%d", addrs[0], entry.Port)
@@ -170,7 +170,7 @@ func ZeroconfRegister(svc *Service) (string, error) {
 		return ``, fmt.Errorf("Must specify a service port")
 	}
 
-	slug := fmt.Sprintf("%x", sha256.Sum256(
+	var slug = fmt.Sprintf("%x", sha256.Sum256(
 		[]byte(fmt.Sprintf("%s.%s%s:%d", svc.Instance, svc.Service, svc.Domain, svc.Port)),
 	))
 
@@ -206,7 +206,7 @@ func ZeroconfUnregister(id string) {
 
 // Unregister all Multicast DNS services.
 func ZeroconfUnregisterAll() {
-	registered.Range(func(key, value interface{}) bool {
+	registered.Range(func(key, value any) bool {
 		ZeroconfUnregister(typeutil.String(key))
 		return true
 	})

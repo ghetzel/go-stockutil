@@ -7,7 +7,7 @@ import (
 )
 
 func TestGetMimeType(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(`text/plain; charset=utf-8`, GetMimeType(`test.txt`))
 	assert.Equal(`image/jpeg`, GetMimeType(`test.jpg`))

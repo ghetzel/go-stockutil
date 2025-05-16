@@ -18,7 +18,7 @@ type tStructBase struct {
 type tStructChild struct {
 	*tStructBase
 	Address string
-	Details map[string]interface{}
+	Details map[string]any
 }
 
 func TestS(t *testing.T) {
@@ -30,8 +30,8 @@ func TestS(t *testing.T) {
 			Phrase: []string{`may`, `the`, `force`, `be`, `with`, `you`},
 		},
 		Address: `123 Fake St.`,
-		Details: map[string]interface{}{
-			`global`: map[string]interface{}{
+		Details: map[string]any{
+			`global`: map[string]any{
 				`name`:   `base`,
 				`values`: []int{2, 4, 6},
 			},
@@ -100,8 +100,8 @@ func TestS(t *testing.T) {
 			Phrase: []string{`and`, `also`, `with`, `you`},
 		},
 		Address: `987 Lulz Lane`,
-		Details: map[string]interface{}{
-			`global`: map[string]interface{}{
+		Details: map[string]any{
+			`global`: map[string]any{
 				`name`:   `replaced`,
 				`values`: []int{1, 3, 5},
 			},
@@ -116,10 +116,10 @@ func TestS(t *testing.T) {
 		`and`, `also`, `with`, `you`,
 	}, base.Phrase)
 
-	require.Equal(t, map[string]interface{}{
-		`global`: map[string]interface{}{
+	require.Equal(t, map[string]any{
+		`global`: map[string]any{
 			`name`:   `replaced`,
-			`values`: []interface{}{1, 3, 5},
+			`values`: []any{1, 3, 5},
 		},
 	}, base.Details)
 }

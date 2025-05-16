@@ -9,7 +9,7 @@ import (
 )
 
 func TestParseDuration(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	v, err := ParseDuration(``)
 	assert.NoError(err)
@@ -32,7 +32,7 @@ func TestParseDuration(t *testing.T) {
 }
 
 func TestDurationHMS(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	h, m, s := DurationHMS(0)
 	assert.Equal(0, h)
@@ -71,9 +71,9 @@ func TestDurationHMS(t *testing.T) {
 }
 
 func TestFormatTimer(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	out := FormatTimer(0)
+	var out = FormatTimer(0)
 	assert.Equal(`0:00`, out)
 
 	out = FormatTimer(time.Second)

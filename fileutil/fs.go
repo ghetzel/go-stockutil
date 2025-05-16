@@ -14,14 +14,14 @@ type RewriteFileSystem struct {
 	MustMatch  bool
 }
 
-func (self RewriteFileSystem) Open(name string) (http.File, error) {
-	if self.Find != nil {
-		if self.Find.MatchString(name) {
-			name = self.Find.ReplaceAllString(name, self.Replace)
-		} else if self.MustMatch {
+func (rwfs RewriteFileSystem) Open(name string) (http.File, error) {
+	if rwfs.Find != nil {
+		if rwfs.Find.MatchString(name) {
+			name = rwfs.Find.ReplaceAllString(name, rwfs.Replace)
+		} else if rwfs.MustMatch {
 			return nil, os.ErrNotExist
 		}
 	}
 
-	return self.FileSystem.Open(name)
+	return rwfs.FileSystem.Open(name)
 }

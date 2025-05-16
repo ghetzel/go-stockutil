@@ -39,7 +39,7 @@ func (self *TimedReadCloser) Read(b []byte) (int, error) {
 }
 
 func (self *TimedReadCloser) Close() (err error) {
-	closeStart := time.Now()
+	var closeStart = time.Now()
 	self.readTook = time.Since(self.startedAt)
 
 	err = self.rc.Close()

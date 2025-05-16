@@ -3,7 +3,6 @@ package fileutil
 import (
 	"bytes"
 	"io"
-	"io/ioutil"
 	"strings"
 	"testing"
 
@@ -31,55 +30,55 @@ func tt() io.Reader {
 }
 
 func TestReadManipulatorNoOp(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	rm := NewReadManipulator(tt())
-	out, err := ioutil.ReadAll(rm)
+	var rm = NewReadManipulator(tt())
+	out, err := io.ReadAll(rm)
 	assert.NoError(err)
 	assert.Equal(testText, string(out))
 }
 
 func TestReadManipulatorDoNothingFunction(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	rm := NewReadManipulator(tt(), func(in []byte) ([]byte, error) {
+	var rm = NewReadManipulator(tt(), func(in []byte) ([]byte, error) {
 		return in, nil
 	})
 
-	out, err := ioutil.ReadAll(rm)
+	out, err := io.ReadAll(rm)
 	assert.NoError(err)
 	assert.Equal(testText, string(out))
 }
 
 func TestReadManipulatorRemoveComments(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	rm := NewReadManipulator(tt(), RemoveLinesWithPrefix(`//`, true))
+	var rm = NewReadManipulator(tt(), RemoveLinesWithPrefix(`//`, true))
 
-	out, err := ioutil.ReadAll(rm)
+	out, err := io.ReadAll(rm)
 	assert.NoError(err)
 	assert.Equal("\n"+testTextBody, string(out))
 }
 
 func TestReadManipulatorRemoveBlankLines(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	rm := NewReadManipulator(tt(), RemoveBlankLines)
+	var rm = NewReadManipulator(tt(), RemoveBlankLines)
 
-	out, err := ioutil.ReadAll(rm)
+	out, err := io.ReadAll(rm)
 	assert.NoError(err)
 	assert.Equal(strings.TrimSpace(testTextPre)+testTextBody, string(out))
 }
 
 func TestReadManipulatorDolorToBacon(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	rm := NewReadManipulator(tt(), func(in []byte) ([]byte, error) {
-		line := strings.Replace(string(in), `dolor`, `bacon`, -1)
+	var rm = NewReadManipulator(tt(), func(in []byte) ([]byte, error) {
+		var line = strings.Replace(string(in), `dolor`, `bacon`, -1)
 		return []byte(line), nil
 	})
 
-	out, err := ioutil.ReadAll(rm)
+	out, err := io.ReadAll(rm)
 	assert.NoError(err)
 	assert.Equal(
 		strings.Replace(testText, `dolor`, `bacon`, -1),
@@ -88,23 +87,23 @@ func TestReadManipulatorDolorToBacon(t *testing.T) {
 }
 
 func TestReadManipulatorManipulateAll(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	fn1 := ReplaceWith(`dolor`, `bacon`, -1)
-	fn2 := RemoveBlankLines
-	fn3 := func(in []byte) ([]byte, error) {
-		line := strings.Replace(string(in), `nostrud`, `potato`, -1)
+	var fn1 = ReplaceWith(`dolor`, `bacon`, -1)
+	var fn2 = RemoveBlankLines
+	var fn3 = func(in []byte) ([]byte, error) {
+		var line = strings.Replace(string(in), `nostrud`, `potato`, -1)
 		return []byte(line), nil
 	}
 
-	rm := NewReadManipulator(tt(), ManipulateAll(fn1, fn2, fn3))
+	var rm = NewReadManipulator(tt(), ManipulateAll(fn1, fn2, fn3))
 
-	wanted := testText
+	var wanted = testText
 	wanted = strings.Replace(wanted, `dolor`, `bacon`, -1)
 	wanted = strings.Replace(wanted, `nostrud`, `potato`, -1)
 	wanted = strings.Replace(wanted, "\n\n", "\n", -1)
 
-	out, err := ioutil.ReadAll(rm)
+	out, err := io.ReadAll(rm)
 	assert.NoError(err)
 	assert.Equal(wanted, string(out))
 }

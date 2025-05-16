@@ -30,7 +30,7 @@ func RegisterTypeHandler(handler TypeConvertFunc, types ...string) {
 }
 
 // Returns whether the given value represents the underlying type's zero value
-func IsZero(value interface{}) bool {
+func IsZero(value any) bool {
 	return utils.IsZero(value)
 }
 
@@ -38,8 +38,8 @@ func IsZero(value interface{}) bool {
 // are considered empty, as are arrays, slices, and maps containing only empty
 // values (called recursively). Finally, strings are trimmed of whitespace and
 // considered empty if the result is zero-length.
-func IsEmpty(value interface{}) bool {
-	valueV := reflect.ValueOf(value)
+func IsEmpty(value any) bool {
+	var valueV = reflect.ValueOf(value)
 
 	if valueV.Kind() == reflect.Ptr {
 		valueV = valueV.Elem()
@@ -97,7 +97,7 @@ func IsEmpty(value interface{}) bool {
 // Return the concrete value pointed to by a pointer type, or within an
 // interface type.  Allows functions receiving pointers to supported types
 // to work with those types without doing reflection.
-func ResolveValue(in interface{}) interface{} {
+func ResolveValue(in any) any {
 	if inV, ok := in.(Variant); ok {
 		in = inV.Value
 	}
@@ -107,13 +107,13 @@ func ResolveValue(in interface{}) interface{} {
 
 // Dectect whether the concrete underlying value of the given input is one or more
 // Kinds of value.
-func IsKind(in interface{}, kinds ...reflect.Kind) bool {
+func IsKind(in any, kinds ...reflect.Kind) bool {
 	return utils.IsKind(in, kinds...)
 }
 
 // Return whether the given input is a discrete scalar value (ints, floats, bools,
 // strings), otherwise known as "primitive types" in some other languages.
-func IsScalar(in interface{}) bool {
+func IsScalar(in any) bool {
 	if !IsKind(in, utils.CompoundTypes...) {
 		return true
 	}
@@ -122,56 +122,56 @@ func IsScalar(in interface{}) bool {
 }
 
 // Returns whether the given value is a slice or array.
-func IsArray(in interface{}) bool {
+func IsArray(in any) bool {
 	return IsKind(in, utils.SliceTypes...)
 }
 
 // Returns whether the given value is a map.
-func IsMap(in interface{}) bool {
+func IsMap(in any) bool {
 	return IsKind(in, reflect.Map)
 }
 
 // Returns whether the given value is a struct.
-func IsStruct(in interface{}) bool {
+func IsStruct(in any) bool {
 	return IsKind(in, reflect.Struct)
 }
 
 // Returns whether the given value is a function of any kind
-func IsFunction(in interface{}) bool {
+func IsFunction(in any) bool {
 	return IsKind(in, reflect.Func)
 }
 
 // Returns whether the given value represents a numeric value.
-func IsNumeric(in interface{}) bool {
+func IsNumeric(in any) bool {
 	return utils.IsNumeric(in)
 }
 
 // Returns whether the given value represents an integer value.
-func IsInteger(in interface{}) bool {
+func IsInteger(in any) bool {
 	return utils.IsInteger(in)
 }
 
 // Returns whether the given value represents a floating point value.
-func IsFloat(in interface{}) bool {
+func IsFloat(in any) bool {
 	return utils.IsFloat(in)
 }
 
 // Return whether the value can be interpreted as a time.
-func IsTime(in interface{}) bool {
+func IsTime(in any) bool {
 	return VV(in).IsTime()
 }
 
 // Return whether the value can be interpreted as a duration.
-func IsDuration(in interface{}) bool {
+func IsDuration(in any) bool {
 	return VV(in).IsDuration()
 }
 
 // Returns whether the given value is a function.  If inParams is not -1, the function must
 // accept that number of arguments.  If outParams is not -1, the function must return that
 // number of values.
-func IsFunctionArity(in interface{}, inParams int, outParams int) bool {
+func IsFunctionArity(in any, inParams int, outParams int) bool {
 	if IsKind(in, reflect.Func) {
-		inT := reflect.TypeOf(in)
+		var inT = reflect.TypeOf(in)
 
 		if inParams < 0 || inParams >= 0 && inT.NumIn() == inParams {
 			if outParams < 0 || outParams >= 0 && inT.NumOut() == outParams {
@@ -185,7 +185,7 @@ func IsFunctionArity(in interface{}, inParams int, outParams int) bool {
 
 // Returns the length of the given value that could have a length (strings, slices, arrays,
 // maps, and channels).  If the value is not a type that has a length, -1 is returned.
-func Len(in interface{}) int {
+func Len(in any) int {
 	if IsKind(in, reflect.Array, reflect.Chan, reflect.Map, reflect.Slice, reflect.String) {
 		return reflect.ValueOf(in).Len()
 	} else {
@@ -194,17 +194,17 @@ func Len(in interface{}) int {
 }
 
 // Returns a pretty-printed string representation of the given values.
-func Dump(in1 interface{}, in ...interface{}) string {
-	return scs.Sdump(append([]interface{}{in1}, in...)...)
+func Dump(in1 any, in ...any) string {
+	return scs.Sdump(append([]any{in1}, in...)...)
 }
 
 // Returns a pretty-printed string representation of the given values.
-func Dumpf(format string, in ...interface{}) string {
+func Dumpf(format string, in ...any) string {
 	return fmt.Sprintf(format, scs.Sdump(in...))
 }
 
 // Attempts to set the given reflect.Value to the given interface value
-func SetValue(target interface{}, value interface{}) error {
+func SetValue(target any, value any) error {
 	var targetV, valueV, originalV reflect.Value
 
 	// if we were given a reflect.Value target, then we shouldn't take the reflect.ValueOf that
@@ -244,8 +244,8 @@ func SetValue(target interface{}, value interface{}) error {
 
 	// get the underlying value that was passed in
 	if valueV.IsValid() {
-		targetT := targetV.Type()
-		valueT := valueV.Type()
+		var targetT = targetV.Type()
+		var valueT = valueV.Type()
 
 		// if the target value is a string-a-like, stringify whatever we got in
 		if targetT.Kind() == reflect.String && valueV.CanInterface() {
@@ -330,7 +330,7 @@ func SetValue(target interface{}, value interface{}) error {
 	return nil
 }
 
-func IsKindOfInteger(in interface{}) bool {
+func IsKindOfInteger(in any) bool {
 	var kind reflect.Kind
 
 	if k, ok := in.(reflect.Kind); ok {
@@ -355,7 +355,7 @@ func IsKindOfInteger(in interface{}) bool {
 	)
 }
 
-func IsKindOfFloat(in interface{}) bool {
+func IsKindOfFloat(in any) bool {
 	var kind reflect.Kind
 
 	if k, ok := in.(reflect.Kind); ok {
@@ -371,7 +371,7 @@ func IsKindOfFloat(in interface{}) bool {
 	)
 }
 
-func IsKindOfBool(in interface{}) bool {
+func IsKindOfBool(in any) bool {
 	var kind reflect.Kind
 
 	if k, ok := in.(reflect.Kind); ok {
@@ -383,7 +383,7 @@ func IsKindOfBool(in interface{}) bool {
 	return IsKind(kind, reflect.Bool)
 }
 
-func IsKindOfString(in interface{}) bool {
+func IsKindOfString(in any) bool {
 	var kind reflect.Kind
 
 	if k, ok := in.(reflect.Kind); ok {
@@ -398,7 +398,7 @@ func IsKindOfString(in interface{}) bool {
 // Provide a variable to encode as JSON, and an optional indent string.  If no indent argument is
 // provided, the default indent is "  " (two spaces).  If an empty string is explcitly provided
 // for the indent argument, the output will not be indented (single line).
-func JSON(in interface{}, indent ...string) string {
+func JSON(in any, indent ...string) string {
 	var i string
 	var out []byte
 	var err error

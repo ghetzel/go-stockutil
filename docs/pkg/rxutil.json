@@ -25,7 +25,7 @@
     "Files": [
         {
             "Name": "functions.go",
-            "Size": 527,
+            "Size": 511,
             "LineCount": 20,
             "SourceLineCount": 14,
             "FunctionCount": 2,
@@ -65,7 +65,7 @@
                     "Alias": "regexp"
                 }
             ],
-            "Size": 3431,
+            "Size": 3406,
             "LineCount": 133,
             "SourceLineCount": 96,
             "FunctionCount": 7,
@@ -85,7 +85,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 1935,
+            "Size": 1965,
             "LineCount": 71,
             "SourceLineCount": 52,
             "FunctionCount": 0,
@@ -166,7 +166,7 @@
             "Arguments": [
                 {
                     "Name": "pattern",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "source",
@@ -178,7 +178,7 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "IsMatchString(pattern interface{}, source string) bool",
+            "Signature": "IsMatchString(pattern any, source string) bool",
             "Source": "ewoJcmV0dXJuIChNYXRjaChwYXR0ZXJuLCBzb3VyY2UpICE9IG5pbCkKfQ==",
             "IsPackageLevel": true
         },
@@ -188,7 +188,7 @@
             "Arguments": [
                 {
                     "Name": "pattern",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "s",
@@ -200,7 +200,7 @@
                     "Type": "[]string"
                 }
             ],
-            "Signature": "Split(pattern interface{}, s string) []string",
+            "Signature": "Split(pattern any, s string) []string",
             "Source": "ewoJcmV0dXJuIFNwbGl0TihwYXR0ZXJuLCBzLCAtMSkKfQ==",
             "IsPackageLevel": true
         },
@@ -210,7 +210,7 @@
             "Arguments": [
                 {
                     "Name": "pattern",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "s",
@@ -226,7 +226,7 @@
                     "Type": "[]string"
                 }
             ],
-            "Signature": "SplitN(pattern interface{}, s string, n int) []string",
+            "Signature": "SplitN(pattern any, s string, n int) []string",
             "Source": "ewoJaWYgcyA9PSBgYCB7CgkJcmV0dXJuIG1ha2UoW11zdHJpbmcsIDApCgl9CglpZiBtYXRjaCA6PSBNYXRjaChwYXR0ZXJuLCBzKTsgbWF0Y2ggIT0gbmlsIHsKCQlyZXR1cm4gbWF0Y2gucnguU3BsaXQocywgbikKCX0gZWxzZSB7CgkJcmV0dXJuIFtdc3RyaW5ne3N9Cgl9Cn0=",
             "IsPackageLevel": true
         }
@@ -241,7 +241,7 @@
                 }
             ],
             "Signature": "TestMatch(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgltYXRjaCA6PSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGAxMjM0LjU2NzguOWAsIG1hdGNoLkdyb3VwKDApKQoJYXNzZXJ0LkVxdWFsKGAxMjM0YCwgbWF0Y2guR3JvdXAoMSkpCglhc3NlcnQuRXF1YWwoYDU2NzhgLCBtYXRjaC5Hcm91cCgyKSkKCWFzc2VydC5FcXVhbChgOWAsIG1hdGNoLkdyb3VwKDMpKQoJYXNzZXJ0LkVtcHR5KG1hdGNoLkdyb3VwKDQpKQoJYXNzZXJ0LkVxdWFsKGAxMjM0YCwgbWF0Y2guR3JvdXAoYGZpcnN0YCkpCglhc3NlcnQuRXF1YWwoYDlgLCBtYXRjaC5Hcm91cChgc2Vjb25kYCkpCglhc3NlcnQuRW1wdHkobWF0Y2guR3JvdXAoYHBvdGF0b2ApKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgbWF0Y2ggPSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGAxMjM0LjU2NzguOWAsIG1hdGNoLkdyb3VwKDApKQoJYXNzZXJ0LkVxdWFsKGAxMjM0YCwgbWF0Y2guR3JvdXAoMSkpCglhc3NlcnQuRXF1YWwoYDU2NzhgLCBtYXRjaC5Hcm91cCgyKSkKCWFzc2VydC5FcXVhbChgOWAsIG1hdGNoLkdyb3VwKDMpKQoJYXNzZXJ0LkVtcHR5KG1hdGNoLkdyb3VwKDQpKQoJYXNzZXJ0LkVxdWFsKGAxMjM0YCwgbWF0Y2guR3JvdXAoYGZpcnN0YCkpCglhc3NlcnQuRXF1YWwoYDlgLCBtYXRjaC5Hcm91cChgc2Vjb25kYCkpCglhc3NlcnQuRW1wdHkobWF0Y2guR3JvdXAoYHBvdGF0b2ApKQp9",
             "IsPackageLevel": true
         },
         {
@@ -253,7 +253,7 @@
                 }
             ],
             "Signature": "TestMatchAndMap(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgltYXRjaCA6PSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGAxMjM0LjU2NzguOWAsIG1hdGNoLkdyb3VwKDApKQoJYXNzZXJ0LkVxdWFsKG1hcFtzdHJpbmddc3RyaW5ne2BmaXJzdGA6IGAxMjM0YCwgYHNlY29uZGA6IGA5YH0sIG1hdGNoLk5hbWVkQ2FwdHVyZXMoKSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgbWF0Y2ggPSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGAxMjM0LjU2NzguOWAsIG1hdGNoLkdyb3VwKDApKQoJYXNzZXJ0LkVxdWFsKG1hcFtzdHJpbmddc3RyaW5ne2BmaXJzdGA6IGAxMjM0YCwgYHNlY29uZGA6IGA5YH0sIG1hdGNoLk5hbWVkQ2FwdHVyZXMoKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -265,7 +265,7 @@
                 }
             ],
             "Signature": "TestMatchCaptures(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgltYXRjaCA6PSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2AxMjM0LjU2NzguOWAsIGAxMjM0YCwgYDU2NzhgLCBgOWB9LCBtYXRjaC5DYXB0dXJlcygpKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgbWF0Y2ggPSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2AxMjM0LjU2NzguOWAsIGAxMjM0YCwgYDU2NzhgLCBgOWB9LCBtYXRjaC5DYXB0dXJlcygpKQp9",
             "IsPackageLevel": true
         },
         {
@@ -277,7 +277,7 @@
                 }
             ],
             "Signature": "TestReplaceGroup(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgltYXRjaCA6PSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGByZXBsYCwgbWF0Y2guUmVwbGFjZUdyb3VwKDAsIGByZXBsYCkpCglhc3NlcnQuRXF1YWwoYGZpcnN0LjU2NzguOWAsIG1hdGNoLlJlcGxhY2VHcm91cCgxLCBgZmlyc3RgKSkKCWFzc2VydC5FcXVhbChgMTIzNC5zZWNvbmQuOWAsIG1hdGNoLlJlcGxhY2VHcm91cCgyLCBgc2Vjb25kYCkpCglhc3NlcnQuRXF1YWwoYDEyMzQuNTY3OC50aGlyZGAsIG1hdGNoLlJlcGxhY2VHcm91cCgzLCBgdGhpcmRgKSkKCWFzc2VydC5FcXVhbChgMTIzNC41Njc4LjlgLCBtYXRjaC5SZXBsYWNlR3JvdXAoNCwgYGZvdXJ0aGApKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgbWF0Y2ggPSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGByZXBsYCwgbWF0Y2guUmVwbGFjZUdyb3VwKDAsIGByZXBsYCkpCglhc3NlcnQuRXF1YWwoYGZpcnN0LjU2NzguOWAsIG1hdGNoLlJlcGxhY2VHcm91cCgxLCBgZmlyc3RgKSkKCWFzc2VydC5FcXVhbChgMTIzNC5zZWNvbmQuOWAsIG1hdGNoLlJlcGxhY2VHcm91cCgyLCBgc2Vjb25kYCkpCglhc3NlcnQuRXF1YWwoYDEyMzQuNTY3OC50aGlyZGAsIG1hdGNoLlJlcGxhY2VHcm91cCgzLCBgdGhpcmRgKSkKCWFzc2VydC5FcXVhbChgMTIzNC41Njc4LjlgLCBtYXRjaC5SZXBsYWNlR3JvdXAoNCwgYGZvdXJ0aGApKQp9",
             "IsPackageLevel": true
         },
         {
@@ -289,7 +289,7 @@
                 }
             ],
             "Signature": "TestReplaceGroupNamed(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgltYXRjaCA6PSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGBmaXJzdC41Njc4LjlgLCBtYXRjaC5SZXBsYWNlR3JvdXAoYGZpcnN0YCwgYGZpcnN0YCkpCglhc3NlcnQuRXF1YWwoYDEyMzQuNTY3OC5zZWNvbmRgLCBtYXRjaC5SZXBsYWNlR3JvdXAoYHNlY29uZGAsIGBzZWNvbmRgKSkKCWFzc2VydC5FcXVhbChgMTIzNC41Njc4LjlgLCBtYXRjaC5SZXBsYWNlR3JvdXAoYHRoaXJkYCwgYHRoaXJkYCkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgbWF0Y2ggPSBNYXRjaChgKD9QPGZpcnN0PlxkKylcLihcZCspLig/UDxzZWNvbmQ+XGQrKWAsIGAxMjM0LjU2NzguOWApCglhc3NlcnQuTm90TmlsKG1hdGNoKQoJYXNzZXJ0LkVxdWFsKGBmaXJzdC41Njc4LjlgLCBtYXRjaC5SZXBsYWNlR3JvdXAoYGZpcnN0YCwgYGZpcnN0YCkpCglhc3NlcnQuRXF1YWwoYDEyMzQuNTY3OC5zZWNvbmRgLCBtYXRjaC5SZXBsYWNlR3JvdXAoYHNlY29uZGAsIGBzZWNvbmRgKSkKCWFzc2VydC5FcXVhbChgMTIzNC41Njc4LjlgLCBtYXRjaC5SZXBsYWNlR3JvdXAoYHRoaXJkYCwgYHRoaXJkYCkpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -344,7 +344,7 @@
                     "Arguments": [
                         {
                             "Name": "nameOrIndex",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -352,7 +352,7 @@
                             "Type": "string"
                         }
                     ],
-                    "Signature": "Group(nameOrIndex interface{}) string",
+                    "Signature": "Group(nameOrIndex any) string",
                     "IsPackageLevel": false
                 },
                 {
@@ -361,7 +361,7 @@
                     "Arguments": [
                         {
                             "Name": "pattern",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "source",
@@ -373,7 +373,7 @@
                             "Type": "*MatchResult"
                         }
                     ],
-                    "Signature": "Match(pattern interface{}, source string) *MatchResult",
+                    "Signature": "Match(pattern any, source string) *MatchResult",
                     "Source": "ewoJdmFyIHJ4ICpyZWdleHAuUmVnZXhwCglpZiByLCBvayA6PSBwYXR0ZXJuLigqcmVnZXhwLlJlZ2V4cCk7IG9rIHsKCQlyeCA9IHIKCX0gZWxzZSBpZiByLCBvayA6PSBwYXR0ZXJuLihyZWdleHAuUmVnZXhwKTsgb2sgewoJCXJ4ID0gJnIKCX0gZWxzZSB7CgkJcnggPSByZWdleHAuTXVzdENvbXBpbGUoZm10LlNwcmludGYoIiV2IiwgcGF0dGVybikpCgl9CglpZiByeC5NYXRjaFN0cmluZyhzb3VyY2UpIHsKCQlyZXR1cm4gJk1hdGNoUmVzdWx0e3J4OiByeCwgc291cmNlOiBzb3VyY2UsIG5hbWVzOiByeC5TdWJleHBOYW1lcygpLCBsZWZ0bW9zdF9zdWJtYXRjaGVzOiByeC5GaW5kU3RyaW5nU3VibWF0Y2goc291cmNlKSwgbGVmdG1vc3Rfc3VibWF0Y2hfaW5kaWNlczogcnguRmluZFN0cmluZ1N1Ym1hdGNoSW5kZXgoc291cmNlKSwgYWxsX3N1Ym1hdGNoZXM6IHJ4LkZpbmRBbGxTdHJpbmdTdWJtYXRjaChzb3VyY2UsIC0xKX0KCX0KCXJldHVybiBuaWwKfQ==",
                     "IsPackageLevel": true
                 },
@@ -398,7 +398,7 @@
                     "Arguments": [
                         {
                             "Name": "nameOrIndex",
-                            "Type": "interface{}"
+                            "Type": "any"
                         },
                         {
                             "Name": "repl",
@@ -410,7 +410,7 @@
                             "Type": "string"
                         }
                     ],
-                    "Signature": "ReplaceGroup(nameOrIndex interface{}, repl string) string",
+                    "Signature": "ReplaceGroup(nameOrIndex any, repl string) string",
                     "IsPackageLevel": false
                 }
             ],

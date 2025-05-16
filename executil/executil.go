@@ -32,15 +32,15 @@ func Which(cmdname string, path ...string) string {
 // directories are specified in the path variadic argument, they will be checked
 // first.  If the command is not in any path, an empty slice will be returned.
 func WhichAll(cmdname string, path ...string) []string {
-	dirs := append(path, strings.Split(os.Getenv(`PATH`), `:`)...)
-	found := make([]string, 0)
+	var dirs = append(path, strings.Split(os.Getenv(`PATH`), `:`)...)
+	var found = make([]string, 0)
 
 	if fileutil.IsNonemptyExecutableFile(cmdname) {
 		found = append(found, cmdname)
 	}
 
 	for _, dir := range dirs {
-		candidate := filepath.Join(dir, cmdname)
+		var candidate = filepath.Join(dir, cmdname)
 
 		if len(strings.TrimSpace(dir)) == 0 {
 			continue
@@ -55,7 +55,7 @@ func WhichAll(cmdname string, path ...string) []string {
 }
 
 // Take an *exec.Cmd or []string and return a shell-executable command line string.
-func Join(in interface{}) string {
+func Join(in any) string {
 	var args []string
 
 	if cmd, ok := in.(*exec.Cmd); ok {
@@ -78,7 +78,7 @@ func Join(in interface{}) string {
 // Uses environment variables and other configurations to attempt to locate the
 // path to the user's shell.
 func FindShell() string {
-	shells := []string{os.Getenv(`SHELL`)}
+	var shells = []string{os.Getenv(`SHELL`)}
 	shells = append(shells, Which(`sh`))
 
 	for _, shell := range shells {
@@ -102,7 +102,7 @@ func IsRoot() bool {
 }
 
 // Returns the first argument if the current user is root, and the second if not.
-func RootOr(ifRoot interface{}, notRoot interface{}) interface{} {
+func RootOr(ifRoot any, notRoot any) any {
 	if IsRoot() {
 		return ifRoot
 	} else {
@@ -111,7 +111,7 @@ func RootOr(ifRoot interface{}, notRoot interface{}) interface{} {
 }
 
 // The same as RootOr, but returns a string.
-func RootOrString(ifRoot interface{}, notRoot interface{}) string {
+func RootOrString(ifRoot any, notRoot any) string {
 	if IsRoot() {
 		return typeutil.String(ifRoot)
 	} else {
@@ -122,7 +122,7 @@ func RootOrString(ifRoot interface{}, notRoot interface{}) string {
 // Registers a list of OS signals to intercept and provides an opportunity to run
 // a function before the program exits.
 func TrapSignals(after func(sig os.Signal) bool, signals ...os.Signal) {
-	signalChan := make(chan os.Signal, 1)
+	var signalChan = make(chan os.Signal, 1)
 	signal.Notify(signalChan, signals...)
 
 	for trap := range signalChan {

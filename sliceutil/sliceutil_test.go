@@ -9,8 +9,8 @@ import (
 )
 
 func TestContains(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
+	var assert = require.New(t)
+	var input any
 
 	input = []int{1, 3, 5}
 	assert.True(Contains(input, 1))
@@ -40,9 +40,9 @@ func TestContains(t *testing.T) {
 }
 
 func TestAt(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
-	var out interface{}
+	var assert = require.New(t)
+	var input any
+	var out any
 	var ok bool
 
 	input = []int{1, 3, 5}
@@ -64,8 +64,8 @@ func TestAt(t *testing.T) {
 }
 
 func TestLen(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
+	var assert = require.New(t)
+	var input any
 
 	assert.Zero(Len(nil))
 	assert.Zero(Len(input))
@@ -75,8 +75,8 @@ func TestLen(t *testing.T) {
 }
 
 func TestGet(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
+	var assert = require.New(t)
+	var input any
 
 	input = []int{1, 3, 5}
 	assert.Equal(1, Get(input, 0))
@@ -87,8 +87,8 @@ func TestGet(t *testing.T) {
 }
 
 func TestFirst(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
+	var assert = require.New(t)
+	var input any
 
 	assert.Nil(First(nil))
 	assert.Nil(First(input))
@@ -102,8 +102,8 @@ func TestFirst(t *testing.T) {
 }
 
 func TestRest(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
+	var assert = require.New(t)
+	var input any
 
 	assert.Nil(Rest(nil))
 	assert.Nil(Rest(input))
@@ -112,12 +112,12 @@ func TestRest(t *testing.T) {
 	assert.Nil(Rest(input))
 
 	input = []int{1, 3, 5}
-	assert.Equal([]interface{}{3, 5}, Rest(input))
+	assert.Equal([]any{3, 5}, Rest(input))
 }
 
 func TestLast(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
+	var assert = require.New(t)
+	var input any
 
 	assert.Nil(Last(nil))
 	assert.Nil(Last(input))
@@ -130,9 +130,9 @@ func TestLast(t *testing.T) {
 }
 
 func TestContainsString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := []string{"one", "three", "five"}
+	var input = []string{"one", "three", "five"}
 
 	assert.True(ContainsString(input, "one"))
 	assert.True(ContainsString(input, "three"))
@@ -148,10 +148,10 @@ func TestContainsString(t *testing.T) {
 }
 
 func TestContainsAnyString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := []string{"one", "three", "five"}
-	any := []string{"one", "two", "four"}
+	var input = []string{"one", "three", "five"}
+	var any = []string{"one", "two", "four"}
 
 	assert.True(ContainsAnyString(input, any...))
 	assert.False(ContainsAnyString(input))
@@ -162,9 +162,9 @@ func TestContainsAnyString(t *testing.T) {
 }
 
 func TestContainsAllStrings(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := []string{"one", "three", "five"}
+	var input = []string{"one", "three", "five"}
 
 	assert.True(ContainsAllStrings(input, "one"))
 	assert.True(ContainsAllStrings(input, "three"))
@@ -177,37 +177,37 @@ func TestContainsAllStrings(t *testing.T) {
 }
 
 func TestCompact(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Nil(Compact(nil))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		0, 1, 2, 3,
-	}, Compact([]interface{}{
+	}, Compact([]any{
 		0, 1, 2, 3,
 	}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		1, 3, 5,
-	}, Compact([]interface{}{
+	}, Compact([]any{
 		nil, 1, nil, 3, nil, 5,
 	}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`one`, `three`, ` `, `five`,
-	}, Compact([]interface{}{
+	}, Compact([]any{
 		`one`, ``, `three`, ``, ` `, `five`,
 	}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		[]int{1, 2, 3},
-	}, Compact([]interface{}{
+	}, Compact([]any{
 		nil, []string{}, []int{1, 2, 3}, map[string]bool{},
 	}))
 }
 
 func TestCompactString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Nil(CompactString(nil))
 
@@ -225,31 +225,31 @@ func TestCompactString(t *testing.T) {
 }
 
 func TestStringify(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Nil(Stringify(nil))
 
 	assert.Equal([]string{
 		`0`, `1`, `2`,
-	}, Stringify([]interface{}{
+	}, Stringify([]any{
 		0, 1, 2,
 	}))
 
 	assert.Equal([]string{
 		`0.5`, `0.55`, `0.555`, `0.555001`,
-	}, Stringify([]interface{}{
+	}, Stringify([]any{
 		0.5, 0.55, 0.55500, 0.555001,
 	}))
 
 	assert.Equal([]string{
 		`true`, `true`, `false`,
-	}, Stringify([]interface{}{
+	}, Stringify([]any{
 		true, true, false,
 	}))
 }
 
 func TestOr(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Nil(Or())
 	assert.Nil(Or(nil))
@@ -270,7 +270,7 @@ func TestOr(t *testing.T) {
 }
 
 func TestOrString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(``, OrString())
 	assert.Equal(``, OrString(``))
@@ -280,7 +280,7 @@ func TestOrString(t *testing.T) {
 }
 
 func TestEach(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	type testStruct struct {
 		Name  string
@@ -290,12 +290,12 @@ func TestEach(t *testing.T) {
 
 	assert.Nil(Each(nil, nil))
 
-	assert.Nil(Each([]string{`one`, `two`, `three`}, func(i int, v interface{}) error {
+	assert.Nil(Each([]string{`one`, `two`, `three`}, func(i int, v any) error {
 		return Stop
 	}))
 
-	count := 0
-	assert.Nil(Each([]string{`one`, `two`, `three`}, func(i int, v interface{}) error {
+	var count = 0
+	assert.Nil(Each([]string{`one`, `two`, `three`}, func(i int, v any) error {
 		if v.(string) == `two` {
 			return Stop
 		} else {
@@ -304,31 +304,31 @@ func TestEach(t *testing.T) {
 		}
 	}))
 
-	values := []interface{}{}
+	var values = []any{}
 
 	assert.Nil(Each(map[string]string{
 		`one`:   `first`,
 		`two`:   `second`,
 		`three`: `third`,
-	}, func(i int, v interface{}) error {
+	}, func(i int, v any) error {
 		values = append(values, v)
 		return nil
 	}))
 
-	values = []interface{}{}
+	values = []any{}
 
 	assert.Nil(Each(&testStruct{
 		Name:  `test`,
 		Hello: true,
 		unex:  `should not see me`,
-	}, func(i int, v interface{}) error {
+	}, func(i int, v any) error {
 		values = append(values, v)
 		return nil
 	}))
 
-	assert.ElementsMatch([]interface{}{`test`, true}, values)
+	assert.ElementsMatch([]any{`test`, true}, values)
 
-	valchan := make(chan string)
+	var valchan = make(chan string)
 
 	go func() {
 		defer close(valchan)
@@ -338,9 +338,9 @@ func TestEach(t *testing.T) {
 	}()
 
 	// test Each-ing over a channel
-	valuesS := make([]string, 0)
+	var valuesS = make([]string, 0)
 
-	assert.Nil(Each(valchan, func(i int, v interface{}) error {
+	assert.Nil(Each(valchan, func(i int, v any) error {
 		valuesS = append(valuesS, fmt.Sprintf("%v", v))
 		return nil
 	}))
@@ -349,33 +349,33 @@ func TestEach(t *testing.T) {
 }
 
 func TestUnique(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	assert.Equal([]interface{}{`one`, `two`, `three`}, Unique([]string{`one`, `one`, `two`, `three`}))
-	assert.Equal([]interface{}{1, 2, 3}, Unique([]int{1, 2, 2, 3}))
-	assert.NotEqual([]interface{}{1, 2, 3}, Unique([]int64{1, 2, 2, 3}))
+	assert.Equal([]any{`one`, `two`, `three`}, Unique([]string{`one`, `one`, `two`, `three`}))
+	assert.Equal([]any{1, 2, 3}, Unique([]int{1, 2, 2, 3}))
+	assert.NotEqual([]any{1, 2, 3}, Unique([]int64{1, 2, 2, 3}))
 }
 
 func TestMap(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(
-		[]interface{}{10, 20, 30},
-		Map([]int{1, 2, 3}, func(_ int, v interface{}) interface{} {
+		[]any{10, 20, 30},
+		Map([]int{1, 2, 3}, func(_ int, v any) any {
 			return v.(int) * 10
 		}),
 	)
 
 	assert.Equal(
-		[]interface{}{true, false, true},
-		Map([]bool{false, true, false}, func(_ int, v interface{}) interface{} {
+		[]any{true, false, true},
+		Map([]bool{false, true, false}, func(_ int, v any) any {
 			return !v.(bool)
 		}),
 	)
 }
 
 func TestMapString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(
 		[]string{`1-1thousand`, `2-1thousand`, `3-1thousand`},
@@ -398,55 +398,55 @@ func TestMapString(t *testing.T) {
 }
 
 func TestChunks(t *testing.T) {
-	assert := require.New(t)
-	input := []int{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23}
+	var assert = require.New(t)
+	var input = []int{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23}
 
-	assert.Equal([][]interface{}{
-		[]interface{}{1},
-		[]interface{}{3},
-		[]interface{}{5},
-		[]interface{}{7},
-		[]interface{}{9},
-		[]interface{}{11},
-		[]interface{}{13},
-		[]interface{}{15},
-		[]interface{}{17},
-		[]interface{}{19},
-		[]interface{}{21},
-		[]interface{}{23},
+	assert.Equal([][]any{
+		[]any{1},
+		[]any{3},
+		[]any{5},
+		[]any{7},
+		[]any{9},
+		[]any{11},
+		[]any{13},
+		[]any{15},
+		[]any{17},
+		[]any{19},
+		[]any{21},
+		[]any{23},
 	}, Chunks(input, 1))
 
-	assert.Equal([][]interface{}{
-		[]interface{}{1, 3},
-		[]interface{}{5, 7},
-		[]interface{}{9, 11},
-		[]interface{}{13, 15},
-		[]interface{}{17, 19},
-		[]interface{}{21, 23},
+	assert.Equal([][]any{
+		[]any{1, 3},
+		[]any{5, 7},
+		[]any{9, 11},
+		[]any{13, 15},
+		[]any{17, 19},
+		[]any{21, 23},
 	}, Chunks(input, 2))
 
-	assert.Equal([][]interface{}{
-		[]interface{}{1, 3, 5},
-		[]interface{}{7, 9, 11},
-		[]interface{}{13, 15, 17},
-		[]interface{}{19, 21, 23},
+	assert.Equal([][]any{
+		[]any{1, 3, 5},
+		[]any{7, 9, 11},
+		[]any{13, 15, 17},
+		[]any{19, 21, 23},
 	}, Chunks(input, 3))
 
-	assert.Equal([][]interface{}{
-		[]interface{}{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23},
+	assert.Equal([][]any{
+		[]any{1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23},
 	}, Chunks(input, 1000))
 }
 
 func TestFlatten(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	assert.Equal([]interface{}{`one`, `two`, `three`}, Flatten([]string{`one`, `two`, `three`}))
-	assert.Equal([]interface{}{`one`, `two`, `three`}, Flatten([]interface{}{[]string{`one`, `two`}, `three`}))
-	assert.Equal([]interface{}{`one`, `two`, `three`}, Flatten([]interface{}{[]string{`one`}, []string{`two`}, []string{`three`}}))
+	assert.Equal([]any{`one`, `two`, `three`}, Flatten([]string{`one`, `two`, `three`}))
+	assert.Equal([]any{`one`, `two`, `three`}, Flatten([]any{[]string{`one`, `two`}, `three`}))
+	assert.Equal([]any{`one`, `two`, `three`}, Flatten([]any{[]string{`one`}, []string{`two`}, []string{`three`}}))
 }
 
 func TestIntersect(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Empty(IntersectStrings(nil, nil))
 	assert.Empty(IntersectStrings([]string{`a`, `b`, `c`}, nil))
@@ -459,14 +459,14 @@ func TestIntersect(t *testing.T) {
 }
 
 func TestDifference(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Empty(Difference(nil, nil))
 	assert.Empty(Difference(nil, []string{`a`, `c`, `e`}))
 	assert.ElementsMatch([]string{`a`, `b`, `c`}, Difference([]string{`a`, `b`, `c`}, nil))
 
 	assert.ElementsMatch(
-		[]interface{}{`a`},
+		[]any{`a`},
 		Difference([]string{`a`, `b`, `c`}, []string{`b`, `c`}),
 	)
 
@@ -476,49 +476,49 @@ func TestDifference(t *testing.T) {
 }
 
 func TestSlice(t *testing.T) {
-	assert := require.New(t)
-	in := []interface{}{1, 2, 3, 4, 5}
+	var assert = require.New(t)
+	var in = []any{1, 2, 3, 4, 5}
 
-	assert.EqualValues([]interface{}{}, Slice(in, 99, -1))
-	assert.EqualValues([]interface{}{1}, Slice(in, 0, 1))
-	assert.EqualValues([]interface{}{1, 2}, Slice(in, 0, 2))
-	assert.EqualValues([]interface{}{1, 2, 3, 4}, Slice(in, 0, 4))
-	assert.EqualValues([]interface{}{3, 4}, Slice(in, 2, 4))
-	assert.EqualValues([]interface{}{3, 4}, Slice(in, 2, 4))
-	assert.EqualValues([]interface{}{4, 5}, Slice(in, -2, -1))
-	assert.EqualValues([]interface{}{1, 2, 3, 4, 5}, Slice(in, -5, -1))
-	assert.EqualValues([]interface{}{2, 3, 4}, Slice(in, -4, -2))
+	assert.EqualValues([]any{}, Slice(in, 99, -1))
+	assert.EqualValues([]any{1}, Slice(in, 0, 1))
+	assert.EqualValues([]any{1, 2}, Slice(in, 0, 2))
+	assert.EqualValues([]any{1, 2, 3, 4}, Slice(in, 0, 4))
+	assert.EqualValues([]any{3, 4}, Slice(in, 2, 4))
+	assert.EqualValues([]any{3, 4}, Slice(in, 2, 4))
+	assert.EqualValues([]any{4, 5}, Slice(in, -2, -1))
+	assert.EqualValues([]any{1, 2, 3, 4, 5}, Slice(in, -5, -1))
+	assert.EqualValues([]any{2, 3, 4}, Slice(in, -4, -2))
 
-	assert.EqualValues([]interface{}{}, Slice(in, -6, -6))
-	assert.EqualValues([]interface{}{1}, Slice(in, -5, -5))
-	assert.EqualValues([]interface{}{2}, Slice(in, -4, -4))
-	assert.EqualValues([]interface{}{3}, Slice(in, -3, -3))
-	assert.EqualValues([]interface{}{4}, Slice(in, -2, -2))
-	assert.EqualValues([]interface{}{5}, Slice(in, -1, -1))
-	assert.EqualValues([]interface{}{1}, Slice(in, 0, 1))
-	assert.EqualValues([]interface{}{2}, Slice(in, 1, 2))
-	assert.EqualValues([]interface{}{3}, Slice(in, 2, 3))
-	assert.EqualValues([]interface{}{4}, Slice(in, 3, 4))
-	assert.EqualValues([]interface{}{5}, Slice(in, 4, 5))
-	assert.EqualValues([]interface{}{}, Slice(in, 5, 6))
+	assert.EqualValues([]any{}, Slice(in, -6, -6))
+	assert.EqualValues([]any{1}, Slice(in, -5, -5))
+	assert.EqualValues([]any{2}, Slice(in, -4, -4))
+	assert.EqualValues([]any{3}, Slice(in, -3, -3))
+	assert.EqualValues([]any{4}, Slice(in, -2, -2))
+	assert.EqualValues([]any{5}, Slice(in, -1, -1))
+	assert.EqualValues([]any{1}, Slice(in, 0, 1))
+	assert.EqualValues([]any{2}, Slice(in, 1, 2))
+	assert.EqualValues([]any{3}, Slice(in, 2, 3))
+	assert.EqualValues([]any{4}, Slice(in, 3, 4))
+	assert.EqualValues([]any{5}, Slice(in, 4, 5))
+	assert.EqualValues([]any{}, Slice(in, 5, 6))
 
-	assert.EqualValues([]interface{}{1, 2, 3, 4, 5}, Slice(in, -100, -1))
-	assert.EqualValues([]interface{}{1, 2, 3, 4}, Slice(in, -100, -2))
-	assert.EqualValues([]interface{}{1, 2, 3}, Slice(in, -100, -3))
-	assert.EqualValues([]interface{}{1, 2}, Slice(in, -100, -4))
-	assert.EqualValues([]interface{}{1}, Slice(in, -100, -5))
-	assert.EqualValues([]interface{}{}, Slice(in, -100, -6))
+	assert.EqualValues([]any{1, 2, 3, 4, 5}, Slice(in, -100, -1))
+	assert.EqualValues([]any{1, 2, 3, 4}, Slice(in, -100, -2))
+	assert.EqualValues([]any{1, 2, 3}, Slice(in, -100, -3))
+	assert.EqualValues([]any{1, 2}, Slice(in, -100, -4))
+	assert.EqualValues([]any{1}, Slice(in, -100, -5))
+	assert.EqualValues([]any{}, Slice(in, -100, -6))
 
-	assert.EqualValues([]interface{}{2, 3, 4, 5}, Slice(in, 1, -1))
-	assert.EqualValues([]interface{}{2, 3, 4}, Slice(in, 1, -2))
-	assert.EqualValues([]interface{}{2, 3}, Slice(in, 1, -3))
-	assert.EqualValues([]interface{}{2}, Slice(in, 1, -4))
-	assert.EqualValues([]interface{}{}, Slice(in, 1, -5))
-	assert.EqualValues([]interface{}{}, Slice(in, 1, -6))
+	assert.EqualValues([]any{2, 3, 4, 5}, Slice(in, 1, -1))
+	assert.EqualValues([]any{2, 3, 4}, Slice(in, 1, -2))
+	assert.EqualValues([]any{2, 3}, Slice(in, 1, -3))
+	assert.EqualValues([]any{2}, Slice(in, 1, -4))
+	assert.EqualValues([]any{}, Slice(in, 1, -5))
+	assert.EqualValues([]any{}, Slice(in, 1, -6))
 }
 
 func TestTrimSpace(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Nil(TrimSpace(nil))
 	assert.Equal([]string{`aaa`, `bbb`, `ccc`}, TrimSpace([]string{`aaa`, `   bbb `, ` ccc    `}))
@@ -532,25 +532,24 @@ func TestFirstNonZero(t *testing.T) {
 	assert.Equal(t, 84, FirstNonZero([]int{0, 0, 0}, 0, []int{84}))
 }
 
-
 func TestSplitCompact(t *testing.T) {
 	assert.Equal(t, []string{}, SplitCompact(``, `,`))
 	assert.Equal(t, []string{` `}, SplitCompact(` `, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,b,c`, `,`))
-	assert.Equal(t, []string{` a `,`  b  `,`   c   `}, SplitCompact(` a ,  b  ,   c   `, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,,b,c`, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,,b,c,`, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`,,,a,,,b,,,,,c,,,`, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitCompact(`a,,,b,,,,,c`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitCompact(`a,b,c`, `,`))
+	assert.Equal(t, []string{` a `, `  b  `, `   c   `}, SplitCompact(` a ,  b  ,   c   `, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitCompact(`a,,b,c`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitCompact(`a,,b,c,`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitCompact(`,,,a,,,b,,,,,c,,,`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitCompact(`a,,,b,,,,,c`, `,`))
 }
 
 func TestSplitTrimSpaceCompact(t *testing.T) {
 	assert.Equal(t, []string{}, SplitTrimSpaceCompact(``, `,`))
 	assert.Equal(t, []string{}, SplitTrimSpaceCompact(` `, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,b,c`, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(` a ,  b  ,   c   `, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,,b,c`, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,,b,c,`, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`,,,a,,,b,,,,,c,,,`, `,`))
-	assert.Equal(t, []string{`a`,`b`,`c`}, SplitTrimSpaceCompact(`a,,,b,,,,,c`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitTrimSpaceCompact(`a,b,c`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitTrimSpaceCompact(` a ,  b  ,   c   `, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitTrimSpaceCompact(`a,,b,c`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitTrimSpaceCompact(`a,,b,c,`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitTrimSpaceCompact(`,,,a,,,b,,,,,c,,,`, `,`))
+	assert.Equal(t, []string{`a`, `b`, `c`}, SplitTrimSpaceCompact(`a,,,b,,,,,c`, `,`))
 }

@@ -7,7 +7,7 @@ import (
 )
 
 func TestClamp(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	assert.True(Clamp(0, 0, 0) == 0)
 	assert.True(Clamp(0, -1, 1) == 0)
@@ -22,7 +22,7 @@ func TestClamp(t *testing.T) {
 }
 
 func TestRound(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	assert.Equal(float64(1), Round(1.499999999999999))
 	assert.Equal(float64(2), Round(1.5))
@@ -37,7 +37,7 @@ func TestRound(t *testing.T) {
 }
 
 func TestLeadingSignificantZeros(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	assert.Equal(0, LeadingSignificantZeros(1.1, 10))
 	assert.Equal(1, LeadingSignificantZeros(1.0100, 10))

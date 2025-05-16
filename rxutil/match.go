@@ -15,14 +15,14 @@ type MatchResult struct {
 	all_submatches            [][]string
 }
 
-func IsMatchString(pattern interface{}, source string) bool {
+func IsMatchString(pattern any, source string) bool {
 	return (Match(pattern, source) != nil)
 }
 
 // Returns a MatchResult object representing the leftmost match of pattern against
 // source, or nil if no matches were found.  Pattern can be a string or a
 // previously-compiled *regexp.Regexp.
-func Match(pattern interface{}, source string) *MatchResult {
+func Match(pattern any, source string) *MatchResult {
 	var rx *regexp.Regexp
 
 	if r, ok := pattern.(*regexp.Regexp); ok {
@@ -47,7 +47,7 @@ func Match(pattern interface{}, source string) *MatchResult {
 	return nil
 }
 
-func (self *MatchResult) groupI(nameOrIndex interface{}) (string, int) {
+func (self *MatchResult) groupI(nameOrIndex any) (string, int) {
 	for i, name := range self.names {
 		switch nameOrIndex.(type) {
 		case string:
@@ -67,7 +67,7 @@ func (self *MatchResult) groupI(nameOrIndex interface{}) (string, int) {
 // Return the value of the numbered capture group (if given an int), or the
 // named capture group (if given a string).  Returns an empty string if the
 // given group name or index does not exist.
-func (self *MatchResult) Group(nameOrIndex interface{}) string {
+func (self *MatchResult) Group(nameOrIndex any) string {
 	if match, i := self.groupI(nameOrIndex); i >= 0 {
 		return match
 	} else {
@@ -77,17 +77,17 @@ func (self *MatchResult) Group(nameOrIndex interface{}) string {
 
 // Return a copy of source string with the given numbered or named group replaced
 // with repl.
-func (self *MatchResult) ReplaceGroup(nameOrIndex interface{}, repl string) string {
+func (self *MatchResult) ReplaceGroup(nameOrIndex any, repl string) string {
 	if _, i := self.groupI(nameOrIndex); i >= 0 {
 		if i == 0 {
 			return repl
 		}
 
 		if (i*2 + 1) < len(self.leftmost_submatch_indices) {
-			startIndex := self.leftmost_submatch_indices[(i * 2)]
-			endIndex := self.leftmost_submatch_indices[(i*2)+1]
+			var startIndex = self.leftmost_submatch_indices[(i * 2)]
+			var endIndex = self.leftmost_submatch_indices[(i*2)+1]
 
-			out := self.source[0:startIndex]
+			var out = self.source[0:startIndex]
 			out += repl
 			out += self.source[endIndex:]
 
@@ -100,7 +100,7 @@ func (self *MatchResult) ReplaceGroup(nameOrIndex interface{}, repl string) stri
 
 // Returns a map of all named capture matches, keyed on capture group name.
 func (self *MatchResult) NamedCaptures() map[string]string {
-	captures := make(map[string]string)
+	var captures = make(map[string]string)
 
 	for i, name := range self.names {
 		if i > 0 && name != `` {
@@ -120,7 +120,7 @@ func (self *MatchResult) Captures() []string {
 // from match is omitted, so only the actual values appearing within capture groups
 // are returned.
 func (self *MatchResult) AllCaptures() []string {
-	all := make([]string, 0)
+	var all = make([]string, 0)
 
 	for _, subcaptures := range self.all_submatches {
 		if len(subcaptures) > 1 {

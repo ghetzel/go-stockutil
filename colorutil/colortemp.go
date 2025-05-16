@@ -57,15 +57,15 @@ func KelvinToColor(kelvin int) (color Color) {
 	bX = hellandBartlettOver2000K_Under6600K_BlueX
 
 	// scale the value to make working with some of this easier
-	temp := float64(kelvin) / 100.0
+	var temp = float64(kelvin) / 100.0
 
 	// Calculate Red
 	if temp < 66 {
 		color.r = 1.0
 	} else {
 		// a + b*x + c*ln(x)
-		x := (temp + rX)
-		r255 := (rA + (rB * x) + (rC * math.Log(x)))
+		var x = (temp + rX)
+		var r255 = (rA + (rB * x) + (rC * math.Log(x)))
 
 		if r255 < 0 {
 			r255 = 0
@@ -78,8 +78,8 @@ func KelvinToColor(kelvin int) (color Color) {
 
 	// Calculate Green
 	if temp < 66 {
-		x := (temp + g1X)
-		g255 := (g1A + (g1B * x) + (g1C * math.Log(x)))
+		var x = (temp + g1X)
+		var g255 = (g1A + (g1B * x) + (g1C * math.Log(x)))
 
 		if g255 < 0 {
 			g255 = 0
@@ -89,8 +89,8 @@ func KelvinToColor(kelvin int) (color Color) {
 
 		color.g = g255 / 255
 	} else {
-		x := (temp + g2X)
-		g255 := (g2A + (g2B * x) + (g2C * math.Log(x)))
+		var x = (temp + g2X)
+		var g255 = (g2A + (g2B * x) + (g2C * math.Log(x)))
 
 		if g255 < 0 {
 			g255 = 0
@@ -107,8 +107,8 @@ func KelvinToColor(kelvin int) (color Color) {
 	} else if temp >= 66 {
 		color.b = 1.0
 	} else {
-		x := (temp + bX)
-		b255 := (bA + (bB * x) + (bC * math.Log(x)))
+		var x = (temp + bX)
+		var b255 = (bA + (bB * x) + (bC * math.Log(x)))
 
 		if b255 < 0 {
 			b255 = 0

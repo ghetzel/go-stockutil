@@ -91,7 +91,7 @@
                     "Alias": "go-shellwords"
                 }
             ],
-            "Size": 13482,
+            "Size": 13456,
             "LineCount": 589,
             "SourceLineCount": 447,
             "FunctionCount": 22,
@@ -107,8 +107,8 @@
                     "Alias": "bytes"
                 },
                 {
-                    "PackageName": "io/ioutil",
-                    "Alias": "ioutil"
+                    "PackageName": "io",
+                    "Alias": "io"
                 },
                 {
                     "PackageName": "testing",
@@ -123,7 +123,7 @@
                     "Alias": "assert"
                 }
             ],
-            "Size": 3448,
+            "Size": 3433,
             "LineCount": 135,
             "SourceLineCount": 109,
             "FunctionCount": 0,
@@ -147,7 +147,7 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 938,
+            "Size": 882,
             "LineCount": 43,
             "SourceLineCount": 33,
             "FunctionCount": 6,
@@ -203,7 +203,7 @@
                     "Alias": "go-shellwords"
                 }
             ],
-            "Size": 3950,
+            "Size": 3917,
             "LineCount": 159,
             "SourceLineCount": 115,
             "FunctionCount": 11,
@@ -227,7 +227,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 1760,
+            "Size": 1778,
             "LineCount": 80,
             "SourceLineCount": 57,
             "FunctionCount": 0,
@@ -315,7 +315,7 @@
                 },
                 {
                     "Name": "fallback",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -323,7 +323,7 @@
                     "Type": "string"
                 }
             ],
-            "Signature": "Env(name string, fallback ...interface{}) string",
+            "Signature": "Env(name string, fallback ...any) string",
             "Source": "ewoJcmV0dXJuIGVudihuYW1lLCBmYWxsYmFjay4uLikuU3RyaW5nKCkKfQ==",
             "IsPackageLevel": true
         },
@@ -336,7 +336,7 @@
                 },
                 {
                     "Name": "fallback",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -344,7 +344,7 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "EnvBool(name string, fallback ...interface{}) bool",
+            "Signature": "EnvBool(name string, fallback ...any) bool",
             "Source": "ewoJcmV0dXJuIGVudihuYW1lLCBmYWxsYmFjay4uLikuQm9vbCgpCn0=",
             "IsPackageLevel": true
         },
@@ -357,7 +357,7 @@
                 },
                 {
                     "Name": "fallback",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -365,7 +365,7 @@
                     "Type": "time.Duration"
                 }
             ],
-            "Signature": "EnvDuration(name string, fallback ...interface{}) time.Duration",
+            "Signature": "EnvDuration(name string, fallback ...any) time.Duration",
             "Source": "ewoJcmV0dXJuIGVudihuYW1lLCBmYWxsYmFjay4uLikuRHVyYXRpb24oKQp9",
             "IsPackageLevel": true
         },
@@ -378,7 +378,7 @@
                 },
                 {
                     "Name": "fallback",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -386,7 +386,7 @@
                     "Type": "float64"
                 }
             ],
-            "Signature": "EnvFloat(name string, fallback ...interface{}) float64",
+            "Signature": "EnvFloat(name string, fallback ...any) float64",
             "Source": "ewoJcmV0dXJuIGVudihuYW1lLCBmYWxsYmFjay4uLikuRmxvYXQoKQp9",
             "IsPackageLevel": true
         },
@@ -399,7 +399,7 @@
                 },
                 {
                     "Name": "fallback",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -407,7 +407,7 @@
                     "Type": "int64"
                 }
             ],
-            "Signature": "EnvInt(name string, fallback ...interface{}) int64",
+            "Signature": "EnvInt(name string, fallback ...any) int64",
             "Source": "ewoJcmV0dXJuIGVudihuYW1lLCBmYWxsYmFjay4uLikuSW50KCkKfQ==",
             "IsPackageLevel": true
         },
@@ -420,7 +420,7 @@
                 },
                 {
                     "Name": "fallback",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -428,7 +428,7 @@
                     "Type": "time.Time"
                 }
             ],
-            "Signature": "EnvTime(name string, fallback ...interface{}) time.Time",
+            "Signature": "EnvTime(name string, fallback ...any) time.Time",
             "Source": "ewoJcmV0dXJuIGVudihuYW1lLCBmYWxsYmFjay4uLikuVGltZSgpCn0=",
             "IsPackageLevel": true
         },
@@ -441,7 +441,7 @@
                 }
             ],
             "Signature": "FindShell() string",
-            "Source": "ewoJc2hlbGxzIDo9IFtdc3RyaW5ne29zLkdldGVudihgU0hFTExgKX0KCXNoZWxscyA9IGFwcGVuZChzaGVsbHMsIFdoaWNoKGBzaGApKQoJZm9yIF8sIHNoZWxsIDo9IHJhbmdlIHNoZWxscyB7CgkJaWYgc2hlbGwgIT0gYGAgewoJCQlyZXR1cm4gc2hlbGwKCQl9Cgl9CglyZXR1cm4gYGAKfQ==",
+            "Source": "ewoJdmFyIHNoZWxscyA9IFtdc3RyaW5ne29zLkdldGVudihgU0hFTExgKX0KCXNoZWxscyA9IGFwcGVuZChzaGVsbHMsIFdoaWNoKGBzaGApKQoJZm9yIF8sIHNoZWxsIDo9IHJhbmdlIHNoZWxscyB7CgkJaWYgc2hlbGwgIT0gYGAgewoJCQlyZXR1cm4gc2hlbGwKCQl9Cgl9CglyZXR1cm4gYGAKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -462,7 +462,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -470,7 +470,7 @@
                     "Type": "string"
                 }
             ],
-            "Signature": "Join(in interface{}) string",
+            "Signature": "Join(in any) string",
             "Source": "ewoJdmFyIGFyZ3MgW11zdHJpbmcKCWlmIGNtZCwgb2sgOj0gaW4uKCpleGVjLkNtZCk7IG9rIHsKCQlhcmdzID0gY21kLkFyZ3MKCX0gZWxzZSBpZiB0eXBldXRpbC5Jc0FycmF5KGluKSB7CgkJYXJncyA9IHNsaWNldXRpbC5TdHJpbmdpZnkoaW4pCgl9IGVsc2UgewoJCXJldHVybiBgYAoJfQoJZm9yIGksIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlpZiBzdHJpbmdzLkNvbnRhaW5zKGFyZywgYCBgKSB7CgkJCWFyZ3NbaV0gPSBzdHJpbmd1dGlsLldyYXAoYXJnLCBgJ2AsIGAnYCkKCQl9Cgl9CglyZXR1cm4gc3RyaW5ncy5Kb2luKGFyZ3MsIGAgYCkKfQ==",
             "IsPackageLevel": true
         },
@@ -521,7 +521,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -529,7 +529,7 @@
                     "Type": "[]byte"
                 }
             ],
-            "Signature": "MustShellOut(cmdOrLine string, args ...interface{}) []byte",
+            "Signature": "MustShellOut(cmdOrLine string, args ...any) []byte",
             "Source": "ewoJaWYgb3V0LCBlcnIgOj0gU2hlbGxPdXQoY21kT3JMaW5lLCBhcmdzLi4uKTsgZXJyID09IG5pbCB7CgkJcmV0dXJuIG91dAoJfSBlbHNlIHsKCQlwYW5pYyhlcnIuRXJyb3IoKSkKCX0KfQ==",
             "IsPackageLevel": true
         },
@@ -613,19 +613,19 @@
             "Arguments": [
                 {
                     "Name": "ifRoot",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "notRoot",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
-            "Signature": "RootOr(ifRoot interface{}, notRoot interface{}) interface{}",
+            "Signature": "RootOr(ifRoot any, notRoot any) any",
             "Source": "ewoJaWYgSXNSb290KCkgewoJCXJldHVybiBpZlJvb3QKCX0gZWxzZSB7CgkJcmV0dXJuIG5vdFJvb3QKCX0KfQ==",
             "IsPackageLevel": true
         },
@@ -635,11 +635,11 @@
             "Arguments": [
                 {
                     "Name": "ifRoot",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "notRoot",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -647,7 +647,7 @@
                     "Type": "string"
                 }
             ],
-            "Signature": "RootOrString(ifRoot interface{}, notRoot interface{}) string",
+            "Signature": "RootOrString(ifRoot any, notRoot any) string",
             "Source": "ewoJaWYgSXNSb290KCkgewoJCXJldHVybiB0eXBldXRpbC5TdHJpbmcoaWZSb290KQoJfSBlbHNlIHsKCQlyZXR1cm4gdHlwZXV0aWwuU3RyaW5nKG5vdFJvb3QpCgl9Cn0=",
             "IsPackageLevel": true
         },
@@ -661,7 +661,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -672,7 +672,7 @@
                     "Type": "error"
                 }
             ],
-            "Signature": "ShellOut(cmdOrLine string, args ...interface{}) ([]byte, error)",
+            "Signature": "ShellOut(cmdOrLine string, args ...any) ([]byte, error)",
             "Source": "ewoJdmFyIGNtZCAqQ21kCglpZiB2YSwgZXJyIDo9IHNoZWxsd29yZHMuUGFyc2UoY21kT3JMaW5lKTsgZXJyID09IG5pbCB7CgkJaWYgbGVuKHZhKSA9PSAxIHsKCQkJY21kID0gQ29tbWFuZCh2YVswXSwgc2xpY2V1dGlsLlN0cmluZ2lmeShhcmdzKS4uLikKCQl9IGVsc2UgewoJCQljbWQgPSBTaGVsbENvbW1hbmQoc3RyaW5ncy5Kb2luKGFwcGVuZCh2YSwgc2xpY2V1dGlsLlN0cmluZ2lmeShhcmdzKS4uLiksIGAgYCkpCgkJfQoJCWlmIG91dCwgZXJyIDo9IGNtZC5PdXRwdXQoKTsgZXJyID09IG5pbCB7CgkJCXJldHVybiBvdXQsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGVycgoJCX0KCX0gZWxzZSB7CgkJcmV0dXJuIG5pbCwgZXJyCgl9Cn0=",
             "IsPackageLevel": true
         },
@@ -686,7 +686,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -694,7 +694,7 @@
                     "Type": "[]byte"
                 }
             ],
-            "Signature": "ShouldShellOut(cmdOrLine string, args ...interface{}) []byte",
+            "Signature": "ShouldShellOut(cmdOrLine string, args ...any) []byte",
             "Source": "ewoJaWYgb3V0LCBlcnIgOj0gU2hlbGxPdXQoY21kT3JMaW5lLCBhcmdzLi4uKTsgZXJyID09IG5pbCB7CgkJcmV0dXJuIG91dAoJfSBlbHNlIHsKCQlyZXR1cm4gbmlsCgl9Cn0=",
             "IsPackageLevel": true
         },
@@ -751,7 +751,7 @@
                 }
             ],
             "Signature": "TrapSignals(after , signals ...os.Signal)",
-            "Source": "ewoJc2lnbmFsQ2hhbiA6PSBtYWtlKGNoYW4gb3MuU2lnbmFsLCAxKQoJc2lnbmFsLk5vdGlmeShzaWduYWxDaGFuLCBzaWduYWxzLi4uKQoJZm9yIHRyYXAgOj0gcmFuZ2Ugc2lnbmFsQ2hhbiB7CgkJaWYgYWZ0ZXIgIT0gbmlsIHsKCQkJaWYgIWFmdGVyKHRyYXApIHsKCQkJCXJldHVybgoJCQl9CgkJfQoJfQp9",
+            "Source": "ewoJdmFyIHNpZ25hbENoYW4gPSBtYWtlKGNoYW4gb3MuU2lnbmFsLCAxKQoJc2lnbmFsLk5vdGlmeShzaWduYWxDaGFuLCBzaWduYWxzLi4uKQoJZm9yIHRyYXAgOj0gcmFuZ2Ugc2lnbmFsQ2hhbiB7CgkJaWYgYWZ0ZXIgIT0gbmlsIHsKCQkJaWYgIWFmdGVyKHRyYXApIHsKCQkJCXJldHVybgoJCQl9CgkJfQoJfQp9",
             "IsPackageLevel": true
         },
         {
@@ -795,7 +795,7 @@
                 }
             ],
             "Signature": "WhichAll(cmdname string, path ...string) []string",
-            "Source": "ewoJZGlycyA6PSBhcHBlbmQocGF0aCwgc3RyaW5ncy5TcGxpdChvcy5HZXRlbnYoYFBBVEhgKSwgYDpgKS4uLikKCWZvdW5kIDo9IG1ha2UoW11zdHJpbmcsIDApCglpZiBmaWxldXRpbC5Jc05vbmVtcHR5RXhlY3V0YWJsZUZpbGUoY21kbmFtZSkgewoJCWZvdW5kID0gYXBwZW5kKGZvdW5kLCBjbWRuYW1lKQoJfQoJZm9yIF8sIGRpciA6PSByYW5nZSBkaXJzIHsKCQljYW5kaWRhdGUgOj0gZmlsZXBhdGguSm9pbihkaXIsIGNtZG5hbWUpCgkJaWYgbGVuKHN0cmluZ3MuVHJpbVNwYWNlKGRpcikpID09IDAgewoJCQljb250aW51ZQoJCX0gZWxzZSBpZiAhZmlsZXV0aWwuRGlyRXhpc3RzKGRpcikgewoJCQljb250aW51ZQoJCX0gZWxzZSBpZiBmaWxldXRpbC5Jc05vbmVtcHR5RXhlY3V0YWJsZUZpbGUoY2FuZGlkYXRlKSB7CgkJCWZvdW5kID0gYXBwZW5kKGZvdW5kLCBjYW5kaWRhdGUpCgkJfQoJfQoJcmV0dXJuIGZvdW5kCn0=",
+            "Source": "ewoJdmFyIGRpcnMgPSBhcHBlbmQocGF0aCwgc3RyaW5ncy5TcGxpdChvcy5HZXRlbnYoYFBBVEhgKSwgYDpgKS4uLikKCXZhciBmb3VuZCA9IG1ha2UoW11zdHJpbmcsIDApCglpZiBmaWxldXRpbC5Jc05vbmVtcHR5RXhlY3V0YWJsZUZpbGUoY21kbmFtZSkgewoJCWZvdW5kID0gYXBwZW5kKGZvdW5kLCBjbWRuYW1lKQoJfQoJZm9yIF8sIGRpciA6PSByYW5nZSBkaXJzIHsKCQl2YXIgY2FuZGlkYXRlID0gZmlsZXBhdGguSm9pbihkaXIsIGNtZG5hbWUpCgkJaWYgbGVuKHN0cmluZ3MuVHJpbVNwYWNlKGRpcikpID09IDAgewoJCQljb250aW51ZQoJCX0gZWxzZSBpZiAhZmlsZXV0aWwuRGlyRXhpc3RzKGRpcikgewoJCQljb250aW51ZQoJCX0gZWxzZSBpZiBmaWxldXRpbC5Jc05vbmVtcHR5RXhlY3V0YWJsZUZpbGUoY2FuZGlkYXRlKSB7CgkJCWZvdW5kID0gYXBwZW5kKGZvdW5kLCBjYW5kaWRhdGUpCgkJfQoJfQoJcmV0dXJuIGZvdW5kCn0=",
             "IsPackageLevel": true
         }
     ],
@@ -809,7 +809,7 @@
                 }
             ],
             "Signature": "TestEventedLineOutput(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglzdGRvdXQgOj0gbWFrZShbXXN0cmluZywgMCkKCXN0ZGVyciA6PSBtYWtlKFtdc3RyaW5nLCAwKQoJY21kIDo9IENvbW1hbmQoYHByaW50ZmAsIGAxXG4yXG4zXG5gKQoJY21kLk9uU3Rkb3V0ID0gZnVuYyhsaW5lIHN0cmluZywgc2VyciBib29sKSB7CgkJc3Rkb3V0ID0gYXBwZW5kKHN0ZG91dCwgbGluZSkKCX0KCWFzc2VydC5Ob0Vycm9yKGNtZC5SdW4oKSkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgMWAsIGAyYCwgYDNgfSwgc3Rkb3V0KQoJYXNzZXJ0LkVtcHR5KHN0ZGVycikKCWNtZCA9IENvbW1hbmQoYGJhc2hgLCBgLWNgLCBgZWNobyBtb2NrOyBlY2hvIHllYWggMT4mMjsgZWNobyBpbmc7IGVjaG8geWVhaCAxPiYyOyBlY2hvIGJpcmQ7IGVjaG8geWVhaCAxPiYyOyBlY2hvIHllYWg7IGVjaG8geWVhaCAxPiYyYCkKCXN0ZG91dCA9IG5pbAoJc3RkZXJyID0gbmlsCgljbWQuT25TdGRvdXQgPSBmdW5jKGxpbmUgc3RyaW5nLCBzZXJyIGJvb2wpIHsKCQlzdGRvdXQgPSBhcHBlbmQoc3Rkb3V0LCBsaW5lKQoJfQoJY21kLk9uU3RkZXJyID0gZnVuYyhsaW5lIHN0cmluZywgc2VyciBib29sKSB7CgkJc3RkZXJyID0gYXBwZW5kKHN0ZGVyciwgbGluZSkKCX0KCWFzc2VydC5Ob0Vycm9yKGNtZC5SdW4oKSkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgbW9ja2AsIGBpbmdgLCBgYmlyZGAsIGB5ZWFoYH0sIHN0ZG91dCkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgeWVhaGAsIGB5ZWFoYCwgYHllYWhgLCBgeWVhaGB9LCBzdGRlcnIpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgc3Rkb3V0ID0gbWFrZShbXXN0cmluZywgMCkKCXZhciBzdGRlcnIgPSBtYWtlKFtdc3RyaW5nLCAwKQoJdmFyIGNtZCA9IENvbW1hbmQoYHByaW50ZmAsIGAxXG4yXG4zXG5gKQoJY21kLk9uU3Rkb3V0ID0gZnVuYyhsaW5lIHN0cmluZywgc2VyciBib29sKSB7CgkJc3Rkb3V0ID0gYXBwZW5kKHN0ZG91dCwgbGluZSkKCX0KCWFzc2VydC5Ob0Vycm9yKGNtZC5SdW4oKSkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgMWAsIGAyYCwgYDNgfSwgc3Rkb3V0KQoJYXNzZXJ0LkVtcHR5KHN0ZGVycikKCWNtZCA9IENvbW1hbmQoYGJhc2hgLCBgLWNgLCBgZWNobyBtb2NrOyBlY2hvIHllYWggMT4mMjsgZWNobyBpbmc7IGVjaG8geWVhaCAxPiYyOyBlY2hvIGJpcmQ7IGVjaG8geWVhaCAxPiYyOyBlY2hvIHllYWg7IGVjaG8geWVhaCAxPiYyYCkKCXN0ZG91dCA9IG5pbAoJc3RkZXJyID0gbmlsCgljbWQuT25TdGRvdXQgPSBmdW5jKGxpbmUgc3RyaW5nLCBzZXJyIGJvb2wpIHsKCQlzdGRvdXQgPSBhcHBlbmQoc3Rkb3V0LCBsaW5lKQoJfQoJY21kLk9uU3RkZXJyID0gZnVuYyhsaW5lIHN0cmluZywgc2VyciBib29sKSB7CgkJc3RkZXJyID0gYXBwZW5kKHN0ZGVyciwgbGluZSkKCX0KCWFzc2VydC5Ob0Vycm9yKGNtZC5SdW4oKSkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgbW9ja2AsIGBpbmdgLCBgYmlyZGAsIGB5ZWFoYH0sIHN0ZG91dCkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgeWVhaGAsIGB5ZWFoYCwgYHllYWhgLCBgeWVhaGB9LCBzdGRlcnIpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -833,7 +833,7 @@
                 }
             ],
             "Signature": "TestExecReadCloser(t *testing.T)",
-            "Source": "ewoJdmFyIGNtZCA9IENvbW1hbmQoYGVjaG9gLCBgaGVsbG9gKQoJdmFyIGRhdGEsIGVyciA9IGlvdXRpbC5SZWFkQWxsKGNtZCkKCWFzc2VydC5Ob0Vycm9yKHQsIGVycikKCWFzc2VydC5FcXVhbCh0LCAiaGVsbG9cbiIsIHN0cmluZyhkYXRhKSkKCWFzc2VydC5Ob0Vycm9yKHQsIGNtZC5DbG9zZSgpKQp9",
+            "Source": "ewoJdmFyIGNtZCA9IENvbW1hbmQoYGVjaG9gLCBgaGVsbG9gKQoJdmFyIGRhdGEsIGVyciA9IGlvLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJYXNzZXJ0LkVxdWFsKHQsICJoZWxsb1xuIiwgc3RyaW5nKGRhdGEpKQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlKCkpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -845,7 +845,7 @@
                 }
             ],
             "Signature": "TestExecReadWriteCloser(t *testing.T)",
-            "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW91dGlsLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgcmVycikKCWFzc2VydC5FcXVhbCh0LCBieXRlcy5SZXBlYXQocGF5bG9hZCwgYyksIGRhdGEpCn0=",
+            "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW8uUmVhZEFsbChjbWQpCglhc3NlcnQuTm9FcnJvcih0LCByZXJyKQoJYXNzZXJ0LkVxdWFsKHQsIGJ5dGVzLlJlcGVhdChwYXlsb2FkLCBjKSwgZGF0YSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -881,7 +881,7 @@
                 }
             ],
             "Signature": "TestJoin(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoYGAsIEpvaW4obmlsKSkKCWFzc2VydC5FcXVhbChgYCwgSm9pbihgYCkpCglhc3NlcnQuRXF1YWwoYGAsIEpvaW4oW11zdHJpbmd7fSkpCglhc3NlcnQuRXF1YWwoYGxzIC1sYCwgSm9pbihbXXN0cmluZ3tgbHNgLCBgLWxgfSkpCglhc3NlcnQuRXF1YWwoYGxzIC1sICcvdGhpcyBpcyBhIGZvbGRlcidgLCBKb2luKFtdc3RyaW5ne2Bsc2AsIGAtbGAsIGAvdGhpcyBpcyBhIGZvbGRlcmB9KSkKCWFzc2VydC5FcXVhbChgbHMgLWwgJy90aGlzIGlzIGEgZm9sZGVyJ2AsIEpvaW4oZXhlYy5Db21tYW5kKGBsc2AsIGAtbGAsIGAvdGhpcyBpcyBhIGZvbGRlcmApKSkKCWFzc2VydC5FcXVhbChgd2hvYW1pYCwgSm9pbihleGVjLkNvbW1hbmQoYHdob2FtaWApKSkKCWFzc2VydC5FcXVhbChgYCwgSm9pbihleGVjLkNvbW1hbmQoYGApKSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoYGAsIEpvaW4obmlsKSkKCWFzc2VydC5FcXVhbChgYCwgSm9pbihgYCkpCglhc3NlcnQuRXF1YWwoYGAsIEpvaW4oW11zdHJpbmd7fSkpCglhc3NlcnQuRXF1YWwoYGxzIC1sYCwgSm9pbihbXXN0cmluZ3tgbHNgLCBgLWxgfSkpCglhc3NlcnQuRXF1YWwoYGxzIC1sICcvdGhpcyBpcyBhIGZvbGRlcidgLCBKb2luKFtdc3RyaW5ne2Bsc2AsIGAtbGAsIGAvdGhpcyBpcyBhIGZvbGRlcmB9KSkKCWFzc2VydC5FcXVhbChgbHMgLWwgJy90aGlzIGlzIGEgZm9sZGVyJ2AsIEpvaW4oZXhlYy5Db21tYW5kKGBsc2AsIGAtbGAsIGAvdGhpcyBpcyBhIGZvbGRlcmApKSkKCWFzc2VydC5FcXVhbChgd2hvYW1pYCwgSm9pbihleGVjLkNvbW1hbmQoYHdob2FtaWApKSkKCWFzc2VydC5FcXVhbChgYCwgSm9pbihleGVjLkNvbW1hbmQoYGApKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -905,7 +905,7 @@
                 }
             ],
             "Signature": "TestWhich(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRW1wdHkoV2hpY2goYGFic29sdXRlbHktbm90LWEtY29tbWFuZC1AIyQlXiYqYCkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRW1wdHkoV2hpY2goYGFic29sdXRlbHktbm90LWEtY29tbWFuZC1AIyQlXiYqYCkpCn0=",
             "IsPackageLevel": true
         }
     ],
@@ -1049,10 +1049,10 @@
                         },
                         {
                             "Name": "value",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
-                    "Signature": "SetEnv(key string, value interface{})",
+                    "Signature": "SetEnv(key string, value any)",
                     "IsPackageLevel": false
                 },
                 {

@@ -1,7 +1,8 @@
 package fileutil
 
 import (
-	"io/ioutil"
+	"context"
+	"io"
 	"net/url"
 	"testing"
 
@@ -9,14 +10,14 @@ import (
 )
 
 func TestRetrieveViaFilesystem(t *testing.T) {
-	var rc, rerr = RetrieveViaFilesystem(nil, &url.URL{
+	var rc, rerr = RetrieveViaFilesystem(context.TODO(), &url.URL{
 		Scheme: `file`,
 		Path:   `testdir/a.txt`,
 	})
 
 	assert.NoError(t, rerr)
 
-	var data, derr = ioutil.ReadAll(rc)
+	var data, derr = io.ReadAll(rc)
 
 	assert.NoError(t, rc.Close())
 	assert.NoError(t, derr)

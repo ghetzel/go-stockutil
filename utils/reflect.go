@@ -23,7 +23,7 @@ var CompoundTypes = []reflect.Kind{
 	reflect.Struct,
 }
 
-func ResolveValue(in interface{}) interface{} {
+func ResolveValue(in any) any {
 	var inV reflect.Value
 
 	if vV, ok := in.(reflect.Value); ok {
@@ -50,7 +50,7 @@ func ResolveValue(in interface{}) interface{} {
 
 // Dectect whether the concrete underlying value of the given input is one or more
 // Kinds of value.
-func IsKind(in interface{}, kinds ...reflect.Kind) bool {
+func IsKind(in any, kinds ...reflect.Kind) bool {
 	var inT reflect.Type
 
 	if v, ok := in.(reflect.Value); ok && v.IsValid() {
@@ -76,7 +76,7 @@ func IsKind(in interface{}, kinds ...reflect.Kind) bool {
 }
 
 // Returns whether the given value represents the underlying type's zero value
-func IsZero(value interface{}) bool {
+func IsZero(value any) bool {
 	if value == nil {
 		return true
 	} else if valueV, ok := value.(reflect.Value); ok && valueV.IsValid() {

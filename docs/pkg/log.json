@@ -4,7 +4,7 @@
     "ImportPath": "log",
     "ParentPackage": "stockutil",
     "URL": "https://github.com/ghetzel/go-stockutil",
-    "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"github.com/ghetzel/go-stockutil/log\"\n\t)\n\n\twr := log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tls := exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
+    "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"github.com/ghetzel/go-stockutil/log\"\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
     "MainFunction": false,
     "CommentWordCount": 1139,
     "LineCount": 1046,
@@ -51,7 +51,7 @@
                     "Alias": "ansi"
                 }
             ],
-            "Size": 1599,
+            "Size": 1568,
             "LineCount": 61,
             "SourceLineCount": 43,
             "FunctionCount": 4,
@@ -71,7 +71,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 3229,
+            "Size": 3232,
             "LineCount": 49,
             "SourceLineCount": 40,
             "FunctionCount": 0,
@@ -113,7 +113,7 @@
         },
         {
             "Name": "doc.go",
-            "Size": 4108,
+            "Size": 4114,
             "LineCount": 121,
             "SourceLineCount": 84,
             "FunctionCount": 0,
@@ -133,7 +133,7 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 1372,
+            "Size": 1340,
             "LineCount": 50,
             "SourceLineCount": 36,
             "FunctionCount": 3,
@@ -157,7 +157,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 2232,
+            "Size": 2247,
             "LineCount": 78,
             "SourceLineCount": 63,
             "FunctionCount": 0,
@@ -233,7 +233,7 @@
                     "Alias": "go-logging"
                 }
             ],
-            "Size": 9535,
+            "Size": 9312,
             "LineCount": 406,
             "SourceLineCount": 301,
             "FunctionCount": 37,
@@ -249,7 +249,7 @@
                     "Alias": "time"
                 }
             ],
-            "Size": 738,
+            "Size": 741,
             "LineCount": 48,
             "SourceLineCount": 39,
             "FunctionCount": 5,
@@ -265,7 +265,7 @@
                     "Alias": "strings"
                 }
             ],
-            "Size": 787,
+            "Size": 793,
             "LineCount": 45,
             "SourceLineCount": 35,
             "FunctionCount": 3,
@@ -419,7 +419,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -430,7 +430,7 @@
                     "Type": "error"
                 }
             ],
-            "Signature": "CFPrintf(w io.Writer, format string, args ...interface{}) (int, error)",
+            "Signature": "CFPrintf(w io.Writer, format string, args ...any) (int, error)",
             "Source": "ewoJcmV0dXJuIGZtdC5GcHJpbnQodywgQ1NwcmludGYoZm9ybWF0LCBhcmdzLi4uKSkKfQ==",
             "IsPackageLevel": true
         },
@@ -443,7 +443,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -451,7 +451,7 @@
                     "Type": "string"
                 }
             ],
-            "Signature": "CSprintf(format string, args ...interface{}) string",
+            "Signature": "CSprintf(format string, args ...any) string",
             "Source": "ewoJcmV0dXJuIGNzcHJpbnRmKGZhbHNlLCB0cnVlLCBmb3JtYXQsIGFyZ3MuLi4pCn0=",
             "IsPackageLevel": true
         },
@@ -464,7 +464,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -472,7 +472,7 @@
                     "Type": "string"
                 }
             ],
-            "Signature": "CStripf(format string, args ...interface{}) string",
+            "Signature": "CStripf(format string, args ...any) string",
             "Source": "ewoJcmV0dXJuIGNzcHJpbnRmKGZhbHNlLCBmYWxzZSwgZm9ybWF0LCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -490,7 +490,7 @@
                 }
             ],
             "Signature": "Confirm(prompt string) bool",
-            "Source": "ewoJcmV0dXJuIENvbmZpcm1mKHByb21wdCkKfQ==",
+            "Source": "ewoJcmV0dXJuIENvbmZpcm1mKCIldiIsIHByb21wdCkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -503,7 +503,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -511,7 +511,7 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "Confirmf(format string, args ...interface{}) bool",
+            "Signature": "Confirmf(format string, args ...any) bool",
             "Source": "ewoJdmFyIHJlc3BvbnNlIHN0cmluZwoJZm10LlByaW50Zihmb3JtYXQsIGFyZ3MuLi4pCglpZiBfLCBlcnIgOj0gZm10LlNjYW5sbigmcmVzcG9uc2UpOyBlcnIgIT0gbmlsIHsKCQlwYW5pYyhlcnIuRXJyb3IoKSkKCX0KCWZvciBfLCBva2F5IDo9IHJhbmdlIFtdc3RyaW5ne2B5YCwgYHllc2B9IHsKCQlpZiBzdHJpbmdzLlRvTG93ZXIob2theSkgPT0gc3RyaW5ncy5Ub0xvd2VyKHJlc3BvbnNlKSB7CgkJCXJldHVybiB0cnVlCgkJfQoJfQoJcmV0dXJuIGZhbHNlCn0=",
             "IsPackageLevel": true
         },
@@ -520,10 +520,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Critical(args ...interface{})",
+            "Signature": "Critical(args ...any)",
             "Source": "ewoJTG9nKENSSVRJQ0FMLCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -536,10 +536,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Criticalf(format string, args ...interface{})",
+            "Signature": "Criticalf(format string, args ...any)",
             "Source": "ewoJTG9nZihDUklUSUNBTCwgZm9ybWF0LCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -548,10 +548,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Debug(args ...interface{})",
+            "Signature": "Debug(args ...any)",
             "Source": "ewoJTG9nKERFQlVHLCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -571,10 +571,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Debugf(format string, args ...interface{})",
+            "Signature": "Debugf(format string, args ...any)",
             "Source": "ewoJTG9nZihERUJVRywgZm9ybWF0LCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -595,10 +595,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Dump(args ...interface{})",
+            "Signature": "Dump(args ...any)",
             "Source": "ewoJZm9yIF8sIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlMb2coTG9nTGV2ZWwsIHR5cGV1dGlsLkR1bXAoYXJnKSkKCX0KfQ==",
             "IsPackageLevel": true
         },
@@ -608,10 +608,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "DumpJSON(args ...interface{})",
+            "Signature": "DumpJSON(args ...any)",
             "Source": "ewoJZm9yIF8sIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlpZiBkYXRhLCBlcnIgOj0ganNvbi5NYXJzaGFsSW5kZW50KGFyZywgYGAsIGAgIGApOyBlcnIgPT0gbmlsIHsKCQkJTG9nKExvZ0xldmVsLCBzdHJpbmcoZGF0YSkpCgkJfSBlbHNlIHsKCQkJTG9nZihMb2dMZXZlbCwgIkR1bXBKU09OOiAldiIsIGVycikKCQl9Cgl9Cn0=",
             "IsPackageLevel": true
         },
@@ -625,10 +625,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Dumpf(format string, args ...interface{})",
+            "Signature": "Dumpf(format string, args ...any)",
             "Source": "ewoJZm9yIF8sIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlMb2dmKExvZ0xldmVsLCBmb3JtYXQsIHR5cGV1dGlsLkR1bXAoYXJnKSkKCX0KfQ==",
             "IsPackageLevel": true
         },
@@ -642,7 +642,7 @@
                 },
                 {
                     "Name": "message",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -650,7 +650,7 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "ErrContains(err error, message interface{}) bool",
+            "Signature": "ErrContains(err error, message any) bool",
             "Source": "ewoJaWYgZW1zZywgbXNnLCBvayA6PSBwcmVjaGVjayhlcnIsIG1lc3NhZ2UpOyBvayB7CgkJcmV0dXJuIHN0cmluZ3MuQ29udGFpbnMoZW1zZywgbXNnKQoJfSBlbHNlIHsKCQlyZXR1cm4gZmFsc2UKCX0KfQ==",
             "IsPackageLevel": true
         },
@@ -664,7 +664,7 @@
                 },
                 {
                     "Name": "message",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -672,7 +672,7 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "ErrHasPrefix(err error, message interface{}) bool",
+            "Signature": "ErrHasPrefix(err error, message any) bool",
             "Source": "ewoJaWYgZW1zZywgbXNnLCBvayA6PSBwcmVjaGVjayhlcnIsIG1lc3NhZ2UpOyBvayB7CgkJcmV0dXJuIHN0cmluZ3MuSGFzUHJlZml4KGVtc2csIG1zZykKCX0gZWxzZSB7CgkJcmV0dXJuIGZhbHNlCgl9Cn0=",
             "IsPackageLevel": true
         },
@@ -686,7 +686,7 @@
                 },
                 {
                     "Name": "message",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -694,7 +694,7 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "ErrHasSuffix(err error, message interface{}) bool",
+            "Signature": "ErrHasSuffix(err error, message any) bool",
             "Source": "ewoJaWYgZW1zZywgbXNnLCBvayA6PSBwcmVjaGVjayhlcnIsIG1lc3NhZ2UpOyBvayB7CgkJcmV0dXJuIHN0cmluZ3MuSGFzU3VmZml4KGVtc2csIG1zZykKCX0gZWxzZSB7CgkJcmV0dXJuIGZhbHNlCgl9Cn0=",
             "IsPackageLevel": true
         },
@@ -703,10 +703,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Error(args ...interface{})",
+            "Signature": "Error(args ...any)",
             "Source": "ewoJTG9nKEVSUk9SLCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -719,10 +719,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Errorf(format string, args ...interface{})",
+            "Signature": "Errorf(format string, args ...any)",
             "Source": "ewoJTG9nZihFUlJPUiwgZm9ybWF0LCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -731,10 +731,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Fatal(args ...interface{})",
+            "Signature": "Fatal(args ...any)",
             "Source": "ewoJTG9nKEZBVEFMLCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -760,10 +760,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Fatalf(format string, args ...interface{})",
+            "Signature": "Fatalf(format string, args ...any)",
             "Source": "ewoJTG9nZihGQVRBTCwgZm9ybWF0LCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -807,10 +807,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Info(args ...interface{})",
+            "Signature": "Info(args ...any)",
             "Source": "ewoJTG9nKElORk8sIGFyZ3MuLi4pCn0=",
             "IsPackageLevel": true
         },
@@ -823,10 +823,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Infof(format string, args ...interface{})",
+            "Signature": "Infof(format string, args ...any)",
             "Source": "ewoJTG9nZihJTkZPLCBmb3JtYXQsIGFyZ3MuLi4pCn0=",
             "IsPackageLevel": true
         },
@@ -839,10 +839,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Log(level Level, args ...interface{})",
+            "Signature": "Log(level Level, args ...any)",
             "Source": "ewoJaWYgbGV2ZWwgPT0gRkFUQUwgJiYgbGVuKGFyZ3MpID09IDEgJiYgYXJnc1swXSA9PSBuaWwgewoJCXJldHVybgoJfQoJaW5pdExvZ2dpbmcoKQoJdmFyIGxpbmUgPSBzdHJpbmdzLkpvaW4oc2xpY2V1dGlsLlN0cmluZ2lmeShhcmdzKSwgYCBgKQoJdmFyIHN0YWNrID0gU3RhY2tUcmFjZShEZWZhdWx0SW50ZXJjZXB0U3RhY2tEZXB0aCkKCWlmIHNob3VsZFNraXAobGV2ZWwsIGxpbmUsIHN0YWNrKSB7CgkJcmV0dXJuCgl9CgljYWxsSW50ZXJjZXB0cyhsZXZlbCwgbGluZSwgc3RhY2spCglsb2cobGV2ZWwsIGFyZ3MuLi4pCn0=",
             "IsPackageLevel": true
         },
@@ -859,10 +859,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Logf(level Level, format string, args ...interface{})",
+            "Signature": "Logf(level Level, format string, args ...any)",
             "Source": "ewoJaW5pdExvZ2dpbmcoKQoJdmFyIGxpbmUgPSBmbXQuU3ByaW50Zihmb3JtYXQsIGFyZ3MuLi4pCgl2YXIgc3RhY2sgPSBTdGFja1RyYWNlKERlZmF1bHRJbnRlcmNlcHRTdGFja0RlcHRoKQoJaWYgc2hvdWxkU2tpcChsZXZlbCwgbGluZSwgc3RhY2spIHsKCQlyZXR1cm4KCX0KCWNhbGxJbnRlcmNlcHRzKGxldmVsLCBsaW5lLCBzdGFjaykKCWlmIEVuYWJsZUNvbG9yRXhwcmVzc2lvbnMgewoJCWxvZyhsZXZlbCwgQ1NwcmludGYoZm9ybWF0LCBhcmdzLi4uKSkKCX0gZWxzZSB7CgkJbG9nKGxldmVsLCBDU3RyaXBmKGZvcm1hdCwgYXJncy4uLikpCgl9Cn0=",
             "IsPackageLevel": true
         },
@@ -882,10 +882,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Notice(args ...interface{})",
+            "Signature": "Notice(args ...any)",
             "Source": "ewoJTG9nKE5PVElDRSwgYXJncy4uLikKfQ==",
             "IsPackageLevel": true
         },
@@ -898,10 +898,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Noticef(format string, args ...interface{})",
+            "Signature": "Noticef(format string, args ...any)",
             "Source": "ewoJTG9nZihOT1RJQ0UsIGZvcm1hdCwgYXJncy4uLikKfQ==",
             "IsPackageLevel": true
         },
@@ -910,10 +910,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Panic(args ...interface{})",
+            "Signature": "Panic(args ...any)",
             "Source": "ewoJTG9nKFBBTklDLCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -926,10 +926,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Panicf(format string, args ...interface{})",
+            "Signature": "Panicf(format string, args ...any)",
             "Source": "ewoJTG9nZihQQU5JQywgZm9ybWF0LCBhcmdzLi4uKQp9",
             "IsPackageLevel": true
         },
@@ -1014,7 +1014,7 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
@@ -1022,7 +1022,7 @@
                     "Type": "string"
                 }
             ],
-            "Signature": "TermSprintf(format string, args ...interface{}) string",
+            "Signature": "TermSprintf(format string, args ...any) string",
             "Source": "ewoJcmV0dXJuIGNzcHJpbnRmKHRydWUsIHRydWUsIGZvcm1hdCwgYXJncy4uLikKfQ==",
             "IsPackageLevel": true
         },
@@ -1040,7 +1040,7 @@
                 }
             ],
             "Signature": "VeryDebugging(features ...string) bool",
-            "Source": "ewoJaWYgRGVidWdnaW5nKCkgewoJCWVudkZlYXR1cmVzIDo9IHN0cmluZ3MuU3BsaXQob3MuR2V0ZW52KGBERUJVR2ApLCBgLGApCgkJZm9yIF8sIGZlYXR1cmUgOj0gcmFuZ2UgZmVhdHVyZXMgewoJCQlmb3IgXywgZWYgOj0gcmFuZ2UgZW52RmVhdHVyZXMgewoJCQkJaWYgdHlwZXV0aWwuQm9vbChlZikgewoJCQkJCXJldHVybiB0cnVlCgkJCQl9IGVsc2UgaWYgc3RyaW5ncy5Ub0xvd2VyKGZlYXR1cmUpID09IHN0cmluZ3MuVG9Mb3dlcihlZikgewoJCQkJCXJldHVybiB0cnVlCgkJCQl9CgkJCX0KCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
+            "Source": "ewoJaWYgRGVidWdnaW5nKCkgewoJCXZhciBlbnZGZWF0dXJlcyA9IHN0cmluZ3MuU3BsaXQob3MuR2V0ZW52KGBERUJVR2ApLCBgLGApCgkJZm9yIF8sIGZlYXR1cmUgOj0gcmFuZ2UgZmVhdHVyZXMgewoJCQlmb3IgXywgZWYgOj0gcmFuZ2UgZW52RmVhdHVyZXMgewoJCQkJaWYgdHlwZXV0aWwuQm9vbChlZikgewoJCQkJCXJldHVybiB0cnVlCgkJCQl9IGVsc2UgaWYgc3RyaW5ncy5Ub0xvd2VyKGZlYXR1cmUpID09IHN0cmluZ3MuVG9Mb3dlcihlZikgewoJCQkJCXJldHVybiB0cnVlCgkJCQl9CgkJCX0KCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -1048,10 +1048,10 @@
             "Arguments": [
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Warning(args ...interface{})",
+            "Signature": "Warning(args ...any)",
             "Source": "ewoJTG9nKFdBUk5JTkcsIGFyZ3MuLi4pCn0=",
             "IsPackageLevel": true
         },
@@ -1064,10 +1064,10 @@
                 },
                 {
                     "Name": "args",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
-            "Signature": "Warningf(format string, args ...interface{})",
+            "Signature": "Warningf(format string, args ...any)",
             "Source": "ewoJTG9nZihXQVJOSU5HLCBmb3JtYXQsIGFyZ3MuLi4pCn0=",
             "IsPackageLevel": true
         }
@@ -1082,7 +1082,7 @@
                 }
             ],
             "Signature": "TestCSprintf(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzMwbWJsYWNrXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtibGFja31ibGFjayR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7MzFtcmVkXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtyZWR9cmVkJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDszMm1ncmVlblx4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7Z3JlZW59Z3JlZW4ke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzMzbXllbGxvd1x4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7eWVsbG93fXllbGxvdyR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7MzRtYmx1ZVx4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7Ymx1ZX1ibHVlJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDszNW1tYWdlbnRhXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHttYWdlbnRhfW1hZ2VudGEke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzM2bWN5YW5ceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke2N5YW59Y3lhbiR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7Mzdtd2hpdGVceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke3doaXRlfXdoaXRlJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDs5MG1ibGFja1x4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7YmxhY2sraH1ibGFjayR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7OTFtcmVkXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtyZWQraH1yZWQke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzkybWdyZWVuXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtncmVlbitofWdyZWVuJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDs5M215ZWxsb3dceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke3llbGxvdytofXllbGxvdyR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7OTRtYmx1ZVx4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7Ymx1ZStofWJsdWUke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzk1bW1hZ2VudGFceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke21hZ2VudGEraH1tYWdlbnRhJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDs5Nm1jeWFuXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtjeWFuK2h9Y3lhbiR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7OTdtd2hpdGVceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke3doaXRlK2h9d2hpdGUke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXFxbXHgxYlswOzkwbVxcXWJsYWNrXFxbXHgxYlswbVxcXSB3b3JkIiwgVGVybVNwcmludGYoInRoaXMgJHtibGFjaytofWJsYWNrJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFxcW1x4MWJbMDs5MW1cXF1yZWRcXFtceDFiWzBtXFxdIHdvcmQiLCBUZXJtU3ByaW50ZigidGhpcyAke3JlZCtofXJlZCR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBcXFtceDFiWzA7OTJtXFxdZ3JlZW5cXFtceDFiWzBtXFxdIHdvcmQiLCBUZXJtU3ByaW50ZigidGhpcyAke2dyZWVuK2h9Z3JlZW4ke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXFxbXHgxYlswOzkzbVxcXXllbGxvd1xcW1x4MWJbMG1cXF0gd29yZCIsIFRlcm1TcHJpbnRmKCJ0aGlzICR7eWVsbG93K2h9eWVsbG93JHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFxcW1x4MWJbMDs5NG1cXF1ibHVlXFxbXHgxYlswbVxcXSB3b3JkIiwgVGVybVNwcmludGYoInRoaXMgJHtibHVlK2h9Ymx1ZSR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBcXFtceDFiWzA7OTVtXFxdbWFnZW50YVxcW1x4MWJbMG1cXF0gd29yZCIsIFRlcm1TcHJpbnRmKCJ0aGlzICR7bWFnZW50YStofW1hZ2VudGEke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXFxbXHgxYlswOzk2bVxcXWN5YW5cXFtceDFiWzBtXFxdIHdvcmQiLCBUZXJtU3ByaW50ZigidGhpcyAke2N5YW4raH1jeWFuJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFxcW1x4MWJbMDs5N21cXF13aGl0ZVxcW1x4MWJbMG1cXF0gd29yZCIsIFRlcm1TcHJpbnRmKCJ0aGlzICR7d2hpdGUraH13aGl0ZSR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBibGFjayB3b3JkIiwgQ1N0cmlwZigidGhpcyAke2JsYWNrK2h9YmxhY2ske3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgcmVkIHdvcmQiLCBDU3RyaXBmKCJ0aGlzICR7cmVkK2h9cmVkJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIGdyZWVuIHdvcmQiLCBDU3RyaXBmKCJ0aGlzICR7Z3JlZW4raH1ncmVlbiR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyB5ZWxsb3cgd29yZCIsIENTdHJpcGYoInRoaXMgJHt5ZWxsb3craH15ZWxsb3cke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgYmx1ZSB3b3JkIiwgQ1N0cmlwZigidGhpcyAke2JsdWUraH1ibHVlJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIG1hZ2VudGEgd29yZCIsIENTdHJpcGYoInRoaXMgJHttYWdlbnRhK2h9bWFnZW50YSR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBjeWFuIHdvcmQiLCBDU3RyaXBmKCJ0aGlzICR7Y3lhbitofWN5YW4ke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgd2hpdGUgd29yZCIsIENTdHJpcGYoInRoaXMgJHt3aGl0ZStofXdoaXRlJHtyZXNldH0gd29yZCIpKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzMwbWJsYWNrXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtibGFja31ibGFjayR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7MzFtcmVkXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtyZWR9cmVkJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDszMm1ncmVlblx4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7Z3JlZW59Z3JlZW4ke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzMzbXllbGxvd1x4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7eWVsbG93fXllbGxvdyR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7MzRtYmx1ZVx4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7Ymx1ZX1ibHVlJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDszNW1tYWdlbnRhXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHttYWdlbnRhfW1hZ2VudGEke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzM2bWN5YW5ceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke2N5YW59Y3lhbiR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7Mzdtd2hpdGVceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke3doaXRlfXdoaXRlJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDs5MG1ibGFja1x4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7YmxhY2sraH1ibGFjayR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7OTFtcmVkXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtyZWQraH1yZWQke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzkybWdyZWVuXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtncmVlbitofWdyZWVuJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDs5M215ZWxsb3dceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke3llbGxvdytofXllbGxvdyR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7OTRtYmx1ZVx4MWJbMG0gd29yZCIsIENTcHJpbnRmKCJ0aGlzICR7Ymx1ZStofWJsdWUke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXHgxYlswOzk1bW1hZ2VudGFceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke21hZ2VudGEraH1tYWdlbnRhJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFx4MWJbMDs5Nm1jeWFuXHgxYlswbSB3b3JkIiwgQ1NwcmludGYoInRoaXMgJHtjeWFuK2h9Y3lhbiR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBceDFiWzA7OTdtd2hpdGVceDFiWzBtIHdvcmQiLCBDU3ByaW50ZigidGhpcyAke3doaXRlK2h9d2hpdGUke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXFxbXHgxYlswOzkwbVxcXWJsYWNrXFxbXHgxYlswbVxcXSB3b3JkIiwgVGVybVNwcmludGYoInRoaXMgJHtibGFjaytofWJsYWNrJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFxcW1x4MWJbMDs5MW1cXF1yZWRcXFtceDFiWzBtXFxdIHdvcmQiLCBUZXJtU3ByaW50ZigidGhpcyAke3JlZCtofXJlZCR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBcXFtceDFiWzA7OTJtXFxdZ3JlZW5cXFtceDFiWzBtXFxdIHdvcmQiLCBUZXJtU3ByaW50ZigidGhpcyAke2dyZWVuK2h9Z3JlZW4ke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXFxbXHgxYlswOzkzbVxcXXllbGxvd1xcW1x4MWJbMG1cXF0gd29yZCIsIFRlcm1TcHJpbnRmKCJ0aGlzICR7eWVsbG93K2h9eWVsbG93JHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFxcW1x4MWJbMDs5NG1cXF1ibHVlXFxbXHgxYlswbVxcXSB3b3JkIiwgVGVybVNwcmludGYoInRoaXMgJHtibHVlK2h9Ymx1ZSR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBcXFtceDFiWzA7OTVtXFxdbWFnZW50YVxcW1x4MWJbMG1cXF0gd29yZCIsIFRlcm1TcHJpbnRmKCJ0aGlzICR7bWFnZW50YStofW1hZ2VudGEke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgXFxbXHgxYlswOzk2bVxcXWN5YW5cXFtceDFiWzBtXFxdIHdvcmQiLCBUZXJtU3ByaW50ZigidGhpcyAke2N5YW4raH1jeWFuJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIFxcW1x4MWJbMDs5N21cXF13aGl0ZVxcW1x4MWJbMG1cXF0gd29yZCIsIFRlcm1TcHJpbnRmKCJ0aGlzICR7d2hpdGUraH13aGl0ZSR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBibGFjayB3b3JkIiwgQ1N0cmlwZigidGhpcyAke2JsYWNrK2h9YmxhY2ske3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgcmVkIHdvcmQiLCBDU3RyaXBmKCJ0aGlzICR7cmVkK2h9cmVkJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIGdyZWVuIHdvcmQiLCBDU3RyaXBmKCJ0aGlzICR7Z3JlZW4raH1ncmVlbiR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyB5ZWxsb3cgd29yZCIsIENTdHJpcGYoInRoaXMgJHt5ZWxsb3craH15ZWxsb3cke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgYmx1ZSB3b3JkIiwgQ1N0cmlwZigidGhpcyAke2JsdWUraH1ibHVlJHtyZXNldH0gd29yZCIpKQoJYXNzZXJ0LkVxdWFsKCJ0aGlzIG1hZ2VudGEgd29yZCIsIENTdHJpcGYoInRoaXMgJHttYWdlbnRhK2h9bWFnZW50YSR7cmVzZXR9IHdvcmQiKSkKCWFzc2VydC5FcXVhbCgidGhpcyBjeWFuIHdvcmQiLCBDU3RyaXBmKCJ0aGlzICR7Y3lhbitofWN5YW4ke3Jlc2V0fSB3b3JkIikpCglhc3NlcnQuRXF1YWwoInRoaXMgd2hpdGUgd29yZCIsIENTdHJpcGYoInRoaXMgJHt3aGl0ZStofXdoaXRlJHtyZXNldH0gd29yZCIpKQp9",
             "IsPackageLevel": true
         },
         {
@@ -1094,7 +1094,7 @@
                 }
             ],
             "Signature": "TestErrors(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgllMW0gOj0gYGVycm9yIDFgCgllMSA6PSBlcnJvcnMuTmV3KGUxbSkKCWUybSA6PSBgZXJyb3JgCgllMiA6PSBlcnJvcnMuTmV3KGUybSkKCWFzc2VydC5GYWxzZShFcnJDb250YWlucyhuaWwsIG5pbCkpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMoZTEsIG5pbCkpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMobmlsLCBlMikpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMobmlsLCBlMm0pKQoJYXNzZXJ0LlRydWUoRXJyQ29udGFpbnMoZTEsIGUxKSkKCWFzc2VydC5UcnVlKEVyckNvbnRhaW5zKGUxLCBlMW0pKQoJYXNzZXJ0LlRydWUoRXJyQ29udGFpbnMoZTIsIGUyKSkKCWFzc2VydC5UcnVlKEVyckNvbnRhaW5zKGUyLCBlMm0pKQoJYXNzZXJ0LlRydWUoRXJyQ29udGFpbnMoZTEsIGUyKSkKCWFzc2VydC5UcnVlKEVyckNvbnRhaW5zKGUxLCBlMm0pKQoJYXNzZXJ0LkZhbHNlKEVyckNvbnRhaW5zKGUyLCBlMSkpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMoZTIsIGUxbSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNQcmVmaXgoZTEsIGUxKSkKCWFzc2VydC5UcnVlKEVyckhhc1ByZWZpeChlMSwgZTFtKSkKCWFzc2VydC5UcnVlKEVyckhhc1ByZWZpeChlMiwgZTIpKQoJYXNzZXJ0LlRydWUoRXJySGFzUHJlZml4KGUyLCBlMm0pKQoJYXNzZXJ0LlRydWUoRXJySGFzUHJlZml4KGUxLCBlMikpCglhc3NlcnQuVHJ1ZShFcnJIYXNQcmVmaXgoZTEsIGUybSkpCglhc3NlcnQuRmFsc2UoRXJySGFzUHJlZml4KGUxLCBgbm9wZWApKQoJYXNzZXJ0LkZhbHNlKEVyckhhc1ByZWZpeChlMiwgZTEpKQoJYXNzZXJ0LkZhbHNlKEVyckhhc1ByZWZpeChlMiwgZTFtKSkKCWFzc2VydC5GYWxzZShFcnJIYXNTdWZmaXgoZTEsIGUyKSkKCWFzc2VydC5GYWxzZShFcnJIYXNTdWZmaXgoZTEsIGUybSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNTdWZmaXgoZTEsIGAxYCkpCglhc3NlcnQuRmFsc2UoRXJySGFzU3VmZml4KGUyLCBlMSkpCglhc3NlcnQuRmFsc2UoRXJySGFzU3VmZml4KGUyLCBlMW0pKQoJYXNzZXJ0LlRydWUoRXJySGFzU3VmZml4KGUxLCBlMSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNTdWZmaXgoZTEsIGUxbSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNTdWZmaXgoZTIsIGUyKSkKCWFzc2VydC5UcnVlKEVyckhhc1N1ZmZpeChlMiwgZTJtKSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgZTFtID0gYGVycm9yIDFgCgl2YXIgZTEgPSBlcnJvcnMuTmV3KGUxbSkKCXZhciBlMm0gPSBgZXJyb3JgCgl2YXIgZTIgPSBlcnJvcnMuTmV3KGUybSkKCWFzc2VydC5GYWxzZShFcnJDb250YWlucyhuaWwsIG5pbCkpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMoZTEsIG5pbCkpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMobmlsLCBlMikpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMobmlsLCBlMm0pKQoJYXNzZXJ0LlRydWUoRXJyQ29udGFpbnMoZTEsIGUxKSkKCWFzc2VydC5UcnVlKEVyckNvbnRhaW5zKGUxLCBlMW0pKQoJYXNzZXJ0LlRydWUoRXJyQ29udGFpbnMoZTIsIGUyKSkKCWFzc2VydC5UcnVlKEVyckNvbnRhaW5zKGUyLCBlMm0pKQoJYXNzZXJ0LlRydWUoRXJyQ29udGFpbnMoZTEsIGUyKSkKCWFzc2VydC5UcnVlKEVyckNvbnRhaW5zKGUxLCBlMm0pKQoJYXNzZXJ0LkZhbHNlKEVyckNvbnRhaW5zKGUyLCBlMSkpCglhc3NlcnQuRmFsc2UoRXJyQ29udGFpbnMoZTIsIGUxbSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNQcmVmaXgoZTEsIGUxKSkKCWFzc2VydC5UcnVlKEVyckhhc1ByZWZpeChlMSwgZTFtKSkKCWFzc2VydC5UcnVlKEVyckhhc1ByZWZpeChlMiwgZTIpKQoJYXNzZXJ0LlRydWUoRXJySGFzUHJlZml4KGUyLCBlMm0pKQoJYXNzZXJ0LlRydWUoRXJySGFzUHJlZml4KGUxLCBlMikpCglhc3NlcnQuVHJ1ZShFcnJIYXNQcmVmaXgoZTEsIGUybSkpCglhc3NlcnQuRmFsc2UoRXJySGFzUHJlZml4KGUxLCBgbm9wZWApKQoJYXNzZXJ0LkZhbHNlKEVyckhhc1ByZWZpeChlMiwgZTEpKQoJYXNzZXJ0LkZhbHNlKEVyckhhc1ByZWZpeChlMiwgZTFtKSkKCWFzc2VydC5GYWxzZShFcnJIYXNTdWZmaXgoZTEsIGUyKSkKCWFzc2VydC5GYWxzZShFcnJIYXNTdWZmaXgoZTEsIGUybSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNTdWZmaXgoZTEsIGAxYCkpCglhc3NlcnQuRmFsc2UoRXJySGFzU3VmZml4KGUyLCBlMSkpCglhc3NlcnQuRmFsc2UoRXJySGFzU3VmZml4KGUyLCBlMW0pKQoJYXNzZXJ0LlRydWUoRXJySGFzU3VmZml4KGUxLCBlMSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNTdWZmaXgoZTEsIGUxbSkpCglhc3NlcnQuVHJ1ZShFcnJIYXNTdWZmaXgoZTIsIGUyKSkKCWFzc2VydC5UcnVlKEVyckhhc1N1ZmZpeChlMiwgZTJtKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -1113,7 +1113,7 @@
     "Types": {
         "FormattedLogFunc": {
             "Name": "FormattedLogFunc",
-            "Source": "dHlwZSBGb3JtYXR0ZWRMb2dGdW5jIGZ1bmMoZm9ybWF0IHN0cmluZywgYXJncyAuLi5pbnRlcmZhY2V7fSk="
+            "Source": "dHlwZSBGb3JtYXR0ZWRMb2dGdW5jIGZ1bmMoZm9ybWF0IHN0cmluZywgYXJncyAuLi5hbnkp"
         },
         "Level": {
             "Name": "Level",
@@ -1156,7 +1156,7 @@
         },
         "LogFunc": {
             "Name": "LogFunc",
-            "Source": "dHlwZSBMb2dGdW5jIGZ1bmMoYXJncyAuLi5pbnRlcmZhY2V7fSk="
+            "Source": "dHlwZSBMb2dGdW5jIGZ1bmMoYXJncyAuLi5hbnkp"
         },
         "LogInterceptFunc": {
             "Name": "LogInterceptFunc",
@@ -1342,7 +1342,7 @@
                         }
                     ],
                     "Signature": "TimeFunc(name string, fn ) *Timing",
-                    "Source": "ewoJaWYgZm4gPT0gbmlsIHsKCQlwYW5pYygiQ2Fubm90IGNhbGwgbG9nLlRpbWVGdW5jIHdpdGggYSBuaWwgZnVuY3Rpb24iKQoJfQoJdG0gOj0gVGltZShuYW1lKQoJZm4oKQoJdG0uRG9uZSgpCglyZXR1cm4gdG0KfQ==",
+                    "Source": "ewoJaWYgZm4gPT0gbmlsIHsKCQlwYW5pYygiQ2Fubm90IGNhbGwgbG9nLlRpbWVGdW5jIHdpdGggYSBuaWwgZnVuY3Rpb24iKQoJfQoJdmFyIHRtID0gVGltZShuYW1lKQoJZm4oKQoJdG0uRG9uZSgpCglyZXR1cm4gdG0KfQ==",
                     "IsPackageLevel": true
                 }
             ],

@@ -25,7 +25,7 @@ const (
 
 var DistanceDisplayUnit = MeasurementSystem(Imperial)
 
-func MustParseDistance(in interface{}) Distance {
+func MustParseDistance(in any) Distance {
 	if distance, err := ParseDistance(in); err == nil {
 		return distance
 	} else {
@@ -33,14 +33,14 @@ func MustParseDistance(in interface{}) Distance {
 	}
 }
 
-func ParseDistance(in interface{}) (Distance, error) {
+func ParseDistance(in any) (Distance, error) {
 	if typeutil.IsZero(in) {
 		return 0, nil
 	}
 
 	if match := rxutil.Match(rxDistanceExtract, strings.TrimSpace(fmt.Sprintf("%v", in))); match != nil {
 		if v := typeutil.V(match.Group(`number`)).Float(); v >= 0 {
-			unit := match.Group(`unit`)
+			var unit = match.Group(`unit`)
 			unit = strings.TrimSpace(unit)
 			unit = strings.ToLower(unit)
 			unit = strings.TrimSuffix(unit, `s`)
@@ -117,9 +117,9 @@ func (self Distance) ImperialString() string {
 }
 
 func (self Distance) MarshalJSON() ([]byte, error) {
-	return json.Marshal(map[string]interface{}{
+	return json.Marshal(map[string]any{
 		`value`: float64(self),
-		`units`: map[string]interface{}{
+		`units`: map[string]any{
 			`default`:  self.String(),
 			`imperial`: self.ImperialString(),
 			`metric`:   self.MetricString(),
@@ -138,7 +138,7 @@ func (self *Distance) UnmarshalJSON(data []byte) error {
 			return err
 		}
 	} else {
-		var in map[string]interface{}
+		var in map[string]any
 
 		if err := json.Unmarshal(data, &in); err == nil {
 			*self = Distance(typeutil.V(in[`value`]).Float())

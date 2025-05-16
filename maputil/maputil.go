@@ -26,9 +26,9 @@ var UnmarshalStructTag string = `maputil`
 var SkipDescendants = errors.New("skip descendants")
 var rxMapFmt = regexp.MustCompile(`(\$\{(?P<key>.*?)(?:\|(?P<fallback>.*?))?(?::(?P<fmt>%[^\}]+))?\})`) // ${key}, ${key:%04s}, ${key|fallback}
 
-type WalkFunc func(value interface{}, path []string, isLeaf bool) error
-type ApplyFunc func(key []string, value interface{}) (interface{}, bool)
-type ConversionFunc func(from reflect.Type, to reflect.Type, data interface{}) (interface{}, error)
+type WalkFunc func(value any, path []string, isLeaf bool) error
+type ApplyFunc func(key []string, value any) (any, bool)
+type ConversionFunc func(from reflect.Type, to reflect.Type, data any) (any, error)
 type deleteValue bool
 
 type MergeOption int
@@ -50,8 +50,8 @@ func (self MergeOptions) Has(option MergeOption) bool {
 }
 
 // Return an interface slice of the keys of the given map.
-func Keys(input interface{}) []interface{} {
-	var keys = make([]interface{}, 0)
+func Keys(input any) []any {
+	var keys = make([]any, 0)
 	var rinput = typeutil.ResolveValue(input)
 
 	if rinput == nil {
@@ -61,13 +61,13 @@ func Keys(input interface{}) []interface{} {
 	var inputV = reflect.ValueOf(rinput)
 
 	if inputV.Kind() == reflect.Map {
-		keysV := inputV.MapKeys()
+		var keysV = inputV.MapKeys()
 
 		for _, keyV := range keysV {
 			keys = append(keys, keyV)
 		}
 	} else if syncMap, ok := input.(*sync.Map); ok {
-		syncMap.Range(func(key interface{}, _ interface{}) bool {
+		syncMap.Range(func(key any, _ any) bool {
 			keys = append(keys, key)
 			return true
 		})
@@ -77,16 +77,16 @@ func Keys(input interface{}) []interface{} {
 }
 
 // Return a slice of strings representing the keys of the given map.
-func StringKeys(input interface{}) []string {
-	keys := sliceutil.Stringify(Keys(input))
+func StringKeys(input any) []string {
+	var keys = sliceutil.Stringify(Keys(input))
 	sort.Strings(keys)
 
 	return keys
 }
 
 // Return the values from the given map.
-func MapValues(input interface{}) []interface{} {
-	var values = make([]interface{}, 0)
+func MapValues(input any) []any {
+	var values = make([]any, 0)
 	var inputV = reflect.ValueOf(input)
 
 	switch inputV.Kind() {
@@ -104,13 +104,13 @@ func MapValues(input interface{}) []interface{} {
 // Take an input map, and populate the struct instance pointed to by "populate".  Use the values of the tagname tag
 // to inform which map keys should be used to fill struct fields, and if a Conversion function is given, that
 // function will be used to allow values to be converted in preparation for becoming struct field values.
-func TaggedStructFromMapFunc(input interface{}, populate interface{}, tagname string, converter ConversionFunc) error {
+func TaggedStructFromMapFunc(input any, populate any, tagname string, converter ConversionFunc) error {
 	if tagname == `` {
 		tagname = UnmarshalStructTag
 	}
 
 	if converter == nil {
-		converter = func(source reflect.Type, target reflect.Type, data interface{}) (interface{}, error) {
+		converter = func(source reflect.Type, target reflect.Type, data any) (any, error) {
 			if target.Kind() == reflect.String {
 				return stringutil.ConvertToString(data)
 			}
@@ -167,25 +167,25 @@ func TaggedStructFromMapFunc(input interface{}, populate interface{}, tagname st
 }
 
 // Same as TaggedStructFromMapFunc, but does not perform any value conversion.
-func TaggedStructFromMap(input interface{}, populate interface{}, tagname string) error {
+func TaggedStructFromMap(input any, populate any, tagname string) error {
 	return TaggedStructFromMapFunc(input, populate, tagname, nil)
 }
 
 // Same as TaggedStructFromMapFunc, but no value conversion and uses the "maputil" struct tag.
-func StructFromMap(input map[string]interface{}, populate interface{}) error {
+func StructFromMap(input map[string]any, populate any) error {
 	return TaggedStructFromMap(input, populate, ``)
 }
 
 // Join the given map, using innerJoiner to join keys and values, and outerJoiner to join the resulting key-value lines.
-func Join(input interface{}, innerJoiner string, outerJoiner string) string {
+func Join(input any, innerJoiner string, outerJoiner string) string {
 	return DeepJoin(input, innerJoiner, outerJoiner, `.`)
 }
 
 // Join the given map, using innerJoiner to join keys and values, and outerJoiner to join the resulting key-value lines.
-func DeepJoin(input interface{}, innerJoiner string, outerJoiner string, nestedSeparator string) string {
-	parts := make([]string, 0)
+func DeepJoin(input any, innerJoiner string, outerJoiner string, nestedSeparator string) string {
+	var parts = make([]string, 0)
 
-	Walk(input, func(value interface{}, path []string, isLeaf bool) error {
+	Walk(input, func(value any, path []string, isLeaf bool) error {
 		if isLeaf {
 			parts = append(parts, strings.Join(path, nestedSeparator)+innerJoiner+stringutil.MustString(value))
 		}
@@ -198,12 +198,12 @@ func DeepJoin(input interface{}, innerJoiner string, outerJoiner string, nestedS
 
 // Split the given string, first on outerJoiner to form key-value lines, then each line on innerJoiner.
 // Populates a map and returns the result.
-func Split(input string, innerJoiner string, outerJoiner string) map[string]interface{} {
-	rv := make(map[string]interface{})
-	pairs := strings.Split(input, outerJoiner)
+func Split(input string, innerJoiner string, outerJoiner string) map[string]any {
+	var rv = make(map[string]any)
+	var pairs = strings.Split(input, outerJoiner)
 
 	for _, pair := range pairs {
-		kv := strings.SplitN(pair, innerJoiner, 2)
+		var kv = strings.SplitN(pair, innerJoiner, 2)
 
 		if len(kv) == 2 {
 			rv[kv[0]] = kv[1]
@@ -215,19 +215,19 @@ func Split(input string, innerJoiner string, outerJoiner string) map[string]inte
 
 // Take a flat (non-nested) map keyed with fields joined on fieldJoiner and return a
 // deeply-nested map
-func DiffuseMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error) {
+func DiffuseMap(data map[string]any, fieldJoiner string) (map[string]any, error) {
 	rv, _ := DiffuseMapTyped(data, fieldJoiner, "")
 	return rv, nil
 }
 
 // Take a flat (non-nested) map keyed with fields joined on fieldJoiner and return a
 // deeply-nested map
-func DiffuseMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error) {
+func DiffuseMapTyped(data map[string]any, fieldJoiner string, typePrefixSeparator string) (map[string]any, []error) {
 	var errs = make([]error, 0)
-	var output = make(map[string]interface{})
+	var output = make(map[string]any)
 
 	//  get the list of keys and sort them because order in a map is undefined
-	dataKeys := StringKeys(data)
+	var dataKeys = StringKeys(data)
 	sort.Strings(dataKeys)
 
 	//  for each data item
@@ -253,22 +253,22 @@ func DiffuseMapTyped(data map[string]interface{}, fieldJoiner string, typePrefix
 		}
 
 		keyParts = strings.Split(key, fieldJoiner)
-		output = DeepSet(output, keyParts, value).(map[string]interface{})
+		output = DeepSet(output, keyParts, value).(map[string]any)
 	}
 
 	return output, errs
 }
 
 // Take a deeply-nested map and return a flat (non-nested) map with keys whose intermediate tiers are joined with fieldJoiner
-func CoalesceMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error) {
+func CoalesceMap(data map[string]any, fieldJoiner string) (map[string]any, error) {
 	return deepGetValues([]string{}, fieldJoiner, data), nil
 }
 
 // Take a deeply-nested map and return a flat (non-nested) map with keys whose intermediate tiers are joined with fieldJoiner
 // Additionally, values will be converted to strings and keys will be prefixed with the datatype of the value
-func CoalesceMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error) {
+func CoalesceMapTyped(data map[string]any, fieldJoiner string, typePrefixSeparator string) (map[string]any, []error) {
 	var errs = make([]error, 0)
-	var rv = make(map[string]interface{})
+	var rv = make(map[string]any)
 
 	for k, v := range deepGetValues([]string{}, fieldJoiner, data) {
 		if stringVal, err := stringutil.ToString(v); err == nil {
@@ -281,8 +281,8 @@ func CoalesceMapTyped(data map[string]interface{}, fieldJoiner string, typePrefi
 	return rv, errs
 }
 
-func deepGetValues(keys []string, joiner string, data interface{}) map[string]interface{} {
-	var rv = make(map[string]interface{})
+func deepGetValues(keys []string, joiner string, data any) map[string]any {
+	var rv = make(map[string]any)
 	data = typeutil.ResolveValue(data)
 
 	if data != nil {
@@ -290,7 +290,7 @@ func deepGetValues(keys []string, joiner string, data interface{}) map[string]in
 
 		switch dType.Kind() {
 		case reflect.Map:
-			for k, v := range data.(map[string]interface{}) {
+			for k, v := range data.(map[string]any) {
 				var newKey = keys
 				newKey = append(newKey, k)
 
@@ -317,7 +317,7 @@ func deepGetValues(keys []string, joiner string, data interface{}) map[string]in
 	return rv
 }
 
-func prepareCoalescedKey(key string, value interface{}, typePrefixSeparator string) string {
+func prepareCoalescedKey(key string, value any, typePrefixSeparator string) string {
 	if typePrefixSeparator == "" {
 		return key
 	} else {
@@ -331,7 +331,7 @@ func prepareCoalescedKey(key string, value interface{}, typePrefixSeparator stri
 	}
 }
 
-func coerceIntoType(in interface{}, typeName string) (interface{}, error) {
+func coerceIntoType(in any, typeName string) (any, error) {
 	if dtype := stringutil.ParseType(typeName); dtype != stringutil.Invalid {
 		if v, err := stringutil.ConvertTo(dtype, in); err == nil {
 			return v, nil
@@ -345,7 +345,7 @@ func coerceIntoType(in interface{}, typeName string) (interface{}, error) {
 	}
 }
 
-func Get(data interface{}, key string, fallback ...interface{}) interface{} {
+func Get(data any, key string, fallback ...any) any {
 	data = typeutil.ResolveValue(data)
 
 	if typeutil.IsKind(data, reflect.Map) {
@@ -365,11 +365,11 @@ func Get(data interface{}, key string, fallback ...interface{}) interface{} {
 	}
 }
 
-func DeepGet(data interface{}, path []string, fallbacks ...interface{}) interface{} {
+func DeepGet(data any, path []string, fallbacks ...any) any {
 	var current = typeutil.ResolveValue(data)
 
 	if len(fallbacks) == 0 {
-		fallbacks = []interface{}{nil}
+		fallbacks = []any{nil}
 	}
 
 	var fallback = fallbacks[0]
@@ -404,7 +404,7 @@ func DeepGet(data interface{}, path []string, fallbacks ...interface{}) interfac
 					}
 				}
 			} else if part == `*` {
-				var subitems = make([]interface{}, dValue.Len())
+				var subitems = make([]any, dValue.Len())
 
 				for j := 0; j < dValue.Len(); j++ {
 					if value := dValue.Index(j).Interface(); value != nil {
@@ -454,7 +454,7 @@ func DeepGet(data interface{}, path []string, fallbacks ...interface{}) interfac
 	return current
 }
 
-func DeepGetBool(data interface{}, path []string) bool {
+func DeepGetBool(data any, path []string) bool {
 	var vI = DeepGet(data, path, false)
 
 	if v, ok := vI.(bool); ok && v {
@@ -464,7 +464,7 @@ func DeepGetBool(data interface{}, path []string) bool {
 	return false
 }
 
-func DeepGetString(data interface{}, path []string) string {
+func DeepGetString(data any, path []string) string {
 	if v, err := stringutil.ToString(DeepGet(data, path)); err == nil {
 		return v
 	}
@@ -473,12 +473,12 @@ func DeepGetString(data interface{}, path []string) string {
 }
 
 // Delete a key to a given value in the given map.
-func Delete(data interface{}, key interface{}) error {
+func Delete(data any, key any) error {
 	return Set(data, key, deleteValue(true))
 }
 
 // Set a key to a given value in the given map, reflect.Map Value, or slice/array.
-func Set(data interface{}, key interface{}, value interface{}) error {
+func Set(data any, key any, value any) error {
 	var dataM reflect.Value
 	var isDelete bool
 
@@ -493,7 +493,7 @@ func Set(data interface{}, key interface{}, value interface{}) error {
 	}
 
 	// some shortcuts for common cases
-	if asMap, ok := data.(map[string]interface{}); ok {
+	if asMap, ok := data.(map[string]any); ok {
 		if isDelete {
 			delete(asMap, typeutil.String(key))
 		} else {
@@ -502,7 +502,7 @@ func Set(data interface{}, key interface{}, value interface{}) error {
 
 		return nil
 	} else if dataM.CanInterface() {
-		if asMap, ok := dataM.Interface().(map[string]interface{}); ok {
+		if asMap, ok := dataM.Interface().(map[string]any); ok {
 			if isDelete {
 				delete(asMap, typeutil.String(key))
 			} else {
@@ -538,7 +538,7 @@ func Set(data interface{}, key interface{}, value interface{}) error {
 	return nil
 }
 
-func DeepSet(data interface{}, path []string, value interface{}) interface{} {
+func DeepSet(data any, path []string, value any) any {
 	if len(path) == 0 {
 		return data
 	}
@@ -554,7 +554,7 @@ func DeepSet(data interface{}, path []string, value interface{}) interface{} {
 	if len(rest) == 0 {
 		//  parent element is an array; set the correct index or append if the index is out of bounds
 		if typeutil.IsArray(data) {
-			dataArray := sliceutil.Sliceify(data)
+			var dataArray = sliceutil.Sliceify(data)
 
 			if curIndex := int(typeutil.Int(first)); typeutil.IsInteger(first) {
 				if curIndex >= len(dataArray) {
@@ -610,7 +610,7 @@ func DeepSet(data interface{}, path []string, value interface{}) interface{} {
 				if typeutil.IsArray(curVal) {
 					curVal = sliceutil.Sliceify(curVal)
 				} else {
-					curVal = make([]interface{}, 0)
+					curVal = make([]any, 0)
 					Set(data, first, curVal)
 				}
 
@@ -632,7 +632,7 @@ func DeepSet(data interface{}, path []string, value interface{}) interface{} {
 				if curIndex := int(typeutil.Int(first)); typeutil.IsInteger(first) {
 					if curIndex >= len(dataArray) {
 						for add := len(dataArray); add <= curIndex; add++ {
-							dataArray = append(dataArray, make(map[string]interface{}))
+							dataArray = append(dataArray, make(map[string]any))
 						}
 					}
 
@@ -642,13 +642,13 @@ func DeepSet(data interface{}, path []string, value interface{}) interface{} {
 					}
 				}
 
-			} else if dataMap, ok := data.(map[string]interface{}); ok {
+			} else if dataMap, ok := data.(map[string]any); ok {
 				//  handle good old fashioned maps-of-maps
 				//  is the value at 'first' in the map isn't present or isn't a map, create it
 				var curVal, _ = dataMap[first]
 
 				if !typeutil.IsMap(curVal) {
-					dataMap[first] = make(map[string]interface{})
+					dataMap[first] = make(map[string]any)
 					curVal, _ = dataMap[first]
 				}
 
@@ -661,8 +661,8 @@ func DeepSet(data interface{}, path []string, value interface{}) interface{} {
 	return data
 }
 
-func Append(maps ...map[string]interface{}) map[string]interface{} {
-	var out = make(map[string]interface{})
+func Append(maps ...map[string]any) map[string]any {
+	var out = make(map[string]any)
 
 	for _, mapV := range maps {
 		for k, v := range mapV {
@@ -673,14 +673,14 @@ func Append(maps ...map[string]interface{}) map[string]interface{} {
 	return out
 }
 
-func Pluck(sliceOfMaps interface{}, key []string) []interface{} {
-	var rv = make([]interface{}, 0)
+func Pluck(sliceOfMaps any, key []string) []any {
+	var rv = make([]any, 0)
 
 	if sliceOfMaps == nil {
 		return rv
 	}
 
-	WalkStruct(sliceOfMaps, func(value interface{}, path []string, isLeaf bool) error {
+	WalkStruct(sliceOfMaps, func(value any, path []string, isLeaf bool) error {
 		if isLeaf && len(path) > 1 {
 			var shouldInclude bool
 
@@ -710,18 +710,18 @@ func Pluck(sliceOfMaps interface{}, key []string) []interface{} {
 }
 
 // Recursively walk through the given map, calling walkFn for each intermediate and leaf value.
-func Walk(input interface{}, walkFn WalkFunc) error {
+func Walk(input any, walkFn WalkFunc) error {
 	return walkGeneric(input, nil, walkFn, false, nil)
 }
 
 // Recursively walk through the given map, calling walkFn for each intermediate and leaf value.
 // This form behaves identically to Walk(), except that it will also recurse into structs, calling
 // walkFn for all intermediate structs and fields.
-func WalkStruct(input interface{}, walkFn WalkFunc) error {
+func WalkStruct(input any, walkFn WalkFunc) error {
 	return walkGeneric(input, nil, walkFn, true, nil)
 }
 
-func walkGeneric(parent interface{}, path []string, walkFn WalkFunc, includeStruct bool, seen []uintptr) error {
+func walkGeneric(parent any, path []string, walkFn WalkFunc, includeStruct bool, seen []uintptr) error {
 	if parent == nil {
 		return nil
 	}
@@ -758,8 +758,8 @@ func walkGeneric(parent interface{}, path []string, walkFn WalkFunc, includeStru
 		}
 
 		for _, key := range parentV.MapKeys() {
-			valueV := parentV.MapIndex(key)
-			subpath := append(path, fmt.Sprintf("%v", key.Interface()))
+			var valueV = parentV.MapIndex(key)
+			var subpath = append(path, fmt.Sprintf("%v", key.Interface()))
 
 			if err := walkGeneric(valueV.Interface(), subpath, walkFn, includeStruct, seen); err != nil {
 				return returnSkipOrErr(err)
@@ -772,8 +772,8 @@ func walkGeneric(parent interface{}, path []string, walkFn WalkFunc, includeStru
 		}
 
 		for i := 0; i < parentV.Len(); i++ {
-			valueV := parentV.Index(i)
-			subpath := append(path, fmt.Sprintf("%v", i))
+			var valueV = parentV.Index(i)
+			var subpath = append(path, fmt.Sprintf("%v", i))
 
 			if err := walkGeneric(valueV.Interface(), subpath, walkFn, includeStruct, seen); err != nil {
 				return returnSkipOrErr(err)
@@ -787,11 +787,11 @@ func walkGeneric(parent interface{}, path []string, walkFn WalkFunc, includeStru
 			}
 
 			for i := 0; i < parentV.NumField(); i++ {
-				fieldV := parentV.Type().Field(i)
+				var fieldV = parentV.Type().Field(i)
 
 				// only operate on exported fields
 				if fieldV.PkgPath == `` {
-					valueV := parentV.Field(i)
+					var valueV = parentV.Field(i)
 					var subpath []string
 
 					// if this field is embedded, don't add it to the path list because
@@ -821,10 +821,10 @@ func walkGeneric(parent interface{}, path []string, walkFn WalkFunc, includeStru
 }
 
 // Recursively remove all zero and empty values from the given map.
-func Compact(input map[string]interface{}) (map[string]interface{}, error) {
-	var output = make(map[string]interface{})
+func Compact(input map[string]any) (map[string]any, error) {
+	var output = make(map[string]any)
 
-	if err := Walk(input, func(value interface{}, path []string, isLeaf bool) error {
+	if err := Walk(input, func(value any, path []string, isLeaf bool) error {
 		if !typeutil.IsEmpty(value) {
 			if typeutil.IsArray(value) {
 				DeepSet(output, path, value)
@@ -843,7 +843,7 @@ func Compact(input map[string]interface{}) (map[string]interface{}, error) {
 }
 
 // Recursively merge the contents of the second map into the first one and return the result.
-func Merge(first interface{}, second interface{}, options ...MergeOption) (map[string]interface{}, error) {
+func Merge(first any, second any, options ...MergeOption) (map[string]any, error) {
 	if first != nil && !typeutil.IsKind(first, reflect.Map) {
 		return nil, fmt.Errorf("first argument must be a map, got %T", first)
 	}
@@ -852,9 +852,9 @@ func Merge(first interface{}, second interface{}, options ...MergeOption) (map[s
 		return nil, fmt.Errorf("second argument must be a map, got %T", second)
 	}
 
-	var output = make(map[string]interface{})
+	var output = make(map[string]any)
 
-	if err := Walk(first, func(value interface{}, path []string, isLeaf bool) error {
+	if err := Walk(first, func(value any, path []string, isLeaf bool) error {
 		if isLeaf {
 			DeepSet(output, path, value)
 		}
@@ -864,22 +864,22 @@ func Merge(first interface{}, second interface{}, options ...MergeOption) (map[s
 		return nil, err
 	}
 
-	if err := Walk(second, func(value interface{}, path []string, isLeaf bool) error {
+	if err := Walk(second, func(value any, path []string, isLeaf bool) error {
 		if isLeaf {
 			if value != nil {
 				if currentValue := DeepGet(output, path, nil); currentValue == nil {
 					DeepSet(output, path, value)
 				} else {
-					currentV := reflect.ValueOf(currentValue)
+					var currentV = reflect.ValueOf(currentValue)
 
 					switch currentV.Type().Kind() {
 					case reflect.Slice, reflect.Array:
-						newPath := append(path, fmt.Sprintf("%d", currentV.Len()))
+						var newPath = append(path, fmt.Sprintf("%d", currentV.Len()))
 						DeepSet(output, newPath, value)
 
 					default:
 						if MergeOptions(options).Has(AppendValues) {
-							DeepSet(output, path, []interface{}{currentValue, value})
+							DeepSet(output, path, []any{currentValue, value})
 						} else {
 							DeepSet(output, path, value)
 						}
@@ -897,7 +897,7 @@ func Merge(first interface{}, second interface{}, options ...MergeOption) (map[s
 }
 
 // Take the input map and convert all values to strings.
-func Stringify(input map[string]interface{}) map[string]string {
+func Stringify(input map[string]any) map[string]string {
 	var output = make(map[string]string)
 
 	for k, v := range input {
@@ -912,10 +912,10 @@ func Stringify(input map[string]interface{}) map[string]string {
 }
 
 // Recursively walk the given map, performing automatic type conversion on all leaf nodes.
-func Autotype(input interface{}) map[string]interface{} {
-	var output = make(map[string]interface{})
+func Autotype(input any) map[string]any {
+	var output = make(map[string]any)
 
-	if err := Walk(input, func(value interface{}, path []string, isLeaf bool) error {
+	if err := Walk(input, func(value any, path []string, isLeaf bool) error {
 		// if we encounter a Variant, use its autotyping instead of walking the struct
 		if valueVar, ok := value.(typeutil.Variant); ok {
 			value = valueVar.Auto()
@@ -941,14 +941,14 @@ func Autotype(input interface{}) map[string]interface{} {
 
 // Performs a JSONPath query against the given object and returns the results.
 // JSONPath description, syntax, and examples are available at http://goessner.net/articles/JsonPath/.
-func JSONPath(data interface{}, query string) (interface{}, error) {
+func JSONPath(data any, query string) (any, error) {
 	return utils.JSONPath(data, query, true)
 }
 
-func apply(includeStruct bool, input interface{}, fn ApplyFunc) map[string]interface{} {
-	var output = make(map[string]interface{})
+func apply(includeStruct bool, input any, fn ApplyFunc) map[string]any {
+	var output = make(map[string]any)
 
-	wfn := func(value interface{}, path []string, isLeaf bool) error {
+	var wfn = func(value any, path []string, isLeaf bool) error {
 		if isLeaf {
 			if fn != nil {
 				if out, ok := fn(path, value); ok {
@@ -981,27 +981,27 @@ func apply(includeStruct bool, input interface{}, fn ApplyFunc) map[string]inter
 // Recursively walk the given map, calling the ApplyFunc for each leaf value.  If the second
 // return value from the function is true, that value in the struct will be replaced with the first
 // return value.  If false, the value will be left as-is.
-func Apply(input interface{}, fn ApplyFunc) map[string]interface{} {
+func Apply(input any, fn ApplyFunc) map[string]any {
 	return apply(false, input, fn)
 }
 
 // The same as Apply(), but will descend into structs.
-func ApplyStruct(input interface{}, fn ApplyFunc) map[string]interface{} {
+func ApplyStruct(input any, fn ApplyFunc) map[string]any {
 	return apply(true, input, fn)
 }
 
 // Perform a deep copy of the given map.
-func DeepCopy(input interface{}) map[string]interface{} {
+func DeepCopy(input any) map[string]any {
 	return apply(false, input, nil)
 }
 
 // Perform a deep copy of the given map or struct, returning a map.
-func DeepCopyStruct(input interface{}) map[string]interface{} {
+func DeepCopyStruct(input any) map[string]any {
 	return apply(true, input, nil)
 }
 
 // Convert the given value to a slice using typeutil.Slice, then return each element as a Map.
-func SliceOfMaps(input interface{}) (maps []*Map) {
+func SliceOfMaps(input any) (maps []*Map) {
 	for _, v := range typeutil.Slice(input) {
 		maps = append(maps, M(v))
 	}
@@ -1034,29 +1034,29 @@ func fieldNameFromReflect(field reflect.StructField) string {
 // The value may also specify a standard fmt.Sprintf pattern with "${path.to.value:%02d}" (or
 // "${path.to.value|fallback:%02d}" for fallback values.)  Finally, a special case for time.Time values
 // allows for the format string to be passed to time.Format: "${path.to.time:%January 2, 2006 (3:04pm)}".
-func Sprintf(format string, data ...interface{}) string {
-	var params []interface{}
+func Sprintf(format string, data ...any) string {
+	var params []any
 
 MatchLoop:
 	for {
-		m := rxutil.Match(rxMapFmt, format)
+		var m = rxutil.Match(rxMapFmt, format)
 
 		if m == nil {
 			break
 		}
 
-		caps := m.NamedCaptures()
-		placeholder := caps[`fmt`]
+		var caps = m.NamedCaptures()
+		var placeholder = caps[`fmt`]
 
 		if placeholder == `` {
 			placeholder = `%v`
 		}
 
 		for _, d := range data {
-			dm := M(d)
+			var dm = M(d)
 
 			if tm, ok := dm.Get(caps[`key`]).Value.(time.Time); ok {
-				tmfmt := strings.TrimPrefix(placeholder, `%`)
+				var tmfmt = strings.TrimPrefix(placeholder, `%`)
 
 				if tmfmt == `v` {
 					tmfmt = time.RFC3339
@@ -1080,11 +1080,11 @@ MatchLoop:
 }
 
 // Same as Sprintf, but prints its output to standard output.
-func Printf(format string, data ...interface{}) {
+func Printf(format string, data ...any) {
 	fmt.Print(Sprintf(format, data...))
 }
 
 // Same as Sprintf, but writes output to the given writer.
-func Fprintf(w io.Writer, format string, data ...interface{}) {
+func Fprintf(w io.Writer, format string, data ...any) {
 	fmt.Fprint(w, Sprintf(format, data...))
 }

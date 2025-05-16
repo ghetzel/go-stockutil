@@ -8,7 +8,7 @@ import (
 )
 
 func TestAttachAndRetrieveValue(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	req, err := http.NewRequest(`GET`, `about:blank`, nil)
 	assert.NoError(err)

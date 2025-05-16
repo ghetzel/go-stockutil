@@ -29,7 +29,7 @@ func ParseDuration(in string) (time.Duration, error) {
 func FormatTimer(d time.Duration) string {
 	h, m, s := DurationHMS(d)
 
-	out := fmt.Sprintf("%02d:%02d:%02d", h, m, s)
+	var out = fmt.Sprintf("%02d:%02d:%02d", h, m, s)
 	out = strings.TrimPrefix(out, `00:`)
 	out = strings.TrimPrefix(out, `0`)
 	return out
@@ -41,18 +41,18 @@ func FormatTimer(d time.Duration) string {
 func FormatTimerf(format string, d time.Duration) string {
 	h, m, s := DurationHMS(d)
 
-	out := fmt.Sprintf(format, h, m, s)
+	var out = fmt.Sprintf(format, h, m, s)
 	return out
 }
 
 // Extracts the hours, minutes, and seconds from the given duration.
 func DurationHMS(d time.Duration) (int, int, int) {
 	d = d.Round(time.Second)
-	h := d / time.Hour
+	var h = d / time.Hour
 	d -= h * time.Hour
-	m := d / time.Minute
+	var m = d / time.Minute
 	d -= m * time.Minute
-	s := d / time.Second
+	var s = d / time.Second
 
 	return int(h), int(m), int(s)
 }

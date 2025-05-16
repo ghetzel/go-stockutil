@@ -19,7 +19,7 @@ func testHttpServer() *httptest.Server {
 	return httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		switch req.Method {
 		case `GET`:
-			RespondJSON(w, map[string]interface{}{
+			RespondJSON(w, map[string]any{
 				`path`: req.URL.Path,
 				`qs`:   req.URL.Query(),
 			})
@@ -33,7 +33,7 @@ func testHttpServer() *httptest.Server {
 				}
 
 			default:
-				var input interface{}
+				var input any
 
 				if !QBool(req, `thing`) {
 					RespondJSON(w, nil, http.StatusForbidden)
@@ -48,7 +48,7 @@ func testHttpServer() *httptest.Server {
 			}
 
 		case `PUT`:
-			var input interface{}
+			var input any
 
 			if !QBool(req, `thing`) || !QBool(req, `topthing`) {
 				RespondJSON(w, nil, http.StatusForbidden)
@@ -87,8 +87,8 @@ func testHttpServer() *httptest.Server {
 }
 
 func TestDefaultClient(t *testing.T) {
-	assert := require.New(t)
-	server := testHttpServer()
+	var assert = require.New(t)
+	var server = testHttpServer()
 	defer server.Close()
 
 	// GET
@@ -99,11 +99,11 @@ func TestDefaultClient(t *testing.T) {
 }
 
 func TestClient(t *testing.T) {
-	assert := require.New(t)
-	var out map[string]interface{}
+	var assert = require.New(t)
+	var out map[string]any
 	var outS string
 
-	server := testHttpServer()
+	var server = testHttpServer()
 	defer server.Close()
 
 	client, err := NewClient(server.URL + `/base/?hello=true`)
@@ -118,17 +118,17 @@ func TestClient(t *testing.T) {
 	assert.NoError(err)
 	assert.NotNil(response)
 	assert.NoError(ParseJSON(response.Body, &out))
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`path`: `/base/test/path`,
-		`qs`: map[string]interface{}{
-			`hello`:    []interface{}{`true`},
-			`topthing`: []interface{}{`true`},
+		`qs`: map[string]any{
+			`hello`:    []any{`true`},
+			`topthing`: []any{`true`},
 		},
 	}, out)
 
 	// POST
 	// --------------------------------------------------------------------------------------------
-	response, err = client.Post(`/base/test/path`, `postable`, map[string]interface{}{
+	response, err = client.Post(`/base/test/path`, `postable`, map[string]any{
 		`thing`: true,
 	}, nil)
 
@@ -139,7 +139,7 @@ func TestClient(t *testing.T) {
 
 	// PUT
 	// --------------------------------------------------------------------------------------------
-	response, err = client.Put(`/base/test/path`, `puttable`, map[string]interface{}{
+	response, err = client.Put(`/base/test/path`, `puttable`, map[string]any{
 		`thing`: true,
 	}, nil)
 
@@ -158,10 +158,10 @@ func TestClient(t *testing.T) {
 }
 
 func TestClientMultipartFormEncoder(t *testing.T) {
-	assert := require.New(t)
-	var out map[string]interface{}
+	var assert = require.New(t)
+	var out map[string]any
 
-	server := testHttpServer()
+	var server = testHttpServer()
 	defer server.Close()
 
 	client, err := NewClient(server.URL)
@@ -174,7 +174,7 @@ func TestClientMultipartFormEncoder(t *testing.T) {
 		return errors.New(typeutil.String(res.Body))
 	})
 
-	response, err := client.WithEncoder(MultipartFormEncoder).Post(`/way/cool`, map[string]interface{}{
+	response, err := client.WithEncoder(MultipartFormEncoder).Post(`/way/cool`, map[string]any{
 		`file`:   bytes.NewBuffer([]byte("test file 1\n")),
 		`other`:  bytes.NewBuffer([]byte("test file 2\n")),
 		`key`:    `value`,
@@ -186,16 +186,16 @@ func TestClientMultipartFormEncoder(t *testing.T) {
 	assert.Equal(response.StatusCode, http.StatusAccepted)
 	assert.NoError(ParseJSON(response.Body, &out))
 
-	assert.Equal(map[string]interface{}{
-		`file`:   []interface{}{"test file 1\n"},
-		`other`:  []interface{}{"test file 2\n"},
-		`key`:    []interface{}{"value"},
-		`enable`: []interface{}{"true"},
+	assert.Equal(map[string]any{
+		`file`:   []any{"test file 1\n"},
+		`other`:  []any{"test file 2\n"},
+		`key`:    []any{"value"},
+		`enable`: []any{"true"},
 	}, out)
 }
 
 func TestClientNetrcAuth(t *testing.T) {
-	server := testHttpServer()
+	var server = testHttpServer()
 	defer server.Close()
 
 	client, err := NewClient(server.URL)

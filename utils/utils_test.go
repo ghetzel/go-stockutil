@@ -37,7 +37,7 @@ type testMarshal struct {
 }
 
 func TestGenericMarshalJSON(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	data, err := GenericMarshalJSON(&testMarshal{
 		Name:      `test`,

@@ -4,7 +4,6 @@ import (
 	"crypto/tls"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net"
 	"net/http"
 	"net/url"
@@ -26,11 +25,11 @@ type OpenOptions struct {
 
 type OpenHandler func(*url.URL, OpenOptions) (io.ReadCloser, error)
 
-func (self OpenOptions) GetTimeout() time.Duration {
-	if self.Timeout == 0 {
+func (opts OpenOptions) GetTimeout() time.Duration {
+	if opts.Timeout == 0 {
 		return DefaultOpenTimeout
 	} else {
-		return self.Timeout
+		return opts.Timeout
 	}
 }
 
@@ -52,7 +51,7 @@ func openHandlerLocalFile(uri *url.URL, opt OpenOptions) (io.ReadCloser, error) 
 }
 
 func openHandlerHttp(uri *url.URL, opt OpenOptions) (io.ReadCloser, error) {
-	client := http.Client{
+	var client = http.Client{
 		Timeout: opt.GetTimeout(),
 		Transport: &http.Transport{
 			TLSClientConfig: &tls.Config{
@@ -133,7 +132,7 @@ func openHandlerSftp(u *url.URL, opts OpenOptions) (io.ReadCloser, error) {
 	// go through the whole process of loading keypairs
 	if v := u.Query().Get(`keyfile`); v != `` {
 		if kexpanded, err := pathutil.ExpandUser(v); err == nil {
-			if key, err := ioutil.ReadFile(kexpanded); err == nil {
+			if key, err := os.ReadFile(kexpanded); err == nil {
 				if signer, err := ssh.ParsePrivateKey(key); err == nil {
 					methods = append(methods, ssh.PublicKeys(signer))
 				} else {

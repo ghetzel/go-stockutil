@@ -10,8 +10,8 @@ import (
 
 var ConvertRoundToPlaces = 6
 
-func parseUnit(in interface{}) Unit {
-	out := Invalid
+func parseUnit(in any) Unit {
+	var out = Invalid
 
 	if v, ok := in.(Unit); ok {
 		out = v
@@ -32,7 +32,7 @@ func parseUnit(in interface{}) Unit {
 	return out
 }
 
-func MustConvert(in interface{}, from interface{}, to interface{}) float64 {
+func MustConvert(in any, from any, to any) float64 {
 	if value, err := Convert(in, from, to); err == nil {
 		return value
 	} else {
@@ -40,7 +40,7 @@ func MustConvert(in interface{}, from interface{}, to interface{}) float64 {
 	}
 }
 
-func Convert(in interface{}, from interface{}, to interface{}) (float64, error) {
+func Convert(in any, from any, to any) (float64, error) {
 	if v, err := ExactConvert(in, from, to); err == nil {
 		return mathutil.RoundPlaces(v, ConvertRoundToPlaces), nil
 	} else {
@@ -48,7 +48,7 @@ func Convert(in interface{}, from interface{}, to interface{}) (float64, error) 
 	}
 }
 
-func MustExactConvert(in interface{}, from interface{}, to interface{}) float64 {
+func MustExactConvert(in any, from any, to any) float64 {
 	if value, err := Convert(in, from, to); err == nil {
 		return value
 	} else {
@@ -56,9 +56,9 @@ func MustExactConvert(in interface{}, from interface{}, to interface{}) float64 
 	}
 }
 
-func ExactConvert(in interface{}, from interface{}, to interface{}) (float64, error) {
-	fromU := parseUnit(from)
-	toU := parseUnit(to)
+func ExactConvert(in any, from any, to any) (float64, error) {
+	var fromU = parseUnit(from)
+	var toU = parseUnit(to)
 
 	if !fromU.IsValid() {
 		return 0, fmt.Errorf("invalid 'from' unit")
@@ -77,7 +77,7 @@ func ExactConvert(in interface{}, from interface{}, to interface{}) (float64, er
 			return 0, fmt.Errorf("units '%v' and '%v' are not convertible to each other", fromU, toU)
 		}
 
-		baseConvert := func() interface{} {
+		var baseConvert = func() any {
 			switch fromU.Family() {
 			case TemperatureUnits:
 				return convertTemperature(v, fromU, toU)
@@ -90,7 +90,7 @@ func ExactConvert(in interface{}, from interface{}, to interface{}) (float64, er
 			return fmt.Errorf("cannot convert from %v to %v", from, to)
 		}
 
-		converted := baseConvert()
+		var converted = baseConvert()
 
 		if vF, ok := converted.(float64); ok {
 			return vF, nil
@@ -131,7 +131,7 @@ func convertTemperature(v float64, from Unit, to Unit) float64 {
 }
 
 func convertSpeed(v float64, from Unit, to Unit) float64 {
-	c := unit.Speed(v)
+	var c = unit.Speed(v)
 
 	switch from {
 	case MilesPerHour:
@@ -153,7 +153,7 @@ func convertSpeed(v float64, from Unit, to Unit) float64 {
 }
 
 func convertDistance(v float64, from Unit, to Unit) float64 {
-	c := unit.Length(v)
+	var c = unit.Length(v)
 
 	switch from {
 	case Feet:

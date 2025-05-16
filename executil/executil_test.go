@@ -8,7 +8,7 @@ import (
 )
 
 func TestWhich(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	// assert.Equal(`/bin/sh`, Which(`/bin/sh`))
 	// assert.Equal(`/bin/sh`, Which(`sh`))
@@ -17,7 +17,7 @@ func TestWhich(t *testing.T) {
 }
 
 func TestJoin(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(``, Join(nil))
 	assert.Equal(``, Join(``))
@@ -39,12 +39,12 @@ func TestJoin(t *testing.T) {
 }
 
 func TestEventedLineOutput(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	stdout := make([]string, 0)
-	stderr := make([]string, 0)
+	var stdout = make([]string, 0)
+	var stderr = make([]string, 0)
 
-	cmd := Command(`printf`, `1\n2\n3\n`)
+	var cmd = Command(`printf`, `1\n2\n3\n`)
 	cmd.OnStdout = func(line string, serr bool) {
 		stdout = append(stdout, line)
 	}

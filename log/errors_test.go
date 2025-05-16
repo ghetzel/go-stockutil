@@ -34,13 +34,13 @@ func TestStackTrace(t *testing.T) {
 }
 
 func TestErrors(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	e1m := `error 1`
-	e1 := errors.New(e1m)
+	var e1m = `error 1`
+	var e1 = errors.New(e1m)
 
-	e2m := `error`
-	e2 := errors.New(e2m)
+	var e2m = `error`
+	var e2 = errors.New(e2m)
 
 	assert.False(ErrContains(nil, nil))
 	assert.False(ErrContains(e1, nil))

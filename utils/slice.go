@@ -8,12 +8,12 @@ import (
 var Stop = fmt.Errorf("stop iterating")
 var EachChanMaxItems = 1048576
 
-type IterationFunc func(i int, value interface{}) error
+type IterationFunc func(i int, value any) error
 
 // Iterate through each element of the given array, slice or channel; calling
 // iterFn exactly once for each element.  Otherwise, call iterFn one time
 // with the given input as the argument.
-func SliceEach(slice interface{}, iterFn IterationFunc, preserve ...reflect.Kind) error {
+func SliceEach(slice any, iterFn IterationFunc, preserve ...reflect.Kind) error {
 	if iterFn == nil {
 		return nil
 	}
@@ -23,7 +23,7 @@ func SliceEach(slice interface{}, iterFn IterationFunc, preserve ...reflect.Kind
 	if inT := reflect.TypeOf(slice); inT != nil {
 		switch inT.Kind() {
 		case reflect.Slice, reflect.Array:
-			sliceV := reflect.ValueOf(slice)
+			var sliceV = reflect.ValueOf(slice)
 
 			for i := 0; i < sliceV.Len(); i++ {
 				if err := iterFn(i, sliceV.Index(i).Interface()); err != nil {
@@ -49,7 +49,7 @@ func SliceEach(slice interface{}, iterFn IterationFunc, preserve ...reflect.Kind
 				}
 			}
 
-			mapV := reflect.ValueOf(slice)
+			var mapV = reflect.ValueOf(slice)
 
 			for i, key := range mapV.MapKeys() {
 				if valueV := mapV.MapIndex(key); valueV.IsValid() && valueV.CanInterface() {
@@ -78,10 +78,10 @@ func SliceEach(slice interface{}, iterFn IterationFunc, preserve ...reflect.Kind
 				}
 			}
 
-			structV := reflect.ValueOf(slice)
+			var structV = reflect.ValueOf(slice)
 
 			for i := 0; i < structV.Type().NumField(); i++ {
-				field := structV.Type().Field(i)
+				var field = structV.Type().Field(i)
 
 				if field.Name != `` {
 					if valueV := structV.Field(i); valueV.IsValid() && valueV.CanInterface() {
@@ -97,7 +97,7 @@ func SliceEach(slice interface{}, iterFn IterationFunc, preserve ...reflect.Kind
 			}
 
 		case reflect.Chan:
-			sliceC := reflect.ValueOf(slice)
+			var sliceC = reflect.ValueOf(slice)
 			var i int
 
 			for {
@@ -135,14 +135,14 @@ func SliceEach(slice interface{}, iterFn IterationFunc, preserve ...reflect.Kind
 }
 
 // Takes some input value and returns it as a slice.
-func Sliceify(in interface{}) []interface{} {
+func Sliceify(in any) []any {
 	if in == nil {
 		return nil
 	}
 
-	var out = make([]interface{}, 0)
+	var out = make([]any, 0)
 
-	SliceEach(in, func(_ int, v interface{}) error {
+	SliceEach(in, func(_ int, v any) error {
 		out = append(out, v)
 		return nil
 	})

@@ -7,7 +7,7 @@ import (
 )
 
 func TestIsInteger(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsInteger(nil))
 	assert.False(IsInteger(``))
@@ -25,7 +25,7 @@ func TestIsInteger(t *testing.T) {
 }
 
 func TestIsFloat(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsFloat(nil))
 	assert.False(IsFloat(``))
@@ -43,7 +43,7 @@ func TestIsFloat(t *testing.T) {
 }
 
 func TestIsHexadecimal(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsHexadecimal(nil))
 	assert.False(IsHexadecimal(``))

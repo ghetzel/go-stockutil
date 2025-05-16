@@ -286,7 +286,7 @@ func (self Country) IsValid() bool {
 
 type CountryData map[string]Country
 
-func (self CountryData) Get(nameOrCode interface{}) Country {
+func (self CountryData) Get(nameOrCode any) Country {
 	var ia2 = strings.ToLower(typeutil.String(nameOrCode))
 
 	if c, ok := self[ia2]; ok && c.IsValid() {

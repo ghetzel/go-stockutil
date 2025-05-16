@@ -9,7 +9,7 @@ import (
 )
 
 func TestSetExt(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(``, SetExt(``, ``))
 	assert.Equal(`/nothingburger.txt`, SetExt(`/nothingburger.txt`, ``))
@@ -36,7 +36,7 @@ func reset(s io.Seeker) error {
 }
 
 func TestSameFile(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.True(SameFile(`file_test.go`, `file_test.go`))
 	assert.True(SameFile(`file.go`, `file.go`))
@@ -61,9 +61,11 @@ func TestSameFile(t *testing.T) {
 	assert.True(SameFile(`file.go`, o))
 
 	f1, err := os.Open(`file_test.go`)
+	assert.NoError(err)
 	defer f1.Close()
 
 	f2, err := os.Open(`file.go`)
+	assert.NoError(err)
 	defer f2.Close()
 
 	assert.True(SameFile(f1, f1))
@@ -82,4 +84,16 @@ func TestSameFile(t *testing.T) {
 	assert.False(SameFile(f2, f1))
 	assert.NoError(reset(f1))
 	assert.NoError(reset(f2))
+}
+
+func TestIsHiddenFile(t *testing.T) {
+	var assert = require.New(t)
+
+	assert.True(IsHiddenFile(`.hidden`))
+	assert.True(IsHiddenFile(`path/to/.hidden`))
+	assert.False(IsHiddenFile(``))
+	assert.False(IsHiddenFile(`.`))
+	assert.False(IsHiddenFile(`..`))
+	assert.False(IsHiddenFile(`visible`))
+	assert.False(IsHiddenFile(`path/to/visible`))
 }

@@ -102,15 +102,15 @@ func QStrings(req *http.Request, key string, delimiter string, fallbacks ...stri
 }
 
 // Sets a query string to the given value in the given url.URL
-func SetQ(u *url.URL, key string, value interface{}) {
-	qs := u.Query()
+func SetQ(u *url.URL, key string, value any) {
+	var qs = u.Query()
 	qs.Set(key, stringutil.MustString(value))
 	u.RawQuery = qs.Encode()
 }
 
 // Appends a query string from then given url.URL
-func AddQ(u *url.URL, key string, values ...interface{}) {
-	qs := u.Query()
+func AddQ(u *url.URL, key string, values ...any) {
+	var qs = u.Query()
 
 	for _, value := range values {
 		qs.Add(key, stringutil.MustString(value))
@@ -121,14 +121,14 @@ func AddQ(u *url.URL, key string, values ...interface{}) {
 
 // Deletes a query string from then given url.URL
 func DelQ(u *url.URL, key string) {
-	qs := u.Query()
+	var qs = u.Query()
 	qs.Del(key)
 	u.RawQuery = qs.Encode()
 }
 
 // A version of SetQ that accepts a URL string and makes a best-effort to modify it.
 // Will return the modified URL or the original URL if an error occurred.
-func SetQString(u string, key string, value interface{}) string {
+func SetQString(u string, key string, value any) string {
 	if ur, err := url.Parse(u); err == nil {
 		SetQ(ur, key, value)
 
@@ -140,7 +140,7 @@ func SetQString(u string, key string, value interface{}) string {
 
 // A version of AddQ that accepts a URL string and makes a best-effort to modify it.
 // Will return the modified URL or the original URL if an error occurred.
-func AddQString(u string, key string, value interface{}) string {
+func AddQString(u string, key string, value any) string {
 	if ur, err := url.Parse(u); err == nil {
 		AddQ(ur, key, value)
 

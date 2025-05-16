@@ -20,8 +20,8 @@ var WaitForPingCheckInterval = time.Second
 // Periodically attempts to send an ICMP ECHO request (a "ping") to the given IP address, up to totaltime.
 // Returns nil if an ECHO reply was received, or an error if the function timed out.
 // The check interval can be configured using the WaitForPingCheckInterval package variable.
-func WaitForPing(addr interface{}, totaltime time.Duration) error {
-	started := time.Now()
+func WaitForPing(addr any, totaltime time.Duration) error {
+	var started = time.Now()
 
 	var address net.IP
 
@@ -102,7 +102,7 @@ func OnePingOnly(dest net.IP, source *IPAddress, timeout time.Duration) error {
 			return fmt.Errorf("bad timeout: %v", err)
 		}
 
-		req := icmp.Message{
+		var req = icmp.Message{
 			Type: icmptyp,
 			Code: 0,
 			Body: &icmp.Echo{
@@ -120,7 +120,7 @@ func OnePingOnly(dest net.IP, source *IPAddress, timeout time.Duration) error {
 				return fmt.Errorf("failed to send ping: %v", err)
 			}
 
-			replybin := make([]byte, 1500)
+			var replybin = make([]byte, 1500)
 
 			if n, _, err := conn.ReadFrom(replybin); err == nil {
 				if _, err := icmp.ParseMessage(58, replybin[:n]); err == nil {

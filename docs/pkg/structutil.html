@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -173,19 +173,19 @@
 	
     <li>
 		
-		<a href="#CopyFunc">func CopyFunc(dest interface{}, source interface{}, fn StructValueFunc) error</a>
+		<a href="#CopyFunc">func CopyFunc(dest any, source any, fn StructValueFunc) error</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#CopyNonZero">func CopyNonZero(dest interface{}, source interface{}) error</a>
+		<a href="#CopyNonZero">func CopyNonZero(dest any, source any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#FieldsFunc">func FieldsFunc(in interface{}, fn StructFieldFunc) error</a>
+		<a href="#FieldsFunc">func FieldsFunc(in any, fn StructFieldFunc) error</a>
 		</strong>
 	</li>
 	
@@ -220,7 +220,7 @@
 				<a href="#Field.GetTag">
 					func
 					(self *Field)
-					GetTag(label string, fallback ...interface{}) (string, []string, bool)
+					GetTag(label string, fallback ...any) (string, []string, bool)
 				</a>
 				</strong>
 			</li>
@@ -244,7 +244,7 @@
 				<a href="#Field.MergeValue">
 					func
 					(self *Field)
-					MergeValue(in interface{}) error
+					MergeValue(in any) error
 				</a>
 				
 			</li>
@@ -256,7 +256,7 @@
 				<a href="#Field.Set">
 					func
 					(self *Field)
-					Set(value interface{}) error
+					Set(value any) error
 				</a>
 				
 			</li>
@@ -308,7 +308,7 @@
 			<li>
 				
 				<a href="#Struct.S">
-					func S(src interface{}) *Struct
+					func S(src any) *Struct
 				</a>
 				
 			</li>
@@ -347,7 +347,7 @@
 				<a href="#Struct.Merge">
 					func
 					(self *Struct)
-					Merge(other interface{}) error
+					Merge(other any) error
 				</a>
 				
 			</li>
@@ -498,7 +498,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CopyFunc(dest interface{}, source interface{}, fn StructValueFunc) error</pre>
+	<pre>func CopyFunc(dest any, source any, fn StructValueFunc) error</pre>
 </div>
 
 
@@ -509,7 +509,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CopyNonZero(dest interface{}, source interface{}) error</pre>
+	<pre>func CopyNonZero(dest any, source any) error</pre>
 </div>
 
 
@@ -523,7 +523,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func FieldsFunc(in interface{}, fn StructFieldFunc) error</pre>
+	<pre>func FieldsFunc(in any, fn StructFieldFunc) error</pre>
 </div>
 
 
@@ -577,7 +577,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Field) GetTag(label string, fallback ...interface{}) (string, []string, bool)</pre>
+	<pre>func (self *Field) GetTag(label string, fallback ...any) (string, []string, bool)</pre>
 </div>
 
 <p><p>Retrieve the field name and attributes associated with the given field tag.</p>
@@ -610,7 +610,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Field) MergeValue(in interface{}) error</pre>
+	<pre>func (self *Field) MergeValue(in any) error</pre>
 </div>
 
 
@@ -625,7 +625,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Field) Set(value interface{}) error</pre>
+	<pre>func (self *Field) Set(value any) error</pre>
 </div>
 
 
@@ -674,7 +674,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 	
 	
 	<pre>type Struct struct {
-	Source interface{}
+	Source any
 
 }// A Struct, or &#34;S-object&#34;, can be used to rapidly and safely inspect, iterate over, and modify values of a struct.
 
@@ -697,7 +697,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func S(src interface{}) *Struct</pre>
+	<pre>func S(src any) *Struct</pre>
 </div>
 
 
@@ -745,7 +745,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Struct) Merge(other interface{}) error</pre>
+	<pre>func (self *Struct) Merge(other any) error</pre>
 </div>
 
 
@@ -782,7 +782,7 @@ var <span id="StructTag">StructTag    </span> = `structutil`
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type StructValueFunc func(field string, sourceValue interface{}, destValue interface{}) (interface{}, bool) // Receives a struct field name, the value of that field in the source struct, and the value for that field in the destination struct.
+	<pre>type StructValueFunc func(field string, sourceValue any, destValue any) (any, bool) // Receives a struct field name, the value of that field in the source struct, and the value for that field in the destination struct.
 // Returns the value that should be placed in the destination struct fields.  If the returned bool is false, no changes will
 // be made.
 </pre>

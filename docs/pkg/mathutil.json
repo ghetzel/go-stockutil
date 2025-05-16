@@ -31,7 +31,7 @@
                     "Alias": "math"
                 }
             ],
-            "Size": 2248,
+            "Size": 2254,
             "LineCount": 56,
             "SourceLineCount": 18,
             "FunctionCount": 1,
@@ -47,7 +47,7 @@
                     "Alias": "math"
                 }
             ],
-            "Size": 994,
+            "Size": 997,
             "LineCount": 60,
             "SourceLineCount": 48,
             "FunctionCount": 5,
@@ -67,7 +67,7 @@
                     "Alias": "assert"
                 }
             ],
-            "Size": 1591,
+            "Size": 1600,
             "LineCount": 51,
             "SourceLineCount": 41,
             "FunctionCount": 0,
@@ -180,7 +180,7 @@
                 }
             ],
             "Signature": "Round(x float64) float64",
-            "Source": "ewoJYml0cyA6PSBtYXRoLkZsb2F0NjRiaXRzKHgpCgllIDo9IHVpbnQoYml0cz4+c2hpZnQpICYgbWFzawoJaWYgZSA8IGJpYXMgewoJCWJpdHMgJj0gc2lnbk1hc2sKCQlpZiBlID09IGJpYXMtMSB7CgkJCWJpdHMgfD0gdXZvbmUKCQl9Cgl9IGVsc2UgaWYgZSA8IGJpYXMrc2hpZnQgewoJCWNvbnN0IGhhbGYgPSAxIDw8IChzaGlmdCAtIDEpCgkJZSAtPSBiaWFzCgkJYml0cyArPSBoYWxmID4+IGUKCQliaXRzICZePSBmcmFjTWFzayA+PiBlCgl9CglyZXR1cm4gbWF0aC5GbG9hdDY0ZnJvbWJpdHMoYml0cykKfS8vIFJvdW5kIGFueSBhYnMoeCkgPj0gMSBjb250YWluaW5nIGEgZnJhY3Rpb25hbCBjb21wb25lbnQgWzAsMSkuCi8vCi8vIE51bWJlcnMgd2l0aCBsYXJnZXIgZXhwb25lbnRzIGFyZSByZXR1cm5lZCB1bmNoYW5nZWQgc2luY2UgdGhleQovLyBtdXN0IGJlIGVpdGhlciBhbiBpbnRlZ2VyLCBpbmZpbml0eSwgb3IgTmFOLgo=",
+            "Source": "ewoJdmFyIGJpdHMgPSBtYXRoLkZsb2F0NjRiaXRzKHgpCgl2YXIgZSA9IHVpbnQoYml0cz4+c2hpZnQpICYgbWFzawoJaWYgZSA8IGJpYXMgewoJCWJpdHMgJj0gc2lnbk1hc2sKCQlpZiBlID09IGJpYXMtMSB7CgkJCWJpdHMgfD0gdXZvbmUKCQl9Cgl9IGVsc2UgaWYgZSA8IGJpYXMrc2hpZnQgewoJCWNvbnN0IGhhbGYgPSAxIDw8IChzaGlmdCAtIDEpCgkJZSAtPSBiaWFzCgkJYml0cyArPSBoYWxmID4+IGUKCQliaXRzICZePSBmcmFjTWFzayA+PiBlCgl9CglyZXR1cm4gbWF0aC5GbG9hdDY0ZnJvbWJpdHMoYml0cykKfS8vIFJvdW5kIGFueSBhYnMoeCkgPj0gMSBjb250YWluaW5nIGEgZnJhY3Rpb25hbCBjb21wb25lbnQgWzAsMSkuCi8vCi8vIE51bWJlcnMgd2l0aCBsYXJnZXIgZXhwb25lbnRzIGFyZSByZXR1cm5lZCB1bmNoYW5nZWQgc2luY2UgdGhleQovLyBtdXN0IGJlIGVpdGhlciBhbiBpbnRlZ2VyLCBpbmZpbml0eSwgb3IgTmFOLgo=",
             "IsPackageLevel": true
         },
         {
@@ -201,7 +201,7 @@
                 }
             ],
             "Signature": "RoundPlaces(x float64, places int) float64",
-            "Source": "ewoJaWYgcGxhY2VzIDw9IDAgewoJCXJldHVybiBSb3VuZCh4KQoJfSBlbHNlIHsKCQltdWx0aSA6PSBtYXRoLlBvdygxMCwgQ2xhbXAoZmxvYXQ2NChwbGFjZXMpLCAwLCAxNikpCgkJcmV0dXJuIChSb3VuZCh4Km11bHRpKSAvIG11bHRpKQoJfQp9",
+            "Source": "ewoJaWYgcGxhY2VzIDw9IDAgewoJCXJldHVybiBSb3VuZCh4KQoJfSBlbHNlIHsKCQl2YXIgbXVsdGkgPSBtYXRoLlBvdygxMCwgQ2xhbXAoZmxvYXQ2NChwbGFjZXMpLCAwLCAxNikpCgkJcmV0dXJuIChSb3VuZCh4Km11bHRpKSAvIG11bHRpKQoJfQp9",
             "IsPackageLevel": true
         }
     ],
@@ -215,7 +215,7 @@
                 }
             ],
             "Signature": "TestClamp(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCWFzc2VydC5UcnVlKENsYW1wKDAsIDAsIDApID09IDApCglhc3NlcnQuVHJ1ZShDbGFtcCgwLCAtMSwgMSkgPT0gMCkKCWFzc2VydC5UcnVlKENsYW1wKC0xLCAtMSwgMSkgPT0gLTEpCglhc3NlcnQuVHJ1ZShDbGFtcCgtMC45OTk5LCAtMSwgMSkgPT0gLTAuOTk5OSkKCWFzc2VydC5UcnVlKENsYW1wKC0xLjAwMDEsIC0xLCAxKSA9PSAtMSkKCWFzc2VydC5UcnVlKENsYW1wKC0yLCAtMSwgMSkgPT0gLTEpCglhc3NlcnQuVHJ1ZShDbGFtcCgxLCAtMSwgMSkgPT0gMSkKCWFzc2VydC5UcnVlKENsYW1wKDAuOTk5OSwgLTEsIDEpID09IDAuOTk5OSkKCWFzc2VydC5UcnVlKENsYW1wKDEuMDAwMSwgLTEsIDEpID09IDEpCglhc3NlcnQuVHJ1ZShDbGFtcCgyLCAtMSwgMSkgPT0gMSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IGFzc2VydC5OZXcodCkKCWFzc2VydC5UcnVlKENsYW1wKDAsIDAsIDApID09IDApCglhc3NlcnQuVHJ1ZShDbGFtcCgwLCAtMSwgMSkgPT0gMCkKCWFzc2VydC5UcnVlKENsYW1wKC0xLCAtMSwgMSkgPT0gLTEpCglhc3NlcnQuVHJ1ZShDbGFtcCgtMC45OTk5LCAtMSwgMSkgPT0gLTAuOTk5OSkKCWFzc2VydC5UcnVlKENsYW1wKC0xLjAwMDEsIC0xLCAxKSA9PSAtMSkKCWFzc2VydC5UcnVlKENsYW1wKC0yLCAtMSwgMSkgPT0gLTEpCglhc3NlcnQuVHJ1ZShDbGFtcCgxLCAtMSwgMSkgPT0gMSkKCWFzc2VydC5UcnVlKENsYW1wKDAuOTk5OSwgLTEsIDEpID09IDAuOTk5OSkKCWFzc2VydC5UcnVlKENsYW1wKDEuMDAwMSwgLTEsIDEpID09IDEpCglhc3NlcnQuVHJ1ZShDbGFtcCgyLCAtMSwgMSkgPT0gMSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -227,7 +227,7 @@
                 }
             ],
             "Signature": "TestLeadingSignificantZeros(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbCgwLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjEsIDEwKSkKCWFzc2VydC5FcXVhbCgxLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAxMDAsIDEwKSkKCWFzc2VydC5FcXVhbCgyLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMTAsIDEwKSkKCWFzc2VydC5FcXVhbCgzLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMDEsIDEwKSkKCWFzc2VydC5FcXVhbCg0LCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMDAxLCAxMCkpCglhc3NlcnQuRXF1YWwoNSwgTGVhZGluZ1NpZ25pZmljYW50WmVyb3MoMS4wMDAwMDEsIDEwKSkKCWFzc2VydC5FcXVhbCgwLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMDAwMDAwMDAwMDAxLCAxMikpCglhc3NlcnQuRXF1YWwoMTMsIExlYWRpbmdTaWduaWZpY2FudFplcm9zKDEuMDAwMDAwMDAwMDAwMDEsIDEzKSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbCgwLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjEsIDEwKSkKCWFzc2VydC5FcXVhbCgxLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAxMDAsIDEwKSkKCWFzc2VydC5FcXVhbCgyLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMTAsIDEwKSkKCWFzc2VydC5FcXVhbCgzLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMDEsIDEwKSkKCWFzc2VydC5FcXVhbCg0LCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMDAxLCAxMCkpCglhc3NlcnQuRXF1YWwoNSwgTGVhZGluZ1NpZ25pZmljYW50WmVyb3MoMS4wMDAwMDEsIDEwKSkKCWFzc2VydC5FcXVhbCgwLCBMZWFkaW5nU2lnbmlmaWNhbnRaZXJvcygxLjAwMDAwMDAwMDAwMDAxLCAxMikpCglhc3NlcnQuRXF1YWwoMTMsIExlYWRpbmdTaWduaWZpY2FudFplcm9zKDEuMDAwMDAwMDAwMDAwMDEsIDEzKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -239,7 +239,7 @@
                 }
             ],
             "Signature": "TestRound(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDEpLCBSb3VuZCgxLjQ5OTk5OTk5OTk5OTk5OSkpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyKSwgUm91bmQoMS41KSkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDIpLCBSb3VuZCgxLjk5OTk5OTk5OTk5OTk5OSkpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyKSwgUm91bmQoMS45OTk5OTk5OTk5OTk5OTkpKQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMiksIFJvdW5kUGxhY2VzKDIuNDksIDApKQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMi41KSwgUm91bmRQbGFjZXMoMi40OSwgMSkpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyLjQ5KSwgUm91bmRQbGFjZXMoMi40OSwgMikpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyLjQ5KSwgUm91bmRQbGFjZXMoMi40OTAwMDAwMDAwNDksIDEwKSkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDIuNDkwMDAwMDAwMSksIFJvdW5kUGxhY2VzKDIuNDkwMDAwMDAwMDUsIDEwKSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IGFzc2VydC5OZXcodCkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDEpLCBSb3VuZCgxLjQ5OTk5OTk5OTk5OTk5OSkpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyKSwgUm91bmQoMS41KSkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDIpLCBSb3VuZCgxLjk5OTk5OTk5OTk5OTk5OSkpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyKSwgUm91bmQoMS45OTk5OTk5OTk5OTk5OTkpKQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMiksIFJvdW5kUGxhY2VzKDIuNDksIDApKQoJYXNzZXJ0LkVxdWFsKGZsb2F0NjQoMi41KSwgUm91bmRQbGFjZXMoMi40OSwgMSkpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyLjQ5KSwgUm91bmRQbGFjZXMoMi40OSwgMikpCglhc3NlcnQuRXF1YWwoZmxvYXQ2NCgyLjQ5KSwgUm91bmRQbGFjZXMoMi40OTAwMDAwMDAwNDksIDEwKSkKCWFzc2VydC5FcXVhbChmbG9hdDY0KDIuNDkwMDAwMDAwMSksIFJvdW5kUGxhY2VzKDIuNDkwMDAwMDAwMDUsIDEwKSkKfQ==",
             "IsPackageLevel": true
         }
     ]

@@ -25,7 +25,7 @@ func ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc {
 // A ReadManipulatorFunc for replacing text in an io.Reader as its being read.
 func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc {
 	return func(data []byte) ([]byte, error) {
-		line := string(data)
+		var line = string(data)
 		line = strings.Replace(line, find, replace, occurrences)
 		return []byte(line), nil
 	}
@@ -34,7 +34,7 @@ func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFu
 // A ReadManipulatorFunc for removing lines that only contain whitespace.
 func RemoveBlankLines(data []byte) ([]byte, error) {
 	if line := strings.TrimSpace(string(data)); len(line) == 0 {
-		return nil, SkipToken
+		return nil, ErrSkipToken
 	} else {
 		return data, nil
 	}
@@ -54,7 +54,7 @@ func RemoveLinesContaining(needle string) ReadManipulatorFunc {
 // A ReadManipulatorFunc for removing lines that have a given prefix.
 func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc {
 	return func(data []byte) ([]byte, error) {
-		line := string(data)
+		var line = string(data)
 
 		if trimSpace {
 			line = strings.TrimSpace(line)
@@ -71,7 +71,7 @@ func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc {
 // A ReadManipulatorFunc for removing lines that have a given suffix.
 func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc {
 	return func(data []byte) ([]byte, error) {
-		line := string(data)
+		var line = string(data)
 
 		if trimSpace {
 			line = strings.TrimSpace(line)
@@ -88,7 +88,7 @@ func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc {
 // A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.
 func RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc {
 	return func(data []byte) ([]byte, error) {
-		line := string(data)
+		var line = string(data)
 
 		if trimSpace {
 			line = strings.TrimSpace(line)

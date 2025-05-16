@@ -7,7 +7,7 @@ import (
 )
 
 func TestDetectConvertType(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(Nil, DetectConvertType(nil))
 	assert.Equal(Nil, DetectConvertType(``))
@@ -44,7 +44,7 @@ func TestDetectConvertType(t *testing.T) {
 }
 
 func TestConvertToInteger(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var i int64
 	var err error
@@ -86,7 +86,7 @@ func TestConvertToInteger(t *testing.T) {
 }
 
 func TestConvertTypeSpecificity(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(Nil.IsSupersetOf(Nil))
 	assert.False(Nil.IsSupersetOf(Bytes))

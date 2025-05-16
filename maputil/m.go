@@ -21,7 +21,7 @@ import (
 var MapXmlRootTagName = `data`
 var MapXmlStructTagName = `xml`
 
-type MapSetFunc func(m *Map, key string) interface{}
+type MapSetFunc func(m *Map, key string) any
 
 type IterOptions struct {
 	TagName  string
@@ -29,18 +29,18 @@ type IterOptions struct {
 }
 
 type Item struct {
-	Key   interface{}
-	Value interface{}
+	Key   any
+	Value any
 	K     string
 	V     typeutil.Variant
 	m     *Map
 }
 
-func (self *Item) Set(value interface{}) error {
+func (self *Item) Set(value any) error {
 	if self.m == nil {
 		return fmt.Errorf("cannot set value: no parent Map")
 	} else {
-		nv := self.m.Set(self.K, value)
+		var nv = self.m.Set(self.K, value)
 		self.V = nv
 		self.Value = self.V.Value
 		return nil
@@ -54,7 +54,7 @@ type KeyTransformFunc func(string) string
 // work with interface data types that contain map-like data (has a reflect.Kind equal
 // to reflect.Map).
 type Map struct {
-	data              interface{}
+	data              any
 	structTagKey      string
 	rootTagName       string
 	xmlMarshalGeneric bool
@@ -71,7 +71,7 @@ func NewMap() *Map {
 // any value with a reflect.Kind of reflect.Map, sync.Map, another maputil.Map, url.Values,
 // http.Header, or a string or []byte which will be decoded using json.Unmarshal if and only if the
 // string begins with "{" and ends with "}".
-func M(data interface{}) *Map {
+func M(data any) *Map {
 	if dataV, ok := data.(typeutil.Variant); ok {
 		data = dataV.Value
 	} else if dataM, ok := data.(*Map); ok {
@@ -79,15 +79,15 @@ func M(data interface{}) *Map {
 	} else if dataM, ok := data.(Map); ok {
 		return &dataM
 	} else if dataSM, ok := data.(*sync.Map); ok {
-		var dataM = make(map[string]interface{})
-		dataSM.Range(func(key, value interface{}) bool {
+		var dataM = make(map[string]any)
+		dataSM.Range(func(key, value any) bool {
 			dataM[typeutil.String(key)] = value
 			return true
 		})
 
 		data = dataM
 	} else if uV, ok := data.(url.Values); ok {
-		dataM := make(map[string]interface{})
+		var dataM = make(map[string]any)
 
 		for k, v := range uV {
 			switch len(v) {
@@ -102,7 +102,7 @@ func M(data interface{}) *Map {
 
 		data = dataM
 	} else if hV, ok := data.(http.Header); ok {
-		var dataM = make(map[string]interface{})
+		var dataM = make(map[string]any)
 
 		for k, v := range hV {
 			switch len(v) {
@@ -118,18 +118,18 @@ func M(data interface{}) *Map {
 		data = dataM
 	} else if dS, ok := data.(string); ok {
 		if stringutil.IsSurroundedBy(strings.TrimSpace(dS), `{`, `}`) {
-			data = make(map[string]interface{})
+			data = make(map[string]any)
 			json.Unmarshal([]byte(dS), &data)
 		}
 	} else if dB, ok := data.([]byte); ok {
 		if stringutil.IsSurroundedBy(strings.TrimSpace(string(dB)), `{`, `}`) {
-			data = make(map[string]interface{})
+			data = make(map[string]any)
 			json.Unmarshal(dB, &data)
 		}
 	}
 
 	if data == nil {
-		data = make(map[string]interface{})
+		data = make(map[string]any)
 	}
 
 	return &Map{
@@ -146,7 +146,7 @@ func (self *Map) Tag(key string) *Map {
 }
 
 // Return the underlying value the M-object was created with.
-func (self *Map) Value() interface{} {
+func (self *Map) Value() any {
 	return self.data
 }
 
@@ -172,7 +172,7 @@ func (self *Map) unlock() {
 }
 
 // internal: unlocked implementation of set()
-func (self *Map) set(key string, value interface{}) typeutil.Variant {
+func (self *Map) set(key string, value any) typeutil.Variant {
 	var vv = typeutil.V(value)
 	self.data = DeepSet(self.data, strings.Split(key, `.`), vv)
 
@@ -180,7 +180,7 @@ func (self *Map) set(key string, value interface{}) typeutil.Variant {
 }
 
 // Set a value in the Map at the given dot.separated key to a value.
-func (self *Map) Set(key string, value interface{}) typeutil.Variant {
+func (self *Map) Set(key string, value any) typeutil.Variant {
 	self.lock()
 	defer self.unlock()
 
@@ -202,7 +202,7 @@ func (self *Map) SetFunc(key string, vfunc MapSetFunc) typeutil.Variant {
 
 // Set a value in the Map at the given dot.separated key to a value, but only if the
 // current value at that key is that type's zero value.
-func (self *Map) SetIfZero(key string, value interface{}) (typeutil.Variant, bool) {
+func (self *Map) SetIfZero(key string, value any) (typeutil.Variant, bool) {
 	self.lock()
 	defer self.unlock()
 
@@ -215,7 +215,7 @@ func (self *Map) SetIfZero(key string, value interface{}) (typeutil.Variant, boo
 
 // Set a value in the Map at the given dot.separated key to a value, but only if the
 // new value is not a zero value.
-func (self *Map) SetValueIfNonZero(key string, value interface{}) (typeutil.Variant, bool) {
+func (self *Map) SetValueIfNonZero(key string, value any) (typeutil.Variant, bool) {
 	self.lock()
 	defer self.unlock()
 
@@ -227,7 +227,7 @@ func (self *Map) SetValueIfNonZero(key string, value interface{}) (typeutil.Vari
 }
 
 // Copy the items from a map into this one.
-func (self *Map) Merge(other interface{}) int {
+func (self *Map) Merge(other any) int {
 	self.lock()
 	defer self.unlock()
 
@@ -260,7 +260,7 @@ func (self *Map) Compact() *Map {
 
 // Performs a JSONPath query against the given object and returns the results.
 // See JSONPath for details.
-func (self *Map) JSONPath(query string, fallback ...interface{}) interface{} {
+func (self *Map) JSONPath(query string, fallback ...any) any {
 	if d, err := JSONPath(self.MapNative(), query); err == nil && d != nil {
 		return d
 	}
@@ -271,8 +271,8 @@ func (self *Map) JSONPath(query string, fallback ...interface{}) interface{} {
 // Retrieve a value from the Map by the given dot.separated key, or return a fallback
 // value.  Return values are a typeutil.Variant, which can be easily coerced into
 // various types.
-func (self *Map) Get(key string, fallbacks ...interface{}) typeutil.Variant {
-	native := self.MapNative(self.structTagKey)
+func (self *Map) Get(key string, fallbacks ...any) typeutil.Variant {
+	var native = self.MapNative(self.structTagKey)
 
 	if v, ok := native[key]; ok && v != nil {
 		return typeutil.Variant{
@@ -288,22 +288,22 @@ func (self *Map) Get(key string, fallbacks ...interface{}) typeutil.Variant {
 }
 
 // Return the value at key as an automatically converted value.
-func (self *Map) Auto(key string, fallbacks ...interface{}) interface{} {
+func (self *Map) Auto(key string, fallbacks ...any) any {
 	return self.Get(key, fallbacks...).Auto()
 }
 
 // Return the value at key as a string.
-func (self *Map) String(key string, fallbacks ...interface{}) string {
+func (self *Map) String(key string, fallbacks ...any) string {
 	return self.Get(key, fallbacks...).String()
 }
 
 // Return the value at key interpreted as a Time.
-func (self *Map) Time(key string, fallbacks ...interface{}) time.Time {
+func (self *Map) Time(key string, fallbacks ...any) time.Time {
 	return self.Get(key, fallbacks...).Time()
 }
 
 // Return the value at key interpreted as a Duration.
-func (self *Map) Duration(key string, fallbacks ...interface{}) time.Duration {
+func (self *Map) Duration(key string, fallbacks ...any) time.Duration {
 	return self.Get(key, fallbacks...).Duration()
 }
 
@@ -313,17 +313,17 @@ func (self *Map) Bool(key string) bool {
 }
 
 // Return the value at key as an integer.
-func (self *Map) Int(key string, fallbacks ...interface{}) int64 {
+func (self *Map) Int(key string, fallbacks ...any) int64 {
 	return self.Get(key, fallbacks...).Int()
 }
 
 // Return the value at key as a native integer.
-func (self *Map) NInt(key string, fallbacks ...interface{}) int {
+func (self *Map) NInt(key string, fallbacks ...any) int {
 	return self.Get(key, fallbacks...).NInt()
 }
 
 // Return the value at key as a float.
-func (self *Map) Float(key string, fallbacks ...interface{}) float64 {
+func (self *Map) Float(key string, fallbacks ...any) float64 {
 	return self.Get(key, fallbacks...).Float()
 }
 
@@ -336,6 +336,11 @@ func (self *Map) Bytes(key string) []byte {
 // only that value.
 func (self *Map) Slice(key string) []typeutil.Variant {
 	return self.Get(key).Slice()
+}
+
+// Convert the given value to a slice using typeutil.Slice, then return each element as a Map.
+func (self *Map) SliceOfMaps(key string) []*Map {
+	return SliceOfMaps(self.Get(key).Value)
 }
 
 // Same as Slice(), but returns a []string
@@ -359,8 +364,8 @@ func (self *Map) Map(key string, tagName ...string) map[typeutil.Variant]typeuti
 	return self.Get(key).Map(tagName...)
 }
 
-// Return the value as a map[string]interface{}.
-func (self *Map) MapNative(tagName ...string) map[string]interface{} {
+// Return the value as a map[string]any.
+func (self *Map) MapNative(tagName ...string) map[string]any {
 	if len(tagName) == 0 {
 		tagName = []string{self.structTagKey}
 	}
@@ -421,7 +426,7 @@ func _xn(tagName string) xml.Name {
 	}
 }
 
-func xt(value interface{}) string {
+func xt(value any) string {
 	if typeutil.IsMap(value) {
 		return `object`
 	} else if typeutil.IsArray(value) {
@@ -431,15 +436,15 @@ func xt(value interface{}) string {
 	}
 }
 
-func (self *Map) valueToXmlTokens(parent *xml.StartElement, value interface{}, key string) (tokens []xml.Token, ferr error) {
-	g := self.xmlMarshalGeneric
+func (self *Map) valueToXmlTokens(parent *xml.StartElement, value any, key string) (tokens []xml.Token, ferr error) {
+	var g = self.xmlMarshalGeneric
 
 	if self.xmlKeyTransformFn != nil {
 		key = self.xmlKeyTransformFn(key)
 	}
 
 	if typeutil.IsScalar(value) {
-		open := xml.StartElement{
+		var open = xml.StartElement{
 			Name: xn(g, `item`, key),
 		}
 
@@ -460,7 +465,7 @@ func (self *Map) valueToXmlTokens(parent *xml.StartElement, value interface{}, k
 		})
 
 	} else if typeutil.IsArray(value) {
-		start := xml.StartElement{
+		var start = xml.StartElement{
 			Name: xn(g, `item`, key),
 		}
 
@@ -489,11 +494,11 @@ func (self *Map) valueToXmlTokens(parent *xml.StartElement, value interface{}, k
 			Name: start.Name,
 		})
 	} else {
-		children := M(value).MapNative(MapXmlStructTagName)
-		ckeys := StringKeys(children)
+		var children = M(value).MapNative(MapXmlStructTagName)
+		var ckeys = StringKeys(children)
 		sort.Strings(ckeys)
 
-		start := xml.StartElement{
+		var start = xml.StartElement{
 			Name: xn(g, `item`, key),
 		}
 
@@ -510,7 +515,7 @@ func (self *Map) valueToXmlTokens(parent *xml.StartElement, value interface{}, k
 		tokens = append(tokens, start)
 
 		for _, k := range ckeys {
-			v := children[k]
+			var v = children[k]
 
 			if ts, err := self.valueToXmlTokens(&start, v, k); err == nil {
 				tokens = append(tokens, ts...)
@@ -546,7 +551,7 @@ func (self *Map) SetMarshalXmlKeyFunc(fn KeyTransformFunc) {
 // Marshals the current data into XML.  Nested maps are output as nested elements.  Map values that
 // are scalars (strings, numbers, bools, dates/times) will appear as attributes on the parent element.
 func (self *Map) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
-	root := MapXmlRootTagName
+	var root = MapXmlRootTagName
 
 	if self.rootTagName != `` {
 		root = self.rootTagName
@@ -557,14 +562,14 @@ func (self *Map) MarshalXML(e *xml.Encoder, start xml.StartElement) error {
 	}
 
 	start.Name = _xn(root)
-	tokens := []xml.Token{start}
+	var tokens = []xml.Token{start}
 
-	children := self.MapNative(MapXmlStructTagName)
-	ckeys := StringKeys(children)
+	var children = self.MapNative(MapXmlStructTagName)
+	var ckeys = StringKeys(children)
 	sort.Strings(ckeys)
 
 	for _, k := range ckeys {
-		v := children[k]
+		var v = children[k]
 
 		if ts, err := self.valueToXmlTokens(&start, v, k); err == nil {
 			tokens = append(tokens, ts...)
@@ -593,7 +598,7 @@ func (self *Map) IsZero(key string) bool {
 
 // Return the keys in this Map object.  You may specify the name of a struct tag on the underlying
 // object to use for generating key names.
-func (self *Map) Keys(tagName ...string) []interface{} {
+func (self *Map) Keys(tagName ...string) []any {
 	return Keys(self.MapNative(tagName...))
 }
 
@@ -609,7 +614,7 @@ func (self *Map) Len() int {
 
 // Iterate through each item in the map.
 func (self *Map) Each(fn ItemFunc, tagName ...string) error {
-	tn := ``
+	var tn = ``
 
 	if len(tagName) > 0 && tagName[0] != `` {
 		tn = tagName[0]
@@ -629,7 +634,7 @@ func (self *Map) each(fn ItemFunc, opts IterOptions) error {
 			tn = append(tn, opts.TagName)
 		}
 
-		keys := self.StringKeys(tn...)
+		var keys = self.StringKeys(tn...)
 
 		if opts.SortKeys {
 			sort.Strings(keys)
@@ -646,7 +651,7 @@ func (self *Map) each(fn ItemFunc, opts IterOptions) error {
 }
 
 func (self *Map) Iter(opts ...IterOptions) <-chan Item {
-	itemchan := make(chan Item)
+	var itemchan = make(chan Item)
 
 	if len(opts) == 0 {
 		opts = []IterOptions{IterOptions{}}

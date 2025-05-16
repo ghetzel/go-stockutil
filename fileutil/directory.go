@@ -2,7 +2,6 @@ package fileutil
 
 import (
 	"io"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"sort"
@@ -13,12 +12,13 @@ type DirReaderOption int
 const (
 	NoRecursive DirReaderOption = iota
 	FailOnError
+	IncludeHidden
 )
 
 type DirReaderOptions []DirReaderOption
 
-func (self DirReaderOptions) Has(option DirReaderOption) bool {
-	for _, opt := range self {
+func (dir DirReaderOptions) Has(option DirReaderOption) bool {
+	for _, opt := range dir {
 		if opt == option {
 			return true
 		}
@@ -51,56 +51,60 @@ func NewDirReader(path string, options ...DirReaderOption) *DirReader {
 
 // Set a function that will be called for each path encountered while reading.
 // If this function returns true, that path (and its descedants) will not be read.
-func (self *DirReader) SetSkipFunc(fn SkipFunc) {
-	self.skipFn = fn
+func (dir *DirReader) SetSkipFunc(fn SkipFunc) {
+	dir.skipFn = fn
 }
 
-func (self *DirReader) setup() error {
-	if rt, entries, err := self.readDir(); err == nil {
-		self.root = rt
-		self.current = nil
-		self.currentEntry = 0
-		self.entries = entries
-		self.size = 0
-		self.loaded = true
+func (dir *DirReader) setup() error {
+	if rt, entries, err := dir.readDir(); err == nil {
+		dir.root = rt
+		dir.current = nil
+		dir.currentEntry = 0
+		dir.entries = entries
+		dir.size = 0
+		dir.loaded = true
 		return nil
 	} else {
 		return err
 	}
 }
 
-func (self *DirReader) advanceAndRead(b []byte) (int, error) {
-	if self.current != nil {
-		if err := self.current.Close(); err != nil {
+func (dir *DirReader) advanceAndRead(b []byte) (int, error) {
+	if dir.current != nil {
+		if err := dir.current.Close(); err != nil {
 			return 0, err
 		}
 	}
 
 	// if the current entry is in-bounds
-	if self.currentEntry < len(self.entries) {
-		entry := self.entries[self.currentEntry]
-		self.currentEntry += 1
-		path := filepath.Join(self.root, entry.Name())
+	if dir.currentEntry < len(dir.entries) {
+		var entry = dir.entries[dir.currentEntry]
+		dir.currentEntry += 1
+		var path = filepath.Join(dir.root, entry.Name())
 
 		// if a skipFunc we provided, and it returned false, return a skiperr from here
-		if skipFn := self.skipFn; skipFn != nil && skipFn(path) {
-			return self.advanceAndRead(b)
+		if skipFn := dir.skipFn; skipFn != nil && skipFn(path) {
+			return dir.advanceAndRead(b)
+		}
+
+		if !dir.options.Has(IncludeHidden) && IsHiddenFile(path) {
+			return dir.advanceAndRead(b)
 		}
 
 		if entry.IsDir() {
-			if !self.options.Has(NoRecursive) {
+			if !dir.options.Has(NoRecursive) {
 				// directories that we recurse into are just instances of DirReaders whose root is the directory
-				subreader := NewDirReader(path, self.options...)
-				subreader.SetSkipFunc(self.skipFn)
+				var subreader = NewDirReader(path, dir.options...)
+				subreader.SetSkipFunc(dir.skipFn)
 
-				self.current = subreader
-				return self.current.Read(b)
+				dir.current = subreader
+				return dir.current.Read(b)
 			} else {
-				return self.advanceAndRead(b)
+				return dir.advanceAndRead(b)
 			}
 		} else if file, err := os.Open(path); err == nil {
-			self.current = file
-			return self.current.Read(b)
+			dir.current = file
+			return dir.current.Read(b)
 		} else {
 			return 0, err
 		}
@@ -109,48 +113,57 @@ func (self *DirReader) advanceAndRead(b []byte) (int, error) {
 	}
 }
 
-func (self *DirReader) Read(b []byte) (int, error) {
+func (dir *DirReader) Read(b []byte) (int, error) {
 	// do initial setup if we're starting out
-	if !self.loaded {
-		if err := self.setup(); err != nil {
+	if !dir.loaded {
+		if err := dir.setup(); err != nil {
 			return 0, err
 		}
 	}
 
 	// check if we have a current file
-	if self.current != nil {
-		if n, err := self.current.Read(b); err == nil {
+	if dir.current != nil {
+		if n, err := dir.current.Read(b); err == nil {
 			// if so, read from that file
 			return n, nil
-		} else if err == io.EOF || !self.options.Has(FailOnError) {
+		} else if err == io.EOF || !dir.options.Has(FailOnError) {
 			// if the current file is EOF (or we're skipping errors), advance to the next one and start reading it
 			// keep advancing until the error is not skipEntryErr
-			return self.advanceAndRead(b)
+			return dir.advanceAndRead(b)
 		} else {
 			return n, err
 		}
 	} else {
-		return self.advanceAndRead(b)
+		return dir.advanceAndRead(b)
 	}
 }
 
 // close open files and reset the internal reader
-func (self *DirReader) Close() error {
-	if self.current != nil {
-		self.current.Close()
+func (dir *DirReader) Close() error {
+	if dir.current != nil {
+		dir.current.Close()
 	}
 
-	self.loaded = false
+	dir.loaded = false
 
 	return nil
 }
 
 // read the immediate entries from  the current root directory, or if the current root
 // is a file, treat it like a directory of one entry
-func (self *DirReader) readDir() (string, []os.FileInfo, error) {
-	if root, err := ExpandUser(self.root); err == nil {
+func (dir *DirReader) readDir() (string, []os.FileInfo, error) {
+	if root, err := ExpandUser(dir.root); err == nil {
 		if DirExists(root) {
-			entries, err := ioutil.ReadDir(self.root)
+			var dentries, err = os.ReadDir(dir.root)
+			var entries []os.FileInfo
+
+			for _, de := range dentries {
+				if fi, err := de.Info(); err == nil {
+					entries = append(entries, fi)
+				} else {
+					return ``, nil, err
+				}
+			}
 
 			sort.Slice(entries, func(i int, j int) bool {
 				return entries[i].Name() < entries[j].Name()
@@ -174,6 +187,15 @@ type CopyEntryFunc func(path string, info os.FileInfo, err error) (io.Writer, er
 // the io.Writer is nil, the file will not be written anywhere but no error will be returned.
 // If CopyEntryFunc returns an error, the behavior will be consistent with filepath.WalkFunc
 func CopyDir(root string, fn CopyEntryFunc) error {
+	return copyDir(root, false, fn)
+}
+
+// A version of CopyDir that includes hidden files
+func CopyDirWithHidden(root string, fn CopyEntryFunc) error {
+	return copyDir(root, true, fn)
+}
+
+func copyDir(root string, withHidden bool, fn CopyEntryFunc) error {
 	if p, err := ExpandUser(root); err == nil {
 		root = p
 	} else {
@@ -181,6 +203,10 @@ func CopyDir(root string, fn CopyEntryFunc) error {
 	}
 
 	return filepath.Walk(root, func(path string, info os.FileInfo, err error) error {
+		if !withHidden && IsHiddenFile(path) {
+			return nil
+		}
+
 		if w, err := fn(path, info, err); err == nil && w != nil {
 			if file, err := os.Open(path); err == nil {
 				defer file.Close()

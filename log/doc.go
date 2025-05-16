@@ -98,7 +98,7 @@ lines being written to the WritableLogger to be parsed, rewritten, and given a l
 		"github.com/ghetzel/go-stockutil/log"
 	)
 
-	wr := log.NewWritableLogger(log.INFO, `ls: `)
+	var wr = log.NewWritableLogger(log.INFO, `ls: `)
 
 	wr.SetParserFunc(func(line string) (log.Level, string) {
 		if strings.Contains(line, `root`) {
@@ -113,7 +113,7 @@ lines being written to the WritableLogger to be parsed, rewritten, and given a l
 		}
 	})
 
-	ls := exec.Command(`ls`, `-l`)
+	var ls = exec.Command(`ls`, `-l`)
 	ls.Stdout = wr
 	ls.Run()
 */

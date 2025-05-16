@@ -8,7 +8,7 @@ import (
 
 type mapTestSubstruct struct {
 	Name  string
-	Value interface{}
+	Value any
 }
 
 type mapTestStruct struct {
@@ -18,10 +18,10 @@ type mapTestStruct struct {
 }
 
 func TestGetNil(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := make(map[string]interface{})
-	level1 := make(map[string]interface{})
+	var input = make(map[string]any)
+	var level1 = make(map[string]any)
 
 	level1["nilvalue"] = nil
 
@@ -32,11 +32,11 @@ func TestGetNil(t *testing.T) {
 }
 
 func TestDeepGetScalar(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := make(map[string]interface{})
+	var input = make(map[string]any)
 
-	input = DeepSet(input, []string{"deeply", "nested", "value"}, 1.4).(map[string]interface{})
+	input = DeepSet(input, []string{"deeply", "nested", "value"}, 1.4).(map[string]any)
 
 	assert.NotNil(DeepGet(input, []string{"deeply", "nested", "value"}, nil))
 	assert.Equal(true, DeepGet(input, []string{"deeply", "nested", "value2"}, true))
@@ -44,10 +44,10 @@ func TestDeepGetScalar(t *testing.T) {
 }
 
 func TestDeepGetArrayElement(t *testing.T) {
-	input := make(map[string]interface{})
+	var input = make(map[string]any)
 
-	input = DeepSet(input, []string{"tags", "0"}, "base").(map[string]interface{})
-	input = DeepSet(input, []string{"tags", "1"}, "other").(map[string]interface{})
+	input = DeepSet(input, []string{"tags", "0"}, "base").(map[string]any)
+	input = DeepSet(input, []string{"tags", "1"}, "other").(map[string]any)
 
 	if v := DeepGet(input, []string{"tags", "0"}, nil); v != "base" {
 		t.Errorf("%s\n", v)
@@ -59,24 +59,24 @@ func TestDeepGetArrayElement(t *testing.T) {
 }
 
 func TestDeepGetMapKeyInArray(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := make(map[string]interface{})
+	var input = make(map[string]any)
 
-	input = DeepSet(input, []string{"devices", "0", "name"}, "lo").(map[string]interface{})
-	input = DeepSet(input, []string{"devices", "1", "name"}, "eth0").(map[string]interface{})
+	input = DeepSet(input, []string{"devices", "0", "name"}, "lo").(map[string]any)
+	input = DeepSet(input, []string{"devices", "1", "name"}, "eth0").(map[string]any)
 
 	assert.Equal(`lo`, DeepGet(input, []string{"devices", "0", "name"}, nil))
 	assert.Equal(`eth0`, DeepGet(input, []string{"devices", "1", "name"}, nil))
 }
 
 func TestDeepGetMapKeyInDeepArray(t *testing.T) {
-	input := make(map[string]interface{})
+	var input = make(map[string]any)
 
-	input = DeepSet(input, []string{"devices", "0", "switch", "peers", "0"}, "0.0.0.0").(map[string]interface{})
-	input = DeepSet(input, []string{"devices", "0", "switch", "peers", "1"}, "0.0.1.1").(map[string]interface{})
-	input = DeepSet(input, []string{"devices", "1", "switch", "peers", "0"}, "1.1.0.0").(map[string]interface{})
-	input = DeepSet(input, []string{"devices", "1", "switch", "peers", "1"}, "1.1.1.1").(map[string]interface{})
+	input = DeepSet(input, []string{"devices", "0", "switch", "peers", "0"}, "0.0.0.0").(map[string]any)
+	input = DeepSet(input, []string{"devices", "0", "switch", "peers", "1"}, "0.0.1.1").(map[string]any)
+	input = DeepSet(input, []string{"devices", "1", "switch", "peers", "0"}, "1.1.0.0").(map[string]any)
+	input = DeepSet(input, []string{"devices", "1", "switch", "peers", "1"}, "1.1.1.1").(map[string]any)
 
 	if v := DeepGet(input, []string{"devices", "0", "switch", "peers", "0"}, nil); v != "0.0.0.0" {
 		t.Errorf("%s\n", v)
@@ -96,10 +96,10 @@ func TestDeepGetMapKeyInDeepArray(t *testing.T) {
 }
 
 func TestDeepGetBool(t *testing.T) {
-	assert := require.New(t)
-	var input interface{}
+	var assert = require.New(t)
+	var input any
 
-	input = make(map[string]interface{})
+	input = make(map[string]any)
 
 	input = DeepSet(input, []string{"deeply", "nested", "value"}, true)
 	input = DeepSet(input, []string{"deeply", "nested", "thing"}, "nope")
@@ -110,12 +110,12 @@ func TestDeepGetBool(t *testing.T) {
 }
 
 func TestDeepGetMapInMap(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	in := map[string]interface{}{
+	var in = map[string]any{
 		`ok`: true,
-		`always`: map[string]interface{}{
-			`finishing`: map[string]interface{}{
+		`always`: map[string]any{
+			`finishing`: map[string]any{
 				`each_others`: `sentences`,
 			},
 		},
@@ -126,9 +126,9 @@ func TestDeepGetMapInMap(t *testing.T) {
 }
 
 func TestDeepStructs(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	in := &mapTestStruct{
+	var in = &mapTestStruct{
 		Name: `toplevel`,
 		NestedP: &mapTestSubstruct{
 			Name:  `one-ptr`,
@@ -148,24 +148,24 @@ func TestDeepStructs(t *testing.T) {
 }
 
 func TestDeepGetNestedArrayElements(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := map[string]interface{}{
+	var input = map[string]any{
 		`interfaces`: []string{
 			`lo0`, `en1`, `wlan0`,
 		},
 	}
 
-	assert.EqualValues([]interface{}{
+	assert.EqualValues([]any{
 		`lo0`, `en1`, `wlan0`,
 	}, DeepGet(input, []string{`interfaces`, `*`}))
 }
 
 func TestDeepGetNestedArrayOfMaps(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := map[string]interface{}{
-		`interfaces`: []map[string]interface{}{
+	var input = map[string]any{
+		`interfaces`: []map[string]any{
 			{
 				`name`: `lo0`,
 				`type`: `loopback`,
@@ -180,11 +180,11 @@ func TestDeepGetNestedArrayOfMaps(t *testing.T) {
 		},
 	}
 
-	assert.EqualValues([]interface{}{
+	assert.EqualValues([]any{
 		`loopback`, `ethernet`, `ethernet`,
 	}, DeepGet(input, []string{`interfaces`, `*`, `type`}))
 
-	assert.EqualValues([]interface{}{
+	assert.EqualValues([]any{
 		false, false, true,
 	}, DeepGet(input, []string{`interfaces`, `*`, `wireless`}, false))
 }

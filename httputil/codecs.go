@@ -14,16 +14,16 @@ import (
 	"github.com/ghetzel/go-stockutil/typeutil"
 )
 
-type EncoderFunc func(interface{}) (io.Reader, error)
-type DecoderFunc func(io.Reader, interface{}) error
+type EncoderFunc func(any) (io.Reader, error)
+type DecoderFunc func(io.Reader, any) error
 type ErrorDecoderFunc func(*http.Response) error
 type InitRequestFunc func() error
-type InterceptRequestFunc func(*http.Request) (interface{}, error)
-type InterceptResponseFunc func(*http.Response, interface{}) error
+type InterceptRequestFunc func(*http.Request) (any, error)
+type InterceptResponseFunc func(*http.Response, any) error
 
 var DefaultMultipartFormFileField = `filename`
 
-func JSONEncoder(in interface{}) (io.Reader, error) {
+func JSONEncoder(in any) (io.Reader, error) {
 	if req, ok := in.(*http.Request); ok {
 		req.Header.Set(`Content-Type`, `application/json`)
 
@@ -35,11 +35,11 @@ func JSONEncoder(in interface{}) (io.Reader, error) {
 	}
 }
 
-func JSONDecoder(in io.Reader, out interface{}) error {
+func JSONDecoder(in io.Reader, out any) error {
 	return json.NewDecoder(in).Decode(out)
 }
 
-func XMLDecoder(in io.Reader, out interface{}) error {
+func XMLDecoder(in io.Reader, out any) error {
 	return xml.NewDecoder(in).Decode(out)
 }
 
@@ -59,15 +59,15 @@ func (self *multipartFormRequest) Read(b []byte) (int, error) {
 }
 
 // Specifies that the given data should be encoded as a multipart/form-data request.
-func MultipartFormEncoder(in interface{}) (io.Reader, error) {
+func MultipartFormEncoder(in any) (io.Reader, error) {
 	if req, ok := in.(*http.Request); ok {
 		req.Header.Set(`Content-Type`, `multipart/form-data`)
 
 		return nil, nil
 	} else {
-		output := bytes.NewBuffer(nil)
-		mp := multipart.NewWriter(output)
-		fields := make(map[string]interface{})
+		var output = bytes.NewBuffer(nil)
+		var mp = multipart.NewWriter(output)
+		var fields = make(map[string]any)
 
 		if typeutil.IsMap(in) {
 			fields = maputil.M(in).MapNative()

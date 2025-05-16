@@ -4,7 +4,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"reflect"
 	"regexp"
 	"strconv"
@@ -61,7 +60,7 @@ func (self ConvertType) IsSupersetOf(other ConvertType) bool {
 
 var PassthroughType = errors.New(`passthrough`)
 
-type TypeConvertFunc func(in interface{}) (interface{}, error)
+type TypeConvertFunc func(in any) (any, error)
 
 var typeHandlers = make(map[string]TypeConvertFunc)
 
@@ -112,7 +111,7 @@ var TimeFormats = []string{
 	`2006-01-02T15:04`,
 }
 
-func ToString(in interface{}) (string, error) {
+func ToString(in any) (string, error) {
 	if in == nil {
 		return ``, nil
 	} else if err, ok := in.(error); ok {
@@ -161,7 +160,7 @@ func ToString(in interface{}) (string, error) {
 	return ``, fmt.Errorf("Unable to convert type '%T' to string", in)
 }
 
-func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
+func ConvertTo(toType ConvertType, inI any) (any, error) {
 	var inS string
 	var inSerr error
 
@@ -283,7 +282,7 @@ func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
 			return time.Now(), nil
 		default:
 			// handle time zero values
-			tmS := strings.Map(func(r rune) rune {
+			var tmS = strings.Map(func(r rune) rune {
 				switch r {
 				case '-', ':', ' ', 'T', 'Z':
 					return '0'
@@ -304,7 +303,7 @@ func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
 			return []byte{}, nil
 		} else if inR, ok := inI.(io.Reader); ok {
 			// special case: read all io.Reader, convert resulting bytes to string
-			if data, err := ioutil.ReadAll(inR); err == nil {
+			if data, err := io.ReadAll(inR); err == nil {
 				return data, nil
 			} else {
 				return ``, fmt.Errorf("Cannot convert io.Reader to []byte: %v", err)
@@ -312,7 +311,7 @@ func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
 		} else if inB, ok := inI.([]byte); ok {
 			return inB, nil
 		} else if inB, ok := inI.([]uint8); ok {
-			outB := make([]byte, len(inB))
+			var outB = make([]byte, len(inB))
 
 			for i, v := range inB {
 				outB[i] = byte(v)
@@ -320,9 +319,9 @@ func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
 
 			return outB, nil
 		} else if IsKind(inI, reflect.Slice, reflect.Array) {
-			outB := make([]byte, 0)
+			var outB = make([]byte, 0)
 
-			if err := SliceEach(inI, func(i int, value interface{}) error {
+			if err := SliceEach(inI, func(i int, value any) error {
 				if bb, err := ConvertToInteger(value); err == nil {
 					outB = append(outB, byte(bb))
 					return nil
@@ -345,7 +344,7 @@ func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
 			return ``, nil
 		} else if inR, ok := inI.(io.Reader); ok {
 			// special case: read all io.Reader, convert resulting bytes to string
-			if data, err := ioutil.ReadAll(inR); err == nil {
+			if data, err := io.ReadAll(inR); err == nil {
 				return string(data), nil
 			} else {
 				return ``, fmt.Errorf("Cannot convert io.Reader to string: %v", err)
@@ -370,7 +369,7 @@ func ConvertTo(toType ConvertType, inI interface{}) (interface{}, error) {
 	}
 }
 
-func ConvertHexToInteger(in interface{}) (int64, error) {
+func ConvertHexToInteger(in any) (int64, error) {
 	if IsHexadecimal(in) {
 		if inS, err := ToString(in); err == nil {
 			inS = strings.ToLower(inS)
@@ -385,7 +384,7 @@ func ConvertHexToInteger(in interface{}) (int64, error) {
 	}
 }
 
-func ConvertToInteger(in interface{}) (int64, error) {
+func ConvertToInteger(in any) (int64, error) {
 	if v, err := ConvertTo(Integer, in); err == nil {
 		return v.(int64), nil
 	} else {
@@ -393,7 +392,7 @@ func ConvertToInteger(in interface{}) (int64, error) {
 	}
 }
 
-func ConvertToFloat(in interface{}) (float64, error) {
+func ConvertToFloat(in any) (float64, error) {
 	if v, err := ConvertTo(Float, in); err == nil {
 		return v.(float64), nil
 	} else {
@@ -401,7 +400,7 @@ func ConvertToFloat(in interface{}) (float64, error) {
 	}
 }
 
-func ConvertToString(in interface{}) (string, error) {
+func ConvertToString(in any) (string, error) {
 	if v, err := ConvertTo(String, in); err == nil {
 		return v.(string), nil
 	} else {
@@ -409,7 +408,7 @@ func ConvertToString(in interface{}) (string, error) {
 	}
 }
 
-func ConvertToBool(in interface{}) (bool, error) {
+func ConvertToBool(in any) (bool, error) {
 	if v, err := ConvertTo(Boolean, in); err == nil {
 		return v.(bool), nil
 	} else {
@@ -417,7 +416,7 @@ func ConvertToBool(in interface{}) (bool, error) {
 	}
 }
 
-func ConvertToTime(in interface{}) (time.Time, error) {
+func ConvertToTime(in any) (time.Time, error) {
 	switch in.(type) {
 	case time.Time:
 		return in.(time.Time), nil
@@ -430,7 +429,7 @@ func ConvertToTime(in interface{}) (time.Time, error) {
 	}
 }
 
-func ConvertToBytes(in interface{}) ([]byte, error) {
+func ConvertToBytes(in any) ([]byte, error) {
 	if v, err := ConvertTo(Bytes, in); err == nil {
 		return v.([]byte), nil
 	} else {
@@ -453,7 +452,7 @@ func DetectTimeFormat(in string) string {
 }
 
 // Returns the given value, converted according to any handlers set via RegisterTypeHandler.
-func ConvertCustomType(in interface{}) (interface{}, error) {
+func ConvertCustomType(in any) (any, error) {
 	var convert TypeConvertFunc
 	var inV reflect.Value
 
@@ -486,7 +485,7 @@ func ConvertCustomType(in interface{}) (interface{}, error) {
 	return in, PassthroughType
 }
 
-func Detect(in interface{}) (ConvertType, interface{}) {
+func Detect(in any) (ConvertType, any) {
 	// perform custom type conversions (if any)
 	if v, err := ConvertCustomType(in); err == nil {
 		return UserDefined, v
@@ -535,12 +534,12 @@ func Detect(in interface{}) (ConvertType, interface{}) {
 	return Invalid, in
 }
 
-func Autotype(in interface{}) interface{} {
+func Autotype(in any) any {
 	_, value := Detect(in)
 	return value
 }
 
-func DetectConvertType(in interface{}) ConvertType {
+func DetectConvertType(in any) ConvertType {
 	ctype, _ := Detect(in)
 	return ctype
 }

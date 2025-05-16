@@ -14,11 +14,11 @@ import (
 // Represents an interface type with helper functions for making it easy to do
 // type conversions.
 type Variant struct {
-	Value interface{}
+	Value any
 }
 
 // Shortcut for creating a Variant.
-func V(value interface{}) Variant {
+func V(value any) Variant {
 	if v, ok := value.(Variant); ok {
 		return v
 	} else {
@@ -29,7 +29,7 @@ func V(value interface{}) Variant {
 }
 
 // Returns a pointer to a variant.
-func VV(value interface{}) *Variant {
+func VV(value any) *Variant {
 	var v = V(value)
 	return &v
 }
@@ -108,9 +108,9 @@ func (self Variant) NInt() int {
 // Return the value as a slice of Variants. Scalar types will return a slice containing
 // a single Variant element representing the value.
 func (self Variant) Slice() []Variant {
-	values := make([]Variant, 0)
+	var values = make([]Variant, 0)
 
-	utils.SliceEach(self.Value, func(_ int, v interface{}) error {
+	utils.SliceEach(self.Value, func(_ int, v any) error {
 		values = append(values, Variant{
 			Value: v,
 		})
@@ -122,8 +122,8 @@ func (self Variant) Slice() []Variant {
 
 // Same as Slice(), but returns a []string.
 func (self Variant) Strings() []string {
-	values := self.Slice()
-	out := make([]string, len(values))
+	var values = self.Slice()
+	var out = make([]string, len(values))
 
 	for i, value := range values {
 		out[i] = value.String()
@@ -151,7 +151,7 @@ func (self Variant) Err() error {
 }
 
 // Return the value automatically converted to the appropriate type.
-func (self Variant) Auto() interface{} {
+func (self Variant) Auto() any {
 	return utils.Autotype(self.Value)
 }
 
@@ -182,8 +182,8 @@ func (self Variant) Bytes() []byte {
 	}
 }
 
-func (self Variant) Interface() interface{} {
-	out := self.Value
+func (self Variant) Interface() any {
+	var out = self.Value
 
 	for {
 		if subvariant, ok := out.(Variant); ok {
@@ -202,7 +202,7 @@ func (self Variant) Interface() interface{} {
 // If the variant contains a struct, and a tagName is specified, the key names of the output map will be taken
 // from the struct field's tag value, consistent with the rules used in encoding/json.
 func (self Variant) Map(tagName ...string) map[Variant]Variant {
-	output := make(map[Variant]Variant)
+	var output = make(map[Variant]Variant)
 	var tn string
 
 	if len(tagName) > 0 && tagName[0] != `` {
@@ -210,7 +210,7 @@ func (self Variant) Map(tagName ...string) map[Variant]Variant {
 	}
 
 	if IsMap(self.Value) {
-		mapV := reflect.ValueOf(self.Value)
+		var mapV = reflect.ValueOf(self.Value)
 
 		for _, key := range mapV.MapKeys() {
 			if key.CanInterface() {
@@ -220,17 +220,17 @@ func (self Variant) Map(tagName ...string) map[Variant]Variant {
 			}
 		}
 	} else if elem := ResolveValue(self.Value); IsStruct(elem) {
-		structV := reflect.ValueOf(elem)
-		structT := structV.Type()
+		var structV = reflect.ValueOf(elem)
+		var structT = structV.Type()
 
 	FieldLoop:
 		for i := 0; i < structT.NumField(); i++ {
 			if structF := structT.Field(i); !structF.Anonymous {
 				if value := structV.Field(i); value.IsValid() {
-					key := structF.Name
+					var key = structF.Name
 
 					if tn != `` {
-						parts := strings.Split(structF.Tag.Get(tn), `,`)
+						var parts = strings.Split(structF.Tag.Get(tn), `,`)
 
 						if tag := parts[0]; tag != `` {
 							key = tag
@@ -259,9 +259,9 @@ func (self Variant) Map(tagName ...string) map[Variant]Variant {
 	return output
 }
 
-// Return the value as a map[string]interface{} if it can be interpreted as such, or an empty map otherwise.
-func (self Variant) MapNative(tagName ...string) map[string]interface{} {
-	out := make(map[string]interface{})
+// Return the value as a map[string]any if it can be interpreted as such, or an empty map otherwise.
+func (self Variant) MapNative(tagName ...string) map[string]any {
+	var out = make(map[string]any)
 
 	for k, v := range self.Map(tagName...) {
 		out[k.String()] = v.Interface()
@@ -305,13 +305,13 @@ func (self *Variant) IsDuration() bool {
 	return (self.Duration() != 0)
 }
 
-func (self *Variant) Append(values ...interface{}) error {
-	var base []interface{}
+func (self *Variant) Append(values ...any) error {
+	var base []any
 
 	if self.IsArray() {
 		base = utils.Sliceify(self.Value)
 	} else {
-		base = []interface{}{self.Value}
+		base = []any{self.Value}
 	}
 
 	for _, val := range values {
@@ -332,7 +332,7 @@ func (self *Variant) Append(values ...interface{}) error {
 	return nil
 }
 
-func (self Variant) OrString(or ...interface{}) string {
+func (self Variant) OrString(or ...any) string {
 	if v := self.String(); v != `` {
 		return v
 	}
@@ -346,7 +346,7 @@ func (self Variant) OrString(or ...interface{}) string {
 	return ``
 }
 
-func (self Variant) OrBool(or ...interface{}) bool {
+func (self Variant) OrBool(or ...any) bool {
 	if self.Value == nil {
 		for _, orval := range or {
 			if Bool(orval) {
@@ -360,7 +360,7 @@ func (self Variant) OrBool(or ...interface{}) bool {
 	}
 }
 
-func (self Variant) OrFloat(or ...interface{}) float64 {
+func (self Variant) OrFloat(or ...any) float64 {
 	if v := self.Float(); v != 0 {
 		return v
 	}
@@ -374,7 +374,7 @@ func (self Variant) OrFloat(or ...interface{}) float64 {
 	return 0
 }
 
-func (self Variant) OrInt(or ...interface{}) int64 {
+func (self Variant) OrInt(or ...any) int64 {
 	if v := self.Int(); v != 0 {
 		return v
 	}
@@ -388,7 +388,7 @@ func (self Variant) OrInt(or ...interface{}) int64 {
 	return 0
 }
 
-func (self Variant) OrNInt(or ...interface{}) int {
+func (self Variant) OrNInt(or ...any) int {
 	if v := self.NInt(); v != 0 {
 		return v
 	}
@@ -402,7 +402,7 @@ func (self Variant) OrNInt(or ...interface{}) int {
 	return 0
 }
 
-func (self Variant) OrAuto(or ...interface{}) interface{} {
+func (self Variant) OrAuto(or ...any) any {
 	if v := self.Auto(); !IsZero(v) {
 		return v
 	}
@@ -416,7 +416,7 @@ func (self Variant) OrAuto(or ...interface{}) interface{} {
 	return nil
 }
 
-func (self Variant) OrTime(or ...interface{}) time.Time {
+func (self Variant) OrTime(or ...any) time.Time {
 	if v := self.Time(); !v.IsZero() {
 		return v
 	}
@@ -430,7 +430,7 @@ func (self Variant) OrTime(or ...interface{}) time.Time {
 	return time.Time{}
 }
 
-func (self Variant) OrDuration(or ...interface{}) time.Duration {
+func (self Variant) OrDuration(or ...any) time.Duration {
 	if v := self.Duration(); v != 0 {
 		return v
 	}
@@ -458,7 +458,7 @@ func (self Variant) OrBytes(or ...[]byte) []byte {
 	return nil
 }
 
-func (self Variant) Or(or ...interface{}) interface{} {
+func (self Variant) Or(or ...any) any {
 	if v := self.Interface(); !IsZero(v) {
 		return v
 	}
@@ -475,7 +475,7 @@ func (self Variant) Or(or ...interface{}) interface{} {
 // IsLessThan reports whether the given value should sort before the current variant value, taking special
 // care to compare like types appropriately, such as detecting numbers and performing a numeric comparison,
 // or detecting dates, times, and durations and comparing them temporally.
-func (self Variant) IsLessThan(j interface{}) bool {
+func (self Variant) IsLessThan(j any) bool {
 	var jV Variant = V(j)
 
 	// we're going to say that if we encounter a nil, we always want that nil to sort before this
@@ -511,77 +511,77 @@ func (self Variant) IsFunction(signature ...string) bool {
 }
 
 // Package-level string converter
-func String(in interface{}) string {
+func String(in any) string {
 	return V(in).String()
 }
 
 // Package-level bool converter
-func Bool(in interface{}) bool {
+func Bool(in any) bool {
 	return V(in).Bool()
 }
 
 // Package-level float converter
-func Float(in interface{}) float64 {
+func Float(in any) float64 {
 	return V(in).Float()
 }
 
 // Package-level int64 converter
-func Int(in interface{}) int64 {
+func Int(in any) int64 {
 	return V(in).Int()
 }
 
 // Package-level native int converter
-func NInt(in interface{}) int {
+func NInt(in any) int {
 	return V(in).NInt()
 }
 
 // Package-level slice converter
-func Slice(in interface{}) []Variant {
+func Slice(in any) []Variant {
 	return V(in).Slice()
 }
 
 // Package-level string slice converter
-func Strings(in interface{}) []string {
+func Strings(in any) []string {
 	return V(in).Strings()
 }
 
 // Package-level string splitter.
-func Split(in interface{}, on string) []string {
+func Split(in any, on string) []string {
 	return V(in).Split(on)
 }
 
 // Package-level error converter
-func Err(in interface{}) error {
+func Err(in any) error {
 	return V(in).Err()
 }
 
 // Package-level auto converter
-func Auto(in interface{}) interface{} {
+func Auto(in any) any {
 	return V(in).Auto()
 }
 
 // Package-level time converter
-func Time(in interface{}) time.Time {
+func Time(in any) time.Time {
 	return V(in).Time()
 }
 
 // Package-level duration converter
-func Duration(in interface{}) time.Duration {
+func Duration(in any) time.Duration {
 	return V(in).Duration()
 }
 
 // Package-level bytes converter
-func Bytes(in interface{}) []byte {
+func Bytes(in any) []byte {
 	return V(in).Bytes()
 }
 
 // Package-level map converter
-func Map(in interface{}, tagName ...string) map[Variant]Variant {
+func Map(in any, tagName ...string) map[Variant]Variant {
 	return V(in).Map(tagName...)
 }
 
-// Package-level map[string]interface{} converter
-func MapNative(in interface{}, tagName ...string) map[string]interface{} {
+// Package-level map[string]any converter
+func MapNative(in any, tagName ...string) map[string]any {
 	return V(in).MapNative(tagName...)
 }
 
@@ -590,35 +590,35 @@ func Nil() Variant {
 	return V(nil)
 }
 
-func OrString(first interface{}, rest ...interface{}) string {
+func OrString(first any, rest ...any) string {
 	return V(first).OrString(rest...)
 }
 
-func OrBool(first interface{}, rest ...interface{}) bool {
+func OrBool(first any, rest ...any) bool {
 	return V(first).OrBool(rest...)
 }
 
-func OrFloat(first interface{}, rest ...interface{}) float64 {
+func OrFloat(first any, rest ...any) float64 {
 	return V(first).OrFloat(rest...)
 }
 
-func OrInt(first interface{}, rest ...interface{}) int64 {
+func OrInt(first any, rest ...any) int64 {
 	return V(first).OrInt(rest...)
 }
 
-func OrNInt(first interface{}, rest ...interface{}) int {
+func OrNInt(first any, rest ...any) int {
 	return V(first).OrNInt(rest...)
 }
 
-func OrAuto(first interface{}, rest ...interface{}) interface{} {
+func OrAuto(first any, rest ...any) any {
 	return V(first).OrAuto(rest...)
 }
 
-func OrTime(first interface{}, rest ...interface{}) time.Time {
+func OrTime(first any, rest ...any) time.Time {
 	return V(first).OrTime(rest...)
 }
 
-func OrDuration(first interface{}, rest ...interface{}) time.Duration {
+func OrDuration(first any, rest ...any) time.Duration {
 	return V(first).OrDuration(rest...)
 }
 
@@ -626,6 +626,6 @@ func OrBytes(first []byte, rest ...[]byte) []byte {
 	return V(first).OrBytes(rest...)
 }
 
-func IsLessThan(a interface{}, b interface{}) bool {
+func IsLessThan(a any, b any) bool {
 	return VV(a).IsLessThan(b)
 }

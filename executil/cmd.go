@@ -142,7 +142,7 @@ func ShellCommand(cmdline string) *Cmd {
 // a command and its arguments, it will be executed in the user's shell using FindShell.
 // Otherwise, the first argument will be treated as a command and the remaining arguments
 // will be passed in parameterized.
-func ShellOut(cmdOrLine string, args ...interface{}) ([]byte, error) {
+func ShellOut(cmdOrLine string, args ...any) ([]byte, error) {
 	var cmd *Cmd
 
 	if va, err := shellwords.Parse(cmdOrLine); err == nil {
@@ -166,7 +166,7 @@ func ShellOut(cmdOrLine string, args ...interface{}) ([]byte, error) {
 }
 
 // A panicky version of ShellOut.
-func MustShellOut(cmdOrLine string, args ...interface{}) []byte {
+func MustShellOut(cmdOrLine string, args ...any) []byte {
 	if out, err := ShellOut(cmdOrLine, args...); err == nil {
 		return out
 	} else {
@@ -175,7 +175,7 @@ func MustShellOut(cmdOrLine string, args ...interface{}) []byte {
 }
 
 // Attempts to call ShellOut, but will return nil if there is an error.  Does not panic.
-func ShouldShellOut(cmdOrLine string, args ...interface{}) []byte {
+func ShouldShellOut(cmdOrLine string, args ...any) []byte {
 	if out, err := ShellOut(cmdOrLine, args...); err == nil {
 		return out
 	} else {
@@ -306,8 +306,8 @@ func (self *Cmd) Output() ([]byte, error) {
 	}
 }
 
-func (self *Cmd) SetEnv(key string, value interface{}) {
-	kv := fmt.Sprintf("%v=%s", key, typeutil.String(value))
+func (self *Cmd) SetEnv(key string, value any) {
+	var kv = fmt.Sprintf("%v=%s", key, typeutil.String(value))
 
 	for i, pair := range self.Cmd.Env {
 		k, _ := stringutil.SplitPair(pair, `=`)
@@ -325,7 +325,7 @@ func (self *Cmd) Run() error {
 	defer self.killAndWait()
 
 	if err := self.prestart(); err == nil {
-		err := self.Cmd.Run()
+		var err = self.Cmd.Run()
 		self.exitError = err
 		self.updateStatus()
 		return err

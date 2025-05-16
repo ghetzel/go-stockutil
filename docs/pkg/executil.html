@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -173,37 +173,37 @@
 	
     <li>
 		
-		<a href="#Env">func Env(name string, fallback ...interface{}) string</a>
+		<a href="#Env">func Env(name string, fallback ...any) string</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#EnvBool">func EnvBool(name string, fallback ...interface{}) bool</a>
+		<a href="#EnvBool">func EnvBool(name string, fallback ...any) bool</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#EnvDuration">func EnvDuration(name string, fallback ...interface{}) time.Duration</a>
+		<a href="#EnvDuration">func EnvDuration(name string, fallback ...any) time.Duration</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#EnvFloat">func EnvFloat(name string, fallback ...interface{}) float64</a>
+		<a href="#EnvFloat">func EnvFloat(name string, fallback ...any) float64</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#EnvInt">func EnvInt(name string, fallback ...interface{}) int64</a>
+		<a href="#EnvInt">func EnvInt(name string, fallback ...any) int64</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#EnvTime">func EnvTime(name string, fallback ...interface{}) time.Time</a>
+		<a href="#EnvTime">func EnvTime(name string, fallback ...any) time.Time</a>
 		
 	</li>
 	
@@ -221,7 +221,7 @@
 	
     <li>
 		<strong>
-		<a href="#Join">func Join(in interface{}) string</a>
+		<a href="#Join">func Join(in any) string</a>
 		</strong>
 	</li>
 	
@@ -239,7 +239,7 @@
 	
     <li>
 		<strong>
-		<a href="#MustShellOut">func MustShellOut(cmdOrLine string, args ...interface{}) []byte</a>
+		<a href="#MustShellOut">func MustShellOut(cmdOrLine string, args ...any) []byte</a>
 		</strong>
 	</li>
 	
@@ -269,25 +269,25 @@
 	
     <li>
 		<strong>
-		<a href="#RootOr">func RootOr(ifRoot interface{}, notRoot interface{}) interface{}</a>
+		<a href="#RootOr">func RootOr(ifRoot any, notRoot any) any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#RootOrString">func RootOrString(ifRoot interface{}, notRoot interface{}) string</a>
+		<a href="#RootOrString">func RootOrString(ifRoot any, notRoot any) string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ShellOut">func ShellOut(cmdOrLine string, args ...interface{}) ([]byte, error)</a>
+		<a href="#ShellOut">func ShellOut(cmdOrLine string, args ...any) ([]byte, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ShouldShellOut">func ShouldShellOut(cmdOrLine string, args ...interface{}) []byte</a>
+		<a href="#ShouldShellOut">func ShouldShellOut(cmdOrLine string, args ...any) []byte</a>
 		</strong>
 	</li>
 	
@@ -496,7 +496,7 @@
 				<a href="#Cmd.SetEnv">
 					func
 					(self *Cmd)
-					SetEnv(key string, value interface{})
+					SetEnv(key string, value any)
 				</a>
 				
 			</li>
@@ -686,7 +686,7 @@
 			<a href="env.go">env.go</a>
 			
 		</td>
-		<td class="text-right">938B</td>
+		<td class="text-right">882B</td>
 		<td class="text-right">33</td>
 		<td class="text-right">6</td>
 		<td class="text-right"></td>
@@ -782,7 +782,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Env(name string, fallback ...interface{}) string</pre>
+	<pre>func Env(name string, fallback ...any) string</pre>
 </div>
 
 
@@ -793,7 +793,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func EnvBool(name string, fallback ...interface{}) bool</pre>
+	<pre>func EnvBool(name string, fallback ...any) bool</pre>
 </div>
 
 
@@ -804,7 +804,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func EnvDuration(name string, fallback ...interface{}) time.Duration</pre>
+	<pre>func EnvDuration(name string, fallback ...any) time.Duration</pre>
 </div>
 
 
@@ -815,7 +815,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func EnvFloat(name string, fallback ...interface{}) float64</pre>
+	<pre>func EnvFloat(name string, fallback ...any) float64</pre>
 </div>
 
 
@@ -826,7 +826,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func EnvInt(name string, fallback ...interface{}) int64</pre>
+	<pre>func EnvInt(name string, fallback ...any) int64</pre>
 </div>
 
 
@@ -837,7 +837,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func EnvTime(name string, fallback ...interface{}) time.Time</pre>
+	<pre>func EnvTime(name string, fallback ...any) time.Time</pre>
 </div>
 
 
@@ -876,7 +876,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Join(in interface{}) string</pre>
+	<pre>func Join(in any) string</pre>
 </div>
 
 
@@ -912,7 +912,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustShellOut(cmdOrLine string, args ...interface{}) []byte</pre>
+	<pre>func MustShellOut(cmdOrLine string, args ...any) []byte</pre>
 </div>
 
 
@@ -982,7 +982,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func RootOr(ifRoot interface{}, notRoot interface{}) interface{}</pre>
+	<pre>func RootOr(ifRoot any, notRoot any) any</pre>
 </div>
 
 
@@ -996,7 +996,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func RootOrString(ifRoot interface{}, notRoot interface{}) string</pre>
+	<pre>func RootOrString(ifRoot any, notRoot any) string</pre>
 </div>
 
 
@@ -1010,7 +1010,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ShellOut(cmdOrLine string, args ...interface{}) ([]byte, error)</pre>
+	<pre>func ShellOut(cmdOrLine string, args ...any) ([]byte, error)</pre>
 </div>
 
 
@@ -1024,7 +1024,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ShouldShellOut(cmdOrLine string, args ...interface{}) []byte</pre>
+	<pre>func ShouldShellOut(cmdOrLine string, args ...any) []byte</pre>
 </div>
 
 
@@ -1351,7 +1351,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Cmd) SetEnv(key string, value interface{})</pre>
+	<pre>func (self *Cmd) SetEnv(key string, value any)</pre>
 </div>
 
 

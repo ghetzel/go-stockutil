@@ -16,13 +16,13 @@ func NewRequestLogger() *RequestLogger {
 }
 
 func (self *RequestLogger) ServeHTTP(rw http.ResponseWriter, req *http.Request, next http.HandlerFunc) {
-	start := time.Now()
+	var start = time.Now()
 
 	next(rw, req)
 
-	response := rw.(negroni.ResponseWriter)
-	status := response.Status()
-	duration := time.Since(start)
+	var response = rw.(negroni.ResponseWriter)
+	var status = response.Status()
+	var duration = time.Since(start)
 
 	if status < 400 {
 		Logger.Debugf("[HTTP %d] %s to %v took %v", status, req.Method, req.URL, duration)

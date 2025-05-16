@@ -8,7 +8,7 @@ import (
 )
 
 type fnCallSignature struct {
-	Value  interface{}
+	Value  any
 	Path   []string
 	IsLeaf bool
 }
@@ -21,12 +21,12 @@ type walkTestStruct struct {
 }
 
 func TestMapWalkScalar(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Nil(Walk(nil, nil))
 
-	i := 0
-	assert.Nil(Walk(42, func(value interface{}, path []string, isLeaf bool) error {
+	var i = 0
+	assert.Nil(Walk(42, func(value any, path []string, isLeaf bool) error {
 		i += 1
 
 		assert.Equal(42, value)
@@ -40,15 +40,15 @@ func TestMapWalkScalar(t *testing.T) {
 }
 
 func TestMapWalkFlatMap(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := map[string]interface{}{
+	var input = map[string]any{
 		`a`: 1,
 		`b`: true,
 		`c`: `Three`,
 	}
 
-	checkAnswers := func(callSignatures map[string]fnCallSignature) {
+	var checkAnswers = func(callSignatures map[string]fnCallSignature) {
 		v, ok := callSignatures[``]
 		assert.True(ok)
 		assert.Equal(fnCallSignature{input, nil, false}, v)
@@ -66,8 +66,8 @@ func TestMapWalkFlatMap(t *testing.T) {
 		assert.Equal(fnCallSignature{`Three`, []string{`c`}, true}, v)
 	}
 
-	callSignatures := make(map[string]fnCallSignature)
-	assert.Nil(Walk(input, func(value interface{}, path []string, isLeaf bool) error {
+	var callSignatures = make(map[string]fnCallSignature)
+	assert.Nil(Walk(input, func(value any, path []string, isLeaf bool) error {
 		callSignatures[strings.Join(path, `.`)] = fnCallSignature{
 			Value:  value,
 			Path:   path,
@@ -80,7 +80,7 @@ func TestMapWalkFlatMap(t *testing.T) {
 	checkAnswers(callSignatures)
 
 	callSignatures = make(map[string]fnCallSignature)
-	assert.Nil(Walk(&input, func(value interface{}, path []string, isLeaf bool) error {
+	assert.Nil(Walk(&input, func(value any, path []string, isLeaf bool) error {
 		callSignatures[strings.Join(path, `.`)] = fnCallSignature{
 			Value:  value,
 			Path:   path,
@@ -94,30 +94,30 @@ func TestMapWalkFlatMap(t *testing.T) {
 }
 
 func TestMapWalkNestedMap(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	callSignatures := make(map[string]fnCallSignature)
+	var callSignatures = make(map[string]fnCallSignature)
 
-	b2a_map := map[string]interface{}{
+	var b2a_map = map[string]any{
 		`a`: true,
 	}
 
-	b2b_map := map[string]interface{}{
+	var b2b_map = map[string]any{
 		`a`: 42,
 	}
 
-	b2_slice := []map[string]interface{}{b2a_map, b2b_map}
-	b_map := map[string]interface{}{
+	var b2_slice = []map[string]any{b2a_map, b2b_map}
+	var b_map = map[string]any{
 		`b1`: 11,
 		`b2`: b2_slice,
 	}
 
-	input := map[string]interface{}{
+	var input = map[string]any{
 		`a`: 1,
 		`b`: b_map,
 	}
 
-	Walk(input, func(value interface{}, path []string, isLeaf bool) error {
+	Walk(input, func(value any, path []string, isLeaf bool) error {
 		callSignatures[strings.Join(path, `.`)] = fnCallSignature{
 			Value:  value,
 			Path:   path,
@@ -161,9 +161,9 @@ func TestMapWalkNestedMap(t *testing.T) {
 }
 
 func TestMapWalkStruct(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	input := walkTestStruct{
+	var input = walkTestStruct{
 		Name:  `First`,
 		Value: 42,
 		Flags: []bool{true, true, false, true},
@@ -174,7 +174,7 @@ func TestMapWalkStruct(t *testing.T) {
 		},
 	}
 
-	checkAnswers := func(callSignatures map[string]fnCallSignature) {
+	var checkAnswers = func(callSignatures map[string]fnCallSignature) {
 		v, ok := callSignatures[``]
 		assert.True(ok)
 		assert.Equal(fnCallSignature{input, nil, false}, v)
@@ -224,8 +224,8 @@ func TestMapWalkStruct(t *testing.T) {
 		assert.Equal(fnCallSignature{`Three`, []string{`Submap`, `c`}, true}, v)
 	}
 
-	callSignatures := make(map[string]fnCallSignature)
-	assert.Nil(WalkStruct(input, func(value interface{}, path []string, isLeaf bool) error {
+	var callSignatures = make(map[string]fnCallSignature)
+	assert.Nil(WalkStruct(input, func(value any, path []string, isLeaf bool) error {
 		callSignatures[strings.Join(path, `.`)] = fnCallSignature{
 			Value:  value,
 			Path:   path,
@@ -238,7 +238,7 @@ func TestMapWalkStruct(t *testing.T) {
 	checkAnswers(callSignatures)
 
 	callSignatures = make(map[string]fnCallSignature)
-	assert.Nil(WalkStruct(&input, func(value interface{}, path []string, isLeaf bool) error {
+	assert.Nil(WalkStruct(&input, func(value any, path []string, isLeaf bool) error {
 		callSignatures[strings.Join(path, `.`)] = fnCallSignature{
 			Value:  value,
 			Path:   path,

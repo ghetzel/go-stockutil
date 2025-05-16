@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -254,7 +254,7 @@ lines being written to the WritableLogger to be parsed, rewritten, and given a l
 	&#34;github.com/ghetzel/go-stockutil/log&#34;
 )
 
-wr := log.NewWritableLogger(log.INFO, `ls: `)
+var wr = log.NewWritableLogger(log.INFO, `ls: `)
 
 wr.SetParserFunc(func(line string) (log.Level, string) {
 	if strings.Contains(line, `root`) {
@@ -269,7 +269,7 @@ wr.SetParserFunc(func(line string) (log.Level, string) {
 	}
 })
 
-ls := exec.Command(`ls`, `-l`)
+var ls = exec.Command(`ls`, `-l`)
 ls.Stdout = wr
 ls.Run()
 </code></pre>
@@ -316,19 +316,19 @@ ls.Run()
 	
     <li>
 		
-		<a href="#CFPrintf">func CFPrintf(w io.Writer, format string, args ...interface{}) (int, error)</a>
+		<a href="#CFPrintf">func CFPrintf(w io.Writer, format string, args ...any) (int, error)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#CSprintf">func CSprintf(format string, args ...interface{}) string</a>
+		<a href="#CSprintf">func CSprintf(format string, args ...any) string</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#CStripf">func CStripf(format string, args ...interface{}) string</a>
+		<a href="#CStripf">func CStripf(format string, args ...any) string</a>
 		
 	</li>
 	
@@ -340,25 +340,25 @@ ls.Run()
 	
     <li>
 		<strong>
-		<a href="#Confirmf">func Confirmf(format string, args ...interface{}) bool</a>
+		<a href="#Confirmf">func Confirmf(format string, args ...any) bool</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#Critical">func Critical(args ...interface{})</a>
+		<a href="#Critical">func Critical(args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Criticalf">func Criticalf(format string, args ...interface{})</a>
+		<a href="#Criticalf">func Criticalf(format string, args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Debug">func Debug(args ...interface{})</a>
+		<a href="#Debug">func Debug(args ...any)</a>
 		
 	</li>
 	
@@ -370,7 +370,7 @@ ls.Run()
 	
     <li>
 		
-		<a href="#Debugf">func Debugf(format string, args ...interface{})</a>
+		<a href="#Debugf">func Debugf(format string, args ...any)</a>
 		
 	</li>
 	
@@ -382,55 +382,55 @@ ls.Run()
 	
     <li>
 		<strong>
-		<a href="#Dump">func Dump(args ...interface{})</a>
+		<a href="#Dump">func Dump(args ...any)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#DumpJSON">func DumpJSON(args ...interface{})</a>
+		<a href="#DumpJSON">func DumpJSON(args ...any)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Dumpf">func Dumpf(format string, args ...interface{})</a>
+		<a href="#Dumpf">func Dumpf(format string, args ...any)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ErrContains">func ErrContains(err error, message interface{}) bool</a>
+		<a href="#ErrContains">func ErrContains(err error, message any) bool</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ErrHasPrefix">func ErrHasPrefix(err error, message interface{}) bool</a>
+		<a href="#ErrHasPrefix">func ErrHasPrefix(err error, message any) bool</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ErrHasSuffix">func ErrHasSuffix(err error, message interface{}) bool</a>
+		<a href="#ErrHasSuffix">func ErrHasSuffix(err error, message any) bool</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#Error">func Error(args ...interface{})</a>
+		<a href="#Error">func Error(args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Errorf">func Errorf(format string, args ...interface{})</a>
+		<a href="#Errorf">func Errorf(format string, args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Fatal">func Fatal(args ...interface{})</a>
+		<a href="#Fatal">func Fatal(args ...any)</a>
 		
 	</li>
 	
@@ -442,7 +442,7 @@ ls.Run()
 	
     <li>
 		
-		<a href="#Fatalf">func Fatalf(format string, args ...interface{})</a>
+		<a href="#Fatalf">func Fatalf(format string, args ...any)</a>
 		
 	</li>
 	
@@ -460,25 +460,25 @@ ls.Run()
 	
     <li>
 		
-		<a href="#Info">func Info(args ...interface{})</a>
+		<a href="#Info">func Info(args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Infof">func Infof(format string, args ...interface{})</a>
+		<a href="#Infof">func Infof(format string, args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Log">func Log(level Level, args ...interface{})</a>
+		<a href="#Log">func Log(level Level, args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Logf">func Logf(level Level, format string, args ...interface{})</a>
+		<a href="#Logf">func Logf(level Level, format string, args ...any)</a>
 		
 	</li>
 	
@@ -490,25 +490,25 @@ ls.Run()
 	
     <li>
 		
-		<a href="#Notice">func Notice(args ...interface{})</a>
+		<a href="#Notice">func Notice(args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Noticef">func Noticef(format string, args ...interface{})</a>
+		<a href="#Noticef">func Noticef(format string, args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Panic">func Panic(args ...interface{})</a>
+		<a href="#Panic">func Panic(args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Panicf">func Panicf(format string, args ...interface{})</a>
+		<a href="#Panicf">func Panicf(format string, args ...any)</a>
 		
 	</li>
 	
@@ -544,7 +544,7 @@ ls.Run()
 	
     <li>
 		<strong>
-		<a href="#TermSprintf">func TermSprintf(format string, args ...interface{}) string</a>
+		<a href="#TermSprintf">func TermSprintf(format string, args ...any) string</a>
 		</strong>
 	</li>
 	
@@ -556,13 +556,13 @@ ls.Run()
 	
     <li>
 		
-		<a href="#Warning">func Warning(args ...interface{})</a>
+		<a href="#Warning">func Warning(args ...any)</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#Warningf">func Warningf(format string, args ...interface{})</a>
+		<a href="#Warningf">func Warningf(format string, args ...any)</a>
 		
 	</li>
 	
@@ -939,7 +939,7 @@ ls.Run()
 			<a href="timing.go">timing.go</a>
 			
 		</td>
-		<td class="text-right">738B</td>
+		<td class="text-right">741B</td>
 		<td class="text-right">39</td>
 		<td class="text-right">5</td>
 		<td class="text-right">1</td>
@@ -953,7 +953,7 @@ ls.Run()
 			<a href="writable.go">writable.go</a>
 			
 		</td>
-		<td class="text-right">787B</td>
+		<td class="text-right">793B</td>
 		<td class="text-right">35</td>
 		<td class="text-right">3</td>
 		<td class="text-right">2</td>
@@ -1060,7 +1060,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CFPrintf(w io.Writer, format string, args ...interface{}) (int, error)</pre>
+	<pre>func CFPrintf(w io.Writer, format string, args ...any) (int, error)</pre>
 </div>
 
 
@@ -1071,7 +1071,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CSprintf(format string, args ...interface{}) string</pre>
+	<pre>func CSprintf(format string, args ...any) string</pre>
 </div>
 
 
@@ -1082,7 +1082,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CStripf(format string, args ...interface{}) string</pre>
+	<pre>func CStripf(format string, args ...any) string</pre>
 </div>
 
 
@@ -1104,7 +1104,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Confirmf(format string, args ...interface{}) bool</pre>
+	<pre>func Confirmf(format string, args ...any) bool</pre>
 </div>
 
 
@@ -1118,7 +1118,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Critical(args ...interface{})</pre>
+	<pre>func Critical(args ...any)</pre>
 </div>
 
 
@@ -1129,7 +1129,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Criticalf(format string, args ...interface{})</pre>
+	<pre>func Criticalf(format string, args ...any)</pre>
 </div>
 
 
@@ -1140,7 +1140,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Debug(args ...interface{})</pre>
+	<pre>func Debug(args ...any)</pre>
 </div>
 
 
@@ -1165,7 +1165,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Debugf(format string, args ...interface{})</pre>
+	<pre>func Debugf(format string, args ...any)</pre>
 </div>
 
 
@@ -1187,7 +1187,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Dump(args ...interface{})</pre>
+	<pre>func Dump(args ...any)</pre>
 </div>
 
 
@@ -1201,7 +1201,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DumpJSON(args ...interface{})</pre>
+	<pre>func DumpJSON(args ...any)</pre>
 </div>
 
 
@@ -1215,7 +1215,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Dumpf(format string, args ...interface{})</pre>
+	<pre>func Dumpf(format string, args ...any)</pre>
 </div>
 
 
@@ -1229,7 +1229,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ErrContains(err error, message interface{}) bool</pre>
+	<pre>func ErrContains(err error, message any) bool</pre>
 </div>
 
 
@@ -1243,7 +1243,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ErrHasPrefix(err error, message interface{}) bool</pre>
+	<pre>func ErrHasPrefix(err error, message any) bool</pre>
 </div>
 
 
@@ -1257,7 +1257,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ErrHasSuffix(err error, message interface{}) bool</pre>
+	<pre>func ErrHasSuffix(err error, message any) bool</pre>
 </div>
 
 
@@ -1271,7 +1271,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Error(args ...interface{})</pre>
+	<pre>func Error(args ...any)</pre>
 </div>
 
 
@@ -1282,7 +1282,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Errorf(format string, args ...interface{})</pre>
+	<pre>func Errorf(format string, args ...any)</pre>
 </div>
 
 
@@ -1293,7 +1293,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Fatal(args ...interface{})</pre>
+	<pre>func Fatal(args ...any)</pre>
 </div>
 
 
@@ -1318,7 +1318,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Fatalf(format string, args ...interface{})</pre>
+	<pre>func Fatalf(format string, args ...any)</pre>
 </div>
 
 
@@ -1357,7 +1357,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Info(args ...interface{})</pre>
+	<pre>func Info(args ...any)</pre>
 </div>
 
 
@@ -1368,7 +1368,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Infof(format string, args ...interface{})</pre>
+	<pre>func Infof(format string, args ...any)</pre>
 </div>
 
 
@@ -1379,7 +1379,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Log(level Level, args ...interface{})</pre>
+	<pre>func Log(level Level, args ...any)</pre>
 </div>
 
 
@@ -1390,7 +1390,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Logf(level Level, format string, args ...interface{})</pre>
+	<pre>func Logf(level Level, format string, args ...any)</pre>
 </div>
 
 
@@ -1412,7 +1412,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Notice(args ...interface{})</pre>
+	<pre>func Notice(args ...any)</pre>
 </div>
 
 
@@ -1423,7 +1423,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Noticef(format string, args ...interface{})</pre>
+	<pre>func Noticef(format string, args ...any)</pre>
 </div>
 
 
@@ -1434,7 +1434,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Panic(args ...interface{})</pre>
+	<pre>func Panic(args ...any)</pre>
 </div>
 
 
@@ -1445,7 +1445,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Panicf(format string, args ...interface{})</pre>
+	<pre>func Panicf(format string, args ...any)</pre>
 </div>
 
 
@@ -1520,7 +1520,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func TermSprintf(format string, args ...interface{}) string</pre>
+	<pre>func TermSprintf(format string, args ...any) string</pre>
 </div>
 
 
@@ -1545,7 +1545,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Warning(args ...interface{})</pre>
+	<pre>func Warning(args ...any)</pre>
 </div>
 
 
@@ -1556,7 +1556,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Warningf(format string, args ...interface{})</pre>
+	<pre>func Warningf(format string, args ...any)</pre>
 </div>
 
 
@@ -1574,7 +1574,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type FormattedLogFunc func(format string, args ...interface{})</pre>
+	<pre>type FormattedLogFunc func(format string, args ...any)</pre>
 </div>
 
 
@@ -1663,7 +1663,7 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type LogFunc func(args ...interface{})</pre>
+	<pre>type LogFunc func(args ...any)</pre>
 </div>
 
 

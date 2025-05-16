@@ -6,16 +6,16 @@
     "URL": "https://github.com/ghetzel/go-stockutil",
     "Synopsis": "Utilities for converting, manipulating, and iterating over slices\n",
     "MainFunction": false,
-    "CommentWordCount": 745,
-    "LineCount": 1020,
-    "SourceLineCount": 761,
-    "FunctionCount": 32,
+    "CommentWordCount": 764,
+    "LineCount": 1063,
+    "SourceLineCount": 794,
+    "FunctionCount": 34,
     "TypeCount": 4,
     "ConstantCount": 0,
     "VariableCount": 3,
     "Statistics": {
-        "Mean": 0.8943,
-        "StdDev": 0.2818,
+        "Mean": 0.9,
+        "StdDev": 0.2751,
         "GeometricMean": 0,
         "HarmonicMean": 0,
         "Median": 1,
@@ -51,10 +51,10 @@
                     "Alias": "go-intersect"
                 }
             ],
-            "Size": 11608,
-            "LineCount": 486,
-            "SourceLineCount": 333,
-            "FunctionCount": 32,
+            "Size": 11552,
+            "LineCount": 507,
+            "SourceLineCount": 346,
+            "FunctionCount": 34,
             "TypeCount": 4,
             "ConstantCount": 0,
             "VariableCount": 3
@@ -79,9 +79,9 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 13446,
-            "LineCount": 534,
-            "SourceLineCount": 428,
+            "Size": 14013,
+            "LineCount": 556,
+            "SourceLineCount": 448,
             "FunctionCount": 0,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -107,19 +107,19 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "values",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Append(in interface{}, values ...interface{}) []interface{}",
+            "Signature": "Append(in any, values ...any) []any",
             "Source": "ewoJcmV0dXJuIGFwcGVuZChTbGljZWlmeShpbiksIHZhbHVlcy4uLikKfQ==",
             "IsPackageLevel": true
         },
@@ -129,7 +129,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "index",
@@ -138,14 +138,14 @@
             ],
             "Returns": [
                 {
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Type": "bool"
                 }
             ],
-            "Signature": "At(in interface{}, index int) (interface{}, bool)",
-            "Source": "ewoJaW4gPSB0eXBldXRpbC5SZXNvbHZlVmFsdWUoaW4pCglpZiB0eXBldXRpbC5Jc0tpbmQoaW4sIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuU3RyaW5nKSB7CgkJaW5WIDo9IHJlZmxlY3QuVmFsdWVPZihpbikKCQlpZiBpbmRleCA8IGluVi5MZW4oKSB7CgkJCXJldHVybiBpblYuSW5kZXgoaW5kZXgpLkludGVyZmFjZSgpLCB0cnVlCgkJfQoJfQoJcmV0dXJuIG5pbCwgZmFsc2UKfQ==",
+            "Signature": "At(in any, index int) (any, bool)",
+            "Source": "ewoJaW4gPSB0eXBldXRpbC5SZXNvbHZlVmFsdWUoaW4pCglpZiB0eXBldXRpbC5Jc0tpbmQoaW4sIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuU3RyaW5nKSB7CgkJdmFyIGluViA9IHJlZmxlY3QuVmFsdWVPZihpbikKCQlpZiBpbmRleCA8IGluVi5MZW4oKSB7CgkJCXJldHVybiBpblYuSW5kZXgoaW5kZXgpLkludGVyZmFjZSgpLCB0cnVlCgkJfQoJfQoJcmV0dXJuIG5pbCwgZmFsc2UKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -154,16 +154,16 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Autotype(in interface{}) []interface{}",
-            "Source": "ewoJdmFyIG91dCBbXWludGVyZmFjZXt9CglFYWNoKGluLCBmdW5jKGkgaW50LCB2IGludGVyZmFjZXt9KSBlcnJvciB7CgkJb3V0ID0gYXBwZW5kKG91dCwgc3RyaW5ndXRpbC5BdXRvdHlwZSh2KSkKCQlyZXR1cm4gbmlsCgl9KQoJcmV0dXJuIG91dAp9",
+            "Signature": "Autotype(in any) []any",
+            "Source": "ewoJdmFyIG91dCBbXWFueQoJRWFjaChpbiwgZnVuYyhpIGludCwgdiBhbnkpIGVycm9yIHsKCQlvdXQgPSBhcHBlbmQob3V0LCBzdHJpbmd1dGlsLkF1dG90eXBlKHYpKQoJCXJldHVybiBuaWwKCX0pCglyZXR1cm4gb3V0Cn0=",
             "IsPackageLevel": true
         },
         {
@@ -172,7 +172,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "size",
@@ -181,11 +181,11 @@
             ],
             "Returns": [
                 {
-                    "Type": "[][]interface{}"
+                    "Type": "[][]any"
                 }
             ],
-            "Signature": "Chunks(in interface{}, size int) [][]interface{}",
-            "Source": "ewoJaWYgIXR5cGV1dGlsLklzQXJyYXkoaW4pIHsKCQlyZXR1cm4gbmlsCgl9CglvdXRwdXQgOj0gbWFrZShbXVtdaW50ZXJmYWNle30sIDApCgljdXJyZW50IDo9IG1ha2UoW11pbnRlcmZhY2V7fSwgMCkKCUVhY2goaW4sIGZ1bmMoaSBpbnQsIHYgaW50ZXJmYWNle30pIGVycm9yIHsKCQlpZiBpID4gMCAmJiBpJXNpemUgPT0gMCB7CgkJCW91dHB1dCA9IGFwcGVuZChvdXRwdXQsIGN1cnJlbnQpCgkJCWN1cnJlbnQgPSBuaWwKCQl9CgkJY3VycmVudCA9IGFwcGVuZChjdXJyZW50LCB2KQoJCXJldHVybiBuaWwKCX0pCglpZiBsZW4oY3VycmVudCkgPiAwIHsKCQlvdXRwdXQgPSBhcHBlbmQob3V0cHV0LCBjdXJyZW50KQoJfQoJcmV0dXJuIG91dHB1dAp9",
+            "Signature": "Chunks(in any, size int) [][]any",
+            "Source": "ewoJaWYgIXR5cGV1dGlsLklzQXJyYXkoaW4pIHsKCQlyZXR1cm4gbmlsCgl9Cgl2YXIgb3V0cHV0ID0gbWFrZShbXVtdYW55LCAwKQoJdmFyIGN1cnJlbnQgPSBtYWtlKFtdYW55LCAwKQoJRWFjaChpbiwgZnVuYyhpIGludCwgdiBhbnkpIGVycm9yIHsKCQlpZiBpID4gMCAmJiBpJXNpemUgPT0gMCB7CgkJCW91dHB1dCA9IGFwcGVuZChvdXRwdXQsIGN1cnJlbnQpCgkJCWN1cnJlbnQgPSBuaWwKCQl9CgkJY3VycmVudCA9IGFwcGVuZChjdXJyZW50LCB2KQoJCXJldHVybiBuaWwKCX0pCglpZiBsZW4oY3VycmVudCkgPiAwIHsKCQlvdXRwdXQgPSBhcHBlbmQob3V0cHV0LCBjdXJyZW50KQoJfQoJcmV0dXJuIG91dHB1dAp9",
             "IsPackageLevel": true
         },
         {
@@ -194,16 +194,16 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Compact(in interface{}) []interface{}",
-            "Source": "ewoJaWYgaW4gPT0gbmlsIHsKCQlyZXR1cm4gbmlsCgl9CglydiA6PSBtYWtlKFtdaW50ZXJmYWNle30sIDApCglmb3IgXywgdiA6PSByYW5nZSBTbGljZWlmeShpbikgewoJCWlmIHYgIT0gbmlsIHsKCQkJdlYgOj0gcmVmbGVjdC5WYWx1ZU9mKHYpCgkJCXN3aXRjaCB2Vi5LaW5kKCkgewoJCQljYXNlIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuQ2hhbiwgcmVmbGVjdC5NYXAsIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuU3RyaW5nOgoJCQkJaWYgdlYuTGVuKCkgPiAwIHsKCQkJCQlydiA9IGFwcGVuZChydiwgdikKCQkJCX0KCQkJZGVmYXVsdDoKCQkJCXJ2ID0gYXBwZW5kKHJ2LCB2KQoJCQl9CgkJfQoJfQoJcmV0dXJuIHJ2Cn0=",
+            "Signature": "Compact(in any) []any",
+            "Source": "ewoJaWYgaW4gPT0gbmlsIHsKCQlyZXR1cm4gbmlsCgl9Cgl2YXIgcnYgPSBtYWtlKFtdYW55LCAwKQoJZm9yIF8sIHYgOj0gcmFuZ2UgU2xpY2VpZnkoaW4pIHsKCQlpZiB2ICE9IG5pbCB7CgkJCXZhciB2ViA9IHJlZmxlY3QuVmFsdWVPZih2KQoJCQlzd2l0Y2ggdlYuS2luZCgpIHsKCQkJY2FzZSByZWZsZWN0LkFycmF5LCByZWZsZWN0LkNoYW4sIHJlZmxlY3QuTWFwLCByZWZsZWN0LlNsaWNlLCByZWZsZWN0LlN0cmluZzoKCQkJCWlmIHZWLkxlbigpID4gMCB7CgkJCQkJcnYgPSBhcHBlbmQocnYsIHYpCgkJCQl9CgkJCWRlZmF1bHQ6CgkJCQlydiA9IGFwcGVuZChydiwgdikKCQkJfQoJCX0KCX0KCXJldHVybiBydgp9",
             "IsPackageLevel": true
         },
         {
@@ -221,7 +221,7 @@
                 }
             ],
             "Signature": "CompactString(in []string) []string",
-            "Source": "ewoJaWYgaW4gPT0gbmlsIHsKCQlyZXR1cm4gbmlsCgl9CglydiA6PSBtYWtlKFtdc3RyaW5nLCAwKQoJZm9yIF8sIHYgOj0gcmFuZ2UgaW4gewoJCWlmIHYgIT0gYGAgewoJCQlydiA9IGFwcGVuZChydiwgdikKCQl9Cgl9CglyZXR1cm4gcnYKfQ==",
+            "Source": "ewoJaWYgaW4gPT0gbmlsIHsKCQlyZXR1cm4gbmlsCgl9Cgl2YXIgcnYgPSBtYWtlKFtdc3RyaW5nLCAwKQoJZm9yIF8sIHYgOj0gcmFuZ2UgaW4gewoJCWlmIHYgIT0gYGAgewoJCQlydiA9IGFwcGVuZChydiwgdikKCQl9Cgl9CglyZXR1cm4gcnYKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -230,11 +230,11 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "value",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "comparators",
@@ -246,8 +246,8 @@
                     "Type": "bool"
                 }
             ],
-            "Signature": "Contains(in interface{}, value interface{}, comparators ...CompareFunc) bool",
-            "Source": "ewoJaWYgbGVuKGNvbXBhcmF0b3JzKSA9PSAwIHsKCQljb21wYXJhdG9ycyA9IFtdQ29tcGFyZUZ1bmN7U3RyaWN0RXF1YWxpdHlDb21wYXJlfQoJfQoJY29tcGFyYXRvciA6PSBjb21wYXJhdG9yc1swXQoJaWYgaW5WIDo9IHJlZmxlY3QuVmFsdWVPZihpbik7IGluVi5Jc1ZhbGlkKCkgewoJCWZvciBpIDo9IDA7IGkgPCBpblYuTGVuKCk7IGkrKyB7CgkJCWlmIGN1cnJlbnQgOj0gaW5WLkluZGV4KGkpOyBjdXJyZW50LklzVmFsaWQoKSB7CgkJCQlpZiBjb21wYXJhdG9yKGksIHZhbHVlLCBjdXJyZW50LkludGVyZmFjZSgpKSB7CgkJCQkJcmV0dXJuIHRydWUKCQkJCX0KCQkJfQoJCX0KCX0KCXJldHVybiBmYWxzZQp9",
+            "Signature": "Contains(in any, value any, comparators ...CompareFunc) bool",
+            "Source": "ewoJaWYgbGVuKGNvbXBhcmF0b3JzKSA9PSAwIHsKCQljb21wYXJhdG9ycyA9IFtdQ29tcGFyZUZ1bmN7U3RyaWN0RXF1YWxpdHlDb21wYXJlfQoJfQoJdmFyIGNvbXBhcmF0b3IgPSBjb21wYXJhdG9yc1swXQoJaWYgaW5WIDo9IHJlZmxlY3QuVmFsdWVPZihpbik7IGluVi5Jc1ZhbGlkKCkgewoJCWZvciBpIDo9IDA7IGkgPCBpblYuTGVuKCk7IGkrKyB7CgkJCWlmIGN1cnJlbnQgOj0gaW5WLkluZGV4KGkpOyBjdXJyZW50LklzVmFsaWQoKSB7CgkJCQlpZiBjb21wYXJhdG9yKGksIHZhbHVlLCBjdXJyZW50LkludGVyZmFjZSgpKSB7CgkJCQkJcmV0dXJuIHRydWUKCQkJCX0KCQkJfQoJCX0KCX0KCXJldHVybiBmYWxzZQp9",
             "IsPackageLevel": true
         },
         {
@@ -322,20 +322,20 @@
             "Arguments": [
                 {
                     "Name": "first",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "second",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Difference(first interface{}, second interface{}) []interface{}",
-            "Source": "ewoJdmFyIGRpZmYgPSBtYWtlKG1hcFtpbnRlcmZhY2V7fV1ib29sKQoJdmFyIG91dCA9IG1ha2UoW11pbnRlcmZhY2V7fSwgMCkKCXZhciBhUyA9IFNsaWNlaWZ5KGZpcnN0KQoJdmFyIGJTID0gU2xpY2VpZnkoc2Vjb25kKQoJaWYgbGVuKGFTKSA9PSAwIHsKCQlyZXR1cm4gb3V0Cgl9IGVsc2UgaWYgbGVuKGJTKSA9PSAwIHsKCQlyZXR1cm4gYVMKCX0KCWZvciBfLCBpdGVtIDo9IHJhbmdlIGJTIHsKCQlkaWZmW2l0ZW1dID0gdHJ1ZQoJfQoJZm9yIF8sIGl0ZW0gOj0gcmFuZ2UgYVMgewoJCWlmIF8sIG9rIDo9IGRpZmZbaXRlbV07ICFvayB7CgkJCW91dCA9IGFwcGVuZChvdXQsIGl0ZW0pCgkJfQoJfQoJcmV0dXJuIG91dAp9",
+            "Signature": "Difference(first any, second any) []any",
+            "Source": "ewoJdmFyIGRpZmYgPSBtYWtlKG1hcFthbnldYm9vbCkKCXZhciBvdXQgPSBtYWtlKFtdYW55LCAwKQoJdmFyIGFTID0gU2xpY2VpZnkoZmlyc3QpCgl2YXIgYlMgPSBTbGljZWlmeShzZWNvbmQpCglpZiBsZW4oYVMpID09IDAgewoJCXJldHVybiBvdXQKCX0gZWxzZSBpZiBsZW4oYlMpID09IDAgewoJCXJldHVybiBhUwoJfQoJZm9yIF8sIGl0ZW0gOj0gcmFuZ2UgYlMgewoJCWRpZmZbaXRlbV0gPSB0cnVlCgl9Cglmb3IgXywgaXRlbSA6PSByYW5nZSBhUyB7CgkJaWYgXywgb2sgOj0gZGlmZltpdGVtXTsgIW9rIHsKCQkJb3V0ID0gYXBwZW5kKG91dCwgaXRlbSkKCQl9Cgl9CglyZXR1cm4gb3V0Cn0=",
             "IsPackageLevel": true
         },
         {
@@ -344,7 +344,7 @@
             "Arguments": [
                 {
                     "Name": "slice",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "iterFn",
@@ -356,7 +356,7 @@
                     "Type": "error"
                 }
             ],
-            "Signature": "Each(slice interface{}, iterFn IterationFunc) error",
+            "Signature": "Each(slice any, iterFn IterationFunc) error",
             "Source": "ewoJcmV0dXJuIHV0aWxzLlNsaWNlRWFjaChzbGljZSwgaXRlckZuKQp9",
             "IsPackageLevel": true
         },
@@ -366,15 +366,15 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
-            "Signature": "First(in interface{}) interface{}",
+            "Signature": "First(in any) any",
             "Source": "ewoJcmV0dXJuIEdldChpbiwgMCkKfQ==",
             "IsPackageLevel": true
         },
@@ -384,15 +384,15 @@
             "Arguments": [
                 {
                     "Name": "inputs",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
-            "Signature": "FirstNonZero(inputs ...interface{}) interface{}",
+            "Signature": "FirstNonZero(inputs ...any) any",
             "Source": "ewoJZm9yIF8sIHYgOj0gcmFuZ2UgRmxhdHRlbihpbnB1dHMpIHsKCQlpZiAhdHlwZXV0aWwuSXNaZXJvKHYpIHsKCQkJcmV0dXJuIHYKCQl9Cgl9CglyZXR1cm4gbmlsCn0=",
             "IsPackageLevel": true
         },
@@ -402,16 +402,16 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Flatten(in interface{}) []interface{}",
-            "Source": "ewoJdmFyIG91dCA9IG1ha2UoW11pbnRlcmZhY2V7fSwgMCkKCUVhY2goaW4sIGZ1bmMoXyBpbnQsIHZhbHVlIGludGVyZmFjZXt9KSBlcnJvciB7CgkJaWYgdHlwZXV0aWwuSXNBcnJheSh2YWx1ZSkgewoJCQlvdXQgPSBhcHBlbmQob3V0LCBGbGF0dGVuKHZhbHVlKS4uLikKCQl9IGVsc2UgewoJCQlvdXQgPSBhcHBlbmQob3V0LCB2YWx1ZSkKCQl9CgkJcmV0dXJuIG5pbAoJfSkKCXJldHVybiBvdXQKfQ==",
+            "Signature": "Flatten(in any) []any",
+            "Source": "ewoJdmFyIG91dCA9IG1ha2UoW11hbnksIDApCglFYWNoKGluLCBmdW5jKF8gaW50LCB2YWx1ZSBhbnkpIGVycm9yIHsKCQlpZiB0eXBldXRpbC5Jc0FycmF5KHZhbHVlKSB7CgkJCW91dCA9IGFwcGVuZChvdXQsIEZsYXR0ZW4odmFsdWUpLi4uKQoJCX0gZWxzZSB7CgkJCW91dCA9IGFwcGVuZChvdXQsIHZhbHVlKQoJCX0KCQlyZXR1cm4gbmlsCgl9KQoJcmV0dXJuIG91dAp9",
             "IsPackageLevel": true
         },
         {
@@ -420,7 +420,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "index",
@@ -429,10 +429,10 @@
             ],
             "Returns": [
                 {
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
-            "Signature": "Get(in interface{}, index int) interface{}",
+            "Signature": "Get(in any, index int) any",
             "Source": "ewoJaWYgdiwgb2sgOj0gQXQoaW4sIGluZGV4KTsgb2sgewoJCXJldHVybiB2Cgl9IGVsc2UgewoJCXJldHVybiBuaWwKCX0KfQ==",
             "IsPackageLevel": true
         },
@@ -442,19 +442,19 @@
             "Arguments": [
                 {
                     "Name": "a",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "b",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Intersect(a interface{}, b interface{}) []interface{}",
+            "Signature": "Intersect(a any, b any) []any",
             "Source": "ewoJcmV0dXJuIFNsaWNlaWZ5KGludGVyc2VjdC5TaW1wbGUoYSwgYikpCn0=",
             "IsPackageLevel": true
         },
@@ -486,15 +486,15 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
-            "Signature": "Last(in interface{}) interface{}",
+            "Signature": "Last(in any) any",
             "Source": "ewoJaWYgTGVuKGluKSA9PSAwIHsKCQlyZXR1cm4gbmlsCgl9CglyZXR1cm4gR2V0KGluLCBMZW4oaW4pLTEpCn0=",
             "IsPackageLevel": true
         },
@@ -504,7 +504,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -512,8 +512,8 @@
                     "Type": "int"
                 }
             ],
-            "Signature": "Len(in interface{}) int",
-            "Source": "ewoJaW4gPSB0eXBldXRpbC5SZXNvbHZlVmFsdWUoaW4pCglpZiB0eXBldXRpbC5Jc0tpbmQoaW4sIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuU3RyaW5nKSB7CgkJaW5WIDo9IHJlZmxlY3QuVmFsdWVPZihpbikKCQlyZXR1cm4gaW5WLkxlbigpCgl9CglyZXR1cm4gMAp9",
+            "Signature": "Len(in any) int",
+            "Source": "ewoJaW4gPSB0eXBldXRpbC5SZXNvbHZlVmFsdWUoaW4pCglpZiB0eXBldXRpbC5Jc0tpbmQoaW4sIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuU3RyaW5nKSB7CgkJdmFyIGluViA9IHJlZmxlY3QuVmFsdWVPZihpbikKCQlyZXR1cm4gaW5WLkxlbigpCgl9CglyZXR1cm4gMAp9",
             "IsPackageLevel": true
         },
         {
@@ -522,7 +522,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "fn",
@@ -531,11 +531,11 @@
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Map(in interface{}, fn MapFunc) []interface{}",
-            "Source": "ewoJdmFyIG91dCBbXWludGVyZmFjZXt9CglFYWNoKGluLCBmdW5jKGkgaW50LCB2IGludGVyZmFjZXt9KSBlcnJvciB7CgkJb3V0ID0gYXBwZW5kKG91dCwgZm4oaSwgdikpCgkJcmV0dXJuIG5pbAoJfSkKCXJldHVybiBvdXQKfQ==",
+            "Signature": "Map(in any, fn MapFunc) []any",
+            "Source": "ewoJdmFyIG91dCBbXWFueQoJRWFjaChpbiwgZnVuYyhpIGludCwgdiBhbnkpIGVycm9yIHsKCQlvdXQgPSBhcHBlbmQob3V0LCBmbihpLCB2KSkKCQlyZXR1cm4gbmlsCgl9KQoJcmV0dXJuIG91dAp9",
             "IsPackageLevel": true
         },
         {
@@ -544,7 +544,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "fn",
@@ -556,8 +556,8 @@
                     "Type": "[]string"
                 }
             ],
-            "Signature": "MapString(in interface{}, fn MapStringFunc) []string",
-            "Source": "ewoJb3V0IDo9IFN0cmluZ2lmeShpbikKCWZvciBpLCBlbCA6PSByYW5nZSBvdXQgewoJCW91dFtpXSA9IGZuKGksIGVsKQoJfQoJcmV0dXJuIG91dAp9",
+            "Signature": "MapString(in any, fn MapStringFunc) []string",
+            "Source": "ewoJdmFyIG91dCA9IFN0cmluZ2lmeShpbikKCWZvciBpLCBlbCA6PSByYW5nZSBvdXQgewoJCW91dFtpXSA9IGZuKGksIGVsKQoJfQoJcmV0dXJuIG91dAp9",
             "IsPackageLevel": true
         },
         {
@@ -566,15 +566,15 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "...interface{}"
+                    "Type": "...any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
-            "Signature": "Or(in ...interface{}) interface{}",
+            "Signature": "Or(in ...any) any",
             "Source": "ewoJZm9yIF8sIHYgOj0gcmFuZ2UgQ29tcGFjdChpbikgewoJCWlmIHYgIT0gcmVmbGVjdC5aZXJvKHJlZmxlY3QuVHlwZU9mKHYpKS5JbnRlcmZhY2UoKSB7CgkJCXJldHVybiB2CgkJfQoJfQoJcmV0dXJuIG5pbAp9",
             "IsPackageLevel": true
         },
@@ -602,25 +602,25 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Rest(in interface{}) []interface{}",
-            "Source": "ewoJaWYgdHlwZXV0aWwuSXNLaW5kKGluLCByZWZsZWN0LkFycmF5LCByZWZsZWN0LlNsaWNlLCByZWZsZWN0LlN0cmluZykgewoJCWluViA6PSByZWZsZWN0LlZhbHVlT2YoaW4pCgkJbCA6PSBpblYuTGVuKCkKCQlzd2l0Y2ggbCB7CgkJY2FzZSAwLCAxOgoJCQlyZXR1cm4gbmlsCgkJZGVmYXVsdDoKCQkJb3V0IDo9IG1ha2UoW11pbnRlcmZhY2V7fSwgbC0xKQoJCQlmb3IgaSA6PSAxOyBpIDwgbDsgaSsrIHsKCQkJCWVsZW1WIDo9IGluVi5JbmRleChpKQoJCQkJaWYgZWxlbVYuQ2FuSW50ZXJmYWNlKCkgewoJCQkJCW91dFtpLTFdID0gZWxlbVYuSW50ZXJmYWNlKCkKCQkJCX0KCQkJfQoJCQlyZXR1cm4gb3V0CgkJfQoJfQoJcmV0dXJuIG5pbAp9",
+            "Signature": "Rest(in any) []any",
+            "Source": "ewoJaWYgdHlwZXV0aWwuSXNLaW5kKGluLCByZWZsZWN0LkFycmF5LCByZWZsZWN0LlNsaWNlLCByZWZsZWN0LlN0cmluZykgewoJCXZhciBpblYgPSByZWZsZWN0LlZhbHVlT2YoaW4pCgkJdmFyIGwgPSBpblYuTGVuKCkKCQlzd2l0Y2ggbCB7CgkJY2FzZSAwLCAxOgoJCQlyZXR1cm4gbmlsCgkJZGVmYXVsdDoKCQkJdmFyIG91dCA9IG1ha2UoW11hbnksIGwtMSkKCQkJZm9yIGkgOj0gMTsgaSA8IGw7IGkrKyB7CgkJCQl2YXIgZWxlbVYgPSBpblYuSW5kZXgoaSkKCQkJCWlmIGVsZW1WLkNhbkludGVyZmFjZSgpIHsKCQkJCQlvdXRbaS0xXSA9IGVsZW1WLkludGVyZmFjZSgpCgkJCQl9CgkJCX0KCQkJcmV0dXJuIG91dAoJCX0KCX0KCXJldHVybiBuaWwKfQ==",
             "IsPackageLevel": true
         },
         {
             "Name": "Slice",
-            "Comment": "Returns a new slice with only the specified subset of items included.  In addition to the\nnormal slice index rules in Golang, negative indices are also supported.  If a negative index is\ngiven for the from and/or to values, the index will be treated as being relative to the end of the\ngiven slice. For example:\n\n\tSlice([]interface{}{1,2,3,4,5}, -5, -1)  // returns []interface{}{1, 2, 3, 4, 5}\n\tSlice([]interface{}{1,2,3,4,5}, -2, -1)  // returns []interface{}{4, 5}\n\tSlice([]interface{}{1,2,3,4,5}, -1, -1)  // returns []interface{}{5}\n\tSlice([]interface{}{1,2,3,4,5}, -4, -2)  // returns []interface{}{2, 3, 4}",
+            "Comment": "Returns a new slice with only the specified subset of items included.  In addition to the\nnormal slice index rules in Golang, negative indices are also supported.  If a negative index is\ngiven for the from and/or to values, the index will be treated as being relative to the end of the\ngiven slice. For example:\n\n\tSlice([]any{1,2,3,4,5}, -5, -1)  // returns []any{1, 2, 3, 4, 5}\n\tSlice([]any{1,2,3,4,5}, -2, -1)  // returns []any{4, 5}\n\tSlice([]any{1,2,3,4,5}, -1, -1)  // returns []any{5}\n\tSlice([]any{1,2,3,4,5}, -4, -2)  // returns []any{2, 3, 4}",
             "Arguments": [
                 {
                     "Name": "slice",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "from",
@@ -633,11 +633,11 @@
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Slice(slice interface{}, from int, to int) []interface{}",
-            "Source": "ewoJc2xpY2VTIDo9IFNsaWNlaWZ5KHNsaWNlKQoJaWYgZnJvbSA8IDAgewoJCWZyb20gPSBsZW4oc2xpY2VTKSArIGZyb20KCX0KCWlmIGZyb20gPiBsZW4oc2xpY2VTKSB7CgkJcmV0dXJuIG1ha2UoW11pbnRlcmZhY2V7fSwgMCkKCX0gZWxzZSBpZiBmcm9tIDwgMCB7CgkJZnJvbSA9IDAKCX0KCWlmIHRvID4gbGVuKHNsaWNlUykgewoJCXRvID0gbGVuKHNsaWNlUykKCX0gZWxzZSBpZiB0byA8IDAgewoJCXRvID0gbGVuKHNsaWNlUykgKyB0byArIDEKCX0KCWlmIChmcm9tID49IDAgJiYgZnJvbSA8IGxlbihzbGljZVMpKSAmJiAodG8gPj0gZnJvbSAmJiB0byA8PSBsZW4oc2xpY2VTKSkgewoJCXJldHVybiBzbGljZVNbZnJvbTp0b10KCX0gZWxzZSB7CgkJcmV0dXJuIG1ha2UoW11pbnRlcmZhY2V7fSwgMCkKCX0KfQ==",
+            "Signature": "Slice(slice any, from int, to int) []any",
+            "Source": "ewoJdmFyIHNsaWNlUyA9IFNsaWNlaWZ5KHNsaWNlKQoJaWYgZnJvbSA8IDAgewoJCWZyb20gPSBsZW4oc2xpY2VTKSArIGZyb20KCX0KCWlmIGZyb20gPiBsZW4oc2xpY2VTKSB7CgkJcmV0dXJuIG1ha2UoW11hbnksIDApCgl9IGVsc2UgaWYgZnJvbSA8IDAgewoJCWZyb20gPSAwCgl9CglpZiB0byA+IGxlbihzbGljZVMpIHsKCQl0byA9IGxlbihzbGljZVMpCgl9IGVsc2UgaWYgdG8gPCAwIHsKCQl0byA9IGxlbihzbGljZVMpICsgdG8gKyAxCgl9CglpZiAoZnJvbSA+PSAwICYmIGZyb20gPCBsZW4oc2xpY2VTKSkgJiYgKHRvID49IGZyb20gJiYgdG8gPD0gbGVuKHNsaWNlUykpIHsKCQlyZXR1cm4gc2xpY2VTW2Zyb206dG9dCgl9IGVsc2UgewoJCXJldHVybiBtYWtlKFtdYW55LCAwKQoJfQp9",
             "IsPackageLevel": true
         },
         {
@@ -646,16 +646,62 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Sliceify(in interface{}) []interface{}",
+            "Signature": "Sliceify(in any) []any",
             "Source": "ewoJcmV0dXJuIHV0aWxzLlNsaWNlaWZ5KGluKQp9",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "SplitCompact",
+            "Comment": "Splits the given string by a delimiter, then eliminates any zero-length items.",
+            "Arguments": [
+                {
+                    "Name": "in",
+                    "Type": "string"
+                },
+                {
+                    "Name": "delimiter",
+                    "Type": "string"
+                }
+            ],
+            "Returns": [
+                {
+                    "Name": "out",
+                    "Type": "[]string"
+                }
+            ],
+            "Signature": "SplitCompact(in string, delimiter string) out []string",
+            "Source": "ewoJb3V0ID0gc3RyaW5ncy5TcGxpdChpbiwgZGVsaW1pdGVyKQoJb3V0ID0gQ29tcGFjdFN0cmluZyhvdXQpCglyZXR1cm4KfQ==",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "SplitTrimSpaceCompact",
+            "Comment": "Splits the given string by a delimiter, trims the space around each item,\nthen eliminates any zero-length results.",
+            "Arguments": [
+                {
+                    "Name": "in",
+                    "Type": "string"
+                },
+                {
+                    "Name": "delimiter",
+                    "Type": "string"
+                }
+            ],
+            "Returns": [
+                {
+                    "Name": "out",
+                    "Type": "[]string"
+                }
+            ],
+            "Signature": "SplitTrimSpaceCompact(in string, delimiter string) out []string",
+            "Source": "ewoJb3V0ID0gc3RyaW5ncy5TcGxpdChpbiwgZGVsaW1pdGVyKQoJZm9yIGksIHYgOj0gcmFuZ2Ugb3V0IHsKCQlvdXRbaV0gPSBzdHJpbmdzLlRyaW1TcGFjZSh2KQoJfQoJb3V0ID0gQ29tcGFjdFN0cmluZyhvdXQpCglyZXR1cm4KfQ==",
             "IsPackageLevel": true
         },
         {
@@ -664,7 +710,7 @@
             "Arguments": [
                 {
                     "Name": "slice",
-                    "Type": "interface{}"
+                    "Type": "any"
                 },
                 {
                     "Name": "from",
@@ -680,7 +726,7 @@
                     "Type": "[]string"
                 }
             ],
-            "Signature": "StringSlice(slice interface{}, from int, to int) []string",
+            "Signature": "StringSlice(slice any, from int, to int) []string",
             "Source": "ewoJcmV0dXJuIFN0cmluZ2lmeShTbGljZShzbGljZSwgZnJvbSwgdG8pKQp9",
             "IsPackageLevel": true
         },
@@ -690,7 +736,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -698,8 +744,8 @@
                     "Type": "[]string"
                 }
             ],
-            "Signature": "Stringify(in interface{}) []string",
-            "Source": "ewoJaWYgYXJyIDo9IFNsaWNlaWZ5KGluKTsgbGVuKGFycikgPiAwIHsKCQlvdXQgOj0gbWFrZShbXXN0cmluZywgbGVuKGFycikpCgkJZm9yIGksIGl0ZW0gOj0gcmFuZ2UgYXJyIHsKCQkJb3V0W2ldID0gdHlwZXV0aWwuU3RyaW5nKGl0ZW0pCgkJfQoJCXJldHVybiBvdXQKCX0gZWxzZSB7CgkJcmV0dXJuIG5pbAoJfQp9",
+            "Signature": "Stringify(in any) []string",
+            "Source": "ewoJaWYgYXJyIDo9IFNsaWNlaWZ5KGluKTsgbGVuKGFycikgPiAwIHsKCQl2YXIgb3V0ID0gbWFrZShbXXN0cmluZywgbGVuKGFycikpCgkJZm9yIGksIGl0ZW0gOj0gcmFuZ2UgYXJyIHsKCQkJb3V0W2ldID0gdHlwZXV0aWwuU3RyaW5nKGl0ZW0pCgkJfQoJCXJldHVybiBvdXQKCX0gZWxzZSB7CgkJcmV0dXJuIG5pbAoJfQp9",
             "IsPackageLevel": true
         },
         {
@@ -708,7 +754,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -716,7 +762,7 @@
                     "Type": "[]string"
                 }
             ],
-            "Signature": "TrimSpace(in interface{}) []string",
+            "Signature": "TrimSpace(in any) []string",
             "Source": "ewoJcmV0dXJuIE1hcFN0cmluZyhpbiwgZnVuYyhfIGludCwgZWwgc3RyaW5nKSBzdHJpbmcgewoJCXJldHVybiBzdHJpbmdzLlRyaW1TcGFjZShlbCkKCX0pCn0=",
             "IsPackageLevel": true
         },
@@ -726,15 +772,15 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
                 {
-                    "Type": "[]interface{}"
+                    "Type": "[]any"
                 }
             ],
-            "Signature": "Unique(in interface{}) []interface{}",
+            "Signature": "Unique(in any) []any",
             "Source": "ewoJcmV0dXJuIHVuaXF1ZShpbiwgU3RyaWN0RXF1YWxpdHlDb21wYXJlKQp9",
             "IsPackageLevel": true
         },
@@ -744,7 +790,7 @@
             "Arguments": [
                 {
                     "Name": "in",
-                    "Type": "interface{}"
+                    "Type": "any"
                 }
             ],
             "Returns": [
@@ -752,7 +798,7 @@
                     "Type": "[]string"
                 }
             ],
-            "Signature": "UniqueStrings(in interface{}) []string",
+            "Signature": "UniqueStrings(in any) []string",
             "Source": "ewoJcmV0dXJuIFN0cmluZ2lmeShVbmlxdWUoaW4pKQp9",
             "IsPackageLevel": true
         }
@@ -767,7 +813,7 @@
                 }
             ],
             "Signature": "TestAt(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgaW50ZXJmYWNle30KCXZhciBvdXQgaW50ZXJmYWNle30KCXZhciBvayBib29sCglpbnB1dCA9IFtdaW50ezEsIDMsIDV9CglvdXQsIG9rID0gQXQoaW5wdXQsIDApCglhc3NlcnQuVHJ1ZShvaykKCWFzc2VydC5FcXVhbCgxLCBvdXQpCglvdXQsIG9rID0gQXQoaW5wdXQsIDEpCglhc3NlcnQuVHJ1ZShvaykKCWFzc2VydC5FcXVhbCgzLCBvdXQpCglvdXQsIG9rID0gQXQoaW5wdXQsIDIpCglhc3NlcnQuVHJ1ZShvaykKCWFzc2VydC5FcXVhbCg1LCBvdXQpCglvdXQsIG9rID0gQXQoaW5wdXQsIDk5OTk5KQoJYXNzZXJ0LkZhbHNlKG9rKQoJYXNzZXJ0Lk5pbChvdXQpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgYW55Cgl2YXIgb3V0IGFueQoJdmFyIG9rIGJvb2wKCWlucHV0ID0gW11pbnR7MSwgMywgNX0KCW91dCwgb2sgPSBBdChpbnB1dCwgMCkKCWFzc2VydC5UcnVlKG9rKQoJYXNzZXJ0LkVxdWFsKDEsIG91dCkKCW91dCwgb2sgPSBBdChpbnB1dCwgMSkKCWFzc2VydC5UcnVlKG9rKQoJYXNzZXJ0LkVxdWFsKDMsIG91dCkKCW91dCwgb2sgPSBBdChpbnB1dCwgMikKCWFzc2VydC5UcnVlKG9rKQoJYXNzZXJ0LkVxdWFsKDUsIG91dCkKCW91dCwgb2sgPSBBdChpbnB1dCwgOTk5OTkpCglhc3NlcnQuRmFsc2Uob2spCglhc3NlcnQuTmlsKG91dCkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -779,7 +825,7 @@
                 }
             ],
             "Signature": "TestChunks(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglpbnB1dCA6PSBbXWludHsxLCAzLCA1LCA3LCA5LCAxMSwgMTMsIDE1LCAxNywgMTksIDIxLCAyM30KCWFzc2VydC5FcXVhbChbXVtdaW50ZXJmYWNle317W11pbnRlcmZhY2V7fXsxfSwgW11pbnRlcmZhY2V7fXszfSwgW11pbnRlcmZhY2V7fXs1fSwgW11pbnRlcmZhY2V7fXs3fSwgW11pbnRlcmZhY2V7fXs5fSwgW11pbnRlcmZhY2V7fXsxMX0sIFtdaW50ZXJmYWNle317MTN9LCBbXWludGVyZmFjZXt9ezE1fSwgW11pbnRlcmZhY2V7fXsxN30sIFtdaW50ZXJmYWNle317MTl9LCBbXWludGVyZmFjZXt9ezIxfSwgW11pbnRlcmZhY2V7fXsyM319LCBDaHVua3MoaW5wdXQsIDEpKQoJYXNzZXJ0LkVxdWFsKFtdW11pbnRlcmZhY2V7fXtbXWludGVyZmFjZXt9ezEsIDN9LCBbXWludGVyZmFjZXt9ezUsIDd9LCBbXWludGVyZmFjZXt9ezksIDExfSwgW11pbnRlcmZhY2V7fXsxMywgMTV9LCBbXWludGVyZmFjZXt9ezE3LCAxOX0sIFtdaW50ZXJmYWNle317MjEsIDIzfX0sIENodW5rcyhpbnB1dCwgMikpCglhc3NlcnQuRXF1YWwoW11bXWludGVyZmFjZXt9e1tdaW50ZXJmYWNle317MSwgMywgNX0sIFtdaW50ZXJmYWNle317NywgOSwgMTF9LCBbXWludGVyZmFjZXt9ezEzLCAxNSwgMTd9LCBbXWludGVyZmFjZXt9ezE5LCAyMSwgMjN9fSwgQ2h1bmtzKGlucHV0LCAzKSkKCWFzc2VydC5FcXVhbChbXVtdaW50ZXJmYWNle317W11pbnRlcmZhY2V7fXsxLCAzLCA1LCA3LCA5LCAxMSwgMTMsIDE1LCAxNywgMTksIDIxLCAyM319LCBDaHVua3MoaW5wdXQsIDEwMDApKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgPSBbXWludHsxLCAzLCA1LCA3LCA5LCAxMSwgMTMsIDE1LCAxNywgMTksIDIxLCAyM30KCWFzc2VydC5FcXVhbChbXVtdYW55e1tdYW55ezF9LCBbXWFueXszfSwgW11hbnl7NX0sIFtdYW55ezd9LCBbXWFueXs5fSwgW11hbnl7MTF9LCBbXWFueXsxM30sIFtdYW55ezE1fSwgW11hbnl7MTd9LCBbXWFueXsxOX0sIFtdYW55ezIxfSwgW11hbnl7MjN9fSwgQ2h1bmtzKGlucHV0LCAxKSkKCWFzc2VydC5FcXVhbChbXVtdYW55e1tdYW55ezEsIDN9LCBbXWFueXs1LCA3fSwgW11hbnl7OSwgMTF9LCBbXWFueXsxMywgMTV9LCBbXWFueXsxNywgMTl9LCBbXWFueXsyMSwgMjN9fSwgQ2h1bmtzKGlucHV0LCAyKSkKCWFzc2VydC5FcXVhbChbXVtdYW55e1tdYW55ezEsIDMsIDV9LCBbXWFueXs3LCA5LCAxMX0sIFtdYW55ezEzLCAxNSwgMTd9LCBbXWFueXsxOSwgMjEsIDIzfX0sIENodW5rcyhpbnB1dCwgMykpCglhc3NlcnQuRXF1YWwoW11bXWFueXtbXWFueXsxLCAzLCA1LCA3LCA5LCAxMSwgMTMsIDE1LCAxNywgMTksIDIxLCAyM319LCBDaHVua3MoaW5wdXQsIDEwMDApKQp9",
             "IsPackageLevel": true
         },
         {
@@ -791,7 +837,7 @@
                 }
             ],
             "Signature": "TestCompact(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKENvbXBhY3QobmlsKSkKCWFzc2VydC5FcXVhbChbXWludGVyZmFjZXt9ezAsIDEsIDIsIDN9LCBDb21wYWN0KFtdaW50ZXJmYWNle317MCwgMSwgMiwgM30pKQoJYXNzZXJ0LkVxdWFsKFtdaW50ZXJmYWNle317MSwgMywgNX0sIENvbXBhY3QoW11pbnRlcmZhY2V7fXtuaWwsIDEsIG5pbCwgMywgbmlsLCA1fSkpCglhc3NlcnQuRXF1YWwoW11pbnRlcmZhY2V7fXtgb25lYCwgYHRocmVlYCwgYCBgLCBgZml2ZWB9LCBDb21wYWN0KFtdaW50ZXJmYWNle317YG9uZWAsIGBgLCBgdGhyZWVgLCBgYCwgYCBgLCBgZml2ZWB9KSkKCWFzc2VydC5FcXVhbChbXWludGVyZmFjZXt9e1tdaW50ezEsIDIsIDN9fSwgQ29tcGFjdChbXWludGVyZmFjZXt9e25pbCwgW11zdHJpbmd7fSwgW11pbnR7MSwgMiwgM30sIG1hcFtzdHJpbmddYm9vbHt9fSkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKENvbXBhY3QobmlsKSkKCWFzc2VydC5FcXVhbChbXWFueXswLCAxLCAyLCAzfSwgQ29tcGFjdChbXWFueXswLCAxLCAyLCAzfSkpCglhc3NlcnQuRXF1YWwoW11hbnl7MSwgMywgNX0sIENvbXBhY3QoW11hbnl7bmlsLCAxLCBuaWwsIDMsIG5pbCwgNX0pKQoJYXNzZXJ0LkVxdWFsKFtdYW55e2BvbmVgLCBgdGhyZWVgLCBgIGAsIGBmaXZlYH0sIENvbXBhY3QoW11hbnl7YG9uZWAsIGBgLCBgdGhyZWVgLCBgYCwgYCBgLCBgZml2ZWB9KSkKCWFzc2VydC5FcXVhbChbXWFueXtbXWludHsxLCAyLCAzfX0sIENvbXBhY3QoW11hbnl7bmlsLCBbXXN0cmluZ3t9LCBbXWludHsxLCAyLCAzfSwgbWFwW3N0cmluZ11ib29se319KSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -803,7 +849,7 @@
                 }
             ],
             "Signature": "TestCompactString(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKENvbXBhY3RTdHJpbmcobmlsKSkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgb25lYCwgYHRocmVlYCwgYGZpdmVgfSwgQ29tcGFjdFN0cmluZyhbXXN0cmluZ3tgb25lYCwgYHRocmVlYCwgYGZpdmVgfSkpCglhc3NlcnQuRXF1YWwoW11zdHJpbmd7YG9uZWAsIGB0aHJlZWAsIGAgYCwgYGZpdmVgfSwgQ29tcGFjdFN0cmluZyhbXXN0cmluZ3tgb25lYCwgYGAsIGB0aHJlZWAsIGBgLCBgIGAsIGBmaXZlYH0pKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKENvbXBhY3RTdHJpbmcobmlsKSkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgb25lYCwgYHRocmVlYCwgYGZpdmVgfSwgQ29tcGFjdFN0cmluZyhbXXN0cmluZ3tgb25lYCwgYHRocmVlYCwgYGZpdmVgfSkpCglhc3NlcnQuRXF1YWwoW11zdHJpbmd7YG9uZWAsIGB0aHJlZWAsIGAgYCwgYGZpdmVgfSwgQ29tcGFjdFN0cmluZyhbXXN0cmluZ3tgb25lYCwgYGAsIGB0aHJlZWAsIGBgLCBgIGAsIGBmaXZlYH0pKQp9",
             "IsPackageLevel": true
         },
         {
@@ -815,7 +861,7 @@
                 }
             ],
             "Signature": "TestContains(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgaW50ZXJmYWNle30KCWlucHV0ID0gW11pbnR7MSwgMywgNX0KCWFzc2VydC5UcnVlKENvbnRhaW5zKGlucHV0LCAxKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zKGlucHV0LCAzKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zKGlucHV0LCA1KSkKCWFzc2VydC5GYWxzZShDb250YWlucyhpbnB1dCwgLTEpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKGlucHV0LCAyKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhpbnB1dCwgLTMpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKGlucHV0LCA0KSkKCWFzc2VydC5GYWxzZShDb250YWlucyhpbnB1dCwgLTUpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKFtdaW50e30sIDEpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKFtdaW50e30sIDIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKFtdaW50e30sIDApKQoJaW5wdXQgPSBbXXN0cmluZ3sib25lIiwgInRocmVlIiwgImZpdmUifQoJYXNzZXJ0LlRydWUoQ29udGFpbnMoaW5wdXQsICJvbmUiKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zKGlucHV0LCAidGhyZWUiKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zKGlucHV0LCAiZml2ZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKGlucHV0LCAiT25lIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoaW5wdXQsICJ0d28iKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhpbnB1dCwgIlRocmVlIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoaW5wdXQsICJmb3VyIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoaW5wdXQsICJGaXZlIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoW11zdHJpbmd7fSwgIm9uZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKFtdc3RyaW5ne30sICJ0d28iKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhbXXN0cmluZ3t9LCAiIikpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgYW55CglpbnB1dCA9IFtdaW50ezEsIDMsIDV9Cglhc3NlcnQuVHJ1ZShDb250YWlucyhpbnB1dCwgMSkpCglhc3NlcnQuVHJ1ZShDb250YWlucyhpbnB1dCwgMykpCglhc3NlcnQuVHJ1ZShDb250YWlucyhpbnB1dCwgNSkpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoaW5wdXQsIC0xKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhpbnB1dCwgMikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoaW5wdXQsIC0zKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhpbnB1dCwgNCkpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoaW5wdXQsIC01KSkKCWFzc2VydC5GYWxzZShDb250YWlucyhbXWludHt9LCAxKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhbXWludHt9LCAyKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhbXWludHt9LCAwKSkKCWlucHV0ID0gW11zdHJpbmd7Im9uZSIsICJ0aHJlZSIsICJmaXZlIn0KCWFzc2VydC5UcnVlKENvbnRhaW5zKGlucHV0LCAib25lIikpCglhc3NlcnQuVHJ1ZShDb250YWlucyhpbnB1dCwgInRocmVlIikpCglhc3NlcnQuVHJ1ZShDb250YWlucyhpbnB1dCwgImZpdmUiKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhpbnB1dCwgIk9uZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKGlucHV0LCAidHdvIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoaW5wdXQsICJUaHJlZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKGlucHV0LCAiZm91ciIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKGlucHV0LCAiRml2ZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zKFtdc3RyaW5ne30sICJvbmUiKSkKCWFzc2VydC5GYWxzZShDb250YWlucyhbXXN0cmluZ3t9LCAidHdvIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnMoW11zdHJpbmd7fSwgIiIpKQp9",
             "IsPackageLevel": true
         },
         {
@@ -827,7 +873,7 @@
                 }
             ],
             "Signature": "TestContainsAllStrings(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglpbnB1dCA6PSBbXXN0cmluZ3sib25lIiwgInRocmVlIiwgImZpdmUifQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAib25lIikpCglhc3NlcnQuVHJ1ZShDb250YWluc0FsbFN0cmluZ3MoaW5wdXQsICJ0aHJlZSIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAiZml2ZSIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAib25lIiwgInRocmVlIikpCglhc3NlcnQuVHJ1ZShDb250YWluc0FsbFN0cmluZ3MoaW5wdXQsICJvbmUiLCAiZml2ZSIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAib25lIiwgInRocmVlIiwgImZpdmUiKSkKCWFzc2VydC5GYWxzZShDb250YWluc0FsbFN0cmluZ3MoaW5wdXQsICJvbmUiLCAiZm91ciIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0KSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgPSBbXXN0cmluZ3sib25lIiwgInRocmVlIiwgImZpdmUifQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAib25lIikpCglhc3NlcnQuVHJ1ZShDb250YWluc0FsbFN0cmluZ3MoaW5wdXQsICJ0aHJlZSIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAiZml2ZSIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAib25lIiwgInRocmVlIikpCglhc3NlcnQuVHJ1ZShDb250YWluc0FsbFN0cmluZ3MoaW5wdXQsICJvbmUiLCAiZml2ZSIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0LCAib25lIiwgInRocmVlIiwgImZpdmUiKSkKCWFzc2VydC5GYWxzZShDb250YWluc0FsbFN0cmluZ3MoaW5wdXQsICJvbmUiLCAiZm91ciIpKQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbGxTdHJpbmdzKGlucHV0KSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -839,7 +885,7 @@
                 }
             ],
             "Signature": "TestContainsAnyString(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglpbnB1dCA6PSBbXXN0cmluZ3sib25lIiwgInRocmVlIiwgImZpdmUifQoJYW55IDo9IFtdc3RyaW5neyJvbmUiLCAidHdvIiwgImZvdXIifQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbnlTdHJpbmcoaW5wdXQsIGFueS4uLikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNBbnlTdHJpbmcoaW5wdXQpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zQW55U3RyaW5nKFtdc3RyaW5ne30sICJvbmUiKSkKCWFzc2VydC5GYWxzZShDb250YWluc0FueVN0cmluZyhbXXN0cmluZ3t9LCAidHdvIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNBbnlTdHJpbmcoW11zdHJpbmd7fSwgIiIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zQW55U3RyaW5nKGlucHV0LCBbXXN0cmluZ3sic2l4IiwgInNldmVuIn0uLi4pKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgPSBbXXN0cmluZ3sib25lIiwgInRocmVlIiwgImZpdmUifQoJdmFyIGFueSA9IFtdc3RyaW5neyJvbmUiLCAidHdvIiwgImZvdXIifQoJYXNzZXJ0LlRydWUoQ29udGFpbnNBbnlTdHJpbmcoaW5wdXQsIGFueS4uLikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNBbnlTdHJpbmcoaW5wdXQpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zQW55U3RyaW5nKFtdc3RyaW5ne30sICJvbmUiKSkKCWFzc2VydC5GYWxzZShDb250YWluc0FueVN0cmluZyhbXXN0cmluZ3t9LCAidHdvIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNBbnlTdHJpbmcoW11zdHJpbmd7fSwgIiIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zQW55U3RyaW5nKGlucHV0LCBbXXN0cmluZ3sic2l4IiwgInNldmVuIn0uLi4pKQp9",
             "IsPackageLevel": true
         },
         {
@@ -851,7 +897,7 @@
                 }
             ],
             "Signature": "TestContainsString(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglpbnB1dCA6PSBbXXN0cmluZ3sib25lIiwgInRocmVlIiwgImZpdmUifQoJYXNzZXJ0LlRydWUoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJvbmUiKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zU3RyaW5nKGlucHV0LCAidGhyZWUiKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zU3RyaW5nKGlucHV0LCAiZml2ZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zU3RyaW5nKGlucHV0LCAiT25lIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJ0d28iKSkKCWFzc2VydC5GYWxzZShDb250YWluc1N0cmluZyhpbnB1dCwgIlRocmVlIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJmb3VyIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJGaXZlIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoW11zdHJpbmd7fSwgIm9uZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zU3RyaW5nKFtdc3RyaW5ne30sICJ0d28iKSkKCWFzc2VydC5GYWxzZShDb250YWluc1N0cmluZyhbXXN0cmluZ3t9LCAiIikpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgPSBbXXN0cmluZ3sib25lIiwgInRocmVlIiwgImZpdmUifQoJYXNzZXJ0LlRydWUoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJvbmUiKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zU3RyaW5nKGlucHV0LCAidGhyZWUiKSkKCWFzc2VydC5UcnVlKENvbnRhaW5zU3RyaW5nKGlucHV0LCAiZml2ZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zU3RyaW5nKGlucHV0LCAiT25lIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJ0d28iKSkKCWFzc2VydC5GYWxzZShDb250YWluc1N0cmluZyhpbnB1dCwgIlRocmVlIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJmb3VyIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoaW5wdXQsICJGaXZlIikpCglhc3NlcnQuRmFsc2UoQ29udGFpbnNTdHJpbmcoW11zdHJpbmd7fSwgIm9uZSIpKQoJYXNzZXJ0LkZhbHNlKENvbnRhaW5zU3RyaW5nKFtdc3RyaW5ne30sICJ0d28iKSkKCWFzc2VydC5GYWxzZShDb250YWluc1N0cmluZyhbXXN0cmluZ3t9LCAiIikpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -863,7 +909,7 @@
                 }
             ],
             "Signature": "TestDifference(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRW1wdHkoRGlmZmVyZW5jZShuaWwsIG5pbCkpCglhc3NlcnQuRW1wdHkoRGlmZmVyZW5jZShuaWwsIFtdc3RyaW5ne2BhYCwgYGNgLCBgZWB9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBEaWZmZXJlbmNlKFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBuaWwpKQoJYXNzZXJ0LkVsZW1lbnRzTWF0Y2goW11pbnRlcmZhY2V7fXtgYWB9LCBEaWZmZXJlbmNlKFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBbXXN0cmluZ3tgYmAsIGBjYH0pKQoJYXNzZXJ0LkVsZW1lbnRzTWF0Y2goW11zdHJpbmd7YGFgLCBgYmAsIGBjYH0sIERpZmZlcmVuY2UoW11zdHJpbmd7YGFgLCBgYmAsIGBjYH0sIFtdc3RyaW5ne2B4YCwgYHlgLCBgemB9KSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRW1wdHkoRGlmZmVyZW5jZShuaWwsIG5pbCkpCglhc3NlcnQuRW1wdHkoRGlmZmVyZW5jZShuaWwsIFtdc3RyaW5ne2BhYCwgYGNgLCBgZWB9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBEaWZmZXJlbmNlKFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBuaWwpKQoJYXNzZXJ0LkVsZW1lbnRzTWF0Y2goW11hbnl7YGFgfSwgRGlmZmVyZW5jZShbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgW11zdHJpbmd7YGJgLCBgY2B9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBEaWZmZXJlbmNlKFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBbXXN0cmluZ3tgeGAsIGB5YCwgYHpgfSkpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -875,7 +921,7 @@
                 }
             ],
             "Signature": "TestEach(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl0eXBlIHRlc3RTdHJ1Y3Qgc3RydWN0IHsKCQlOYW1lICBzdHJpbmcKCQlIZWxsbyBib29sCgkJdW5leCAgc3RyaW5nCgl9Cglhc3NlcnQuTmlsKEVhY2gobmlsLCBuaWwpKQoJYXNzZXJ0Lk5pbChFYWNoKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIGZ1bmMoaSBpbnQsIHYgaW50ZXJmYWNle30pIGVycm9yIHsKCQlyZXR1cm4gU3RvcAoJfSkpCgljb3VudCA6PSAwCglhc3NlcnQuTmlsKEVhY2goW11zdHJpbmd7YG9uZWAsIGB0d29gLCBgdGhyZWVgfSwgZnVuYyhpIGludCwgdiBpbnRlcmZhY2V7fSkgZXJyb3IgewoJCWlmIHYuKHN0cmluZykgPT0gYHR3b2AgewoJCQlyZXR1cm4gU3RvcAoJCX0gZWxzZSB7CgkJCWNvdW50ICs9IDEKCQkJcmV0dXJuIG5pbAoJCX0KCX0pKQoJdmFsdWVzIDo9IFtdaW50ZXJmYWNle317fQoJYXNzZXJ0Lk5pbChFYWNoKG1hcFtzdHJpbmddc3RyaW5ne2BvbmVgOiBgZmlyc3RgLCBgdHdvYDogYHNlY29uZGAsIGB0aHJlZWA6IGB0aGlyZGB9LCBmdW5jKGkgaW50LCB2IGludGVyZmFjZXt9KSBlcnJvciB7CgkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgdikKCQlyZXR1cm4gbmlsCgl9KSkKCXZhbHVlcyA9IFtdaW50ZXJmYWNle317fQoJYXNzZXJ0Lk5pbChFYWNoKCZ0ZXN0U3RydWN0e05hbWU6IGB0ZXN0YCwgSGVsbG86IHRydWUsIHVuZXg6IGBzaG91bGQgbm90IHNlZSBtZWB9LCBmdW5jKGkgaW50LCB2IGludGVyZmFjZXt9KSBlcnJvciB7CgkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgdikKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdaW50ZXJmYWNle317YHRlc3RgLCB0cnVlfSwgdmFsdWVzKQoJdmFsY2hhbiA6PSBtYWtlKGNoYW4gc3RyaW5nKQoJZ28gZnVuYygpIHsKCQlkZWZlciBjbG9zZSh2YWxjaGFuKQoJCWZvciBpIDo9IDA7IGkgPCAzOyBpKysgewoJCQl2YWxjaGFuIDwtIGZtdC5TcHJpbnRmKCJ2YWx1ZSVkIiwgaSkKCQl9Cgl9KCkKCXZhbHVlc1MgOj0gbWFrZShbXXN0cmluZywgMCkKCWFzc2VydC5OaWwoRWFjaCh2YWxjaGFuLCBmdW5jKGkgaW50LCB2IGludGVyZmFjZXt9KSBlcnJvciB7CgkJdmFsdWVzUyA9IGFwcGVuZCh2YWx1ZXNTLCBmbXQuU3ByaW50ZigiJXYiLCB2KSkKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdc3RyaW5ne2B2YWx1ZTBgLCBgdmFsdWUxYCwgYHZhbHVlMmB9LCB2YWx1ZXNTKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl0eXBlIHRlc3RTdHJ1Y3Qgc3RydWN0IHsKCQlOYW1lICBzdHJpbmcKCQlIZWxsbyBib29sCgkJdW5leCAgc3RyaW5nCgl9Cglhc3NlcnQuTmlsKEVhY2gobmlsLCBuaWwpKQoJYXNzZXJ0Lk5pbChFYWNoKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJcmV0dXJuIFN0b3AKCX0pKQoJdmFyIGNvdW50ID0gMAoJYXNzZXJ0Lk5pbChFYWNoKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJaWYgdi4oc3RyaW5nKSA9PSBgdHdvYCB7CgkJCXJldHVybiBTdG9wCgkJfSBlbHNlIHsKCQkJY291bnQgKz0gMQoJCQlyZXR1cm4gbmlsCgkJfQoJfSkpCgl2YXIgdmFsdWVzID0gW11hbnl7fQoJYXNzZXJ0Lk5pbChFYWNoKG1hcFtzdHJpbmddc3RyaW5ne2BvbmVgOiBgZmlyc3RgLCBgdHdvYDogYHNlY29uZGAsIGB0aHJlZWA6IGB0aGlyZGB9LCBmdW5jKGkgaW50LCB2IGFueSkgZXJyb3IgewoJCXZhbHVlcyA9IGFwcGVuZCh2YWx1ZXMsIHYpCgkJcmV0dXJuIG5pbAoJfSkpCgl2YWx1ZXMgPSBbXWFueXt9Cglhc3NlcnQuTmlsKEVhY2goJnRlc3RTdHJ1Y3R7TmFtZTogYHRlc3RgLCBIZWxsbzogdHJ1ZSwgdW5leDogYHNob3VsZCBub3Qgc2VlIG1lYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgdikKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdYW55e2B0ZXN0YCwgdHJ1ZX0sIHZhbHVlcykKCXZhciB2YWxjaGFuID0gbWFrZShjaGFuIHN0cmluZykKCWdvIGZ1bmMoKSB7CgkJZGVmZXIgY2xvc2UodmFsY2hhbikKCQlmb3IgaSA6PSAwOyBpIDwgMzsgaSsrIHsKCQkJdmFsY2hhbiA8LSBmbXQuU3ByaW50ZigidmFsdWUlZCIsIGkpCgkJfQoJfSgpCgl2YXIgdmFsdWVzUyA9IG1ha2UoWyAvLyB0ZXN0IEVhY2gtaW5nIG92ZXIgYSBjaGFubmVsCgldc3RyaW5nLCAwKQoJYXNzZXJ0Lk5pbChFYWNoKHZhbGNoYW4sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJdmFsdWVzUyA9IGFwcGVuZCh2YWx1ZXNTLCBmbXQuU3ByaW50ZigiJXYiLCB2KSkKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdc3RyaW5ne2B2YWx1ZTBgLCBgdmFsdWUxYCwgYHZhbHVlMmB9LCB2YWx1ZXNTKQp9",
             "IsPackageLevel": true
         },
         {
@@ -887,7 +933,7 @@
                 }
             ],
             "Signature": "TestFirst(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgaW50ZXJmYWNle30KCWFzc2VydC5OaWwoRmlyc3QobmlsKSkKCWFzc2VydC5OaWwoRmlyc3QoaW5wdXQpKQoJaW5wdXQgPSBbXWludHt9Cglhc3NlcnQuTmlsKEZpcnN0KGlucHV0KSkKCWlucHV0ID0gW11pbnR7MSwgMywgNX0KCWFzc2VydC5FcXVhbCgxLCBGaXJzdChpbnB1dCkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgYW55Cglhc3NlcnQuTmlsKEZpcnN0KG5pbCkpCglhc3NlcnQuTmlsKEZpcnN0KGlucHV0KSkKCWlucHV0ID0gW11pbnR7fQoJYXNzZXJ0Lk5pbChGaXJzdChpbnB1dCkpCglpbnB1dCA9IFtdaW50ezEsIDMsIDV9Cglhc3NlcnQuRXF1YWwoMSwgRmlyc3QoaW5wdXQpKQp9",
             "IsPackageLevel": true
         },
         {
@@ -911,7 +957,7 @@
                 }
             ],
             "Signature": "TestFlatten(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11pbnRlcmZhY2V7fXtgb25lYCwgYHR3b2AsIGB0aHJlZWB9LCBGbGF0dGVuKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0pKQoJYXNzZXJ0LkVxdWFsKFtdaW50ZXJmYWNle317YG9uZWAsIGB0d29gLCBgdGhyZWVgfSwgRmxhdHRlbihbXWludGVyZmFjZXt9e1tdc3RyaW5ne2BvbmVgLCBgdHdvYH0sIGB0aHJlZWB9KSkKCWFzc2VydC5FcXVhbChbXWludGVyZmFjZXt9e2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIEZsYXR0ZW4oW11pbnRlcmZhY2V7fXtbXXN0cmluZ3tgb25lYH0sIFtdc3RyaW5ne2B0d29gfSwgW11zdHJpbmd7YHRocmVlYH19KSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11hbnl7YG9uZWAsIGB0d29gLCBgdGhyZWVgfSwgRmxhdHRlbihbXXN0cmluZ3tgb25lYCwgYHR3b2AsIGB0aHJlZWB9KSkKCWFzc2VydC5FcXVhbChbXWFueXtgb25lYCwgYHR3b2AsIGB0aHJlZWB9LCBGbGF0dGVuKFtdYW55e1tdc3RyaW5ne2BvbmVgLCBgdHdvYH0sIGB0aHJlZWB9KSkKCWFzc2VydC5FcXVhbChbXWFueXtgb25lYCwgYHR3b2AsIGB0aHJlZWB9LCBGbGF0dGVuKFtdYW55e1tdc3RyaW5ne2BvbmVgfSwgW11zdHJpbmd7YHR3b2B9LCBbXXN0cmluZ3tgdGhyZWVgfX0pKQp9",
             "IsPackageLevel": true
         },
         {
@@ -923,7 +969,7 @@
                 }
             ],
             "Signature": "TestGet(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgaW50ZXJmYWNle30KCWlucHV0ID0gW11pbnR7MSwgMywgNX0KCWFzc2VydC5FcXVhbCgxLCBHZXQoaW5wdXQsIDApKQoJYXNzZXJ0LkVxdWFsKDMsIEdldChpbnB1dCwgMSkpCglhc3NlcnQuRXF1YWwoNSwgR2V0KGlucHV0LCAyKSkKCWFzc2VydC5OaWwoR2V0KGlucHV0LCA5OTk5OSkpCglhc3NlcnQuTmlsKEdldChuaWwsIDApKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgYW55CglpbnB1dCA9IFtdaW50ezEsIDMsIDV9Cglhc3NlcnQuRXF1YWwoMSwgR2V0KGlucHV0LCAwKSkKCWFzc2VydC5FcXVhbCgzLCBHZXQoaW5wdXQsIDEpKQoJYXNzZXJ0LkVxdWFsKDUsIEdldChpbnB1dCwgMikpCglhc3NlcnQuTmlsKEdldChpbnB1dCwgOTk5OTkpKQoJYXNzZXJ0Lk5pbChHZXQobmlsLCAwKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -935,7 +981,7 @@
                 }
             ],
             "Signature": "TestIntersect(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRW1wdHkoSW50ZXJzZWN0U3RyaW5ncyhuaWwsIG5pbCkpCglhc3NlcnQuRW1wdHkoSW50ZXJzZWN0U3RyaW5ncyhbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgbmlsKSkKCWFzc2VydC5FbXB0eShJbnRlcnNlY3RTdHJpbmdzKG5pbCwgW11zdHJpbmd7YGFgLCBgY2AsIGBlYH0pKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2BhYCwgYGNgfSwgSW50ZXJzZWN0U3RyaW5ncyhbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgW11zdHJpbmd7YGFgLCBgY2AsIGBlYH0pKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRW1wdHkoSW50ZXJzZWN0U3RyaW5ncyhuaWwsIG5pbCkpCglhc3NlcnQuRW1wdHkoSW50ZXJzZWN0U3RyaW5ncyhbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgbmlsKSkKCWFzc2VydC5FbXB0eShJbnRlcnNlY3RTdHJpbmdzKG5pbCwgW11zdHJpbmd7YGFgLCBgY2AsIGBlYH0pKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2BhYCwgYGNgfSwgSW50ZXJzZWN0U3RyaW5ncyhbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgW11zdHJpbmd7YGFgLCBgY2AsIGBlYH0pKQp9",
             "IsPackageLevel": true
         },
         {
@@ -947,7 +993,7 @@
                 }
             ],
             "Signature": "TestLast(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgaW50ZXJmYWNle30KCWFzc2VydC5OaWwoTGFzdChuaWwpKQoJYXNzZXJ0Lk5pbChMYXN0KGlucHV0KSkKCWlucHV0ID0gW11pbnR7fQoJYXNzZXJ0Lk5pbChMYXN0KGlucHV0KSkKCWlucHV0ID0gW11pbnR7MSwgMywgNX0KCWFzc2VydC5FcXVhbCg1LCBMYXN0KGlucHV0KSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgYW55Cglhc3NlcnQuTmlsKExhc3QobmlsKSkKCWFzc2VydC5OaWwoTGFzdChpbnB1dCkpCglpbnB1dCA9IFtdaW50e30KCWFzc2VydC5OaWwoTGFzdChpbnB1dCkpCglpbnB1dCA9IFtdaW50ezEsIDMsIDV9Cglhc3NlcnQuRXF1YWwoNSwgTGFzdChpbnB1dCkpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -959,7 +1005,7 @@
                 }
             ],
             "Signature": "TestLen(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgaW50ZXJmYWNle30KCWFzc2VydC5aZXJvKExlbihuaWwpKQoJYXNzZXJ0Llplcm8oTGVuKGlucHV0KSkKCWlucHV0ID0gW11pbnR7MSwgMywgNX0KCWFzc2VydC5FcXVhbCgzLCBMZW4oaW5wdXQpKQoJYXNzZXJ0LkVxdWFsKDMsIExlbihgMTIzYCkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgYW55Cglhc3NlcnQuWmVybyhMZW4obmlsKSkKCWFzc2VydC5aZXJvKExlbihpbnB1dCkpCglpbnB1dCA9IFtdaW50ezEsIDMsIDV9Cglhc3NlcnQuRXF1YWwoMywgTGVuKGlucHV0KSkKCWFzc2VydC5FcXVhbCgzLCBMZW4oYDEyM2ApKQp9",
             "IsPackageLevel": true
         },
         {
@@ -971,7 +1017,7 @@
                 }
             ],
             "Signature": "TestMap(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11pbnRlcmZhY2V7fXsxMCwgMjAsIDMwfSwgTWFwKFtdaW50ezEsIDIsIDN9LCBmdW5jKF8gaW50LCB2IGludGVyZmFjZXt9KSBpbnRlcmZhY2V7fSB7CgkJcmV0dXJuIHYuKGludCkgKiAxMAoJfSkpCglhc3NlcnQuRXF1YWwoW11pbnRlcmZhY2V7fXt0cnVlLCBmYWxzZSwgdHJ1ZX0sIE1hcChbXWJvb2x7ZmFsc2UsIHRydWUsIGZhbHNlfSwgZnVuYyhfIGludCwgdiBpbnRlcmZhY2V7fSkgaW50ZXJmYWNle30gewoJCXJldHVybiAhdi4oYm9vbCkKCX0pKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11hbnl7MTAsIDIwLCAzMH0sIE1hcChbXWludHsxLCAyLCAzfSwgZnVuYyhfIGludCwgdiBhbnkpIGFueSB7CgkJcmV0dXJuIHYuKGludCkgKiAxMAoJfSkpCglhc3NlcnQuRXF1YWwoW11hbnl7dHJ1ZSwgZmFsc2UsIHRydWV9LCBNYXAoW11ib29se2ZhbHNlLCB0cnVlLCBmYWxzZX0sIGZ1bmMoXyBpbnQsIHYgYW55KSBhbnkgewoJCXJldHVybiAhdi4oYm9vbCkKCX0pKQp9",
             "IsPackageLevel": true
         },
         {
@@ -983,7 +1029,7 @@
                 }
             ],
             "Signature": "TestMapString(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11zdHJpbmd7YDEtMXRob3VzYW5kYCwgYDItMXRob3VzYW5kYCwgYDMtMXRob3VzYW5kYH0sIE1hcFN0cmluZyhbXWludHsxLCAyLCAzfSwgZnVuYyhfIGludCwgdiBzdHJpbmcpIHN0cmluZyB7CgkJcmV0dXJuIHYgKyBgLTF0aG91c2FuZGAKCX0pKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2BmaXJzdGAsIGB0aGlyZGAsIGBmaWZ0aGB9LCBDb21wYWN0U3RyaW5nKE1hcFN0cmluZyhbXXN0cmluZ3tgZmlyc3RgLCBgc2Vjb25kYCwgYHRoaXJkYCwgYGZvdXJ0aGAsIGBmaWZ0aGB9LCBmdW5jKF8gaW50LCB2IHN0cmluZykgc3RyaW5nIHsKCQlzd2l0Y2ggdiB7CgkJY2FzZSBgc2Vjb25kYCwgYGZvdXJ0aGA6CgkJCXJldHVybiBgYAoJCWRlZmF1bHQ6CgkJCXJldHVybiB2CgkJfQoJfSkpKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11zdHJpbmd7YDEtMXRob3VzYW5kYCwgYDItMXRob3VzYW5kYCwgYDMtMXRob3VzYW5kYH0sIE1hcFN0cmluZyhbXWludHsxLCAyLCAzfSwgZnVuYyhfIGludCwgdiBzdHJpbmcpIHN0cmluZyB7CgkJcmV0dXJuIHYgKyBgLTF0aG91c2FuZGAKCX0pKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2BmaXJzdGAsIGB0aGlyZGAsIGBmaWZ0aGB9LCBDb21wYWN0U3RyaW5nKE1hcFN0cmluZyhbXXN0cmluZ3tgZmlyc3RgLCBgc2Vjb25kYCwgYHRoaXJkYCwgYGZvdXJ0aGAsIGBmaWZ0aGB9LCBmdW5jKF8gaW50LCB2IHN0cmluZykgc3RyaW5nIHsKCQlzd2l0Y2ggdiB7CgkJY2FzZSBgc2Vjb25kYCwgYGZvdXJ0aGA6CgkJCXJldHVybiBgYAoJCWRlZmF1bHQ6CgkJCXJldHVybiB2CgkJfQoJfSkpKQp9",
             "IsPackageLevel": true
         },
         {
@@ -995,7 +1041,7 @@
                 }
             ],
             "Signature": "TestOr(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKE9yKCkpCglhc3NlcnQuTmlsKE9yKG5pbCkpCglhc3NlcnQuRXF1YWwoMSwgT3IoMCwgMSwgMCwgMiwgMCwgMywgNCwgNSwgNikpCglhc3NlcnQuRXF1YWwodHJ1ZSwgT3IoZmFsc2UsIGZhbHNlLCB0cnVlKSkKCWFzc2VydC5FcXVhbChgb25lYCwgT3IoYG9uZWApKQoJYXNzZXJ0LkVxdWFsKDQuMCwgT3IobmlsLCBgYCwgZmFsc2UsIDAsIDQuMCkpCglhc3NlcnQuTmlsKE9yKGZhbHNlLCBmYWxzZSwgZmFsc2UpKQoJYXNzZXJ0Lk5pbChPcigwLCAwLCAwKSkKCWFzc2VydC5FcXVhbChgdGhyZWVgLCBPcihgYCwgYGAsIGB0aHJlZWApKQoJdHlwZSB0ZXN0U3RydWN0IHN0cnVjdHsgbmFtZSBzdHJpbmcgfQoJYXNzZXJ0LkVxdWFsKHRlc3RTdHJ1Y3R7YHRocmVlYH0sIE9yKHRlc3RTdHJ1Y3R7fSwgdGVzdFN0cnVjdHt9LCB0ZXN0U3RydWN0e2B0aHJlZWB9KSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKE9yKCkpCglhc3NlcnQuTmlsKE9yKG5pbCkpCglhc3NlcnQuRXF1YWwoMSwgT3IoMCwgMSwgMCwgMiwgMCwgMywgNCwgNSwgNikpCglhc3NlcnQuRXF1YWwodHJ1ZSwgT3IoZmFsc2UsIGZhbHNlLCB0cnVlKSkKCWFzc2VydC5FcXVhbChgb25lYCwgT3IoYG9uZWApKQoJYXNzZXJ0LkVxdWFsKDQuMCwgT3IobmlsLCBgYCwgZmFsc2UsIDAsIDQuMCkpCglhc3NlcnQuTmlsKE9yKGZhbHNlLCBmYWxzZSwgZmFsc2UpKQoJYXNzZXJ0Lk5pbChPcigwLCAwLCAwKSkKCWFzc2VydC5FcXVhbChgdGhyZWVgLCBPcihgYCwgYGAsIGB0aHJlZWApKQoJdHlwZSB0ZXN0U3RydWN0IHN0cnVjdHsgbmFtZSBzdHJpbmcgfQoJYXNzZXJ0LkVxdWFsKHRlc3RTdHJ1Y3R7YHRocmVlYH0sIE9yKHRlc3RTdHJ1Y3R7fSwgdGVzdFN0cnVjdHt9LCB0ZXN0U3RydWN0e2B0aHJlZWB9KSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -1007,7 +1053,7 @@
                 }
             ],
             "Signature": "TestOrString(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoYGAsIE9yU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYGAsIE9yU3RyaW5nKGBgKSkKCWFzc2VydC5FcXVhbChgb25lYCwgT3JTdHJpbmcoYG9uZWApKQoJYXNzZXJ0LkVxdWFsKGB0d29gLCBPclN0cmluZyhgYCwgYHR3b2AsIGBgLCBgdGhyZWVgKSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoYGAsIE9yU3RyaW5nKCkpCglhc3NlcnQuRXF1YWwoYGAsIE9yU3RyaW5nKGBgKSkKCWFzc2VydC5FcXVhbChgb25lYCwgT3JTdHJpbmcoYG9uZWApKQoJYXNzZXJ0LkVxdWFsKGB0d29gLCBPclN0cmluZyhgYCwgYHR3b2AsIGBgLCBgdGhyZWVgKSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -1019,7 +1065,7 @@
                 }
             ],
             "Signature": "TestRest(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgaW50ZXJmYWNle30KCWFzc2VydC5OaWwoUmVzdChuaWwpKQoJYXNzZXJ0Lk5pbChSZXN0KGlucHV0KSkKCWlucHV0ID0gW11pbnR7MX0KCWFzc2VydC5OaWwoUmVzdChpbnB1dCkpCglpbnB1dCA9IFtdaW50ezEsIDMsIDV9Cglhc3NlcnQuRXF1YWwoW11pbnRlcmZhY2V7fXszLCA1fSwgUmVzdChpbnB1dCkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW5wdXQgYW55Cglhc3NlcnQuTmlsKFJlc3QobmlsKSkKCWFzc2VydC5OaWwoUmVzdChpbnB1dCkpCglpbnB1dCA9IFtdaW50ezF9Cglhc3NlcnQuTmlsKFJlc3QoaW5wdXQpKQoJaW5wdXQgPSBbXWludHsxLCAzLCA1fQoJYXNzZXJ0LkVxdWFsKFtdYW55ezMsIDV9LCBSZXN0KGlucHV0KSkKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -1031,7 +1077,31 @@
                 }
             ],
             "Signature": "TestSlice(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglpbiA6PSBbXWludGVyZmFjZXt9ezEsIDIsIDMsIDQsIDV9Cglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXt9LCBTbGljZShpbiwgOTksIC0xKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWludGVyZmFjZXt9ezF9LCBTbGljZShpbiwgMCwgMSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXsxLCAyfSwgU2xpY2UoaW4sIDAsIDIpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317MSwgMiwgMywgNH0sIFNsaWNlKGluLCAwLCA0KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWludGVyZmFjZXt9ezMsIDR9LCBTbGljZShpbiwgMiwgNCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXszLCA0fSwgU2xpY2UoaW4sIDIsIDQpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317NCwgNX0sIFNsaWNlKGluLCAtMiwgLTEpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317MSwgMiwgMywgNCwgNX0sIFNsaWNlKGluLCAtNSwgLTEpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317MiwgMywgNH0sIFNsaWNlKGluLCAtNCwgLTIpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317fSwgU2xpY2UoaW4sIC02LCAtNikpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXsxfSwgU2xpY2UoaW4sIC01LCAtNSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXsyfSwgU2xpY2UoaW4sIC00LCAtNCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXszfSwgU2xpY2UoaW4sIC0zLCAtMykpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXs0fSwgU2xpY2UoaW4sIC0yLCAtMikpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXs1fSwgU2xpY2UoaW4sIC0xLCAtMSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXsxfSwgU2xpY2UoaW4sIDAsIDEpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317Mn0sIFNsaWNlKGluLCAxLCAyKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWludGVyZmFjZXt9ezN9LCBTbGljZShpbiwgMiwgMykpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXs0fSwgU2xpY2UoaW4sIDMsIDQpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317NX0sIFNsaWNlKGluLCA0LCA1KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWludGVyZmFjZXt9e30sIFNsaWNlKGluLCA1LCA2KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWludGVyZmFjZXt9ezEsIDIsIDMsIDQsIDV9LCBTbGljZShpbiwgLTEwMCwgLTEpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317MSwgMiwgMywgNH0sIFNsaWNlKGluLCAtMTAwLCAtMikpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXsxLCAyLCAzfSwgU2xpY2UoaW4sIC0xMDAsIC0zKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWludGVyZmFjZXt9ezEsIDJ9LCBTbGljZShpbiwgLTEwMCwgLTQpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317MX0sIFNsaWNlKGluLCAtMTAwLCAtNSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXt9LCBTbGljZShpbiwgLTEwMCwgLTYpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317MiwgMywgNCwgNX0sIFNsaWNlKGluLCAxLCAtMSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXsyLCAzLCA0fSwgU2xpY2UoaW4sIDEsIC0yKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWludGVyZmFjZXt9ezIsIDN9LCBTbGljZShpbiwgMSwgLTMpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317Mn0sIFNsaWNlKGluLCAxLCAtNCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11pbnRlcmZhY2V7fXt9LCBTbGljZShpbiwgMSwgLTUpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdaW50ZXJmYWNle317fSwgU2xpY2UoaW4sIDEsIC02KSkKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgaW4gPSBbXWFueXsxLCAyLCAzLCA0LCA1fQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55e30sIFNsaWNlKGluLCA5OSwgLTEpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55ezF9LCBTbGljZShpbiwgMCwgMSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MSwgMn0sIFNsaWNlKGluLCAwLCAyKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXsxLCAyLCAzLCA0fSwgU2xpY2UoaW4sIDAsIDQpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55ezMsIDR9LCBTbGljZShpbiwgMiwgNCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MywgNH0sIFNsaWNlKGluLCAyLCA0KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXs0LCA1fSwgU2xpY2UoaW4sIC0yLCAtMSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MSwgMiwgMywgNCwgNX0sIFNsaWNlKGluLCAtNSwgLTEpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55ezIsIDMsIDR9LCBTbGljZShpbiwgLTQsIC0yKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXt9LCBTbGljZShpbiwgLTYsIC02KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXsxfSwgU2xpY2UoaW4sIC01LCAtNSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7Mn0sIFNsaWNlKGluLCAtNCwgLTQpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55ezN9LCBTbGljZShpbiwgLTMsIC0zKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXs0fSwgU2xpY2UoaW4sIC0yLCAtMikpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7NX0sIFNsaWNlKGluLCAtMSwgLTEpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55ezF9LCBTbGljZShpbiwgMCwgMSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7Mn0sIFNsaWNlKGluLCAxLCAyKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXszfSwgU2xpY2UoaW4sIDIsIDMpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55ezR9LCBTbGljZShpbiwgMywgNCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7NX0sIFNsaWNlKGluLCA0LCA1KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXt9LCBTbGljZShpbiwgNSwgNikpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MSwgMiwgMywgNCwgNX0sIFNsaWNlKGluLCAtMTAwLCAtMSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MSwgMiwgMywgNH0sIFNsaWNlKGluLCAtMTAwLCAtMikpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MSwgMiwgM30sIFNsaWNlKGluLCAtMTAwLCAtMykpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MSwgMn0sIFNsaWNlKGluLCAtMTAwLCAtNCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7MX0sIFNsaWNlKGluLCAtMTAwLCAtNSkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoW11hbnl7fSwgU2xpY2UoaW4sIC0xMDAsIC02KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXsyLCAzLCA0LCA1fSwgU2xpY2UoaW4sIDEsIC0xKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXsyLCAzLCA0fSwgU2xpY2UoaW4sIDEsIC0yKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXsyLCAzfSwgU2xpY2UoaW4sIDEsIC0zKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXsyfSwgU2xpY2UoaW4sIDEsIC00KSkKCWFzc2VydC5FcXVhbFZhbHVlcyhbXWFueXt9LCBTbGljZShpbiwgMSwgLTUpKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKFtdYW55e30sIFNsaWNlKGluLCAxLCAtNikpCn0=",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "TestSplitCompact",
+            "Arguments": [
+                {
+                    "Name": "t",
+                    "Type": "*testing.T"
+                }
+            ],
+            "Signature": "TestSplitCompact(t *testing.T)",
+            "Source": "ewoJYXNzZXJ0LkVxdWFsKHQsIFtdc3RyaW5ne30sIFNwbGl0Q29tcGFjdChgYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3tgIGB9LCBTcGxpdENvbXBhY3QoYCBgLCBgLGApKQoJYXNzZXJ0LkVxdWFsKHQsIFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBTcGxpdENvbXBhY3QoYGEsYixjYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3tgIGEgYCwgYCAgYiAgYCwgYCAgIGMgICBgfSwgU3BsaXRDb21wYWN0KGAgYSAsICBiICAsICAgYyAgIGAsIGAsYCkpCglhc3NlcnQuRXF1YWwodCwgW11zdHJpbmd7YGFgLCBgYmAsIGBjYH0sIFNwbGl0Q29tcGFjdChgYSwsYixjYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgU3BsaXRDb21wYWN0KGBhLCxiLGMsYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgU3BsaXRDb21wYWN0KGAsLCxhLCwsYiwsLCwsYywsLGAsIGAsYCkpCglhc3NlcnQuRXF1YWwodCwgW11zdHJpbmd7YGFgLCBgYmAsIGBjYH0sIFNwbGl0Q29tcGFjdChgYSwsLGIsLCwsLGNgLCBgLGApKQp9",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "TestSplitTrimSpaceCompact",
+            "Arguments": [
+                {
+                    "Name": "t",
+                    "Type": "*testing.T"
+                }
+            ],
+            "Signature": "TestSplitTrimSpaceCompact(t *testing.T)",
+            "Source": "ewoJYXNzZXJ0LkVxdWFsKHQsIFtdc3RyaW5ne30sIFNwbGl0VHJpbVNwYWNlQ29tcGFjdChgYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3t9LCBTcGxpdFRyaW1TcGFjZUNvbXBhY3QoYCBgLCBgLGApKQoJYXNzZXJ0LkVxdWFsKHQsIFtdc3RyaW5ne2BhYCwgYGJgLCBgY2B9LCBTcGxpdFRyaW1TcGFjZUNvbXBhY3QoYGEsYixjYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgU3BsaXRUcmltU3BhY2VDb21wYWN0KGAgYSAsICBiICAsICAgYyAgIGAsIGAsYCkpCglhc3NlcnQuRXF1YWwodCwgW11zdHJpbmd7YGFgLCBgYmAsIGBjYH0sIFNwbGl0VHJpbVNwYWNlQ29tcGFjdChgYSwsYixjYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgU3BsaXRUcmltU3BhY2VDb21wYWN0KGBhLCxiLGMsYCwgYCxgKSkKCWFzc2VydC5FcXVhbCh0LCBbXXN0cmluZ3tgYWAsIGBiYCwgYGNgfSwgU3BsaXRUcmltU3BhY2VDb21wYWN0KGAsLCxhLCwsYiwsLCwsYywsLGAsIGAsYCkpCglhc3NlcnQuRXF1YWwodCwgW11zdHJpbmd7YGFgLCBgYmAsIGBjYH0sIFNwbGl0VHJpbVNwYWNlQ29tcGFjdChgYSwsLGIsLCwsLGNgLCBgLGApKQp9",
             "IsPackageLevel": true
         },
         {
@@ -1043,7 +1113,7 @@
                 }
             ],
             "Signature": "TestStringify(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKFN0cmluZ2lmeShuaWwpKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2AwYCwgYDFgLCBgMmB9LCBTdHJpbmdpZnkoW11pbnRlcmZhY2V7fXswLCAxLCAyfSkpCglhc3NlcnQuRXF1YWwoW11zdHJpbmd7YDAuNWAsIGAwLjU1YCwgYDAuNTU1YCwgYDAuNTU1MDAxYH0sIFN0cmluZ2lmeShbXWludGVyZmFjZXt9ezAuNSwgMC41NSwgMC41NTUwMCwgMC41NTUwMDF9KSkKCWFzc2VydC5FcXVhbChbXXN0cmluZ3tgdHJ1ZWAsIGB0cnVlYCwgYGZhbHNlYH0sIFN0cmluZ2lmeShbXWludGVyZmFjZXt9e3RydWUsIHRydWUsIGZhbHNlfSkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKFN0cmluZ2lmeShuaWwpKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2AwYCwgYDFgLCBgMmB9LCBTdHJpbmdpZnkoW11hbnl7MCwgMSwgMn0pKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2AwLjVgLCBgMC41NWAsIGAwLjU1NWAsIGAwLjU1NTAwMWB9LCBTdHJpbmdpZnkoW11hbnl7MC41LCAwLjU1LCAwLjU1NTAwLCAwLjU1NTAwMX0pKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2B0cnVlYCwgYHRydWVgLCBgZmFsc2VgfSwgU3RyaW5naWZ5KFtdYW55e3RydWUsIHRydWUsIGZhbHNlfSkpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -1055,7 +1125,7 @@
                 }
             ],
             "Signature": "TestTrimSpace(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKFRyaW1TcGFjZShuaWwpKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2BhYWFgLCBgYmJiYCwgYGNjY2B9LCBUcmltU3BhY2UoW11zdHJpbmd7YGFhYWAsIGAgICBiYmIgYCwgYCBjY2MgICAgYH0pKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuTmlsKFRyaW1TcGFjZShuaWwpKQoJYXNzZXJ0LkVxdWFsKFtdc3RyaW5ne2BhYWFgLCBgYmJiYCwgYGNjY2B9LCBUcmltU3BhY2UoW11zdHJpbmd7YGFhYWAsIGAgICBiYmIgYCwgYCBjY2MgICAgYH0pKQp9",
             "IsPackageLevel": true
         },
         {
@@ -1067,14 +1137,14 @@
                 }
             ],
             "Signature": "TestUnique(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11pbnRlcmZhY2V7fXtgb25lYCwgYHR3b2AsIGB0aHJlZWB9LCBVbmlxdWUoW11zdHJpbmd7YG9uZWAsIGBvbmVgLCBgdHdvYCwgYHRocmVlYH0pKQoJYXNzZXJ0LkVxdWFsKFtdaW50ZXJmYWNle317MSwgMiwgM30sIFVuaXF1ZShbXWludHsxLCAyLCAyLCAzfSkpCglhc3NlcnQuTm90RXF1YWwoW11pbnRlcmZhY2V7fXsxLCAyLCAzfSwgVW5pcXVlKFtdaW50NjR7MSwgMiwgMiwgM30pKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuRXF1YWwoW11hbnl7YG9uZWAsIGB0d29gLCBgdGhyZWVgfSwgVW5pcXVlKFtdc3RyaW5ne2BvbmVgLCBgb25lYCwgYHR3b2AsIGB0aHJlZWB9KSkKCWFzc2VydC5FcXVhbChbXWFueXsxLCAyLCAzfSwgVW5pcXVlKFtdaW50ezEsIDIsIDIsIDN9KSkKCWFzc2VydC5Ob3RFcXVhbChbXWFueXsxLCAyLCAzfSwgVW5pcXVlKFtdaW50NjR7MSwgMiwgMiwgM30pKQp9",
             "IsPackageLevel": true
         }
     ],
     "Types": {
         "CompareFunc": {
             "Name": "CompareFunc",
-            "Source": "dHlwZSBDb21wYXJlRnVuYyBmdW5jKGkgaW50LCBmaXJzdCBpbnRlcmZhY2V7fSwgc2Vjb25kIGludGVyZmFjZXt9KSBib29sIC8vIHt9Cg=="
+            "Source": "dHlwZSBDb21wYXJlRnVuYyBmdW5jKGkgaW50LCBmaXJzdCBhbnksIHNlY29uZCBhbnkpIGJvb2wgLy8ge30K"
         },
         "IterationFunc": {
             "Name": "IterationFunc",
@@ -1082,7 +1152,7 @@
         },
         "MapFunc": {
             "Name": "MapFunc",
-            "Source": "dHlwZSBNYXBGdW5jIGZ1bmMoaSBpbnQsIHZhbHVlIGludGVyZmFjZXt9KSBpbnRlcmZhY2V7fQ=="
+            "Source": "dHlwZSBNYXBGdW5jIGZ1bmMoaSBpbnQsIHZhbHVlIGFueSkgYW55"
         },
         "MapStringFunc": {
             "Name": "MapStringFunc",

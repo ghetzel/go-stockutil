@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -181,13 +181,13 @@
 	
     <li>
 		<strong>
-		<a href="#Cat">func Cat(file interface{}) string</a>
+		<a href="#Cat">func Cat(file any) string</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#ChecksumFile">func ChecksumFile(filename string, fn interface{}) ([]byte, error)</a>
+		<a href="#ChecksumFile">func ChecksumFile(filename string, fn any) ([]byte, error)</a>
 		
 	</li>
 	
@@ -205,25 +205,37 @@
 	
     <li>
 		<strong>
-		<a href="#CopyFile">func CopyFile(source interface{}, destination interface{}) error</a>
+		<a href="#CopyDirWithHidden">func CopyDirWithHidden(root string, fn CopyEntryFunc) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#GetMimeType">func GetMimeType(filenameOrReader interface{}, fallback ...string) string</a>
+		<a href="#CopyFile">func CopyFile(source any, destination any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#GetNthLine">func GetNthLine(file interface{}, number int) (string, error)</a>
+		<a href="#GetMimeType">func GetMimeType(filenameOrReader any, fallback ...string) string</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#GetNthLine">func GetNthLine(file any, number int) (string, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		
 		<a href="#InitMime">func InitMime()</a>
+		
+	</li>
+	
+    <li>
+		
+		<a href="#IsHiddenFile">func IsHiddenFile(filename string) bool</a>
 		
 	</li>
 	
@@ -240,12 +252,6 @@
 	</li>
 	
     <li>
-		<strong>
-		<a href="#ManipulateAll">func ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
 		
 		<a href="#MustExpandUser">func MustExpandUser(path string) string</a>
 		
@@ -253,37 +259,37 @@
 	
     <li>
 		<strong>
-		<a href="#MustGetNthLine">func MustGetNthLine(file interface{}, number int) string</a>
+		<a href="#MustGetNthLine">func MustGetNthLine(file any, number int) string</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#MustReadAll">func MustReadAll(file interface{}) []byte</a>
+		<a href="#MustReadAll">func MustReadAll(file any) []byte</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#MustReadAllLines">func MustReadAllLines(file interface{}) []string</a>
+		<a href="#MustReadAllLines">func MustReadAllLines(file any) []string</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#MustReadAllString">func MustReadAllString(file interface{}) string</a>
+		<a href="#MustReadAllString">func MustReadAllString(file any) string</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#MustWriteFile">func MustWriteFile(input interface{}, filename string) int64</a>
+		<a href="#MustWriteFile">func MustWriteFile(input any, filename string) int64</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#MustWriteTempFile">func MustWriteTempFile(input interface{}, prefix string) string</a>
+		<a href="#MustWriteTempFile">func MustWriteTempFile(input any, prefix string) string</a>
 		</strong>
 	</li>
 	
@@ -301,25 +307,25 @@
 	
     <li>
 		<strong>
-		<a href="#ReadAll">func ReadAll(file interface{}) ([]byte, error)</a>
+		<a href="#ReadAll">func ReadAll(file any) ([]byte, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ReadAllLines">func ReadAllLines(file interface{}) ([]string, error)</a>
+		<a href="#ReadAllLines">func ReadAllLines(file any) ([]string, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ReadAllString">func ReadAllString(file interface{}) (string, error)</a>
+		<a href="#ReadAllString">func ReadAllString(file any) (string, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#ReadFirstLine">func ReadFirstLine(file interface{}) (string, error)</a>
+		<a href="#ReadFirstLine">func ReadFirstLine(file any) (string, error)</a>
 		
 	</li>
 	
@@ -343,43 +349,13 @@
 	
     <li>
 		<strong>
-		<a href="#RemoveLinesContaining">func RemoveLinesContaining(needle string) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#RemoveLinesSurroundedBy">func RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#RemoveLinesWithPrefix">func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#RemoveLinesWithSuffix">func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
 		<a href="#RemoveOpenHandler">func RemoveOpenHandler(scheme string)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ReplaceWith">func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#Retrieve">func Retrieve(ctx context.Context, resourceUri interface{}) (io.ReadCloser, error)</a>
+		<a href="#Retrieve">func Retrieve(ctx context.Context, resourceUri any) (io.ReadCloser, error)</a>
 		</strong>
 	</li>
 	
@@ -403,7 +379,7 @@
 	
     <li>
 		<strong>
-		<a href="#SameFile">func SameFile(first interface{}, second interface{}) bool</a>
+		<a href="#SameFile">func SameFile(first any, second any) bool</a>
 		</strong>
 	</li>
 	
@@ -415,13 +391,13 @@
 	
     <li>
 		<strong>
-		<a href="#ShouldGetNthLine">func ShouldGetNthLine(file interface{}, number int) string</a>
+		<a href="#ShouldGetNthLine">func ShouldGetNthLine(file any, number int) string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ShouldReadAllLines">func ShouldReadAllLines(file interface{}) []string</a>
+		<a href="#ShouldReadAllLines">func ShouldReadAllLines(file any) []string</a>
 		</strong>
 	</li>
 	
@@ -439,13 +415,13 @@
 	
     <li>
 		<strong>
-		<a href="#WriteFile">func WriteFile(input interface{}, filename string) (int64, error)</a>
+		<a href="#WriteFile">func WriteFile(input any, filename string) (int64, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#WriteTempFile">func WriteTempFile(input interface{}, pattern string) (string, error)</a>
+		<a href="#WriteTempFile">func WriteTempFile(input any, pattern string) (string, error)</a>
 		</strong>
 	</li>
 	
@@ -498,7 +474,7 @@
 				<strong>
 				<a href="#DirReader.Close">
 					func
-					(self *DirReader)
+					(dir *DirReader)
 					Close() error
 				</a>
 				</strong>
@@ -512,7 +488,7 @@
 				
 				<a href="#DirReader.Read">
 					func
-					(self *DirReader)
+					(dir *DirReader)
 					Read(b []byte) (int, error)
 				</a>
 				
@@ -524,7 +500,7 @@
 				<strong>
 				<a href="#DirReader.SetSkipFunc">
 					func
-					(self *DirReader)
+					(dir *DirReader)
 					SetSkipFunc(fn SkipFunc)
 				</a>
 				</strong>
@@ -570,7 +546,7 @@
 				
 				<a href="#ExtendableReader.AppendSource">
 					func
-					(self *ExtendableReader)
+					(xreader *ExtendableReader)
 					AppendSource(rc io.ReadCloser)
 				</a>
 				
@@ -582,7 +558,7 @@
 				
 				<a href="#ExtendableReader.Close">
 					func
-					(self *ExtendableReader)
+					(xreader *ExtendableReader)
 					Close() error
 				</a>
 				
@@ -594,7 +570,7 @@
 				
 				<a href="#ExtendableReader.Read">
 					func
-					(self *ExtendableReader)
+					(xreader *ExtendableReader)
 					Read(b []byte) (int, error)
 				</a>
 				
@@ -655,7 +631,7 @@
 				
 				<a href="#FileInfo.IsDir">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					IsDir() bool
 				</a>
 				
@@ -667,7 +643,7 @@
 				
 				<a href="#FileInfo.ModTime">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					ModTime() time.Time
 				</a>
 				
@@ -679,7 +655,7 @@
 				
 				<a href="#FileInfo.Mode">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					Mode() os.FileMode
 				</a>
 				
@@ -691,7 +667,7 @@
 				
 				<a href="#FileInfo.Name">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					Name() string
 				</a>
 				
@@ -705,7 +681,7 @@
 				
 				<a href="#FileInfo.SetIsDir">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					SetIsDir(isDir bool)
 				</a>
 				
@@ -717,7 +693,7 @@
 				
 				<a href="#FileInfo.SetModTime">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					SetModTime(mtime time.Time)
 				</a>
 				
@@ -729,7 +705,7 @@
 				
 				<a href="#FileInfo.SetMode">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					SetMode(mode os.FileMode)
 				</a>
 				
@@ -741,7 +717,7 @@
 				
 				<a href="#FileInfo.SetName">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					SetName(name string)
 				</a>
 				
@@ -753,7 +729,7 @@
 				
 				<a href="#FileInfo.SetSize">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					SetSize(sz int64)
 				</a>
 				
@@ -765,8 +741,8 @@
 				
 				<a href="#FileInfo.SetSys">
 					func
-					(self *FileInfo)
-					SetSys(iface interface{})
+					(info *FileInfo)
+					SetSys(iface any)
 				</a>
 				
 			</li>
@@ -777,7 +753,7 @@
 				
 				<a href="#FileInfo.Size">
 					func
-					(self *FileInfo)
+					(info *FileInfo)
 					Size() int64
 				</a>
 				
@@ -789,8 +765,8 @@
 				
 				<a href="#FileInfo.Sys">
 					func
-					(self *FileInfo)
-					Sys() interface{}
+					(info *FileInfo)
+					Sys() any
 				</a>
 				
 			</li>
@@ -828,7 +804,7 @@
 				
 				<a href="#MultiCloser.Close">
 					func
-					(self *MultiCloser)
+					(multicloser *MultiCloser)
 					Close() merr error
 				</a>
 				
@@ -865,7 +841,7 @@
 				
 				<a href="#OpenOptions.GetTimeout">
 					func
-					(self OpenOptions)
+					(opts OpenOptions)
 					GetTimeout() time.Duration
 				</a>
 				
@@ -906,7 +882,7 @@
 				
 				<a href="#PostReadCloser.Close">
 					func
-					(self *PostReadCloser)
+					(postcloser *PostReadCloser)
 					Close() error
 				</a>
 				
@@ -920,7 +896,7 @@
 				
 				<a href="#PostReadCloser.Read">
 					func
-					(self *PostReadCloser)
+					(postcloser *PostReadCloser)
 					Read(b []byte) (int, error)
 				</a>
 				
@@ -963,7 +939,7 @@
 				
 				<a href="#ReadManipulator.Close">
 					func
-					(self *ReadManipulator)
+					(manip *ReadManipulator)
 					Close() error
 				</a>
 				
@@ -977,7 +953,7 @@
 				
 				<a href="#ReadManipulator.Read">
 					func
-					(self *ReadManipulator)
+					(manip *ReadManipulator)
 					Read(b []byte) (int, error)
 				</a>
 				
@@ -989,7 +965,7 @@
 				
 				<a href="#ReadManipulator.Split">
 					func
-					(self *ReadManipulator)
+					(manip *ReadManipulator)
 					Split(split bufio.SplitFunc)
 				</a>
 				
@@ -1031,7 +1007,7 @@
 				
 				<a href="#RewriteFileSystem.Open">
 					func
-					(self RewriteFileSystem)
+					(rwfs RewriteFileSystem)
 					Open(name string) (http.File, error)
 				</a>
 				
@@ -1094,7 +1070,7 @@
 			
 		</td>
 		<td class="text-right">2KB</td>
-		<td class="text-right">66</td>
+		<td class="text-right">65</td>
 		<td class="text-right">3</td>
 		<td class="text-right">1</td>
 		<td class="text-right"></td>
@@ -1121,8 +1097,8 @@
 			<a href="anyget_file_test.go">anyget_file_test.go</a>
 			
 		</td>
-		<td class="text-right">413B</td>
-		<td class="text-right">18</td>
+		<td class="text-right">424B</td>
+		<td class="text-right">19</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1149,7 +1125,7 @@
 			<a href="anyget_http_test.go">anyget_http_test.go</a>
 			
 		</td>
-		<td class="text-right">837B</td>
+		<td class="text-right">817B</td>
 		<td class="text-right">32</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1164,7 +1140,7 @@
 			
 		</td>
 		<td class="text-right">5KB</td>
-		<td class="text-right">127</td>
+		<td class="text-right">126</td>
 		<td class="text-right">1</td>
 		<td class="text-right">1</td>
 		<td class="text-right"></td>
@@ -1178,7 +1154,7 @@
 			
 		</td>
 		<td class="text-right">2KB</td>
-		<td class="text-right">66</td>
+		<td class="text-right">68</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1192,7 +1168,7 @@
 			
 		</td>
 		<td class="text-right">1KB</td>
-		<td class="text-right">46</td>
+		<td class="text-right">47</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1220,10 +1196,10 @@
 			
 		</td>
 		<td class="text-right">5KB</td>
-		<td class="text-right">152</td>
-		<td class="text-right">6</td>
+		<td class="text-right">172</td>
+		<td class="text-right">7</td>
 		<td class="text-right">5</td>
-		<td class="text-right">2</td>
+		<td class="text-right">3</td>
 		<td class="text-right"></td>
 	</tr>
 	
@@ -1234,7 +1210,7 @@
 			
 		</td>
 		<td class="text-right">2KB</td>
-		<td class="text-right">65</td>
+		<td class="text-right">69</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1261,8 +1237,8 @@
 			<a href="extendable_reader_test.go">extendable_reader_test.go</a>
 			
 		</td>
-		<td class="text-right">1020B</td>
-		<td class="text-right">32</td>
+		<td class="text-right">987B</td>
+		<td class="text-right">31</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1276,8 +1252,8 @@
 			
 		</td>
 		<td class="text-right">13KB</td>
-		<td class="text-right">408</td>
-		<td class="text-right">25</td>
+		<td class="text-right">416</td>
+		<td class="text-right">26</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right">23</td>
@@ -1290,7 +1266,7 @@
 			
 		</td>
 		<td class="text-right">5KB</td>
-		<td class="text-right">178</td>
+		<td class="text-right">177</td>
 		<td class="text-right">5</td>
 		<td class="text-right">2</td>
 		<td class="text-right">1</td>
@@ -1304,7 +1280,7 @@
 			
 		</td>
 		<td class="text-right">3KB</td>
-		<td class="text-right">67</td>
+		<td class="text-right">79</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1356,20 +1332,6 @@
 	<tr>
 		<td class="text-left">
 			
-			<a href="http_file.go">http_file.go</a>
-			
-		</td>
-		<td class="text-right">1KB</td>
-		<td class="text-right">49</td>
-		<td class="text-right"></td>
-		<td class="text-right"></td>
-		<td class="text-right"></td>
-		<td class="text-right"></td>
-	</tr>
-	
-	<tr>
-		<td class="text-left">
-			
 			<a href="manipulator.go">manipulator.go</a>
 			
 		</td>
@@ -1402,7 +1364,7 @@
 			
 		</td>
 		<td class="text-right">3KB</td>
-		<td class="text-right">86</td>
+		<td class="text-right">85</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1429,7 +1391,7 @@
 			<a href="mime_test.go">mime_test.go</a>
 			
 		</td>
-		<td class="text-right">622B</td>
+		<td class="text-right">625B</td>
 		<td class="text-right">16</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1453,6 +1415,7 @@
 	<pre>
 const <span id="DefaultOpenTimeout">DefaultOpenTimeout</span> = time.Duration(10 * time.Second)
 const <span id="FailOnError">FailOnError       </span> = 
+const <span id="IncludeHidden">IncludeHidden     </span> = 
 const <span id="NoRecursive">NoRecursive       </span> = iota
 </pre>
 </div>
@@ -1470,6 +1433,7 @@ const <span id="NoRecursive">NoRecursive       </span> = iota
 	<pre>
 var <span id="CompareHasher">CompareHasher           </span> = sha256.New()
 var <span id="DirExists">DirExists               </span> = pathutil.DirExists
+var <span id="ErrSkipToken">ErrSkipToken            </span> = errors.New(`skip token`)
 var <span id="Exists">Exists                  </span> = pathutil.Exists
 var <span id="ExpandUser">ExpandUser              </span> = pathutil.ExpandUser
 var <span id="FileExists">FileExists              </span> = pathutil.FileExists
@@ -1493,8 +1457,7 @@ var <span id="IsSymlink">IsSymlink               </span> = pathutil.IsSymlink
 var <span id="IsTemporary">IsTemporary             </span> = pathutil.IsTemporary
 var <span id="IsWritable">IsWritable              </span> = pathutil.IsWritable
 var <span id="LinkExists">LinkExists              </span> = pathutil.LinkExists
-var <span id="NullReadCloser">NullReadCloser          </span> = ioutil.NopCloser(bytes.NewBuffer(nil))
-var <span id="SkipToken">SkipToken               </span> = errors.New(`skip token`)
+var <span id="NullReadCloser">NullReadCloser          </span> = io.NopCloser(bytes.NewBuffer(nil))
 var <span id="SshDefaultTimeout">SshDefaultTimeout       </span> = 10 * time.Second
 var <span id="SshPrivateKey">SshPrivateKey           </span> = ExpandUser(`~/.ssh/id_rsa`)
 var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> = 
@@ -1522,7 +1485,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Cat(file interface{}) string</pre>
+	<pre>func Cat(file any) string</pre>
 </div>
 
 
@@ -1536,7 +1499,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ChecksumFile(filename string, fn interface{}) ([]byte, error)</pre>
+	<pre>func ChecksumFile(filename string, fn any) ([]byte, error)</pre>
 </div>
 
 
@@ -1569,13 +1532,27 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </p>
 
 
+<h3 id="CopyDirWithHidden" data-kind="f">
+	func <a title="View Source" href="">CopyDirWithHidden</a>
+	<a class="permalink" href="#CopyDirWithHidden">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func CopyDirWithHidden(root string, fn CopyEntryFunc) error</pre>
+</div>
+
+
+<p><p>A version of CopyDir that includes hidden files</p>
+</p>
+
+
 <h3 id="CopyFile" data-kind="f">
 	func <a title="View Source" href="">CopyFile</a>
 	<a class="permalink" href="#CopyFile">&#182;</a>
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CopyFile(source interface{}, destination interface{}) error</pre>
+	<pre>func CopyFile(source any, destination any) error</pre>
 </div>
 
 
@@ -1589,7 +1566,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func GetMimeType(filenameOrReader interface{}, fallback ...string) string</pre>
+	<pre>func GetMimeType(filenameOrReader any, fallback ...string) string</pre>
 </div>
 
 
@@ -1603,7 +1580,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func GetNthLine(file interface{}, number int) (string, error)</pre>
+	<pre>func GetNthLine(file any, number int) (string, error)</pre>
 </div>
 
 
@@ -1618,6 +1595,17 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
 	<pre>func InitMime()</pre>
+</div>
+
+
+
+<h3 id="IsHiddenFile" data-kind="f">
+	func <a title="View Source" href="">IsHiddenFile</a>
+	<a class="permalink" href="#IsHiddenFile">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func IsHiddenFile(filename string) bool</pre>
 </div>
 
 
@@ -1647,20 +1635,6 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 
 
-<h3 id="ManipulateAll" data-kind="f">
-	func <a title="View Source" href="">ManipulateAll</a>
-	<a class="permalink" href="#ManipulateAll">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>Performs multiple sequential manipulations on an intercepted line of text from<br>an io.Reader as its being read.</p>
-</p>
-
-
 <h3 id="MustExpandUser" data-kind="f">
 	func <a title="View Source" href="">MustExpandUser</a>
 	<a class="permalink" href="#MustExpandUser">&#182;</a>
@@ -1678,7 +1652,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustGetNthLine(file interface{}, number int) string</pre>
+	<pre>func MustGetNthLine(file any, number int) string</pre>
 </div>
 
 
@@ -1692,7 +1666,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustReadAll(file interface{}) []byte</pre>
+	<pre>func MustReadAll(file any) []byte</pre>
 </div>
 
 
@@ -1703,7 +1677,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustReadAllLines(file interface{}) []string</pre>
+	<pre>func MustReadAllLines(file any) []string</pre>
 </div>
 
 
@@ -1717,7 +1691,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustReadAllString(file interface{}) string</pre>
+	<pre>func MustReadAllString(file any) string</pre>
 </div>
 
 
@@ -1728,7 +1702,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustWriteFile(input interface{}, filename string) int64</pre>
+	<pre>func MustWriteFile(input any, filename string) int64</pre>
 </div>
 
 
@@ -1742,7 +1716,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MustWriteTempFile(input interface{}, prefix string) string</pre>
+	<pre>func MustWriteTempFile(input any, prefix string) string</pre>
 </div>
 
 
@@ -1784,7 +1758,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ReadAll(file interface{}) ([]byte, error)</pre>
+	<pre>func ReadAll(file any) ([]byte, error)</pre>
 </div>
 
 
@@ -1798,7 +1772,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ReadAllLines(file interface{}) ([]string, error)</pre>
+	<pre>func ReadAllLines(file any) ([]string, error)</pre>
 </div>
 
 
@@ -1812,7 +1786,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ReadAllString(file interface{}) (string, error)</pre>
+	<pre>func ReadAllString(file any) (string, error)</pre>
 </div>
 
 
@@ -1826,7 +1800,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ReadFirstLine(file interface{}) (string, error)</pre>
+	<pre>func ReadFirstLine(file any) (string, error)</pre>
 </div>
 
 
@@ -1873,62 +1847,6 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </p>
 
 
-<h3 id="RemoveLinesContaining" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesContaining</a>
-	<a class="permalink" href="#RemoveLinesContaining">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesContaining(needle string) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines that contain the given string.</p>
-</p>
-
-
-<h3 id="RemoveLinesSurroundedBy" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesSurroundedBy</a>
-	<a class="permalink" href="#RemoveLinesSurroundedBy">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.</p>
-</p>
-
-
-<h3 id="RemoveLinesWithPrefix" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesWithPrefix</a>
-	<a class="permalink" href="#RemoveLinesWithPrefix">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines that have a given prefix.</p>
-</p>
-
-
-<h3 id="RemoveLinesWithSuffix" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesWithSuffix</a>
-	<a class="permalink" href="#RemoveLinesWithSuffix">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines that have a given suffix.</p>
-</p>
-
-
 <h3 id="RemoveOpenHandler" data-kind="f">
 	func <a title="View Source" href="">RemoveOpenHandler</a>
 	<a class="permalink" href="#RemoveOpenHandler">&#182;</a>
@@ -1943,27 +1861,13 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </p>
 
 
-<h3 id="ReplaceWith" data-kind="f">
-	func <a title="View Source" href="">ReplaceWith</a>
-	<a class="permalink" href="#ReplaceWith">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for replacing text in an io.Reader as its being read.</p>
-</p>
-
-
 <h3 id="Retrieve" data-kind="f">
 	func <a title="View Source" href="">Retrieve</a>
 	<a class="permalink" href="#Retrieve">&#182;</a>
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Retrieve(ctx context.Context, resourceUri interface{}) (io.ReadCloser, error)</pre>
+	<pre>func Retrieve(ctx context.Context, resourceUri any) (io.ReadCloser, error)</pre>
 </div>
 
 
@@ -1995,7 +1899,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </div>
 
 
-<p><p>Retrieve a file via HTTP or HTTPS.<br><br>Supported Context Values:<br><br>	insecure:<br>	  (bool) specify that strict TLS validation should be optional.<br><br>	method:<br>	  (string) the HTTP method to use, defaults to GET.<br><br>	metadata:<br>	  (map[string]interface{}) a key-value set of HTTP request headers to include.<br><br>	safeResponseCodes:<br>	  ([]int) a list of one or more HTTP status codes that are considered successful for this request.</p>
+<p><p>Retrieve a file via HTTP or HTTPS.<br><br>Supported Context Values:<br><br>	insecure:<br>	  (bool) specify that strict TLS validation should be optional.<br><br>	method:<br>	  (string) the HTTP method to use, defaults to GET.<br><br>	metadata:<br>	  (map[string]any) a key-value set of HTTP request headers to include.<br><br>	safeResponseCodes:<br>	  ([]int) a list of one or more HTTP status codes that are considered successful for this request.</p>
 </p>
 
 
@@ -2019,7 +1923,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func SameFile(first interface{}, second interface{}) bool</pre>
+	<pre>func SameFile(first any, second any) bool</pre>
 </div>
 
 
@@ -2047,7 +1951,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ShouldGetNthLine(file interface{}, number int) string</pre>
+	<pre>func ShouldGetNthLine(file any, number int) string</pre>
 </div>
 
 
@@ -2061,7 +1965,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ShouldReadAllLines(file interface{}) []string</pre>
+	<pre>func ShouldReadAllLines(file any) []string</pre>
 </div>
 
 
@@ -2103,7 +2007,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func WriteFile(input interface{}, filename string) (int64, error)</pre>
+	<pre>func WriteFile(input any, filename string) (int64, error)</pre>
 </div>
 
 
@@ -2117,7 +2021,7 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func WriteTempFile(input interface{}, pattern string) (string, error)</pre>
+	<pre>func WriteTempFile(input any, pattern string) (string, error)</pre>
 </div>
 
 
@@ -2213,14 +2117,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="DirReader.Close" data-kind="f">
 	func
-	(self *DirReader)
+	(dir *DirReader)
 	<a title="View Source" href="">Close</a>
 	<a class="permalink" href="#Close">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *DirReader) Close() error</pre>
+	<pre>func (dir *DirReader) Close() error</pre>
 </div>
 
 <p><p>close open files and reset the internal reader</p>
@@ -2233,14 +2137,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="DirReader.Read" data-kind="f">
 	func
-	(self *DirReader)
+	(dir *DirReader)
 	<a title="View Source" href="">Read</a>
 	<a class="permalink" href="#Read">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *DirReader) Read(b []byte) (int, error)</pre>
+	<pre>func (dir *DirReader) Read(b []byte) (int, error)</pre>
 </div>
 
 
@@ -2248,14 +2152,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="DirReader.SetSkipFunc" data-kind="f">
 	func
-	(self *DirReader)
+	(dir *DirReader)
 	<a title="View Source" href="">SetSkipFunc</a>
 	<a class="permalink" href="#SetSkipFunc">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *DirReader) SetSkipFunc(fn SkipFunc)</pre>
+	<pre>func (dir *DirReader) SetSkipFunc(fn SkipFunc)</pre>
 </div>
 
 <p><p>Set a function that will be called for each path encountered while reading.<br>If this function returns true, that path (and its descedants) will not be read.</p>
@@ -2306,14 +2210,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="DirReaderOptions.Has" data-kind="f">
 	func
-	(self DirReaderOptions)
+	(dir DirReaderOptions)
 	<a title="View Source" href="">Has</a>
 	<a class="permalink" href="#Has">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self DirReaderOptions) Has(option DirReaderOption) bool</pre>
+	<pre>func (dir DirReaderOptions) Has(option DirReaderOption) bool</pre>
 </div>
 
 
@@ -2350,14 +2254,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="ExtendableReader.AppendSource" data-kind="f">
 	func
-	(self *ExtendableReader)
+	(xreader *ExtendableReader)
 	<a title="View Source" href="">AppendSource</a>
 	<a class="permalink" href="#AppendSource">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *ExtendableReader) AppendSource(rc io.ReadCloser)</pre>
+	<pre>func (xreader *ExtendableReader) AppendSource(rc io.ReadCloser)</pre>
 </div>
 
 
@@ -2365,14 +2269,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="ExtendableReader.Close" data-kind="f">
 	func
-	(self *ExtendableReader)
+	(xreader *ExtendableReader)
 	<a title="View Source" href="">Close</a>
 	<a class="permalink" href="#Close">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *ExtendableReader) Close() error</pre>
+	<pre>func (xreader *ExtendableReader) Close() error</pre>
 </div>
 
 
@@ -2380,14 +2284,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="ExtendableReader.Read" data-kind="f">
 	func
-	(self *ExtendableReader)
+	(xreader *ExtendableReader)
 	<a title="View Source" href="">Read</a>
 	<a class="permalink" href="#Read">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *ExtendableReader) Read(b []byte) (int, error)</pre>
+	<pre>func (xreader *ExtendableReader) Read(b []byte) (int, error)</pre>
 </div>
 
 
@@ -2458,14 +2362,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.IsDir" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">IsDir</a>
 	<a class="permalink" href="#IsDir">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) IsDir() bool</pre>
+	<pre>func (info *FileInfo) IsDir() bool</pre>
 </div>
 
 
@@ -2473,14 +2377,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.ModTime" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">ModTime</a>
 	<a class="permalink" href="#ModTime">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) ModTime() time.Time</pre>
+	<pre>func (info *FileInfo) ModTime() time.Time</pre>
 </div>
 
 
@@ -2488,14 +2392,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.Mode" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">Mode</a>
 	<a class="permalink" href="#Mode">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) Mode() os.FileMode</pre>
+	<pre>func (info *FileInfo) Mode() os.FileMode</pre>
 </div>
 
 
@@ -2503,14 +2407,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.Name" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">Name</a>
 	<a class="permalink" href="#Name">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) Name() string</pre>
+	<pre>func (info *FileInfo) Name() string</pre>
 </div>
 
 
@@ -2520,14 +2424,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.SetIsDir" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">SetIsDir</a>
 	<a class="permalink" href="#SetIsDir">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) SetIsDir(isDir bool)</pre>
+	<pre>func (info *FileInfo) SetIsDir(isDir bool)</pre>
 </div>
 
 
@@ -2535,14 +2439,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.SetModTime" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">SetModTime</a>
 	<a class="permalink" href="#SetModTime">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) SetModTime(mtime time.Time)</pre>
+	<pre>func (info *FileInfo) SetModTime(mtime time.Time)</pre>
 </div>
 
 
@@ -2550,14 +2454,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.SetMode" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">SetMode</a>
 	<a class="permalink" href="#SetMode">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) SetMode(mode os.FileMode)</pre>
+	<pre>func (info *FileInfo) SetMode(mode os.FileMode)</pre>
 </div>
 
 
@@ -2565,14 +2469,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.SetName" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">SetName</a>
 	<a class="permalink" href="#SetName">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) SetName(name string)</pre>
+	<pre>func (info *FileInfo) SetName(name string)</pre>
 </div>
 
 
@@ -2580,14 +2484,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.SetSize" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">SetSize</a>
 	<a class="permalink" href="#SetSize">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) SetSize(sz int64)</pre>
+	<pre>func (info *FileInfo) SetSize(sz int64)</pre>
 </div>
 
 
@@ -2595,14 +2499,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.SetSys" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">SetSys</a>
 	<a class="permalink" href="#SetSys">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) SetSys(iface interface{})</pre>
+	<pre>func (info *FileInfo) SetSys(iface any)</pre>
 </div>
 
 
@@ -2610,14 +2514,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.Size" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">Size</a>
 	<a class="permalink" href="#Size">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) Size() int64</pre>
+	<pre>func (info *FileInfo) Size() int64</pre>
 </div>
 
 
@@ -2625,14 +2529,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="FileInfo.Sys" data-kind="f">
 	func
-	(self *FileInfo)
+	(info *FileInfo)
 	<a title="View Source" href="">Sys</a>
 	<a class="permalink" href="#Sys">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *FileInfo) Sys() interface{}</pre>
+	<pre>func (info *FileInfo) Sys() any</pre>
 </div>
 
 
@@ -2678,14 +2582,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="MultiCloser.Close" data-kind="f">
 	func
-	(self *MultiCloser)
+	(multicloser *MultiCloser)
 	<a title="View Source" href="">Close</a>
 	<a class="permalink" href="#Close">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *MultiCloser) Close() merr error</pre>
+	<pre>func (multicloser *MultiCloser) Close() merr error</pre>
 </div>
 
 
@@ -2738,14 +2642,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="OpenOptions.GetTimeout" data-kind="f">
 	func
-	(self OpenOptions)
+	(opts OpenOptions)
 	<a title="View Source" href="">GetTimeout</a>
 	<a class="permalink" href="#GetTimeout">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self OpenOptions) GetTimeout() time.Duration</pre>
+	<pre>func (opts OpenOptions) GetTimeout() time.Duration</pre>
 </div>
 
 
@@ -2796,14 +2700,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="PostReadCloser.Close" data-kind="f">
 	func
-	(self *PostReadCloser)
+	(postcloser *PostReadCloser)
 	<a title="View Source" href="">Close</a>
 	<a class="permalink" href="#Close">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *PostReadCloser) Close() error</pre>
+	<pre>func (postcloser *PostReadCloser) Close() error</pre>
 </div>
 
 
@@ -2813,14 +2717,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="PostReadCloser.Read" data-kind="f">
 	func
-	(self *PostReadCloser)
+	(postcloser *PostReadCloser)
 	<a title="View Source" href="">Read</a>
 	<a class="permalink" href="#Read">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *PostReadCloser) Read(b []byte) (int, error)</pre>
+	<pre>func (postcloser *PostReadCloser) Read(b []byte) (int, error)</pre>
 </div>
 
 
@@ -2870,14 +2774,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="ReadManipulator.Close" data-kind="f">
 	func
-	(self *ReadManipulator)
+	(manip *ReadManipulator)
 	<a title="View Source" href="">Close</a>
 	<a class="permalink" href="#Close">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *ReadManipulator) Close() error</pre>
+	<pre>func (manip *ReadManipulator) Close() error</pre>
 </div>
 
 
@@ -2887,14 +2791,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="ReadManipulator.Read" data-kind="f">
 	func
-	(self *ReadManipulator)
+	(manip *ReadManipulator)
 	<a title="View Source" href="">Read</a>
 	<a class="permalink" href="#Read">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *ReadManipulator) Read(b []byte) (int, error)</pre>
+	<pre>func (manip *ReadManipulator) Read(b []byte) (int, error)</pre>
 </div>
 
 
@@ -2902,14 +2806,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="ReadManipulator.Split" data-kind="f">
 	func
-	(self *ReadManipulator)
+	(manip *ReadManipulator)
 	<a title="View Source" href="">Split</a>
 	<a class="permalink" href="#Split">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *ReadManipulator) Split(split bufio.SplitFunc)</pre>
+	<pre>func (manip *ReadManipulator) Split(split bufio.SplitFunc)</pre>
 </div>
 
 
@@ -2927,6 +2831,114 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 	
 	<pre>type ReadManipulatorFunc func(data []byte) ([]byte, error)</pre>
 </div>
+
+
+
+
+<h4 id="ManipulateAll" data-kind="f">
+	func <a title="View Source" href="">ManipulateAll</a>
+	<a class="permalink" href="#ManipulateAll">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>Performs multiple sequential manipulations on an intercepted line of text from<br>an io.Reader as its being read.</p>
+</p>
+
+
+
+
+<h4 id="ReplaceWith" data-kind="f">
+	func <a title="View Source" href="">ReplaceWith</a>
+	<a class="permalink" href="#ReplaceWith">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for replacing text in an io.Reader as its being read.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesContaining" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesContaining</a>
+	<a class="permalink" href="#RemoveLinesContaining">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesContaining(needle string) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines that contain the given string.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesWithPrefix" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesWithPrefix</a>
+	<a class="permalink" href="#RemoveLinesWithPrefix">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines that have a given prefix.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesWithSuffix" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesWithSuffix</a>
+	<a class="permalink" href="#RemoveLinesWithSuffix">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines that have a given suffix.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesSurroundedBy" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesSurroundedBy</a>
+	<a class="permalink" href="#RemoveLinesSurroundedBy">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.</p>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2981,14 +2993,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="RewriteFileSystem.Open" data-kind="f">
 	func
-	(self RewriteFileSystem)
+	(rwfs RewriteFileSystem)
 	<a title="View Source" href="">Open</a>
 	<a class="permalink" href="#Open">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self RewriteFileSystem) Open(name string) (http.File, error)</pre>
+	<pre>func (rwfs RewriteFileSystem) Open(name string) (http.File, error)</pre>
 </div>
 
 
@@ -3055,14 +3067,14 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 <h4 id="TestFileSystem.Open" data-kind="f">
 	func
-	(self TestFileSystem)
+	(testfs TestFileSystem)
 	<a title="View Source" href="">Open</a>
 	<a class="permalink" href="#Open">&#182;</a>
 </h4>
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self TestFileSystem) Open(name string) (http.File, error)</pre>
+	<pre>func (testfs TestFileSystem) Open(name string) (http.File, error)</pre>
 </div>
 
 

@@ -11,20 +11,20 @@ type testOutputOne struct {
 	Name          string `json:"name"`
 	URL           string `json:"url"`
 	Count         int64
-	Ok1           bool                     `json:"OK1" maputil:"ok1"`
-	Ok2           bool                     `json:"OK2" maputil:"Ok2"`
-	Ok3           bool                     `json:"OK3"`
-	LOL           []string                 `json:"lol"`
-	NonIndexedLOL []string                 `json:"nilol"`
-	Onesie        []string                 `json:"onesie"`
-	Twosie        []map[string]interface{} `json:"twosie"`
-	Empty         string                   `json:"empty"`
+	Ok1           bool             `json:"OK1" maputil:"ok1"`
+	Ok2           bool             `json:"OK2" maputil:"Ok2"`
+	Ok3           bool             `json:"OK3"`
+	LOL           []string         `json:"lol"`
+	NonIndexedLOL []string         `json:"nilol"`
+	Onesie        []string         `json:"onesie"`
+	Twosie        []map[string]any `json:"twosie"`
+	Empty         string           `json:"empty"`
 }
 
 func TestParseFormValues(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	t1 := testOutputOne{
+	var t1 = testOutputOne{
 		URL: `http://test`,
 	}
 
@@ -50,7 +50,7 @@ func TestParseFormValues(t *testing.T) {
 	assert.Equal([]string{`zero`, `one`, `two`}, t1.LOL)
 	assert.Equal([]string{`first`, `second`, `third`}, t1.NonIndexedLOL)
 	assert.Equal([]string{`uno`}, t1.Onesie)
-	assert.Equal([]map[string]interface{}{
+	assert.Equal([]map[string]any{
 		{
 			`hello`: `there`,
 		},

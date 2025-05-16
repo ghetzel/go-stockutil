@@ -8,7 +8,7 @@ import (
 )
 
 func TestQueryStringModify(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	u, err := url.Parse(`https://example.com`)
 	assert.NoError(err)
@@ -27,7 +27,7 @@ func TestQueryStringModify(t *testing.T) {
 }
 
 func TestQueryStringStringModify(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(
 		`https://example.com?test=false`,
@@ -39,7 +39,7 @@ func TestQueryStringStringModify(t *testing.T) {
 		SetQString(`https://example.com`, `test`, true),
 	)
 
-	x := `https://example.com`
+	var x = `https://example.com`
 	x = AddQString(x, `test2`, 1)
 	x = AddQString(x, `test2`, 3)
 
@@ -49,7 +49,7 @@ func TestQueryStringStringModify(t *testing.T) {
 }
 
 func TestQueryStringStringModifyPathOnly(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(
 		`/some/path?test=false`,
@@ -61,7 +61,7 @@ func TestQueryStringStringModifyPathOnly(t *testing.T) {
 		SetQString(`/some/path`, `test`, true),
 	)
 
-	x := `/some/path`
+	var x = `/some/path`
 	x = AddQString(x, `test2`, 1)
 	x = AddQString(x, `test2`, 3)
 

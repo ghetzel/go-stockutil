@@ -2,7 +2,7 @@ package fileutil
 
 import (
 	"context"
-	"io/ioutil"
+	"io"
 	"net/url"
 	"testing"
 	"time"
@@ -11,7 +11,7 @@ import (
 )
 
 func TestRetrieveViaHTTP(t *testing.T) {
-	var server = testHttpServer(t, map[string]interface{}{
+	var server = testHttpServer(t, map[string]any{
 		`X-Test`: `1`,
 	})
 	defer server.Close()
@@ -31,7 +31,7 @@ func TestRetrieveViaHTTP(t *testing.T) {
 	var rc, rerr = RetrieveViaHTTP(ctx, u)
 	assert.NoError(t, rerr)
 
-	var data, derr = ioutil.ReadAll(rc)
+	var data, derr = io.ReadAll(rc)
 
 	assert.NoError(t, rc.Close())
 	assert.NoError(t, derr)
@@ -39,6 +39,6 @@ func TestRetrieveViaHTTP(t *testing.T) {
 
 	u.Path = `/sleep/1100ms`
 
-	rc, rerr = RetrieveViaHTTP(ctx, u)
+	_, rerr = RetrieveViaHTTP(ctx, u)
 	assert.Contains(t, rerr.Error(), `context deadline exceeded`)
 }

@@ -13,7 +13,7 @@ type FileInfo struct {
 	mode  *os.FileMode
 	mtime time.Time
 	dir   *bool
-	sys   interface{}
+	sys   any
 }
 
 func NewFileInfo(wrap ...os.FileInfo) *FileInfo {
@@ -26,86 +26,86 @@ func NewFileInfo(wrap ...os.FileInfo) *FileInfo {
 	}
 }
 
-func (self *FileInfo) Name() string {
-	if self.name != `` {
-		return self.name
-	} else if self.FileInfo != nil {
-		return self.FileInfo.Name()
+func (info *FileInfo) Name() string {
+	if info.name != `` {
+		return info.name
+	} else if info.FileInfo != nil {
+		return info.FileInfo.Name()
 	} else {
 		return ``
 	}
 }
 
-func (self *FileInfo) Size() int64 {
-	if self.size != 0 {
-		return self.size
-	} else if self.FileInfo != nil {
-		return self.FileInfo.Size()
+func (info *FileInfo) Size() int64 {
+	if info.size != 0 {
+		return info.size
+	} else if info.FileInfo != nil {
+		return info.FileInfo.Size()
 	} else {
 		return 0
 	}
 }
 
-func (self *FileInfo) Mode() os.FileMode {
-	if self.mode != nil {
-		return *self.mode
-	} else if self.FileInfo != nil {
-		return self.FileInfo.Mode()
+func (info *FileInfo) Mode() os.FileMode {
+	if info.mode != nil {
+		return *info.mode
+	} else if info.FileInfo != nil {
+		return info.FileInfo.Mode()
 	} else {
 		return 0
 	}
 }
 
-func (self *FileInfo) ModTime() time.Time {
-	if !self.mtime.IsZero() {
-		return self.mtime
-	} else if self.FileInfo != nil {
-		return self.FileInfo.ModTime()
+func (info *FileInfo) ModTime() time.Time {
+	if !info.mtime.IsZero() {
+		return info.mtime
+	} else if info.FileInfo != nil {
+		return info.FileInfo.ModTime()
 	} else {
 		return time.Time{}
 	}
 }
 
-func (self *FileInfo) IsDir() bool {
-	if self.dir != nil {
-		return *self.dir
-	} else if self.FileInfo != nil {
-		return self.FileInfo.IsDir()
+func (info *FileInfo) IsDir() bool {
+	if info.dir != nil {
+		return *info.dir
+	} else if info.FileInfo != nil {
+		return info.FileInfo.IsDir()
 	} else {
 		return false
 	}
 }
 
-func (self *FileInfo) Sys() interface{} {
-	if self.sys != nil {
-		return self.sys
-	} else if self.FileInfo != nil {
-		return self.FileInfo.Sys()
+func (info *FileInfo) Sys() any {
+	if info.sys != nil {
+		return info.sys
+	} else if info.FileInfo != nil {
+		return info.FileInfo.Sys()
 	} else {
 		return nil
 	}
 }
 
-func (self *FileInfo) SetName(name string) {
-	self.name = name
+func (info *FileInfo) SetName(name string) {
+	info.name = name
 }
 
-func (self *FileInfo) SetSize(sz int64) {
-	self.size = sz
+func (info *FileInfo) SetSize(sz int64) {
+	info.size = sz
 }
 
-func (self *FileInfo) SetMode(mode os.FileMode) {
-	self.mode = &mode
+func (info *FileInfo) SetMode(mode os.FileMode) {
+	info.mode = &mode
 }
 
-func (self *FileInfo) SetModTime(mtime time.Time) {
-	self.mtime = mtime
+func (info *FileInfo) SetModTime(mtime time.Time) {
+	info.mtime = mtime
 }
 
-func (self *FileInfo) SetIsDir(isDir bool) {
-	self.dir = &isDir
+func (info *FileInfo) SetIsDir(isDir bool) {
+	info.dir = &isDir
 }
 
-func (self *FileInfo) SetSys(iface interface{}) {
-	self.sys = iface
+func (info *FileInfo) SetSys(iface any) {
+	info.sys = iface
 }

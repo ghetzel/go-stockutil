@@ -43,7 +43,7 @@
                     "Alias": "utils"
                 }
             ],
-            "Size": 1577,
+            "Size": 1592,
             "LineCount": 59,
             "SourceLineCount": 34,
             "FunctionCount": 5,
@@ -71,7 +71,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 2791,
+            "Size": 2803,
             "LineCount": 132,
             "SourceLineCount": 96,
             "FunctionCount": 0,
@@ -102,7 +102,7 @@
                 }
             ],
             "Signature": "DurationHMS(d time.Duration) (int, int, int)",
-            "Source": "ewoJZCA9IGQuUm91bmQodGltZS5TZWNvbmQpCgloIDo9IGQgLyB0aW1lLkhvdXIKCWQgLT0gaCAqIHRpbWUuSG91cgoJbSA6PSBkIC8gdGltZS5NaW51dGUKCWQgLT0gbSAqIHRpbWUuTWludXRlCglzIDo9IGQgLyB0aW1lLlNlY29uZAoJcmV0dXJuIGludChoKSwgaW50KG0pLCBpbnQocykKfQ==",
+            "Source": "ewoJZCA9IGQuUm91bmQodGltZS5TZWNvbmQpCgl2YXIgaCA9IGQgLyB0aW1lLkhvdXIKCWQgLT0gaCAqIHRpbWUuSG91cgoJdmFyIG0gPSBkIC8gdGltZS5NaW51dGUKCWQgLT0gbSAqIHRpbWUuTWludXRlCgl2YXIgcyA9IGQgLyB0aW1lLlNlY29uZAoJcmV0dXJuIGludChoKSwgaW50KG0pLCBpbnQocykKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -120,7 +120,7 @@
                 }
             ],
             "Signature": "FormatTimer(d time.Duration) string",
-            "Source": "ewoJaCwgbSwgcyA6PSBEdXJhdGlvbkhNUyhkKQoJb3V0IDo9IGZtdC5TcHJpbnRmKCIlMDJkOiUwMmQ6JTAyZCIsIGgsIG0sIHMpCglvdXQgPSBzdHJpbmdzLlRyaW1QcmVmaXgob3V0LCBgMDA6YCkKCW91dCA9IHN0cmluZ3MuVHJpbVByZWZpeChvdXQsIGAwYCkKCXJldHVybiBvdXQKfQ==",
+            "Source": "ewoJaCwgbSwgcyA6PSBEdXJhdGlvbkhNUyhkKQoJdmFyIG91dCA9IGZtdC5TcHJpbnRmKCIlMDJkOiUwMmQ6JTAyZCIsIGgsIG0sIHMpCglvdXQgPSBzdHJpbmdzLlRyaW1QcmVmaXgob3V0LCBgMDA6YCkKCW91dCA9IHN0cmluZ3MuVHJpbVByZWZpeChvdXQsIGAwYCkKCXJldHVybiBvdXQKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -142,7 +142,7 @@
                 }
             ],
             "Signature": "FormatTimerf(format string, d time.Duration) string",
-            "Source": "ewoJaCwgbSwgcyA6PSBEdXJhdGlvbkhNUyhkKQoJb3V0IDo9IGZtdC5TcHJpbnRmKGZvcm1hdCwgaCwgbSwgcykKCXJldHVybiBvdXQKfQ==",
+            "Source": "ewoJaCwgbSwgcyA6PSBEdXJhdGlvbkhNUyhkKQoJdmFyIG91dCA9IGZtdC5TcHJpbnRmKGZvcm1hdCwgaCwgbSwgcykKCXJldHVybiBvdXQKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -247,7 +247,7 @@
                 }
             ],
             "Signature": "TestDurationHMS(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgloLCBtLCBzIDo9IER1cmF0aW9uSE1TKDApCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgwLCBtKQoJYXNzZXJ0LkVxdWFsKDAsIHMpCgloLCBtLCBzID0gRHVyYXRpb25ITVModGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgwLCBtKQoJYXNzZXJ0LkVxdWFsKDEsIHMpCgloLCBtLCBzID0gRHVyYXRpb25ITVModGltZS5NaW51dGUpCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgxLCBtKQoJYXNzZXJ0LkVxdWFsKDAsIHMpCgloLCBtLCBzID0gRHVyYXRpb25ITVModGltZS5Ib3VyKQoJYXNzZXJ0LkVxdWFsKDEsIGgpCglhc3NlcnQuRXF1YWwoMCwgbSkKCWFzc2VydC5FcXVhbCgwLCBzKQoJaCwgbSwgcyA9IER1cmF0aW9uSE1TKDU5ICogdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgwLCBtKQoJYXNzZXJ0LkVxdWFsKDU5LCBzKQoJaCwgbSwgcyA9IER1cmF0aW9uSE1TKDExOSAqIHRpbWUuU2Vjb25kKQoJYXNzZXJ0LkVxdWFsKDAsIGgpCglhc3NlcnQuRXF1YWwoMSwgbSkKCWFzc2VydC5FcXVhbCg1OSwgcykKCWgsIG0sIHMgPSBEdXJhdGlvbkhNUygyMyp0aW1lLkhvdXIgKyA0KnRpbWUuTWludXRlICsgMTMqdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoMjMsIGgpCglhc3NlcnQuRXF1YWwoNCwgbSkKCWFzc2VydC5FcXVhbCgxMywgcykKfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgloLCBtLCBzIDo9IER1cmF0aW9uSE1TKDApCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgwLCBtKQoJYXNzZXJ0LkVxdWFsKDAsIHMpCgloLCBtLCBzID0gRHVyYXRpb25ITVModGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgwLCBtKQoJYXNzZXJ0LkVxdWFsKDEsIHMpCgloLCBtLCBzID0gRHVyYXRpb25ITVModGltZS5NaW51dGUpCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgxLCBtKQoJYXNzZXJ0LkVxdWFsKDAsIHMpCgloLCBtLCBzID0gRHVyYXRpb25ITVModGltZS5Ib3VyKQoJYXNzZXJ0LkVxdWFsKDEsIGgpCglhc3NlcnQuRXF1YWwoMCwgbSkKCWFzc2VydC5FcXVhbCgwLCBzKQoJaCwgbSwgcyA9IER1cmF0aW9uSE1TKDU5ICogdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoMCwgaCkKCWFzc2VydC5FcXVhbCgwLCBtKQoJYXNzZXJ0LkVxdWFsKDU5LCBzKQoJaCwgbSwgcyA9IER1cmF0aW9uSE1TKDExOSAqIHRpbWUuU2Vjb25kKQoJYXNzZXJ0LkVxdWFsKDAsIGgpCglhc3NlcnQuRXF1YWwoMSwgbSkKCWFzc2VydC5FcXVhbCg1OSwgcykKCWgsIG0sIHMgPSBEdXJhdGlvbkhNUygyMyp0aW1lLkhvdXIgKyA0KnRpbWUuTWludXRlICsgMTMqdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoMjMsIGgpCglhc3NlcnQuRXF1YWwoNCwgbSkKCWFzc2VydC5FcXVhbCgxMywgcykKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -259,7 +259,7 @@
                 }
             ],
             "Signature": "TestFormatTimer(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglvdXQgOj0gRm9ybWF0VGltZXIoMCkKCWFzc2VydC5FcXVhbChgMDowMGAsIG91dCkKCW91dCA9IEZvcm1hdFRpbWVyKHRpbWUuU2Vjb25kKQoJYXNzZXJ0LkVxdWFsKGAwOjAxYCwgb3V0KQoJb3V0ID0gRm9ybWF0VGltZXIodGltZS5NaW51dGUpCglhc3NlcnQuRXF1YWwoYDE6MDBgLCBvdXQpCglvdXQgPSBGb3JtYXRUaW1lcih0aW1lLkhvdXIpCglhc3NlcnQuRXF1YWwoYDE6MDA6MDBgLCBvdXQpCglvdXQgPSBGb3JtYXRUaW1lcig1OSAqIHRpbWUuU2Vjb25kKQoJYXNzZXJ0LkVxdWFsKGAwOjU5YCwgb3V0KQoJb3V0ID0gRm9ybWF0VGltZXIoMTE5ICogdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoYDE6NTlgLCBvdXQpCglvdXQgPSBGb3JtYXRUaW1lcigyMyp0aW1lLkhvdXIgKyA0KnRpbWUuTWludXRlICsgMTMqdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoYDIzOjA0OjEzYCwgb3V0KQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgb3V0ID0gRm9ybWF0VGltZXIoMCkKCWFzc2VydC5FcXVhbChgMDowMGAsIG91dCkKCW91dCA9IEZvcm1hdFRpbWVyKHRpbWUuU2Vjb25kKQoJYXNzZXJ0LkVxdWFsKGAwOjAxYCwgb3V0KQoJb3V0ID0gRm9ybWF0VGltZXIodGltZS5NaW51dGUpCglhc3NlcnQuRXF1YWwoYDE6MDBgLCBvdXQpCglvdXQgPSBGb3JtYXRUaW1lcih0aW1lLkhvdXIpCglhc3NlcnQuRXF1YWwoYDE6MDA6MDBgLCBvdXQpCglvdXQgPSBGb3JtYXRUaW1lcig1OSAqIHRpbWUuU2Vjb25kKQoJYXNzZXJ0LkVxdWFsKGAwOjU5YCwgb3V0KQoJb3V0ID0gRm9ybWF0VGltZXIoMTE5ICogdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoYDE6NTlgLCBvdXQpCglvdXQgPSBGb3JtYXRUaW1lcigyMyp0aW1lLkhvdXIgKyA0KnRpbWUuTWludXRlICsgMTMqdGltZS5TZWNvbmQpCglhc3NlcnQuRXF1YWwoYDIzOjA0OjEzYCwgb3V0KQp9",
             "IsPackageLevel": true
         },
         {
@@ -271,7 +271,7 @@
                 }
             ],
             "Signature": "TestParseDuration(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2LCBlcnIgOj0gUGFyc2VEdXJhdGlvbihgYCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5aZXJvKHYpCglmb3IgaW4sIG91dCA6PSByYW5nZSBtYXBbc3RyaW5nXXRpbWUuRHVyYXRpb257YDRoYDogdGltZS5EdXJhdGlvbig0ICogdGltZS5Ib3VyKSwgYDRIYDogdGltZS5EdXJhdGlvbig0ICogdGltZS5Ib3VyKSwgYDFkYDogdGltZS5EdXJhdGlvbigyNCAqIHRpbWUuSG91ciksIGAxZGF5YDogdGltZS5EdXJhdGlvbigyNCAqIHRpbWUuSG91ciksIGAxZGF5c2A6IHRpbWUuRHVyYXRpb24oMjQgKiB0aW1lLkhvdXIpLCBgNSB5ZWFycyA0IHdlZWtzIDMgZGF5cyAyIGhvdXJzIDEgbWludXRlYDogdGltZS5EdXJhdGlvbig0NDU0Nip0aW1lLkhvdXIpICsgdGltZS5NaW51dGUsIGAxZDFoYDogdGltZS5EdXJhdGlvbigyNSAqIHRpbWUuSG91ciksIGAxZCAxaGA6IHRpbWUuRHVyYXRpb24oMjUgKiB0aW1lLkhvdXIpfSB7CgkJdiwgZXJyIDo9IFBhcnNlRHVyYXRpb24oaW4pCgkJYXNzZXJ0Lk5vRXJyb3IoZXJyKQoJCWFzc2VydC5FcXVhbChvdXQsIHYsIGZtdC5TcHJpbnRmKCJpbj0ldiIsIGluKSkKCX0KfQ==",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2LCBlcnIgOj0gUGFyc2VEdXJhdGlvbihgYCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5aZXJvKHYpCglmb3IgaW4sIG91dCA6PSByYW5nZSBtYXBbc3RyaW5nXXRpbWUuRHVyYXRpb257YDRoYDogdGltZS5EdXJhdGlvbig0ICogdGltZS5Ib3VyKSwgYDRIYDogdGltZS5EdXJhdGlvbig0ICogdGltZS5Ib3VyKSwgYDFkYDogdGltZS5EdXJhdGlvbigyNCAqIHRpbWUuSG91ciksIGAxZGF5YDogdGltZS5EdXJhdGlvbigyNCAqIHRpbWUuSG91ciksIGAxZGF5c2A6IHRpbWUuRHVyYXRpb24oMjQgKiB0aW1lLkhvdXIpLCBgNSB5ZWFycyA0IHdlZWtzIDMgZGF5cyAyIGhvdXJzIDEgbWludXRlYDogdGltZS5EdXJhdGlvbig0NDU0Nip0aW1lLkhvdXIpICsgdGltZS5NaW51dGUsIGAxZDFoYDogdGltZS5EdXJhdGlvbigyNSAqIHRpbWUuSG91ciksIGAxZCAxaGA6IHRpbWUuRHVyYXRpb24oMjUgKiB0aW1lLkhvdXIpfSB7CgkJdiwgZXJyIDo9IFBhcnNlRHVyYXRpb24oaW4pCgkJYXNzZXJ0Lk5vRXJyb3IoZXJyKQoJCWFzc2VydC5FcXVhbChvdXQsIHYsIGZtdC5TcHJpbnRmKCJpbj0ldiIsIGluKSkKCX0KfQ==",
             "IsPackageLevel": true
         }
     ]

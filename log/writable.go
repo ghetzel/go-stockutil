@@ -27,8 +27,8 @@ func (self *WritableLogger) SetParserFunc(fn LogParseFunc) *WritableLogger {
 func (self *WritableLogger) Write(p []byte) (int, error) {
 	initLogging()
 
-	lvl := self.level
-	line := string(p)
+	var lvl = self.level
+	var line = string(p)
 
 	if self.levelFn != nil {
 		if newLevel, rewritten := self.levelFn(line); rewritten != `` {

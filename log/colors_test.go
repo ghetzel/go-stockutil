@@ -7,7 +7,7 @@ import (
 )
 
 func TestCSprintf(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal("this \x1b[0;30mblack\x1b[0m word", CSprintf("this ${black}black${reset} word"))
 	assert.Equal("this \x1b[0;31mred\x1b[0m word", CSprintf("this ${red}red${reset} word"))

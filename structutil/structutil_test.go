@@ -20,9 +20,9 @@ type tPerson struct {
 }
 
 func TestFieldsFunc(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	out := make(map[string]interface{})
+	var out = make(map[string]any)
 
 	FieldsFunc(&TBase{
 		Name:    `hello`,
@@ -37,7 +37,7 @@ func TestFieldsFunc(t *testing.T) {
 		return nil
 	})
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`Name`:    `hello`,
 		`Age`:     32,
 		`Enabled`: true,
@@ -45,15 +45,15 @@ func TestFieldsFunc(t *testing.T) {
 }
 
 func TestCopyFunc(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	dest := tPerson{
+	var dest = tPerson{
 		TBase: &TBase{
 			Enabled: true,
 		},
 	}
 
-	src := tPerson{
+	var src = tPerson{
 		TBase: &TBase{
 			Name: `Bob Johnson`,
 			Age:  42,

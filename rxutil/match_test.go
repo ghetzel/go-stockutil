@@ -7,9 +7,9 @@ import (
 )
 
 func TestMatch(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	match := Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
+	var match = Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
 	assert.NotNil(match)
 
 	assert.Equal(`1234.5678.9`, match.Group(0))
@@ -24,9 +24,9 @@ func TestMatch(t *testing.T) {
 }
 
 func TestMatchAndMap(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	match := Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
+	var match = Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
 	assert.NotNil(match)
 
 	assert.Equal(`1234.5678.9`, match.Group(0))
@@ -37,18 +37,18 @@ func TestMatchAndMap(t *testing.T) {
 }
 
 func TestMatchCaptures(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	match := Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
+	var match = Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
 	assert.NotNil(match)
 
 	assert.Equal([]string{`1234.5678.9`, `1234`, `5678`, `9`}, match.Captures())
 }
 
 func TestReplaceGroup(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	match := Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
+	var match = Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
 	assert.NotNil(match)
 
 	assert.Equal(`repl`, match.ReplaceGroup(0, `repl`))
@@ -59,9 +59,9 @@ func TestReplaceGroup(t *testing.T) {
 }
 
 func TestReplaceGroupNamed(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	match := Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
+	var match = Match(`(?P<first>\d+)\.(\d+).(?P<second>\d+)`, `1234.5678.9`)
 	assert.NotNil(match)
 
 	assert.Equal(`first.5678.9`, match.ReplaceGroup(`first`, `first`))

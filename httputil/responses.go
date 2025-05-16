@@ -17,7 +17,7 @@ import (
 
 var FormUnmarshalStructTag = `json`
 
-type RequestParseFunc func(*http.Request, interface{}) error
+type RequestParseFunc func(*http.Request, any) error
 
 // specifies a mapping between Content-Type (first by exact match, then by just the Media Type component)
 // The "empty string" key is the default if no other keys match first.
@@ -37,14 +37,14 @@ func SetContentTypeParser(contentType string, parser RequestParseFunc) {
 // a status is given, that will be used as the HTTP response status.  If data is an error, and no
 // status is given, the status will be "500 Internal Server Error"; if data is nil, the status will
 // be "204 No Content".  The Content-Type of the response is "application/json".
-func RespondJSON(w http.ResponseWriter, data interface{}, status ...int) {
+func RespondJSON(w http.ResponseWriter, data any, status ...int) {
 	w.Header().Set(`Content-Type`, `application/json`)
 
 	var headerSent bool
 	var finalStatus int
 
 	if err, ok := data.(error); ok && err != nil {
-		data = map[string]interface{}{
+		data = map[string]any{
 			`success`: false,
 			`error`:   err.Error(),
 		}
@@ -72,19 +72,19 @@ func RespondJSON(w http.ResponseWriter, data interface{}, status ...int) {
 }
 
 // Parses the Request as JSON and unmarshals into the given value.
-func ParseJSONRequest(req *http.Request, into interface{}) error {
+func ParseJSONRequest(req *http.Request, into any) error {
 	return ParseJSON(req.Body, into)
 }
 
 // Parses a given reader as a JSON document and unmarshals into the given value.
-func ParseJSON(r io.Reader, into interface{}) error {
+func ParseJSON(r io.Reader, into any) error {
 	return json.NewDecoder(r).Decode(into)
 }
 
 // Parses a set of values received from an HTML form (usually the value of the
 // http.Request.Form property) and unmarshals into the given value.
-func ParseFormValues(formValues url.Values, into interface{}) error {
-	var data = make(map[string]interface{})
+func ParseFormValues(formValues url.Values, into any) error {
+	var data = make(map[string]any)
 
 	for key, values := range formValues {
 		values = sliceutil.CompactString(values)
@@ -116,7 +116,7 @@ func ParseFormValues(formValues url.Values, into interface{}) error {
 }
 
 // Parses the form values for a Request and unmarshals into the given value.
-func ParseFormRequest(req *http.Request, into interface{}) error {
+func ParseFormRequest(req *http.Request, into any) error {
 	if err := req.ParseForm(); err == nil {
 		if req.Method == `POST` {
 			return ParseFormValues(req.PostForm, into)
@@ -130,8 +130,8 @@ func ParseFormRequest(req *http.Request, into interface{}) error {
 
 // Autodetect the Content-Type of the given request and unmarshals into the
 // given value.
-func ParseRequest(req *http.Request, into interface{}) error {
-	contentType := req.Header.Get(`Content-Type`)
+func ParseRequest(req *http.Request, into any) error {
+	var contentType = req.Header.Get(`Content-Type`)
 
 	// look for an exact match first based on the entire Content-Type value (mediatype + params)
 	if parser, ok := parsers[contentType]; ok {

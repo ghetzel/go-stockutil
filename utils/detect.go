@@ -6,8 +6,8 @@ import (
 	"strings"
 )
 
-func IsInteger(in interface{}) bool {
-	inV := reflect.ValueOf(in)
+func IsInteger(in any) bool {
+	var inV = reflect.ValueOf(in)
 
 	switch inV.Kind() {
 	case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64, reflect.Uint,
@@ -25,8 +25,8 @@ func IsInteger(in interface{}) bool {
 	return false
 }
 
-func IsFloat(in interface{}) bool {
-	inV := reflect.ValueOf(in)
+func IsFloat(in any) bool {
+	var inV = reflect.ValueOf(in)
 
 	switch inV.Kind() {
 	case reflect.Float32, reflect.Float64:
@@ -43,7 +43,7 @@ func IsFloat(in interface{}) bool {
 	return false
 }
 
-func IsHexadecimal(in interface{}) bool {
+func IsHexadecimal(in any) bool {
 	if inS, err := ToString(in); err == nil {
 		inS = strings.ToLower(inS)
 
@@ -67,11 +67,11 @@ func IsHexadecimal(in interface{}) bool {
 	return true
 }
 
-func IsNumeric(in interface{}) bool {
+func IsNumeric(in any) bool {
 	return IsFloat(in)
 }
 
-func IsBoolean(inI interface{}) bool {
+func IsBoolean(inI any) bool {
 	if in, err := ToString(inI); err == nil {
 		in = strings.ToLower(in)
 
@@ -81,7 +81,7 @@ func IsBoolean(inI interface{}) bool {
 	return false
 }
 
-func IsBooleanTrue(inI interface{}) bool {
+func IsBooleanTrue(inI any) bool {
 	if in, err := ToString(inI); err == nil {
 		in = strings.ToLower(in)
 
@@ -95,7 +95,7 @@ func IsBooleanTrue(inI interface{}) bool {
 	return false
 }
 
-func IsBooleanFalse(inI interface{}) bool {
+func IsBooleanFalse(inI any) bool {
 	if in, err := ToString(inI); err == nil {
 		in = strings.ToLower(in)
 
@@ -109,7 +109,7 @@ func IsBooleanFalse(inI interface{}) bool {
 	return false
 }
 
-func IsTime(inI interface{}) bool {
+func IsTime(inI any) bool {
 	if in, err := ToString(inI); err == nil {
 		if f := DetectTimeFormat(in); f != `` && f != `epoch` {
 			return true

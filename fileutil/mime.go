@@ -535,7 +535,7 @@ func InitMime() {
 
 				mimetype, extset := stringutil.SplitPair(line, ` `)
 				mimetype = strings.TrimSpace(mimetype)
-				exts := strings.Split(strings.TrimSpace(extset), ` `)
+				var exts = strings.Split(strings.TrimSpace(extset), ` `)
 
 				for _, ext := range exts {
 					ext = strings.TrimSpace(ext)
@@ -556,7 +556,7 @@ func InitMime() {
 // GetMimeType goes out of its way to really, really try to figure out the MIME type of a given
 // filename or io.Reader.  If the first argument satisfies the io.Seeker interface, the seeker
 // will Seek() back to the beginning.  If it satisfies the io.Closer interface, it will be closed.
-func GetMimeType(filenameOrReader interface{}, fallback ...string) string {
+func GetMimeType(filenameOrReader any, fallback ...string) string {
 	once.Do(InitMime)
 
 	if filename, ok := filenameOrReader.(string); ok {

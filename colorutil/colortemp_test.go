@@ -53,7 +53,7 @@ func BenchmarkKelvinToColor(b *testing.B) {
 }
 
 func TestKelvinToColor(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for k, rgba := range map[int][3]uint8{
 		1850: [3]uint8{255, 130, 0},

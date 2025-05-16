@@ -14,7 +14,7 @@ func (self *fmtStringerTest) String() string {
 }
 
 func TestConvertToString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	v, err := ConvertTo(String, nil)
 	assert.NoError(err)
@@ -29,9 +29,9 @@ func TestConvertToString(t *testing.T) {
 	assert.Equal(`test`, v)
 }
 func TestToString(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	testvalues := map[interface{}]string{
+	var testvalues = map[any]string{
 		nil:                        ``,
 		fmt.Errorf(`error-worked`): `error-worked`,
 		new(fmtStringerTest):       `stringer-worked`,
@@ -88,7 +88,7 @@ func TestToString(t *testing.T) {
 }
 
 func TestToStringSlice(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	v, err := ToStringSlice([]string{`a`, `b`, `c`})
 	assert.Nil(err)
@@ -106,7 +106,7 @@ func TestToStringSlice(t *testing.T) {
 	assert.Nil(err)
 	assert.Equal([]string{`1.5`, `2.7`, `3.9832412754892137`}, v)
 
-	v, err = ToStringSlice([]interface{}{1, true, 3.9832412754892137, `four`})
+	v, err = ToStringSlice([]any{1, true, 3.9832412754892137, `four`})
 	assert.Nil(err)
 	assert.Equal([]string{`1`, `true`, `3.9832412754892137`, `four`}, v)
 

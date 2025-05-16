@@ -11,7 +11,7 @@ import (
 )
 
 func TestConvertToFloat(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	type testFloat float64
 	const (
@@ -62,7 +62,7 @@ func TestConvertToFloat(t *testing.T) {
 }
 
 func TestConvertToInteger(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	v, err := ConvertTo(Integer, nil)
 	assert.NoError(err)
@@ -76,7 +76,7 @@ func TestConvertToInteger(t *testing.T) {
 	assert.NoError(err)
 	assert.Equal(int64(7), v)
 
-	tm := time.Date(2010, 2, 21, 15, 14, 13, 0, time.UTC)
+	var tm = time.Date(2010, 2, 21, 15, 14, 13, 0, time.UTC)
 
 	v, err = ConvertTo(Integer, tm)
 	assert.NoError(err)
@@ -119,7 +119,7 @@ func TestConvertToInteger(t *testing.T) {
 }
 
 func TestConvertToBytes(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	v, err := ConvertTo(Bytes, nil)
 	assert.NoError(err)
@@ -143,7 +143,7 @@ func TestConvertToBytes(t *testing.T) {
 }
 
 func TestConvertToBoolean(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	v, err := ConvertTo(Boolean, nil)
 	assert.Equal(false, v)
@@ -174,11 +174,11 @@ func TestConvertToBoolean(t *testing.T) {
 }
 
 func TestConvertToTime(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	atLeastNow := time.Now()
+	var atLeastNow = time.Now()
 
-	values := map[string]time.Time{
+	var values = map[string]time.Time{
 		`2015-05-01 00:15:16`:         time.Date(2015, 5, 1, 0, 15, 16, 0, time.UTC),
 		`Fri May 1 00:15:16 UTC 2015`: time.Date(2015, 5, 1, 0, 15, 16, 0, time.UTC),
 		// `Fri May 01 00:15:16 +0000 2015`: time.Date(2015, 5, 1, 0, 15, 16, 0, time.UTC),
@@ -227,7 +227,7 @@ func TestConvertToTime(t *testing.T) {
 }
 
 func TestAutotypeNil(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for _, testValue := range []string{
 		``,
@@ -243,7 +243,7 @@ func TestAutotypeNil(t *testing.T) {
 }
 
 func TestAutotypeFloat(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for _, testValue := range []string{
 		`-0.00000000001`,
@@ -258,7 +258,7 @@ func TestAutotypeFloat(t *testing.T) {
 }
 
 func TestAutotypeInt(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for _, testValue := range []string{
 		`-1`,
@@ -274,7 +274,7 @@ func TestAutotypeInt(t *testing.T) {
 }
 
 func TestAutotypePreserveLeadingZeroes(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for _, testValue := range []string{
 		`00`,
@@ -288,17 +288,17 @@ func TestAutotypePreserveLeadingZeroes(t *testing.T) {
 }
 
 func TestAutotypeDate(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for _, testValue := range TimeFormats {
-		tvS := strings.Replace(string(testValue), `_`, ``, -1)
+		var tvS = strings.Replace(string(testValue), `_`, ``, -1)
 		tvS = strings.TrimSuffix(tvS, `07:00`)
 		assert.IsType(time.Now(), Autotype(tvS))
 	}
 }
 
 func TestAutotypeBool(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	for _, testValue := range []string{
 		`true`,

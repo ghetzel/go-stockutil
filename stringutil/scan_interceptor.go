@@ -74,11 +74,11 @@ func (self *ScanInterceptor) Scan(data []byte, atEOF bool) (advance int, token [
 		// we go to work...
 		if processedLen := self.accumulator.Len(); processedLen >= self.longestSubsequence {
 			// get the bytes we've accumulated since start or the last time we reset
-			soFar := self.accumulator.Bytes()
+			var soFar = self.accumulator.Bytes()
 
 			// for each registered subsequence...
 			for k, handler := range self.subsequences {
-				subseq := []byte(k)
+				var subseq = []byte(k)
 
 				// skip zero-length matches
 				if len(subseq) == 0 {
@@ -94,13 +94,13 @@ func (self *ScanInterceptor) Scan(data []byte, atEOF bool) (advance int, token [
 					continue
 				}
 
-				work := soFar
+				var work = soFar
 
 				// find the index in the stream of our match (if any)
 				for {
 					if indexOf := bytes.Index(work, subseq); indexOf >= 0 {
 						// mark the end of the stream (so we ensure we dont fire events for anything before this point)
-						endIndex := indexOf + len(subseq)
+						var endIndex = indexOf + len(subseq)
 
 						// fire the handler
 						handler(work[indexOf:endIndex])

@@ -21,10 +21,10 @@ type testMstruct struct {
 }
 
 func TestM(t *testing.T) {
-	assert := require.New(t)
-	input := M(map[string]interface{}{
+	var assert = require.New(t)
+	var input = M(map[string]any{
 		`first`: true,
-		`second`: map[string]interface{}{
+		`second`: map[string]any{
 			`s1`:     `test`,
 			`values`: []int{1, 2, 3, 4},
 			`truthy`: `True`,
@@ -34,6 +34,17 @@ func TestM(t *testing.T) {
 		`now`:    time.Now(),
 		`third`:  3.1415,
 		`fourth`: 42,
+		`mapslice`: []any{
+			map[string]any{
+				`id`: 1,
+			},
+			map[string]any{
+				`id`: 2,
+			},
+			map[string]any{
+				`id`: 3,
+			},
+		},
 	})
 
 	assert.Equal(``, M(nil).String(`lol`))
@@ -58,12 +69,20 @@ func TestM(t *testing.T) {
 	assert.Equal(int64(42), input.Auto(`second.strnum`))
 	assert.Equal(time.Date(2006, 1, 2, 0, 0, 0, 0, time.UTC), input.Time(`second.then`))
 
+	var mapvals []int64
+
+	for _, ms := range input.SliceOfMaps(`mapslice`) {
+		mapvals = append(mapvals, ms.Int(`id`))
+	}
+
+	assert.Equal([]int64{1, 2, 3}, mapvals)
+
 	assert.Equal(2, input.JSONPath(`$..values[1]`, 42))
 	assert.Equal(42, input.JSONPath(`$..values[99]`, 42))
 
-	assert.Equal(5, input.Len())
-	k := make([]string, 5)
-	i := 0
+	assert.Equal(6, input.Len())
+	var k = make([]string, 6)
+	var i = 0
 
 	assert.NoError(input.Each(func(key string, value typeutil.Variant) error {
 		k[i] = key
@@ -71,12 +90,12 @@ func TestM(t *testing.T) {
 		return nil
 	}))
 
-	assert.ElementsMatch(k, []string{`first`, `second`, `third`, `fourth`, `now`})
+	assert.ElementsMatch(k, []string{`first`, `second`, `third`, `fourth`, `now`, `mapslice`})
 }
 
 func TestMSet(t *testing.T) {
-	assert := require.New(t)
-	input := M(nil)
+	var assert = require.New(t)
+	var input = M(nil)
 
 	assert.Equal(``, input.String(`lol`))
 
@@ -86,8 +105,8 @@ func TestMSet(t *testing.T) {
 }
 
 func TestMStruct(t *testing.T) {
-	assert := require.New(t)
-	input := M(&testMstruct{
+	var assert = require.New(t)
+	var input = M(&testMstruct{
 		ID:     `123`,
 		Name:   `tester`,
 		Factor: 3.14,
@@ -99,20 +118,20 @@ func TestMStruct(t *testing.T) {
 	assert.Equal(`tester`, input.String(`Name`))
 	assert.Equal(3.14, input.Float(`Factor`))
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`id`:     `123`,
 		`Name`:   `tester`,
 		`Factor`: 3.14,
 	}, input.MapNative())
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`_id`:    `123`,
 		`NAME`:   `tester`,
 		`Factor`: 3.14,
 	}, input.MapNative(`json`))
 
 	var keys []string
-	var values []interface{}
+	var values []any
 
 	for item := range input.Iter() {
 		keys = append(keys, item.K)
@@ -120,12 +139,12 @@ func TestMStruct(t *testing.T) {
 	}
 
 	assert.ElementsMatch([]string{`id`, `Name`, `Factor`}, keys)
-	assert.ElementsMatch([]interface{}{`123`, `tester`, float64(3.14)}, values)
+	assert.ElementsMatch([]any{`123`, `tester`, float64(3.14)}, values)
 }
 
 func TestMUrlValues(t *testing.T) {
-	assert := require.New(t)
-	input := M(url.Values{
+	var assert = require.New(t)
+	var input = M(url.Values{
 		`a`: []string{`1`},
 		`b`: []string{},
 		`c`: []string{`2`, `3`},
@@ -142,8 +161,8 @@ func TestMUrlValues(t *testing.T) {
 }
 
 func TestMHttpHeader(t *testing.T) {
-	assert := require.New(t)
-	input := M(http.Header{
+	var assert = require.New(t)
+	var input = M(http.Header{
 		`a`: []string{`1`},
 		`b`: []string{},
 		`c`: []string{`2`, `3`},
@@ -160,12 +179,12 @@ func TestMHttpHeader(t *testing.T) {
 }
 
 func TestMStructNested(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	type msecond struct {
 		S1     string
 		Values []int
-		Truthy interface{}
+		Truthy any
 		Strnum string
 		Then   string
 	}
@@ -178,7 +197,7 @@ func TestMStructNested(t *testing.T) {
 		Fourth int
 	}
 
-	input := M(mtop{
+	var input = M(mtop{
 		First: true,
 		Second: msecond{
 			S1:     `test`,
@@ -208,25 +227,25 @@ func TestMStructNested(t *testing.T) {
 }
 
 func TestMMarshalJSON(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	m := M(map[string]interface{}{
+	var m = M(map[string]any{
 		`hello`: 1,
 		`there`: true,
-		`general`: map[string]interface{}{
+		`general`: map[string]any{
 			`kenobi`: true,
 		},
 		`xyz`: []string{`a`, `b`, `c`},
-		`zzz`: []map[string]interface{}{
-			map[string]interface{}{
+		`zzz`: []map[string]any{
+			map[string]any{
 				`name`:  `a`,
 				`value`: 0,
 			},
-			map[string]interface{}{
+			map[string]any{
 				`name`:  `b`,
 				`value`: 1,
 			},
-			map[string]interface{}{
+			map[string]any{
 				`name`:  `c`,
 				`value`: 2,
 			},
@@ -239,30 +258,30 @@ func TestMMarshalJSON(t *testing.T) {
 }
 
 func TestMUnmarshalJSON(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	js := []byte(`{"general":{"kenobi":true},"hello":1,"there":true,"xyz":["a","b","c"],"zzz":[{"name":"a","value":0},{"name":"b","value":1},{"name":"c","value":2}]}`)
+	var js = []byte(`{"general":{"kenobi":true},"hello":1,"there":true,"xyz":["a","b","c"],"zzz":[{"name":"a","value":0},{"name":"b","value":1},{"name":"c","value":2}]}`)
 
 	var m Map
 
 	assert.NoError(json.Unmarshal(js, &m))
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`hello`: float64(1),
 		`there`: true,
-		`general`: map[string]interface{}{
+		`general`: map[string]any{
 			`kenobi`: true,
 		},
-		`xyz`: []interface{}{`a`, `b`, `c`},
-		`zzz`: []interface{}{
-			map[string]interface{}{
+		`xyz`: []any{`a`, `b`, `c`},
+		`zzz`: []any{
+			map[string]any{
 				`name`:  `a`,
 				`value`: float64(0),
 			},
-			map[string]interface{}{
+			map[string]any{
 				`name`:  `b`,
 				`value`: float64(1),
 			},
-			map[string]interface{}{
+			map[string]any{
 				`name`:  `c`,
 				`value`: float64(2),
 			},
@@ -276,25 +295,25 @@ func TestMUnmarshalJSON(t *testing.T) {
 }
 
 func TestMMarshalXML(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	m := M(map[string]interface{}{
+	var m = M(map[string]any{
 		`hello`: 1,
 		`there`: true,
-		`general`: map[string]interface{}{
+		`general`: map[string]any{
 			`kenobi`: true,
 		},
 		`xyz`: []string{`a`, `b`, `c`},
-		`zzz`: []map[string]interface{}{
-			map[string]interface{}{
+		`zzz`: []map[string]any{
+			map[string]any{
 				`name`:  `a`,
 				`value`: 0,
 			},
-			map[string]interface{}{
+			map[string]any{
 				`name`:  `b`,
 				`value`: 1,
 			},
-			map[string]interface{}{
+			map[string]any{
 				`name`:  `c`,
 				`value`: 2,
 			},
@@ -336,8 +355,8 @@ func TestMMarshalXML(t *testing.T) {
 }
 
 func TestMIter(t *testing.T) {
-	assert := require.New(t)
-	input := M(map[string]interface{}{
+	var assert = require.New(t)
+	var input = M(map[string]any{
 		`a`: 1,
 		`b`: 2,
 		`c`: 3,
@@ -370,10 +389,10 @@ func TestMIter(t *testing.T) {
 }
 
 func TestMJson(t *testing.T) {
-	assert := require.New(t)
-	m := M(`{"hello": "there", "general": "kenobi"}`)
+	var assert = require.New(t)
+	var m = M(`{"hello": "there", "general": "kenobi"}`)
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`hello`:   `there`,
 		`general`: `kenobi`,
 	}, m.MapNative())
@@ -382,7 +401,7 @@ func TestMJson(t *testing.T) {
 
 	m.Delete(`general`)
 
-	assert.Equal(map[string]interface{}{
+	assert.Equal(map[string]any{
 		`hello`: `there`,
 	}, m.MapNative())
 
@@ -393,34 +412,34 @@ func TestMJson(t *testing.T) {
 func TestMMerge(t *testing.T) {
 	var m = NewMap()
 
-	assert.Equal(t, map[string]interface{}{}, m.MapNative())
+	assert.Equal(t, map[string]any{}, m.MapNative())
 
-	m.Merge(map[string]interface{}{
+	m.Merge(map[string]any{
 		`a`: 1,
 		`b`: 2,
 	})
 
-	assert.Equal(t, map[string]interface{}{
+	assert.Equal(t, map[string]any{
 		`a`: 1,
 		`b`: 2,
 	}, m.MapNative())
 
-	m.Merge(map[string]interface{}{
+	m.Merge(map[string]any{
 		`b`: 2.1,
 		`c`: 3,
 	})
 
-	assert.Equal(t, map[string]interface{}{
+	assert.Equal(t, map[string]any{
 		`a`: 1,
 		`b`: 2.1,
 		`c`: 3,
 	}, m.MapNative())
 
-	m.Merge(map[string]interface{}{
+	m.Merge(map[string]any{
 		`b`: nil,
 	})
 
-	assert.Equal(t, map[string]interface{}{
+	assert.Equal(t, map[string]any{
 		`a`: 1,
 		`b`: nil,
 		`c`: 3,
@@ -428,7 +447,7 @@ func TestMMerge(t *testing.T) {
 
 	m.Compact()
 
-	assert.Equal(t, map[string]interface{}{
+	assert.Equal(t, map[string]any{
 		`a`: 1,
 		`c`: 3,
 	}, m.MapNative())

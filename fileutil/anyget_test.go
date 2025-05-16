@@ -1,8 +1,9 @@
 package fileutil
 
 import (
+	"context"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -14,7 +15,7 @@ import (
 	"github.com/ghetzel/testify/assert"
 )
 
-func testHttpServer(t *testing.T, mustHeaders ...map[string]interface{}) *httptest.Server {
+func testHttpServer(t *testing.T, mustHeaders ...map[string]any) *httptest.Server {
 	return httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, req *http.Request) {
 		if len(mustHeaders) > 0 {
 			for k, v := range maputil.M(mustHeaders[0]).MapNative() {
@@ -44,10 +45,10 @@ func TestRetrieve(t *testing.T) {
 		"file:///testdir/a.txt": "a\n",
 		server.URL + "/hello":   "OK",
 	} {
-		var rc, err = Retrieve(nil, uri)
+		var rc, err = Retrieve(context.TODO(), uri)
 		assert.NoError(t, err, uri)
 
-		var actual, rerr = ioutil.ReadAll(rc)
+		var actual, rerr = io.ReadAll(rc)
 
 		assert.NoError(t, rc.Close(), uri)
 		assert.NoError(t, rerr, uri)

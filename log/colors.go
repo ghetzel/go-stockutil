@@ -14,13 +14,13 @@ var rxColorExpr = regexp.MustCompile(`(\$\{(?P<color>[^\}]+)\})`) // ${color}, $
 var TerminalEscapePrefix = `\[`
 var TerminalEscapeSuffix = `\]`
 
-func csprintf(termEscape bool, colorEnabled bool, format string, args ...interface{}) string {
-	out := fmt.Sprintf(format, args...)
+func csprintf(termEscape bool, colorEnabled bool, format string, args ...any) string {
+	var out = fmt.Sprintf(format, args...)
 
 	for {
 		if match := rxutil.Match(rxColorExpr, out); match != nil {
-			colorExpr := match.Group(`color`)
-			repl := ``
+			var colorExpr = match.Group(`color`)
+			var repl = ``
 
 			// only replace with the actual ANSI escape sequences if we're at a tty
 			// or if colors have been explicitly enabled, otherwise just remove the sequences
@@ -41,20 +41,20 @@ func csprintf(termEscape bool, colorEnabled bool, format string, args ...interfa
 	return out
 }
 
-func CSprintf(format string, args ...interface{}) string {
+func CSprintf(format string, args ...any) string {
 	return csprintf(false, true, format, args...)
 }
 
-func CFPrintf(w io.Writer, format string, args ...interface{}) (int, error) {
+func CFPrintf(w io.Writer, format string, args ...any) (int, error) {
 	return fmt.Fprint(w, CSprintf(format, args...))
 }
 
-func CStripf(format string, args ...interface{}) string {
+func CStripf(format string, args ...any) string {
 	return csprintf(false, false, format, args...)
 }
 
 // Same as CSprintf, but wraps all replaced color sequences with terminal escape sequences
 // as defined in TerminalEscapePrefix and TerminalEscapeSuffix
-func TermSprintf(format string, args ...interface{}) string {
+func TermSprintf(format string, args ...any) string {
 	return csprintf(true, true, format, args...)
 }

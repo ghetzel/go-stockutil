@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -141,7 +141,7 @@
 	</span>
 </div>
 
-<span class="pull-right">Doc Coverage: 58%</span>
+<span class="pull-right">Doc Coverage: 59%</span>
 <h2 id="pkg-overview">package maputil</h2>
 
 <p>
@@ -175,217 +175,223 @@
 	
     <li>
 		
-		<a href="#Append">func Append(maps ...map[string]interface{}) map[string]interface{}</a>
+		<a href="#Append">func Append(maps ...map[string]any) map[string]any</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Apply">func Apply(input interface{}, fn ApplyFunc) map[string]interface{}</a>
+		<a href="#Apply">func Apply(input any, fn ApplyFunc) map[string]any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ApplyStruct">func ApplyStruct(input interface{}, fn ApplyFunc) map[string]interface{}</a>
+		<a href="#ApplyStruct">func ApplyStruct(input any, fn ApplyFunc) map[string]any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Autotype">func Autotype(input interface{}) map[string]interface{}</a>
+		<a href="#Autotype">func Autotype(input any) map[string]any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#CoalesceMap">func CoalesceMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error)</a>
+		<a href="#CoalesceMap">func CoalesceMap(data map[string]any, fieldJoiner string) (map[string]any, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#CoalesceMapTyped">func CoalesceMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error)</a>
+		<a href="#CoalesceMapTyped">func CoalesceMapTyped(data map[string]any, fieldJoiner string, typePrefixSeparator string) (map[string]any, []error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Compact">func Compact(input map[string]interface{}) (map[string]interface{}, error)</a>
+		<a href="#Compact">func Compact(input map[string]any) (map[string]any, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#DeepCopy">func DeepCopy(input interface{}) map[string]interface{}</a>
+		<a href="#DeepCopy">func DeepCopy(input any) map[string]any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#DeepCopyStruct">func DeepCopyStruct(input interface{}) map[string]interface{}</a>
-		</strong>
-	</li>
-	
-    <li>
-		
-		<a href="#DeepGet">func DeepGet(data interface{}, path []string, fallbacks ...interface{}) interface{}</a>
-		
-	</li>
-	
-    <li>
-		
-		<a href="#DeepGetBool">func DeepGetBool(data interface{}, path []string) bool</a>
-		
-	</li>
-	
-    <li>
-		
-		<a href="#DeepGetString">func DeepGetString(data interface{}, path []string) string</a>
-		
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#DeepJoin">func DeepJoin(input interface{}, innerJoiner string, outerJoiner string, nestedSeparator string) string</a>
+		<a href="#DeepCopyStruct">func DeepCopyStruct(input any) map[string]any</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#DeepSet">func DeepSet(data interface{}, path []string, value interface{}) interface{}</a>
+		<a href="#DeepGet">func DeepGet(data any, path []string, fallbacks ...any) any</a>
+		
+	</li>
+	
+    <li>
+		
+		<a href="#DeepGetBool">func DeepGetBool(data any, path []string) bool</a>
+		
+	</li>
+	
+    <li>
+		
+		<a href="#DeepGetString">func DeepGetString(data any, path []string) string</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Delete">func Delete(data interface{}, key interface{}) error</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#DiffuseMap">func DiffuseMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error)</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#DiffuseMapTyped">func DiffuseMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error)</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#Fprintf">func Fprintf(w io.Writer, format string, data ...interface{})</a>
+		<a href="#DeepJoin">func DeepJoin(input any, innerJoiner string, outerJoiner string, nestedSeparator string) string</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#Get">func Get(data interface{}, key string, fallback ...interface{}) interface{}</a>
+		<a href="#DeepSet">func DeepSet(data any, path []string, value any) any</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#JSONPath">func JSONPath(data interface{}, query string) (interface{}, error)</a>
+		<a href="#Delete">func Delete(data any, key any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Join">func Join(input interface{}, innerJoiner string, outerJoiner string) string</a>
+		<a href="#DiffuseMap">func DiffuseMap(data map[string]any, fieldJoiner string) (map[string]any, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Keys">func Keys(input interface{}) []interface{}</a>
+		<a href="#DiffuseMapTyped">func DiffuseMapTyped(data map[string]any, fieldJoiner string, typePrefixSeparator string) (map[string]any, []error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#MapValues">func MapValues(input interface{}) []interface{}</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#Merge">func Merge(first interface{}, second interface{}, options ...MergeOption) (map[string]interface{}, error)</a>
+		<a href="#Fprintf">func Fprintf(w io.Writer, format string, data ...any)</a>
 		</strong>
 	</li>
 	
     <li>
 		
-		<a href="#Pluck">func Pluck(sliceOfMaps interface{}, key []string) []interface{}</a>
+		<a href="#Get">func Get(data any, key string, fallback ...any) any</a>
 		
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Printf">func Printf(format string, data ...interface{})</a>
+		<a href="#JSONPath">func JSONPath(data any, query string) (any, error)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Set">func Set(data interface{}, key interface{}, value interface{}) error</a>
+		<a href="#Join">func Join(input any, innerJoiner string, outerJoiner string) string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Split">func Split(input string, innerJoiner string, outerJoiner string) map[string]interface{}</a>
+		<a href="#Keys">func Keys(input any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Sprintf">func Sprintf(format string, data ...interface{}) string</a>
+		<a href="#MapValues">func MapValues(input any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#StringKeys">func StringKeys(input interface{}) []string</a>
+		<a href="#Merge">func Merge(first any, second any, options ...MergeOption) (map[string]any, error)</a>
+		</strong>
+	</li>
+	
+    <li>
+		
+		<a href="#Pluck">func Pluck(sliceOfMaps any, key []string) []any</a>
+		
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#Printf">func Printf(format string, data ...any)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Stringify">func Stringify(input map[string]interface{}) map[string]string</a>
+		<a href="#Set">func Set(data any, key any, value any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#StructFromMap">func StructFromMap(input map[string]interface{}, populate interface{}) error</a>
+		<a href="#SliceOfMaps">func SliceOfMaps(input any) maps []*Map</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#TaggedStructFromMap">func TaggedStructFromMap(input interface{}, populate interface{}, tagname string) error</a>
+		<a href="#Split">func Split(input string, innerJoiner string, outerJoiner string) map[string]any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#TaggedStructFromMapFunc">func TaggedStructFromMapFunc(input interface{}, populate interface{}, tagname string, converter ConversionFunc) error</a>
+		<a href="#Sprintf">func Sprintf(format string, data ...any) string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Walk">func Walk(input interface{}, walkFn WalkFunc) error</a>
+		<a href="#StringKeys">func StringKeys(input any) []string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#WalkStruct">func WalkStruct(input interface{}, walkFn WalkFunc) error</a>
+		<a href="#Stringify">func Stringify(input map[string]any) map[string]string</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#StructFromMap">func StructFromMap(input map[string]any, populate any) error</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#TaggedStructFromMap">func TaggedStructFromMap(input any, populate any, tagname string) error</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#TaggedStructFromMapFunc">func TaggedStructFromMapFunc(input any, populate any, tagname string, converter ConversionFunc) error</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#Walk">func Walk(input any, walkFn WalkFunc) error</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#WalkStruct">func WalkStruct(input any, walkFn WalkFunc) error</a>
 		</strong>
 	</li>
 	
@@ -424,7 +430,7 @@
 				<a href="#Item.Set">
 					func
 					(self *Item)
-					Set(value interface{}) error
+					Set(value any) error
 				</a>
 				
 			</li>
@@ -510,7 +516,7 @@
 			<li>
 				<strong>
 				<a href="#Map.M">
-					func M(data interface{}) *Map
+					func M(data any) *Map
 				</a>
 				</strong>
 			</li>
@@ -575,6 +581,8 @@
 			
 			
 			
+			
+			
 
 			
 			
@@ -584,7 +592,7 @@
 				<a href="#Map.Auto">
 					func
 					(self *Map)
-					Auto(key string, fallbacks ...interface{}) interface{}
+					Auto(key string, fallbacks ...any) any
 				</a>
 				</strong>
 			</li>
@@ -644,7 +652,7 @@
 				<a href="#Map.Duration">
 					func
 					(self *Map)
-					Duration(key string, fallbacks ...interface{}) time.Duration
+					Duration(key string, fallbacks ...any) time.Duration
 				</a>
 				</strong>
 			</li>
@@ -680,7 +688,7 @@
 				<a href="#Map.Float">
 					func
 					(self *Map)
-					Float(key string, fallbacks ...interface{}) float64
+					Float(key string, fallbacks ...any) float64
 				</a>
 				</strong>
 			</li>
@@ -704,7 +712,7 @@
 				<a href="#Map.Get">
 					func
 					(self *Map)
-					Get(key string, fallbacks ...interface{}) typeutil.Variant
+					Get(key string, fallbacks ...any) typeutil.Variant
 				</a>
 				</strong>
 			</li>
@@ -716,7 +724,7 @@
 				<a href="#Map.Int">
 					func
 					(self *Map)
-					Int(key string, fallbacks ...interface{}) int64
+					Int(key string, fallbacks ...any) int64
 				</a>
 				</strong>
 			</li>
@@ -764,7 +772,7 @@
 				<a href="#Map.JSONPath">
 					func
 					(self *Map)
-					JSONPath(query string, fallback ...interface{}) interface{}
+					JSONPath(query string, fallback ...any) any
 				</a>
 				</strong>
 			</li>
@@ -776,7 +784,7 @@
 				<a href="#Map.Keys">
 					func
 					(self *Map)
-					Keys(tagName ...string) []interface{}
+					Keys(tagName ...string) []any
 				</a>
 				</strong>
 			</li>
@@ -814,7 +822,7 @@
 				<a href="#Map.MapNative">
 					func
 					(self *Map)
-					MapNative(tagName ...string) map[string]interface{}
+					MapNative(tagName ...string) map[string]any
 				</a>
 				</strong>
 			</li>
@@ -862,7 +870,7 @@
 				<a href="#Map.Merge">
 					func
 					(self *Map)
-					Merge(other interface{}) int
+					Merge(other any) int
 				</a>
 				</strong>
 			</li>
@@ -874,7 +882,7 @@
 				<a href="#Map.NInt">
 					func
 					(self *Map)
-					NInt(key string, fallbacks ...interface{}) int
+					NInt(key string, fallbacks ...any) int
 				</a>
 				</strong>
 			</li>
@@ -888,7 +896,7 @@
 				<a href="#Map.Set">
 					func
 					(self *Map)
-					Set(key string, value interface{}) typeutil.Variant
+					Set(key string, value any) typeutil.Variant
 				</a>
 				</strong>
 			</li>
@@ -912,7 +920,7 @@
 				<a href="#Map.SetIfZero">
 					func
 					(self *Map)
-					SetIfZero(key string, value interface{}) (typeutil.Variant, bool)
+					SetIfZero(key string, value any) (typeutil.Variant, bool)
 				</a>
 				</strong>
 			</li>
@@ -960,7 +968,7 @@
 				<a href="#Map.SetValueIfNonZero">
 					func
 					(self *Map)
-					SetValueIfNonZero(key string, value interface{}) (typeutil.Variant, bool)
+					SetValueIfNonZero(key string, value any) (typeutil.Variant, bool)
 				</a>
 				</strong>
 			</li>
@@ -973,6 +981,18 @@
 					func
 					(self *Map)
 					Slice(key string) []typeutil.Variant
+				</a>
+				</strong>
+			</li>
+			
+			
+			
+			<li>
+				<strong>
+				<a href="#Map.SliceOfMaps">
+					func
+					(self *Map)
+					SliceOfMaps(key string) []*Map
 				</a>
 				</strong>
 			</li>
@@ -996,7 +1016,7 @@
 				<a href="#Map.String">
 					func
 					(self *Map)
-					String(key string, fallbacks ...interface{}) string
+					String(key string, fallbacks ...any) string
 				</a>
 				</strong>
 			</li>
@@ -1044,7 +1064,7 @@
 				<a href="#Map.Time">
 					func
 					(self *Map)
-					Time(key string, fallbacks ...interface{}) time.Time
+					Time(key string, fallbacks ...any) time.Time
 				</a>
 				</strong>
 			</li>
@@ -1068,7 +1088,7 @@
 				<a href="#Map.Value">
 					func
 					(self *Map)
-					Value() interface{}
+					Value() any
 				</a>
 				</strong>
 			</li>
@@ -1269,7 +1289,7 @@
 			<a href="003_maputil_diffuse_test.go">003_maputil_diffuse_test.go</a>
 			
 		</td>
-		<td class="text-right">4KB</td>
+		<td class="text-right">3KB</td>
 		<td class="text-right">124</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1353,7 +1373,7 @@
 			<a href="009_maputil_pluck_test.go">009_maputil_pluck_test.go</a>
 			
 		</td>
-		<td class="text-right">3KB</td>
+		<td class="text-right">2KB</td>
 		<td class="text-right">147</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1382,8 +1402,8 @@
 			
 		</td>
 		<td class="text-right">16KB</td>
-		<td class="text-right">490</td>
-		<td class="text-right">45</td>
+		<td class="text-right">493</td>
+		<td class="text-right">46</td>
 		<td class="text-right">6</td>
 		<td class="text-right"></td>
 		<td class="text-right">2</td>
@@ -1396,7 +1416,7 @@
 			
 		</td>
 		<td class="text-right">12KB</td>
-		<td class="text-right">357</td>
+		<td class="text-right">373</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1410,8 +1430,8 @@
 			
 		</td>
 		<td class="text-right">27KB</td>
-		<td class="text-right">795</td>
-		<td class="text-right">37</td>
+		<td class="text-right">801</td>
+		<td class="text-right">38</td>
 		<td class="text-right">5</td>
 		<td class="text-right">1</td>
 		<td class="text-right">2</td>
@@ -1424,7 +1444,7 @@
 			
 		</td>
 		<td class="text-right">7KB</td>
-		<td class="text-right">238</td>
+		<td class="text-right">258</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1477,7 +1497,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Append(maps ...map[string]interface{}) map[string]interface{}</pre>
+	<pre>func Append(maps ...map[string]any) map[string]any</pre>
 </div>
 
 
@@ -1488,7 +1508,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Apply(input interface{}, fn ApplyFunc) map[string]interface{}</pre>
+	<pre>func Apply(input any, fn ApplyFunc) map[string]any</pre>
 </div>
 
 
@@ -1502,7 +1522,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ApplyStruct(input interface{}, fn ApplyFunc) map[string]interface{}</pre>
+	<pre>func ApplyStruct(input any, fn ApplyFunc) map[string]any</pre>
 </div>
 
 
@@ -1516,7 +1536,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Autotype(input interface{}) map[string]interface{}</pre>
+	<pre>func Autotype(input any) map[string]any</pre>
 </div>
 
 
@@ -1530,7 +1550,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CoalesceMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error)</pre>
+	<pre>func CoalesceMap(data map[string]any, fieldJoiner string) (map[string]any, error)</pre>
 </div>
 
 
@@ -1544,7 +1564,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func CoalesceMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error)</pre>
+	<pre>func CoalesceMapTyped(data map[string]any, fieldJoiner string, typePrefixSeparator string) (map[string]any, []error)</pre>
 </div>
 
 
@@ -1558,7 +1578,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Compact(input map[string]interface{}) (map[string]interface{}, error)</pre>
+	<pre>func Compact(input map[string]any) (map[string]any, error)</pre>
 </div>
 
 
@@ -1572,7 +1592,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DeepCopy(input interface{}) map[string]interface{}</pre>
+	<pre>func DeepCopy(input any) map[string]any</pre>
 </div>
 
 
@@ -1586,7 +1606,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DeepCopyStruct(input interface{}) map[string]interface{}</pre>
+	<pre>func DeepCopyStruct(input any) map[string]any</pre>
 </div>
 
 
@@ -1600,7 +1620,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DeepGet(data interface{}, path []string, fallbacks ...interface{}) interface{}</pre>
+	<pre>func DeepGet(data any, path []string, fallbacks ...any) any</pre>
 </div>
 
 
@@ -1611,7 +1631,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DeepGetBool(data interface{}, path []string) bool</pre>
+	<pre>func DeepGetBool(data any, path []string) bool</pre>
 </div>
 
 
@@ -1622,7 +1642,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DeepGetString(data interface{}, path []string) string</pre>
+	<pre>func DeepGetString(data any, path []string) string</pre>
 </div>
 
 
@@ -1633,7 +1653,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DeepJoin(input interface{}, innerJoiner string, outerJoiner string, nestedSeparator string) string</pre>
+	<pre>func DeepJoin(input any, innerJoiner string, outerJoiner string, nestedSeparator string) string</pre>
 </div>
 
 
@@ -1647,7 +1667,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DeepSet(data interface{}, path []string, value interface{}) interface{}</pre>
+	<pre>func DeepSet(data any, path []string, value any) any</pre>
 </div>
 
 
@@ -1658,7 +1678,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Delete(data interface{}, key interface{}) error</pre>
+	<pre>func Delete(data any, key any) error</pre>
 </div>
 
 
@@ -1672,7 +1692,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DiffuseMap(data map[string]interface{}, fieldJoiner string) (map[string]interface{}, error)</pre>
+	<pre>func DiffuseMap(data map[string]any, fieldJoiner string) (map[string]any, error)</pre>
 </div>
 
 
@@ -1686,7 +1706,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func DiffuseMapTyped(data map[string]interface{}, fieldJoiner string, typePrefixSeparator string) (map[string]interface{}, []error)</pre>
+	<pre>func DiffuseMapTyped(data map[string]any, fieldJoiner string, typePrefixSeparator string) (map[string]any, []error)</pre>
 </div>
 
 
@@ -1700,7 +1720,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Fprintf(w io.Writer, format string, data ...interface{})</pre>
+	<pre>func Fprintf(w io.Writer, format string, data ...any)</pre>
 </div>
 
 
@@ -1714,7 +1734,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Get(data interface{}, key string, fallback ...interface{}) interface{}</pre>
+	<pre>func Get(data any, key string, fallback ...any) any</pre>
 </div>
 
 
@@ -1725,7 +1745,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func JSONPath(data interface{}, query string) (interface{}, error)</pre>
+	<pre>func JSONPath(data any, query string) (any, error)</pre>
 </div>
 
 
@@ -1739,7 +1759,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Join(input interface{}, innerJoiner string, outerJoiner string) string</pre>
+	<pre>func Join(input any, innerJoiner string, outerJoiner string) string</pre>
 </div>
 
 
@@ -1753,7 +1773,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Keys(input interface{}) []interface{}</pre>
+	<pre>func Keys(input any) []any</pre>
 </div>
 
 
@@ -1767,7 +1787,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MapValues(input interface{}) []interface{}</pre>
+	<pre>func MapValues(input any) []any</pre>
 </div>
 
 
@@ -1781,7 +1801,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Merge(first interface{}, second interface{}, options ...MergeOption) (map[string]interface{}, error)</pre>
+	<pre>func Merge(first any, second any, options ...MergeOption) (map[string]any, error)</pre>
 </div>
 
 
@@ -1795,7 +1815,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Pluck(sliceOfMaps interface{}, key []string) []interface{}</pre>
+	<pre>func Pluck(sliceOfMaps any, key []string) []any</pre>
 </div>
 
 
@@ -1806,7 +1826,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Printf(format string, data ...interface{})</pre>
+	<pre>func Printf(format string, data ...any)</pre>
 </div>
 
 
@@ -1820,11 +1840,25 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Set(data interface{}, key interface{}, value interface{}) error</pre>
+	<pre>func Set(data any, key any, value any) error</pre>
 </div>
 
 
 <p><p>Set a key to a given value in the given map, reflect.Map Value, or slice/array.</p>
+</p>
+
+
+<h3 id="SliceOfMaps" data-kind="f">
+	func <a title="View Source" href="">SliceOfMaps</a>
+	<a class="permalink" href="#SliceOfMaps">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func SliceOfMaps(input any) maps []*Map</pre>
+</div>
+
+
+<p><p>Convert the given value to a slice using typeutil.Slice, then return each element as a Map.</p>
 </p>
 
 
@@ -1834,7 +1868,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Split(input string, innerJoiner string, outerJoiner string) map[string]interface{}</pre>
+	<pre>func Split(input string, innerJoiner string, outerJoiner string) map[string]any</pre>
 </div>
 
 
@@ -1848,7 +1882,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Sprintf(format string, data ...interface{}) string</pre>
+	<pre>func Sprintf(format string, data ...any) string</pre>
 </div>
 
 
@@ -1862,7 +1896,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func StringKeys(input interface{}) []string</pre>
+	<pre>func StringKeys(input any) []string</pre>
 </div>
 
 
@@ -1876,7 +1910,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Stringify(input map[string]interface{}) map[string]string</pre>
+	<pre>func Stringify(input map[string]any) map[string]string</pre>
 </div>
 
 
@@ -1890,7 +1924,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func StructFromMap(input map[string]interface{}, populate interface{}) error</pre>
+	<pre>func StructFromMap(input map[string]any, populate any) error</pre>
 </div>
 
 
@@ -1904,7 +1938,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func TaggedStructFromMap(input interface{}, populate interface{}, tagname string) error</pre>
+	<pre>func TaggedStructFromMap(input any, populate any, tagname string) error</pre>
 </div>
 
 
@@ -1918,7 +1952,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func TaggedStructFromMapFunc(input interface{}, populate interface{}, tagname string, converter ConversionFunc) error</pre>
+	<pre>func TaggedStructFromMapFunc(input any, populate any, tagname string, converter ConversionFunc) error</pre>
 </div>
 
 
@@ -1932,7 +1966,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Walk(input interface{}, walkFn WalkFunc) error</pre>
+	<pre>func Walk(input any, walkFn WalkFunc) error</pre>
 </div>
 
 
@@ -1946,7 +1980,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func WalkStruct(input interface{}, walkFn WalkFunc) error</pre>
+	<pre>func WalkStruct(input any, walkFn WalkFunc) error</pre>
 </div>
 
 
@@ -1967,7 +2001,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type ApplyFunc func(key []string, value interface{}) (interface{}, bool)</pre>
+	<pre>type ApplyFunc func(key []string, value any) (any, bool)</pre>
 </div>
 
 
@@ -1986,7 +2020,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type ConversionFunc func(from reflect.Type, to reflect.Type, data interface{}) (interface{}, error)</pre>
+	<pre>type ConversionFunc func(from reflect.Type, to reflect.Type, data any) (any, error)</pre>
 </div>
 
 
@@ -2008,8 +2042,8 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 	
 	
 	<pre>type Item struct {
-	Key   interface{}
-	Value interface{}
+	Key   any
+	Value any
 	K     string
 	V     typeutil.Variant
   // contains filtered or unexported fields
@@ -2033,7 +2067,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Item) Set(value interface{}) error</pre>
+	<pre>func (self *Item) Set(value any) error</pre>
 </div>
 
 
@@ -2166,7 +2200,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func M(data interface{}) *Map</pre>
+	<pre>func M(data any) *Map</pre>
 </div>
 
 <p><p>Create a new Variant map object from the given value.  A wide range of values are accepted, and<br>the best effort is made to convert those values into a usable map. Accepted values include typeutil.Variant,<br>any value with a reflect.Kind of reflect.Map, sync.Map, another maputil.Map, url.Values,<br>http.Header, or a string or []byte which will be decoded using json.Unmarshal if and only if the<br>string begins with “{” and ends with “}”.</p>
@@ -2239,6 +2273,8 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 
 
+
+
 <h4 id="Map.Auto" data-kind="f">
 	func
 	(self *Map)
@@ -2248,7 +2284,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Auto(key string, fallbacks ...interface{}) interface{}</pre>
+	<pre>func (self *Map) Auto(key string, fallbacks ...any) any</pre>
 </div>
 
 <p><p>Return the value at key as an automatically converted value.</p>
@@ -2338,7 +2374,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Duration(key string, fallbacks ...interface{}) time.Duration</pre>
+	<pre>func (self *Map) Duration(key string, fallbacks ...any) time.Duration</pre>
 </div>
 
 <p><p>Return the value at key interpreted as a Duration.</p>
@@ -2392,7 +2428,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Float(key string, fallbacks ...interface{}) float64</pre>
+	<pre>func (self *Map) Float(key string, fallbacks ...any) float64</pre>
 </div>
 
 <p><p>Return the value at key as a float.</p>
@@ -2428,7 +2464,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Get(key string, fallbacks ...interface{}) typeutil.Variant</pre>
+	<pre>func (self *Map) Get(key string, fallbacks ...any) typeutil.Variant</pre>
 </div>
 
 <p><p>Retrieve a value from the Map by the given dot.separated key, or return a fallback<br>value.  Return values are a typeutil.Variant, which can be easily coerced into<br>various types.</p>
@@ -2446,7 +2482,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Int(key string, fallbacks ...interface{}) int64</pre>
+	<pre>func (self *Map) Int(key string, fallbacks ...any) int64</pre>
 </div>
 
 <p><p>Return the value at key as an integer.</p>
@@ -2512,7 +2548,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) JSONPath(query string, fallback ...interface{}) interface{}</pre>
+	<pre>func (self *Map) JSONPath(query string, fallback ...any) any</pre>
 </div>
 
 <p><p>Performs a JSONPath query against the given object and returns the results.<br>See JSONPath for details.</p>
@@ -2530,7 +2566,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Keys(tagName ...string) []interface{}</pre>
+	<pre>func (self *Map) Keys(tagName ...string) []any</pre>
 </div>
 
 <p><p>Return the keys in this Map object.  You may specify the name of a struct tag on the underlying<br>object to use for generating key names.</p>
@@ -2586,10 +2622,10 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) MapNative(tagName ...string) map[string]interface{}</pre>
+	<pre>func (self *Map) MapNative(tagName ...string) map[string]any</pre>
 </div>
 
-<p><p>Return the value as a map[string]interface{}.</p>
+<p><p>Return the value as a map[string]any.</p>
 </p>
 
 
@@ -2655,7 +2691,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Merge(other interface{}) int</pre>
+	<pre>func (self *Map) Merge(other any) int</pre>
 </div>
 
 <p><p>Copy the items from a map into this one.</p>
@@ -2673,7 +2709,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) NInt(key string, fallbacks ...interface{}) int</pre>
+	<pre>func (self *Map) NInt(key string, fallbacks ...any) int</pre>
 </div>
 
 <p><p>Return the value at key as a native integer.</p>
@@ -2693,7 +2729,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Set(key string, value interface{}) typeutil.Variant</pre>
+	<pre>func (self *Map) Set(key string, value any) typeutil.Variant</pre>
 </div>
 
 <p><p>Set a value in the Map at the given dot.separated key to a value.</p>
@@ -2729,7 +2765,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) SetIfZero(key string, value interface{}) (typeutil.Variant, bool)</pre>
+	<pre>func (self *Map) SetIfZero(key string, value any) (typeutil.Variant, bool)</pre>
 </div>
 
 <p><p>Set a value in the Map at the given dot.separated key to a value, but only if the<br>current value at that key is that type’s zero value.</p>
@@ -2798,7 +2834,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) SetValueIfNonZero(key string, value interface{}) (typeutil.Variant, bool)</pre>
+	<pre>func (self *Map) SetValueIfNonZero(key string, value any) (typeutil.Variant, bool)</pre>
 </div>
 
 <p><p>Set a value in the Map at the given dot.separated key to a value, but only if the<br>new value is not a zero value.</p>
@@ -2820,6 +2856,24 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 </div>
 
 <p><p>Return the value at key as a slice.  Scalar values will be returned as a slice containing<br>only that value.</p>
+</p>
+
+
+
+
+<h4 id="Map.SliceOfMaps" data-kind="f">
+	func
+	(self *Map)
+	<a title="View Source" href="">SliceOfMaps</a>
+	<a class="permalink" href="#SliceOfMaps">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func (self *Map) SliceOfMaps(key string) []*Map</pre>
+</div>
+
+<p><p>Convert the given value to a slice using typeutil.Slice, then return each element as a Map.</p>
 </p>
 
 
@@ -2852,7 +2906,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) String(key string, fallbacks ...interface{}) string</pre>
+	<pre>func (self *Map) String(key string, fallbacks ...any) string</pre>
 </div>
 
 <p><p>Return the value at key as a string.</p>
@@ -2924,7 +2978,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Time(key string, fallbacks ...interface{}) time.Time</pre>
+	<pre>func (self *Map) Time(key string, fallbacks ...any) time.Time</pre>
 </div>
 
 <p><p>Return the value at key interpreted as a Time.</p>
@@ -2957,7 +3011,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Map) Value() interface{}</pre>
+	<pre>func (self *Map) Value() any</pre>
 </div>
 
 <p><p>Return the underlying value the M-object was created with.</p>
@@ -2994,7 +3048,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type MapSetFunc func(m *Map, key string) interface{}</pre>
+	<pre>type MapSetFunc func(m *Map, key string) any</pre>
 </div>
 
 
@@ -3077,7 +3131,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 	Subtype2              *SubtypeTester `maputil:&#34;subtype2&#34;`
 	TimeTest              time.Duration
 	IntTest               int32
-	Properties            map[string]interface{}
+	Properties            map[string]any
 	StrSliceTest          []string
 	InterfaceStrSliceTest []string
 	StructSliceTest       []SubtypeTester
@@ -3147,7 +3201,7 @@ var <span id="UnmarshalStructTag">UnmarshalStructTag </span> = `maputil`
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type WalkFunc func(value interface{}, path []string, isLeaf bool) error</pre>
+	<pre>type WalkFunc func(value any, path []string, isLeaf bool) error</pre>
 </div>
 
 

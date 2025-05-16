@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -175,13 +175,13 @@
 	
     <li>
 		<strong>
-		<a href="#AddQ">func AddQ(u *url.URL, key string, values ...interface{})</a>
+		<a href="#AddQ">func AddQ(u *url.URL, key string, values ...any)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#AddQString">func AddQString(u string, key string, value interface{}) string</a>
+		<a href="#AddQString">func AddQString(u string, key string, value any) string</a>
 		</strong>
 	</li>
 	
@@ -259,13 +259,13 @@
 	
     <li>
 		
-		<a href="#JSONDecoder">func JSONDecoder(in io.Reader, out interface{}) error</a>
+		<a href="#JSONDecoder">func JSONDecoder(in io.Reader, out any) error</a>
 		
 	</li>
 	
     <li>
 		
-		<a href="#JSONEncoder">func JSONEncoder(in interface{}) (io.Reader, error)</a>
+		<a href="#JSONEncoder">func JSONEncoder(in any) (io.Reader, error)</a>
 		
 	</li>
 	
@@ -283,7 +283,7 @@
 	
     <li>
 		<strong>
-		<a href="#MultipartFormEncoder">func MultipartFormEncoder(in interface{}) (io.Reader, error)</a>
+		<a href="#MultipartFormEncoder">func MultipartFormEncoder(in any) (io.Reader, error)</a>
 		</strong>
 	</li>
 	
@@ -295,31 +295,31 @@
 	
     <li>
 		<strong>
-		<a href="#ParseFormRequest">func ParseFormRequest(req *http.Request, into interface{}) error</a>
+		<a href="#ParseFormRequest">func ParseFormRequest(req *http.Request, into any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ParseFormValues">func ParseFormValues(formValues url.Values, into interface{}) error</a>
+		<a href="#ParseFormValues">func ParseFormValues(formValues url.Values, into any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ParseJSON">func ParseJSON(r io.Reader, into interface{}) error</a>
+		<a href="#ParseJSON">func ParseJSON(r io.Reader, into any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ParseJSONRequest">func ParseJSONRequest(req *http.Request, into interface{}) error</a>
+		<a href="#ParseJSONRequest">func ParseJSONRequest(req *http.Request, into any) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#ParseRequest">func ParseRequest(req *http.Request, into interface{}) error</a>
+		<a href="#ParseRequest">func ParseRequest(req *http.Request, into any) error</a>
 		</strong>
 	</li>
 	
@@ -373,13 +373,13 @@
 	
     <li>
 		<strong>
-		<a href="#RequestSetValue">func RequestSetValue(req *http.Request, key string, value interface{})</a>
+		<a href="#RequestSetValue">func RequestSetValue(req *http.Request, key string, value any)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#RespondJSON">func RespondJSON(w http.ResponseWriter, data interface{}, status ...int)</a>
+		<a href="#RespondJSON">func RespondJSON(w http.ResponseWriter, data any, status ...int)</a>
 		</strong>
 	</li>
 	
@@ -391,13 +391,13 @@
 	
     <li>
 		<strong>
-		<a href="#SetQ">func SetQ(u *url.URL, key string, value interface{})</a>
+		<a href="#SetQ">func SetQ(u *url.URL, key string, value any)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#SetQString">func SetQString(u string, key string, value interface{}) string</a>
+		<a href="#SetQString">func SetQString(u string, key string, value any) string</a>
 		</strong>
 	</li>
 	
@@ -409,7 +409,7 @@
 	
     <li>
 		<strong>
-		<a href="#UrlPathJoin">func UrlPathJoin(baseurl interface{}, path string) (*url.URL, error)</a>
+		<a href="#UrlPathJoin">func UrlPathJoin(baseurl any, path string) (*url.URL, error)</a>
 		</strong>
 	</li>
 	
@@ -421,7 +421,7 @@
 	
     <li>
 		
-		<a href="#XMLDecoder">func XMLDecoder(in io.Reader, out interface{}) error</a>
+		<a href="#XMLDecoder">func XMLDecoder(in io.Reader, out any) error</a>
 		
 	</li>
 	
@@ -517,6 +517,8 @@
 			
 			
 			
+			
+			
 
 			
 			
@@ -526,7 +528,7 @@
 				<a href="#Client.AppendTrustedRootCA">
 					func
 					(self *Client)
-					AppendTrustedRootCA(pemFilenamesOrData ...interface{}) error
+					AppendTrustedRootCA(pemFilenamesOrData ...any) error
 				</a>
 				</strong>
 			</li>
@@ -574,7 +576,7 @@
 				<a href="#Client.Decode">
 					func
 					(self *Client)
-					Decode(r io.Reader, out interface{}) error
+					Decode(r io.Reader, out any) error
 				</a>
 				</strong>
 			</li>
@@ -586,7 +588,7 @@
 				<a href="#Client.Delete">
 					func
 					(self *Client)
-					Delete(path string, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)
+					Delete(path string, params map[string]any, headers map[string]any) (*http.Response, error)
 				</a>
 				
 			</li>
@@ -598,7 +600,7 @@
 				<a href="#Client.Encode">
 					func
 					(self *Client)
-					Encode(in interface{}) ([]byte, error)
+					Encode(in any) ([]byte, error)
 				</a>
 				
 			</li>
@@ -610,7 +612,7 @@
 				<a href="#Client.Get">
 					func
 					(self *Client)
-					Get(path string, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)
+					Get(path string, params map[string]any, headers map[string]any) (*http.Response, error)
 				</a>
 				
 			</li>
@@ -622,7 +624,7 @@
 				<a href="#Client.GetWithBody">
 					func
 					(self *Client)
-					GetWithBody(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)
+					GetWithBody(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)
 				</a>
 				
 			</li>
@@ -650,7 +652,7 @@
 				<a href="#Client.Params">
 					func
 					(self *Client)
-					Params() map[string]interface{}
+					Params() map[string]any
 				</a>
 				</strong>
 			</li>
@@ -662,7 +664,7 @@
 				<a href="#Client.Post">
 					func
 					(self *Client)
-					Post(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)
+					Post(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)
 				</a>
 				
 			</li>
@@ -674,7 +676,7 @@
 				<a href="#Client.Put">
 					func
 					(self *Client)
-					Put(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)
+					Put(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)
 				</a>
 				
 			</li>
@@ -686,7 +688,19 @@
 				<a href="#Client.Request">
 					func
 					(self *Client)
-					Request(method Method, path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)
+					Request(method Method, path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)
+				</a>
+				</strong>
+			</li>
+			
+			
+			
+			<li>
+				<strong>
+				<a href="#Client.RequestWithContext">
+					func
+					(self *Client)
+					RequestWithContext(ctx context.Context, method Method, path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)
 				</a>
 				</strong>
 			</li>
@@ -770,7 +784,7 @@
 				<a href="#Client.SetHeader">
 					func
 					(self *Client)
-					SetHeader(name string, value interface{})
+					SetHeader(name string, value any)
 				</a>
 				</strong>
 			</li>
@@ -806,7 +820,7 @@
 				<a href="#Client.SetParam">
 					func
 					(self *Client)
-					SetParam(name string, value interface{})
+					SetParam(name string, value any)
 				</a>
 				</strong>
 			</li>
@@ -842,7 +856,7 @@
 				<a href="#Client.SetRootCA">
 					func
 					(self *Client)
-					SetRootCA(pemFilenamesOrData ...interface{}) error
+					SetRootCA(pemFilenamesOrData ...any) error
 				</a>
 				</strong>
 			</li>
@@ -1248,8 +1262,8 @@
 			
 		</td>
 		<td class="text-right">16KB</td>
-		<td class="text-right">409</td>
-		<td class="text-right">34</td>
+		<td class="text-right">420</td>
+		<td class="text-right">35</td>
 		<td class="text-right">2</td>
 		<td class="text-right"></td>
 		<td class="text-right">3</td>
@@ -1289,7 +1303,7 @@
 			<a href="context.go">context.go</a>
 			
 		</td>
-		<td class="text-right">611B</td>
+		<td class="text-right">609B</td>
 		<td class="text-right">18</td>
 		<td class="text-right">2</td>
 		<td class="text-right"></td>
@@ -1303,7 +1317,7 @@
 			<a href="context_test.go">context_test.go</a>
 			
 		</td>
-		<td class="text-right">621B</td>
+		<td class="text-right">624B</td>
 		<td class="text-right">17</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1415,7 +1429,7 @@
 			<a href="request_logger_middleware.go">request_logger_middleware.go</a>
 			
 		</td>
-		<td class="text-right">678B</td>
+		<td class="text-right">690B</td>
 		<td class="text-right">23</td>
 		<td class="text-right">2</td>
 		<td class="text-right">1</td>
@@ -1554,7 +1568,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func AddQ(u *url.URL, key string, values ...interface{})</pre>
+	<pre>func AddQ(u *url.URL, key string, values ...any)</pre>
 </div>
 
 
@@ -1568,7 +1582,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func AddQString(u string, key string, value interface{}) string</pre>
+	<pre>func AddQString(u string, key string, value any) string</pre>
 </div>
 
 
@@ -1747,7 +1761,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func JSONDecoder(in io.Reader, out interface{}) error</pre>
+	<pre>func JSONDecoder(in io.Reader, out any) error</pre>
 </div>
 
 
@@ -1758,7 +1772,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func JSONEncoder(in interface{}) (io.Reader, error)</pre>
+	<pre>func JSONEncoder(in any) (io.Reader, error)</pre>
 </div>
 
 
@@ -1797,7 +1811,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MultipartFormEncoder(in interface{}) (io.Reader, error)</pre>
+	<pre>func MultipartFormEncoder(in any) (io.Reader, error)</pre>
 </div>
 
 
@@ -1825,7 +1839,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ParseFormRequest(req *http.Request, into interface{}) error</pre>
+	<pre>func ParseFormRequest(req *http.Request, into any) error</pre>
 </div>
 
 
@@ -1839,7 +1853,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ParseFormValues(formValues url.Values, into interface{}) error</pre>
+	<pre>func ParseFormValues(formValues url.Values, into any) error</pre>
 </div>
 
 
@@ -1853,7 +1867,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ParseJSON(r io.Reader, into interface{}) error</pre>
+	<pre>func ParseJSON(r io.Reader, into any) error</pre>
 </div>
 
 
@@ -1867,7 +1881,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ParseJSONRequest(req *http.Request, into interface{}) error</pre>
+	<pre>func ParseJSONRequest(req *http.Request, into any) error</pre>
 </div>
 
 
@@ -1881,7 +1895,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ParseRequest(req *http.Request, into interface{}) error</pre>
+	<pre>func ParseRequest(req *http.Request, into any) error</pre>
 </div>
 
 
@@ -2007,7 +2021,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func RequestSetValue(req *http.Request, key string, value interface{})</pre>
+	<pre>func RequestSetValue(req *http.Request, key string, value any)</pre>
 </div>
 
 
@@ -2021,7 +2035,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func RespondJSON(w http.ResponseWriter, data interface{}, status ...int)</pre>
+	<pre>func RespondJSON(w http.ResponseWriter, data any, status ...int)</pre>
 </div>
 
 
@@ -2049,7 +2063,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func SetQ(u *url.URL, key string, value interface{})</pre>
+	<pre>func SetQ(u *url.URL, key string, value any)</pre>
 </div>
 
 
@@ -2063,7 +2077,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func SetQString(u string, key string, value interface{}) string</pre>
+	<pre>func SetQString(u string, key string, value any) string</pre>
 </div>
 
 
@@ -2091,7 +2105,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func UrlPathJoin(baseurl interface{}, path string) (*url.URL, error)</pre>
+	<pre>func UrlPathJoin(baseurl any, path string) (*url.URL, error)</pre>
 </div>
 
 
@@ -2119,7 +2133,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func XMLDecoder(in io.Reader, out interface{}) error</pre>
+	<pre>func XMLDecoder(in io.Reader, out any) error</pre>
 </div>
 
 
@@ -2236,6 +2250,8 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 
 
+
+
 <h4 id="Client.AppendTrustedRootCA" data-kind="f">
 	func
 	(self *Client)
@@ -2245,7 +2261,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) AppendTrustedRootCA(pemFilenamesOrData ...interface{}) error</pre>
+	<pre>func (self *Client) AppendTrustedRootCA(pemFilenamesOrData ...any) error</pre>
 </div>
 
 <p><p>Append one or more trusted certificates to the RootCA bundle that is consulted when performing HTTPS requests.</p>
@@ -2317,7 +2333,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Decode(r io.Reader, out interface{}) error</pre>
+	<pre>func (self *Client) Decode(r io.Reader, out any) error</pre>
 </div>
 
 <p><p>Decode a response and, if applicable, automatically close the reader.</p>
@@ -2335,7 +2351,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Delete(path string, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)</pre>
+	<pre>func (self *Client) Delete(path string, params map[string]any, headers map[string]any) (*http.Response, error)</pre>
 </div>
 
 
@@ -2350,7 +2366,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Encode(in interface{}) ([]byte, error)</pre>
+	<pre>func (self *Client) Encode(in any) ([]byte, error)</pre>
 </div>
 
 
@@ -2365,7 +2381,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Get(path string, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)</pre>
+	<pre>func (self *Client) Get(path string, params map[string]any, headers map[string]any) (*http.Response, error)</pre>
 </div>
 
 
@@ -2380,7 +2396,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) GetWithBody(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)</pre>
+	<pre>func (self *Client) GetWithBody(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)</pre>
 </div>
 
 
@@ -2417,7 +2433,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Params() map[string]interface{}</pre>
+	<pre>func (self *Client) Params() map[string]any</pre>
 </div>
 
 <p><p>Return the params set on this client.</p>
@@ -2435,7 +2451,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Post(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)</pre>
+	<pre>func (self *Client) Post(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)</pre>
 </div>
 
 
@@ -2450,7 +2466,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Put(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)</pre>
+	<pre>func (self *Client) Put(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)</pre>
 </div>
 
 
@@ -2465,10 +2481,28 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) Request(method Method, path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error)</pre>
+	<pre>func (self *Client) Request(method Method, path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)</pre>
 </div>
 
 <p><p>Perform an HTTP request</p>
+</p>
+
+
+
+
+<h4 id="Client.RequestWithContext" data-kind="f">
+	func
+	(self *Client)
+	<a title="View Source" href="">RequestWithContext</a>
+	<a class="permalink" href="#RequestWithContext">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func (self *Client) RequestWithContext(ctx context.Context, method Method, path string, body any, params map[string]any, headers map[string]any) (*http.Response, error)</pre>
+</div>
+
+<p><p>Perform an HTTP request using the given context</p>
 </p>
 
 
@@ -2591,7 +2625,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) SetHeader(name string, value interface{})</pre>
+	<pre>func (self *Client) SetHeader(name string, value any)</pre>
 </div>
 
 <p><p>Add an HTTP request header by name that will be included in every request. If<br>value is nil, the named header will be removed instead.</p>
@@ -2645,7 +2679,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) SetParam(name string, value interface{})</pre>
+	<pre>func (self *Client) SetParam(name string, value any)</pre>
 </div>
 
 <p><p>Add a querystring parameter by name that will be included in every request. If<br>value is nil, the parameter will be removed instead.</p>
@@ -2699,7 +2733,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func (self *Client) SetRootCA(pemFilenamesOrData ...interface{}) error</pre>
+	<pre>func (self *Client) SetRootCA(pemFilenamesOrData ...any) error</pre>
 </div>
 
 <p><p>Replace the existing RootCA bundle with an explicit set of trusted certificates.</p>
@@ -2772,7 +2806,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type DecoderFunc func(io.Reader, interface{}) error</pre>
+	<pre>type DecoderFunc func(io.Reader, any) error</pre>
 </div>
 
 
@@ -2791,7 +2825,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type EncoderFunc func(interface{}) (io.Reader, error)</pre>
+	<pre>type EncoderFunc func(any) (io.Reader, error)</pre>
 </div>
 
 
@@ -2848,7 +2882,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type InterceptRequestFunc func(*http.Request) (interface{}, error)</pre>
+	<pre>type InterceptRequestFunc func(*http.Request) (any, error)</pre>
 </div>
 
 
@@ -2867,7 +2901,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type InterceptResponseFunc func(*http.Response, interface{}) error</pre>
+	<pre>type InterceptResponseFunc func(*http.Response, any) error</pre>
 </div>
 
 
@@ -3017,7 +3051,7 @@ var <span id="WaitForPollInterval">WaitForPollInterval          </span> = time.S
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type RequestParseFunc func(*http.Request, interface{}) error</pre>
+	<pre>type RequestParseFunc func(*http.Request, any) error</pre>
 </div>
 
 

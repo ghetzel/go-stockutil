@@ -9,10 +9,10 @@ import (
 	"github.com/ghetzel/testify/require"
 )
 
-var testJsonPathData = map[string]interface{}{
+var testJsonPathData = map[string]any{
 	"expensive": 10,
-	"store": map[string]interface{}{
-		"book": []map[string]interface{}{
+	"store": map[string]any{
+		"book": []map[string]any{
 			{
 				"category": "reference",
 				"author":   "Nigel Rees",
@@ -40,7 +40,7 @@ var testJsonPathData = map[string]interface{}{
 				"price":    22.99,
 			},
 		},
-		"bicycle": map[string]interface{}{
+		"bicycle": map[string]any{
 			"color": "red",
 			"price": 19.95,
 		},
@@ -48,9 +48,9 @@ var testJsonPathData = map[string]interface{}{
 }
 
 func TestRxMapFmt(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	m := rxutil.Match(rxMapFmt, `${testing.the.thing}`)
+	var m = rxutil.Match(rxMapFmt, `${testing.the.thing}`)
 	assert.NotNil(m)
 	assert.Equal(map[string]string{
 		`key`:      `testing.the.thing`,
@@ -92,7 +92,7 @@ func TestRxMapFmt(t *testing.T) {
 }
 
 func TestSprintf(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(
 		`Hello guest! Your IP is: (unknown)`,
@@ -101,14 +101,14 @@ func TestSprintf(t *testing.T) {
 
 	assert.Equal(
 		`Hello guest! Your IP is: 127.0.0.1`,
-		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]interface{}{
+		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]any{
 			`ipaddress`: `127.0.0.1`,
 		}),
 	)
 
 	assert.Equal(
 		`Hello guest! Your IP is: 127.0.0.1`,
-		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]interface{}{
+		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]any{
 			`username`:  ``,
 			`ipaddress`: `127.0.0.1`,
 		}),
@@ -116,14 +116,14 @@ func TestSprintf(t *testing.T) {
 
 	assert.Equal(
 		`Hello friend! Your IP is: (unknown)`,
-		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]interface{}{
+		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]any{
 			`username`: `friend`,
 		}),
 	)
 
 	assert.Equal(
 		`Hello friend! Your IP is: (unknown)`,
-		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]interface{}{
+		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]any{
 			`username`:  `friend`,
 			`ipaddress`: ``,
 		}),
@@ -131,7 +131,7 @@ func TestSprintf(t *testing.T) {
 
 	assert.Equal(
 		`Hello friend! Your IP is: 127.0.0.1`,
-		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]interface{}{
+		Sprintf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]any{
 			`username`:  `friend`,
 			`ipaddress`: `127.0.0.1`,
 		}),
@@ -139,7 +139,7 @@ func TestSprintf(t *testing.T) {
 }
 
 func TestSprintfFormatting(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(
 		`Hello guest     ! Your IP is:       (unknown)`,
@@ -148,14 +148,14 @@ func TestSprintfFormatting(t *testing.T) {
 
 	assert.Equal(
 		`Hello guest     ! Your IP is:       127.0.0.1`,
-		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]interface{}{
+		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]any{
 			`ipaddress`: `127.0.0.1`,
 		}),
 	)
 
 	assert.Equal(
 		`Hello guest     ! Your IP is:       127.0.0.1`,
-		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]interface{}{
+		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]any{
 			`username`:  ``,
 			`ipaddress`: `127.0.0.1`,
 		}),
@@ -163,14 +163,14 @@ func TestSprintfFormatting(t *testing.T) {
 
 	assert.Equal(
 		`Hello friend    ! Your IP is:       (unknown)`,
-		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]interface{}{
+		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]any{
 			`username`: `friend`,
 		}),
 	)
 
 	assert.Equal(
 		`Hello friend    ! Your IP is:       (unknown)`,
-		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]interface{}{
+		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]any{
 			`username`:  `friend`,
 			`ipaddress`: ``,
 		}),
@@ -178,7 +178,7 @@ func TestSprintfFormatting(t *testing.T) {
 
 	assert.Equal(
 		`Hello friend    ! Your IP is:       127.0.0.1`,
-		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]interface{}{
+		Sprintf("Hello ${username|guest:%-10s}! Your IP is: ${ipaddress|(unknown):%15s}", map[string]any{
 			`username`:  `friend`,
 			`ipaddress`: `127.0.0.1`,
 		}),
@@ -186,18 +186,18 @@ func TestSprintfFormatting(t *testing.T) {
 }
 
 func TestSprintfFormatTime(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(
 		`the time is: 2006-01-02T15:04:05-07:00`,
-		Sprintf("the time is: ${now}", map[string]interface{}{
+		Sprintf("the time is: ${now}", map[string]any{
 			`now`: timeutil.ReferenceTime(),
 		}),
 	)
 
 	assert.Equal(
 		`the time is: January 2, 2006 (3:04pm)`,
-		Sprintf("the time is: ${now:%January 2, 2006 (3:04pm)}", map[string]interface{}{
+		Sprintf("the time is: ${now:%January 2, 2006 (3:04pm)}", map[string]any{
 			`now`: timeutil.ReferenceTime(),
 		}),
 	)
@@ -207,7 +207,7 @@ func TestSliceOfMaps(t *testing.T) {
 	require.Len(t, SliceOfMaps(nil), 0)
 	require.Len(t, SliceOfMaps([]int{1}), 1)
 
-	var sm1 = SliceOfMaps([]map[string]interface{}{
+	var sm1 = SliceOfMaps([]map[string]any{
 		{`id`: `one`},
 		{`id`: `two`},
 		{`id`: `three`},
@@ -228,38 +228,38 @@ func TestSliceOfMaps(t *testing.T) {
 }
 
 func TestJSONPath(t *testing.T) {
-	var fn = func(query string) interface{} {
+	var fn = func(query string) any {
 		var out, err = JSONPath(testJsonPathData, query)
 
 		assert.NoError(t, err, query)
 		return out
 	}
 
-	for query, wanted := range map[string]interface{}{
-		`$.store.book[*].author`: []interface{}{
+	for query, wanted := range map[string]any{
+		`$.store.book[*].author`: []any{
 			"Nigel Rees",
 			"Evelyn Waugh",
 			"Herman Melville",
 			"J. R. R. Tolkien",
 		},
-		`$..author`: []interface{}{
+		`$..author`: []any{
 			"Nigel Rees",
 			"Evelyn Waugh",
 			"Herman Melville",
 			"J. R. R. Tolkien",
 		},
-		`$..price`: []interface{}{
+		`$..price`: []any{
 			8.95,
 			12.99,
 			8.99,
 			22.99,
 			19.95,
 		},
-		`$..book[?(.price <= 8.99)].title`: []interface{}{
+		`$..book[?(.price <= 8.99)].title`: []any{
 			"Moby Dick",
 			"Sayings of the Century",
 		},
-		`$..book[?(.price > 10.0)].title`: []interface{}{
+		`$..book[?(.price > 10.0)].title`: []any{
 			"Sword of Honour",
 			"The Lord of the Rings",
 		},
@@ -274,7 +274,7 @@ func ExamplePrintf_usingDefaultValues() {
 }
 
 func ExamplePrintf_suppliedWithData() {
-	Printf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]interface{}{
+	Printf("Hello ${username|guest}! Your IP is: ${ipaddress|(unknown)}", map[string]any{
 		`username`:  `friend`,
 		`ipaddress`: `127.0.0.1`,
 	})
@@ -283,8 +283,8 @@ func ExamplePrintf_suppliedWithData() {
 }
 
 func ExamplePrintf_deeplyNestedKeys() {
-	Printf("Hello ${details.0.value|guest}! Your IP is: ${details.1.value|(unknown)}", map[string]interface{}{
-		`details`: []map[string]interface{}{
+	Printf("Hello ${details.0.value|guest}! Your IP is: ${details.1.value|(unknown)}", map[string]any{
+		`details`: []map[string]any{
 			{
 				`key`:   `username`,
 				`value`: `friend`,

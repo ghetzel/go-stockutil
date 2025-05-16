@@ -7,8 +7,8 @@
     "Synopsis": "Additional helpers for working with file paths and filesystem information\n",
     "MainFunction": false,
     "CommentWordCount": 368,
-    "LineCount": 312,
-    "SourceLineCount": 218,
+    "LineCount": 311,
+    "SourceLineCount": 217,
     "FunctionCount": 23,
     "TypeCount": 0,
     "ConstantCount": 0,
@@ -31,10 +31,6 @@
                     "Alias": "fmt"
                 },
                 {
-                    "PackageName": "io/ioutil",
-                    "Alias": "ioutil"
-                },
-                {
                     "PackageName": "os",
                     "Alias": "os"
                 },
@@ -51,9 +47,9 @@
                     "Alias": "glob"
                 }
             ],
-            "Size": 4996,
-            "LineCount": 210,
-            "SourceLineCount": 132,
+            "Size": 4982,
+            "LineCount": 209,
+            "SourceLineCount": 131,
             "FunctionCount": 23,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -79,7 +75,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 3388,
+            "Size": 3391,
             "LineCount": 102,
             "SourceLineCount": 86,
             "FunctionCount": 0,
@@ -143,7 +139,7 @@
                 }
             ],
             "Signature": "ExpandUser(path string) (string, error)",
-            "Source": "ewoJaWYgdSwgZXJyIDo9IHVzZXIuQ3VycmVudCgpOyBlcnIgPT0gbmlsIHsKCQlmdWxsVGlsZGUgOj0gZm10LlNwcmludGYoIn4lcyIsIHUuTmFtZSkKCQlpZiBzdHJpbmdzLkhhc1ByZWZpeChwYXRoLCBgfi9gKSB8fCBwYXRoID09IGB+YCB7CgkJCXJldHVybiBzdHJpbmdzLlJlcGxhY2UocGF0aCwgYH5gLCB1LkhvbWVEaXIsIDEpLCBuaWwKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgocGF0aCwgZnVsbFRpbGRlK2AvYCkgfHwgcGF0aCA9PSBmdWxsVGlsZGUgewoJCQlyZXR1cm4gc3RyaW5ncy5SZXBsYWNlKHBhdGgsIGZ1bGxUaWxkZSwgdS5Ib21lRGlyLCAxKSwgbmlsCgkJfQoJCXJldHVybiBwYXRoLCBuaWwKCX0gZWxzZSB7CgkJcmV0dXJuIHBhdGgsIGVycgoJfQp9",
+            "Source": "ewoJaWYgdSwgZXJyIDo9IHVzZXIuQ3VycmVudCgpOyBlcnIgPT0gbmlsIHsKCQl2YXIgZnVsbFRpbGRlID0gZm10LlNwcmludGYoIn4lcyIsIHUuTmFtZSkKCQlpZiBzdHJpbmdzLkhhc1ByZWZpeChwYXRoLCBgfi9gKSB8fCBwYXRoID09IGB+YCB7CgkJCXJldHVybiBzdHJpbmdzLlJlcGxhY2UocGF0aCwgYH5gLCB1LkhvbWVEaXIsIDEpLCBuaWwKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgocGF0aCwgZnVsbFRpbGRlK2AvYCkgfHwgcGF0aCA9PSBmdWxsVGlsZGUgewoJCQlyZXR1cm4gc3RyaW5ncy5SZXBsYWNlKHBhdGgsIGZ1bGxUaWxkZSwgdS5Ib21lRGlyLCAxKSwgbmlsCgkJfQoJCXJldHVybiBwYXRoLCBuaWwKCX0gZWxzZSB7CgkJcmV0dXJuIHBhdGgsIGVycgoJfQp9",
             "IsPackageLevel": true
         },
         {
@@ -282,7 +278,7 @@
                 }
             ],
             "Signature": "IsNonemptyDir(path string) bool",
-            "Source": "ewoJaWYgRGlyRXhpc3RzKHBhdGgpIHsKCQlpZiBlbnRyaWVzLCBlcnIgOj0gaW91dGlsLlJlYWREaXIocGF0aCk7IGVyciA9PSBuaWwgJiYgbGVuKGVudHJpZXMpID4gMCB7CgkJCXJldHVybiB0cnVlCgkJfQoJfQoJcmV0dXJuIGZhbHNlCn0=",
+            "Source": "ewoJaWYgRGlyRXhpc3RzKHBhdGgpIHsKCQlpZiBlbnRyaWVzLCBlcnIgOj0gb3MuUmVhZERpcihwYXRoKTsgZXJyID09IG5pbCAmJiBsZW4oZW50cmllcykgPiAwIHsKCQkJcmV0dXJuIHRydWUKCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
             "IsPackageLevel": true
         },
         {
@@ -510,7 +506,7 @@
                 }
             ],
             "Signature": "TestExpandUser(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCgl2YXIgdiBzdHJpbmcKCXZhciBlcnIgZXJyb3IKCXUsIF8gOj0gdXNlci5DdXJyZW50KCkKCXYsIGVyciA9IEV4cGFuZFVzZXIoYC9kZXYvbnVsbGApCglhc3NlcnQuRXF1YWwodiwgYC9kZXYvbnVsbGApCglhc3NlcnQuTmlsKGVycikKCXYsIGVyciA9IEV4cGFuZFVzZXIoYH5gKQoJYXNzZXJ0LkVxdWFsKHYsIHUuSG9tZURpcikKCWFzc2VydC5OaWwoZXJyKQoJdiwgZXJyID0gRXhwYW5kVXNlcigifiIgKyB1Lk5hbWUpCglhc3NlcnQuRXF1YWwodiwgdS5Ib21lRGlyKQoJYXNzZXJ0Lk5pbChlcnIpCgl2LCBlcnIgPSBFeHBhbmRVc2VyKCJ+L3Rlc3QtMTIzIikKCWFzc2VydC5FcXVhbCh2LCB1LkhvbWVEaXIrIi90ZXN0LTEyMyIpCglhc3NlcnQuTmlsKGVycikKCXYsIGVyciA9IEV4cGFuZFVzZXIoIn4iICsgdS5OYW1lICsgIi90ZXN0LTEyMyIpCglhc3NlcnQuRXF1YWwodiwgdS5Ib21lRGlyKyIvdGVzdC0xMjMiKQoJYXNzZXJ0Lk5pbChlcnIpCgl2LCBlcnIgPSBFeHBhbmRVc2VyKCJ+L3Rlc3QtMTIzL34vMTIzIikKCWFzc2VydC5FcXVhbCh2LCB1LkhvbWVEaXIrIi90ZXN0LTEyMy9+LzEyMyIpCglhc3NlcnQuTmlsKGVycikKCXYsIGVyciA9IEV4cGFuZFVzZXIoIn4iICsgdS5OYW1lICsgIi90ZXN0LTEyMy9+IiArIHUuTmFtZSArICIvMTIzIikKCWFzc2VydC5FcXVhbCh2LCB1LkhvbWVEaXIrIi90ZXN0LTEyMy9+Iit1Lk5hbWUrIi8xMjMiKQoJYXNzZXJ0Lk5pbChlcnIpCglhc3NlcnQuRmFsc2UoSXNOb25lbXB0eUZpbGUoYC9ub25leGlzdGVudC50eHRgKSkKCWFzc2VydC5GYWxzZShJc05vbmVtcHR5RGlyKGAvbm9uZXhpc3RlbnQvZGlyYCkpCglhc3NlcnQuVHJ1ZShJc05vbmVtcHR5RmlsZShgL2V0Yy9ob3N0c2ApKQoJYXNzZXJ0LlRydWUoSXNOb25lbXB0eURpcihgL2V0Y2ApKQoJeCwgZXJyIDo9IG9zLkV4ZWN1dGFibGUoKQoJYXNzZXJ0Lk5vRXJyb3IoZXJyKQoJYXNzZXJ0LlRydWUoSXNOb25lbXB0eUV4ZWN1dGFibGVGaWxlKHgpKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2YXIgdiBzdHJpbmcKCXZhciBlcnIgZXJyb3IKCXUsIF8gOj0gdXNlci5DdXJyZW50KCkKCXYsIGVyciA9IEV4cGFuZFVzZXIoYC9kZXYvbnVsbGApCglhc3NlcnQuRXF1YWwodiwgYC9kZXYvbnVsbGApCglhc3NlcnQuTmlsKGVycikKCXYsIGVyciA9IEV4cGFuZFVzZXIoYH5gKQoJYXNzZXJ0LkVxdWFsKHYsIHUuSG9tZURpcikKCWFzc2VydC5OaWwoZXJyKQoJdiwgZXJyID0gRXhwYW5kVXNlcigifiIgKyB1Lk5hbWUpCglhc3NlcnQuRXF1YWwodiwgdS5Ib21lRGlyKQoJYXNzZXJ0Lk5pbChlcnIpCgl2LCBlcnIgPSBFeHBhbmRVc2VyKCJ+L3Rlc3QtMTIzIikKCWFzc2VydC5FcXVhbCh2LCB1LkhvbWVEaXIrIi90ZXN0LTEyMyIpCglhc3NlcnQuTmlsKGVycikKCXYsIGVyciA9IEV4cGFuZFVzZXIoIn4iICsgdS5OYW1lICsgIi90ZXN0LTEyMyIpCglhc3NlcnQuRXF1YWwodiwgdS5Ib21lRGlyKyIvdGVzdC0xMjMiKQoJYXNzZXJ0Lk5pbChlcnIpCgl2LCBlcnIgPSBFeHBhbmRVc2VyKCJ+L3Rlc3QtMTIzL34vMTIzIikKCWFzc2VydC5FcXVhbCh2LCB1LkhvbWVEaXIrIi90ZXN0LTEyMy9+LzEyMyIpCglhc3NlcnQuTmlsKGVycikKCXYsIGVyciA9IEV4cGFuZFVzZXIoIn4iICsgdS5OYW1lICsgIi90ZXN0LTEyMy9+IiArIHUuTmFtZSArICIvMTIzIikKCWFzc2VydC5FcXVhbCh2LCB1LkhvbWVEaXIrIi90ZXN0LTEyMy9+Iit1Lk5hbWUrIi8xMjMiKQoJYXNzZXJ0Lk5pbChlcnIpCglhc3NlcnQuRmFsc2UoSXNOb25lbXB0eUZpbGUoYC9ub25leGlzdGVudC50eHRgKSkKCWFzc2VydC5GYWxzZShJc05vbmVtcHR5RGlyKGAvbm9uZXhpc3RlbnQvZGlyYCkpCglhc3NlcnQuVHJ1ZShJc05vbmVtcHR5RmlsZShgL2V0Yy9ob3N0c2ApKQoJYXNzZXJ0LlRydWUoSXNOb25lbXB0eURpcihgL2V0Y2ApKQoJeCwgZXJyIDo9IG9zLkV4ZWN1dGFibGUoKQoJYXNzZXJ0Lk5vRXJyb3IoZXJyKQoJYXNzZXJ0LlRydWUoSXNOb25lbXB0eUV4ZWN1dGFibGVGaWxlKHgpKQp9",
             "IsPackageLevel": true
         },
         {

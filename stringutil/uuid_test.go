@@ -7,8 +7,8 @@ import (
 )
 
 func TestUUID(t *testing.T) {
-	assert := require.New(t)
-	input := []byte{
+	var assert = require.New(t)
+	var input = []byte{
 		0x01, 0x02, 0x03, 0x01,
 		0x02, 0x03, 0x01, 0x02,
 		0x03, 0x01, 0x02, 0x03,

@@ -5,7 +5,6 @@ import (
 	"context"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/url"
 	"strings"
 	"time"
@@ -16,7 +15,7 @@ import (
 type RetrieveHandlerFunc = func(context.Context, *url.URL) (io.ReadCloser, error)
 
 var GenericDefaultTimeout = 5 * time.Second
-var NullReadCloser = ioutil.NopCloser(bytes.NewBuffer(nil))
+var NullReadCloser = io.NopCloser(bytes.NewBuffer(nil))
 var retrieveSchemeHandlers = make(map[string]RetrieveHandlerFunc)
 
 // Register a new Retrieve() function for the given URL scheme.
@@ -36,7 +35,7 @@ func UnregisterRetrieveScheme(scheme string) {
 // If resourceUri is given as a *url.URL, the value of that URL will be copied.  Any other type
 // will be converted to a string (honoring types that implement fmt.Stringer), and the resulting
 // URL will be used.
-func Retrieve(ctx context.Context, resourceUri interface{}) (io.ReadCloser, error) {
+func Retrieve(ctx context.Context, resourceUri any) (io.ReadCloser, error) {
 	ctx, _ = ctxToTimeout(ctx, 0)
 
 	var uri url.URL

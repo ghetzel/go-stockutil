@@ -37,7 +37,7 @@ func (self *Field) Value() reflect.Value {
 }
 
 // Retrieve the field name and attributes associated with the given field tag.
-func (self *Field) GetTag(label string, fallback ...interface{}) (string, []string, bool) {
+func (self *Field) GetTag(label string, fallback ...any) (string, []string, bool) {
 	if tag := self.Tag.Get(label); tag != `` {
 		var first, rest = stringutil.SplitPair(tag, `,`)
 		var attrs = strings.Split(rest, `,`)
@@ -56,14 +56,14 @@ func (self *Field) V() typeutil.Variant {
 	return typeutil.V(nil)
 }
 
-func (self *Field) Set(value interface{}) error {
+func (self *Field) Set(value any) error {
 	return typeutil.SetValue(self.Value(), value)
 }
 
-func (self *Field) MergeValue(in interface{}) error {
+func (self *Field) MergeValue(in any) error {
 	var current = self.V()
 	var other = typeutil.V(in)
-	var newVal interface{}
+	var newVal any
 	var trySet bool
 
 	if current.IsArray() {
@@ -99,14 +99,14 @@ func (self *Field) MergeValue(in interface{}) error {
 
 // A Struct, or "S-object", can be used to rapidly and safely inspect, iterate over, and modify values of a struct.
 type Struct struct {
-	Source    interface{}
+	Source    any
 	fields    []*Field
 	fieldmap  map[string]*Field
 	populated bool
 	srcval    reflect.Value
 }
 
-func S(src interface{}) *Struct {
+func S(src any) *Struct {
 	return &Struct{
 		Source:   src,
 		fields:   make([]*Field, 0),
@@ -146,7 +146,7 @@ func (self *Struct) Field(name string) (*Field, bool) {
 	return nil, false
 }
 
-func (self *Struct) Merge(other interface{}) error {
+func (self *Struct) Merge(other any) error {
 	for _, otherField := range S(other).Fields() {
 		if myField, ok := self.Field(otherField.Name); ok {
 			var err error

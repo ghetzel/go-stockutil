@@ -8,17 +8,17 @@ import (
 )
 
 func TestLocationSpeedFrom(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Zero(NullIsland().SpeedFrom(NullIsland()))
 
-	from := &Location{
+	var from = &Location{
 		Latitude:  0,
 		Longitude: 1,
 		Timestamp: time.Date(2010, 1, 1, 0, 0, 0, 0, time.UTC),
 	}
 
-	to := &Location{
+	var to = &Location{
 		Latitude:  0,
 		Longitude: 2,
 		Timestamp: time.Date(2010, 1, 1, 1, 0, 0, 0, time.UTC),
@@ -29,7 +29,7 @@ func TestLocationSpeedFrom(t *testing.T) {
 }
 
 func TestSpeedFuncs(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.True(Speed(MPH).FasterThan(KPH))
 	assert.True(Speed(KPH).SlowerThan(MPH))
@@ -37,7 +37,7 @@ func TestSpeedFuncs(t *testing.T) {
 }
 
 func TestParseDistance(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Zero(MustParseDistance(``))
 	assert.Zero(MustParseDistance(`0m`))

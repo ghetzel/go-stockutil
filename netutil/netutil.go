@@ -20,7 +20,7 @@ var WaitForOpenCheckInterval = time.Second
 // was opened successfully (which will then immediately be closed), or an error if the function timed out.
 // The check interval can be configured using the WaitForOpenCheckInterval package variable.
 func WaitForOpen(network string, address string, totaltime time.Duration, timeouts ...time.Duration) error {
-	started := time.Now()
+	var started = time.Now()
 	var timeout time.Duration
 
 	if len(timeouts) > 0 {
@@ -76,7 +76,7 @@ type IPAddress struct {
 
 // Return a list of routable IP addresses, along with their associated gateways and interfaces.
 func RoutableAddresses() ([]*IPAddress, error) {
-	addresses := make([]*IPAddress, 0)
+	var addresses = make([]*IPAddress, 0)
 
 	var gateways []net.IP
 
@@ -116,7 +116,7 @@ func RoutableAddresses() ([]*IPAddress, error) {
 // Returns all addresses on the given interface that can route to the given gateway.  If gateway is nil,
 // the default gateway will be attempted.
 func GetRoutableAddresses(gateway net.IP, iface *net.Interface) ([]*IPAddress, error) {
-	addresses := make([]*IPAddress, 0)
+	var addresses = make([]*IPAddress, 0)
 
 	if gateway == nil {
 		if gw, err := DefaultGateway(); err == nil {

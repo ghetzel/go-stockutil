@@ -32,7 +32,7 @@ func (self Speed) Equal(other Speed) bool {
 }
 
 func (self Speed) MarshalJSON() ([]byte, error) {
-	return json.Marshal(map[string]interface{}{
+	return json.Marshal(map[string]any{
 		`value`:   float64(self),
 		`display`: self.String(),
 	})
@@ -49,7 +49,7 @@ func (self *Speed) UnmarshalJSON(data []byte) error {
 			return err
 		}
 	} else {
-		var in map[string]interface{}
+		var in map[string]any
 
 		if err := json.Unmarshal(data, &in); err == nil {
 			*self = Speed(typeutil.V(in[`value`]).Float())

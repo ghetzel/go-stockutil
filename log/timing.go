@@ -40,7 +40,7 @@ func TimeFunc(name string, fn func()) *Timing {
 		panic("Cannot call log.TimeFunc with a nil function")
 	}
 
-	tm := Time(name)
+	var tm = Time(name)
 	fn()
 	tm.Done()
 	return tm

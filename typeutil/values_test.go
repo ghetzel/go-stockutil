@@ -11,7 +11,7 @@ import (
 
 type Thing struct {
 	Name  string
-	Value interface{}
+	Value any
 }
 
 type subtime struct {
@@ -19,11 +19,11 @@ type subtime struct {
 }
 
 func TestIsZero(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var thing Thing
 	var things []Thing
-	madeThings := make([]Thing, 0)
+	var madeThings = make([]Thing, 0)
 
 	assert.True(IsZero(nil))
 	assert.True(IsZero(0))
@@ -47,11 +47,11 @@ func TestIsZero(t *testing.T) {
 }
 
 func TestIsEmpty(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	things := make([]Thing, 4)
-	thingmap := make(map[string]Thing)
-	stringmap := map[int]string{
+	var things = make([]Thing, 4)
+	var thingmap = make(map[string]Thing)
+	var stringmap = map[int]string{
 		1: ``,
 		2: `    `,
 		3: "\t",
@@ -67,7 +67,7 @@ func TestIsEmpty(t *testing.T) {
 }
 
 func TestIsScalar(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.True(IsScalar(1))
 	assert.True(IsScalar(true))
@@ -80,7 +80,7 @@ func TestIsScalar(t *testing.T) {
 }
 
 func TestIsStruct(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsStruct(1))
 	assert.False(IsStruct(true))
@@ -93,7 +93,7 @@ func TestIsStruct(t *testing.T) {
 }
 
 func TestIsArray(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsArray(nil))
 
@@ -102,7 +102,7 @@ func TestIsArray(t *testing.T) {
 	assert.True(IsArray([]string{`1`}))
 	assert.True(IsArray(&[]string{`1`}))
 
-	var b interface{}
+	var b any
 	b = []string{`1`}
 
 	assert.True(IsArray(b))
@@ -115,7 +115,7 @@ func TestIsArray(t *testing.T) {
 }
 
 func TestIsFunction(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.False(IsFunction(nil))
 	assert.False(IsFunction(1))
@@ -131,23 +131,23 @@ func TestIsFunction(t *testing.T) {
 	assert.False(IsFunctionArity(func() {}, 0, 99))
 	assert.False(IsFunctionArity(func() {}, 99, 99))
 
-	assert.True(IsFunction(func(interface{}) {}))
-	assert.True(IsFunctionArity(func(interface{}) {}, 1, 0))
-	assert.True(IsFunctionArity(func(interface{}) {}, 1, -1))
-	assert.True(IsFunctionArity(func(interface{}) {}, -1, 0))
-	assert.True(IsFunctionArity(func(interface{}) {}, -1, -1))
-	assert.False(IsFunctionArity(func(interface{}) {}, 99, 0))
-	assert.False(IsFunctionArity(func(interface{}) {}, 0, 99))
-	assert.False(IsFunctionArity(func(interface{}) {}, 99, 99))
+	assert.True(IsFunction(func(any) {}))
+	assert.True(IsFunctionArity(func(any) {}, 1, 0))
+	assert.True(IsFunctionArity(func(any) {}, 1, -1))
+	assert.True(IsFunctionArity(func(any) {}, -1, 0))
+	assert.True(IsFunctionArity(func(any) {}, -1, -1))
+	assert.False(IsFunctionArity(func(any) {}, 99, 0))
+	assert.False(IsFunctionArity(func(any) {}, 0, 99))
+	assert.False(IsFunctionArity(func(any) {}, 99, 99))
 
-	assert.True(IsFunction(func(interface{}) error { return nil }))
-	assert.True(IsFunctionArity(func(interface{}) error { return nil }, 1, 1))
-	assert.True(IsFunctionArity(func(interface{}) error { return nil }, 1, -1))
-	assert.True(IsFunctionArity(func(interface{}) error { return nil }, -1, 1))
-	assert.True(IsFunctionArity(func(interface{}) error { return nil }, -1, -1))
-	assert.False(IsFunctionArity(func(interface{}) error { return nil }, 99, 1))
-	assert.False(IsFunctionArity(func(interface{}) error { return nil }, 0, 99))
-	assert.False(IsFunctionArity(func(interface{}) error { return nil }, 99, 99))
+	assert.True(IsFunction(func(any) error { return nil }))
+	assert.True(IsFunctionArity(func(any) error { return nil }, 1, 1))
+	assert.True(IsFunctionArity(func(any) error { return nil }, 1, -1))
+	assert.True(IsFunctionArity(func(any) error { return nil }, -1, 1))
+	assert.True(IsFunctionArity(func(any) error { return nil }, -1, -1))
+	assert.False(IsFunctionArity(func(any) error { return nil }, 99, 1))
+	assert.False(IsFunctionArity(func(any) error { return nil }, 0, 99))
+	assert.False(IsFunctionArity(func(any) error { return nil }, 99, 99))
 
 	assert.True(IsFunction(func() error { return nil }))
 	assert.True(IsFunctionArity(func() error { return nil }, 0, 1))
@@ -160,7 +160,7 @@ func TestIsFunction(t *testing.T) {
 }
 
 func TestSetValueInt(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	// INT
 	// ---------------------------------------------------------------------------------------------
@@ -260,9 +260,9 @@ type testSettable struct {
 }
 
 func TestSetValueStruct(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	t1 := &testSettable{
+	var t1 = &testSettable{
 		Name: `t1`,
 		Type: Value2,
 	}
@@ -292,7 +292,7 @@ func TestSetValueStruct(t *testing.T) {
 	assert.Equal(testEnum(`value-4`), t1.Type)
 
 	// -------------------------------------------------------------------------
-	tm := time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC)
+	var tm = time.Date(2009, time.November, 10, 23, 0, 0, 0, time.UTC)
 	assert.NoError(SetValue(
 		reflect.ValueOf(t1).Elem().Field(2),
 		tm,
@@ -301,7 +301,7 @@ func TestSetValueStruct(t *testing.T) {
 	assert.True(t1.CreatedAt.Equal(tm))
 
 	// -------------------------------------------------------------------------
-	var tmI interface{}
+	var tmI any
 	tmI = tm
 
 	assert.NoError(SetValue(
@@ -325,7 +325,7 @@ func TestSetValueStruct(t *testing.T) {
 		tm,
 	))
 
-	st := subtime{}
+	var st = subtime{}
 	assert.NoError(SetValue(&st, tm))
 	assert.True(st.Time.Equal(tm))
 
@@ -340,7 +340,7 @@ func TestSetValueStruct(t *testing.T) {
 }
 
 func TestSetValueSlice(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var s []string
 

@@ -35,8 +35,8 @@ var filters sync.Map
 var defaultLogger *logging.Logger
 var ModuleName = ``
 
-type LogFunc func(args ...interface{})
-type FormattedLogFunc func(format string, args ...interface{})
+type LogFunc func(args ...any)
+type FormattedLogFunc func(format string, args ...any)
 type LogInterceptFunc func(level Level, line string, stack StackItems)
 type LogFilterFunc func(level Level, line string, stack StackItems) bool
 
@@ -118,7 +118,7 @@ func Debugging() bool {
 
 func VeryDebugging(features ...string) bool {
 	if Debugging() {
-		envFeatures := strings.Split(os.Getenv(`DEBUG`), `,`)
+		var envFeatures = strings.Split(os.Getenv(`DEBUG`), `,`)
 
 		for _, feature := range features {
 			for _, ef := range envFeatures {
@@ -165,7 +165,7 @@ func SetLevel(level Level, modules ...string) {
 	}
 }
 
-func Logf(level Level, format string, args ...interface{}) {
+func Logf(level Level, format string, args ...any) {
 	initLogging()
 
 	var line = fmt.Sprintf(format, args...)
@@ -186,7 +186,7 @@ func Logf(level Level, format string, args ...interface{}) {
 	}
 }
 
-func Log(level Level, args ...interface{}) {
+func Log(level Level, args ...any) {
 	// handle this special case where we are handling a fatal-level unformatted nil value,
 	// in which case we don't actually want to end the program.
 	//
@@ -209,7 +209,7 @@ func Log(level Level, args ...interface{}) {
 	log(level, args...)
 }
 
-func log(level Level, args ...interface{}) {
+func log(level Level, args ...any) {
 	switch level {
 	case PANIC:
 		defaultLogger.Panic(args...)
@@ -230,38 +230,38 @@ func log(level Level, args ...interface{}) {
 	}
 }
 
-func Critical(args ...interface{}) {
+func Critical(args ...any) {
 	Log(CRITICAL, args...)
 }
 
-func Criticalf(format string, args ...interface{}) {
+func Criticalf(format string, args ...any) {
 	Logf(CRITICAL, format, args...)
 }
 
-func Debug(args ...interface{}) {
+func Debug(args ...any) {
 	Log(DEBUG, args...)
 }
 
-func Debugf(format string, args ...interface{}) {
+func Debugf(format string, args ...any) {
 	Logf(DEBUG, format, args...)
 }
 
 // Pretty-print the given arguments to the log at debug-level.
-func Dump(args ...interface{}) {
+func Dump(args ...any) {
 	for _, arg := range args {
 		Log(LogLevel, typeutil.Dump(arg))
 	}
 }
 
 // Same as Dump, but accepts a format string.
-func Dumpf(format string, args ...interface{}) {
+func Dumpf(format string, args ...any) {
 	for _, arg := range args {
 		Logf(LogLevel, format, typeutil.Dump(arg))
 	}
 }
 
 // Marshal the arguments as indented JSON and log them at debug-level.
-func DumpJSON(args ...interface{}) {
+func DumpJSON(args ...any) {
 	for _, arg := range args {
 		if data, err := json.MarshalIndent(arg, ``, `  `); err == nil {
 			Log(LogLevel, string(data))
@@ -271,61 +271,61 @@ func DumpJSON(args ...interface{}) {
 	}
 }
 
-func Error(args ...interface{}) {
+func Error(args ...any) {
 	Log(ERROR, args...)
 }
 
-func Errorf(format string, args ...interface{}) {
+func Errorf(format string, args ...any) {
 	Logf(ERROR, format, args...)
 }
 
-func Fatal(args ...interface{}) {
+func Fatal(args ...any) {
 	Log(FATAL, args...)
 }
 
-func Fatalf(format string, args ...interface{}) {
+func Fatalf(format string, args ...any) {
 	Logf(FATAL, format, args...)
 }
 
-func Info(args ...interface{}) {
+func Info(args ...any) {
 	Log(INFO, args...)
 }
 
-func Infof(format string, args ...interface{}) {
+func Infof(format string, args ...any) {
 	Logf(INFO, format, args...)
 }
 
-func Notice(args ...interface{}) {
+func Notice(args ...any) {
 	Log(NOTICE, args...)
 }
 
-func Noticef(format string, args ...interface{}) {
+func Noticef(format string, args ...any) {
 	Logf(NOTICE, format, args...)
 }
 
-func Panic(args ...interface{}) {
+func Panic(args ...any) {
 	Log(PANIC, args...)
 }
 
-func Panicf(format string, args ...interface{}) {
+func Panicf(format string, args ...any) {
 	Logf(PANIC, format, args...)
 }
 
-func Warning(args ...interface{}) {
+func Warning(args ...any) {
 	Log(WARNING, args...)
 }
 
-func Warningf(format string, args ...interface{}) {
+func Warningf(format string, args ...any) {
 	Logf(WARNING, format, args...)
 }
 
 func Confirm(prompt string) bool {
-	return Confirmf(prompt)
+	return Confirmf("%v", prompt)
 }
 
 // Present a confirmation prompt. The function returns true if the user interactively responds
 // with "yes" or "y". Otherwise the function returns false.
-func Confirmf(format string, args ...interface{}) bool {
+func Confirmf(format string, args ...any) bool {
 	var response string
 
 	fmt.Printf(format, args...)
@@ -372,7 +372,7 @@ func FatalfIf(format string, err error) {
 
 // call all registered intercept functions using the given arguments.
 func callIntercepts(level Level, line string, stack StackItems) {
-	intercepts.Range(func(_ interface{}, value interface{}) bool {
+	intercepts.Range(func(_ any, value any) bool {
 		if fn, ok := value.(LogInterceptFunc); ok {
 			// for levels CRITICAL and worse, call intercepts synchronously in case we're
 			// panicking and about to tear crap down.  Since these intercepts should run BEFORE
@@ -390,7 +390,7 @@ func callIntercepts(level Level, line string, stack StackItems) {
 }
 
 func shouldSkip(level Level, line string, stack StackItems) (skip bool) {
-	filters.Range(func(_ interface{}, value interface{}) bool {
+	filters.Range(func(_ any, value any) bool {
 		if fn, ok := value.(LogFilterFunc); ok {
 			if !fn(level, line, stack) {
 				skip = true

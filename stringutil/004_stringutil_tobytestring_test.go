@@ -5,7 +5,7 @@ import (
 )
 
 func TestToByteString(t *testing.T) {
-	testvalues := map[interface{}]string{
+	var testvalues = map[any]string{
 		0:       `0B`,
 		1:       `1B`,
 		1023:    `1023B`,
@@ -22,7 +22,7 @@ func TestToByteString(t *testing.T) {
 		}
 	}
 
-	testvalues = map[interface{}]string{
+	testvalues = map[any]string{
 		0:       `0.00B`,
 		1:       `1.00B`,
 		1023:    `1023.00B`,

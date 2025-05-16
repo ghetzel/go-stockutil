@@ -10,12 +10,12 @@ import (
 )
 
 func TestDiffuseOneTierScalar(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["id"] = "test"
 	input["enabled"] = true
@@ -38,12 +38,12 @@ func TestDiffuseOneTierScalar(t *testing.T) {
 }
 
 func TestDiffuseOneTierComplex(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["array"] = []string{"first", "third", "fifth"}
 	input["numary"] = []int{9, 7, 3}
@@ -80,12 +80,12 @@ func TestDiffuseOneTierComplex(t *testing.T) {
 }
 
 func TestDiffuseMultiTierScalar(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["items.0"] = 54
 	input["items.1"] = 77
@@ -97,7 +97,7 @@ func TestDiffuseMultiTierScalar(t *testing.T) {
 	i_items, ok := output["items"]
 	assert.True(ok)
 
-	items := i_items.([]interface{})
+	var items = i_items.([]any)
 
 	for i, v := range []int{54, 77, 82} {
 		assert.True(i < len(items))
@@ -106,12 +106,12 @@ func TestDiffuseMultiTierScalar(t *testing.T) {
 }
 
 func TestDiffuseMultiTierComplex(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["items.0.name"] = "First"
 	input["items.0.age"] = 54
@@ -126,7 +126,7 @@ func TestDiffuseMultiTierComplex(t *testing.T) {
 	i_items, ok := output["items"]
 	assert.True(ok)
 
-	items := i_items.([]interface{})
+	var items = i_items.([]any)
 	assert.Len(items, 3)
 
 	for item_id, obj := range items {
@@ -139,12 +139,12 @@ func TestDiffuseMultiTierComplex(t *testing.T) {
 }
 
 func TestDiffuseMultiTierMixed(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	var err error
 
-	input := make(map[string]interface{})
-	output := make(map[string]interface{})
+	var input = make(map[string]any)
+	var output = make(map[string]any)
 
 	input["items.0.tags"] = []string{"base", "other"}
 	input["items.1.tags"] = []string{"thing", "still-other", "more-other"}
@@ -156,18 +156,18 @@ func TestDiffuseMultiTierMixed(t *testing.T) {
 	i_items, ok := output["items"]
 	assert.True(ok)
 
-	items := i_items.([]interface{})
+	var items = i_items.([]any)
 
 	assert.Len(items, 3)
 
 	for item_id, obj := range items {
 		for k, v := range M(obj).MapNative() {
-			vAry := sliceutil.Stringify(v)
+			var vAry = sliceutil.Stringify(v)
 
 			inValue, ok := input[fmt.Sprintf("items.%d.%s", item_id, k)]
 			assert.True(ok)
 
-			inValueAry := inValue.([]string)
+			var inValueAry = inValue.([]string)
 
 			for i, vAryV := range vAry {
 				assert.Equal(inValueAry[i], vAryV)

@@ -20,7 +20,7 @@ func (self TypeDeclaration) String() string {
 	return string(self)
 }
 
-func (self TypeDeclaration) IsSameTypeAs(value interface{}) bool {
+func (self TypeDeclaration) IsSameTypeAs(value any) bool {
 	if self == `any` {
 		return true
 	}
@@ -43,7 +43,7 @@ func (self TypeDeclaration) IsSameTypeAs(value interface{}) bool {
 }
 
 // Returns the number of input and return arguments a given function has.
-func FunctionArity(fn interface{}) (int, int, error) {
+func FunctionArity(fn any) (int, int, error) {
 	if IsFunction(fn) {
 		var fnT = reflect.TypeOf(fn)
 
@@ -98,7 +98,7 @@ func ParseSignatureString(signature string) (ident string, args []TypeDeclaratio
 
 // Returns whether the given function's actual signature matches the given spec string (as parsed by
 // ParseSignatureString).
-func FunctionMatchesSignature(fn interface{}, signature string) error {
+func FunctionMatchesSignature(fn any, signature string) error {
 	fn = ResolveValue(fn)
 	var fnT = reflect.ValueOf(fn).Type()
 

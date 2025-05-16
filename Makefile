@@ -1,15 +1,8 @@
 
-LOCALS := $(shell find . -type f -name '*.go' -not -path "./vendor/*")
-PKGS   := log $(wildcard *util)
-COUNT  ?= 1
-
-# TEST_GOSTOCKUTIL_RETRIEVE_VIA_SFTP ?= sftp://cortex/motd
-# TEST_GOSTOCKUTIL_RETRIEVE_VIA_SSH  ?= ssh://cortex/hostname
-
-.PHONY: test deps docs $(PKGS)
-
-.EXPORT_ALL_VARIABLES:
-GO111MODULE = on
+LOCALS      := $(shell find -type f -name '*.go')
+PKGS        := log $(wildcard *util)
+COUNT       ?= 1
+GO111MODULE  = on
 
 all: fmt deps test docs
 
@@ -19,11 +12,12 @@ deps:
 	go get ./...
 	-go mod tidy
 
-fmt:
-	$(info Formatting)
-	@gofmt -w $(LOCALS)
-	$(info Vetting code)
+fmt: gofmt
 	@go vet ./...
+
+gofmt: $(LOCALS)
+$(LOCALS):
+	@gofmt -w $(@)
 
 docs:
 	@owndoc render --property rootpath=/go-stockutil/
@@ -34,3 +28,5 @@ $(PKGS):
 
 test: $(PKGS)
 
+
+.PHONY: test deps docs $(PKGS) $(LOCALS)

@@ -51,7 +51,7 @@
                     "Alias": "geo"
                 }
             ],
-            "Size": 4126,
+            "Size": 4069,
             "LineCount": 157,
             "SourceLineCount": 119,
             "FunctionCount": 10,
@@ -75,7 +75,7 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 46913,
+            "Size": 46905,
             "LineCount": 2027,
             "SourceLineCount": 2014,
             "FunctionCount": 2,
@@ -141,7 +141,7 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 3622,
+            "Size": 3585,
             "LineCount": 163,
             "SourceLineCount": 133,
             "FunctionCount": 10,
@@ -165,7 +165,7 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 1622,
+            "Size": 1606,
             "LineCount": 89,
             "SourceLineCount": 70,
             "FunctionCount": 6,
@@ -199,7 +199,7 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 3253,
+            "Size": 3268,
             "LineCount": 84,
             "SourceLineCount": 65,
             "FunctionCount": 0,
@@ -1953,7 +1953,7 @@
                 }
             ],
             "Signature": "TestLocationSpeedFrom(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuWmVybyhOdWxsSXNsYW5kKCkuU3BlZWRGcm9tKE51bGxJc2xhbmQoKSkpCglmcm9tIDo9ICZMb2NhdGlvbntMYXRpdHVkZTogMCwgTG9uZ2l0dWRlOiAxLCBUaW1lc3RhbXA6IHRpbWUuRGF0ZSgyMDEwLCAxLCAxLCAwLCAwLCAwLCAwLCB0aW1lLlVUQyl9Cgl0byA6PSAmTG9jYXRpb257TGF0aXR1ZGU6IDAsIExvbmdpdHVkZTogMiwgVGltZXN0YW1wOiB0aW1lLkRhdGUoMjAxMCwgMSwgMSwgMSwgMCwgMCwgMCwgdGltZS5VVEMpfQoJYXNzZXJ0LkVxdWFsKFNwZWVkKDExMS4xOTQ4Mzc2ODg2ODg1NypLUEgpLCB0by5TcGVlZEZyb20oZnJvbSkpCn0=",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuWmVybyhOdWxsSXNsYW5kKCkuU3BlZWRGcm9tKE51bGxJc2xhbmQoKSkpCgl2YXIgZnJvbSA9ICZMb2NhdGlvbntMYXRpdHVkZTogMCwgTG9uZ2l0dWRlOiAxLCBUaW1lc3RhbXA6IHRpbWUuRGF0ZSgyMDEwLCAxLCAxLCAwLCAwLCAwLCAwLCB0aW1lLlVUQyl9Cgl2YXIgdG8gPSAmTG9jYXRpb257TGF0aXR1ZGU6IDAsIExvbmdpdHVkZTogMiwgVGltZXN0YW1wOiB0aW1lLkRhdGUoMjAxMCwgMSwgMSwgMSwgMCwgMCwgMCwgdGltZS5VVEMpfQoJYXNzZXJ0LkVxdWFsKFNwZWVkKDExMS4xOTQ4Mzc2ODg2ODg1NypLUEgpLCB0by5TcGVlZEZyb20oZnJvbSkpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -1965,7 +1965,7 @@
                 }
             ],
             "Signature": "TestParseDistance(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuWmVybyhNdXN0UGFyc2VEaXN0YW5jZShgYCkpCglhc3NlcnQuWmVybyhNdXN0UGFyc2VEaXN0YW5jZShgMG1gKSkKCWFzc2VydC5aZXJvKE11c3RQYXJzZURpc3RhbmNlKGAwIG1ldGVyYCkpCglhc3NlcnQuWmVybyhNdXN0UGFyc2VEaXN0YW5jZShgMCBtZXRlcnNgKSkKCWFzc2VydC5aZXJvKE11c3RQYXJzZURpc3RhbmNlKGAwbWV0ZXJgKSkKCWFzc2VydC5aZXJvKE11c3RQYXJzZURpc3RhbmNlKGAwbWV0ZXJzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoMSwgTXVzdFBhcnNlRGlzdGFuY2UoYDFtYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoMSwgTXVzdFBhcnNlRGlzdGFuY2UoYDEgbWV0ZXJgKSkKCWFzc2VydC5FcXVhbFZhbHVlcygxLCBNdXN0UGFyc2VEaXN0YW5jZShgMSBtZXRlcnNgKSkKCWFzc2VydC5FcXVhbFZhbHVlcygxLCBNdXN0UGFyc2VEaXN0YW5jZShgMW1ldGVyYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoMSwgTXVzdFBhcnNlRGlzdGFuY2UoYDFtZXRlcnNgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjVrbWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMuMTQxNTk3NjI1KSpLaWxvbWV0ZXIsIE11c3RQYXJzZURpc3RhbmNlKGAzLjE0MTU5NzYyNSBrbWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMuMTQxNTk3NjI1KSpLaWxvbWV0ZXIsIE11c3RQYXJzZURpc3RhbmNlKGAzLjE0MTU5NzYyNSBrbS5gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjUga2lsb21ldGVyYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoMy4xNDE1OTc2MjUpKktpbG9tZXRlciwgTXVzdFBhcnNlRGlzdGFuY2UoYDMuMTQxNTk3NjI1IGtpbG9tZXRlcnNgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjVraWxvbWV0ZXJgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjVraWxvbWV0ZXJzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoMjYuMikqTWlsZSwgTXVzdFBhcnNlRGlzdGFuY2UoYDI2LjJtaWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDI2LjIpKk1pbGUsIE11c3RQYXJzZURpc3RhbmNlKGAyNi4yIG1pbGVzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoNTI4MCkqRm9vdCwgTXVzdFBhcnNlRGlzdGFuY2UoYDUyODBmdGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDUyODApKkZvb3QsIE11c3RQYXJzZURpc3RhbmNlKGA1MjgwIGZ0YCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoNTI4MCkqRm9vdCwgTXVzdFBhcnNlRGlzdGFuY2UoYDUyODAgZnQuYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoNTI4MCkqRm9vdCwgTXVzdFBhcnNlRGlzdGFuY2UoYDUyODAgZmVldGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDUyODApKkZvb3QsIE11c3RQYXJzZURpc3RhbmNlKGA1MjgwZmVldGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDEwMCkqWWFyZCwgTXVzdFBhcnNlRGlzdGFuY2UoYDEwMHlkLmApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDEwMCkqWWFyZCwgTXVzdFBhcnNlRGlzdGFuY2UoYDEwMCB5ZC5gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgxMDApKllhcmQsIE11c3RQYXJzZURpc3RhbmNlKGAxMDAgeWRgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgxMDApKllhcmQsIE11c3RQYXJzZURpc3RhbmNlKGAxMDB5ZGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDEwMCkqWWFyZCwgTXVzdFBhcnNlRGlzdGFuY2UoYDEwMCB5YXJkc2ApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMwMCkqTmF1dGljYWxNaWxlLCBNdXN0UGFyc2VEaXN0YW5jZShgMzAwbm1gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzMDApKk5hdXRpY2FsTWlsZSwgTXVzdFBhcnNlRGlzdGFuY2UoYDMwMCBubS5gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzMDApKk5hdXRpY2FsTWlsZSwgTXVzdFBhcnNlRGlzdGFuY2UoYDMwMCBubWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMwMCkqTmF1dGljYWxNaWxlLCBNdXN0UGFyc2VEaXN0YW5jZShgMzAwIG5hdXRpY2FsIG1pbGVzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoMzAwKSpOYXV0aWNhbE1pbGUsIE11c3RQYXJzZURpc3RhbmNlKGAzMDAgbmF1dGljYWwgbWlsZWApKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuWmVybyhNdXN0UGFyc2VEaXN0YW5jZShgYCkpCglhc3NlcnQuWmVybyhNdXN0UGFyc2VEaXN0YW5jZShgMG1gKSkKCWFzc2VydC5aZXJvKE11c3RQYXJzZURpc3RhbmNlKGAwIG1ldGVyYCkpCglhc3NlcnQuWmVybyhNdXN0UGFyc2VEaXN0YW5jZShgMCBtZXRlcnNgKSkKCWFzc2VydC5aZXJvKE11c3RQYXJzZURpc3RhbmNlKGAwbWV0ZXJgKSkKCWFzc2VydC5aZXJvKE11c3RQYXJzZURpc3RhbmNlKGAwbWV0ZXJzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoMSwgTXVzdFBhcnNlRGlzdGFuY2UoYDFtYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoMSwgTXVzdFBhcnNlRGlzdGFuY2UoYDEgbWV0ZXJgKSkKCWFzc2VydC5FcXVhbFZhbHVlcygxLCBNdXN0UGFyc2VEaXN0YW5jZShgMSBtZXRlcnNgKSkKCWFzc2VydC5FcXVhbFZhbHVlcygxLCBNdXN0UGFyc2VEaXN0YW5jZShgMW1ldGVyYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoMSwgTXVzdFBhcnNlRGlzdGFuY2UoYDFtZXRlcnNgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjVrbWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMuMTQxNTk3NjI1KSpLaWxvbWV0ZXIsIE11c3RQYXJzZURpc3RhbmNlKGAzLjE0MTU5NzYyNSBrbWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMuMTQxNTk3NjI1KSpLaWxvbWV0ZXIsIE11c3RQYXJzZURpc3RhbmNlKGAzLjE0MTU5NzYyNSBrbS5gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjUga2lsb21ldGVyYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoMy4xNDE1OTc2MjUpKktpbG9tZXRlciwgTXVzdFBhcnNlRGlzdGFuY2UoYDMuMTQxNTk3NjI1IGtpbG9tZXRlcnNgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjVraWxvbWV0ZXJgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzLjE0MTU5NzYyNSkqS2lsb21ldGVyLCBNdXN0UGFyc2VEaXN0YW5jZShgMy4xNDE1OTc2MjVraWxvbWV0ZXJzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoMjYuMikqTWlsZSwgTXVzdFBhcnNlRGlzdGFuY2UoYDI2LjJtaWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDI2LjIpKk1pbGUsIE11c3RQYXJzZURpc3RhbmNlKGAyNi4yIG1pbGVzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoNTI4MCkqRm9vdCwgTXVzdFBhcnNlRGlzdGFuY2UoYDUyODBmdGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDUyODApKkZvb3QsIE11c3RQYXJzZURpc3RhbmNlKGA1MjgwIGZ0YCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoNTI4MCkqRm9vdCwgTXVzdFBhcnNlRGlzdGFuY2UoYDUyODAgZnQuYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoNTI4MCkqRm9vdCwgTXVzdFBhcnNlRGlzdGFuY2UoYDUyODAgZmVldGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDUyODApKkZvb3QsIE11c3RQYXJzZURpc3RhbmNlKGA1MjgwZmVldGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDEwMCkqWWFyZCwgTXVzdFBhcnNlRGlzdGFuY2UoYDEwMHlkLmApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDEwMCkqWWFyZCwgTXVzdFBhcnNlRGlzdGFuY2UoYDEwMCB5ZC5gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgxMDApKllhcmQsIE11c3RQYXJzZURpc3RhbmNlKGAxMDAgeWRgKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgxMDApKllhcmQsIE11c3RQYXJzZURpc3RhbmNlKGAxMDB5ZGApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDEwMCkqWWFyZCwgTXVzdFBhcnNlRGlzdGFuY2UoYDEwMCB5YXJkc2ApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMwMCkqTmF1dGljYWxNaWxlLCBNdXN0UGFyc2VEaXN0YW5jZShgMzAwbm1gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzMDApKk5hdXRpY2FsTWlsZSwgTXVzdFBhcnNlRGlzdGFuY2UoYDMwMCBubS5gKSkKCWFzc2VydC5FcXVhbFZhbHVlcyhEaXN0YW5jZSgzMDApKk5hdXRpY2FsTWlsZSwgTXVzdFBhcnNlRGlzdGFuY2UoYDMwMCBubWApKQoJYXNzZXJ0LkVxdWFsVmFsdWVzKERpc3RhbmNlKDMwMCkqTmF1dGljYWxNaWxlLCBNdXN0UGFyc2VEaXN0YW5jZShgMzAwIG5hdXRpY2FsIG1pbGVzYCkpCglhc3NlcnQuRXF1YWxWYWx1ZXMoRGlzdGFuY2UoMzAwKSpOYXV0aWNhbE1pbGUsIE11c3RQYXJzZURpc3RhbmNlKGAzMDAgbmF1dGljYWwgbWlsZWApKQp9",
             "IsPackageLevel": true
         },
         {
@@ -1977,7 +1977,7 @@
                 }
             ],
             "Signature": "TestSpeedFuncs(t *testing.T)",
-            "Source": "ewoJYXNzZXJ0IDo9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuVHJ1ZShTcGVlZChNUEgpLkZhc3RlclRoYW4oS1BIKSkKCWFzc2VydC5UcnVlKFNwZWVkKEtQSCkuU2xvd2VyVGhhbihNUEgpKQoJYXNzZXJ0LlRydWUoU3BlZWQoMzYwMCAqIE1QSCkuRXF1YWwoNTI4MCAqIEZlZXRQZXJTZWNvbmQpKQp9",
+            "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglhc3NlcnQuVHJ1ZShTcGVlZChNUEgpLkZhc3RlclRoYW4oS1BIKSkKCWFzc2VydC5UcnVlKFNwZWVkKEtQSCkuU2xvd2VyVGhhbihNUEgpKQoJYXNzZXJ0LlRydWUoU3BlZWQoMzYwMCAqIE1QSCkuRXF1YWwoNTI4MCAqIEZlZXRQZXJTZWNvbmQpKQp9",
             "IsPackageLevel": true
         }
     ],
@@ -2055,7 +2055,7 @@
                     "Arguments": [
                         {
                             "Name": "nameOrCode",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -2063,7 +2063,7 @@
                             "Type": "Country"
                         }
                     ],
-                    "Signature": "Get(nameOrCode interface{}) Country",
+                    "Signature": "Get(nameOrCode any) Country",
                     "IsPackageLevel": false
                 }
             ],
@@ -2148,7 +2148,7 @@
                     "Arguments": [
                         {
                             "Name": "in",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -2156,7 +2156,7 @@
                             "Type": "Distance"
                         }
                     ],
-                    "Signature": "MustParseDistance(in interface{}) Distance",
+                    "Signature": "MustParseDistance(in any) Distance",
                     "Source": "ewoJaWYgZGlzdGFuY2UsIGVyciA6PSBQYXJzZURpc3RhbmNlKGluKTsgZXJyID09IG5pbCB7CgkJcmV0dXJuIGRpc3RhbmNlCgl9IGVsc2UgewoJCXBhbmljKGBpbnZhbGlkIGRpc3RhbmNlOiBgICsgZXJyLkVycm9yKCkpCgl9Cn0=",
                     "IsPackageLevel": true
                 },
@@ -2165,7 +2165,7 @@
                     "Arguments": [
                         {
                             "Name": "in",
-                            "Type": "interface{}"
+                            "Type": "any"
                         }
                     ],
                     "Returns": [
@@ -2176,8 +2176,8 @@
                             "Type": "error"
                         }
                     ],
-                    "Signature": "ParseDistance(in interface{}) (Distance, error)",
-                    "Source": "ewoJaWYgdHlwZXV0aWwuSXNaZXJvKGluKSB7CgkJcmV0dXJuIDAsIG5pbAoJfQoJaWYgbWF0Y2ggOj0gcnh1dGlsLk1hdGNoKHJ4RGlzdGFuY2VFeHRyYWN0LCBzdHJpbmdzLlRyaW1TcGFjZShmbXQuU3ByaW50ZigiJXYiLCBpbikpKTsgbWF0Y2ggIT0gbmlsIHsKCQlpZiB2IDo9IHR5cGV1dGlsLlYobWF0Y2guR3JvdXAoYG51bWJlcmApKS5GbG9hdCgpOyB2ID49IDAgewoJCQl1bml0IDo9IG1hdGNoLkdyb3VwKGB1bml0YCkKCQkJdW5pdCA9IHN0cmluZ3MuVHJpbVNwYWNlKHVuaXQpCgkJCXVuaXQgPSBzdHJpbmdzLlRvTG93ZXIodW5pdCkKCQkJdW5pdCA9IHN0cmluZ3MuVHJpbVN1ZmZpeCh1bml0LCBgc2ApCgkJCXN3aXRjaCB1bml0IHsKCQkJY2FzZSBgbWV0ZXJgLCBgbWA6CgkJCQlyZXR1cm4gRGlzdGFuY2UodiksIG5pbAoJCQljYXNlIGBraWxvbWV0ZXJgLCBga21gOgoJCQkJcmV0dXJuIERpc3RhbmNlKHYpICogS2lsb21ldGVyLCBuaWwKCQkJY2FzZSBgbWlsZWAsIGBtaWA6CgkJCQlyZXR1cm4gRGlzdGFuY2UodikgKiBNaWxlLCBuaWwKCQkJY2FzZSBgZmVldGAsIGBmb290YCwgYGZ0YDoKCQkJCXJldHVybiBEaXN0YW5jZSh2KSAqIEZvb3QsIG5pbAoJCQljYXNlIGB5YXJkYCwgYHlkYDoKCQkJCXJldHVybiBEaXN0YW5jZSh2KSAqIFlhcmQsIG5pbAoJCQljYXNlIGBubWAsIGBuYXV0aWNhbCBtaWxlYDoKCQkJCXJldHVybiBEaXN0YW5jZSh2KSAqIE5hdXRpY2FsTWlsZSwgbmlsCgkJCWRlZmF1bHQ6CgkJCQlyZXR1cm4gMCwgZm10LkVycm9yZigiVW5yZWNvZ25pemVkIGRpc3RhbmNlIHVuaXQgJXEiLCB1bml0KQoJCQl9CgkJfSBlbHNlIHsKCQkJcmV0dXJuIDAsIGZtdC5FcnJvcmYoIlVuYWJsZSB0byBleHRyYWN0IG51bWJlciBmcm9tIGRpc3RhbmNlIHZhbHVlIikKCQl9Cgl9IGVsc2UgaWYgdiA6PSB0eXBldXRpbC5WKGluKS5GbG9hdCgpOyB2ID49IDAgewoJCXJldHVybiBEaXN0YW5jZSh2KSwgbmlsCgl9IGVsc2UgewoJCXJldHVybiAwLCBmbXQuRXJyb3JmKCJ1bmFibGUgdG8gcGFyc2UgZGlzdGFuY2UgdmFsdWUiKQoJfQp9",
+                    "Signature": "ParseDistance(in any) (Distance, error)",
+                    "Source": "ewoJaWYgdHlwZXV0aWwuSXNaZXJvKGluKSB7CgkJcmV0dXJuIDAsIG5pbAoJfQoJaWYgbWF0Y2ggOj0gcnh1dGlsLk1hdGNoKHJ4RGlzdGFuY2VFeHRyYWN0LCBzdHJpbmdzLlRyaW1TcGFjZShmbXQuU3ByaW50ZigiJXYiLCBpbikpKTsgbWF0Y2ggIT0gbmlsIHsKCQlpZiB2IDo9IHR5cGV1dGlsLlYobWF0Y2guR3JvdXAoYG51bWJlcmApKS5GbG9hdCgpOyB2ID49IDAgewoJCQl2YXIgdW5pdCA9IG1hdGNoLkdyb3VwKGB1bml0YCkKCQkJdW5pdCA9IHN0cmluZ3MuVHJpbVNwYWNlKHVuaXQpCgkJCXVuaXQgPSBzdHJpbmdzLlRvTG93ZXIodW5pdCkKCQkJdW5pdCA9IHN0cmluZ3MuVHJpbVN1ZmZpeCh1bml0LCBgc2ApCgkJCXN3aXRjaCB1bml0IHsKCQkJY2FzZSBgbWV0ZXJgLCBgbWA6CgkJCQlyZXR1cm4gRGlzdGFuY2UodiksIG5pbAoJCQljYXNlIGBraWxvbWV0ZXJgLCBga21gOgoJCQkJcmV0dXJuIERpc3RhbmNlKHYpICogS2lsb21ldGVyLCBuaWwKCQkJY2FzZSBgbWlsZWAsIGBtaWA6CgkJCQlyZXR1cm4gRGlzdGFuY2UodikgKiBNaWxlLCBuaWwKCQkJY2FzZSBgZmVldGAsIGBmb290YCwgYGZ0YDoKCQkJCXJldHVybiBEaXN0YW5jZSh2KSAqIEZvb3QsIG5pbAoJCQljYXNlIGB5YXJkYCwgYHlkYDoKCQkJCXJldHVybiBEaXN0YW5jZSh2KSAqIFlhcmQsIG5pbAoJCQljYXNlIGBubWAsIGBuYXV0aWNhbCBtaWxlYDoKCQkJCXJldHVybiBEaXN0YW5jZSh2KSAqIE5hdXRpY2FsTWlsZSwgbmlsCgkJCWRlZmF1bHQ6CgkJCQlyZXR1cm4gMCwgZm10LkVycm9yZigiVW5yZWNvZ25pemVkIGRpc3RhbmNlIHVuaXQgJXEiLCB1bml0KQoJCQl9CgkJfSBlbHNlIHsKCQkJcmV0dXJuIDAsIGZtdC5FcnJvcmYoIlVuYWJsZSB0byBleHRyYWN0IG51bWJlciBmcm9tIGRpc3RhbmNlIHZhbHVlIikKCQl9Cgl9IGVsc2UgaWYgdiA6PSB0eXBldXRpbC5WKGluKS5GbG9hdCgpOyB2ID49IDAgewoJCXJldHVybiBEaXN0YW5jZSh2KSwgbmlsCgl9IGVsc2UgewoJCXJldHVybiAwLCBmbXQuRXJyb3JmKCJ1bmFibGUgdG8gcGFyc2UgZGlzdGFuY2UgdmFsdWUiKQoJfQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -2348,7 +2348,7 @@
                         }
                     ],
                     "Signature": "NewLocation(latitude float64, longitude float64) *Location",
-                    "Source": "ewoJcmV0dXJuICZMb2NhdGlvbntMYXRpdHVkZTogbGF0aXR1ZGUsIExvbmdpdHVkZTogbG9uZ2l0dWRlLCBQcm9wZXJ0aWVzOiBtYWtlKG1hcFtzdHJpbmddaW50ZXJmYWNle30pfQp9",
+                    "Source": "ewoJcmV0dXJuICZMb2NhdGlvbntMYXRpdHVkZTogbGF0aXR1ZGUsIExvbmdpdHVkZTogbG9uZ2l0dWRlLCBQcm9wZXJ0aWVzOiBtYWtlKG1hcFtzdHJpbmddYW55KX0KfQ==",
                     "IsPackageLevel": true
                 },
                 {
@@ -2436,11 +2436,11 @@
                 },
                 {
                     "Name": "Properties",
-                    "Type": "map[string]interface{}"
+                    "Type": "map[string]any"
                 }
             ],
             "Comment": "Specifies a three-dimensional location within a coordinate reference system.",
-            "Source": "dHlwZSBMb2NhdGlvbiBzdHJ1Y3QgewoJTGF0aXR1ZGUgICAgICAgICAgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoibGF0aXR1ZGUsb21pdGVtcHR5ImAKCUxvbmdpdHVkZSAgICAgICAgICAgZmxvYXQ2NCAgICAgICAgICAgYGpzb246ImxvbmdpdHVkZSxvbWl0ZW1wdHkiYAoJQmVhcmluZyAgICAgICAgICAgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoiYmVhcmluZyxvbWl0ZW1wdHkiYAoJVGltZXN0YW1wICAgICAgICAgICB0aW1lLlRpbWUgICAgICAgICBganNvbjoidGltZXN0YW1wLG9taXRlbXB0eSJgCglBbHRpdHVkZSAgICAgICAgICAgIERpc3RhbmNlICAgICAgICAgIGBqc29uOiJhbHRpdHVkZSxvbWl0ZW1wdHkiYAoJU3BlZWQgICAgICAgICAgICAgICBTcGVlZCAgICAgICAgICAgICBganNvbjoic3BlZWQsb21pdGVtcHR5ImAKCUFjY3VyYWN5ICAgICAgICAgICAgZmxvYXQ2NCAgICAgICAgICAgYGpzb246ImFjY3VyYWN5LG9taXRlbXB0eSJgCglFcnJvciAgICAgICAgICAgICAgICpMb2NhdGlvbkVycm9yICAgIGBqc29uOiJlcnJvcixvbWl0ZW1wdHkiYAoJRGlyZWN0aW9uICAgICAgICAgICBDYXJkaW5hbERpcmVjdGlvbiBganNvbjoiZGlyZWN0aW9uLG9taXRlbXB0eSJgCglTb3VyY2UgICAgICAgICAgICAgIHN0cmluZyAgICAgICAgICAgIGBqc29uOiJzb3VyY2Usb21pdGVtcHR5ImAKCVByb3BlcnRpZXMgICAgICAgICAgbWFwIC8vIFNwZWNpZmllcyBhIHRocmVlLWRpbWVuc2lvbmFsIGxvY2F0aW9uIHdpdGhpbiBhIGNvb3JkaW5hdGUgcmVmZXJlbmNlIHN5c3RlbS4KCVtzdHJpbmddaW50ZXJmYWNle30gYGpzb246InByb3BlcnRpZXMsb21pdGVtcHR5ImAKfQ=="
+            "Source": "dHlwZSBMb2NhdGlvbiBzdHJ1Y3QgewoJTGF0aXR1ZGUgICAgZmxvYXQ2NCAgICAgICAgICAgYGpzb246ImxhdGl0dWRlLG9taXRlbXB0eSJgCglMb25naXR1ZGUgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoibG9uZ2l0dWRlLG9taXRlbXB0eSJgCglCZWFyaW5nICAgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoiYmVhcmluZyxvbWl0ZW1wdHkiYAoJVGltZXN0YW1wICAgdGltZS5UaW1lICAgICAgICAgYGpzb246InRpbWVzdGFtcCxvbWl0ZW1wdHkiYAoJQWx0aXR1ZGUgICAgRGlzdGFuY2UgICAgICAgICAgYGpzb246ImFsdGl0dWRlLG9taXRlbXB0eSJgCglTcGVlZCAgICAgICBTcGVlZCAgICAgICAgICAgICBganNvbjoic3BlZWQsb21pdGVtcHR5ImAKCUFjY3VyYWN5ICAgIGZsb2F0NjQgICAgICAgICAgIGBqc29uOiJhY2N1cmFjeSxvbWl0ZW1wdHkiYAoJRXJyb3IgICAgICAgKkxvY2F0aW9uRXJyb3IgICAgYGpzb246ImVycm9yLG9taXRlbXB0eSJgCglEaXJlY3Rpb24gICBDYXJkaW5hbERpcmVjdGlvbiBganNvbjoiZGlyZWN0aW9uLG9taXRlbXB0eSJgCglTb3VyY2UgICAgICBzdHJpbmcgICAgICAgICAgICBganNvbjoic291cmNlLG9taXRlbXB0eSJgCglQcm9wZXJ0aWVzICBtYXAgLy8gU3BlY2lmaWVzIGEgdGhyZWUtZGltZW5zaW9uYWwgbG9jYXRpb24gd2l0aGluIGEgY29vcmRpbmF0ZSByZWZlcmVuY2Ugc3lzdGVtLgoJW3N0cmluZ11hbnkgYGpzb246InByb3BlcnRpZXMsb21pdGVtcHR5ImAKfQ=="
         },
         "LocationError": {
             "Name": "LocationError",

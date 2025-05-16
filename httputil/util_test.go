@@ -10,13 +10,13 @@ import (
 )
 
 func mt(ct string) *http.Request {
-	req := httptest.NewRequest(`GET`, `/`, nil)
+	var req = httptest.NewRequest(`GET`, `/`, nil)
 	req.Header.Set(`Content-Type`, ct)
 	return req
 }
 
 func TestMediaType(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Equal(``, MediaType(mt(``)))
 	assert.Equal(`text/plain`, MediaType(mt(`text/plain`)))
@@ -24,9 +24,9 @@ func TestMediaType(t *testing.T) {
 }
 
 func TestIsMediaType(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
-	req := mt(`text/plain; charset=utf-8`)
+	var req = mt(`text/plain; charset=utf-8`)
 
 	assert.True(IsMediaType(req, `text/plain`))
 	assert.True(IsMediaType(req, `text/plain`, `text/html`))
@@ -36,7 +36,7 @@ func TestIsMediaType(t *testing.T) {
 }
 
 func ExampleIsMediaType_singleMediaType() {
-	req := httptest.NewRequest(`GET`, `/`, nil)
+	var req = httptest.NewRequest(`GET`, `/`, nil)
 	req.Header.Set(`Content-Type`, `text/html; charset=utf-8`)
 
 	fmt.Println(IsMediaType(req, `text/html`))
@@ -44,7 +44,7 @@ func ExampleIsMediaType_singleMediaType() {
 }
 
 func ExampleIsMediaType_multipleMediaTypes() {
-	req := httptest.NewRequest(`GET`, `/`, nil)
+	var req = httptest.NewRequest(`GET`, `/`, nil)
 	req.Header.Set(`Content-Type`, `text/html; charset=utf-8`)
 
 	fmt.Println(IsMediaType(req, `text/html`, `text/plain`))
@@ -52,7 +52,7 @@ func ExampleIsMediaType_multipleMediaTypes() {
 }
 
 func ExampleIsMediaType_mediaTypePrefix() {
-	req := httptest.NewRequest(`GET`, `/`, nil)
+	var req = httptest.NewRequest(`GET`, `/`, nil)
 	req.Header.Set(`Content-Type`, `text/html; charset=utf-8`)
 
 	fmt.Println(IsMediaType(req, `text/`))
@@ -60,7 +60,7 @@ func ExampleIsMediaType_mediaTypePrefix() {
 }
 
 func ExampleIsMediaType_nonMatchingPrefix() {
-	req := httptest.NewRequest(`GET`, `/`, nil)
+	var req = httptest.NewRequest(`GET`, `/`, nil)
 	req.Header.Set(`Content-Type`, `text/html; charset=utf-8`)
 
 	fmt.Println(IsMediaType(req, `video/`))

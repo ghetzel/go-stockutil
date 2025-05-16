@@ -7,7 +7,6 @@ import (
 	"crypto/x509"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net/http"
 	gohttputil "net/http/httputil"
 	"net/url"
@@ -29,7 +28,7 @@ var DefaultClient = MustClient(``)
 // response body as bytes.
 func GetBody(url string) ([]byte, error) {
 	if res, err := DefaultClient.Get(url, nil, nil); err == nil {
-		var data, err = ioutil.ReadAll(res.Body)
+		var data, err = io.ReadAll(res.Body)
 
 		res.Body.Close()
 
@@ -52,7 +51,7 @@ func WaitForHTTP(url string, timeout time.Duration, c ...*http.Client) error {
 		client = http.DefaultClient
 	}
 
-	start := time.Now()
+	var start = time.Now()
 
 	for time.Since(start) < timeout {
 		if res, err := client.Get(url); err == nil {
@@ -75,8 +74,8 @@ type Client struct {
 	preRequestHook    InterceptRequestFunc
 	postRequestHook   InterceptResponseFunc
 	uri               *url.URL
-	headers           map[string]interface{}
-	params            map[string]interface{}
+	headers           map[string]any
+	params            map[string]any
 	httpClient        *http.Client
 	rootCaPool        *x509.CertPool
 	insecure          bool
@@ -96,8 +95,8 @@ func NewClient(baseURI string) (*Client, error) {
 	var client = &Client{
 		encoder:    JSONEncoder,
 		decoder:    JSONDecoder,
-		headers:    make(map[string]interface{}),
-		params:     make(map[string]interface{}),
+		headers:    make(map[string]any),
+		params:     make(map[string]any),
 		httpClient: http.DefaultClient,
 	}
 
@@ -112,7 +111,7 @@ func NewClient(baseURI string) (*Client, error) {
 	}
 
 	if log.VeryDebugging(`github.com/ghetzel/go-stockutil/httputil`) {
-		client.SetPreRequestHook(func(req *http.Request) (interface{}, error) {
+		client.SetPreRequestHook(func(req *http.Request) (any, error) {
 			if data, err := gohttputil.DumpRequest(req, true); err == nil {
 				log.Debugf("httputil ${blue}\u256d\u2500[ HTTP Request ]%s\u2504\u2504\u2504${reset}", strings.Repeat("\u2500", DebugOutputBoxWidth-17))
 				log.Debugf("httputil ${blue}\u2502${reset} \u21c9 %v", req.URL)
@@ -129,7 +128,7 @@ func NewClient(baseURI string) (*Client, error) {
 			return nil, nil
 		})
 
-		client.SetPostRequestHook(func(res *http.Response, _ interface{}) error {
+		client.SetPostRequestHook(func(res *http.Response, _ any) error {
 			if data, err := gohttputil.DumpResponse(res, true); err == nil {
 				log.Debugf("httputil \u256d\u2500[ HTTP Response ]%s\u2504\u2504\u2504", strings.Repeat("\u2500", DebugOutputBoxWidth-18))
 
@@ -236,7 +235,7 @@ func (self *Client) ClearHeaders() {
 
 // Add an HTTP request header by name that will be included in every request. If
 // value is nil, the named header will be removed instead.
-func (self *Client) SetHeader(name string, value interface{}) {
+func (self *Client) SetHeader(name string, value any) {
 	if value != nil {
 		self.headers[name] = value
 	} else {
@@ -251,7 +250,7 @@ func (self *Client) ClearParams() {
 
 // Add a querystring parameter by name that will be included in every request. If
 // value is nil, the parameter will be removed instead.
-func (self *Client) SetParam(name string, value interface{}) {
+func (self *Client) SetParam(name string, value any) {
 	if value != nil {
 		self.params[name] = value
 	} else {
@@ -260,7 +259,7 @@ func (self *Client) SetParam(name string, value interface{}) {
 }
 
 // Return the params set on this client.
-func (self *Client) Params() map[string]interface{} {
+func (self *Client) Params() map[string]any {
 	return self.params
 }
 
@@ -286,16 +285,16 @@ func (self *Client) SetBasicAuth(username string, password string) {
 }
 
 // Append one or more trusted certificates to the RootCA bundle that is consulted when performing HTTPS requests.
-func (self *Client) AppendTrustedRootCA(pemFilenamesOrData ...interface{}) error {
+func (self *Client) AppendTrustedRootCA(pemFilenamesOrData ...any) error {
 	return self.updateRootCA(false, pemFilenamesOrData...)
 }
 
 // Replace the existing RootCA bundle with an explicit set of trusted certificates.
-func (self *Client) SetRootCA(pemFilenamesOrData ...interface{}) error {
+func (self *Client) SetRootCA(pemFilenamesOrData ...any) error {
 	return self.updateRootCA(true, pemFilenamesOrData...)
 }
 
-func (self *Client) updateRootCA(replace bool, pemFilenamesOrData ...interface{}) error {
+func (self *Client) updateRootCA(replace bool, pemFilenamesOrData ...any) error {
 	var pems = make([][]byte, 0)
 
 	// when we're all done, make sure the http.Client we'll be using knows about our certs
@@ -305,7 +304,7 @@ func (self *Client) updateRootCA(replace bool, pemFilenamesOrData ...interface{}
 		if b, ok := pem.([]byte); ok {
 			pems = append(pems, b)
 		} else if r, ok := pem.(io.Reader); ok {
-			if b, err := ioutil.ReadAll(r); err == nil {
+			if b, err := io.ReadAll(r); err == nil {
 				pems = append(pems, b)
 			} else {
 				return err
@@ -379,9 +378,9 @@ func (self *Client) syncHttpClient() {
 func (self *Client) Request(
 	method Method,
 	path string,
-	body interface{},
-	params map[string]interface{},
-	headers map[string]interface{},
+	body any,
+	params map[string]any,
+	headers map[string]any,
 ) (*http.Response, error) {
 	return self.RequestWithContext(context.Background(), method, path, body, params, headers)
 }
@@ -391,9 +390,9 @@ func (self *Client) RequestWithContext(
 	ctx context.Context,
 	method Method,
 	path string,
-	body interface{},
-	params map[string]interface{},
-	headers map[string]interface{},
+	body any,
+	params map[string]any,
+	headers map[string]any,
 ) (*http.Response, error) {
 	if !self.firstRequestSent {
 		if self.firstRequestHook != nil {
@@ -405,8 +404,8 @@ func (self *Client) RequestWithContext(
 		self.firstRequestSent = true
 	}
 
-	var finalParams = make(map[string]interface{})
-	var finalHeaders = make(map[string]interface{})
+	var finalParams = make(map[string]any)
+	var finalHeaders = make(map[string]any)
 
 	for k, v := range self.params {
 		finalParams[k] = v
@@ -442,7 +441,7 @@ func (self *Client) RequestWithContext(
 		}
 
 		var payload io.Reader
-		var encoded interface{}
+		var encoded any
 
 		if body != nil {
 			if lit, ok := body.(Literal); ok {
@@ -498,7 +497,7 @@ func (self *Client) RequestWithContext(
 				}
 			}
 
-			var hookObject interface{}
+			var hookObject any
 
 			if self.preRequestHook != nil {
 				if v, err := self.preRequestHook(request); err == nil {
@@ -539,10 +538,10 @@ func (self *Client) RequestWithContext(
 	}
 }
 
-func (self *Client) Encode(in interface{}) ([]byte, error) {
+func (self *Client) Encode(in any) ([]byte, error) {
 	if self.encoder != nil {
 		if r, err := self.encoder(in); err == nil {
-			return ioutil.ReadAll(r)
+			return io.ReadAll(r)
 		} else {
 			return nil, err
 		}
@@ -552,7 +551,7 @@ func (self *Client) Encode(in interface{}) ([]byte, error) {
 }
 
 // Decode a response and, if applicable, automatically close the reader.
-func (self *Client) Decode(r io.Reader, out interface{}) error {
+func (self *Client) Decode(r io.Reader, out any) error {
 	if closer, ok := r.(io.Closer); ok {
 		defer closer.Close()
 	}
@@ -564,22 +563,22 @@ func (self *Client) Decode(r io.Reader, out interface{}) error {
 	}
 }
 
-func (self *Client) Get(path string, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error) {
+func (self *Client) Get(path string, params map[string]any, headers map[string]any) (*http.Response, error) {
 	return self.Request(Get, path, nil, params, headers)
 }
 
-func (self *Client) GetWithBody(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error) {
+func (self *Client) GetWithBody(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error) {
 	return self.Request(Get, path, body, params, headers)
 }
 
-func (self *Client) Post(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error) {
+func (self *Client) Post(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error) {
 	return self.Request(Post, path, body, params, headers)
 }
 
-func (self *Client) Put(path string, body interface{}, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error) {
+func (self *Client) Put(path string, body any, params map[string]any, headers map[string]any) (*http.Response, error) {
 	return self.Request(Put, path, body, params, headers)
 }
 
-func (self *Client) Delete(path string, params map[string]interface{}, headers map[string]interface{}) (*http.Response, error) {
+func (self *Client) Delete(path string, params map[string]any, headers map[string]any) (*http.Response, error) {
 	return self.Request(Delete, path, nil, params, headers)
 }

@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.12.0
+                            v1.13.0
                         </li>
                     </ul>
                     
@@ -141,7 +141,7 @@
 	</span>
 </div>
 
-<span class="pull-right">Doc Coverage: 89%</span>
+<span class="pull-right">Doc Coverage: 90%</span>
 <h2 id="pkg-overview">package sliceutil</h2>
 
 <p>
@@ -173,31 +173,31 @@
 	
     <li>
 		<strong>
-		<a href="#Append">func Append(in interface{}, values ...interface{}) []interface{}</a>
+		<a href="#Append">func Append(in any, values ...any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#At">func At(in interface{}, index int) (interface{}, bool)</a>
+		<a href="#At">func At(in any, index int) (any, bool)</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Autotype">func Autotype(in interface{}) []interface{}</a>
+		<a href="#Autotype">func Autotype(in any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Chunks">func Chunks(in interface{}, size int) [][]interface{}</a>
+		<a href="#Chunks">func Chunks(in any, size int) [][]any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Compact">func Compact(in interface{}) []interface{}</a>
+		<a href="#Compact">func Compact(in any) []any</a>
 		</strong>
 	</li>
 	
@@ -209,7 +209,7 @@
 	
     <li>
 		<strong>
-		<a href="#Contains">func Contains(in interface{}, value interface{}, comparators ...CompareFunc) bool</a>
+		<a href="#Contains">func Contains(in any, value any, comparators ...CompareFunc) bool</a>
 		</strong>
 	</li>
 	
@@ -233,43 +233,43 @@
 	
     <li>
 		<strong>
-		<a href="#Difference">func Difference(first interface{}, second interface{}) []interface{}</a>
+		<a href="#Difference">func Difference(first any, second any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Each">func Each(slice interface{}, iterFn IterationFunc) error</a>
+		<a href="#Each">func Each(slice any, iterFn IterationFunc) error</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#First">func First(in interface{}) interface{}</a>
+		<a href="#First">func First(in any) any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#FirstNonZero">func FirstNonZero(inputs ...interface{}) interface{}</a>
+		<a href="#FirstNonZero">func FirstNonZero(inputs ...any) any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Flatten">func Flatten(in interface{}) []interface{}</a>
+		<a href="#Flatten">func Flatten(in any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Get">func Get(in interface{}, index int) interface{}</a>
+		<a href="#Get">func Get(in any, index int) any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Intersect">func Intersect(a interface{}, b interface{}) []interface{}</a>
+		<a href="#Intersect">func Intersect(a any, b any) []any</a>
 		</strong>
 	</li>
 	
@@ -281,31 +281,31 @@
 	
     <li>
 		<strong>
-		<a href="#Last">func Last(in interface{}) interface{}</a>
+		<a href="#Last">func Last(in any) any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Len">func Len(in interface{}) int</a>
+		<a href="#Len">func Len(in any) int</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Map">func Map(in interface{}, fn MapFunc) []interface{}</a>
+		<a href="#Map">func Map(in any, fn MapFunc) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#MapString">func MapString(in interface{}, fn MapStringFunc) []string</a>
+		<a href="#MapString">func MapString(in any, fn MapStringFunc) []string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Or">func Or(in ...interface{}) interface{}</a>
+		<a href="#Or">func Or(in ...any) any</a>
 		</strong>
 	</li>
 	
@@ -317,49 +317,61 @@
 	
     <li>
 		<strong>
-		<a href="#Rest">func Rest(in interface{}) []interface{}</a>
+		<a href="#Rest">func Rest(in any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Slice">func Slice(slice interface{}, from int, to int) []interface{}</a>
+		<a href="#Slice">func Slice(slice any, from int, to int) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Sliceify">func Sliceify(in interface{}) []interface{}</a>
+		<a href="#Sliceify">func Sliceify(in any) []any</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#StringSlice">func StringSlice(slice interface{}, from int, to int) []string</a>
+		<a href="#SplitCompact">func SplitCompact(in string, delimiter string) out []string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Stringify">func Stringify(in interface{}) []string</a>
+		<a href="#SplitTrimSpaceCompact">func SplitTrimSpaceCompact(in string, delimiter string) out []string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#TrimSpace">func TrimSpace(in interface{}) []string</a>
+		<a href="#StringSlice">func StringSlice(slice any, from int, to int) []string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#Unique">func Unique(in interface{}) []interface{}</a>
+		<a href="#Stringify">func Stringify(in any) []string</a>
 		</strong>
 	</li>
 	
     <li>
 		<strong>
-		<a href="#UniqueStrings">func UniqueStrings(in interface{}) []string</a>
+		<a href="#TrimSpace">func TrimSpace(in any) []string</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#Unique">func Unique(in any) []any</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#UniqueStrings">func UniqueStrings(in any) []string</a>
 		</strong>
 	</li>
 	
@@ -425,8 +437,8 @@
 			
 		</td>
 		<td class="text-right">11KB</td>
-		<td class="text-right">333</td>
-		<td class="text-right">32</td>
+		<td class="text-right">346</td>
+		<td class="text-right">34</td>
 		<td class="text-right">4</td>
 		<td class="text-right"></td>
 		<td class="text-right">3</td>
@@ -438,8 +450,8 @@
 			<a href="sliceutil_test.go">sliceutil_test.go</a>
 			
 		</td>
-		<td class="text-right">13KB</td>
-		<td class="text-right">428</td>
+		<td class="text-right">14KB</td>
+		<td class="text-right">448</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -478,7 +490,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Append(in interface{}, values ...interface{}) []interface{}</pre>
+	<pre>func Append(in any, values ...any) []any</pre>
 </div>
 
 
@@ -492,7 +504,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func At(in interface{}, index int) (interface{}, bool)</pre>
+	<pre>func At(in any, index int) (any, bool)</pre>
 </div>
 
 
@@ -506,7 +518,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Autotype(in interface{}) []interface{}</pre>
+	<pre>func Autotype(in any) []any</pre>
 </div>
 
 
@@ -520,7 +532,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Chunks(in interface{}, size int) [][]interface{}</pre>
+	<pre>func Chunks(in any, size int) [][]any</pre>
 </div>
 
 
@@ -534,7 +546,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Compact(in interface{}) []interface{}</pre>
+	<pre>func Compact(in any) []any</pre>
 </div>
 
 
@@ -562,7 +574,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Contains(in interface{}, value interface{}, comparators ...CompareFunc) bool</pre>
+	<pre>func Contains(in any, value any, comparators ...CompareFunc) bool</pre>
 </div>
 
 
@@ -618,7 +630,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Difference(first interface{}, second interface{}) []interface{}</pre>
+	<pre>func Difference(first any, second any) []any</pre>
 </div>
 
 
@@ -632,7 +644,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Each(slice interface{}, iterFn IterationFunc) error</pre>
+	<pre>func Each(slice any, iterFn IterationFunc) error</pre>
 </div>
 
 
@@ -646,7 +658,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func First(in interface{}) interface{}</pre>
+	<pre>func First(in any) any</pre>
 </div>
 
 
@@ -660,7 +672,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func FirstNonZero(inputs ...interface{}) interface{}</pre>
+	<pre>func FirstNonZero(inputs ...any) any</pre>
 </div>
 
 
@@ -674,7 +686,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Flatten(in interface{}) []interface{}</pre>
+	<pre>func Flatten(in any) []any</pre>
 </div>
 
 
@@ -688,7 +700,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Get(in interface{}, index int) interface{}</pre>
+	<pre>func Get(in any, index int) any</pre>
 </div>
 
 
@@ -702,7 +714,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Intersect(a interface{}, b interface{}) []interface{}</pre>
+	<pre>func Intersect(a any, b any) []any</pre>
 </div>
 
 
@@ -730,7 +742,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Last(in interface{}) interface{}</pre>
+	<pre>func Last(in any) any</pre>
 </div>
 
 
@@ -744,7 +756,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Len(in interface{}) int</pre>
+	<pre>func Len(in any) int</pre>
 </div>
 
 
@@ -758,7 +770,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Map(in interface{}, fn MapFunc) []interface{}</pre>
+	<pre>func Map(in any, fn MapFunc) []any</pre>
 </div>
 
 
@@ -772,7 +784,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func MapString(in interface{}, fn MapStringFunc) []string</pre>
+	<pre>func MapString(in any, fn MapStringFunc) []string</pre>
 </div>
 
 
@@ -786,7 +798,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Or(in ...interface{}) interface{}</pre>
+	<pre>func Or(in ...any) any</pre>
 </div>
 
 
@@ -814,7 +826,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Rest(in interface{}) []interface{}</pre>
+	<pre>func Rest(in any) []any</pre>
 </div>
 
 
@@ -828,11 +840,11 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Slice(slice interface{}, from int, to int) []interface{}</pre>
+	<pre>func Slice(slice any, from int, to int) []any</pre>
 </div>
 
 
-<p><p>Returns a new slice with only the specified subset of items included.  In addition to the<br>normal slice index rules in Golang, negative indices are also supported.  If a negative index is<br>given for the from and/or to values, the index will be treated as being relative to the end of the<br>given slice. For example:<br><br>	Slice([]interface{}{1,2,3,4,5}, -5, -1)  // returns []interface{}{1, 2, 3, 4, 5}<br>	Slice([]interface{}{1,2,3,4,5}, -2, -1)  // returns []interface{}{4, 5}<br>	Slice([]interface{}{1,2,3,4,5}, -1, -1)  // returns []interface{}{5}<br>	Slice([]interface{}{1,2,3,4,5}, -4, -2)  // returns []interface{}{2, 3, 4}</p>
+<p><p>Returns a new slice with only the specified subset of items included.  In addition to the<br>normal slice index rules in Golang, negative indices are also supported.  If a negative index is<br>given for the from and/or to values, the index will be treated as being relative to the end of the<br>given slice. For example:<br><br>	Slice([]any{1,2,3,4,5}, -5, -1)  // returns []any{1, 2, 3, 4, 5}<br>	Slice([]any{1,2,3,4,5}, -2, -1)  // returns []any{4, 5}<br>	Slice([]any{1,2,3,4,5}, -1, -1)  // returns []any{5}<br>	Slice([]any{1,2,3,4,5}, -4, -2)  // returns []any{2, 3, 4}</p>
 </p>
 
 
@@ -842,11 +854,39 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Sliceify(in interface{}) []interface{}</pre>
+	<pre>func Sliceify(in any) []any</pre>
 </div>
 
 
 <p><p>Takes some input value and returns it as a slice.</p>
+</p>
+
+
+<h3 id="SplitCompact" data-kind="f">
+	func <a title="View Source" href="">SplitCompact</a>
+	<a class="permalink" href="#SplitCompact">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func SplitCompact(in string, delimiter string) out []string</pre>
+</div>
+
+
+<p><p>Splits the given string by a delimiter, then eliminates any zero-length items.</p>
+</p>
+
+
+<h3 id="SplitTrimSpaceCompact" data-kind="f">
+	func <a title="View Source" href="">SplitTrimSpaceCompact</a>
+	<a class="permalink" href="#SplitTrimSpaceCompact">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func SplitTrimSpaceCompact(in string, delimiter string) out []string</pre>
+</div>
+
+
+<p><p>Splits the given string by a delimiter, trims the space around each item,<br>then eliminates any zero-length results.</p>
 </p>
 
 
@@ -856,7 +896,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func StringSlice(slice interface{}, from int, to int) []string</pre>
+	<pre>func StringSlice(slice any, from int, to int) []string</pre>
 </div>
 
 
@@ -870,7 +910,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Stringify(in interface{}) []string</pre>
+	<pre>func Stringify(in any) []string</pre>
 </div>
 
 
@@ -884,7 +924,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func TrimSpace(in interface{}) []string</pre>
+	<pre>func TrimSpace(in any) []string</pre>
 </div>
 
 
@@ -898,7 +938,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func Unique(in interface{}) []interface{}</pre>
+	<pre>func Unique(in any) []any</pre>
 </div>
 
 
@@ -912,7 +952,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 </h3>
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func UniqueStrings(in interface{}) []string</pre>
+	<pre>func UniqueStrings(in any) []string</pre>
 </div>
 
 
@@ -933,7 +973,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type CompareFunc func(i int, first interface{}, second interface{}) bool // {}
+	<pre>type CompareFunc func(i int, first any, second any) bool // {}
 </pre>
 </div>
 
@@ -972,7 +1012,7 @@ var <span id="StrictEqualityCompare">StrictEqualityCompare </span> =
 	<a title="View Source" href="">&#182;</a>
 	
 	
-	<pre>type MapFunc func(i int, value interface{}) interface{}</pre>
+	<pre>type MapFunc func(i int, value any) any</pre>
 </div>
 
 

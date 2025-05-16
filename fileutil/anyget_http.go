@@ -27,7 +27,7 @@ var HttpDefaultTimeout = 10 * time.Second
 //	  (string) the HTTP method to use, defaults to GET.
 //
 //	metadata:
-//	  (map[string]interface{}) a key-value set of HTTP request headers to include.
+//	  (map[string]any) a key-value set of HTTP request headers to include.
 //
 //	safeResponseCodes:
 //	  ([]int) a list of one or more HTTP status codes that are considered successful for this request.

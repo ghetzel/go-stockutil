@@ -7,7 +7,7 @@ import (
 )
 
 func TestConvert(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	// temperatures
 	assert.EqualValues(0, MustConvert(32, Fahrenheit, Celsius))
@@ -27,7 +27,7 @@ func TestConvert(t *testing.T) {
 }
 
 func TestByteStringer(t *testing.T) {
-	assert := assert.New(t)
+	var assert = assert.New(t)
 
 	assert.Equal(`1B`, Byte.String())
 	assert.Equal(`1KB`, Kilobyte.String())

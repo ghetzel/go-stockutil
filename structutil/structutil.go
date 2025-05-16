@@ -14,11 +14,11 @@ var StopIterating = errors.New(`stop iterating`)
 // Receives a struct field name, the value of that field in the source struct, and the value for that field in the destination struct.
 // Returns the value that should be placed in the destination struct fields.  If the returned bool is false, no changes will
 // be made.
-type StructValueFunc func(field string, sourceValue interface{}, destValue interface{}) (interface{}, bool)
+type StructValueFunc func(field string, sourceValue any, destValue any) (any, bool)
 type StructFieldFunc func(field *reflect.StructField, value reflect.Value) error
 
 // Iterates over all exported and embedded fields in the given struct, calling fn for each field.
-func FieldsFunc(in interface{}, fn StructFieldFunc) error {
+func FieldsFunc(in any, fn StructFieldFunc) error {
 	if in == nil || fn == nil {
 		return nil
 	}
@@ -67,7 +67,7 @@ FieldLoop:
 	return nil
 }
 
-func CopyFunc(dest interface{}, source interface{}, fn StructValueFunc) error {
+func CopyFunc(dest any, source any, fn StructValueFunc) error {
 	if dest == nil || source == nil || fn == nil {
 		return nil
 	}
@@ -99,12 +99,12 @@ func CopyFunc(dest interface{}, source interface{}, fn StructValueFunc) error {
 		return err
 	}
 
-	destT := destV.Type()
-	srcT := srcV.Type()
+	var destT = destV.Type()
+	var srcT = srcV.Type()
 
 	for s := 0; s < srcT.NumField(); s++ {
-		sFieldT := srcT.Field(s)
-		sFieldV := srcV.Field(s)
+		var sFieldT = srcT.Field(s)
+		var sFieldV = srcV.Field(s)
 
 		// only exported field names leave this empty, so skip if it's not (i.e.: we have an unexported field)
 		if sFieldT.PkgPath != `` {
@@ -112,7 +112,7 @@ func CopyFunc(dest interface{}, source interface{}, fn StructValueFunc) error {
 		}
 
 		if dFieldT, ok := destT.FieldByName(sFieldT.Name); ok {
-			dFieldV := destV.FieldByName(dFieldT.Name)
+			var dFieldV = destV.FieldByName(dFieldT.Name)
 
 			if dFieldT.Anonymous {
 				if err := CopyFunc(dFieldV, sFieldV, fn); err != nil {
@@ -141,8 +141,8 @@ func CopyFunc(dest interface{}, source interface{}, fn StructValueFunc) error {
 
 // Copy all values from the source into the destination, provided the source value for the corresponding
 // field is not that type's zero value.
-func CopyNonZero(dest interface{}, source interface{}) error {
-	return CopyFunc(dest, source, func(name string, s interface{}, d interface{}) (interface{}, bool) {
+func CopyNonZero(dest any, source any) error {
+	return CopyFunc(dest, source, func(name string, s any, d any) (any, bool) {
 		if typeutil.IsZero(s) {
 			return nil, false
 		} else {

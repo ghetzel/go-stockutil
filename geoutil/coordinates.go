@@ -30,24 +30,24 @@ type Locatable interface {
 
 // Specifies a three-dimensional location within a coordinate reference system.
 type Location struct {
-	Latitude   float64                `json:"latitude,omitempty"`
-	Longitude  float64                `json:"longitude,omitempty"`
-	Bearing    float64                `json:"bearing,omitempty"`
-	Timestamp  time.Time              `json:"timestamp,omitempty"`
-	Altitude   Distance               `json:"altitude,omitempty"`
-	Speed      Speed                  `json:"speed,omitempty"`
-	Accuracy   float64                `json:"accuracy,omitempty"`
-	Error      *LocationError         `json:"error,omitempty"`
-	Direction  CardinalDirection      `json:"direction,omitempty"`
-	Source     string                 `json:"source,omitempty"`
-	Properties map[string]interface{} `json:"properties,omitempty"`
+	Latitude   float64           `json:"latitude,omitempty"`
+	Longitude  float64           `json:"longitude,omitempty"`
+	Bearing    float64           `json:"bearing,omitempty"`
+	Timestamp  time.Time         `json:"timestamp,omitempty"`
+	Altitude   Distance          `json:"altitude,omitempty"`
+	Speed      Speed             `json:"speed,omitempty"`
+	Accuracy   float64           `json:"accuracy,omitempty"`
+	Error      *LocationError    `json:"error,omitempty"`
+	Direction  CardinalDirection `json:"direction,omitempty"`
+	Source     string            `json:"source,omitempty"`
+	Properties map[string]any    `json:"properties,omitempty"`
 }
 
 func NewLocation(latitude float64, longitude float64) *Location {
 	return &Location{
 		Latitude:   latitude,
 		Longitude:  longitude,
-		Properties: make(map[string]interface{}),
+		Properties: make(map[string]any),
 	}
 }
 
@@ -136,8 +136,8 @@ func (self *Location) SpeedFrom(other Locatable) Speed {
 		return 0
 	}
 
-	delta := self.Timestamp.Sub(ts)
-	distance := self.HaversineDistance(other)
+	var delta = self.Timestamp.Sub(ts)
+	var distance = self.HaversineDistance(other)
 
 	// speed is distance (in meters) / time delta (in seconds); meters/sec.
 	return Speed(float64(distance) / delta.Seconds())

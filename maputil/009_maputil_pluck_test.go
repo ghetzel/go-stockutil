@@ -7,14 +7,14 @@ import (
 )
 
 func TestMapPluck(t *testing.T) {
-	assert := require.New(t)
+	var assert = require.New(t)
 
 	assert.Empty(Pluck(nil, nil))
 	assert.Empty(Pluck(nil, []string{`name`}))
 	assert.Empty(Pluck(`test`, []string{`name`}))
 	assert.Empty(Pluck([]string{`test`, `values`}, []string{`name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Bob`,
 		`Mallory`,
@@ -30,7 +30,7 @@ func TestMapPluck(t *testing.T) {
 		},
 	}, []string{`name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Mallory`,
 	}, Pluck([]map[string]string{
@@ -45,55 +45,55 @@ func TestMapPluck(t *testing.T) {
 		},
 	}, []string{`name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Bob`,
 		`Mallory`,
-	}, Pluck([]map[string]map[string]interface{}{
-		map[string]map[string]interface{}{
-			`info`: map[string]interface{}{
+	}, Pluck([]map[string]map[string]any{
+		map[string]map[string]any{
+			`info`: map[string]any{
 				`name`: `Alice`,
 			},
 		},
-		map[string]map[string]interface{}{
-			`info`: map[string]interface{}{
+		map[string]map[string]any{
+			`info`: map[string]any{
 				`name`: `Bob`,
 			},
 		},
-		map[string]map[string]interface{}{
-			`info`: map[string]interface{}{
+		map[string]map[string]any{
+			`info`: map[string]any{
 				`name`: `Mallory`,
 			},
 		},
 	}, []string{`info`, `name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Bob`,
 		`Mallory`,
-	}, Pluck([]map[interface{}]map[interface{}]interface{}{
-		map[interface{}]map[interface{}]interface{}{
-			`info`: map[interface{}]interface{}{
+	}, Pluck([]map[any]map[any]any{
+		map[any]map[any]any{
+			`info`: map[any]any{
 				`name`: `Alice`,
 			},
 		},
-		map[interface{}]map[interface{}]interface{}{
-			`info`: map[interface{}]interface{}{
+		map[any]map[any]any{
+			`info`: map[any]any{
 				`name`: `Bob`,
 			},
 		},
-		map[interface{}]map[interface{}]interface{}{
-			`info`: map[interface{}]interface{}{
+		map[any]map[any]any{
+			`info`: map[any]any{
 				`name`: `Mallory`,
 			},
 		},
 	}, []string{`info`, `name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Bob`,
 		`Mallory`,
-	}, Pluck([]interface{}{
+	}, Pluck([]any{
 		map[string]string{
 			`name`: `Alice`,
 		},
@@ -105,11 +105,11 @@ func TestMapPluck(t *testing.T) {
 		},
 	}, []string{`name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Bob`,
 		`Mallory`,
-	}, Pluck([]interface{}{
+	}, Pluck([]any{
 		&map[string]string{
 			`name`: `Alice`,
 		},
@@ -121,11 +121,11 @@ func TestMapPluck(t *testing.T) {
 		},
 	}, []string{`name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Bob`,
 		`Mallory`,
-	}, Pluck(&[]interface{}{
+	}, Pluck(&[]any{
 		&map[string]string{
 			`name`: `Alice`,
 		},
@@ -137,12 +137,12 @@ func TestMapPluck(t *testing.T) {
 		},
 	}, []string{`name`}))
 
-	assert.Equal([]interface{}{
+	assert.Equal([]any{
 		`Alice`,
 		`Bob`,
 		`Mallory`,
-	}, Pluck(&[]interface{}{
-		[]interface{}{
+	}, Pluck(&[]any{
+		[]any{
 			&map[string]string{
 				`name`: `Alice`,
 			},
@@ -150,7 +150,7 @@ func TestMapPluck(t *testing.T) {
 				`name`: `Bob`,
 			},
 		},
-		[]interface{}{
+		[]any{
 			&map[string]string{
 				`name`: `Mallory`,
 			},
