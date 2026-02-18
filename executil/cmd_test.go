@@ -97,6 +97,12 @@ func TestShellOut(t *testing.T) {
 	assert.Equal(t, `hello there`, string(MustShellOut(`echo -n`, `hello there`)))
 }
 
+func TestShellCommand(t *testing.T) {
+	assert.Equal(t, `hello there`, ShellCommand(`echo`, `-n`, `hello`, `there`).String())
+	assert.Equal(t, `hello there`, ShellCommand(`echo -n hello there`).String())
+	assert.Equal(t, `hello there`, ShellCommand(`echo -n`, `hello there`).String())
+}
+
 func TestExecReadCloser(t *testing.T) {
 	var cmd = Command(`echo`, `hello`)
 	var data, err = io.ReadAll(cmd)

@@ -130,9 +130,9 @@ func Command(name string, arg ...string) *Cmd {
 	return new(exec.Command(name, arg...))
 }
 
-func ShellCommand(cmdline string) *Cmd {
+func ShellCommand(cmdline ...string) *Cmd {
 	if shell := FindShell(); shell != `` {
-		return Command(shell, `-c`, cmdline)
+		return Command(shell, `-c`, strings.Join(cmdline, ` `))
 	}
 
 	return nil

@@ -7,8 +7,8 @@
     "Synopsis": "Utilities that make executing commands on the local system a little bit easier.\n",
     "MainFunction": false,
     "CommentWordCount": 710,
-    "LineCount": 1083,
-    "SourceLineCount": 818,
+    "LineCount": 1089,
+    "SourceLineCount": 823,
     "FunctionCount": 44,
     "TypeCount": 4,
     "ConstantCount": 0,
@@ -91,7 +91,7 @@
                     "Alias": "go-shellwords"
                 }
             ],
-            "Size": 13456,
+            "Size": 13478,
             "LineCount": 589,
             "SourceLineCount": 447,
             "FunctionCount": 22,
@@ -123,9 +123,9 @@
                     "Alias": "assert"
                 }
             ],
-            "Size": 3433,
-            "LineCount": 135,
-            "SourceLineCount": 109,
+            "Size": 3720,
+            "LineCount": 141,
+            "SourceLineCount": 114,
             "FunctionCount": 0,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -885,6 +885,18 @@
             "IsPackageLevel": true
         },
         {
+            "Name": "TestShellCommand",
+            "Arguments": [
+                {
+                    "Name": "t",
+                    "Type": "*testing.T"
+                }
+            ],
+            "Signature": "TestShellCommand(t *testing.T)",
+            "Source": "ewoJYXNzZXJ0LkVxdWFsKHQsIGBoZWxsbyB0aGVyZWAsIFNoZWxsQ29tbWFuZChgZWNob2AsIGAtbmAsIGBoZWxsb2AsIGB0aGVyZWApLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKHQsIGBoZWxsbyB0aGVyZWAsIFNoZWxsQ29tbWFuZChgZWNobyAtbiBoZWxsbyB0aGVyZWApLlN0cmluZygpKQoJYXNzZXJ0LkVxdWFsKHQsIGBoZWxsbyB0aGVyZWAsIFNoZWxsQ29tbWFuZChgZWNobyAtbmAsIGBoZWxsbyB0aGVyZWApLlN0cmluZygpKQp9",
+            "IsPackageLevel": true
+        },
+        {
             "Name": "TestShellOut",
             "Arguments": [
                 {
@@ -1060,7 +1072,7 @@
                     "Arguments": [
                         {
                             "Name": "cmdline",
-                            "Type": "string"
+                            "Type": "...string"
                         }
                     ],
                     "Returns": [
@@ -1068,8 +1080,8 @@
                             "Type": "*Cmd"
                         }
                     ],
-                    "Signature": "ShellCommand(cmdline string) *Cmd",
-                    "Source": "ewoJaWYgc2hlbGwgOj0gRmluZFNoZWxsKCk7IHNoZWxsICE9IGBgIHsKCQlyZXR1cm4gQ29tbWFuZChzaGVsbCwgYC1jYCwgY21kbGluZSkKCX0KCXJldHVybiBuaWwKfQ==",
+                    "Signature": "ShellCommand(cmdline ...string) *Cmd",
+                    "Source": "ewoJaWYgc2hlbGwgOj0gRmluZFNoZWxsKCk7IHNoZWxsICE9IGBgIHsKCQlyZXR1cm4gQ29tbWFuZChzaGVsbCwgYC1jYCwgc3RyaW5ncy5Kb2luKGNtZGxpbmUsIGAgYCkpCgl9CglyZXR1cm4gbmlsCn0=",
                     "IsPackageLevel": true
                 },
                 {

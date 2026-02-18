@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.13.0
+                            v1.13.1
                         </li>
                     </ul>
                     
@@ -363,7 +363,7 @@
 			<li>
 				
 				<a href="#Cmd.ShellCommand">
-					func ShellCommand(cmdline string) *Cmd
+					func ShellCommand(cmdline ...string) *Cmd
 				</a>
 				
 			</li>
@@ -672,8 +672,8 @@
 			<a href="cmd_test.go">cmd_test.go</a>
 			
 		</td>
-		<td class="text-right">3KB</td>
-		<td class="text-right">109</td>
+		<td class="text-right">4KB</td>
+		<td class="text-right">114</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1178,7 +1178,7 @@ var <span id="PromptWriter">PromptWriter        </span> = os.Stdout
 
 <div class="funcdecl decl">
 	<a title="View Source" href="">&#10070;</a>
-	<pre>func ShellCommand(cmdline string) *Cmd</pre>
+	<pre>func ShellCommand(cmdline ...string) *Cmd</pre>
 </div>
 
 
