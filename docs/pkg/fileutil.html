@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.13.1
+                            v1.13.2
                         </li>
                     </ul>
                     
@@ -252,12 +252,6 @@
 	</li>
 	
     <li>
-		<strong>
-		<a href="#ManipulateAll">func ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
 		
 		<a href="#MustExpandUser">func MustExpandUser(path string) string</a>
 		
@@ -355,37 +349,7 @@
 	
     <li>
 		<strong>
-		<a href="#RemoveLinesContaining">func RemoveLinesContaining(needle string) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#RemoveLinesSurroundedBy">func RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#RemoveLinesWithPrefix">func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#RemoveLinesWithSuffix">func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
 		<a href="#RemoveOpenHandler">func RemoveOpenHandler(scheme string)</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#ReplaceWith">func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc</a>
 		</strong>
 	</li>
 	
@@ -1671,20 +1635,6 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 
 
-<h3 id="ManipulateAll" data-kind="f">
-	func <a title="View Source" href="">ManipulateAll</a>
-	<a class="permalink" href="#ManipulateAll">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>Performs multiple sequential manipulations on an intercepted line of text from<br>an io.Reader as its being read.</p>
-</p>
-
-
 <h3 id="MustExpandUser" data-kind="f">
 	func <a title="View Source" href="">MustExpandUser</a>
 	<a class="permalink" href="#MustExpandUser">&#182;</a>
@@ -1897,62 +1847,6 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 </p>
 
 
-<h3 id="RemoveLinesContaining" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesContaining</a>
-	<a class="permalink" href="#RemoveLinesContaining">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesContaining(needle string) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines that contain the given string.</p>
-</p>
-
-
-<h3 id="RemoveLinesSurroundedBy" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesSurroundedBy</a>
-	<a class="permalink" href="#RemoveLinesSurroundedBy">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.</p>
-</p>
-
-
-<h3 id="RemoveLinesWithPrefix" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesWithPrefix</a>
-	<a class="permalink" href="#RemoveLinesWithPrefix">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines that have a given prefix.</p>
-</p>
-
-
-<h3 id="RemoveLinesWithSuffix" data-kind="f">
-	func <a title="View Source" href="">RemoveLinesWithSuffix</a>
-	<a class="permalink" href="#RemoveLinesWithSuffix">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for removing lines that have a given suffix.</p>
-</p>
-
-
 <h3 id="RemoveOpenHandler" data-kind="f">
 	func <a title="View Source" href="">RemoveOpenHandler</a>
 	<a class="permalink" href="#RemoveOpenHandler">&#182;</a>
@@ -1964,20 +1858,6 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 
 
 <p><p>Removes a registered URL scheme handler.</p>
-</p>
-
-
-<h3 id="ReplaceWith" data-kind="f">
-	func <a title="View Source" href="">ReplaceWith</a>
-	<a class="permalink" href="#ReplaceWith">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc</pre>
-</div>
-
-
-<p><p>A ReadManipulatorFunc for replacing text in an io.Reader as its being read.</p>
 </p>
 
 
@@ -2951,6 +2831,114 @@ var <span id="SshVerifyHostFunc">SshVerifyHostFunc       </span> =
 	
 	<pre>type ReadManipulatorFunc func(data []byte) ([]byte, error)</pre>
 </div>
+
+
+
+
+<h4 id="ManipulateAll" data-kind="f">
+	func <a title="View Source" href="">ManipulateAll</a>
+	<a class="permalink" href="#ManipulateAll">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>Performs multiple sequential manipulations on an intercepted line of text from<br>an io.Reader as its being read.</p>
+</p>
+
+
+
+
+<h4 id="ReplaceWith" data-kind="f">
+	func <a title="View Source" href="">ReplaceWith</a>
+	<a class="permalink" href="#ReplaceWith">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for replacing text in an io.Reader as its being read.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesContaining" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesContaining</a>
+	<a class="permalink" href="#RemoveLinesContaining">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesContaining(needle string) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines that contain the given string.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesWithPrefix" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesWithPrefix</a>
+	<a class="permalink" href="#RemoveLinesWithPrefix">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines that have a given prefix.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesWithSuffix" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesWithSuffix</a>
+	<a class="permalink" href="#RemoveLinesWithSuffix">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines that have a given suffix.</p>
+</p>
+
+
+
+
+<h4 id="RemoveLinesSurroundedBy" data-kind="f">
+	func <a title="View Source" href="">RemoveLinesSurroundedBy</a>
+	<a class="permalink" href="#RemoveLinesSurroundedBy">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc</pre>
+</div>
+
+<p><p>A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.</p>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

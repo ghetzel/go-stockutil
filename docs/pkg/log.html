@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.13.1
+                            v1.13.2
                         </li>
                     </ul>
                     
@@ -141,7 +141,7 @@
 	</span>
 </div>
 
-<span class="pull-right">Doc Coverage: 25%</span>
+<span class="pull-right">Doc Coverage: 31%</span>
 <h2 id="pkg-overview">package log</h2>
 
 <p>
@@ -364,6 +364,12 @@ ls.Run()
 	
     <li>
 		<strong>
+		<a href="#DebugIfError">func DebugIfError(err error, args ...any)</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
 		<a href="#DebugStack">func DebugStack()</a>
 		</strong>
 	</li>
@@ -423,6 +429,12 @@ ls.Run()
 	</li>
 	
     <li>
+		<strong>
+		<a href="#ErrorIfError">func ErrorIfError(err error, args ...any)</a>
+		</strong>
+	</li>
+	
+    <li>
 		
 		<a href="#Errorf">func Errorf(format string, args ...any)</a>
 		
@@ -437,6 +449,12 @@ ls.Run()
     <li>
 		<strong>
 		<a href="#FatalIf">func FatalIf(err error)</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#FatalIfError">func FatalIfError(err error, args ...any)</a>
 		</strong>
 	</li>
 	
@@ -465,6 +483,12 @@ ls.Run()
 	</li>
 	
     <li>
+		<strong>
+		<a href="#InfoIfError">func InfoIfError(err error, args ...any)</a>
+		</strong>
+	</li>
+	
+    <li>
 		
 		<a href="#Infof">func Infof(format string, args ...any)</a>
 		
@@ -474,6 +498,12 @@ ls.Run()
 		
 		<a href="#Log">func Log(level Level, args ...any)</a>
 		
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#LogIfError">func LogIfError(level Level, err error, args ...any)</a>
+		</strong>
 	</li>
 	
     <li>
@@ -492,6 +522,12 @@ ls.Run()
 		
 		<a href="#Notice">func Notice(args ...any)</a>
 		
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#NoticeIfError">func NoticeIfError(err error, args ...any)</a>
+		</strong>
 	</li>
 	
     <li>
@@ -558,6 +594,12 @@ ls.Run()
 		
 		<a href="#Warning">func Warning(args ...any)</a>
 		
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#WarningIfError">func WarningIfError(err error, args ...any)</a>
+		</strong>
 	</li>
 	
     <li>
@@ -925,9 +967,9 @@ ls.Run()
 			<a href="log.go">log.go</a>
 			
 		</td>
-		<td class="text-right">9KB</td>
-		<td class="text-right">301</td>
-		<td class="text-right">37</td>
+		<td class="text-right">11KB</td>
+		<td class="text-right">333</td>
+		<td class="text-right">44</td>
 		<td class="text-right">4</td>
 		<td class="text-right"></td>
 		<td class="text-right">5</td>
@@ -1145,6 +1187,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 
 
 
+<h3 id="DebugIfError" data-kind="f">
+	func <a title="View Source" href="">DebugIfError</a>
+	<a class="permalink" href="#DebugIfError">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func DebugIfError(err error, args ...any)</pre>
+</div>
+
+
+<p><p>Print a debug log the given error is not nil.</p>
+</p>
+
+
 <h3 id="DebugStack" data-kind="f">
 	func <a title="View Source" href="">DebugStack</a>
 	<a class="permalink" href="#DebugStack">&#182;</a>
@@ -1276,6 +1332,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 
 
 
+<h3 id="ErrorIfError" data-kind="f">
+	func <a title="View Source" href="">ErrorIfError</a>
+	<a class="permalink" href="#ErrorIfError">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func ErrorIfError(err error, args ...any)</pre>
+</div>
+
+
+<p><p>Print an error log the given error is not nil.</p>
+</p>
+
+
 <h3 id="Errorf" data-kind="f">
 	func <a title="View Source" href="">Errorf</a>
 	<a class="permalink" href="#Errorf">&#182;</a>
@@ -1309,6 +1379,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 
 
 <p><p>Invoke Fatal() if the given error is not nil.</p>
+</p>
+
+
+<h3 id="FatalIfError" data-kind="f">
+	func <a title="View Source" href="">FatalIfError</a>
+	<a class="permalink" href="#FatalIfError">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func FatalIfError(err error, args ...any)</pre>
+</div>
+
+
+<p><p>Print an error log the given error is not nil.</p>
 </p>
 
 
@@ -1362,6 +1446,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 
 
 
+<h3 id="InfoIfError" data-kind="f">
+	func <a title="View Source" href="">InfoIfError</a>
+	<a class="permalink" href="#InfoIfError">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func InfoIfError(err error, args ...any)</pre>
+</div>
+
+
+<p><p>Print an info log the given error is not nil.</p>
+</p>
+
+
 <h3 id="Infof" data-kind="f">
 	func <a title="View Source" href="">Infof</a>
 	<a class="permalink" href="#Infof">&#182;</a>
@@ -1382,6 +1480,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 	<pre>func Log(level Level, args ...any)</pre>
 </div>
 
+
+
+<h3 id="LogIfError" data-kind="f">
+	func <a title="View Source" href="">LogIfError</a>
+	<a class="permalink" href="#LogIfError">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func LogIfError(level Level, err error, args ...any)</pre>
+</div>
+
+
+<p><p>Invoke Log() if the given error is not nil. If one variadic argument is given<br>it will be treated as an fmt.Printf format string which will receive the error<br>as a parameter. If more than one variadic is given, the first variable will be<br>treated as a format string, then all subsequent variables are passed in, then<br>finally the given error. The error message is assumed to be the final parameter<br>in the format string.</p>
+</p>
 
 
 <h3 id="Logf" data-kind="f">
@@ -1415,6 +1527,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 	<pre>func Notice(args ...any)</pre>
 </div>
 
+
+
+<h3 id="NoticeIfError" data-kind="f">
+	func <a title="View Source" href="">NoticeIfError</a>
+	<a class="permalink" href="#NoticeIfError">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func NoticeIfError(err error, args ...any)</pre>
+</div>
+
+
+<p><p>Print a notice log the given error is not nil.</p>
+</p>
 
 
 <h3 id="Noticef" data-kind="f">
@@ -1548,6 +1674,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 	<pre>func Warning(args ...any)</pre>
 </div>
 
+
+
+<h3 id="WarningIfError" data-kind="f">
+	func <a title="View Source" href="">WarningIfError</a>
+	<a class="permalink" href="#WarningIfError">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func WarningIfError(err error, args ...any)</pre>
+</div>
+
+
+<p><p>Print a warning log the given error is not nil.</p>
+</p>
 
 
 <h3 id="Warningf" data-kind="f">

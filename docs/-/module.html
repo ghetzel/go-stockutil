@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.13.1
+                            v1.13.2
                         </li>
                     </ul>
                     
@@ -148,7 +148,7 @@
     &#34;GeneratorVersion&#34;: &#34;0.0.7&#34;,
     &#34;Title&#34;: &#34;go-stockutil&#34;,
     &#34;URL&#34;: &#34;https://github.com/ghetzel/go-stockutil&#34;,
-    &#34;Version&#34;: &#34;1.13.1&#34;
+    &#34;Version&#34;: &#34;1.13.2&#34;
   },
   &#34;Package&#34;: {
     &#34;CanonicalImportPath&#34;: &#34;github.com/ghetzel/go-stockutil&#34;,
@@ -156,10 +156,10 @@
     &#34;ConstantCount&#34;: 1,
     &#34;Constants&#34;: [
       {
-        &#34;Expression&#34;: &#34;`1.13.1`&#34;,
+        &#34;Expression&#34;: &#34;`1.13.2`&#34;,
         &#34;Immutable&#34;: true,
         &#34;Name&#34;: &#34;Version&#34;,
-        &#34;Value&#34;: &#34;1.13.1&#34;
+        &#34;Value&#34;: &#34;1.13.2&#34;
       }
     ],
     &#34;Files&#34;: [
@@ -2264,27 +2264,6 @@
           {
             &#34;Arguments&#34;: [
               {
-                &#34;Name&#34;: &#34;outlevel&#34;,
-                &#34;Type&#34;: &#34;log.Level&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;errlevel&#34;,
-                &#34;Type&#34;: &#34;log.Level&#34;
-              }
-            ],
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;LogOutput&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;OutputLineFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
                 &#34;Name&#34;: &#34;line&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               },
@@ -3079,6 +3058,29 @@
             &#34;Source&#34;: &#34;dHlwZSBDb21tYW5kU3RhdHVzRnVuYyBmdW5jKFN0YXR1cyk=&#34;
           },
           &#34;OutputLineFunc&#34;: {
+            &#34;Methods&#34;: [
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;outlevel&#34;,
+                    &#34;Type&#34;: &#34;log.Level&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;errlevel&#34;,
+                    &#34;Type&#34;: &#34;log.Level&#34;
+                  }
+                ],
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;LogOutput&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;OutputLineFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
+              }
+            ],
             &#34;Name&#34;: &#34;OutputLineFunc&#34;,
             &#34;Source&#34;: &#34;dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk=&#34;
           },
@@ -4339,24 +4341,6 @@
           {
             &#34;Arguments&#34;: [
               {
-                &#34;Name&#34;: &#34;fns&#34;,
-                &#34;Type&#34;: &#34;...ReadManipulatorFunc&#34;
-              }
-            ],
-            &#34;Comment&#34;: &#34;Performs multiple sequential manipulations on an intercepted line of text from\nan io.Reader as its being read.&#34;,
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;ManipulateAll&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGVyciBlcnJvcgoJCWZvciBfLCBmbiA6PSByYW5nZSBmbnMgewoJCQlkYXRhLCBlcnIgPSBmbihkYXRhKQoJCQlpZiBlcnIgIT0gbmlsIHsKCQkJCWJyZWFrCgkJCX0KCQl9CgkJcmV0dXJuIGRhdGEsIGVycgoJfQp9&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
                 &#34;Name&#34;: &#34;path&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               }
@@ -4676,94 +4660,6 @@
           {
             &#34;Arguments&#34;: [
               {
-                &#34;Name&#34;: &#34;needle&#34;,
-                &#34;Type&#34;: &#34;string&#34;
-              }
-            ],
-            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that contain the given string.&#34;,
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;RemoveLinesContaining&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;RemoveLinesContaining(needle string) ReadManipulatorFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJaWYgc3RyaW5ncy5Db250YWlucyhzdHJpbmcoZGF0YSksIG5lZWRsZSkgewoJCQlyZXR1cm4gbmlsLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gZGF0YSwgbmlsCgkJfQoJfQp9&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
-                &#34;Name&#34;: &#34;prefix&#34;,
-                &#34;Type&#34;: &#34;string&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;suffix&#34;,
-                &#34;Type&#34;: &#34;string&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;trimSpace&#34;,
-                &#34;Type&#34;: &#34;bool&#34;
-              }
-            ],
-            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.&#34;,
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;RemoveLinesSurroundedBy&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSAmJiBzdHJpbmdzLkhhc1N1ZmZpeChsaW5lLCBzdWZmaXgpIHsKCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIGRhdGEsIG5pbAoJCX0KCX0KfQ==&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
-                &#34;Name&#34;: &#34;prefix&#34;,
-                &#34;Type&#34;: &#34;string&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;trimSpace&#34;,
-                &#34;Type&#34;: &#34;bool&#34;
-              }
-            ],
-            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given prefix.&#34;,
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;RemoveLinesWithPrefix&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
-                &#34;Name&#34;: &#34;suffix&#34;,
-                &#34;Type&#34;: &#34;string&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;trimSpace&#34;,
-                &#34;Type&#34;: &#34;bool&#34;
-              }
-            ],
-            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given suffix.&#34;,
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;RemoveLinesWithSuffix&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNTdWZmaXgobGluZSwgc3VmZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
                 &#34;Name&#34;: &#34;scheme&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               }
@@ -4773,32 +4669,6 @@
             &#34;Name&#34;: &#34;RemoveOpenHandler&#34;,
             &#34;Signature&#34;: &#34;RemoveOpenHandler(scheme string)&#34;,
             &#34;Source&#34;: &#34;ewoJZGVsZXRlKG9wZW5IYW5kbGVycywgc2NoZW1lKQp9&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
-                &#34;Name&#34;: &#34;find&#34;,
-                &#34;Type&#34;: &#34;string&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;replace&#34;,
-                &#34;Type&#34;: &#34;string&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;occurrences&#34;,
-                &#34;Type&#34;: &#34;int&#34;
-              }
-            ],
-            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for replacing text in an io.Reader as its being read.&#34;,
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;ReplaceWith&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlsaW5lID0gc3RyaW5ncy5SZXBsYWNlKGxpbmUsIGZpbmQsIHJlcGxhY2UsIG9jY3VycmVuY2VzKQoJCXJldHVybiBbXWJ5dGUobGluZSksIG5pbAoJfQp9&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -5883,6 +5753,140 @@
             &#34;Source&#34;: &#34;dHlwZSBSZWFkTWFuaXB1bGF0b3Igc3RydWN0IHsKCn0K&#34;
           },
           &#34;ReadManipulatorFunc&#34;: {
+            &#34;Methods&#34;: [
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;fns&#34;,
+                    &#34;Type&#34;: &#34;...ReadManipulatorFunc&#34;
+                  }
+                ],
+                &#34;Comment&#34;: &#34;Performs multiple sequential manipulations on an intercepted line of text from\nan io.Reader as its being read.&#34;,
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;ManipulateAll&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGVyciBlcnJvcgoJCWZvciBfLCBmbiA6PSByYW5nZSBmbnMgewoJCQlkYXRhLCBlcnIgPSBmbihkYXRhKQoJCQlpZiBlcnIgIT0gbmlsIHsKCQkJCWJyZWFrCgkJCX0KCQl9CgkJcmV0dXJuIGRhdGEsIGVycgoJfQp9&#34;
+              },
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;find&#34;,
+                    &#34;Type&#34;: &#34;string&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;replace&#34;,
+                    &#34;Type&#34;: &#34;string&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;occurrences&#34;,
+                    &#34;Type&#34;: &#34;int&#34;
+                  }
+                ],
+                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for replacing text in an io.Reader as its being read.&#34;,
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;ReplaceWith&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlsaW5lID0gc3RyaW5ncy5SZXBsYWNlKGxpbmUsIGZpbmQsIHJlcGxhY2UsIG9jY3VycmVuY2VzKQoJCXJldHVybiBbXWJ5dGUobGluZSksIG5pbAoJfQp9&#34;
+              },
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;needle&#34;,
+                    &#34;Type&#34;: &#34;string&#34;
+                  }
+                ],
+                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that contain the given string.&#34;,
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;RemoveLinesContaining&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;RemoveLinesContaining(needle string) ReadManipulatorFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJaWYgc3RyaW5ncy5Db250YWlucyhzdHJpbmcoZGF0YSksIG5lZWRsZSkgewoJCQlyZXR1cm4gbmlsLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gZGF0YSwgbmlsCgkJfQoJfQp9&#34;
+              },
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;prefix&#34;,
+                    &#34;Type&#34;: &#34;string&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;trimSpace&#34;,
+                    &#34;Type&#34;: &#34;bool&#34;
+                  }
+                ],
+                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given prefix.&#34;,
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;RemoveLinesWithPrefix&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
+              },
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;suffix&#34;,
+                    &#34;Type&#34;: &#34;string&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;trimSpace&#34;,
+                    &#34;Type&#34;: &#34;bool&#34;
+                  }
+                ],
+                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given suffix.&#34;,
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;RemoveLinesWithSuffix&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNTdWZmaXgobGluZSwgc3VmZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
+              },
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;prefix&#34;,
+                    &#34;Type&#34;: &#34;string&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;suffix&#34;,
+                    &#34;Type&#34;: &#34;string&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;trimSpace&#34;,
+                    &#34;Type&#34;: &#34;bool&#34;
+                  }
+                ],
+                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.&#34;,
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;RemoveLinesSurroundedBy&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSAmJiBzdHJpbmdzLkhhc1N1ZmZpeChsaW5lLCBzdWZmaXgpIHsKCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIGRhdGEsIG5pbAoJCX0KCX0KfQ==&#34;
+              }
+            ],
             &#34;Name&#34;: &#34;ReadManipulatorFunc&#34;,
             &#34;Source&#34;: &#34;dHlwZSBSZWFkTWFuaXB1bGF0b3JGdW5jIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKQ==&#34;
           },
@@ -11404,7 +11408,7 @@
       },
       {
         &#34;CanonicalImportPath&#34;: &#34;github.com/ghetzel/go-stockutil/log&#34;,
-        &#34;CommentWordCount&#34;: 1139,
+        &#34;CommentWordCount&#34;: 1286,
         &#34;ConstantCount&#34;: 8,
         &#34;Constants&#34;: [
           {
@@ -11603,7 +11607,7 @@
           },
           {
             &#34;ConstantCount&#34;: 0,
-            &#34;FunctionCount&#34;: 37,
+            &#34;FunctionCount&#34;: 44,
             &#34;Imports&#34;: [
               {
                 &#34;Alias&#34;: &#34;json&#34;,
@@ -11654,10 +11658,10 @@
                 &#34;PackageName&#34;: &#34;github.com/op/go-logging&#34;
               }
             ],
-            &#34;LineCount&#34;: 406,
+            &#34;LineCount&#34;: 457,
             &#34;Name&#34;: &#34;log.go&#34;,
-            &#34;Size&#34;: 9312,
-            &#34;SourceLineCount&#34;: 301,
+            &#34;Size&#34;: 10757,
+            &#34;SourceLineCount&#34;: 333,
             &#34;TypeCount&#34;: 4,
             &#34;VariableCount&#34;: 5
           },
@@ -11694,7 +11698,7 @@
             &#34;VariableCount&#34;: 0
           }
         ],
-        &#34;FunctionCount&#34;: 59,
+        &#34;FunctionCount&#34;: 66,
         &#34;Functions&#34;: [
           {
             &#34;Arguments&#34;: [
@@ -11904,6 +11908,23 @@
             &#34;Source&#34;: &#34;ewoJTG9nKERFQlVHLCBhcmdzLi4uKQp9&#34;
           },
           {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;err&#34;,
+                &#34;Type&#34;: &#34;error&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;args&#34;,
+                &#34;Type&#34;: &#34;...any&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Print a debug log the given error is not nil.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;DebugIfError&#34;,
+            &#34;Signature&#34;: &#34;DebugIfError(err error, args ...any)&#34;,
+            &#34;Source&#34;: &#34;ewoJTG9nSWZFcnJvcihERUJVRywgZXJyLCBhcmdzLi4uKQp9&#34;
+          },
+          {
             &#34;Comment&#34;: &#34;Logs the current stack trace as debug log output.&#34;,
             &#34;IsPackageLevel&#34;: true,
             &#34;Name&#34;: &#34;DebugStack&#34;,
@@ -12061,6 +12082,23 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;err&#34;,
+                &#34;Type&#34;: &#34;error&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;args&#34;,
+                &#34;Type&#34;: &#34;...any&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Print an error log the given error is not nil.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;ErrorIfError&#34;,
+            &#34;Signature&#34;: &#34;ErrorIfError(err error, args ...any)&#34;,
+            &#34;Source&#34;: &#34;ewoJTG9nSWZFcnJvcihFUlJPUiwgZXJyLCBhcmdzLi4uKQp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;format&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               },
@@ -12098,6 +12136,23 @@
             &#34;Name&#34;: &#34;FatalIf&#34;,
             &#34;Signature&#34;: &#34;FatalIf(err error)&#34;,
             &#34;Source&#34;: &#34;ewoJaWYgZXJyICE9IG5pbCB7CgkJRmF0YWwoZXJyKQoJfQp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;err&#34;,
+                &#34;Type&#34;: &#34;error&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;args&#34;,
+                &#34;Type&#34;: &#34;...any&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Print an error log the given error is not nil.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;FatalIfError&#34;,
+            &#34;Signature&#34;: &#34;FatalIfError(err error, args ...any)&#34;,
+            &#34;Source&#34;: &#34;ewoJTG9nSWZFcnJvcihGQVRBTCwgZXJyLCBhcmdzLi4uKQp9&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -12165,6 +12220,23 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;err&#34;,
+                &#34;Type&#34;: &#34;error&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;args&#34;,
+                &#34;Type&#34;: &#34;...any&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Print an info log the given error is not nil.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;InfoIfError&#34;,
+            &#34;Signature&#34;: &#34;InfoIfError(err error, args ...any)&#34;,
+            &#34;Source&#34;: &#34;ewoJTG9nSWZFcnJvcihJTkZPLCBlcnIsIGFyZ3MuLi4pCn0=&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;format&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               },
@@ -12193,6 +12265,27 @@
             &#34;Name&#34;: &#34;Log&#34;,
             &#34;Signature&#34;: &#34;Log(level Level, args ...any)&#34;,
             &#34;Source&#34;: &#34;ewoJaWYgbGV2ZWwgPT0gRkFUQUwgJiYgbGVuKGFyZ3MpID09IDEgJiYgYXJnc1swXSA9PSBuaWwgewoJCXJldHVybgoJfQoJaW5pdExvZ2dpbmcoKQoJdmFyIGxpbmUgPSBzdHJpbmdzLkpvaW4oc2xpY2V1dGlsLlN0cmluZ2lmeShhcmdzKSwgYCBgKQoJdmFyIHN0YWNrID0gU3RhY2tUcmFjZShEZWZhdWx0SW50ZXJjZXB0U3RhY2tEZXB0aCkKCWlmIHNob3VsZFNraXAobGV2ZWwsIGxpbmUsIHN0YWNrKSB7CgkJcmV0dXJuCgl9CgljYWxsSW50ZXJjZXB0cyhsZXZlbCwgbGluZSwgc3RhY2spCglsb2cobGV2ZWwsIGFyZ3MuLi4pCn0=&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;level&#34;,
+                &#34;Type&#34;: &#34;Level&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;err&#34;,
+                &#34;Type&#34;: &#34;error&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;args&#34;,
+                &#34;Type&#34;: &#34;...any&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Invoke Log() if the given error is not nil. If one variadic argument is given\nit will be treated as an fmt.Printf format string which will receive the error\nas a parameter. If more than one variadic is given, the first variable will be\ntreated as a format string, then all subsequent variables are passed in, then\nfinally the given error. The error message is assumed to be the final parameter\nin the format string.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;LogIfError&#34;,
+            &#34;Signature&#34;: &#34;LogIfError(level Level, err error, args ...any)&#34;,
+            &#34;Source&#34;: &#34;ewoJaWYgZXJyICE9IG5pbCB7CgkJc3dpdGNoIGxlbihhcmdzKSB7CgkJY2FzZSAwOgoJCQlMb2cobGV2ZWwsIGVycikKCQlkZWZhdWx0OgoJCQlMb2dmKGxldmVsLCB0eXBldXRpbC5TdHJpbmcoYXJnc1swXSksIGFwcGVuZChhcmdzWzE6XSwgZXJyKS4uLikKCQl9Cgl9Cn0=&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -12236,6 +12329,23 @@
             &#34;Name&#34;: &#34;Notice&#34;,
             &#34;Signature&#34;: &#34;Notice(args ...any)&#34;,
             &#34;Source&#34;: &#34;ewoJTG9nKE5PVElDRSwgYXJncy4uLikKfQ==&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;err&#34;,
+                &#34;Type&#34;: &#34;error&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;args&#34;,
+                &#34;Type&#34;: &#34;...any&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Print a notice log the given error is not nil.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;NoticeIfError&#34;,
+            &#34;Signature&#34;: &#34;NoticeIfError(err error, args ...any)&#34;,
+            &#34;Source&#34;: &#34;ewoJTG9nSWZFcnJvcihOT1RJQ0UsIGVyciwgYXJncy4uLikKfQ==&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -12406,6 +12516,23 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;err&#34;,
+                &#34;Type&#34;: &#34;error&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;args&#34;,
+                &#34;Type&#34;: &#34;...any&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Print a warning log the given error is not nil.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;WarningIfError&#34;,
+            &#34;Signature&#34;: &#34;WarningIfError(err error, args ...any)&#34;,
+            &#34;Source&#34;: &#34;ewoJTG9nSWZFcnJvcihXQVJOSU5HLCBlcnIsIGFyZ3MuLi4pCn0=&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;format&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               },
@@ -12421,19 +12548,19 @@
           }
         ],
         &#34;ImportPath&#34;: &#34;log&#34;,
-        &#34;LineCount&#34;: 1046,
+        &#34;LineCount&#34;: 1097,
         &#34;MainFunction&#34;: false,
         &#34;Name&#34;: &#34;log&#34;,
         &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-        &#34;SourceLineCount&#34;: 794,
+        &#34;SourceLineCount&#34;: 826,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 0,
+          &#34;HarmonicMean&#34;: 1,
           &#34;Maximum&#34;: 1,
-          &#34;Mean&#34;: 0.2519,
+          &#34;Mean&#34;: 0.3143,
           &#34;Median&#34;: 0,
           &#34;Minimum&#34;: 0,
-          &#34;StdDev&#34;: 0.4278
+          &#34;StdDev&#34;: 0.4588
         },
         &#34;Synopsis&#34;: &#34;Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[&#43;attributes[:backgroundColor[&#43;attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\&#34;Hello, world!\&#34;)\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\&#34;The %q operation could not be completed.\&#34;, \&#34;add\&#34;)\n\t// [11:22:33 0002] WARN The \&#34;add\&#34; operation could not be completed.\n\n\tlog.Errorf(\&#34;There was an ${red}error${reset} opening file ${blue&#43;b:white}%s${reset}\&#34;, filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\&#34;os/exec\&#34;\n\t\t\&#34;github.com/ghetzel/go-stockutil/log\&#34;\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n&#34;,
         &#34;Tests&#34;: [
@@ -16931,7 +17058,7 @@
         &#34;SourceLineCount&#34;: 505,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 1,
+          &#34;HarmonicMean&#34;: 0,
           &#34;Maximum&#34;: 1,
           &#34;Mean&#34;: 0.3673,
           &#34;Median&#34;: 0,
@@ -17817,7 +17944,7 @@
         &#34;SourceLineCount&#34;: 187,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 1,
+          &#34;HarmonicMean&#34;: 0,
           &#34;Maximum&#34;: 1,
           &#34;Mean&#34;: 0.3545,
           &#34;Median&#34;: 0,
@@ -26600,23 +26727,23 @@
     },
     {
       &#34;CanonicalImportPath&#34;: &#34;github.com/ghetzel/go-stockutil/log&#34;,
-      &#34;CommentWordCount&#34;: 1139,
+      &#34;CommentWordCount&#34;: 1286,
       &#34;ConstantCount&#34;: 8,
-      &#34;FunctionCount&#34;: 59,
+      &#34;FunctionCount&#34;: 66,
       &#34;ImportPath&#34;: &#34;log&#34;,
-      &#34;LineCount&#34;: 1046,
+      &#34;LineCount&#34;: 1097,
       &#34;MainFunction&#34;: false,
       &#34;Name&#34;: &#34;log&#34;,
       &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-      &#34;SourceLineCount&#34;: 794,
+      &#34;SourceLineCount&#34;: 826,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 0,
+        &#34;HarmonicMean&#34;: 1,
         &#34;Maximum&#34;: 1,
-        &#34;Mean&#34;: 0.2519,
+        &#34;Mean&#34;: 0.3143,
         &#34;Median&#34;: 0,
         &#34;Minimum&#34;: 0,
-        &#34;StdDev&#34;: 0.4278
+        &#34;StdDev&#34;: 0.4588
       },
       &#34;Synopsis&#34;: &#34;Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[&#43;attributes[:backgroundColor[&#43;attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\&#34;Hello, world!\&#34;)\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\&#34;The %q operation could not be completed.\&#34;, \&#34;add\&#34;)\n\t// [11:22:33 0002] WARN The \&#34;add\&#34; operation could not be completed.\n\n\tlog.Errorf(\&#34;There was an ${red}error${reset} opening file ${blue&#43;b:white}%s${reset}\&#34;, filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\&#34;os/exec\&#34;\n\t\t\&#34;github.com/ghetzel/go-stockutil/log\&#34;\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n&#34;,
       &#34;TypeCount&#34;: 10,
@@ -26686,7 +26813,7 @@
       &#34;SourceLineCount&#34;: 505,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 1,
+        &#34;HarmonicMean&#34;: 0,
         &#34;Maximum&#34;: 1,
         &#34;Mean&#34;: 0.3673,
         &#34;Median&#34;: 0,
@@ -26736,7 +26863,7 @@
       &#34;SourceLineCount&#34;: 187,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 1,
+        &#34;HarmonicMean&#34;: 0,
         &#34;Maximum&#34;: 1,
         &#34;Mean&#34;: 0.3545,
         &#34;Median&#34;: 0,

@@ -356,6 +356,57 @@ func AppendError(base error, err error) error {
 	}
 }
 
+// Invoke Log() if the given error is not nil. If one variadic argument is given
+// it will be treated as an fmt.Printf format string which will receive the error
+// as a parameter. If more than one variadic is given, the first variable will be
+// treated as a format string, then all subsequent variables are passed in, then
+// finally the given error. The error message is assumed to be the final parameter
+// in the format string.
+func LogIfError(level Level, err error, args ...any) {
+	if err != nil {
+		switch len(args) {
+		case 0:
+			Log(level, err)
+		default:
+			Logf(
+				level,
+				typeutil.String(args[0]),
+				append(args[1:], err)...,
+			)
+		}
+	}
+}
+
+// Print a debug log the given error is not nil.
+func DebugIfError(err error, args ...any) {
+	LogIfError(DEBUG, err, args...)
+}
+
+// Print an info log the given error is not nil.
+func InfoIfError(err error, args ...any) {
+	LogIfError(INFO, err, args...)
+}
+
+// Print a notice log the given error is not nil.
+func NoticeIfError(err error, args ...any) {
+	LogIfError(NOTICE, err, args...)
+}
+
+// Print a warning log the given error is not nil.
+func WarningIfError(err error, args ...any) {
+	LogIfError(WARNING, err, args...)
+}
+
+// Print an error log the given error is not nil.
+func ErrorIfError(err error, args ...any) {
+	LogIfError(ERROR, err, args...)
+}
+
+// Print an error log the given error is not nil.
+func FatalIfError(err error, args ...any) {
+	LogIfError(FATAL, err, args...)
+}
+
 // Invoke Fatal() if the given error is not nil.
 func FatalIf(err error) {
 	if err != nil {
