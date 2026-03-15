@@ -17,7 +17,7 @@
         "Mean": 0.3673,
         "StdDev": 0.4586,
         "GeometricMean": 0,
-        "HarmonicMean": 0,
+        "HarmonicMean": 1,
         "Median": 0,
         "Minimum": 0,
         "Maximum": 1
@@ -123,7 +123,7 @@
                     "Alias": "zeroconf"
                 }
             ],
-            "Size": 5448,
+            "Size": 5445,
             "LineCount": 214,
             "SourceLineCount": 174,
             "FunctionCount": 5,
@@ -569,7 +569,7 @@
                 }
             ],
             "Signature": "ZeroconfRegister(svc *Service) (string, error)",
-            "Source": "ewoJaWYgc3ZjID09IG5pbCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGNvbmZpZ3VyYXRpb24gdG8gcmVnaXN0ZXIgbUROUyIpCgl9IGVsc2UgaWYgc3ZjLkluc3RhbmNlID09IGBgIHsKCQlzdmMuSW5zdGFuY2UgPSBzdHJpbmd1dGlsLlVVSUQoKS5TdHJpbmcoKQoJfSBlbHNlIGlmIHN2Yy5TZXJ2aWNlID09IGBgIHsKCQlyZXR1cm4gYGAsIGZtdC5FcnJvcmYoIk11c3QgcHJvdmlkZSBhIHNlcnZpY2UgdHlwZSIpCgl9IGVsc2UgaWYgc3ZjLkRvbWFpbiA9PSBgYCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGRvbWFpbiIpCgl9IGVsc2UgaWYgc3ZjLlBvcnQgPT0gMCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHNwZWNpZnkgYSBzZXJ2aWNlIHBvcnQiKQoJfQoJdmFyIHNsdWcgPSBmbXQuU3ByaW50ZigiJXgiLCBzaGEyNTYuU3VtMjU2KFtdYnl0ZShmbXQuU3ByaW50ZigiJXMuJXMlczolZCIsIHN2Yy5JbnN0YW5jZSwgc3ZjLlNlcnZpY2UsIHN2Yy5Eb21haW4sIHN2Yy5Qb3J0KSkpKQoJaWYgXywgb2sgOj0gcmVnaXN0ZXJlZC5Mb2FkKHNsdWcpOyBvayB7CgkJcmV0dXJuIHNsdWcsIGZtdC5FcnJvcmYoIkEgc2VydmljZSBtYXRjaGluZyB0aGVzZSBwYXJhbWV0ZXJzIGlzIGFscmVhZHkgcmVnaXN0ZXJlZCIpCgl9CglpZiBzZXJ2ZXIsIGVyciA6PSB6ZXJvY29uZi5SZWdpc3RlcihzdmMuSW5zdGFuY2UsIHN2Yy5TZXJ2aWNlLCBzdmMuRG9tYWluLCBzdmMuUG9ydCwgc3ZjLlRleHQsIHN2Yy5JbnRlcmZhY2VzKTsgZXJyID09IG5pbCB7CgkJcmVnaXN0ZXJlZC5TdG9yZShzbHVnLCBzZXJ2ZXIpCgkJcmV0dXJuIHNsdWcsIG5pbAoJfSBlbHNlIHsKCQlyZXR1cm4gYGAsIGVycgoJfQp9",
+            "Source": "ewoJaWYgc3ZjID09IG5pbCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGNvbmZpZ3VyYXRpb24gdG8gcmVnaXN0ZXIgbUROUyIpCgl9IGVsc2UgaWYgc3ZjLkluc3RhbmNlID09IGBgIHsKCQlzdmMuSW5zdGFuY2UgPSBzdHJpbmd1dGlsLlVVSUQoKS5TdHJpbmcoKQoJfSBlbHNlIGlmIHN2Yy5TZXJ2aWNlID09IGBgIHsKCQlyZXR1cm4gYGAsIGZtdC5FcnJvcmYoIk11c3QgcHJvdmlkZSBhIHNlcnZpY2UgdHlwZSIpCgl9IGVsc2UgaWYgc3ZjLkRvbWFpbiA9PSBgYCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGRvbWFpbiIpCgl9IGVsc2UgaWYgc3ZjLlBvcnQgPT0gMCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHNwZWNpZnkgYSBzZXJ2aWNlIHBvcnQiKQoJfQoJdmFyIHNsdWcgPSBmbXQuU3ByaW50ZigiJXgiLCBzaGEyNTYuU3VtMjU2KGZtdC5BcHBlbmRmKG5pbCwgIiVzLiVzJXM6JWQiLCBzdmMuSW5zdGFuY2UsIHN2Yy5TZXJ2aWNlLCBzdmMuRG9tYWluLCBzdmMuUG9ydCkpKQoJaWYgXywgb2sgOj0gcmVnaXN0ZXJlZC5Mb2FkKHNsdWcpOyBvayB7CgkJcmV0dXJuIHNsdWcsIGZtdC5FcnJvcmYoIkEgc2VydmljZSBtYXRjaGluZyB0aGVzZSBwYXJhbWV0ZXJzIGlzIGFscmVhZHkgcmVnaXN0ZXJlZCIpCgl9CglpZiBzZXJ2ZXIsIGVyciA6PSB6ZXJvY29uZi5SZWdpc3RlcihzdmMuSW5zdGFuY2UsIHN2Yy5TZXJ2aWNlLCBzdmMuRG9tYWluLCBzdmMuUG9ydCwgc3ZjLlRleHQsIHN2Yy5JbnRlcmZhY2VzKTsgZXJyID09IG5pbCB7CgkJcmVnaXN0ZXJlZC5TdG9yZShzbHVnLCBzZXJ2ZXIpCgkJcmV0dXJuIHNsdWcsIG5pbAoJfSBlbHNlIHsKCQlyZXR1cm4gYGAsIGVycgoJfQp9",
             "IsPackageLevel": true
         },
         {

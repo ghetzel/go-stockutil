@@ -55,7 +55,7 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 3484,
+            "Size": 3488,
             "LineCount": 171,
             "SourceLineCount": 135,
             "FunctionCount": 10,
@@ -103,7 +103,7 @@
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 3999,
+            "Size": 4007,
             "LineCount": 165,
             "SourceLineCount": 126,
             "FunctionCount": 3,
@@ -215,7 +215,7 @@
                 }
             ],
             "Signature": "FieldsFunc(in any, fn StructFieldFunc) error",
-            "Source": "ewoJaWYgaW4gPT0gbmlsIHx8IGZuID09IG5pbCB7CgkJcmV0dXJuIG5pbAoJfQoJdmFyIGluVmFsdSByZWZsZWN0LlZhbHVlCglpZiB2LCBvayA6PSBpbi4ocmVmbGVjdC5WYWx1ZSk7IG9rIHsKCQlpblZhbHUgPSB2Cgl9IGVsc2UgewoJCWluVmFsdSA9IHJlZmxlY3QuVmFsdWVPZihpbikKCX0KCWlmIGluVmFsdS5LaW5kKCkgPT0gcmVmbGVjdC5QdHIgewoJCWluVmFsdSA9IGluVmFsdS5FbGVtKCkKCX0KCXZhciBpblR5cGUgPSBpblZhbHUuVHlwZSgpCkZpZWxkTG9vcDoKCWZvciBpIDo9IDA7IGkgPCBpblR5cGUuTnVtRmllbGQoKTsgaSsrIHsKCQl2YXIgZmllbGRUID0gaW5UeXBlLkZpZWxkKGkpCgkJdmFyIGZpZWxkViA9IGluVmFsdS5GaWVsZChpKQoJCWlmIGZpZWxkVC5Bbm9ueW1vdXMgewoJCQlpZiBlcnIgOj0gRmllbGRzRnVuYyhmaWVsZFYsIGZuKTsgZXJyICE9IG5pbCB7CgkJCQlyZXR1cm4gZXJyCgkJCX0KCQl9CgkJaWYgZmllbGRULlBrZ1BhdGggIT0gYGAgewoJCQljb250aW51ZQoJCX0KCQlzd2l0Y2ggZXJyIDo9IGZuKCZmaWVsZFQsIGZpZWxkVik7IGVyciB7CgkJY2FzZSBTdG9wSXRlcmF0aW5nOgoJCQlicmVhayBGaWVsZExvb3AKCQljYXNlIG5pbDoKCQkJY29udGludWUKCQlkZWZhdWx0OgoJCQlyZXR1cm4gZXJyCgkJfQoJfQoJcmV0dXJuIG5pbAp9",
+            "Source": "ewoJaWYgaW4gPT0gbmlsIHx8IGZuID09IG5pbCB7CgkJcmV0dXJuIG5pbAoJfQoJdmFyIGluVmFsdSByZWZsZWN0LlZhbHVlCglpZiB2LCBvayA6PSBpbi4ocmVmbGVjdC5WYWx1ZSk7IG9rIHsKCQlpblZhbHUgPSB2Cgl9IGVsc2UgewoJCWluVmFsdSA9IHJlZmxlY3QuVmFsdWVPZihpbikKCX0KCWlmIGluVmFsdS5LaW5kKCkgPT0gcmVmbGVjdC5Qb2ludGVyIHsKCQlpblZhbHUgPSBpblZhbHUuRWxlbSgpCgl9Cgl2YXIgaW5UeXBlID0gaW5WYWx1LlR5cGUoKQpGaWVsZExvb3A6Cglmb3IgaSA6PSAwOyBpIDwgaW5UeXBlLk51bUZpZWxkKCk7IGkrKyB7CgkJdmFyIGZpZWxkVCA9IGluVHlwZS5GaWVsZChpKQoJCXZhciBmaWVsZFYgPSBpblZhbHUuRmllbGQoaSkKCQlpZiBmaWVsZFQuQW5vbnltb3VzIHsKCQkJaWYgZXJyIDo9IEZpZWxkc0Z1bmMoZmllbGRWLCBmbik7IGVyciAhPSBuaWwgewoJCQkJcmV0dXJuIGVycgoJCQl9CgkJfQoJCWlmIGZpZWxkVC5Qa2dQYXRoICE9IGBgIHsKCQkJY29udGludWUKCQl9CgkJc3dpdGNoIGVyciA6PSBmbigmZmllbGRULCBmaWVsZFYpOyBlcnIgewoJCWNhc2UgU3RvcEl0ZXJhdGluZzoKCQkJYnJlYWsgRmllbGRMb29wCgkJY2FzZSBuaWw6CgkJCWNvbnRpbnVlCgkJZGVmYXVsdDoKCQkJcmV0dXJuIGVycgoJCX0KCX0KCXJldHVybiBuaWwKfQ==",
             "IsPackageLevel": true
         }
     ],

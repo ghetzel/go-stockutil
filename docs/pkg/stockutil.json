@@ -38,8 +38,8 @@
         {
             "Name": "Version",
             "Immutable": true,
-            "Expression": "`1.13.2`",
-            "Value": "1.13.2"
+            "Expression": "`1.13.3`",
+            "Value": "1.13.3"
         }
     ],
     "Packages": [
@@ -1809,7 +1809,7 @@
                             "Alias": "assert"
                         }
                     ],
-                    "Size": 3720,
+                    "Size": 3709,
                     "LineCount": 141,
                     "SourceLineCount": 114,
                     "FunctionCount": 0,
@@ -2158,6 +2158,27 @@
                     ],
                     "Signature": "Join(in any) string",
                     "Source": "ewoJdmFyIGFyZ3MgW11zdHJpbmcKCWlmIGNtZCwgb2sgOj0gaW4uKCpleGVjLkNtZCk7IG9rIHsKCQlhcmdzID0gY21kLkFyZ3MKCX0gZWxzZSBpZiB0eXBldXRpbC5Jc0FycmF5KGluKSB7CgkJYXJncyA9IHNsaWNldXRpbC5TdHJpbmdpZnkoaW4pCgl9IGVsc2UgewoJCXJldHVybiBgYAoJfQoJZm9yIGksIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlpZiBzdHJpbmdzLkNvbnRhaW5zKGFyZywgYCBgKSB7CgkJCWFyZ3NbaV0gPSBzdHJpbmd1dGlsLldyYXAoYXJnLCBgJ2AsIGAnYCkKCQl9Cgl9CglyZXR1cm4gc3RyaW5ncy5Kb2luKGFyZ3MsIGAgYCkKfQ==",
+                    "IsPackageLevel": true
+                },
+                {
+                    "Name": "LogOutput",
+                    "Arguments": [
+                        {
+                            "Name": "outlevel",
+                            "Type": "log.Level"
+                        },
+                        {
+                            "Name": "errlevel",
+                            "Type": "log.Level"
+                        }
+                    ],
+                    "Returns": [
+                        {
+                            "Type": "OutputLineFunc"
+                        }
+                    ],
+                    "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
+                    "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
                     "IsPackageLevel": true
                 },
                 {
@@ -2510,7 +2531,7 @@
                         }
                     ],
                     "Signature": "TestExecReadWriteCloser(t *testing.T)",
-                    "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW8uUmVhZEFsbChjbWQpCglhc3NlcnQuTm9FcnJvcih0LCByZXJyKQoJYXNzZXJ0LkVxdWFsKHQsIGJ5dGVzLlJlcGVhdChwYXlsb2FkLCBjKSwgZGF0YSkKfQ==",
+                    "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIHJhbmdlIGMgewoJCXZhciBfLCB3ZXJyID0gY21kLldyaXRlKHBheWxvYWQpCgkJYXNzZXJ0Lk5vRXJyb3IodCwgd2VycikKCX0KCWFzc2VydC5Ob0Vycm9yKHQsIGNtZC5DbG9zZUlucHV0KCkpCgl2YXIgZGF0YSwgcmVyciA9IGlvLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgcmVycikKCWFzc2VydC5FcXVhbCh0LCBieXRlcy5SZXBlYXQocGF5bG9hZCwgYyksIGRhdGEpCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -2941,29 +2962,6 @@
                 },
                 "OutputLineFunc": {
                     "Name": "OutputLineFunc",
-                    "Methods": [
-                        {
-                            "Name": "LogOutput",
-                            "Arguments": [
-                                {
-                                    "Name": "outlevel",
-                                    "Type": "log.Level"
-                                },
-                                {
-                                    "Name": "errlevel",
-                                    "Type": "log.Level"
-                                }
-                            ],
-                            "Returns": [
-                                {
-                                    "Type": "OutputLineFunc"
-                                }
-                            ],
-                            "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
-                            "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
-                            "IsPackageLevel": true
-                        }
-                    ],
                     "Source": "dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk="
                 },
                 "Status": {
@@ -3040,8 +3038,8 @@
             "Synopsis": "Helpers for working with files and filesystems\n",
             "MainFunction": false,
             "CommentWordCount": 1499,
-            "LineCount": 3153,
-            "SourceLineCount": 2509,
+            "LineCount": 3148,
+            "SourceLineCount": 2505,
             "FunctionCount": 81,
             "TypeCount": 18,
             "ConstantCount": 4,
@@ -3468,13 +3466,17 @@
                             "Alias": "filepath"
                         },
                         {
+                            "PackageName": "slices",
+                            "Alias": "slices"
+                        },
+                        {
                             "PackageName": "sort",
                             "Alias": "sort"
                         }
                     ],
-                    "Size": 5502,
-                    "LineCount": 225,
-                    "SourceLineCount": 172,
+                    "Size": 5464,
+                    "LineCount": 220,
+                    "SourceLineCount": 168,
                     "FunctionCount": 7,
                     "TypeCount": 5,
                     "ConstantCount": 3,
@@ -3632,7 +3634,7 @@
                             "Alias": "isatty"
                         }
                     ],
-                    "Size": 13505,
+                    "Size": 13493,
                     "LineCount": 536,
                     "SourceLineCount": 416,
                     "FunctionCount": 26,
@@ -4822,7 +4824,7 @@
                         }
                     ],
                     "Signature": "SetExt(path string, ext string, oldexts ...string) string",
-                    "Source": "ewoJaWYgZXh0ID09IGBgIHsKCQlyZXR1cm4gcGF0aAoJfQoJdmFyIG9sZGV4dCBzdHJpbmcKCWlmIGxlbihvbGRleHRzKSA+IDAgJiYgb2xkZXh0c1swXSAhPSBgYCB7CgkJb2xkZXh0ID0gb2xkZXh0c1swXQoJfSBlbHNlIHsKCQlvbGRleHQgPSBmaWxlcGF0aC5FeHQocGF0aCkKCX0KCW9sZGV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChvbGRleHQsIGAuYCkKCWV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChleHQsIGAuYCkKCWlmIHN0cmluZ3MuSGFzU3VmZml4KHBhdGgsIGAuYCtvbGRleHQpIHsKCQlwYXRoID0gc3RyaW5ncy5UcmltU3VmZml4KHBhdGgsIGAuYCtvbGRleHQpICsgYC5gICsgZXh0Cgl9CglyZXR1cm4gcGF0aAp9",
+                    "Source": "ewoJaWYgZXh0ID09IGBgIHsKCQlyZXR1cm4gcGF0aAoJfQoJdmFyIG9sZGV4dCBzdHJpbmcKCWlmIGxlbihvbGRleHRzKSA+IDAgJiYgb2xkZXh0c1swXSAhPSBgYCB7CgkJb2xkZXh0ID0gb2xkZXh0c1swXQoJfSBlbHNlIHsKCQlvbGRleHQgPSBmaWxlcGF0aC5FeHQocGF0aCkKCX0KCW9sZGV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChvbGRleHQsIGAuYCkKCWV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChleHQsIGAuYCkKCWlmIGJlZm9yZSwgb2sgOj0gc3RyaW5ncy5DdXRTdWZmaXgocGF0aCwgYC5gK29sZGV4dCk7IG9rIHsKCQlwYXRoID0gYmVmb3JlICsgYC5gICsgZXh0Cgl9CglyZXR1cm4gcGF0aAp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -5137,7 +5139,7 @@
                         }
                     ],
                     "Signature": "TestRetrieveViaSSH_SFTP(t *testing.T)",
-                    "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUGApCglpZiBzc2hVcmxFbnYgIT0gYGAgewoJCWZvciBfLCB1cmkgOj0gLy8gZXhhbXBsZTogVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUD0ic2Z0cDovL2xvY2FsaG9zdDoyMDIwL2ZpbGUtaW4taG9tZWRpcnxzZnRwOi8vdWJ1bnR1OnBhc3N3b3JkQHJlbW90ZS1ob3N0Ly9ldGMvZnN0YWIiCgkJcmFuZ2Ugc3RyaW5ncy5TcGxpdChzc2hVcmxFbnYsIGB8YCkgewoJCQl1cmkgPSBzdHJpbmdzLlRyaW1TcGFjZSh1cmkpCgkJCWlmIHVyaSA9PSBgYCB7CgkJCQljb250aW51ZQoJCQl9CgkJCXUsIGVyciA6PSB1cmwuUGFyc2UodXJpKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob3ROaWwodCwgdSkKCQkJY3R4IDo9IGNvbnRleHQuV2l0aFZhbHVlKGNvbnRleHQuQmFja2dyb3VuZCgpLCBgdmVyaWZ5SG9zdEZ1bmNgLCBmdW5jKGhvc3RuYW1lIHN0cmluZywgcmVtb3RlIG5ldC5BZGRyLCBrZXkgc3NoLlB1YmxpY0tleSkgZXJyb3IgewoJCQkJdmFyIHAgPSB1LlBvcnQoKQoJCQkJaWYgcCA9PSBgYCB7CgkJCQkJcCA9IGAyMmAKCQkJCX0KCQkJCWFzc2VydC5FcXVhbCh0LCB1Lkhvc3QrYDpgK3AsIGhvc3RuYW1lKQoJCQkJcmV0dXJuIG5pbAoJCQl9KQoJCQlkLCBlcnIgOj0gUmV0cmlldmVWaWFTU0goY3R4LCB1KQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGQpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGVycikKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZC5DbG9zZSgpKQoJCQlhc3NlcnQuRXF1YWwodCwgIkhFTExPIFRIRVJFXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
+                    "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUGApCglpZiBzc2hVcmxFbnYgIT0gYGAgewoJCWZvciB1cmkgOj0gLy8gZXhhbXBsZTogVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUD0ic2Z0cDovL2xvY2FsaG9zdDoyMDIwL2ZpbGUtaW4taG9tZWRpcnxzZnRwOi8vdWJ1bnR1OnBhc3N3b3JkQHJlbW90ZS1ob3N0Ly9ldGMvZnN0YWIiCgkJcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzc2hVcmxFbnYsIGB8YCkgewoJCQl1cmkgPSBzdHJpbmdzLlRyaW1TcGFjZSh1cmkpCgkJCWlmIHVyaSA9PSBgYCB7CgkJCQljb250aW51ZQoJCQl9CgkJCXUsIGVyciA6PSB1cmwuUGFyc2UodXJpKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob3ROaWwodCwgdSkKCQkJY3R4IDo9IGNvbnRleHQuV2l0aFZhbHVlKGNvbnRleHQuQmFja2dyb3VuZCgpLCBgdmVyaWZ5SG9zdEZ1bmNgLCBmdW5jKGhvc3RuYW1lIHN0cmluZywgcmVtb3RlIG5ldC5BZGRyLCBrZXkgc3NoLlB1YmxpY0tleSkgZXJyb3IgewoJCQkJdmFyIHAgPSB1LlBvcnQoKQoJCQkJaWYgcCA9PSBgYCB7CgkJCQkJcCA9IGAyMmAKCQkJCX0KCQkJCWFzc2VydC5FcXVhbCh0LCB1Lkhvc3QrYDpgK3AsIGhvc3RuYW1lKQoJCQkJcmV0dXJuIG5pbAoJCQl9KQoJCQlkLCBlcnIgOj0gUmV0cmlldmVWaWFTU0goY3R4LCB1KQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGQpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGVycikKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZC5DbG9zZSgpKQoJCQlhc3NlcnQuRXF1YWwodCwgIkhFTExPIFRIRVJFXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -5149,7 +5151,7 @@
                         }
                     ],
                     "Signature": "TestRetrieveViaSSH_SSH(t *testing.T)",
-                    "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU1NIYCkKCWlmIHNzaFVybEVudiAhPSBgYCB7CgkJZm9yIF8sIHVyaSA6PSAvLyBleGFtcGxlOiBURVNUX0dPU1RPQ0tVVElMX1JFVFJJRVZFX1ZJQV9TU0g9InNzaDovL2xvY2FsaG9zdDoyMDIwL2hvc3RuYW1lIgoJCXJhbmdlIHN0cmluZ3MuU3BsaXQoc3NoVXJsRW52LCBgfGApIHsKCQkJdXJpID0gc3RyaW5ncy5UcmltU3BhY2UodXJpKQoJCQlpZiB1cmkgPT0gYGAgewoJCQkJY29udGludWUKCQkJfQoJCQl1LCBlcnIgOj0gdXJsLlBhcnNlKHVyaSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlhc3NlcnQuTm90TmlsKHQsIHUpCgkJCWN0eCA6PSBjb250ZXh0LldpdGhWYWx1ZShjb250ZXh0LkJhY2tncm91bmQoKSwgYHZlcmlmeUhvc3RGdW5jYCwgZnVuYyhob3N0bmFtZSBzdHJpbmcsIHJlbW90ZSBuZXQuQWRkciwga2V5IHNzaC5QdWJsaWNLZXkpIGVycm9yIHsKCQkJCXZhciBwID0gdS5Qb3J0KCkKCQkJCWlmIHAgPT0gYGAgewoJCQkJCXAgPSBgMjJgCgkJCQl9CgkJCQlhc3NlcnQuRXF1YWwodCwgdS5Ib3N0K2A6YCtwLCBob3N0bmFtZSkKCQkJCXJldHVybiBuaWwKCQkJfSkKCQkJZCwgZXJyIDo9IFJldHJpZXZlVmlhU1NIKGN0eCwgdSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChkKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGQuQ2xvc2UoKSkKCQkJYXNzZXJ0LkVxdWFsKHQsIHUuSG9zdG5hbWUoKSsiXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
+                    "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU1NIYCkKCWlmIHNzaFVybEVudiAhPSBgYCB7CgkJZm9yIHVyaSA6PSAvLyBleGFtcGxlOiBURVNUX0dPU1RPQ0tVVElMX1JFVFJJRVZFX1ZJQV9TU0g9InNzaDovL2xvY2FsaG9zdDoyMDIwL2hvc3RuYW1lIgoJCXJhbmdlIHN0cmluZ3MuU3BsaXRTZXEoc3NoVXJsRW52LCBgfGApIHsKCQkJdXJpID0gc3RyaW5ncy5UcmltU3BhY2UodXJpKQoJCQlpZiB1cmkgPT0gYGAgewoJCQkJY29udGludWUKCQkJfQoJCQl1LCBlcnIgOj0gdXJsLlBhcnNlKHVyaSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlhc3NlcnQuTm90TmlsKHQsIHUpCgkJCWN0eCA6PSBjb250ZXh0LldpdGhWYWx1ZShjb250ZXh0LkJhY2tncm91bmQoKSwgYHZlcmlmeUhvc3RGdW5jYCwgZnVuYyhob3N0bmFtZSBzdHJpbmcsIHJlbW90ZSBuZXQuQWRkciwga2V5IHNzaC5QdWJsaWNLZXkpIGVycm9yIHsKCQkJCXZhciBwID0gdS5Qb3J0KCkKCQkJCWlmIHAgPT0gYGAgewoJCQkJCXAgPSBgMjJgCgkJCQl9CgkJCQlhc3NlcnQuRXF1YWwodCwgdS5Ib3N0K2A6YCtwLCBob3N0bmFtZSkKCQkJCXJldHVybiBuaWwKCQkJfSkKCQkJZCwgZXJyIDo9IFJldHJpZXZlVmlhU1NIKGN0eCwgdSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChkKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGQuQ2xvc2UoKSkKCQkJYXNzZXJ0LkVxdWFsKHQsIHUuSG9zdG5hbWUoKSsiXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -6018,7 +6020,7 @@
                             "Alias": "geo"
                         }
                     ],
-                    "Size": 4069,
+                    "Size": 4059,
                     "LineCount": 157,
                     "SourceLineCount": 119,
                     "FunctionCount": 10,
@@ -8407,7 +8409,7 @@
                         }
                     ],
                     "Comment": "Specifies a three-dimensional location within a coordinate reference system.",
-                    "Source": "dHlwZSBMb2NhdGlvbiBzdHJ1Y3QgewoJTGF0aXR1ZGUgICAgZmxvYXQ2NCAgICAgICAgICAgYGpzb246ImxhdGl0dWRlLG9taXRlbXB0eSJgCglMb25naXR1ZGUgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoibG9uZ2l0dWRlLG9taXRlbXB0eSJgCglCZWFyaW5nICAgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoiYmVhcmluZyxvbWl0ZW1wdHkiYAoJVGltZXN0YW1wICAgdGltZS5UaW1lICAgICAgICAgYGpzb246InRpbWVzdGFtcCxvbWl0ZW1wdHkiYAoJQWx0aXR1ZGUgICAgRGlzdGFuY2UgICAgICAgICAgYGpzb246ImFsdGl0dWRlLG9taXRlbXB0eSJgCglTcGVlZCAgICAgICBTcGVlZCAgICAgICAgICAgICBganNvbjoic3BlZWQsb21pdGVtcHR5ImAKCUFjY3VyYWN5ICAgIGZsb2F0NjQgICAgICAgICAgIGBqc29uOiJhY2N1cmFjeSxvbWl0ZW1wdHkiYAoJRXJyb3IgICAgICAgKkxvY2F0aW9uRXJyb3IgICAgYGpzb246ImVycm9yLG9taXRlbXB0eSJgCglEaXJlY3Rpb24gICBDYXJkaW5hbERpcmVjdGlvbiBganNvbjoiZGlyZWN0aW9uLG9taXRlbXB0eSJgCglTb3VyY2UgICAgICBzdHJpbmcgICAgICAgICAgICBganNvbjoic291cmNlLG9taXRlbXB0eSJgCglQcm9wZXJ0aWVzICBtYXAgLy8gU3BlY2lmaWVzIGEgdGhyZWUtZGltZW5zaW9uYWwgbG9jYXRpb24gd2l0aGluIGEgY29vcmRpbmF0ZSByZWZlcmVuY2Ugc3lzdGVtLgoJW3N0cmluZ11hbnkgYGpzb246InByb3BlcnRpZXMsb21pdGVtcHR5ImAKfQ=="
+                    "Source": "dHlwZSBMb2NhdGlvbiBzdHJ1Y3QgewoJTGF0aXR1ZGUgICAgZmxvYXQ2NCAgICAgICAgICAgYGpzb246ImxhdGl0dWRlLG9taXRlbXB0eSJgCglMb25naXR1ZGUgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoibG9uZ2l0dWRlLG9taXRlbXB0eSJgCglCZWFyaW5nICAgICBmbG9hdDY0ICAgICAgICAgICBganNvbjoiYmVhcmluZyxvbWl0ZW1wdHkiYAoJVGltZXN0YW1wICAgdGltZS5UaW1lICAgICAgICAgYGpzb246InRpbWVzdGFtcCJgCglBbHRpdHVkZSAgICBEaXN0YW5jZSAgICAgICAgICBganNvbjoiYWx0aXR1ZGUsb21pdGVtcHR5ImAKCVNwZWVkICAgICAgIFNwZWVkICAgICAgICAgICAgIGBqc29uOiJzcGVlZCxvbWl0ZW1wdHkiYAoJQWNjdXJhY3kgICAgZmxvYXQ2NCAgICAgICAgICAgYGpzb246ImFjY3VyYWN5LG9taXRlbXB0eSJgCglFcnJvciAgICAgICAqTG9jYXRpb25FcnJvciAgICBganNvbjoiZXJyb3Isb21pdGVtcHR5ImAKCURpcmVjdGlvbiAgIENhcmRpbmFsRGlyZWN0aW9uIGBqc29uOiJkaXJlY3Rpb24sb21pdGVtcHR5ImAKCVNvdXJjZSAgICAgIHN0cmluZyAgICAgICAgICAgIGBqc29uOiJzb3VyY2Usb21pdGVtcHR5ImAKCVByb3BlcnRpZXMgIG1hcCAvLyBTcGVjaWZpZXMgYSB0aHJlZS1kaW1lbnNpb25hbCBsb2NhdGlvbiB3aXRoaW4gYSBjb29yZGluYXRlIHJlZmVyZW5jZSBzeXN0ZW0uCglbc3RyaW5nXWFueSBganNvbjoicHJvcGVydGllcyxvbWl0ZW1wdHkiYAp9"
                 },
                 "LocationError": {
                     "Name": "LocationError",
@@ -8558,8 +8560,8 @@
             "Synopsis": "Utilities for extracting and formatting data encountered in HTTP requests\n",
             "MainFunction": false,
             "CommentWordCount": 1266,
-            "LineCount": 2063,
-            "SourceLineCount": 1469,
+            "LineCount": 2052,
+            "SourceLineCount": 1462,
             "FunctionCount": 79,
             "TypeCount": 14,
             "ConstantCount": 13,
@@ -8602,6 +8604,10 @@
                             "Alias": "io"
                         },
                         {
+                            "PackageName": "maps",
+                            "Alias": "maps"
+                        },
+                        {
                             "PackageName": "net/http",
                             "Alias": "http"
                         },
@@ -8638,9 +8644,9 @@
                             "Alias": "typeutil"
                         }
                     ],
-                    "Size": 16513,
-                    "LineCount": 585,
-                    "SourceLineCount": 420,
+                    "Size": 16389,
+                    "LineCount": 574,
+                    "SourceLineCount": 413,
                     "FunctionCount": 35,
                     "TypeCount": 2,
                     "ConstantCount": 0,
@@ -9172,7 +9178,7 @@
                             "Alias": "typeutil"
                         }
                     ],
-                    "Size": 4493,
+                    "Size": 4482,
                     "LineCount": 158,
                     "SourceLineCount": 123,
                     "FunctionCount": 6,
@@ -9444,7 +9450,7 @@
                         }
                     ],
                     "Signature": "EncodeBasicAuth(username string, password string) string",
-                    "Source": "ewoJcmV0dXJuIGZtdC5TcHJpbnRmKCJCYXNpYyAlcyIsIGJhc2U2NC5TdGRFbmNvZGluZy5FbmNvZGVUb1N0cmluZyhbXWJ5dGUoZm10LlNwcmludGYoIiVzOiVzIiwgdXNlcm5hbWUsIHBhc3N3b3JkKSkpKQp9",
+                    "Source": "ewoJcmV0dXJuIGZtdC5TcHJpbnRmKCJCYXNpYyAlcyIsIGJhc2U2NC5TdGRFbmNvZGluZy5FbmNvZGVUb1N0cmluZyhmbXQuQXBwZW5kZihuaWwsICIlczolcyIsIHVzZXJuYW1lLCBwYXNzd29yZCkpKQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -10182,7 +10188,7 @@
                         }
                     ],
                     "Signature": "UrlPathJoin(baseurl any, path string) (*url.URL, error)",
-                    "Source": "ewoJdmFyIGluICp1cmwuVVJMCgl2YXIgb3V0ICp1cmwuVVJMCglpZiB1LCBvayA6PSBiYXNldXJsLigqdXJsLlVSTCk7IG9rIHsKCQlpbiA9IHUKCX0gZWxzZSBpZiB1LCBlcnIgOj0gdXJsLlBhcnNlKHR5cGV1dGlsLlN0cmluZyhiYXNldXJsKSk7IGVyciA9PSBuaWwgewoJCWluID0gdQoJfSBlbHNlIHsKCQlyZXR1cm4gbmlsLCBlcnIKCX0KCW5ld3BhdGgsIHFzIDo9IHN0cmluZ3V0aWwuU3BsaXRQYWlyKHBhdGgsIGA/YCkKCXZhciB0cmFpbCBzdHJpbmcKCWlmIHN0cmluZ3MuSGFzU3VmZml4KG5ld3BhdGgsIGAvYCkgewoJCW5ld3BhdGggPSBzdHJpbmdzLlRyaW1TdWZmaXgobmV3cGF0aCwgYC9gKQoJCWluLlBhdGggPSBzdHJpbmdzLlRyaW1TdWZmaXgoaW4uUGF0aCwgYC9gKQoJCXRyYWlsID0gYC9gCgl9CglvdXQgPSBuZXcodXJsLlVSTCkKCW91dC5TY2hlbWUgPSBpbi5TY2hlbWUKCW91dC5PcGFxdWUgPSBpbi5PcGFxdWUKCW91dC5Vc2VyID0gaW4uVXNlcgoJb3V0Lkhvc3QgPSBpbi5Ib3N0CglvdXQuUGF0aCA9IGZpbGVwYXRoLkpvaW4oaW4uUGF0aCwgbmV3cGF0aCkgKyB0cmFpbAoJb3V0LlJhd1BhdGggPSBpbi5SYXdQYXRoCglvdXQuRm9yY2VRdWVyeSA9IGluLkZvcmNlUXVlcnkKCW91dC5SYXdRdWVyeSA9IGluLlJhd1F1ZXJ5CglvdXQuRnJhZ21lbnQgPSBpbi5GcmFnbWVudAoJaWYgcXMgIT0gYGAgewoJCWlmIHFzdiwgZXJyIDo9IHVybC5QYXJzZVF1ZXJ5KHFzKTsgZXJyID09IG5pbCB7CgkJCWZvciBrLCB2cyA6PSByYW5nZSBxc3YgewoJCQkJaWYgbGVuKHZzKSA9PSAxIHsKCQkJCQlTZXRRKG91dCwgaywgdnNbMF0pCgkJCQl9IGVsc2UgewoJCQkJCUFkZFEob3V0LCBrLCBzbGljZXV0aWwuU2xpY2VpZnkodnMpLi4uKQoJCQkJfQoJCQl9CgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZXJyCgkJfQoJfQoJcmV0dXJuIG91dCwgbmlsCn0=",
+                    "Source": "ewoJdmFyIGluICp1cmwuVVJMCgl2YXIgb3V0ICp1cmwuVVJMCglpZiB1LCBvayA6PSBiYXNldXJsLigqdXJsLlVSTCk7IG9rIHsKCQlpbiA9IHUKCX0gZWxzZSBpZiB1LCBlcnIgOj0gdXJsLlBhcnNlKHR5cGV1dGlsLlN0cmluZyhiYXNldXJsKSk7IGVyciA9PSBuaWwgewoJCWluID0gdQoJfSBlbHNlIHsKCQlyZXR1cm4gbmlsLCBlcnIKCX0KCW5ld3BhdGgsIHFzIDo9IHN0cmluZ3V0aWwuU3BsaXRQYWlyKHBhdGgsIGA/YCkKCXZhciB0cmFpbCBzdHJpbmcKCWlmIGJlZm9yZSwgb2sgOj0gc3RyaW5ncy5DdXRTdWZmaXgobmV3cGF0aCwgYC9gKTsgb2sgewoJCW5ld3BhdGggPSBiZWZvcmUKCQlpbi5QYXRoID0gc3RyaW5ncy5UcmltU3VmZml4KGluLlBhdGgsIGAvYCkKCQl0cmFpbCA9IGAvYAoJfQoJb3V0ID0gbmV3KHVybC5VUkwpCglvdXQuU2NoZW1lID0gaW4uU2NoZW1lCglvdXQuT3BhcXVlID0gaW4uT3BhcXVlCglvdXQuVXNlciA9IGluLlVzZXIKCW91dC5Ib3N0ID0gaW4uSG9zdAoJb3V0LlBhdGggPSBmaWxlcGF0aC5Kb2luKGluLlBhdGgsIG5ld3BhdGgpICsgdHJhaWwKCW91dC5SYXdQYXRoID0gaW4uUmF3UGF0aAoJb3V0LkZvcmNlUXVlcnkgPSBpbi5Gb3JjZVF1ZXJ5CglvdXQuUmF3UXVlcnkgPSBpbi5SYXdRdWVyeQoJb3V0LkZyYWdtZW50ID0gaW4uRnJhZ21lbnQKCWlmIHFzICE9IGBgIHsKCQlpZiBxc3YsIGVyciA6PSB1cmwuUGFyc2VRdWVyeShxcyk7IGVyciA9PSBuaWwgewoJCQlmb3IgaywgdnMgOj0gcmFuZ2UgcXN2IHsKCQkJCWlmIGxlbih2cykgPT0gMSB7CgkJCQkJU2V0UShvdXQsIGssIHZzWzBdKQoJCQkJfSBlbHNlIHsKCQkJCQlBZGRRKG91dCwgaywgc2xpY2V1dGlsLlNsaWNlaWZ5KHZzKS4uLikKCQkJCX0KCQkJfQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGVycgoJCX0KCX0KCXJldHVybiBvdXQsIG5pbAp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -10704,7 +10710,7 @@
                                 }
                             ],
                             "Signature": "NewClient(baseURI string) (*Client, error)",
-                            "Source": "ewoJdmFyIGNsaWVudCA9ICZDbGllbnR7ZW5jb2RlcjogSlNPTkVuY29kZXIsIGRlY29kZXI6IEpTT05EZWNvZGVyLCBoZWFkZXJzOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgcGFyYW1zOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgaHR0cENsaWVudDogaHR0cC5EZWZhdWx0Q2xpZW50fQoJaWYgYmFzZVVSSSAhPSBgYCB7CgkJaWYgdXJpLCBlcnIgOj0gdXJsLlBhcnNlKGJhc2VVUkkpOyBlcnIgPT0gbmlsIHsKCQkJY2xpZW50LnVyaSA9IHVyaQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGVycgoJCX0KCX0gZWxzZSB7CgkJY2xpZW50LnVyaSA9IG5ldyh1cmwuVVJMKQoJfQoJaWYgbG9nLlZlcnlEZWJ1Z2dpbmcoYGdpdGh1Yi5jb20vZ2hldHplbC9nby1zdG9ja3V0aWwvaHR0cHV0aWxgKSB7CgkJY2xpZW50LlNldFByZVJlcXVlc3RIb29rKGZ1bmMocmVxICpodHRwLlJlcXVlc3QpIChhbnksIGVycm9yKSB7CgkJCWlmIGRhdGEsIGVyciA6PSBnb2h0dHB1dGlsLkR1bXBSZXF1ZXN0KHJlcSwgdHJ1ZSk7IGVyciA9PSBuaWwgewoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU2ZFx1MjUwMFsgSFRUUCBSZXF1ZXN0IF0lc1x1MjUwNFx1MjUwNFx1MjUwNCR7cmVzZXR9Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTcpKQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjUwMiR7cmVzZXR9IFx1MjFjOSAldiIsIHJlcS5VUkwpCgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0iKQoJCQkJZm9yIF8sIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdChzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0gJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU3MCVzXHUyNTA0XHUyNTA0XHUyNTA0JHtyZXNldH0iLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSkKCQljbGllbnQuU2V0UG9zdFJlcXVlc3RIb29rKGZ1bmMocmVzICpodHRwLlJlc3BvbnNlLCBfIGFueSkgZXJyb3IgewoJCQlpZiBkYXRhLCBlcnIgOj0gZ29odHRwdXRpbC5EdW1wUmVzcG9uc2UocmVzLCB0cnVlKTsgZXJyID09IG5pbCB7CgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1NmRcdTI1MDBbIEhUVFAgUmVzcG9uc2UgXSVzXHUyNTA0XHUyNTA0XHUyNTA0Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTgpKQoJCQkJaWYgcmVzLlJlcXVlc3QgIT0gbmlsIHsKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke3JlZH1cdTI1MDIke3Jlc2V0fSBcdTIxYzcgJXYiLCByZXMuUmVxdWVzdC5VUkwpCgkJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtyZWR9XHUyNTAyJHtyZXNldH0iKQoJCQkJfQoJCQkJZm9yIF8sIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdChzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1MDIgJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgXHUyNTcwJXNcdTI1MDRcdTI1MDRcdTI1MDQiLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbAoJCX0pCgl9CglyZXR1cm4gY2xpZW50LCBuaWwKfQ==",
+                            "Source": "ewoJdmFyIGNsaWVudCA9ICZDbGllbnR7ZW5jb2RlcjogSlNPTkVuY29kZXIsIGRlY29kZXI6IEpTT05EZWNvZGVyLCBoZWFkZXJzOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgcGFyYW1zOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgaHR0cENsaWVudDogaHR0cC5EZWZhdWx0Q2xpZW50fQoJaWYgYmFzZVVSSSAhPSBgYCB7CgkJaWYgdXJpLCBlcnIgOj0gdXJsLlBhcnNlKGJhc2VVUkkpOyBlcnIgPT0gbmlsIHsKCQkJY2xpZW50LnVyaSA9IHVyaQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGVycgoJCX0KCX0gZWxzZSB7CgkJY2xpZW50LnVyaSA9IG5ldyh1cmwuVVJMKQoJfQoJaWYgbG9nLlZlcnlEZWJ1Z2dpbmcoYGdpdGh1Yi5jb20vZ2hldHplbC9nby1zdG9ja3V0aWwvaHR0cHV0aWxgKSB7CgkJY2xpZW50LlNldFByZVJlcXVlc3RIb29rKGZ1bmMocmVxICpodHRwLlJlcXVlc3QpIChhbnksIGVycm9yKSB7CgkJCWlmIGRhdGEsIGVyciA6PSBnb2h0dHB1dGlsLkR1bXBSZXF1ZXN0KHJlcSwgdHJ1ZSk7IGVyciA9PSBuaWwgewoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU2ZFx1MjUwMFsgSFRUUCBSZXF1ZXN0IF0lc1x1MjUwNFx1MjUwNFx1MjUwNCR7cmVzZXR9Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTcpKQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjUwMiR7cmVzZXR9IFx1MjFjOSAldiIsIHJlcS5VUkwpCgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0iKQoJCQkJZm9yIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0gJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU3MCVzXHUyNTA0XHUyNTA0XHUyNTA0JHtyZXNldH0iLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSkKCQljbGllbnQuU2V0UG9zdFJlcXVlc3RIb29rKGZ1bmMocmVzICpodHRwLlJlc3BvbnNlLCBfIGFueSkgZXJyb3IgewoJCQlpZiBkYXRhLCBlcnIgOj0gZ29odHRwdXRpbC5EdW1wUmVzcG9uc2UocmVzLCB0cnVlKTsgZXJyID09IG5pbCB7CgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1NmRcdTI1MDBbIEhUVFAgUmVzcG9uc2UgXSVzXHUyNTA0XHUyNTA0XHUyNTA0Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTgpKQoJCQkJaWYgcmVzLlJlcXVlc3QgIT0gbmlsIHsKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke3JlZH1cdTI1MDIke3Jlc2V0fSBcdTIxYzcgJXYiLCByZXMuUmVxdWVzdC5VUkwpCgkJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtyZWR9XHUyNTAyJHtyZXNldH0iKQoJCQkJfQoJCQkJZm9yIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1MDIgJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgXHUyNTcwJXNcdTI1MDRcdTI1MDRcdTI1MDQiLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbAoJCX0pCgl9CglyZXR1cm4gY2xpZW50LCBuaWwKfQ==",
                             "IsPackageLevel": true
                         },
                         {
@@ -11278,8 +11284,8 @@
             "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"github.com/ghetzel/go-stockutil/log\"\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
             "MainFunction": false,
             "CommentWordCount": 1286,
-            "LineCount": 1097,
-            "SourceLineCount": 826,
+            "LineCount": 1096,
+            "SourceLineCount": 825,
             "FunctionCount": 66,
             "TypeCount": 10,
             "ConstantCount": 8,
@@ -11472,6 +11478,10 @@
                             "Alias": "os"
                         },
                         {
+                            "PackageName": "slices",
+                            "Alias": "slices"
+                        },
+                        {
                             "PackageName": "strings",
                             "Alias": "strings"
                         },
@@ -11504,9 +11514,9 @@
                             "Alias": "go-logging"
                         }
                     ],
-                    "Size": 10757,
-                    "LineCount": 457,
-                    "SourceLineCount": 333,
+                    "Size": 10751,
+                    "LineCount": 456,
+                    "SourceLineCount": 332,
                     "FunctionCount": 44,
                     "TypeCount": 4,
                     "ConstantCount": 0,
@@ -12121,7 +12131,7 @@
                         }
                     ],
                     "Signature": "FilterPackages(patterns ...string) string",
-                    "Source": "ewoJcmV0dXJuIEFkZExvZ0ZpbHRlcihmdW5jKGxldmVsIExldmVsLCBsaW5lIHN0cmluZywgc3RhY2sgU3RhY2tJdGVtcykgYm9vbCB7CgkJZm9yIF8sIGl0ZW0gOj0gcmFuZ2Ugc3RhY2sgewoJCQlmb3IgXywgcGtnIDo9IHJhbmdlIHBhdHRlcm5zIHsKCQkJCWlmIGl0ZW0uSW5QYWNrYWdlKHBrZykgewoJCQkJCXJldHVybiBmYWxzZQoJCQkJfQoJCQl9CgkJfQoJCXJldHVybiB0cnVlCgl9KQp9",
+                    "Source": "ewoJcmV0dXJuIEFkZExvZ0ZpbHRlcihmdW5jKGxldmVsIExldmVsLCBsaW5lIHN0cmluZywgc3RhY2sgU3RhY2tJdGVtcykgYm9vbCB7CgkJZm9yIF8sIGl0ZW0gOj0gcmFuZ2Ugc3RhY2sgewoJCQlpZiBzbGljZXMuQ29udGFpbnNGdW5jKHBhdHRlcm5zLCBpdGVtLkluUGFja2FnZSkgewoJCQkJcmV0dXJuIGZhbHNlCgkJCX0KCQl9CgkJcmV0dXJuIHRydWUKCX0pCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -12822,8 +12832,8 @@
             "Synopsis": "Utilities for converting, manipulating, and iterating over maps\n",
             "MainFunction": false,
             "CommentWordCount": 1475,
-            "LineCount": 4653,
-            "SourceLineCount": 3562,
+            "LineCount": 4641,
+            "SourceLineCount": 3551,
             "FunctionCount": 84,
             "TypeCount": 14,
             "ConstantCount": 1,
@@ -13210,12 +13220,20 @@
                             "Alias": "io"
                         },
                         {
+                            "PackageName": "maps",
+                            "Alias": "maps"
+                        },
+                        {
                             "PackageName": "reflect",
                             "Alias": "reflect"
                         },
                         {
                             "PackageName": "regexp",
                             "Alias": "regexp"
+                        },
+                        {
+                            "PackageName": "slices",
+                            "Alias": "slices"
                         },
                         {
                             "PackageName": "sort",
@@ -13262,9 +13280,9 @@
                             "Alias": "mapstructure"
                         }
                     ],
-                    "Size": 27441,
-                    "LineCount": 1091,
-                    "SourceLineCount": 801,
+                    "Size": 27330,
+                    "LineCount": 1079,
+                    "SourceLineCount": 790,
                     "FunctionCount": 38,
                     "TypeCount": 5,
                     "ConstantCount": 1,
@@ -13338,7 +13356,7 @@
                     "Name": "Append",
                     "Arguments": [
                         {
-                            "Name": "maps",
+                            "Name": "mapset",
                             "Type": "...map[string]any"
                         }
                     ],
@@ -13347,8 +13365,8 @@
                             "Type": "map[string]any"
                         }
                     ],
-                    "Signature": "Append(maps ...map[string]any) map[string]any",
-                    "Source": "ewoJdmFyIG91dCA9IG1ha2UobWFwW3N0cmluZ11hbnkpCglmb3IgXywgbWFwViA6PSByYW5nZSBtYXBzIHsKCQlmb3IgaywgdiA6PSByYW5nZSBtYXBWIHsKCQkJb3V0W2tdID0gdgoJCX0KCX0KCXJldHVybiBvdXQKfQ==",
+                    "Signature": "Append(mapset ...map[string]any) map[string]any",
+                    "Source": "ewoJdmFyIG91dCA9IG1ha2UobWFwW3N0cmluZ11hbnkpCglmb3IgXywgbWFwViA6PSByYW5nZSBtYXBzZXQgewoJCW1hcHMuQ29weShvdXQsIG1hcFYpCgl9CglyZXR1cm4gb3V0Cn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -13546,7 +13564,7 @@
                         }
                     ],
                     "Signature": "DeepGet(data any, path []string, fallbacks ...any) any",
-                    "Source": "ewoJdmFyIGN1cnJlbnQgPSB0eXBldXRpbC5SZXNvbHZlVmFsdWUoZGF0YSkKCWlmIGxlbihmYWxsYmFja3MpID09IDAgewoJCWZhbGxiYWNrcyA9IFtdYW55e25pbH0KCX0KCXZhciBmYWxsYmFjayA9IGZhbGxiYWNrc1swXQoJZm9yIGkgOj0gMDsgaSA8IGxlbihwYXRoKTsgaSsrIHsKCQl2YXIgcGFydCA9IHBhdGhbaV0KCQl2YXIgZFZhbHVlID0gcmVmbGVjdC5WYWx1ZU9mKGN1cnJlbnQpCgkJaWYgIWRWYWx1ZS5Jc1ZhbGlkKCkgewoJCQlyZXR1cm4gZmFsbGJhY2sKCQl9CgkJdmFyIGRUeXBlID0gZFZhbHVlLlR5cGUoKQoJCXN3aXRjaCBkVHlwZS5LaW5kKCkgewoJCWNhc2UgcmVmbGVjdC5JbnRlcmZhY2UsIHJlZmxlY3QuUHRyOgoJCQlkVHlwZSA9IGRUeXBlLkVsZW0oKQoJCX0KCQlzd2l0Y2ggZFR5cGUuS2luZCgpIHsKCQljYXNlIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuQXJyYXk6CgkJCWlmIHN0cmluZ3V0aWwuSXNJbnRlZ2VyKHBhcnQpIHsKCQkJCWlmIHBhcnRJbmRleCwgZXJyIDo9IHN0cmNvbnYuQXRvaShwYXJ0KTsgZXJyID09IG5pbCB7CgkJCQkJaWYgcGFydEluZGV4IDwgZFZhbHVlLkxlbigpIHsKCQkJCQkJaWYgdmFsdWUgOj0gZFZhbHVlLkluZGV4KHBhcnRJbmRleCkuSW50ZXJmYWNlKCk7IHZhbHVlICE9IG5pbCB7CgkJCQkJCQljdXJyZW50ID0gdmFsdWUKCQkJCQkJCWNvbnRpbnVlCgkJCQkJCX0KCQkJCQl9CgkJCQl9CgkJCX0gZWxzZSBpZiBwYXJ0ID09IGAqYCB7CgkJCQl2YXIgc3ViaXRlbXMgPSBtYWtlKFtdYW55LCBkVmFsdWUuTGVuKCkpCgkJCQlmb3IgaiA6PSAwOyBqIDwgZFZhbHVlLkxlbigpOyBqKysgewoJCQkJCWlmIHZhbHVlIDo9IGRWYWx1ZS5JbmRleChqKS5JbnRlcmZhY2UoKTsgdmFsdWUgIT0gbmlsIHsKCQkJCQkJaWYgaSsxIDwgbGVuKHBhdGgpIHsKCQkJCQkJCXN1Yml0ZW1zW2pdID0gRGVlcEdldCh2YWx1ZSwgcGF0aFsoaSsxKTpdLCBmYWxsYmFja3MuLi4pCgkJCQkJCX0gZWxzZSB7CgkJCQkJCQlzdWJpdGVtc1tqXSA9IHZhbHVlCgkJCQkJCX0KCQkJCQl9IGVsc2UgewoJCQkJCQlzdWJpdGVtc1tqXSA9IGZhbGxiYWNrCgkJCQkJfQoJCQkJfQoJCQkJcmV0dXJuIHN1Yml0ZW1zCgkJCX0KCQkJcmV0dXJuIGZhbGxiYWNrCgkJY2FzZSByZWZsZWN0Lk1hcDoKCQkJaWYgbWFwVmFsdWUgOj0gZFZhbHVlLk1hcEluZGV4KHJlZmxlY3QuVmFsdWVPZihwYXJ0KSk7IG1hcFZhbHVlLklzVmFsaWQoKSB7CgkJCQljdXJyZW50ID0gbWFwVmFsdWUuSW50ZXJmYWNlKCkKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBmYWxsYmFjawoJCQl9CgkJY2FzZSByZWZsZWN0LlN0cnVjdDoKCQkJaWYgZFZhbHVlLlR5cGUoKS5LaW5kKCkgPT0gcmVmbGVjdC5QdHIgewoJCQkJZFZhbHVlID0gZFZhbHVlLkVsZW0oKQoJCQl9CgkJCWlmIHN0cnVjdEZpZWxkIDo9IGRWYWx1ZS5GaWVsZEJ5TmFtZShwYXJ0KTsgc3RydWN0RmllbGQuSXNWYWxpZCgpICYmIHN0cnVjdEZpZWxkLkNhbkludGVyZmFjZSgpIHsKCQkJCWN1cnJlbnQgPSBzdHJ1Y3RGaWVsZC5JbnRlcmZhY2UoKQoJCQkJY29udGludWUKCQkJfQoJCWRlZmF1bHQ6CgkJCXJldHVybiBmYWxsYmFjawoJCX0KCX0KCXJldHVybiBjdXJyZW50Cn0=",
+                    "Source": "ewoJdmFyIGN1cnJlbnQgPSB0eXBldXRpbC5SZXNvbHZlVmFsdWUoZGF0YSkKCWlmIGxlbihmYWxsYmFja3MpID09IDAgewoJCWZhbGxiYWNrcyA9IFtdYW55e25pbH0KCX0KCXZhciBmYWxsYmFjayA9IGZhbGxiYWNrc1swXQoJZm9yIGkgOj0gcmFuZ2UgcGF0aCB7CgkJdmFyIHBhcnQgPSBwYXRoW2ldCgkJdmFyIGRWYWx1ZSA9IHJlZmxlY3QuVmFsdWVPZihjdXJyZW50KQoJCWlmICFkVmFsdWUuSXNWYWxpZCgpIHsKCQkJcmV0dXJuIGZhbGxiYWNrCgkJfQoJCXZhciBkVHlwZSA9IGRWYWx1ZS5UeXBlKCkKCQlzd2l0Y2ggZFR5cGUuS2luZCgpIHsKCQljYXNlIHJlZmxlY3QuSW50ZXJmYWNlLCByZWZsZWN0LlBvaW50ZXI6CgkJCWRUeXBlID0gZFR5cGUuRWxlbSgpCgkJfQoJCXN3aXRjaCBkVHlwZS5LaW5kKCkgewoJCWNhc2UgcmVmbGVjdC5TbGljZSwgcmVmbGVjdC5BcnJheToKCQkJaWYgc3RyaW5ndXRpbC5Jc0ludGVnZXIocGFydCkgewoJCQkJaWYgcGFydEluZGV4LCBlcnIgOj0gc3RyY29udi5BdG9pKHBhcnQpOyBlcnIgPT0gbmlsIHsKCQkJCQlpZiBwYXJ0SW5kZXggPCBkVmFsdWUuTGVuKCkgewoJCQkJCQlpZiB2YWx1ZSA6PSBkVmFsdWUuSW5kZXgocGFydEluZGV4KS5JbnRlcmZhY2UoKTsgdmFsdWUgIT0gbmlsIHsKCQkJCQkJCWN1cnJlbnQgPSB2YWx1ZQoJCQkJCQkJY29udGludWUKCQkJCQkJfQoJCQkJCX0KCQkJCX0KCQkJfSBlbHNlIGlmIHBhcnQgPT0gYCpgIHsKCQkJCXZhciBzdWJpdGVtcyA9IG1ha2UoW11hbnksIGRWYWx1ZS5MZW4oKSkKCQkJCWZvciBqIDo9IDA7IGogPCBkVmFsdWUuTGVuKCk7IGorKyB7CgkJCQkJaWYgdmFsdWUgOj0gZFZhbHVlLkluZGV4KGopLkludGVyZmFjZSgpOyB2YWx1ZSAhPSBuaWwgewoJCQkJCQlpZiBpKzEgPCBsZW4ocGF0aCkgewoJCQkJCQkJc3ViaXRlbXNbal0gPSBEZWVwR2V0KHZhbHVlLCBwYXRoWyhpKzEpOl0sIGZhbGxiYWNrcy4uLikKCQkJCQkJfSBlbHNlIHsKCQkJCQkJCXN1Yml0ZW1zW2pdID0gdmFsdWUKCQkJCQkJfQoJCQkJCX0gZWxzZSB7CgkJCQkJCXN1Yml0ZW1zW2pdID0gZmFsbGJhY2sKCQkJCQl9CgkJCQl9CgkJCQlyZXR1cm4gc3ViaXRlbXMKCQkJfQoJCQlyZXR1cm4gZmFsbGJhY2sKCQljYXNlIHJlZmxlY3QuTWFwOgoJCQlpZiBtYXBWYWx1ZSA6PSBkVmFsdWUuTWFwSW5kZXgocmVmbGVjdC5WYWx1ZU9mKHBhcnQpKTsgbWFwVmFsdWUuSXNWYWxpZCgpIHsKCQkJCWN1cnJlbnQgPSBtYXBWYWx1ZS5JbnRlcmZhY2UoKQoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGZhbGxiYWNrCgkJCX0KCQljYXNlIHJlZmxlY3QuU3RydWN0OgoJCQlpZiBkVmFsdWUuVHlwZSgpLktpbmQoKSA9PSByZWZsZWN0LlBvaW50ZXIgewoJCQkJZFZhbHVlID0gZFZhbHVlLkVsZW0oKQoJCQl9CgkJCWlmIHN0cnVjdEZpZWxkIDo9IGRWYWx1ZS5GaWVsZEJ5TmFtZShwYXJ0KTsgc3RydWN0RmllbGQuSXNWYWxpZCgpICYmIHN0cnVjdEZpZWxkLkNhbkludGVyZmFjZSgpIHsKCQkJCWN1cnJlbnQgPSBzdHJ1Y3RGaWVsZC5JbnRlcmZhY2UoKQoJCQkJY29udGludWUKCQkJfQoJCWRlZmF1bHQ6CgkJCXJldHVybiBmYWxsYmFjawoJCX0KCX0KCXJldHVybiBjdXJyZW50Cn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -13643,7 +13661,7 @@
                         }
                     ],
                     "Signature": "DeepSet(data any, path []string, value any) any",
-                    "Source": "ewoJaWYgbGVuKHBhdGgpID09IDAgewoJCXJldHVybiBkYXRhCgl9Cgl2YXIgZmlyc3QgPSBwYXRoWzBdCgl2YXIgcmVzdCA9IG1ha2UoW11zdHJpbmcsIDApCglpZiBsZW4ocGF0aCkgPiAxIHsKCQlyZXN0ID0gcGF0aFsxOl0KCX0KCWlmIGxlbihyZXN0KSA9PSAwIHsKCQlpZiB0eXBldXRpbC5Jc0FycmF5KGRhdGEpIHsKCQkJdmFyIGRhdGFBcnJheSA9IHNsaWNldXRpbC5TbGljZWlmeShkYXRhKQoJCQlpZiBjdXJJbmRleCA6PSBpbnQodHlwZXV0aWwuSW50KGZpcnN0KSk7IHR5cGV1dGlsLklzSW50ZWdlcihmaXJzdCkgewoJCQkJaWYgY3VySW5kZXggPj0gbGVuKGRhdGFBcnJheSkgewoJCQkJCWZvciBhZGQgOj0gbGVuKGRhdGFBcnJheSk7IGFkZCA8PSBjdXJJbmRleDsgYWRkKysgewoJCQkJCQlkYXRhQXJyYXkgPSBhcHBlbmQoZGF0YUFycmF5LCBuaWwpCgkJCQkJfQoJCQkJfQoJCQkJaWYgY3VySW5kZXggPCBsZW4oZGF0YUFycmF5KSB7CgkJCQkJZGF0YUFycmF5W2N1ckluZGV4XSA9IHZhbHVlCgkJCQkJcmV0dXJuIGRhdGFBcnJheQoJCQkJfQoJCQl9CgkJfSBlbHNlIGlmIHR5cGV1dGlsLklzTWFwKGRhdGEpIHsKCQkJaWYgZXJyIDo9IFNldChkYXRhLCBmaXJzdCwgdmFsdWUpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBkYXRhCgkJCX0KCQl9IGVsc2UgaWYgdHlwZXV0aWwuSXNTdHJ1Y3QoZGF0YSkgewoJCQlpZiBkViA6PSByZWZsZWN0LlZhbHVlT2YoZGF0YSk7IGRWLktpbmQoKSA9PSByZWZsZWN0LlB0ciB7CgkJCQlpZiBkRSA6PSBkVi5FbGVtKCk7IGRFLktpbmQoKSA9PSByZWZsZWN0LlN0cnVjdCB7CgkJCQkJZFYgPSBkRQoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gZGF0YQoJCQkJfQoJCQkJdmFyIGRUID0gZFYuVHlwZSgpCgkJCQlmb3IgaSA6PSAwOyBpIDwgZFQuTnVtRmllbGQoKTsgaSsrIHsKCQkJCQlpZiBmVCA6PSBkVC5GaWVsZChpKTsgZlQuTmFtZSA9PSBmaXJzdCB7CgkJCQkJCWlmIGZWIDo9IGRWLkZpZWxkKGkpOyBmVi5Jc1ZhbGlkKCkgJiYgZlYuQ2FuU2V0KCkgewoJCQkJCQkJdHlwZXV0aWwuU2V0VmFsdWUoZFYuRmllbGQoaSksIHZhbHVlKQoJCQkJCQl9CgkJCQkJCWJyZWFrCgkJCQkJfQoJCQkJfQoJCQl9CgkJCXJldHVybiBkYXRhCgkJfQoJfSBlbHNlIHsKCQlpZiB0eXBldXRpbC5Jc0ludGVnZXIocmVzdFswXSkgewoJCQlpZiB0eXBldXRpbC5Jc01hcChkYXRhKSB7CgkJCQl2YXIgY3VyVmFsID0gR2V0KGRhdGEsIGZpcnN0KQoJCQkJaWYgdHlwZXV0aWwuSXNBcnJheShjdXJWYWwpIHsKCQkJCQljdXJWYWwgPSBzbGljZXV0aWwuU2xpY2VpZnkoY3VyVmFsKQoJCQkJfSBlbHNlIHsKCQkJCQljdXJWYWwgPSBtYWtlKFsgLy8gIGlzIHRoZSB2YWx1ZSBhdCBgZmlyc3QnIGluIHRoZSBtYXAgaXNuJ3QgcHJlc2VudCBvciBpc24ndCBhbiBhcnJheSwgY3JlYXRlIGl0CgkJCQkJXWFueSwgMCkKCQkJCQlTZXQoZGF0YSwgZmlyc3QsIGN1clZhbCkKCQkJCX0KCQkJCWlmIGVyciA6PSBTZXQoZGF0YSwgZmlyc3QsIERlZXBTZXQoY3VyVmFsLCByZXN0LCB2YWx1ZSkpOyBlcnIgPT0gbmlsIHsKCQkJCQlyZXR1cm4gZGF0YQoJCQkJfQoJCQl9CgkJfSBlbHNlIHsKCQkJaWYgdHlwZXV0aWwuSXNBcnJheShkYXRhKSB7CgkJCQl2YXIgZGF0YUFycmF5ID0gc2xpY2V1dGlsLlNsaWNlaWZ5KGRhdGEpCgkJCQlpZiBjdXJJbmRleCA6PSBpbnQodHlwZXV0aWwuSW50KGZpcnN0KSk7IHR5cGV1dGlsLklzSW50ZWdlcihmaXJzdCkgewoJCQkJCWlmIGN1ckluZGV4ID49IGxlbihkYXRhQXJyYXkpIHsKCQkJCQkJZm9yIGFkZCA6PSBsZW4oZGF0YUFycmF5KTsgYWRkIDw9IGN1ckluZGV4OyBhZGQrKyB7CgkJCQkJCQlkYXRhQXJyYXkgPSBhcHBlbmQoZGF0YUFycmF5LCBtYWtlKG1hcFtzdHJpbmddYW55KSkKCQkJCQkJfQoJCQkJCX0KCQkJCQlpZiBjdXJJbmRleCA8IGxlbihkYXRhQXJyYXkpIHsKCQkJCQkJZGF0YUFycmF5W2N1ckluZGV4XSA9IERlZXBTZXQoZGF0YUFycmF5W2N1ckluZGV4XSwgcmVzdCwgdmFsdWUpCgkJCQkJCXJldHVybiBkYXRhQXJyYXkKCQkJCQl9CgkJCQl9CgkJCX0gZWxzZSBpZiBkYXRhTWFwLCBvayA6PSBkYXRhLihtYXBbc3RyaW5nXWFueSk7IG9rIHsKCQkJCXZhciBjdXJWYWwsIF8gPSBkYXRhTWFwW2ZpcnN0XQoJCQkJaWYgIXR5cGV1dGlsLklzTWFwKGN1clZhbCkgewoJCQkJCWRhdGFNYXBbZmlyc3RdID0gbWFrZShtYXAgLy8gIGhhbmRsZSBnb29kIG9sZCBmYXNoaW9uZWQgbWFwcy1vZi1tYXBzCgkJCQkJLy8gIGlzIHRoZSB2YWx1ZSBhdCAnZmlyc3QnIGluIHRoZSBtYXAgaXNuJ3QgcHJlc2VudCBvciBpc24ndCBhIG1hcCwgY3JlYXRlIGl0CgkJCQkJW3N0cmluZ11hbnkpCgkJCQkJY3VyVmFsLCBfID0gZGF0YU1hcFtmaXJzdF0KCQkJCX0KCQkJCWRhdGFNYXBbZmlyc3RdID0gRGVlcFNldChkYXRhTWFwW2ZpcnN0XSwgcmVzdCwgdmFsdWUpCgkJCQlyZXR1cm4gZGF0YU1hcAoJCQl9CgkJfQoJfQoJcmV0dXJuIGRhdGEKfQ==",
+                    "Source": "ewoJaWYgbGVuKHBhdGgpID09IDAgewoJCXJldHVybiBkYXRhCgl9Cgl2YXIgZmlyc3QgPSBwYXRoWzBdCgl2YXIgcmVzdCA9IG1ha2UoW11zdHJpbmcsIDApCglpZiBsZW4ocGF0aCkgPiAxIHsKCQlyZXN0ID0gcGF0aFsxOl0KCX0KCWlmIGxlbihyZXN0KSA9PSAwIHsKCQlpZiB0eXBldXRpbC5Jc0FycmF5KGRhdGEpIHsKCQkJdmFyIGRhdGFBcnJheSA9IHNsaWNldXRpbC5TbGljZWlmeShkYXRhKQoJCQlpZiBjdXJJbmRleCA6PSBpbnQodHlwZXV0aWwuSW50KGZpcnN0KSk7IHR5cGV1dGlsLklzSW50ZWdlcihmaXJzdCkgewoJCQkJaWYgY3VySW5kZXggPj0gbGVuKGRhdGFBcnJheSkgewoJCQkJCWZvciBhZGQgOj0gbGVuKGRhdGFBcnJheSk7IGFkZCA8PSBjdXJJbmRleDsgYWRkKysgewoJCQkJCQlkYXRhQXJyYXkgPSBhcHBlbmQoZGF0YUFycmF5LCBuaWwpCgkJCQkJfQoJCQkJfQoJCQkJaWYgY3VySW5kZXggPCBsZW4oZGF0YUFycmF5KSB7CgkJCQkJZGF0YUFycmF5W2N1ckluZGV4XSA9IHZhbHVlCgkJCQkJcmV0dXJuIGRhdGFBcnJheQoJCQkJfQoJCQl9CgkJfSBlbHNlIGlmIHR5cGV1dGlsLklzTWFwKGRhdGEpIHsKCQkJaWYgZXJyIDo9IFNldChkYXRhLCBmaXJzdCwgdmFsdWUpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBkYXRhCgkJCX0KCQl9IGVsc2UgaWYgdHlwZXV0aWwuSXNTdHJ1Y3QoZGF0YSkgewoJCQlpZiBkViA6PSByZWZsZWN0LlZhbHVlT2YoZGF0YSk7IGRWLktpbmQoKSA9PSByZWZsZWN0LlBvaW50ZXIgewoJCQkJaWYgZEUgOj0gZFYuRWxlbSgpOyBkRS5LaW5kKCkgPT0gcmVmbGVjdC5TdHJ1Y3QgewoJCQkJCWRWID0gZEUKCQkJCX0gZWxzZSB7CgkJCQkJcmV0dXJuIGRhdGEKCQkJCX0KCQkJCXZhciBkVCA9IGRWLlR5cGUoKQoJCQkJZm9yIGkgOj0gMDsgaSA8IGRULk51bUZpZWxkKCk7IGkrKyB7CgkJCQkJaWYgZlQgOj0gZFQuRmllbGQoaSk7IGZULk5hbWUgPT0gZmlyc3QgewoJCQkJCQlpZiBmViA6PSBkVi5GaWVsZChpKTsgZlYuSXNWYWxpZCgpICYmIGZWLkNhblNldCgpIHsKCQkJCQkJCXR5cGV1dGlsLlNldFZhbHVlKGRWLkZpZWxkKGkpLCB2YWx1ZSkKCQkJCQkJfQoJCQkJCQlicmVhawoJCQkJCX0KCQkJCX0KCQkJfQoJCQlyZXR1cm4gZGF0YQoJCX0KCX0gZWxzZSB7CgkJaWYgdHlwZXV0aWwuSXNJbnRlZ2VyKHJlc3RbMF0pIHsKCQkJaWYgdHlwZXV0aWwuSXNNYXAoZGF0YSkgewoJCQkJdmFyIGN1clZhbCA9IEdldChkYXRhLCBmaXJzdCkKCQkJCWlmIHR5cGV1dGlsLklzQXJyYXkoY3VyVmFsKSB7CgkJCQkJY3VyVmFsID0gc2xpY2V1dGlsLlNsaWNlaWZ5KGN1clZhbCkKCQkJCX0gZWxzZSB7CgkJCQkJY3VyVmFsID0gbWFrZShbIC8vICBpcyB0aGUgdmFsdWUgYXQgYGZpcnN0JyBpbiB0aGUgbWFwIGlzbid0IHByZXNlbnQgb3IgaXNuJ3QgYW4gYXJyYXksIGNyZWF0ZSBpdAoJCQkJCV1hbnksIDApCgkJCQkJU2V0KGRhdGEsIGZpcnN0LCBjdXJWYWwpCgkJCQl9CgkJCQlpZiBlcnIgOj0gU2V0KGRhdGEsIGZpcnN0LCBEZWVwU2V0KGN1clZhbCwgcmVzdCwgdmFsdWUpKTsgZXJyID09IG5pbCB7CgkJCQkJcmV0dXJuIGRhdGEKCQkJCX0KCQkJfQoJCX0gZWxzZSB7CgkJCWlmIHR5cGV1dGlsLklzQXJyYXkoZGF0YSkgewoJCQkJdmFyIGRhdGFBcnJheSA9IHNsaWNldXRpbC5TbGljZWlmeShkYXRhKQoJCQkJaWYgY3VySW5kZXggOj0gaW50KHR5cGV1dGlsLkludChmaXJzdCkpOyB0eXBldXRpbC5Jc0ludGVnZXIoZmlyc3QpIHsKCQkJCQlpZiBjdXJJbmRleCA+PSBsZW4oZGF0YUFycmF5KSB7CgkJCQkJCWZvciBhZGQgOj0gbGVuKGRhdGFBcnJheSk7IGFkZCA8PSBjdXJJbmRleDsgYWRkKysgewoJCQkJCQkJZGF0YUFycmF5ID0gYXBwZW5kKGRhdGFBcnJheSwgbWFrZShtYXBbc3RyaW5nXWFueSkpCgkJCQkJCX0KCQkJCQl9CgkJCQkJaWYgY3VySW5kZXggPCBsZW4oZGF0YUFycmF5KSB7CgkJCQkJCWRhdGFBcnJheVtjdXJJbmRleF0gPSBEZWVwU2V0KGRhdGFBcnJheVtjdXJJbmRleF0sIHJlc3QsIHZhbHVlKQoJCQkJCQlyZXR1cm4gZGF0YUFycmF5CgkJCQkJfQoJCQkJfQoJCQl9IGVsc2UgaWYgZGF0YU1hcCwgb2sgOj0gZGF0YS4obWFwW3N0cmluZ11hbnkpOyBvayB7CgkJCQl2YXIgY3VyVmFsLCBfID0gZGF0YU1hcFtmaXJzdF0KCQkJCWlmICF0eXBldXRpbC5Jc01hcChjdXJWYWwpIHsKCQkJCQlkYXRhTWFwW2ZpcnN0XSA9IG1ha2UobWFwIC8vICBoYW5kbGUgZ29vZCBvbGQgZmFzaGlvbmVkIG1hcHMtb2YtbWFwcwoJCQkJCS8vICBpcyB0aGUgdmFsdWUgYXQgJ2ZpcnN0JyBpbiB0aGUgbWFwIGlzbid0IHByZXNlbnQgb3IgaXNuJ3QgYSBtYXAsIGNyZWF0ZSBpdAoJCQkJCVtzdHJpbmddYW55KQoJCQkJCWN1clZhbCwgXyA9IGRhdGFNYXBbZmlyc3RdCgkJCQl9CgkJCQlkYXRhTWFwW2ZpcnN0XSA9IERlZXBTZXQoZGF0YU1hcFtmaXJzdF0sIHJlc3QsIHZhbHVlKQoJCQkJcmV0dXJuIGRhdGFNYXAKCQkJfQoJCX0KCX0KCXJldHVybiBkYXRhCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -16374,7 +16392,7 @@
                 "Mean": 0.3673,
                 "StdDev": 0.4586,
                 "GeometricMean": 0,
-                "HarmonicMean": 0,
+                "HarmonicMean": 1,
                 "Median": 0,
                 "Minimum": 0,
                 "Maximum": 1
@@ -16480,7 +16498,7 @@
                             "Alias": "zeroconf"
                         }
                     ],
-                    "Size": 5448,
+                    "Size": 5445,
                     "LineCount": 214,
                     "SourceLineCount": 174,
                     "FunctionCount": 5,
@@ -16926,7 +16944,7 @@
                         }
                     ],
                     "Signature": "ZeroconfRegister(svc *Service) (string, error)",
-                    "Source": "ewoJaWYgc3ZjID09IG5pbCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGNvbmZpZ3VyYXRpb24gdG8gcmVnaXN0ZXIgbUROUyIpCgl9IGVsc2UgaWYgc3ZjLkluc3RhbmNlID09IGBgIHsKCQlzdmMuSW5zdGFuY2UgPSBzdHJpbmd1dGlsLlVVSUQoKS5TdHJpbmcoKQoJfSBlbHNlIGlmIHN2Yy5TZXJ2aWNlID09IGBgIHsKCQlyZXR1cm4gYGAsIGZtdC5FcnJvcmYoIk11c3QgcHJvdmlkZSBhIHNlcnZpY2UgdHlwZSIpCgl9IGVsc2UgaWYgc3ZjLkRvbWFpbiA9PSBgYCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGRvbWFpbiIpCgl9IGVsc2UgaWYgc3ZjLlBvcnQgPT0gMCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHNwZWNpZnkgYSBzZXJ2aWNlIHBvcnQiKQoJfQoJdmFyIHNsdWcgPSBmbXQuU3ByaW50ZigiJXgiLCBzaGEyNTYuU3VtMjU2KFtdYnl0ZShmbXQuU3ByaW50ZigiJXMuJXMlczolZCIsIHN2Yy5JbnN0YW5jZSwgc3ZjLlNlcnZpY2UsIHN2Yy5Eb21haW4sIHN2Yy5Qb3J0KSkpKQoJaWYgXywgb2sgOj0gcmVnaXN0ZXJlZC5Mb2FkKHNsdWcpOyBvayB7CgkJcmV0dXJuIHNsdWcsIGZtdC5FcnJvcmYoIkEgc2VydmljZSBtYXRjaGluZyB0aGVzZSBwYXJhbWV0ZXJzIGlzIGFscmVhZHkgcmVnaXN0ZXJlZCIpCgl9CglpZiBzZXJ2ZXIsIGVyciA6PSB6ZXJvY29uZi5SZWdpc3RlcihzdmMuSW5zdGFuY2UsIHN2Yy5TZXJ2aWNlLCBzdmMuRG9tYWluLCBzdmMuUG9ydCwgc3ZjLlRleHQsIHN2Yy5JbnRlcmZhY2VzKTsgZXJyID09IG5pbCB7CgkJcmVnaXN0ZXJlZC5TdG9yZShzbHVnLCBzZXJ2ZXIpCgkJcmV0dXJuIHNsdWcsIG5pbAoJfSBlbHNlIHsKCQlyZXR1cm4gYGAsIGVycgoJfQp9",
+                    "Source": "ewoJaWYgc3ZjID09IG5pbCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGNvbmZpZ3VyYXRpb24gdG8gcmVnaXN0ZXIgbUROUyIpCgl9IGVsc2UgaWYgc3ZjLkluc3RhbmNlID09IGBgIHsKCQlzdmMuSW5zdGFuY2UgPSBzdHJpbmd1dGlsLlVVSUQoKS5TdHJpbmcoKQoJfSBlbHNlIGlmIHN2Yy5TZXJ2aWNlID09IGBgIHsKCQlyZXR1cm4gYGAsIGZtdC5FcnJvcmYoIk11c3QgcHJvdmlkZSBhIHNlcnZpY2UgdHlwZSIpCgl9IGVsc2UgaWYgc3ZjLkRvbWFpbiA9PSBgYCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHByb3ZpZGUgYSBzZXJ2aWNlIGRvbWFpbiIpCgl9IGVsc2UgaWYgc3ZjLlBvcnQgPT0gMCB7CgkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJNdXN0IHNwZWNpZnkgYSBzZXJ2aWNlIHBvcnQiKQoJfQoJdmFyIHNsdWcgPSBmbXQuU3ByaW50ZigiJXgiLCBzaGEyNTYuU3VtMjU2KGZtdC5BcHBlbmRmKG5pbCwgIiVzLiVzJXM6JWQiLCBzdmMuSW5zdGFuY2UsIHN2Yy5TZXJ2aWNlLCBzdmMuRG9tYWluLCBzdmMuUG9ydCkpKQoJaWYgXywgb2sgOj0gcmVnaXN0ZXJlZC5Mb2FkKHNsdWcpOyBvayB7CgkJcmV0dXJuIHNsdWcsIGZtdC5FcnJvcmYoIkEgc2VydmljZSBtYXRjaGluZyB0aGVzZSBwYXJhbWV0ZXJzIGlzIGFscmVhZHkgcmVnaXN0ZXJlZCIpCgl9CglpZiBzZXJ2ZXIsIGVyciA6PSB6ZXJvY29uZi5SZWdpc3RlcihzdmMuSW5zdGFuY2UsIHN2Yy5TZXJ2aWNlLCBzdmMuRG9tYWluLCBzdmMuUG9ydCwgc3ZjLlRleHQsIHN2Yy5JbnRlcmZhY2VzKTsgZXJyID09IG5pbCB7CgkJcmVnaXN0ZXJlZC5TdG9yZShzbHVnLCBzZXJ2ZXIpCgkJcmV0dXJuIHNsdWcsIG5pbAoJfSBlbHNlIHsKCQlyZXR1cm4gYGAsIGVycgoJfQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -17654,7 +17672,7 @@
                 "Mean": 0.3545,
                 "StdDev": 0.4707,
                 "GeometricMean": 0,
-                "HarmonicMean": 0,
+                "HarmonicMean": 1,
                 "Median": 0,
                 "Minimum": 0,
                 "Maximum": 1
@@ -18065,8 +18083,8 @@
             "Synopsis": "Utilities for converting, manipulating, and iterating over slices\n",
             "MainFunction": false,
             "CommentWordCount": 764,
-            "LineCount": 1063,
-            "SourceLineCount": 794,
+            "LineCount": 1058,
+            "SourceLineCount": 790,
             "FunctionCount": 34,
             "TypeCount": 4,
             "ConstantCount": 0,
@@ -18089,6 +18107,10 @@
                             "Alias": "reflect"
                         },
                         {
+                            "PackageName": "slices",
+                            "Alias": "slices"
+                        },
+                        {
                             "PackageName": "strings",
                             "Alias": "strings"
                         },
@@ -18109,9 +18131,9 @@
                             "Alias": "go-intersect"
                         }
                     ],
-                    "Size": 11552,
-                    "LineCount": 507,
-                    "SourceLineCount": 346,
+                    "Size": 11518,
+                    "LineCount": 502,
+                    "SourceLineCount": 342,
                     "FunctionCount": 34,
                     "TypeCount": 4,
                     "ConstantCount": 0,
@@ -18137,7 +18159,7 @@
                             "Alias": "require"
                         }
                     ],
-                    "Size": 14013,
+                    "Size": 14007,
                     "LineCount": 556,
                     "SourceLineCount": 448,
                     "FunctionCount": 0,
@@ -18371,7 +18393,7 @@
                         }
                     ],
                     "Signature": "ContainsString(list []string, elem string) bool",
-                    "Source": "ewoJZm9yIF8sIHQgOj0gcmFuZ2UgbGlzdCB7CgkJaWYgdCA9PSBlbGVtIHsKCQkJcmV0dXJuIHRydWUKCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
+                    "Source": "ewoJcmV0dXJuIHNsaWNlcy5Db250YWlucyhsaXN0LCBlbGVtKQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -18979,7 +19001,7 @@
                         }
                     ],
                     "Signature": "TestEach(t *testing.T)",
-                    "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl0eXBlIHRlc3RTdHJ1Y3Qgc3RydWN0IHsKCQlOYW1lICBzdHJpbmcKCQlIZWxsbyBib29sCgkJdW5leCAgc3RyaW5nCgl9Cglhc3NlcnQuTmlsKEVhY2gobmlsLCBuaWwpKQoJYXNzZXJ0Lk5pbChFYWNoKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJcmV0dXJuIFN0b3AKCX0pKQoJdmFyIGNvdW50ID0gMAoJYXNzZXJ0Lk5pbChFYWNoKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJaWYgdi4oc3RyaW5nKSA9PSBgdHdvYCB7CgkJCXJldHVybiBTdG9wCgkJfSBlbHNlIHsKCQkJY291bnQgKz0gMQoJCQlyZXR1cm4gbmlsCgkJfQoJfSkpCgl2YXIgdmFsdWVzID0gW11hbnl7fQoJYXNzZXJ0Lk5pbChFYWNoKG1hcFtzdHJpbmddc3RyaW5ne2BvbmVgOiBgZmlyc3RgLCBgdHdvYDogYHNlY29uZGAsIGB0aHJlZWA6IGB0aGlyZGB9LCBmdW5jKGkgaW50LCB2IGFueSkgZXJyb3IgewoJCXZhbHVlcyA9IGFwcGVuZCh2YWx1ZXMsIHYpCgkJcmV0dXJuIG5pbAoJfSkpCgl2YWx1ZXMgPSBbXWFueXt9Cglhc3NlcnQuTmlsKEVhY2goJnRlc3RTdHJ1Y3R7TmFtZTogYHRlc3RgLCBIZWxsbzogdHJ1ZSwgdW5leDogYHNob3VsZCBub3Qgc2VlIG1lYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgdikKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdYW55e2B0ZXN0YCwgdHJ1ZX0sIHZhbHVlcykKCXZhciB2YWxjaGFuID0gbWFrZShjaGFuIHN0cmluZykKCWdvIGZ1bmMoKSB7CgkJZGVmZXIgY2xvc2UodmFsY2hhbikKCQlmb3IgaSA6PSAwOyBpIDwgMzsgaSsrIHsKCQkJdmFsY2hhbiA8LSBmbXQuU3ByaW50ZigidmFsdWUlZCIsIGkpCgkJfQoJfSgpCgl2YXIgdmFsdWVzUyA9IG1ha2UoWyAvLyB0ZXN0IEVhY2gtaW5nIG92ZXIgYSBjaGFubmVsCgldc3RyaW5nLCAwKQoJYXNzZXJ0Lk5pbChFYWNoKHZhbGNoYW4sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJdmFsdWVzUyA9IGFwcGVuZCh2YWx1ZXNTLCBmbXQuU3ByaW50ZigiJXYiLCB2KSkKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdc3RyaW5ne2B2YWx1ZTBgLCBgdmFsdWUxYCwgYHZhbHVlMmB9LCB2YWx1ZXNTKQp9",
+                    "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl0eXBlIHRlc3RTdHJ1Y3Qgc3RydWN0IHsKCQlOYW1lICBzdHJpbmcKCQlIZWxsbyBib29sCgkJdW5leCAgc3RyaW5nCgl9Cglhc3NlcnQuTmlsKEVhY2gobmlsLCBuaWwpKQoJYXNzZXJ0Lk5pbChFYWNoKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJcmV0dXJuIFN0b3AKCX0pKQoJdmFyIGNvdW50ID0gMAoJYXNzZXJ0Lk5pbChFYWNoKFtdc3RyaW5ne2BvbmVgLCBgdHdvYCwgYHRocmVlYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJaWYgdi4oc3RyaW5nKSA9PSBgdHdvYCB7CgkJCXJldHVybiBTdG9wCgkJfSBlbHNlIHsKCQkJY291bnQgKz0gMQoJCQlyZXR1cm4gbmlsCgkJfQoJfSkpCgl2YXIgdmFsdWVzID0gW11hbnl7fQoJYXNzZXJ0Lk5pbChFYWNoKG1hcFtzdHJpbmddc3RyaW5ne2BvbmVgOiBgZmlyc3RgLCBgdHdvYDogYHNlY29uZGAsIGB0aHJlZWA6IGB0aGlyZGB9LCBmdW5jKGkgaW50LCB2IGFueSkgZXJyb3IgewoJCXZhbHVlcyA9IGFwcGVuZCh2YWx1ZXMsIHYpCgkJcmV0dXJuIG5pbAoJfSkpCgl2YWx1ZXMgPSBbXWFueXt9Cglhc3NlcnQuTmlsKEVhY2goJnRlc3RTdHJ1Y3R7TmFtZTogYHRlc3RgLCBIZWxsbzogdHJ1ZSwgdW5leDogYHNob3VsZCBub3Qgc2VlIG1lYH0sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgdikKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdYW55e2B0ZXN0YCwgdHJ1ZX0sIHZhbHVlcykKCXZhciB2YWxjaGFuID0gbWFrZShjaGFuIHN0cmluZykKCWdvIGZ1bmMoKSB7CgkJZGVmZXIgY2xvc2UodmFsY2hhbikKCQlmb3IgaSA6PSByYW5nZSAzIHsKCQkJdmFsY2hhbiA8LSBmbXQuU3ByaW50ZigidmFsdWUlZCIsIGkpCgkJfQoJfSgpCgl2YXIgdmFsdWVzUyA9IG1ha2UoWyAvLyB0ZXN0IEVhY2gtaW5nIG92ZXIgYSBjaGFubmVsCgldc3RyaW5nLCAwKQoJYXNzZXJ0Lk5pbChFYWNoKHZhbGNoYW4sIGZ1bmMoaSBpbnQsIHYgYW55KSBlcnJvciB7CgkJdmFsdWVzUyA9IGFwcGVuZCh2YWx1ZXNTLCBmbXQuU3ByaW50ZigiJXYiLCB2KSkKCQlyZXR1cm4gbmlsCgl9KSkKCWFzc2VydC5FbGVtZW50c01hdGNoKFtdc3RyaW5ne2B2YWx1ZTBgLCBgdmFsdWUxYCwgYHZhbHVlMmB9LCB2YWx1ZXNTKQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -19267,7 +19289,7 @@
                             "Alias": "require"
                         }
                     ],
-                    "Size": 18122,
+                    "Size": 18116,
                     "LineCount": 626,
                     "SourceLineCount": 492,
                     "FunctionCount": 0,
@@ -19455,7 +19477,7 @@
                             "Alias": "tokenize"
                         }
                     ],
-                    "Size": 24523,
+                    "Size": 24521,
                     "LineCount": 1020,
                     "SourceLineCount": 769,
                     "FunctionCount": 73,
@@ -20941,7 +20963,7 @@
                         }
                     ],
                     "Signature": "ToByteString(in any, formatString ...string) (string, error)",
-                    "Source": "ewoJaWYgYXNCeXRlcywgZXJyIDo9IENvbnZlcnRUb0ludGVnZXIoaW4pOyBlcnIgPT0gbmlsIHsKCQlmb3IgaSA6PSAwOyBpIDwgOTsgaSsrIHsKCQkJaWYgY29udmVydGVkIDo9IChmbG9hdDY0KGFzQnl0ZXMpIC8gbWF0aC5Qb3coMTAyNCwgZmxvYXQ2NChpKSkpOyBjb252ZXJ0ZWQgPCAxMDI0IHsKCQkJCXZhciBwcmVmaXggPSBTaVByZWZpeChpKQoJCQkJdmFyIGYgPSBgJWdgCgkJCQlpZiBsZW4oZm9ybWF0U3RyaW5nKSA+IDAgewoJCQkJCWYgPSBmb3JtYXRTdHJpbmdbMF0KCQkJCX0KCQkJCXJldHVybiBmbXQuU3ByaW50ZihmKyIlc0IiLCBjb252ZXJ0ZWQsIHByZWZpeC5TdHJpbmcoKSksIG5pbAoJCQl9CgkJfQoJCXJldHVybiBmbXQuU3ByaW50ZigiJWRCIiwgYXNCeXRlcyksIG5pbAoJfSBlbHNlIHsKCQlyZXR1cm4gYGAsIGVycgoJfQp9",
+                    "Source": "ewoJaWYgYXNCeXRlcywgZXJyIDo9IENvbnZlcnRUb0ludGVnZXIoaW4pOyBlcnIgPT0gbmlsIHsKCQlmb3IgaSA6PSByYW5nZSA5IHsKCQkJaWYgY29udmVydGVkIDo9IChmbG9hdDY0KGFzQnl0ZXMpIC8gbWF0aC5Qb3coMTAyNCwgZmxvYXQ2NChpKSkpOyBjb252ZXJ0ZWQgPCAxMDI0IHsKCQkJCXZhciBwcmVmaXggPSBTaVByZWZpeChpKQoJCQkJdmFyIGYgPSBgJWdgCgkJCQlpZiBsZW4oZm9ybWF0U3RyaW5nKSA+IDAgewoJCQkJCWYgPSBmb3JtYXRTdHJpbmdbMF0KCQkJCX0KCQkJCXJldHVybiBmbXQuU3ByaW50ZihmKyIlc0IiLCBjb252ZXJ0ZWQsIHByZWZpeC5TdHJpbmcoKSksIG5pbAoJCQl9CgkJfQoJCXJldHVybiBmbXQuU3ByaW50ZigiJWRCIiwgYXNCeXRlcyksIG5pbAoJfSBlbHNlIHsKCQlyZXR1cm4gYGAsIGVycgoJfQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -21001,7 +21023,7 @@
                         }
                     ],
                     "Signature": "ToStringSlice(in any) ([]string, error)",
-                    "Source": "ewoJdmFyIHZhbHVlcyA9IG1ha2UoW11zdHJpbmcsIDApCglpZiBpbiAhPSBuaWwgewoJCWlmIHYsIG9rIDo9IGluLihbXXN0cmluZyk7IG9rIHsKCQkJcmV0dXJuIHYsIG5pbAoJCX0KCQl2YXIgaW5WID0gcmVmbGVjdC5WYWx1ZU9mKGluKQoJCWlmIGluVi5Jc1ZhbGlkKCkgewoJCQlpZiBpblYuS2luZCgpID09IHJlZmxlY3QuUHRyIHsKCQkJCWluViA9IGluVi5FbGVtKCkKCQkJfQoJCQlpZiBpblYuSXNWYWxpZCgpIHsKCQkJCXN3aXRjaCBpblYuS2luZCgpIHsKCQkJCWNhc2UgcmVmbGVjdC5BcnJheSwgcmVmbGVjdC5TbGljZToKCQkJCQlmb3IgaSA6PSAwOyBpIDwgaW5WLkxlbigpOyBpKysgewoJCQkJCQlpZiBpbmRleFYgOj0gaW5WLkluZGV4KGkpOyBpbmRleFYuSXNWYWxpZCgpIHsKCQkJCQkJCWlmIHYsIGVyciA6PSBUb1N0cmluZyhpbmRleFYuSW50ZXJmYWNlKCkpOyBlcnIgPT0gbmlsIHsKCQkJCQkJCQl2YWx1ZXMgPSBhcHBlbmQodmFsdWVzLCB2KQoJCQkJCQkJfSBlbHNlIHsKCQkJCQkJCQlyZXR1cm4gbmlsLCBlcnIKCQkJCQkJCX0KCQkJCQkJfSBlbHNlIHsKCQkJCQkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoIkVsZW1lbnQgJWQgaW4gc2xpY2UgaXMgaW52YWxpZCIsIGkpCgkJCQkJCX0KCQkJCQl9CgkJCQlkZWZhdWx0OgoJCQkJCWlmIHYsIGVyciA6PSBUb1N0cmluZyhpbik7IGVyciA9PSBuaWwgewoJCQkJCQl2YWx1ZXMgPSBhcHBlbmQodmFsdWVzLCB2KQoJCQkJCX0gZWxzZSB7CgkJCQkJCXJldHVybiBuaWwsIGVycgoJCQkJCX0KCQkJCX0KCQkJfSBlbHNlIHsKCQkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoIkNhbm5vdCBwYXJzZSB2YWx1ZSBwb2ludGVkIHRvIGJ5IGdpdmVuIHZhbHVlLiIpCgkJCX0KCQl9IGVsc2UgewoJCQlyZXR1cm4gbmlsLCBmbXQuRXJyb3JmKCJDYW5ub3QgcGFyc2UgZ2l2ZW4gdmFsdWUuIikKCQl9Cgl9CglyZXR1cm4gdmFsdWVzLCBuaWwKfQ==",
+                    "Source": "ewoJdmFyIHZhbHVlcyA9IG1ha2UoW11zdHJpbmcsIDApCglpZiBpbiAhPSBuaWwgewoJCWlmIHYsIG9rIDo9IGluLihbXXN0cmluZyk7IG9rIHsKCQkJcmV0dXJuIHYsIG5pbAoJCX0KCQl2YXIgaW5WID0gcmVmbGVjdC5WYWx1ZU9mKGluKQoJCWlmIGluVi5Jc1ZhbGlkKCkgewoJCQlpZiBpblYuS2luZCgpID09IHJlZmxlY3QuUG9pbnRlciB7CgkJCQlpblYgPSBpblYuRWxlbSgpCgkJCX0KCQkJaWYgaW5WLklzVmFsaWQoKSB7CgkJCQlzd2l0Y2ggaW5WLktpbmQoKSB7CgkJCQljYXNlIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuU2xpY2U6CgkJCQkJZm9yIGkgOj0gMDsgaSA8IGluVi5MZW4oKTsgaSsrIHsKCQkJCQkJaWYgaW5kZXhWIDo9IGluVi5JbmRleChpKTsgaW5kZXhWLklzVmFsaWQoKSB7CgkJCQkJCQlpZiB2LCBlcnIgOj0gVG9TdHJpbmcoaW5kZXhWLkludGVyZmFjZSgpKTsgZXJyID09IG5pbCB7CgkJCQkJCQkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgdikKCQkJCQkJCX0gZWxzZSB7CgkJCQkJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCQkJCQl9CgkJCQkJCX0gZWxzZSB7CgkJCQkJCQlyZXR1cm4gbmlsLCBmbXQuRXJyb3JmKCJFbGVtZW50ICVkIGluIHNsaWNlIGlzIGludmFsaWQiLCBpKQoJCQkJCQl9CgkJCQkJfQoJCQkJZGVmYXVsdDoKCQkJCQlpZiB2LCBlcnIgOj0gVG9TdHJpbmcoaW4pOyBlcnIgPT0gbmlsIHsKCQkJCQkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgdikKCQkJCQl9IGVsc2UgewoJCQkJCQlyZXR1cm4gbmlsLCBlcnIKCQkJCQl9CgkJCQl9CgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gbmlsLCBmbXQuRXJyb3JmKCJDYW5ub3QgcGFyc2UgdmFsdWUgcG9pbnRlZCB0byBieSBnaXZlbiB2YWx1ZS4iKQoJCQl9CgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigiQ2Fubm90IHBhcnNlIGdpdmVuIHZhbHVlLiIpCgkJfQoJfQoJcmV0dXJuIHZhbHVlcywgbmlsCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -21365,7 +21387,7 @@
                         }
                     ],
                     "Signature": "TestIsHexadecimal(t *testing.T)",
-                    "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglmb3IgaSA6PSAwOyBpIDwgMTY7IGkrKyB7CgkJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChmbXQuU3ByaW50ZigiJXgiLCBpKSwgLTEpKQoJCWFzc2VydC5UcnVlKElzSGV4YWRlY2ltYWwoZm10LlNwcmludGYoIiVYIiwgaSksIC0xKSkKCX0KCWZvciBpIDo9IDEwOyBpIDwgMTY7IGkrKyB7CgkJYXNzZXJ0LkZhbHNlKElzSGV4YWRlY2ltYWwoZm10LlNwcmludGYoIiV4JVgiLCBpLCBpKSwgLTEpKQoJCWFzc2VydC5GYWxzZShJc0hleGFkZWNpbWFsKGZtdC5TcHJpbnRmKCIlWCV4IiwgaSwgaSksIC0xKSkKCQlhc3NlcnQuRmFsc2UoSXNIZXhhZGVjaW1hbChmbXQuU3ByaW50ZigiJXgiLCBpKSwgMikpCgkJYXNzZXJ0LkZhbHNlKElzSGV4YWRlY2ltYWwoZm10LlNwcmludGYoIiVYIiwgaSksIDIpKQoJfQoJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChgYWJjMTIzYCwgLTEpKQoJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChgQUJDMTIzYCwgLTEpKQoJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChgYWJjMTIzYCwgNikpCglhc3NlcnQuVHJ1ZShJc0hleGFkZWNpbWFsKGBBQkMxMjNgLCA2KSkKCWFzc2VydC5UcnVlKElzSGV4YWRlY2ltYWwoYGIyNjI1Mjg2MmExMWRkMzIyMTQyN2JkYmFlNjAyNTYwNGIxNzYwZTRgLCA0MCkpCglhc3NlcnQuRmFsc2UoSXNIZXhhZGVjaW1hbChgYUJjMTIzYCwgLTEpKQoJYXNzZXJ0LkZhbHNlKElzSGV4YWRlY2ltYWwoYGFiYzEyM2AsIDMyKSkKCWFzc2VydC5GYWxzZShJc0hleGFkZWNpbWFsKGBBQkMxMjNgLCAzMikpCn0=",
+                    "Source": "ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCglmb3IgaSA6PSByYW5nZSAxNiB7CgkJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChmbXQuU3ByaW50ZigiJXgiLCBpKSwgLTEpKQoJCWFzc2VydC5UcnVlKElzSGV4YWRlY2ltYWwoZm10LlNwcmludGYoIiVYIiwgaSksIC0xKSkKCX0KCWZvciBpIDo9IDEwOyBpIDwgMTY7IGkrKyB7CgkJYXNzZXJ0LkZhbHNlKElzSGV4YWRlY2ltYWwoZm10LlNwcmludGYoIiV4JVgiLCBpLCBpKSwgLTEpKQoJCWFzc2VydC5GYWxzZShJc0hleGFkZWNpbWFsKGZtdC5TcHJpbnRmKCIlWCV4IiwgaSwgaSksIC0xKSkKCQlhc3NlcnQuRmFsc2UoSXNIZXhhZGVjaW1hbChmbXQuU3ByaW50ZigiJXgiLCBpKSwgMikpCgkJYXNzZXJ0LkZhbHNlKElzSGV4YWRlY2ltYWwoZm10LlNwcmludGYoIiVYIiwgaSksIDIpKQoJfQoJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChgYWJjMTIzYCwgLTEpKQoJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChgQUJDMTIzYCwgLTEpKQoJYXNzZXJ0LlRydWUoSXNIZXhhZGVjaW1hbChgYWJjMTIzYCwgNikpCglhc3NlcnQuVHJ1ZShJc0hleGFkZWNpbWFsKGBBQkMxMjNgLCA2KSkKCWFzc2VydC5UcnVlKElzSGV4YWRlY2ltYWwoYGIyNjI1Mjg2MmExMWRkMzIyMTQyN2JkYmFlNjAyNTYwNGIxNzYwZTRgLCA0MCkpCglhc3NlcnQuRmFsc2UoSXNIZXhhZGVjaW1hbChgYUJjMTIzYCwgLTEpKQoJYXNzZXJ0LkZhbHNlKElzSGV4YWRlY2ltYWwoYGFiYzEyM2AsIDMyKSkKCWFzc2VydC5GYWxzZShJc0hleGFkZWNpbWFsKGBBQkMxMjNgLCAzMikpCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -22024,7 +22046,7 @@
                             "Alias": "typeutil"
                         }
                     ],
-                    "Size": 3484,
+                    "Size": 3488,
                     "LineCount": 171,
                     "SourceLineCount": 135,
                     "FunctionCount": 10,
@@ -22072,7 +22094,7 @@
                             "Alias": "typeutil"
                         }
                     ],
-                    "Size": 3999,
+                    "Size": 4007,
                     "LineCount": 165,
                     "SourceLineCount": 126,
                     "FunctionCount": 3,
@@ -22184,7 +22206,7 @@
                         }
                     ],
                     "Signature": "FieldsFunc(in any, fn StructFieldFunc) error",
-                    "Source": "ewoJaWYgaW4gPT0gbmlsIHx8IGZuID09IG5pbCB7CgkJcmV0dXJuIG5pbAoJfQoJdmFyIGluVmFsdSByZWZsZWN0LlZhbHVlCglpZiB2LCBvayA6PSBpbi4ocmVmbGVjdC5WYWx1ZSk7IG9rIHsKCQlpblZhbHUgPSB2Cgl9IGVsc2UgewoJCWluVmFsdSA9IHJlZmxlY3QuVmFsdWVPZihpbikKCX0KCWlmIGluVmFsdS5LaW5kKCkgPT0gcmVmbGVjdC5QdHIgewoJCWluVmFsdSA9IGluVmFsdS5FbGVtKCkKCX0KCXZhciBpblR5cGUgPSBpblZhbHUuVHlwZSgpCkZpZWxkTG9vcDoKCWZvciBpIDo9IDA7IGkgPCBpblR5cGUuTnVtRmllbGQoKTsgaSsrIHsKCQl2YXIgZmllbGRUID0gaW5UeXBlLkZpZWxkKGkpCgkJdmFyIGZpZWxkViA9IGluVmFsdS5GaWVsZChpKQoJCWlmIGZpZWxkVC5Bbm9ueW1vdXMgewoJCQlpZiBlcnIgOj0gRmllbGRzRnVuYyhmaWVsZFYsIGZuKTsgZXJyICE9IG5pbCB7CgkJCQlyZXR1cm4gZXJyCgkJCX0KCQl9CgkJaWYgZmllbGRULlBrZ1BhdGggIT0gYGAgewoJCQljb250aW51ZQoJCX0KCQlzd2l0Y2ggZXJyIDo9IGZuKCZmaWVsZFQsIGZpZWxkVik7IGVyciB7CgkJY2FzZSBTdG9wSXRlcmF0aW5nOgoJCQlicmVhayBGaWVsZExvb3AKCQljYXNlIG5pbDoKCQkJY29udGludWUKCQlkZWZhdWx0OgoJCQlyZXR1cm4gZXJyCgkJfQoJfQoJcmV0dXJuIG5pbAp9",
+                    "Source": "ewoJaWYgaW4gPT0gbmlsIHx8IGZuID09IG5pbCB7CgkJcmV0dXJuIG5pbAoJfQoJdmFyIGluVmFsdSByZWZsZWN0LlZhbHVlCglpZiB2LCBvayA6PSBpbi4ocmVmbGVjdC5WYWx1ZSk7IG9rIHsKCQlpblZhbHUgPSB2Cgl9IGVsc2UgewoJCWluVmFsdSA9IHJlZmxlY3QuVmFsdWVPZihpbikKCX0KCWlmIGluVmFsdS5LaW5kKCkgPT0gcmVmbGVjdC5Qb2ludGVyIHsKCQlpblZhbHUgPSBpblZhbHUuRWxlbSgpCgl9Cgl2YXIgaW5UeXBlID0gaW5WYWx1LlR5cGUoKQpGaWVsZExvb3A6Cglmb3IgaSA6PSAwOyBpIDwgaW5UeXBlLk51bUZpZWxkKCk7IGkrKyB7CgkJdmFyIGZpZWxkVCA9IGluVHlwZS5GaWVsZChpKQoJCXZhciBmaWVsZFYgPSBpblZhbHUuRmllbGQoaSkKCQlpZiBmaWVsZFQuQW5vbnltb3VzIHsKCQkJaWYgZXJyIDo9IEZpZWxkc0Z1bmMoZmllbGRWLCBmbik7IGVyciAhPSBuaWwgewoJCQkJcmV0dXJuIGVycgoJCQl9CgkJfQoJCWlmIGZpZWxkVC5Qa2dQYXRoICE9IGBgIHsKCQkJY29udGludWUKCQl9CgkJc3dpdGNoIGVyciA6PSBmbigmZmllbGRULCBmaWVsZFYpOyBlcnIgewoJCWNhc2UgU3RvcEl0ZXJhdGluZzoKCQkJYnJlYWsgRmllbGRMb29wCgkJY2FzZSBuaWw6CgkJCWNvbnRpbnVlCgkJZGVmYXVsdDoKCQkJcmV0dXJuIGVycgoJCX0KCX0KCXJldHVybiBuaWwKfQ==",
                     "IsPackageLevel": true
                 }
             ],
@@ -22741,8 +22763,8 @@
             "Synopsis": "Helpers for type inflection and simplifying working with Golang generic interface types\n",
             "MainFunction": false,
             "CommentWordCount": 1133,
-            "LineCount": 2837,
-            "SourceLineCount": 2306,
+            "LineCount": 2832,
+            "SourceLineCount": 2302,
             "FunctionCount": 99,
             "TypeCount": 4,
             "ConstantCount": 3,
@@ -22873,7 +22895,7 @@
                             "Alias": "utils"
                         }
                     ],
-                    "Size": 10467,
+                    "Size": 10483,
                     "LineCount": 424,
                     "SourceLineCount": 303,
                     "FunctionCount": 25,
@@ -22929,6 +22951,10 @@
                             "Alias": "reflect"
                         },
                         {
+                            "PackageName": "slices",
+                            "Alias": "slices"
+                        },
+                        {
                             "PackageName": "strings",
                             "Alias": "strings"
                         },
@@ -22945,9 +22971,9 @@
                             "Alias": "utils"
                         }
                     ],
-                    "Size": 13278,
-                    "LineCount": 632,
-                    "SourceLineCount": 459,
+                    "Size": 13237,
+                    "LineCount": 627,
+                    "SourceLineCount": 455,
                     "FunctionCount": 67,
                     "TypeCount": 1,
                     "ConstantCount": 0,
@@ -23269,7 +23295,7 @@
                         }
                     ],
                     "Signature": "IsEmpty(value any) bool",
-                    "Source": "ewoJdmFyIHZhbHVlViA9IHJlZmxlY3QuVmFsdWVPZih2YWx1ZSkKCWlmIHZhbHVlVi5LaW5kKCkgPT0gcmVmbGVjdC5QdHIgewoJCXZhbHVlViA9IHZhbHVlVi5FbGVtKCkKCX0KCXN3aXRjaCB2YWx1ZVYuS2luZCgpIHsKCWNhc2UgcmVmbGVjdC5TdHJ1Y3Q6CgkJaWYgSXNaZXJvKHZhbHVlKSB7CgkJCXJldHVybiB0cnVlCgkJfQoJfQoJc3dpdGNoIHZhbHVlVi5LaW5kKCkgewoJY2FzZSByZWZsZWN0LkFycmF5LCByZWZsZWN0LlNsaWNlOgoJCWlmIHZhbHVlVi5MZW4oKSA9PSAwIHsKCQkJcmV0dXJuIHRydWUKCQl9IGVsc2UgewoJCQlmb3IgaSA6PSAwOyBpIDwgdmFsdWVWLkxlbigpOyBpKysgewoJCQkJaWYgaW5kZXhWIDo9IHZhbHVlVi5JbmRleChpKTsgaW5kZXhWLklzVmFsaWQoKSAmJiAhSXNFbXB0eShpbmRleFYuSW50ZXJmYWNlKCkpIHsKCQkJCQlyZXR1cm4gZmFsc2UKCQkJCX0KCQkJfQoJCQlyZXR1cm4gdHJ1ZQoJCX0KCWNhc2UgcmVmbGVjdC5NYXA6CgkJaWYgdmFsdWVWLkxlbigpID09IDAgewoJCQlyZXR1cm4gdHJ1ZQoJCX0gZWxzZSB7CgkJCWZvciBfLCBrZXlWIDo9IHJhbmdlIHZhbHVlVi5NYXBLZXlzKCkgewoJCQkJaWYgaW5kZXhWIDo9IHZhbHVlVi5NYXBJbmRleChrZXlWKTsgaW5kZXhWLklzVmFsaWQoKSAmJiAhSXNFbXB0eShpbmRleFYuSW50ZXJmYWNlKCkpIHsKCQkJCQlyZXR1cm4gZmFsc2UKCQkJCX0KCQkJfQoJCQlyZXR1cm4gdHJ1ZQoJCX0KCWNhc2UgcmVmbGVjdC5DaGFuOgoJCWlmIHZhbHVlVi5MZW4oKSA9PSAwIHsKCQkJcmV0dXJuIHRydWUKCQl9CgljYXNlIHJlZmxlY3QuU3RyaW5nOgoJCWlmIGxlbihzdHJpbmdzLlRyaW1TcGFjZShmbXQuU3ByaW50ZigiJXYiLCB2YWx1ZSkpKSA9PSAwIHsKCQkJcmV0dXJuIHRydWUKCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
+                    "Source": "ewoJdmFyIHZhbHVlViA9IHJlZmxlY3QuVmFsdWVPZih2YWx1ZSkKCWlmIHZhbHVlVi5LaW5kKCkgPT0gcmVmbGVjdC5Qb2ludGVyIHsKCQl2YWx1ZVYgPSB2YWx1ZVYuRWxlbSgpCgl9Cglzd2l0Y2ggdmFsdWVWLktpbmQoKSB7CgljYXNlIHJlZmxlY3QuU3RydWN0OgoJCWlmIElzWmVybyh2YWx1ZSkgewoJCQlyZXR1cm4gdHJ1ZQoJCX0KCX0KCXN3aXRjaCB2YWx1ZVYuS2luZCgpIHsKCWNhc2UgcmVmbGVjdC5BcnJheSwgcmVmbGVjdC5TbGljZToKCQlpZiB2YWx1ZVYuTGVuKCkgPT0gMCB7CgkJCXJldHVybiB0cnVlCgkJfSBlbHNlIHsKCQkJZm9yIGkgOj0gMDsgaSA8IHZhbHVlVi5MZW4oKTsgaSsrIHsKCQkJCWlmIGluZGV4ViA6PSB2YWx1ZVYuSW5kZXgoaSk7IGluZGV4Vi5Jc1ZhbGlkKCkgJiYgIUlzRW1wdHkoaW5kZXhWLkludGVyZmFjZSgpKSB7CgkJCQkJcmV0dXJuIGZhbHNlCgkJCQl9CgkJCX0KCQkJcmV0dXJuIHRydWUKCQl9CgljYXNlIHJlZmxlY3QuTWFwOgoJCWlmIHZhbHVlVi5MZW4oKSA9PSAwIHsKCQkJcmV0dXJuIHRydWUKCQl9IGVsc2UgewoJCQlmb3IgXywga2V5ViA6PSByYW5nZSB2YWx1ZVYuTWFwS2V5cygpIHsKCQkJCWlmIGluZGV4ViA6PSB2YWx1ZVYuTWFwSW5kZXgoa2V5Vik7IGluZGV4Vi5Jc1ZhbGlkKCkgJiYgIUlzRW1wdHkoaW5kZXhWLkludGVyZmFjZSgpKSB7CgkJCQkJcmV0dXJuIGZhbHNlCgkJCQl9CgkJCX0KCQkJcmV0dXJuIHRydWUKCQl9CgljYXNlIHJlZmxlY3QuQ2hhbjoKCQlpZiB2YWx1ZVYuTGVuKCkgPT0gMCB7CgkJCXJldHVybiB0cnVlCgkJfQoJY2FzZSByZWZsZWN0LlN0cmluZzoKCQlpZiBsZW4oc3RyaW5ncy5UcmltU3BhY2UoZm10LlNwcmludGYoIiV2IiwgdmFsdWUpKSkgPT0gMCB7CgkJCXJldHVybiB0cnVlCgkJfQoJfQoJcmV0dXJuIGZhbHNlCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -23964,7 +23990,7 @@
                         }
                     ],
                     "Signature": "SetValue(target any, value any) error",
-                    "Source": "ewoJdmFyIHRhcmdldFYsIHZhbHVlViwgb3JpZ2luYWxWIHJlZmxlY3QuVmFsdWUKCWlmIHRWLCBvayA6PSB0YXJnZXQuKHJlZmxlY3QuVmFsdWUpOyBvayB7CgkJdGFyZ2V0ViA9IHRWCgl9IGVsc2UgewoJCXRhcmdldFYgPSByZWZsZWN0LlZhbHVlT2YodGFyZ2V0KQoJCWlmIHRhcmdldFYuS2luZCgpID09IHJlZmxlY3QuU3RydWN0IHsKCQkJcmV0dXJuIGZtdC5FcnJvcmYoIk11c3QgcGFzcyBhIHBvaW50ZXIgdG8gYSBzdHJ1Y3QgaW5zdGFuY2UsIGdvdCAlVCIsIHRhcmdldCkKCQl9IGVsc2UgaWYgdGFyZ2V0Vi5LaW5kKCkgPT0gcmVmbGVjdC5QdHIgewoJCQl0YXJnZXRWID0gdGFyZ2V0Vi5FbGVtKCkKCQl9Cgl9CglpZiAhdGFyZ2V0Vi5Jc1ZhbGlkKCkgewoJCXJldHVybiBmbXQuRXJyb3JmKCJUYXJnZXQgJVQgaXMgbm90IHZhbGlkIiwgdGFyZ2V0KQoJfQoJaWYgdiwgZXJyIDo9IHV0aWxzLkNvbnZlcnRDdXN0b21UeXBlKHZhbHVlKTsgZXJyID09IG5pbCB7CgkJdmFsdWUgPSB2Cgl9IGVsc2UgaWYgZXJyICE9IHV0aWxzLlBhc3N0aHJvdWdoVHlwZSB7CgkJcmV0dXJuIGVycgoJfQoJaWYgdlYsIG9rIDo9IHZhbHVlLihyZWZsZWN0LlZhbHVlKTsgb2sgewoJCW9yaWdpbmFsViA9IHZWCgkJdmFsdWVWID0gdlYKCX0gZWxzZSB7CgkJb3JpZ2luYWxWID0gcmVmbGVjdC5WYWx1ZU9mKHZhbHVlKQoJCXZhbHVlViA9IHJlZmxlY3QuVmFsdWVPZihSZXNvbHZlVmFsdWUodmFsdWUpKQoJfQoJaWYgdmFsdWVWLklzVmFsaWQoKSB7CgkJdmFyIHRhcmdldFQgPSB0YXJnZXRWLlR5cGUoKQoJCXZhciB2YWx1ZVQgPSB2YWx1ZVYuVHlwZSgpCgkJaWYgdGFyZ2V0VC5LaW5kKCkgPT0gcmVmbGVjdC5TdHJpbmcgJiYgdmFsdWVWLkNhbkludGVyZmFjZSgpIHsKCQkJdmFsdWVWID0gcmVmbGVjdC5WYWx1ZU9mKGZtdC5TcHJpbnRmKCIldiIsIHZhbHVlVi5JbnRlcmZhY2UoKSkpCgkJCXZhbHVlVCA9IHZhbHVlVi5UeXBlKCkKCQkJaWYgIXZhbHVlVi5Jc1ZhbGlkKCkgewoJCQkJcmV0dXJuIGZtdC5FcnJvcmYoIkNvbnZlcnRpbmcgJVQgdG8gJXYgcHJvZHVjZWQgYW4gaW52YWxpZCB2YWx1ZSIsIHZhbHVlLCB0YXJnZXRUKQoJCQl9CgkJfQoJCWlmIHZhbHVlVC5Bc3NpZ25hYmxlVG8odGFyZ2V0VCkgewoJCQl0YXJnZXRWLlNldCh2YWx1ZVYpCgkJfSBlbHNlIGlmIHZhbHVlVC5Db252ZXJ0aWJsZVRvKHRhcmdldFQpIHsKCQkJdGFyZ2V0Vi5TZXQodmFsdWVWLkNvbnZlcnQodGFyZ2V0VCkpCgkJfSBlbHNlIGlmIHRhcmdldFYuS2luZCgpID09IHJlZmxlY3QuUHRyIHsKCQkJaWYgb3JpZ2luYWxWLktpbmQoKSA9PSByZWZsZWN0LlB0ciB7CgkJCQlyZXR1cm4gU2V0VmFsdWUodGFyZ2V0Viwgb3JpZ2luYWxWKQoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGZtdC5FcnJvcmYoIlVuYWJsZSB0byBzZXQgdGFyZ2V0OiB2YWx1ZSBmb3IgdGFyZ2V0ICV2IG11c3QgYmUgZ2l2ZW4gYXMgYSBwb2ludGVyIiwgdGFyZ2V0VCkKCQkJfQoJCX0gZWxzZSB7CgkJCXN3aXRjaCBraW5kIDo9IHRhcmdldFYuS2luZCgpOyBraW5kIHsKCQkJY2FzZSByZWZsZWN0LlN0cnVjdDoKCQkJCWlmIGVtYmVkZGVkViA6PSB0YXJnZXRWLkZpZWxkQnlOYW1lKHZhbHVlVC5OYW1lKCkpOyBlbWJlZGRlZFYuSXNWYWxpZCgpIHsKCQkJCQlpZiBlcnIgOj0gU2V0VmFsdWUoZW1iZWRkZWRWLCB2YWx1ZSk7IGVyciA9PSBuaWwgewoJCQkJCQlyZXR1cm4gbmlsCgkJCQkJfQoJCQkJfQoJCQljYXNlIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuU2xpY2U6CgkJCQlpZiBJc0FycmF5KHZhbHVlKSB7CgkJCQkJdmFyIHZhbHVlQSA9IHV0aWxzLlNsaWNlaWZ5KHZhbHVlKQoJCQkJCXZhciByZXBsID0gdGFyZ2V0VgoJCQkJCWlmIHRhcmdldFYuTGVuKCkgPCBsZW4odmFsdWVBKSB7CgkJCQkJCXJlcGwgPSByZWZsZWN0Lk1ha2VTbGljZSh0YXJnZXRULCBsZW4odmFsdWVBKSwgbGVuKHZhbHVlQSkpCgkJCQkJfQoJCQkJCWZvciBpIDo9IDA7IGkgPCByZXBsLkxlbigpOyBpKysgewoJCQkJCQl2YXIgZWxlbSA9IHJlcGwuSW5kZXgoaSkKCQkJCQkJaWYgZXJyIDo9IFNldFZhbHVlKGVsZW0sIHZhbHVlQVtpXSk7IGVyciAhPSBuaWwgewoJCQkJCQkJcmV0dXJuIGZtdC5FcnJvcmYoImNhbm5vdCBzZXQgaW5kZXggJWQ6ICV2IiwgaSwgZXJyKQoJCQkJCQl9CgkJCQkJfQoJCQkJCXJldHVybiBTZXRWYWx1ZSh0YXJnZXRWLCByZXBsKQoJCQkJfQoJCQl9CgkJCXN3aXRjaCB2YWx1ZS4odHlwZSkgewoJCQljYXNlIHRpbWUuVGltZToKCQkJCXJldHVybiBTZXRWYWx1ZSh0YXJnZXQsIHZhbHVlLih0aW1lLlRpbWUpLlVuaXhOYW5vKCkpCgkJCWNhc2UgKnRpbWUuVGltZToKCQkJCWlmIHRtIDo9IHZhbHVlLigqdGltZS5UaW1lKTsgdG0gIT0gbmlsIHsKCQkJCQlyZXR1cm4gU2V0VmFsdWUodGFyZ2V0LCB0bS5Vbml4TmFubygpKQoJCQkJfQoJCQl9CgkJCXJldHVybiBmbXQuRXJyb3JmKCJVbmFibGUgdG8gc2V0IHRhcmdldDogJVQgaGFzIG5vIHBhdGggdG8gYmVjb21pbmcgJXYiLCB2YWx1ZSwgdGFyZ2V0VCkKCQl9Cgl9IGVsc2UgewoJCXJldHVybiBmbXQuRXJyb3JmKCJVbmFibGUgdG8gc2V0IHRhcmdldCB0byB0aGUgZ2l2ZW4gJVQgdmFsdWUiLCB2YWx1ZSkKCX0KCXJldHVybiBuaWwKfQ==",
+                    "Source": "ewoJdmFyIHRhcmdldFYsIHZhbHVlViwgb3JpZ2luYWxWIHJlZmxlY3QuVmFsdWUKCWlmIHRWLCBvayA6PSB0YXJnZXQuKHJlZmxlY3QuVmFsdWUpOyBvayB7CgkJdGFyZ2V0ViA9IHRWCgl9IGVsc2UgewoJCXRhcmdldFYgPSByZWZsZWN0LlZhbHVlT2YodGFyZ2V0KQoJCWlmIHRhcmdldFYuS2luZCgpID09IHJlZmxlY3QuU3RydWN0IHsKCQkJcmV0dXJuIGZtdC5FcnJvcmYoIk11c3QgcGFzcyBhIHBvaW50ZXIgdG8gYSBzdHJ1Y3QgaW5zdGFuY2UsIGdvdCAlVCIsIHRhcmdldCkKCQl9IGVsc2UgaWYgdGFyZ2V0Vi5LaW5kKCkgPT0gcmVmbGVjdC5Qb2ludGVyIHsKCQkJdGFyZ2V0ViA9IHRhcmdldFYuRWxlbSgpCgkJfQoJfQoJaWYgIXRhcmdldFYuSXNWYWxpZCgpIHsKCQlyZXR1cm4gZm10LkVycm9yZigiVGFyZ2V0ICVUIGlzIG5vdCB2YWxpZCIsIHRhcmdldCkKCX0KCWlmIHYsIGVyciA6PSB1dGlscy5Db252ZXJ0Q3VzdG9tVHlwZSh2YWx1ZSk7IGVyciA9PSBuaWwgewoJCXZhbHVlID0gdgoJfSBlbHNlIGlmIGVyciAhPSB1dGlscy5QYXNzdGhyb3VnaFR5cGUgewoJCXJldHVybiBlcnIKCX0KCWlmIHZWLCBvayA6PSB2YWx1ZS4ocmVmbGVjdC5WYWx1ZSk7IG9rIHsKCQlvcmlnaW5hbFYgPSB2VgoJCXZhbHVlViA9IHZWCgl9IGVsc2UgewoJCW9yaWdpbmFsViA9IHJlZmxlY3QuVmFsdWVPZih2YWx1ZSkKCQl2YWx1ZVYgPSByZWZsZWN0LlZhbHVlT2YoUmVzb2x2ZVZhbHVlKHZhbHVlKSkKCX0KCWlmIHZhbHVlVi5Jc1ZhbGlkKCkgewoJCXZhciB0YXJnZXRUID0gdGFyZ2V0Vi5UeXBlKCkKCQl2YXIgdmFsdWVUID0gdmFsdWVWLlR5cGUoKQoJCWlmIHRhcmdldFQuS2luZCgpID09IHJlZmxlY3QuU3RyaW5nICYmIHZhbHVlVi5DYW5JbnRlcmZhY2UoKSB7CgkJCXZhbHVlViA9IHJlZmxlY3QuVmFsdWVPZihmbXQuU3ByaW50ZigiJXYiLCB2YWx1ZVYuSW50ZXJmYWNlKCkpKQoJCQl2YWx1ZVQgPSB2YWx1ZVYuVHlwZSgpCgkJCWlmICF2YWx1ZVYuSXNWYWxpZCgpIHsKCQkJCXJldHVybiBmbXQuRXJyb3JmKCJDb252ZXJ0aW5nICVUIHRvICV2IHByb2R1Y2VkIGFuIGludmFsaWQgdmFsdWUiLCB2YWx1ZSwgdGFyZ2V0VCkKCQkJfQoJCX0KCQlpZiB2YWx1ZVQuQXNzaWduYWJsZVRvKHRhcmdldFQpIHsKCQkJdGFyZ2V0Vi5TZXQodmFsdWVWKQoJCX0gZWxzZSBpZiB2YWx1ZVQuQ29udmVydGlibGVUbyh0YXJnZXRUKSB7CgkJCXRhcmdldFYuU2V0KHZhbHVlVi5Db252ZXJ0KHRhcmdldFQpKQoJCX0gZWxzZSBpZiB0YXJnZXRWLktpbmQoKSA9PSByZWZsZWN0LlBvaW50ZXIgewoJCQlpZiBvcmlnaW5hbFYuS2luZCgpID09IHJlZmxlY3QuUG9pbnRlciB7CgkJCQlyZXR1cm4gU2V0VmFsdWUodGFyZ2V0Viwgb3JpZ2luYWxWKQoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGZtdC5FcnJvcmYoIlVuYWJsZSB0byBzZXQgdGFyZ2V0OiB2YWx1ZSBmb3IgdGFyZ2V0ICV2IG11c3QgYmUgZ2l2ZW4gYXMgYSBwb2ludGVyIiwgdGFyZ2V0VCkKCQkJfQoJCX0gZWxzZSB7CgkJCXN3aXRjaCBraW5kIDo9IHRhcmdldFYuS2luZCgpOyBraW5kIHsKCQkJY2FzZSByZWZsZWN0LlN0cnVjdDoKCQkJCWlmIGVtYmVkZGVkViA6PSB0YXJnZXRWLkZpZWxkQnlOYW1lKHZhbHVlVC5OYW1lKCkpOyBlbWJlZGRlZFYuSXNWYWxpZCgpIHsKCQkJCQlpZiBlcnIgOj0gU2V0VmFsdWUoZW1iZWRkZWRWLCB2YWx1ZSk7IGVyciA9PSBuaWwgewoJCQkJCQlyZXR1cm4gbmlsCgkJCQkJfQoJCQkJfQoJCQljYXNlIHJlZmxlY3QuQXJyYXksIHJlZmxlY3QuU2xpY2U6CgkJCQlpZiBJc0FycmF5KHZhbHVlKSB7CgkJCQkJdmFyIHZhbHVlQSA9IHV0aWxzLlNsaWNlaWZ5KHZhbHVlKQoJCQkJCXZhciByZXBsID0gdGFyZ2V0VgoJCQkJCWlmIHRhcmdldFYuTGVuKCkgPCBsZW4odmFsdWVBKSB7CgkJCQkJCXJlcGwgPSByZWZsZWN0Lk1ha2VTbGljZSh0YXJnZXRULCBsZW4odmFsdWVBKSwgbGVuKHZhbHVlQSkpCgkJCQkJfQoJCQkJCWZvciBpIDo9IDA7IGkgPCByZXBsLkxlbigpOyBpKysgewoJCQkJCQl2YXIgZWxlbSA9IHJlcGwuSW5kZXgoaSkKCQkJCQkJaWYgZXJyIDo9IFNldFZhbHVlKGVsZW0sIHZhbHVlQVtpXSk7IGVyciAhPSBuaWwgewoJCQkJCQkJcmV0dXJuIGZtdC5FcnJvcmYoImNhbm5vdCBzZXQgaW5kZXggJWQ6ICV2IiwgaSwgZXJyKQoJCQkJCQl9CgkJCQkJfQoJCQkJCXJldHVybiBTZXRWYWx1ZSh0YXJnZXRWLCByZXBsKQoJCQkJfQoJCQl9CgkJCXN3aXRjaCB2YWx1ZS4odHlwZSkgewoJCQljYXNlIHRpbWUuVGltZToKCQkJCXJldHVybiBTZXRWYWx1ZSh0YXJnZXQsIHZhbHVlLih0aW1lLlRpbWUpLlVuaXhOYW5vKCkpCgkJCWNhc2UgKnRpbWUuVGltZToKCQkJCWlmIHRtIDo9IHZhbHVlLigqdGltZS5UaW1lKTsgdG0gIT0gbmlsIHsKCQkJCQlyZXR1cm4gU2V0VmFsdWUodGFyZ2V0LCB0bS5Vbml4TmFubygpKQoJCQkJfQoJCQl9CgkJCXJldHVybiBmbXQuRXJyb3JmKCJVbmFibGUgdG8gc2V0IHRhcmdldDogJVQgaGFzIG5vIHBhdGggdG8gYmVjb21pbmcgJXYiLCB2YWx1ZSwgdGFyZ2V0VCkKCQl9Cgl9IGVsc2UgewoJCXJldHVybiBmbXQuRXJyb3JmKCJVbmFibGUgdG8gc2V0IHRhcmdldCB0byB0aGUgZ2l2ZW4gJVQgdmFsdWUiLCB2YWx1ZSkKCX0KCXJldHVybiBuaWwKfQ==",
                     "IsPackageLevel": true
                 },
                 {
@@ -25101,8 +25127,8 @@
             "Synopsis": "",
             "MainFunction": false,
             "CommentWordCount": 355,
-            "LineCount": 1527,
-            "SourceLineCount": 1239,
+            "LineCount": 1517,
+            "SourceLineCount": 1230,
             "FunctionCount": 46,
             "TypeCount": 4,
             "ConstantCount": 12,
@@ -25141,6 +25167,10 @@
                             "Alias": "regexp"
                         },
                         {
+                            "PackageName": "slices",
+                            "Alias": "slices"
+                        },
+                        {
                             "PackageName": "strconv",
                             "Alias": "strconv"
                         },
@@ -25165,9 +25195,9 @@
                             "Alias": "rxutil"
                         }
                     ],
-                    "Size": 13746,
-                    "LineCount": 608,
-                    "SourceLineCount": 505,
+                    "Size": 13734,
+                    "LineCount": 607,
+                    "SourceLineCount": 504,
                     "FunctionCount": 18,
                     "TypeCount": 2,
                     "ConstantCount": 9,
@@ -25201,6 +25231,10 @@
                             "Alias": "reflect"
                         },
                         {
+                            "PackageName": "slices",
+                            "Alias": "slices"
+                        },
+                        {
                             "PackageName": "strconv",
                             "Alias": "strconv"
                         },
@@ -25209,9 +25243,9 @@
                             "Alias": "strings"
                         }
                     ],
-                    "Size": 1992,
-                    "LineCount": 121,
-                    "SourceLineCount": 95,
+                    "Size": 1955,
+                    "LineCount": 118,
+                    "SourceLineCount": 92,
                     "FunctionCount": 8,
                     "TypeCount": 0,
                     "ConstantCount": 0,
@@ -25263,11 +25297,15 @@
                         {
                             "PackageName": "reflect",
                             "Alias": "reflect"
+                        },
+                        {
+                            "PackageName": "slices",
+                            "Alias": "slices"
                         }
                     ],
-                    "Size": 1561,
-                    "LineCount": 93,
-                    "SourceLineCount": 73,
+                    "Size": 1535,
+                    "LineCount": 88,
+                    "SourceLineCount": 69,
                     "FunctionCount": 3,
                     "TypeCount": 0,
                     "ConstantCount": 0,
@@ -25329,6 +25367,10 @@
                             "Alias": "fmt"
                         },
                         {
+                            "PackageName": "maps",
+                            "Alias": "maps"
+                        },
+                        {
                             "PackageName": "reflect",
                             "Alias": "reflect"
                         },
@@ -25353,9 +25395,9 @@
                             "Alias": "jsonpath"
                         }
                     ],
-                    "Size": 2854,
-                    "LineCount": 127,
-                    "SourceLineCount": 101,
+                    "Size": 2840,
+                    "LineCount": 126,
+                    "SourceLineCount": 100,
                     "FunctionCount": 3,
                     "TypeCount": 0,
                     "ConstantCount": 0,
@@ -25377,7 +25419,7 @@
                             "Alias": "require"
                         }
                     ],
-                    "Size": 907,
+                    "Size": 886,
                     "LineCount": 54,
                     "SourceLineCount": 44,
                     "FunctionCount": 0,
@@ -25581,7 +25623,7 @@
                         }
                     ],
                     "Signature": "ConvertTo(toType ConvertType, inI any) (any, error)",
-                    "Source": "ewoJdmFyIGluUyBzdHJpbmcKCXZhciBpblNlcnIgZXJyb3IKCWlmIGluViwgb2sgOj0gaW5JLihyZWZsZWN0LlZhbHVlKTsgb2sgewoJCWlmIGluVi5DYW5JbnRlcmZhY2UoKSB7CgkJCWluSSA9IGluVi5JbnRlcmZhY2UoKQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoInJlZmxlY3QuVmFsdWUgZ2l2ZW4sIGJ1dCBjYW5ub3QgcmV0cmlldmUgaW50ZXJmYWNlIHZhbHVlIikKCQl9Cgl9CglpblMsIGluU2VyciA9IFRvU3RyaW5nKGluSSkKCXN3aXRjaCB0b1R5cGUgewoJY2FzZSBGbG9hdDoKCQlpZiBpblMgPT0gYGAgewoJCQlyZXR1cm4gZmxvYXQ2NCgwKSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oZmxvYXQzMik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGZsb2F0NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQ4KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MTYpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQzMik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDY0KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQ4KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDE2KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDY0KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIElzSGV4YWRlY2ltYWwoaW5JKSB7CgkJCXYsIGVyciA6PSBDb252ZXJ0SGV4VG9JbnRlZ2VyKGluSSkKCQkJcmV0dXJuIGZsb2F0NjQodiksIGVycgoJCX0KCQlyZXR1cm4gc3RyY29udi5QYXJzZUZsb2F0KGluUywgNjQpCgljYXNlIEludGVnZXI6CgkJaWYgaW5UaW1lLCBvayA6PSBpbkkuKHRpbWUuVGltZSk7IG9rIHsKCQkJcmV0dXJuIGludDY0KGluVGltZS5Vbml4TmFubygpKSwgbmlsCgkJfSBlbHNlIGlmIGluUyA9PSBgYCB7CgkJCXJldHVybiBpbnQ2NCgwKSwgbmlsCgkJfSBlbHNlIGlmIGxheW91dCA6PSBEZXRlY3RUaW1lRm9ybWF0KGluUyk7IGxheW91dCAhPSBgYCAmJiBsYXlvdXQgIT0gYGVwb2NoYCB7CgkJCWlmIHRtLCBlcnIgOj0gdGltZS5QYXJzZShsYXlvdXQsIGluUyk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHRtLlVuaXhOYW5vKCksIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCX0KCQl9IGVsc2UgaWYgSXNIZXhhZGVjaW1hbChpbkkpIHsKCQkJcmV0dXJuIENvbnZlcnRIZXhUb0ludGVnZXIoaW5JKQoJCX0KCQlpZiB2LCBvayA6PSBpbkkuKGludCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQ4KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDE2KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDMyKTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDY0KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDgpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDE2KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQzMik7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50NjQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfQoJCXJldHVybiBzdHJjb252LlBhcnNlSW50KGluUywgMTAsIDY0KQoJY2FzZSBCb29sZWFuOgoJCWlmIGluSSA9PSBuaWwgewoJCQlyZXR1cm4gZmFsc2UsIG5pbAoJCX0KCQlpZiBJc0Jvb2xlYW5UcnVlKGluUykgewoJCQlyZXR1cm4gdHJ1ZSwgbmlsCgkJfSBlbHNlIGlmIElzQm9vbGVhbkZhbHNlKGluUykgewoJCQlyZXR1cm4gZmFsc2UsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoIkNhbm5vdCBjb252ZXJ0ICclcycgaW50byBhIGJvb2xlYW4gdmFsdWUiLCBpblMpCgkJfQoJY2FzZSBUaW1lOgoJCWlmIGluVGltZSwgb2sgOj0gaW5JLih0aW1lLlRpbWUpOyBvayB7CgkJCXJldHVybiBpblRpbWUsIG5pbAoJCX0KCQlpblMgPSBzdHJpbmdzLlRyaW0oc3RyaW5ncy5UcmltU3BhY2UoaW5TKSwgYCInYCkKCQlpZiBEZXRlY3RUaW1lRm9ybWF0KGluUykgPT0gYGVwb2NoYCB7CgkJCWlmIHYsIGVyciA6PSBzdHJjb252LlBhcnNlSW50KGluUywgMTAsIDY0KTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdGltZS5Vbml4KHYsIDApLCBuaWwKCQkJfQoJCX0KCQlmb3IgXywgZm9ybWF0IDo9IHJhbmdlIFRpbWVGb3JtYXRzIHsKCQkJaWYgdG0sIGVyciA6PSB0aW1lLlBhcnNlKGZvcm1hdCwgc3RyaW5ncy5UcmltU3BhY2UoaW5TKSk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHRtLCBuaWwKCQkJfQoJCX0KCQlzd2l0Y2ggaW5TIHsKCQljYXNlIGBub3dgOgoJCQlyZXR1cm4gdGltZS5Ob3coKSwgbmlsCgkJZGVmYXVsdDoKCQkJdmFyIHRtUyA9IHN0cmluZ3MuTWFwKGZ1bmMociBydW5lKSBydW5lIHsKCQkJCXN3aXRjaCByIHsKCQkJCWNhc2UgJy0nLCAnOicsICcgJywgJ1QnLCAnWic6CgkJCQkJcmV0dXJuICcwJwoJCQkJfQoJCQkJcmV0dXJuIHIKCQkJfSwgaW5TKQoJCQlpZiB2LCBlcnIgOj0gc3RyY29udi5QYXJzZUludCh0bVMsIDEwLCA2NCk7IGVyciA9PSBuaWwgJiYgdiA9PSAwIHsKCQkJCXJldHVybiB0aW1lLlRpbWV7fSwgbmlsCgkJCX0KCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgJyVzJyBpbnRvIGEgZGF0ZS90aW1lIHZhbHVlIiwgaW5TKQoJCX0KCWNhc2UgQnl0ZXM6CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBbIC8vIGhhbmRsZSB0aW1lIHplcm8gdmFsdWVzCgkJCV1ieXRle30sIG5pbAoJCX0gZWxzZSBpZiBpblIsIG9rIDo9IGluSS4oaW8uUmVhZGVyKTsgb2sgewoJCQlpZiBkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChpblIpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBkYXRhLCBuaWwKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBgYCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgaW8uUmVhZGVyIHRvIFtdYnl0ZTogJXYiLCBlcnIpCgkJCX0KCQl9IGVsc2UgaWYgaW5CLCBvayA6PSBpbkkuKFtdYnl0ZSk7IG9rIHsKCQkJcmV0dXJuIGluQiwgbmlsCgkJfSBlbHNlIGlmIGluQiwgb2sgOj0gaW5JLihbXXVpbnQ4KTsgb2sgewoJCQl2YXIgb3V0QiA9IG1ha2UoW11ieXRlLCBsZW4oaW5CKSkKCQkJZm9yIGksIHYgOj0gcmFuZ2UgaW5CIHsKCQkJCW91dEJbaV0gPSBieXRlKHYpCgkJCX0KCQkJcmV0dXJuIG91dEIsIG5pbAoJCX0gZWxzZSBpZiBJc0tpbmQoaW5JLCByZWZsZWN0LlNsaWNlLCByZWZsZWN0LkFycmF5KSB7CgkJCXZhciBvdXRCID0gbWFrZShbXWJ5dGUsIDApCgkJCWlmIGVyciA6PSBTbGljZUVhY2goaW5JLCBmdW5jKGkgaW50LCB2YWx1ZSBhbnkpIGVycm9yIHsKCQkJCWlmIGJiLCBlcnIgOj0gQ29udmVydFRvSW50ZWdlcih2YWx1ZSk7IGVyciA9PSBuaWwgewoJCQkJCW91dEIgPSBhcHBlbmQob3V0QiwgYnl0ZShiYikpCgkJCQkJcmV0dXJuIG5pbAoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gZXJyCgkJCQl9CgkJCX0pOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBvdXRCLCBuaWwKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBuaWwsIGVycgoJCQl9CgkJfSBlbHNlIGlmIGluU2VyciA9PSBuaWwgewoJCQlyZXR1cm4gW11ieXRlKGluUyksIGluU2VycgoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGluU2VycgoJCX0KCWNhc2UgU3RyaW5nOgoJCWlmIGluSSA9PSBuaWwgewoJCQlyZXR1cm4gYGAsIG5pbAoJCX0gZWxzZSBpZiBpblIsIG9rIDo9IGluSS4oaW8uUmVhZGVyKTsgb2sgewoJCQlpZiBkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChpblIpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBzdHJpbmcoZGF0YSksIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCBpby5SZWFkZXIgdG8gc3RyaW5nOiAldiIsIGVycikKCQkJfQoJCX0gZWxzZSBpZiBpbkIsIG9rIDo9IGluSS4oW11ieXRlKTsgb2sgewoJCQlyZXR1cm4gc3RyaW5nKGluQiksIG5pbAoJCX0gZWxzZSBpZiBpblNyLCBvayA6PSBpbkkuKGZtdC5TdHJpbmdlcik7IG9rIHsKCQkJcmV0dXJuIGluU3IuU3RyaW5nKCksIG5pbAoJCX0gZWxzZSBpZiBpblYgOj0gcmVmbGVjdC5WYWx1ZU9mKGluSSk7IGluVi5LaW5kKCkgPT0gcmVmbGVjdC5QdHIgewoJCQlpblMsIGluU2VyciA9IFRvU3RyaW5nKGluVi5FbGVtKCkpCgkJfQoJCXJldHVybiBpblMsIGluU2VycgoJZGVmYXVsdDoKCQlyZXR1cm4gaW5JLCBuaWwKCX0KfQ==",
+                    "Source": "ewoJdmFyIGluUyBzdHJpbmcKCXZhciBpblNlcnIgZXJyb3IKCWlmIGluViwgb2sgOj0gaW5JLihyZWZsZWN0LlZhbHVlKTsgb2sgewoJCWlmIGluVi5DYW5JbnRlcmZhY2UoKSB7CgkJCWluSSA9IGluVi5JbnRlcmZhY2UoKQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoInJlZmxlY3QuVmFsdWUgZ2l2ZW4sIGJ1dCBjYW5ub3QgcmV0cmlldmUgaW50ZXJmYWNlIHZhbHVlIikKCQl9Cgl9CglpblMsIGluU2VyciA9IFRvU3RyaW5nKGluSSkKCXN3aXRjaCB0b1R5cGUgewoJY2FzZSBGbG9hdDoKCQlpZiBpblMgPT0gYGAgewoJCQlyZXR1cm4gZmxvYXQ2NCgwKSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oZmxvYXQzMik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGZsb2F0NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQ4KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MTYpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQzMik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDY0KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQ4KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDE2KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDY0KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIElzSGV4YWRlY2ltYWwoaW5JKSB7CgkJCXYsIGVyciA6PSBDb252ZXJ0SGV4VG9JbnRlZ2VyKGluSSkKCQkJcmV0dXJuIGZsb2F0NjQodiksIGVycgoJCX0KCQlyZXR1cm4gc3RyY29udi5QYXJzZUZsb2F0KGluUywgNjQpCgljYXNlIEludGVnZXI6CgkJaWYgaW5UaW1lLCBvayA6PSBpbkkuKHRpbWUuVGltZSk7IG9rIHsKCQkJcmV0dXJuIGludDY0KGluVGltZS5Vbml4TmFubygpKSwgbmlsCgkJfSBlbHNlIGlmIGluUyA9PSBgYCB7CgkJCXJldHVybiBpbnQ2NCgwKSwgbmlsCgkJfSBlbHNlIGlmIGxheW91dCA6PSBEZXRlY3RUaW1lRm9ybWF0KGluUyk7IGxheW91dCAhPSBgYCAmJiBsYXlvdXQgIT0gYGVwb2NoYCB7CgkJCWlmIHRtLCBlcnIgOj0gdGltZS5QYXJzZShsYXlvdXQsIGluUyk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHRtLlVuaXhOYW5vKCksIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCX0KCQl9IGVsc2UgaWYgSXNIZXhhZGVjaW1hbChpbkkpIHsKCQkJcmV0dXJuIENvbnZlcnRIZXhUb0ludGVnZXIoaW5JKQoJCX0KCQlpZiB2LCBvayA6PSBpbkkuKGludCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQ4KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDE2KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDMyKTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDY0KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDgpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDE2KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQzMik7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50NjQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfQoJCXJldHVybiBzdHJjb252LlBhcnNlSW50KGluUywgMTAsIDY0KQoJY2FzZSBCb29sZWFuOgoJCWlmIGluSSA9PSBuaWwgewoJCQlyZXR1cm4gZmFsc2UsIG5pbAoJCX0KCQlpZiBJc0Jvb2xlYW5UcnVlKGluUykgewoJCQlyZXR1cm4gdHJ1ZSwgbmlsCgkJfSBlbHNlIGlmIElzQm9vbGVhbkZhbHNlKGluUykgewoJCQlyZXR1cm4gZmFsc2UsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoIkNhbm5vdCBjb252ZXJ0ICclcycgaW50byBhIGJvb2xlYW4gdmFsdWUiLCBpblMpCgkJfQoJY2FzZSBUaW1lOgoJCWlmIGluVGltZSwgb2sgOj0gaW5JLih0aW1lLlRpbWUpOyBvayB7CgkJCXJldHVybiBpblRpbWUsIG5pbAoJCX0KCQlpblMgPSBzdHJpbmdzLlRyaW0oc3RyaW5ncy5UcmltU3BhY2UoaW5TKSwgYCInYCkKCQlpZiBEZXRlY3RUaW1lRm9ybWF0KGluUykgPT0gYGVwb2NoYCB7CgkJCWlmIHYsIGVyciA6PSBzdHJjb252LlBhcnNlSW50KGluUywgMTAsIDY0KTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdGltZS5Vbml4KHYsIDApLCBuaWwKCQkJfQoJCX0KCQlmb3IgXywgZm9ybWF0IDo9IHJhbmdlIFRpbWVGb3JtYXRzIHsKCQkJaWYgdG0sIGVyciA6PSB0aW1lLlBhcnNlKGZvcm1hdCwgc3RyaW5ncy5UcmltU3BhY2UoaW5TKSk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHRtLCBuaWwKCQkJfQoJCX0KCQlzd2l0Y2ggaW5TIHsKCQljYXNlIGBub3dgOgoJCQlyZXR1cm4gdGltZS5Ob3coKSwgbmlsCgkJZGVmYXVsdDoKCQkJdmFyIHRtUyA9IHN0cmluZ3MuTWFwKGZ1bmMociBydW5lKSBydW5lIHsKCQkJCXN3aXRjaCByIHsKCQkJCWNhc2UgJy0nLCAnOicsICcgJywgJ1QnLCAnWic6CgkJCQkJcmV0dXJuICcwJwoJCQkJfQoJCQkJcmV0dXJuIHIKCQkJfSwgaW5TKQoJCQlpZiB2LCBlcnIgOj0gc3RyY29udi5QYXJzZUludCh0bVMsIDEwLCA2NCk7IGVyciA9PSBuaWwgJiYgdiA9PSAwIHsKCQkJCXJldHVybiB0aW1lLlRpbWV7fSwgbmlsCgkJCX0KCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgJyVzJyBpbnRvIGEgZGF0ZS90aW1lIHZhbHVlIiwgaW5TKQoJCX0KCWNhc2UgQnl0ZXM6CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBbIC8vIGhhbmRsZSB0aW1lIHplcm8gdmFsdWVzCgkJCV1ieXRle30sIG5pbAoJCX0gZWxzZSBpZiBpblIsIG9rIDo9IGluSS4oaW8uUmVhZGVyKTsgb2sgewoJCQlpZiBkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChpblIpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBkYXRhLCBuaWwKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBgYCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgaW8uUmVhZGVyIHRvIFtdYnl0ZTogJXYiLCBlcnIpCgkJCX0KCQl9IGVsc2UgaWYgaW5CLCBvayA6PSBpbkkuKFtdYnl0ZSk7IG9rIHsKCQkJcmV0dXJuIGluQiwgbmlsCgkJfSBlbHNlIGlmIGluQiwgb2sgOj0gaW5JLihbXXVpbnQ4KTsgb2sgewoJCQl2YXIgb3V0QiA9IG1ha2UoW11ieXRlLCBsZW4oaW5CKSkKCQkJZm9yIGksIHYgOj0gcmFuZ2UgaW5CIHsKCQkJCW91dEJbaV0gPSBieXRlKHYpCgkJCX0KCQkJcmV0dXJuIG91dEIsIG5pbAoJCX0gZWxzZSBpZiBJc0tpbmQoaW5JLCByZWZsZWN0LlNsaWNlLCByZWZsZWN0LkFycmF5KSB7CgkJCXZhciBvdXRCID0gbWFrZShbXWJ5dGUsIDApCgkJCWlmIGVyciA6PSBTbGljZUVhY2goaW5JLCBmdW5jKGkgaW50LCB2YWx1ZSBhbnkpIGVycm9yIHsKCQkJCWlmIGJiLCBlcnIgOj0gQ29udmVydFRvSW50ZWdlcih2YWx1ZSk7IGVyciA9PSBuaWwgewoJCQkJCW91dEIgPSBhcHBlbmQob3V0QiwgYnl0ZShiYikpCgkJCQkJcmV0dXJuIG5pbAoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gZXJyCgkJCQl9CgkJCX0pOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBvdXRCLCBuaWwKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBuaWwsIGVycgoJCQl9CgkJfSBlbHNlIGlmIGluU2VyciA9PSBuaWwgewoJCQlyZXR1cm4gW11ieXRlKGluUyksIGluU2VycgoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGluU2VycgoJCX0KCWNhc2UgU3RyaW5nOgoJCWlmIGluSSA9PSBuaWwgewoJCQlyZXR1cm4gYGAsIG5pbAoJCX0gZWxzZSBpZiBpblIsIG9rIDo9IGluSS4oaW8uUmVhZGVyKTsgb2sgewoJCQlpZiBkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChpblIpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBzdHJpbmcoZGF0YSksIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCBpby5SZWFkZXIgdG8gc3RyaW5nOiAldiIsIGVycikKCQkJfQoJCX0gZWxzZSBpZiBpbkIsIG9rIDo9IGluSS4oW11ieXRlKTsgb2sgewoJCQlyZXR1cm4gc3RyaW5nKGluQiksIG5pbAoJCX0gZWxzZSBpZiBpblNyLCBvayA6PSBpbkkuKGZtdC5TdHJpbmdlcik7IG9rIHsKCQkJcmV0dXJuIGluU3IuU3RyaW5nKCksIG5pbAoJCX0gZWxzZSBpZiBpblYgOj0gcmVmbGVjdC5WYWx1ZU9mKGluSSk7IGluVi5LaW5kKCkgPT0gcmVmbGVjdC5Qb2ludGVyIHsKCQkJaW5TLCBpblNlcnIgPSBUb1N0cmluZyhpblYuRWxlbSgpKQoJCX0KCQlyZXR1cm4gaW5TLCBpblNlcnIKCWRlZmF1bHQ6CgkJcmV0dXJuIGluSSwgbmlsCgl9Cn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -25742,7 +25784,7 @@
                         }
                     ],
                     "Signature": "GenericMarshalJSON(in any, extraData ...map[string]any) ([]byte, error)",
-                    "Source": "ewoJdmFyIHN2YWwgPSBzdHJ1Y3RzLk5ldyhpbikKCXZhciBvdXRwdXQgPSBtYWtlKG1hcFtzdHJpbmddYW55KQpGaWVsZExvb3A6Cglmb3IgXywgZmllbGQgOj0gcmFuZ2Ugc3ZhbC5GaWVsZHMoKSB7CgkJaWYgZmllbGQuSXNFeHBvcnRlZCgpIHsKCQkJdmFyIGtleSA9IGZpZWxkLk5hbWUoKQoJCQl2YXIgdmFsdWUgPSBmaWVsZC5WYWx1ZSgpCgkJCWlmIHZUaW1lLCBvayA6PSB2YWx1ZS4odGltZS5UaW1lKTsgb2sgewoJCQkJaWYgdlRpbWUuSXNaZXJvKCkgewoJCQkJCXZhbHVlID0gbmlsCgkJCQl9IGVsc2UgewoJCQkJCXZhbHVlID0gdlRpbWUuRm9ybWF0KHRpbWUuUkZDMzMzOU5hbm8pCgkJCQl9CgkJCX0gZWxzZSBpZiBfLCBvayA6PSB2YWx1ZS4oZm10LlN0cmluZ2VyKTsgb2sgewoJCQkJdmFsdWUgPSBmbXQuU3ByaW50ZigiJXYiLCB2YWx1ZSkKCQkJfQoJCQlpZiBwYXJ0cyA6PSBzdHJpbmdzLlNwbGl0KGZpZWxkLlRhZyhganNvbmApLCBgLGApOyBsZW4ocGFydHMpID4gMCB7CgkJCQlpZiBwYXJ0c1swXSAhPSBgYCB7CgkJCQkJa2V5ID0gcGFydHNbMF0KCQkJCX0KCQkJCWlmIGxlbihwYXJ0cykgPiAxIHsKCQkJCQlmb3IgXywgZmxhZyA6PSByYW5nZSBwYXJ0c1sxOl0gewoJCQkJCQlzd2l0Y2ggZmxhZyB7CgkJCQkJCWNhc2UgYG9taXRlbXB0eWA6CgkJCQkJCQlpZiBmaWVsZC5Jc1plcm8oKSB7CgkJCQkJCQkJY29udGludWUgRmllbGRMb29wCgkJCQkJCQl9CgkJCQkJCX0KCQkJCQl9CgkJCQl9CgkJCX0KCQkJb3V0cHV0W2tleV0gPSB2YWx1ZQoJCX0KCX0KCWlmIGxlbihleHRyYURhdGEpID4gMCAmJiBsZW4oZXh0cmFEYXRhWzBdKSA+IDAgewoJCWZvciBrLCB2IDo9IHJhbmdlIGV4dHJhRGF0YVswXSB7CgkJCW91dHB1dFtrXSA9IHYKCQl9Cgl9CglyZXR1cm4ganNvbi5NYXJzaGFsKG91dHB1dCkKfQ==",
+                    "Source": "ewoJdmFyIHN2YWwgPSBzdHJ1Y3RzLk5ldyhpbikKCXZhciBvdXRwdXQgPSBtYWtlKG1hcFtzdHJpbmddYW55KQpGaWVsZExvb3A6Cglmb3IgXywgZmllbGQgOj0gcmFuZ2Ugc3ZhbC5GaWVsZHMoKSB7CgkJaWYgZmllbGQuSXNFeHBvcnRlZCgpIHsKCQkJdmFyIGtleSA9IGZpZWxkLk5hbWUoKQoJCQl2YXIgdmFsdWUgPSBmaWVsZC5WYWx1ZSgpCgkJCWlmIHZUaW1lLCBvayA6PSB2YWx1ZS4odGltZS5UaW1lKTsgb2sgewoJCQkJaWYgdlRpbWUuSXNaZXJvKCkgewoJCQkJCXZhbHVlID0gbmlsCgkJCQl9IGVsc2UgewoJCQkJCXZhbHVlID0gdlRpbWUuRm9ybWF0KHRpbWUuUkZDMzMzOU5hbm8pCgkJCQl9CgkJCX0gZWxzZSBpZiBfLCBvayA6PSB2YWx1ZS4oZm10LlN0cmluZ2VyKTsgb2sgewoJCQkJdmFsdWUgPSBmbXQuU3ByaW50ZigiJXYiLCB2YWx1ZSkKCQkJfQoJCQlpZiBwYXJ0cyA6PSBzdHJpbmdzLlNwbGl0KGZpZWxkLlRhZyhganNvbmApLCBgLGApOyBsZW4ocGFydHMpID4gMCB7CgkJCQlpZiBwYXJ0c1swXSAhPSBgYCB7CgkJCQkJa2V5ID0gcGFydHNbMF0KCQkJCX0KCQkJCWlmIGxlbihwYXJ0cykgPiAxIHsKCQkJCQlmb3IgXywgZmxhZyA6PSByYW5nZSBwYXJ0c1sxOl0gewoJCQkJCQlzd2l0Y2ggZmxhZyB7CgkJCQkJCWNhc2UgYG9taXRlbXB0eWA6CgkJCQkJCQlpZiBmaWVsZC5Jc1plcm8oKSB7CgkJCQkJCQkJY29udGludWUgRmllbGRMb29wCgkJCQkJCQl9CgkJCQkJCX0KCQkJCQl9CgkJCQl9CgkJCX0KCQkJb3V0cHV0W2tleV0gPSB2YWx1ZQoJCX0KCX0KCWlmIGxlbihleHRyYURhdGEpID4gMCAmJiBsZW4oZXh0cmFEYXRhWzBdKSA+IDAgewoJCW1hcHMuQ29weShvdXRwdXQsIGV4dHJhRGF0YVswXSkKCX0KCXJldHVybiBqc29uLk1hcnNoYWwob3V0cHV0KQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -25776,7 +25818,7 @@
                         }
                     ],
                     "Signature": "IsBooleanFalse(inI any) bool",
-                    "Source": "ewoJaWYgaW4sIGVyciA6PSBUb1N0cmluZyhpbkkpOyBlcnIgPT0gbmlsIHsKCQlpbiA9IHN0cmluZ3MuVG9Mb3dlcihpbikKCQlmb3IgXywgdmFsIDo9IHJhbmdlIEJvb2xlYW5GYWxzZVZhbHVlcyB7CgkJCWlmIGluID09IHZhbCB7CgkJCQlyZXR1cm4gdHJ1ZQoJCQl9CgkJfQoJfQoJcmV0dXJuIGZhbHNlCn0=",
+                    "Source": "ewoJaWYgaW4sIGVyciA6PSBUb1N0cmluZyhpbkkpOyBlcnIgPT0gbmlsIHsKCQlpbiA9IHN0cmluZ3MuVG9Mb3dlcihpbikKCQlpZiBzbGljZXMuQ29udGFpbnMoQm9vbGVhbkZhbHNlVmFsdWVzLCBpbikgewoJCQlyZXR1cm4gdHJ1ZQoJCX0KCX0KCXJldHVybiBmYWxzZQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -25793,7 +25835,7 @@
                         }
                     ],
                     "Signature": "IsBooleanTrue(inI any) bool",
-                    "Source": "ewoJaWYgaW4sIGVyciA6PSBUb1N0cmluZyhpbkkpOyBlcnIgPT0gbmlsIHsKCQlpbiA9IHN0cmluZ3MuVG9Mb3dlcihpbikKCQlmb3IgXywgdmFsIDo9IHJhbmdlIEJvb2xlYW5UcnVlVmFsdWVzIHsKCQkJaWYgaW4gPT0gdmFsIHsKCQkJCXJldHVybiB0cnVlCgkJCX0KCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
+                    "Source": "ewoJaWYgaW4sIGVyciA6PSBUb1N0cmluZyhpbkkpOyBlcnIgPT0gbmlsIHsKCQlpbiA9IHN0cmluZ3MuVG9Mb3dlcihpbikKCQlpZiBzbGljZXMuQ29udGFpbnMoQm9vbGVhblRydWVWYWx1ZXMsIGluKSB7CgkJCXJldHVybiB0cnVlCgkJfQoJfQoJcmV0dXJuIGZhbHNlCn0=",
                     "IsPackageLevel": true
                 },
                 {
@@ -25827,7 +25869,7 @@
                         }
                     ],
                     "Signature": "IsHexadecimal(in any) bool",
-                    "Source": "ewoJaWYgaW5TLCBlcnIgOj0gVG9TdHJpbmcoaW4pOyBlcnIgPT0gbmlsIHsKCQlpblMgPSBzdHJpbmdzLlRvTG93ZXIoaW5TKQoJCWlmIHN0cmluZ3MuSGFzUHJlZml4KGluUywgYDB4YCkgewoJCQlpblMgPSBzdHJpbmdzLlRyaW1QcmVmaXgoaW5TLCBgMHhgKQoJCX0gZWxzZSB7CgkJCXJldHVybiBmYWxzZQoJCX0KCQlmb3IgXywgciA6PSByYW5nZSBpblMgewoJCQlpZiByID49ICcwJyAmJiByIDw9ICc5JyB8fCByID49ICdhJyAmJiByIDw9ICdmJyB7CgkJCQljb250aW51ZQoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGZhbHNlCgkJCX0KCQl9Cgl9IGVsc2UgewoJCXJldHVybiBmYWxzZQoJfQoJcmV0dXJuIHRydWUKfQ==",
+                    "Source": "ewoJaWYgaW5TLCBlcnIgOj0gVG9TdHJpbmcoaW4pOyBlcnIgPT0gbmlsIHsKCQlpblMgPSBzdHJpbmdzLlRvTG93ZXIoaW5TKQoJCWlmIGFmdGVyLCBvayA6PSBzdHJpbmdzLkN1dFByZWZpeChpblMsIGAweGApOyBvayB7CgkJCWluUyA9IGFmdGVyCgkJfSBlbHNlIHsKCQkJcmV0dXJuIGZhbHNlCgkJfQoJCWZvciBfLCByIDo9IHJhbmdlIGluUyB7CgkJCWlmIHIgPj0gJzAnICYmIHIgPD0gJzknIHx8IHIgPj0gJ2EnICYmIHIgPD0gJ2YnIHsKCQkJCWNvbnRpbnVlCgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gZmFsc2UKCQkJfQoJCX0KCX0gZWxzZSB7CgkJcmV0dXJuIGZhbHNlCgl9CglyZXR1cm4gdHJ1ZQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -25866,7 +25908,7 @@
                         }
                     ],
                     "Signature": "IsKind(in any, kinds ...reflect.Kind) bool",
-                    "Source": "ewoJdmFyIGluVCByZWZsZWN0LlR5cGUKCWlmIHYsIG9rIDo9IGluLihyZWZsZWN0LlZhbHVlKTsgb2sgJiYgdi5Jc1ZhbGlkKCkgewoJCWluVCA9IHYuVHlwZSgpCgl9IGVsc2UgaWYgdiwgb2sgOj0gaW4uKHJlZmxlY3QuVHlwZSk7IG9rIHsKCQlpblQgPSB2Cgl9IGVsc2UgewoJCWluID0gUmVzb2x2ZVZhbHVlKGluKQoJCWluVCA9IHJlZmxlY3QuVHlwZU9mKGluKQoJfQoJaWYgaW5UID09IG5pbCB7CgkJcmV0dXJuIGZhbHNlCgl9Cglmb3IgXywgayA6PSByYW5nZSBraW5kcyB7CgkJaWYgaW5ULktpbmQoKSA9PSBrIHsKCQkJcmV0dXJuIHRydWUKCQl9Cgl9CglyZXR1cm4gZmFsc2UKfQ==",
+                    "Source": "ewoJdmFyIGluVCByZWZsZWN0LlR5cGUKCWlmIHYsIG9rIDo9IGluLihyZWZsZWN0LlZhbHVlKTsgb2sgJiYgdi5Jc1ZhbGlkKCkgewoJCWluVCA9IHYuVHlwZSgpCgl9IGVsc2UgaWYgdiwgb2sgOj0gaW4uKHJlZmxlY3QuVHlwZSk7IG9rIHsKCQlpblQgPSB2Cgl9IGVsc2UgewoJCWluID0gUmVzb2x2ZVZhbHVlKGluKQoJCWluVCA9IHJlZmxlY3QuVHlwZU9mKGluKQoJfQoJaWYgaW5UID09IG5pbCB7CgkJcmV0dXJuIGZhbHNlCgl9CglyZXR1cm4gc2xpY2VzLkNvbnRhaW5zKGtpbmRzLCBpblQuS2luZCgpKQp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -25947,7 +25989,7 @@
                         }
                     ],
                     "Signature": "JSONPath(data any, query string, autowrap bool) (any, error)",
-                    "Source": "ewoJaWYgcmVmbGVjdC5UeXBlT2YoZGF0YSkuS2luZCgpID09IHJlZmxlY3QuTWFwICYmIHF1ZXJ5ICE9IGBgIHsKCQlmb3IgXywgbGluZSA6PSByYW5nZSBzdHJpbmdzLlNwbGl0KHF1ZXJ5LCAiXG4iKSB7CgkJCWxpbmUgPSBzdHJpbmdzLlRyaW1TcGFjZShsaW5lKQoJCQlpZiBsaW5lID09IGBgIHsKCQkJCWNvbnRpbnVlCgkJCX0gZWxzZSBpZiBhdXRvd3JhcCB7CgkJCQlsaW5lID0gc3RyaW5ncy5UcmltUHJlZml4KGxpbmUsIGB7YCkKCQkJCWxpbmUgPSBzdHJpbmdzLlRyaW1TdWZmaXgobGluZSwgYH1gKQoJCQkJbGluZSA9IGB7YCArIGxpbmUgKyBgfWAKCQkJfQoJCQl2YXIganAgPSBqc29ucGF0aC5OZXcoYGApLkFsbG93TWlzc2luZ0tleXModHJ1ZSkKCQkJaWYgZXJyIDo9IGpwLlBhcnNlKGxpbmUpOyBlcnIgPT0gbmlsIHsKCQkJCXZhciB2YWx1ZXMgW11hbnkKCQkJCWlmIHJlc3VsdHMsIGVyciA6PSBqcC5GaW5kUmVzdWx0cyhkYXRhKTsgZXJyID09IG5pbCB7CgkJCQkJZm9yIF8sIHBhaXIgOj0gcmFuZ2UgcmVzdWx0cyB7CgkJCQkJCWZvciBfLCBwIDo9IHJhbmdlIHBhaXIgewoJCQkJCQkJaWYgcC5Jc1ZhbGlkKCkgJiYgcC5DYW5JbnRlcmZhY2UoKSB7CgkJCQkJCQkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgcC5JbnRlcmZhY2UoKSkKCQkJCQkJCX0KCQkJCQkJfQoJCQkJCX0KCQkJCX0gZWxzZSB7CgkJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCQl9CgkJCQlzd2l0Y2ggbGVuKHZhbHVlcykgewoJCQkJY2FzZSAwOgoJCQkJCWRhdGEgPSBuaWwKCQkJCWNhc2UgMToKCQkJCQlkYXRhID0gdmFsdWVzWzBdCgkJCQlkZWZhdWx0OgoJCQkJCWRhdGEgPSB2YWx1ZXMKCQkJCX0KCQkJfSBlbHNlIHsKCQkJCXJldHVybiBuaWwsIGVycgoJCQl9CgkJfQoJfQoJcmV0dXJuIGRhdGEsIG5pbAp9",
+                    "Source": "ewoJaWYgcmVmbGVjdC5UeXBlT2YoZGF0YSkuS2luZCgpID09IHJlZmxlY3QuTWFwICYmIHF1ZXJ5ICE9IGBgIHsKCQlmb3IgbGluZSA6PSByYW5nZSBzdHJpbmdzLlNwbGl0U2VxKHF1ZXJ5LCAiXG4iKSB7CgkJCWxpbmUgPSBzdHJpbmdzLlRyaW1TcGFjZShsaW5lKQoJCQlpZiBsaW5lID09IGBgIHsKCQkJCWNvbnRpbnVlCgkJCX0gZWxzZSBpZiBhdXRvd3JhcCB7CgkJCQlsaW5lID0gc3RyaW5ncy5UcmltUHJlZml4KGxpbmUsIGB7YCkKCQkJCWxpbmUgPSBzdHJpbmdzLlRyaW1TdWZmaXgobGluZSwgYH1gKQoJCQkJbGluZSA9IGB7YCArIGxpbmUgKyBgfWAKCQkJfQoJCQl2YXIganAgPSBqc29ucGF0aC5OZXcoYGApLkFsbG93TWlzc2luZ0tleXModHJ1ZSkKCQkJaWYgZXJyIDo9IGpwLlBhcnNlKGxpbmUpOyBlcnIgPT0gbmlsIHsKCQkJCXZhciB2YWx1ZXMgW11hbnkKCQkJCWlmIHJlc3VsdHMsIGVyciA6PSBqcC5GaW5kUmVzdWx0cyhkYXRhKTsgZXJyID09IG5pbCB7CgkJCQkJZm9yIF8sIHBhaXIgOj0gcmFuZ2UgcmVzdWx0cyB7CgkJCQkJCWZvciBfLCBwIDo9IHJhbmdlIHBhaXIgewoJCQkJCQkJaWYgcC5Jc1ZhbGlkKCkgJiYgcC5DYW5JbnRlcmZhY2UoKSB7CgkJCQkJCQkJdmFsdWVzID0gYXBwZW5kKHZhbHVlcywgcC5JbnRlcmZhY2UoKSkKCQkJCQkJCX0KCQkJCQkJfQoJCQkJCX0KCQkJCX0gZWxzZSB7CgkJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCQl9CgkJCQlzd2l0Y2ggbGVuKHZhbHVlcykgewoJCQkJY2FzZSAwOgoJCQkJCWRhdGEgPSBuaWwKCQkJCWNhc2UgMToKCQkJCQlkYXRhID0gdmFsdWVzWzBdCgkJCQlkZWZhdWx0OgoJCQkJCWRhdGEgPSB2YWx1ZXMKCQkJCX0KCQkJfSBlbHNlIHsKCQkJCXJldHVybiBuaWwsIGVycgoJCQl9CgkJfQoJfQoJcmV0dXJuIGRhdGEsIG5pbAp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -26001,7 +26043,7 @@
                         }
                     ],
                     "Signature": "ResolveValue(in any) any",
-                    "Source": "ewoJdmFyIGluViByZWZsZWN0LlZhbHVlCglpZiB2Viwgb2sgOj0gaW4uKHJlZmxlY3QuVmFsdWUpOyBvayB7CgkJaW5WID0gdlYKCX0gZWxzZSB7CgkJaW5WID0gcmVmbGVjdC5WYWx1ZU9mKGluKQoJfQoJaWYgaW5WLklzVmFsaWQoKSB7CgkJaWYgaW5UIDo9IGluVi5UeXBlKCk7IGluVCA9PSBuaWwgewoJCQlyZXR1cm4gbmlsCgkJfQoJCXN3aXRjaCBpblYuS2luZCgpIHsKCQljYXNlIHJlZmxlY3QuUHRyLCByZWZsZWN0LkludGVyZmFjZToKCQkJcmV0dXJuIFJlc29sdmVWYWx1ZShpblYuRWxlbSgpKQoJCX0KCQlpbiA9IGluVi5JbnRlcmZhY2UoKQoJfQoJcmV0dXJuIGluCn0=",
+                    "Source": "ewoJdmFyIGluViByZWZsZWN0LlZhbHVlCglpZiB2Viwgb2sgOj0gaW4uKHJlZmxlY3QuVmFsdWUpOyBvayB7CgkJaW5WID0gdlYKCX0gZWxzZSB7CgkJaW5WID0gcmVmbGVjdC5WYWx1ZU9mKGluKQoJfQoJaWYgaW5WLklzVmFsaWQoKSB7CgkJaWYgaW5UIDo9IGluVi5UeXBlKCk7IGluVCA9PSBuaWwgewoJCQlyZXR1cm4gbmlsCgkJfQoJCXN3aXRjaCBpblYuS2luZCgpIHsKCQljYXNlIHJlZmxlY3QuUG9pbnRlciwgcmVmbGVjdC5JbnRlcmZhY2U6CgkJCXJldHVybiBSZXNvbHZlVmFsdWUoaW5WLkVsZW0oKSkKCQl9CgkJaW4gPSBpblYuSW50ZXJmYWNlKCkKCX0KCXJldHVybiBpbgp9",
                     "IsPackageLevel": true
                 },
                 {
@@ -26217,7 +26259,7 @@
                                 }
                             ],
                             "Signature": "Detect(in any) (ConvertType, any)",
-                            "Source": "ewoJaWYgdiwgZXJyIDo9IENvbnZlcnRDdXN0b21UeXBlKGluKTsgZXJyID09IG5pbCB7CgkJcmV0dXJuIFVzZXJEZWZpbmVkLCB2Cgl9IGVsc2UgaWYgZXJyICE9IFBhc3N0aHJvdWdoVHlwZSB7CgkJcGFuaWMoZXJyLkVycm9yKCkpCgl9CglpZiBpbiA9PSBuaWwgewoJCXJldHVybiBOaWwsIG5pbAoJfQoJaWYgSXNUaW1lKGluKSB7CgkJaWYgdiwgZXJyIDo9IENvbnZlcnRUbyhUaW1lLCBpbik7IGVyciA9PSBuaWwgewoJCQlyZXR1cm4gVGltZSwgdgoJCX0KCX0KCWlmIHZTdHIsIG9rIDo9IGluLihzdHJpbmcpOyBvayB7CgkJaWYgcnhMZWFkaW5nWmVyb2VzLk1hdGNoU3RyaW5nKHZTdHIpIHsKCQkJcmV0dXJuIFN0cmluZywgdlN0cgoJCX0KCQlmb3IgXywgbmlsU3RyIDo9IHJhbmdlIE5pbFN0cmluZ3MgewoJCQlpZiB2U3RyID09IG5pbFN0ciB7CgkJCQlyZXR1cm4gTmlsLCBuaWwKCQkJfQoJCX0KCX0KCWZvciBfLCBjdHlwZSA6PSByYW5nZSBbXUNvbnZlcnRUeXBle0Jvb2xlYW4sIEludGVnZXIsIEZsb2F0LCBTdHJpbmd9IHsKCQlpZiB2YWx1ZSwgZXJyIDo9IENvbnZlcnRUbyhjdHlwZSwgaW4pOyBlcnIgPT0gbmlsIHsKCQkJcmV0dXJuIGN0eXBlLCB2YWx1ZQoJCX0KCX0KCXJldHVybiBJbnZhbGlkLCBpbgp9",
+                            "Source": "ewoJaWYgdiwgZXJyIDo9IENvbnZlcnRDdXN0b21UeXBlKGluKTsgZXJyID09IG5pbCB7CgkJcmV0dXJuIFVzZXJEZWZpbmVkLCB2Cgl9IGVsc2UgaWYgZXJyICE9IFBhc3N0aHJvdWdoVHlwZSB7CgkJcGFuaWMoZXJyLkVycm9yKCkpCgl9CglpZiBpbiA9PSBuaWwgewoJCXJldHVybiBOaWwsIG5pbAoJfQoJaWYgSXNUaW1lKGluKSB7CgkJaWYgdiwgZXJyIDo9IENvbnZlcnRUbyhUaW1lLCBpbik7IGVyciA9PSBuaWwgewoJCQlyZXR1cm4gVGltZSwgdgoJCX0KCX0KCWlmIHZTdHIsIG9rIDo9IGluLihzdHJpbmcpOyBvayB7CgkJaWYgcnhMZWFkaW5nWmVyb2VzLk1hdGNoU3RyaW5nKHZTdHIpIHsKCQkJcmV0dXJuIFN0cmluZywgdlN0cgoJCX0KCQlpZiBzbGljZXMuQ29udGFpbnMoTmlsU3RyaW5ncywgdlN0cikgewoJCQlyZXR1cm4gTmlsLCBuaWwKCQl9Cgl9Cglmb3IgXywgY3R5cGUgOj0gcmFuZ2UgW11Db252ZXJ0VHlwZXtCb29sZWFuLCBJbnRlZ2VyLCBGbG9hdCwgU3RyaW5nfSB7CgkJaWYgdmFsdWUsIGVyciA6PSBDb252ZXJ0VG8oY3R5cGUsIGluKTsgZXJyID09IG5pbCB7CgkJCXJldHVybiBjdHlwZSwgdmFsdWUKCQl9Cgl9CglyZXR1cm4gSW52YWxpZCwgaW4KfQ==",
                             "IsPackageLevel": true
                         },
                         {

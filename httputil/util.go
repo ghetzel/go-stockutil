@@ -20,7 +20,7 @@ import (
 // Encode the username and password into a value than can be used in the Authorization HTTP header.
 func EncodeBasicAuth(username string, password string) string {
 	return fmt.Sprintf("Basic %s", base64.StdEncoding.EncodeToString(
-		[]byte(fmt.Sprintf("%s:%s", username, password)),
+		fmt.Appendf(nil, "%s:%s", username, password),
 	))
 }
 
@@ -95,8 +95,8 @@ func UrlPathJoin(baseurl any, path string) (*url.URL, error) {
 	newpath, qs := stringutil.SplitPair(path, `?`)
 	var trail string
 
-	if strings.HasSuffix(newpath, `/`) {
-		newpath = strings.TrimSuffix(newpath, `/`)
+	if before, ok := strings.CutSuffix(newpath, `/`); ok {
+		newpath = before
 		in.Path = strings.TrimSuffix(in.Path, `/`)
 		trail = `/`
 	}

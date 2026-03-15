@@ -4,6 +4,7 @@ import (
 	"io"
 	"os"
 	"path/filepath"
+	"slices"
 	"sort"
 )
 
@@ -18,13 +19,7 @@ const (
 type DirReaderOptions []DirReaderOption
 
 func (dir DirReaderOptions) Has(option DirReaderOption) bool {
-	for _, opt := range dir {
-		if opt == option {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(dir, option)
 }
 
 type SkipFunc func(string) bool

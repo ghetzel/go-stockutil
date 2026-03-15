@@ -2,6 +2,7 @@ package utils
 
 import (
 	"reflect"
+	"slices"
 	"strconv"
 	"strings"
 )
@@ -47,8 +48,8 @@ func IsHexadecimal(in any) bool {
 	if inS, err := ToString(in); err == nil {
 		inS = strings.ToLower(inS)
 
-		if strings.HasPrefix(inS, `0x`) {
-			inS = strings.TrimPrefix(inS, `0x`)
+		if after, ok := strings.CutPrefix(inS, `0x`); ok {
+			inS = after
 		} else {
 			return false
 		}
@@ -85,10 +86,8 @@ func IsBooleanTrue(inI any) bool {
 	if in, err := ToString(inI); err == nil {
 		in = strings.ToLower(in)
 
-		for _, val := range BooleanTrueValues {
-			if in == val {
-				return true
-			}
+		if slices.Contains(BooleanTrueValues, in) {
+			return true
 		}
 	}
 
@@ -99,10 +98,8 @@ func IsBooleanFalse(inI any) bool {
 	if in, err := ToString(inI); err == nil {
 		in = strings.ToLower(in)
 
-		for _, val := range BooleanFalseValues {
-			if in == val {
-				return true
-			}
+		if slices.Contains(BooleanFalseValues, in) {
+			return true
 		}
 	}
 

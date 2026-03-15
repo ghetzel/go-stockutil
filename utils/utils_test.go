@@ -32,8 +32,8 @@ type testMarshal struct {
 	Name      string `json:"name"`
 	Count     int    `json:"count,omitempty"`
 	CreatedAt time.Time
-	UpdatedAt time.Time `json:",omitempty"`
-	Thing     testEnum  `json:"enum"`
+	UpdatedAt time.Time
+	Thing     testEnum `json:"enum"`
 }
 
 func TestGenericMarshalJSON(t *testing.T) {

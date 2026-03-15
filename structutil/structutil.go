@@ -31,7 +31,7 @@ func FieldsFunc(in any, fn StructFieldFunc) error {
 		inValu = reflect.ValueOf(in)
 	}
 
-	if inValu.Kind() == reflect.Ptr {
+	if inValu.Kind() == reflect.Pointer {
 		inValu = inValu.Elem()
 	}
 
@@ -152,7 +152,7 @@ func CopyNonZero(dest any, source any) error {
 }
 
 func validatePtrToStruct(name string, obj reflect.Value) (reflect.Value, error) {
-	if obj.Kind() == reflect.Ptr {
+	if obj.Kind() == reflect.Pointer {
 		if obj.Elem().Kind() == reflect.Struct {
 			return obj.Elem(), nil
 		} else {

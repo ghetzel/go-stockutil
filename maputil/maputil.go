@@ -5,8 +5,10 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"maps"
 	"reflect"
 	"regexp"
+	"slices"
 	"sort"
 	"strconv"
 	"strings"
@@ -40,13 +42,7 @@ const (
 type MergeOptions []MergeOption
 
 func (self MergeOptions) Has(option MergeOption) bool {
-	for _, opt := range self {
-		if opt == option {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(self, option)
 }
 
 // Return an interface slice of the keys of the given map.
@@ -294,9 +290,7 @@ func deepGetValues(keys []string, joiner string, data any) map[string]any {
 				var newKey = keys
 				newKey = append(newKey, k)
 
-				for kk, vv := range deepGetValues(newKey, joiner, v) {
-					rv[kk] = vv
-				}
+				maps.Copy(rv, deepGetValues(newKey, joiner, v))
 			}
 
 		case reflect.Slice, reflect.Array:
@@ -304,9 +298,7 @@ func deepGetValues(keys []string, joiner string, data any) map[string]any {
 				var newKey = keys
 				newKey = append(newKey, strconv.Itoa(i))
 
-				for k, v := range deepGetValues(newKey, joiner, value) {
-					rv[k] = v
-				}
+				maps.Copy(rv, deepGetValues(newKey, joiner, value))
 			}
 
 		default:
@@ -374,7 +366,7 @@ func DeepGet(data any, path []string, fallbacks ...any) any {
 
 	var fallback = fallbacks[0]
 
-	for i := 0; i < len(path); i++ {
+	for i := range path {
 		var part = path[i]
 		var dValue = reflect.ValueOf(current)
 
@@ -387,7 +379,7 @@ func DeepGet(data any, path []string, fallbacks ...any) any {
 
 		// for pointers and interfaces, get the underlying type
 		switch dType.Kind() {
-		case reflect.Interface, reflect.Ptr:
+		case reflect.Interface, reflect.Pointer:
 			dType = dType.Elem()
 		}
 
@@ -435,7 +427,7 @@ func DeepGet(data any, path []string, fallbacks ...any) any {
 
 		// structs
 		case reflect.Struct:
-			if dValue.Type().Kind() == reflect.Ptr {
+			if dValue.Type().Kind() == reflect.Pointer {
 				dValue = dValue.Elem()
 			}
 
@@ -576,7 +568,7 @@ func DeepSet(data any, path []string, value any) any {
 
 		} else if typeutil.IsStruct(data) {
 			// we only accept a pointer to a struct here
-			if dV := reflect.ValueOf(data); dV.Kind() == reflect.Ptr {
+			if dV := reflect.ValueOf(data); dV.Kind() == reflect.Pointer {
 				// make sure dV is the underlying struct Value
 				if dE := dV.Elem(); dE.Kind() == reflect.Struct {
 					dV = dE
@@ -661,13 +653,11 @@ func DeepSet(data any, path []string, value any) any {
 	return data
 }
 
-func Append(maps ...map[string]any) map[string]any {
+func Append(mapset ...map[string]any) map[string]any {
 	var out = make(map[string]any)
 
-	for _, mapV := range maps {
-		for k, v := range mapV {
-			out[k] = v
-		}
+	for _, mapV := range mapset {
+		maps.Copy(out, mapV)
 	}
 
 	return out
@@ -729,19 +719,17 @@ func walkGeneric(parent any, path []string, walkFn WalkFunc, includeStruct bool,
 	var parentV = reflect.ValueOf(parent)
 
 	switch parentV.Kind() {
-	case reflect.Chan, reflect.Func, reflect.Map, reflect.Ptr, reflect.Slice, reflect.UnsafePointer:
+	case reflect.Chan, reflect.Func, reflect.Map, reflect.Pointer, reflect.Slice, reflect.UnsafePointer:
 		var pp = parentV.Pointer()
 
-		for _, s := range seen {
-			if s == pp {
-				return nil
-			}
+		if slices.Contains(seen, pp) {
+			return nil
 		}
 
 		seen = append(seen, pp)
 	}
 
-	if parentV.Kind() == reflect.Ptr {
+	if parentV.Kind() == reflect.Pointer {
 		parentV = parentV.Elem()
 
 		if parentV.IsValid() {

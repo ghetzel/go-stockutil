@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"slices"
 	"strings"
 	"sync"
 
@@ -101,10 +102,8 @@ func RemoveLogFilter(id string) {
 func FilterPackages(patterns ...string) string {
 	return AddLogFilter(func(level Level, line string, stack StackItems) bool {
 		for _, item := range stack {
-			for _, pkg := range patterns {
-				if item.InPackage(pkg) {
-					return false
-				}
+			if slices.ContainsFunc(patterns, item.InPackage) {
+				return false
 			}
 		}
 

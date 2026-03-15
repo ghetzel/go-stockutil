@@ -6,6 +6,7 @@ import (
 	"io"
 	"reflect"
 	"regexp"
+	"slices"
 	"strconv"
 	"strings"
 	"time"
@@ -357,7 +358,7 @@ func ConvertTo(toType ConvertType, inI any) (any, error) {
 			// convert fmt.Stringer to string
 			return inSr.String(), nil
 
-		} else if inV := reflect.ValueOf(inI); inV.Kind() == reflect.Ptr {
+		} else if inV := reflect.ValueOf(inI); inV.Kind() == reflect.Pointer {
 			// dereference pointers to strings and stringify the result
 			inS, inSerr = ToString(inV.Elem())
 		}
@@ -513,10 +514,8 @@ func Detect(in any) (ConvertType, any) {
 		}
 
 		// certain known string values should convert to nil directly
-		for _, nilStr := range NilStrings {
-			if vStr == nilStr {
-				return Nil, nil
-			}
+		if slices.Contains(NilStrings, vStr) {
+			return Nil, nil
 		}
 	}
 

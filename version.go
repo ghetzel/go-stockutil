@@ -1,3 +1,3 @@
 package stockutil
 
-const Version = `1.13.2`
+const Version = `1.14.0`

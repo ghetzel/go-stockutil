@@ -41,7 +41,7 @@ func IsZero(value any) bool {
 func IsEmpty(value any) bool {
 	var valueV = reflect.ValueOf(value)
 
-	if valueV.Kind() == reflect.Ptr {
+	if valueV.Kind() == reflect.Pointer {
 		valueV = valueV.Elem()
 	}
 
@@ -215,7 +215,7 @@ func SetValue(target any, value any) error {
 
 		if targetV.Kind() == reflect.Struct {
 			return fmt.Errorf("Must pass a pointer to a struct instance, got %T", target)
-		} else if targetV.Kind() == reflect.Ptr {
+		} else if targetV.Kind() == reflect.Pointer {
 			// dereference pointers to get at the real destination
 			targetV = targetV.Elem()
 		}
@@ -267,8 +267,8 @@ func SetValue(target any, value any) error {
 		} else if valueT.ConvertibleTo(targetT) {
 			// attempt type conversion
 			targetV.Set(valueV.Convert(targetT))
-		} else if targetV.Kind() == reflect.Ptr {
-			if originalV.Kind() == reflect.Ptr {
+		} else if targetV.Kind() == reflect.Pointer {
+			if originalV.Kind() == reflect.Pointer {
 				return SetValue(targetV, originalV)
 			} else {
 				return fmt.Errorf(

@@ -3,6 +3,7 @@ package sliceutil
 
 import (
 	"reflect"
+	"slices"
 	"strings"
 
 	"github.com/ghetzel/go-stockutil/stringutil"
@@ -58,13 +59,7 @@ func Contains(in any, value any, comparators ...CompareFunc) bool {
 
 // Returns whether the given string slice contains a given string.
 func ContainsString(list []string, elem string) bool {
-	for _, t := range list {
-		if t == elem {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(list, elem)
 }
 
 // Returns whether the given string slice contains any of the following strings.

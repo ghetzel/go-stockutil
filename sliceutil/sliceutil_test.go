@@ -332,7 +332,7 @@ func TestEach(t *testing.T) {
 
 	go func() {
 		defer close(valchan)
-		for i := 0; i < 3; i++ {
+		for i := range 3 {
 			valchan <- fmt.Sprintf("value%d", i)
 		}
 	}()

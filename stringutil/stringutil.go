@@ -212,7 +212,7 @@ func ToStringSlice(in any) ([]string, error) {
 		var inV = reflect.ValueOf(in)
 
 		if inV.IsValid() {
-			if inV.Kind() == reflect.Ptr {
+			if inV.Kind() == reflect.Pointer {
 				inV = inV.Elem()
 			}
 
@@ -252,7 +252,7 @@ func ToStringSlice(in any) ([]string, error) {
 
 func ToByteString(in any, formatString ...string) (string, error) {
 	if asBytes, err := ConvertToInteger(in); err == nil {
-		for i := 0; i < 9; i++ {
+		for i := range 9 {
 			if converted := (float64(asBytes) / math.Pow(1024, float64(i))); converted < 1024 {
 				var prefix = SiPrefix(i)
 				var f = `%g`

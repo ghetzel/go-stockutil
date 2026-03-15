@@ -252,7 +252,7 @@ func TestIsMixedCase(t *testing.T) {
 func TestIsHexadecimal(t *testing.T) {
 	var assert = require.New(t)
 
-	for i := 0; i < 16; i++ {
+	for i := range 16 {
 		assert.True(IsHexadecimal(fmt.Sprintf("%x", i), -1))
 		assert.True(IsHexadecimal(fmt.Sprintf("%X", i), -1))
 	}

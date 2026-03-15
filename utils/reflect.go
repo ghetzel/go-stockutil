@@ -2,6 +2,7 @@ package utils
 
 import (
 	"reflect"
+	"slices"
 )
 
 var SliceTypes = []reflect.Kind{
@@ -18,7 +19,7 @@ var CompoundTypes = []reflect.Kind{
 	reflect.Func,
 	reflect.Interface,
 	reflect.Map,
-	reflect.Ptr,
+	reflect.Pointer,
 	reflect.Slice,
 	reflect.Struct,
 }
@@ -38,7 +39,7 @@ func ResolveValue(in any) any {
 		}
 
 		switch inV.Kind() {
-		case reflect.Ptr, reflect.Interface:
+		case reflect.Pointer, reflect.Interface:
 			return ResolveValue(inV.Elem())
 		}
 
@@ -66,13 +67,7 @@ func IsKind(in any, kinds ...reflect.Kind) bool {
 		return false
 	}
 
-	for _, k := range kinds {
-		if inT.Kind() == k {
-			return true
-		}
-	}
-
-	return false
+	return slices.Contains(kinds, inT.Kind())
 }
 
 // Returns whether the given value represents the underlying type's zero value

@@ -7,6 +7,7 @@ import (
 	"crypto/x509"
 	"fmt"
 	"io"
+	"maps"
 	"net/http"
 	gohttputil "net/http/httputil"
 	"net/url"
@@ -117,7 +118,7 @@ func NewClient(baseURI string) (*Client, error) {
 				log.Debugf("httputil ${blue}\u2502${reset} \u21c9 %v", req.URL)
 				log.Debugf("httputil ${blue}\u2502${reset}")
 
-				for _, line := range strings.Split(string(data), "\n") {
+				for line := range strings.SplitSeq(string(data), "\n") {
 					line = strings.TrimSpace(line)
 					log.Debugf("httputil ${blue}\u2502${reset} %v", line)
 				}
@@ -137,7 +138,7 @@ func NewClient(baseURI string) (*Client, error) {
 					log.Debugf("httputil ${red}\u2502${reset}")
 				}
 
-				for _, line := range strings.Split(string(data), "\n") {
+				for line := range strings.SplitSeq(string(data), "\n") {
 					line = strings.TrimSpace(line)
 					log.Debugf("httputil \u2502 %v", line)
 				}
@@ -407,22 +408,10 @@ func (self *Client) RequestWithContext(
 	var finalParams = make(map[string]any)
 	var finalHeaders = make(map[string]any)
 
-	for k, v := range self.params {
-		finalParams[k] = v
-	}
-
-	for k, v := range params {
-		finalParams[k] = v
-	}
-
-	// merge given headers with client-wide headers
-	for k, v := range self.headers {
-		finalHeaders[k] = v
-	}
-
-	for k, v := range headers {
-		finalHeaders[k] = v
-	}
+	maps.Copy(finalParams, self.params)
+	maps.Copy(finalParams, params)
+	maps.Copy(finalHeaders, self.headers)
+	maps.Copy(finalHeaders, headers)
 
 	var reqUrl *url.URL
 	var err error

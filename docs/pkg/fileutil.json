@@ -7,8 +7,8 @@
     "Synopsis": "Helpers for working with files and filesystems\n",
     "MainFunction": false,
     "CommentWordCount": 1499,
-    "LineCount": 3153,
-    "SourceLineCount": 2509,
+    "LineCount": 3148,
+    "SourceLineCount": 2505,
     "FunctionCount": 81,
     "TypeCount": 18,
     "ConstantCount": 4,
@@ -435,13 +435,17 @@
                     "Alias": "filepath"
                 },
                 {
+                    "PackageName": "slices",
+                    "Alias": "slices"
+                },
+                {
                     "PackageName": "sort",
                     "Alias": "sort"
                 }
             ],
-            "Size": 5502,
-            "LineCount": 225,
-            "SourceLineCount": 172,
+            "Size": 5464,
+            "LineCount": 220,
+            "SourceLineCount": 168,
             "FunctionCount": 7,
             "TypeCount": 5,
             "ConstantCount": 3,
@@ -599,7 +603,7 @@
                     "Alias": "isatty"
                 }
             ],
-            "Size": 13505,
+            "Size": 13493,
             "LineCount": 536,
             "SourceLineCount": 416,
             "FunctionCount": 26,
@@ -1789,7 +1793,7 @@
                 }
             ],
             "Signature": "SetExt(path string, ext string, oldexts ...string) string",
-            "Source": "ewoJaWYgZXh0ID09IGBgIHsKCQlyZXR1cm4gcGF0aAoJfQoJdmFyIG9sZGV4dCBzdHJpbmcKCWlmIGxlbihvbGRleHRzKSA+IDAgJiYgb2xkZXh0c1swXSAhPSBgYCB7CgkJb2xkZXh0ID0gb2xkZXh0c1swXQoJfSBlbHNlIHsKCQlvbGRleHQgPSBmaWxlcGF0aC5FeHQocGF0aCkKCX0KCW9sZGV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChvbGRleHQsIGAuYCkKCWV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChleHQsIGAuYCkKCWlmIHN0cmluZ3MuSGFzU3VmZml4KHBhdGgsIGAuYCtvbGRleHQpIHsKCQlwYXRoID0gc3RyaW5ncy5UcmltU3VmZml4KHBhdGgsIGAuYCtvbGRleHQpICsgYC5gICsgZXh0Cgl9CglyZXR1cm4gcGF0aAp9",
+            "Source": "ewoJaWYgZXh0ID09IGBgIHsKCQlyZXR1cm4gcGF0aAoJfQoJdmFyIG9sZGV4dCBzdHJpbmcKCWlmIGxlbihvbGRleHRzKSA+IDAgJiYgb2xkZXh0c1swXSAhPSBgYCB7CgkJb2xkZXh0ID0gb2xkZXh0c1swXQoJfSBlbHNlIHsKCQlvbGRleHQgPSBmaWxlcGF0aC5FeHQocGF0aCkKCX0KCW9sZGV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChvbGRleHQsIGAuYCkKCWV4dCA9IHN0cmluZ3MuVHJpbVByZWZpeChleHQsIGAuYCkKCWlmIGJlZm9yZSwgb2sgOj0gc3RyaW5ncy5DdXRTdWZmaXgocGF0aCwgYC5gK29sZGV4dCk7IG9rIHsKCQlwYXRoID0gYmVmb3JlICsgYC5gICsgZXh0Cgl9CglyZXR1cm4gcGF0aAp9",
             "IsPackageLevel": true
         },
         {
@@ -2104,7 +2108,7 @@
                 }
             ],
             "Signature": "TestRetrieveViaSSH_SFTP(t *testing.T)",
-            "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUGApCglpZiBzc2hVcmxFbnYgIT0gYGAgewoJCWZvciBfLCB1cmkgOj0gLy8gZXhhbXBsZTogVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUD0ic2Z0cDovL2xvY2FsaG9zdDoyMDIwL2ZpbGUtaW4taG9tZWRpcnxzZnRwOi8vdWJ1bnR1OnBhc3N3b3JkQHJlbW90ZS1ob3N0Ly9ldGMvZnN0YWIiCgkJcmFuZ2Ugc3RyaW5ncy5TcGxpdChzc2hVcmxFbnYsIGB8YCkgewoJCQl1cmkgPSBzdHJpbmdzLlRyaW1TcGFjZSh1cmkpCgkJCWlmIHVyaSA9PSBgYCB7CgkJCQljb250aW51ZQoJCQl9CgkJCXUsIGVyciA6PSB1cmwuUGFyc2UodXJpKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob3ROaWwodCwgdSkKCQkJY3R4IDo9IGNvbnRleHQuV2l0aFZhbHVlKGNvbnRleHQuQmFja2dyb3VuZCgpLCBgdmVyaWZ5SG9zdEZ1bmNgLCBmdW5jKGhvc3RuYW1lIHN0cmluZywgcmVtb3RlIG5ldC5BZGRyLCBrZXkgc3NoLlB1YmxpY0tleSkgZXJyb3IgewoJCQkJdmFyIHAgPSB1LlBvcnQoKQoJCQkJaWYgcCA9PSBgYCB7CgkJCQkJcCA9IGAyMmAKCQkJCX0KCQkJCWFzc2VydC5FcXVhbCh0LCB1Lkhvc3QrYDpgK3AsIGhvc3RuYW1lKQoJCQkJcmV0dXJuIG5pbAoJCQl9KQoJCQlkLCBlcnIgOj0gUmV0cmlldmVWaWFTU0goY3R4LCB1KQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGQpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGVycikKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZC5DbG9zZSgpKQoJCQlhc3NlcnQuRXF1YWwodCwgIkhFTExPIFRIRVJFXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
+            "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUGApCglpZiBzc2hVcmxFbnYgIT0gYGAgewoJCWZvciB1cmkgOj0gLy8gZXhhbXBsZTogVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU0ZUUD0ic2Z0cDovL2xvY2FsaG9zdDoyMDIwL2ZpbGUtaW4taG9tZWRpcnxzZnRwOi8vdWJ1bnR1OnBhc3N3b3JkQHJlbW90ZS1ob3N0Ly9ldGMvZnN0YWIiCgkJcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzc2hVcmxFbnYsIGB8YCkgewoJCQl1cmkgPSBzdHJpbmdzLlRyaW1TcGFjZSh1cmkpCgkJCWlmIHVyaSA9PSBgYCB7CgkJCQljb250aW51ZQoJCQl9CgkJCXUsIGVyciA6PSB1cmwuUGFyc2UodXJpKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob3ROaWwodCwgdSkKCQkJY3R4IDo9IGNvbnRleHQuV2l0aFZhbHVlKGNvbnRleHQuQmFja2dyb3VuZCgpLCBgdmVyaWZ5SG9zdEZ1bmNgLCBmdW5jKGhvc3RuYW1lIHN0cmluZywgcmVtb3RlIG5ldC5BZGRyLCBrZXkgc3NoLlB1YmxpY0tleSkgZXJyb3IgewoJCQkJdmFyIHAgPSB1LlBvcnQoKQoJCQkJaWYgcCA9PSBgYCB7CgkJCQkJcCA9IGAyMmAKCQkJCX0KCQkJCWFzc2VydC5FcXVhbCh0LCB1Lkhvc3QrYDpgK3AsIGhvc3RuYW1lKQoJCQkJcmV0dXJuIG5pbAoJCQl9KQoJCQlkLCBlcnIgOj0gUmV0cmlldmVWaWFTU0goY3R4LCB1KQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGQpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGVycikKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZC5DbG9zZSgpKQoJCQlhc3NlcnQuRXF1YWwodCwgIkhFTExPIFRIRVJFXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
             "IsPackageLevel": true
         },
         {
@@ -2116,7 +2120,7 @@
                 }
             ],
             "Signature": "TestRetrieveViaSSH_SSH(t *testing.T)",
-            "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU1NIYCkKCWlmIHNzaFVybEVudiAhPSBgYCB7CgkJZm9yIF8sIHVyaSA6PSAvLyBleGFtcGxlOiBURVNUX0dPU1RPQ0tVVElMX1JFVFJJRVZFX1ZJQV9TU0g9InNzaDovL2xvY2FsaG9zdDoyMDIwL2hvc3RuYW1lIgoJCXJhbmdlIHN0cmluZ3MuU3BsaXQoc3NoVXJsRW52LCBgfGApIHsKCQkJdXJpID0gc3RyaW5ncy5UcmltU3BhY2UodXJpKQoJCQlpZiB1cmkgPT0gYGAgewoJCQkJY29udGludWUKCQkJfQoJCQl1LCBlcnIgOj0gdXJsLlBhcnNlKHVyaSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlhc3NlcnQuTm90TmlsKHQsIHUpCgkJCWN0eCA6PSBjb250ZXh0LldpdGhWYWx1ZShjb250ZXh0LkJhY2tncm91bmQoKSwgYHZlcmlmeUhvc3RGdW5jYCwgZnVuYyhob3N0bmFtZSBzdHJpbmcsIHJlbW90ZSBuZXQuQWRkciwga2V5IHNzaC5QdWJsaWNLZXkpIGVycm9yIHsKCQkJCXZhciBwID0gdS5Qb3J0KCkKCQkJCWlmIHAgPT0gYGAgewoJCQkJCXAgPSBgMjJgCgkJCQl9CgkJCQlhc3NlcnQuRXF1YWwodCwgdS5Ib3N0K2A6YCtwLCBob3N0bmFtZSkKCQkJCXJldHVybiBuaWwKCQkJfSkKCQkJZCwgZXJyIDo9IFJldHJpZXZlVmlhU1NIKGN0eCwgdSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChkKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGQuQ2xvc2UoKSkKCQkJYXNzZXJ0LkVxdWFsKHQsIHUuSG9zdG5hbWUoKSsiXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
+            "Source": "ewoJdmFyIHNzaFVybEVudiA9IG9zLkdldGVudihgVEVTVF9HT1NUT0NLVVRJTF9SRVRSSUVWRV9WSUFfU1NIYCkKCWlmIHNzaFVybEVudiAhPSBgYCB7CgkJZm9yIHVyaSA6PSAvLyBleGFtcGxlOiBURVNUX0dPU1RPQ0tVVElMX1JFVFJJRVZFX1ZJQV9TU0g9InNzaDovL2xvY2FsaG9zdDoyMDIwL2hvc3RuYW1lIgoJCXJhbmdlIHN0cmluZ3MuU3BsaXRTZXEoc3NoVXJsRW52LCBgfGApIHsKCQkJdXJpID0gc3RyaW5ncy5UcmltU3BhY2UodXJpKQoJCQlpZiB1cmkgPT0gYGAgewoJCQkJY29udGludWUKCQkJfQoJCQl1LCBlcnIgOj0gdXJsLlBhcnNlKHVyaSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlhc3NlcnQuTm90TmlsKHQsIHUpCgkJCWN0eCA6PSBjb250ZXh0LldpdGhWYWx1ZShjb250ZXh0LkJhY2tncm91bmQoKSwgYHZlcmlmeUhvc3RGdW5jYCwgZnVuYyhob3N0bmFtZSBzdHJpbmcsIHJlbW90ZSBuZXQuQWRkciwga2V5IHNzaC5QdWJsaWNLZXkpIGVycm9yIHsKCQkJCXZhciBwID0gdS5Qb3J0KCkKCQkJCWlmIHAgPT0gYGAgewoJCQkJCXAgPSBgMjJgCgkJCQl9CgkJCQlhc3NlcnQuRXF1YWwodCwgdS5Ib3N0K2A6YCtwLCBob3N0bmFtZSkKCQkJCXJldHVybiBuaWwKCQkJfSkKCQkJZCwgZXJyIDo9IFJldHJpZXZlVmlhU1NIKGN0eCwgdSkKCQkJYXNzZXJ0Lk5vRXJyb3IodCwgZXJyKQoJCQlkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChkKQoJCQlhc3NlcnQuTm9FcnJvcih0LCBlcnIpCgkJCWFzc2VydC5Ob0Vycm9yKHQsIGQuQ2xvc2UoKSkKCQkJYXNzZXJ0LkVxdWFsKHQsIHUuSG9zdG5hbWUoKSsiXG4iLCBzdHJpbmcoZGF0YSkpCgkJfQoJfQp9",
             "IsPackageLevel": true
         },
         {

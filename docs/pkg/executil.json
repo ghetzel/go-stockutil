@@ -123,7 +123,7 @@
                     "Alias": "assert"
                 }
             ],
-            "Size": 3720,
+            "Size": 3709,
             "LineCount": 141,
             "SourceLineCount": 114,
             "FunctionCount": 0,
@@ -472,6 +472,27 @@
             ],
             "Signature": "Join(in any) string",
             "Source": "ewoJdmFyIGFyZ3MgW11zdHJpbmcKCWlmIGNtZCwgb2sgOj0gaW4uKCpleGVjLkNtZCk7IG9rIHsKCQlhcmdzID0gY21kLkFyZ3MKCX0gZWxzZSBpZiB0eXBldXRpbC5Jc0FycmF5KGluKSB7CgkJYXJncyA9IHNsaWNldXRpbC5TdHJpbmdpZnkoaW4pCgl9IGVsc2UgewoJCXJldHVybiBgYAoJfQoJZm9yIGksIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlpZiBzdHJpbmdzLkNvbnRhaW5zKGFyZywgYCBgKSB7CgkJCWFyZ3NbaV0gPSBzdHJpbmd1dGlsLldyYXAoYXJnLCBgJ2AsIGAnYCkKCQl9Cgl9CglyZXR1cm4gc3RyaW5ncy5Kb2luKGFyZ3MsIGAgYCkKfQ==",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "LogOutput",
+            "Arguments": [
+                {
+                    "Name": "outlevel",
+                    "Type": "log.Level"
+                },
+                {
+                    "Name": "errlevel",
+                    "Type": "log.Level"
+                }
+            ],
+            "Returns": [
+                {
+                    "Type": "OutputLineFunc"
+                }
+            ],
+            "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
+            "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
             "IsPackageLevel": true
         },
         {
@@ -824,7 +845,7 @@
                 }
             ],
             "Signature": "TestExecReadWriteCloser(t *testing.T)",
-            "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIGkgOj0gMDsgaSA8IGM7IGkrKyB7CgkJdmFyIF8sIHdlcnIgPSBjbWQuV3JpdGUocGF5bG9hZCkKCQlhc3NlcnQuTm9FcnJvcih0LCB3ZXJyKQoJfQoJYXNzZXJ0Lk5vRXJyb3IodCwgY21kLkNsb3NlSW5wdXQoKSkKCXZhciBkYXRhLCByZXJyID0gaW8uUmVhZEFsbChjbWQpCglhc3NlcnQuTm9FcnJvcih0LCByZXJyKQoJYXNzZXJ0LkVxdWFsKHQsIGJ5dGVzLlJlcGVhdChwYXlsb2FkLCBjKSwgZGF0YSkKfQ==",
+            "Source": "ewoJdmFyIGMgaW50ID0gMTI4Cgl2YXIgcGF5bG9hZCA9IHN0cmluZ3V0aWwuVVVJRCgpLkJ5dGVzKCkKCXZhciBjbWQgPSBDb21tYW5kKGBjYXRgKQoJZm9yIHJhbmdlIGMgewoJCXZhciBfLCB3ZXJyID0gY21kLldyaXRlKHBheWxvYWQpCgkJYXNzZXJ0Lk5vRXJyb3IodCwgd2VycikKCX0KCWFzc2VydC5Ob0Vycm9yKHQsIGNtZC5DbG9zZUlucHV0KCkpCgl2YXIgZGF0YSwgcmVyciA9IGlvLlJlYWRBbGwoY21kKQoJYXNzZXJ0Lk5vRXJyb3IodCwgcmVycikKCWFzc2VydC5FcXVhbCh0LCBieXRlcy5SZXBlYXQocGF5bG9hZCwgYyksIGRhdGEpCn0=",
             "IsPackageLevel": true
         },
         {
@@ -1255,29 +1276,6 @@
         },
         "OutputLineFunc": {
             "Name": "OutputLineFunc",
-            "Methods": [
-                {
-                    "Name": "LogOutput",
-                    "Arguments": [
-                        {
-                            "Name": "outlevel",
-                            "Type": "log.Level"
-                        },
-                        {
-                            "Name": "errlevel",
-                            "Type": "log.Level"
-                        }
-                    ],
-                    "Returns": [
-                        {
-                            "Type": "OutputLineFunc"
-                        }
-                    ],
-                    "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
-                    "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
-                    "IsPackageLevel": true
-                }
-            ],
             "Source": "dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk="
         },
         "Status": {

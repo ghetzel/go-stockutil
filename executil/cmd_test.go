@@ -126,7 +126,7 @@ func TestExecReadWriteCloser(t *testing.T) {
 	var payload = stringutil.UUID().Bytes()
 	var cmd = Command(`cat`)
 
-	for i := 0; i < c; i++ {
+	for range c {
 		var _, werr = cmd.Write(payload)
 		assert.NoError(t, werr)
 	}

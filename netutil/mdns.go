@@ -171,7 +171,7 @@ func ZeroconfRegister(svc *Service) (string, error) {
 	}
 
 	var slug = fmt.Sprintf("%x", sha256.Sum256(
-		[]byte(fmt.Sprintf("%s.%s%s:%d", svc.Instance, svc.Service, svc.Domain, svc.Port)),
+		fmt.Appendf(nil, "%s.%s%s:%d", svc.Instance, svc.Service, svc.Domain, svc.Port),
 	))
 
 	if _, ok := registered.Load(slug); ok {

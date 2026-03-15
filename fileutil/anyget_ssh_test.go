@@ -18,7 +18,7 @@ func TestRetrieveViaSSH_SFTP(t *testing.T) {
 	var sshUrlEnv = os.Getenv(`TEST_GOSTOCKUTIL_RETRIEVE_VIA_SFTP`)
 
 	if sshUrlEnv != `` {
-		for _, uri := range strings.Split(sshUrlEnv, `|`) {
+		for uri := range strings.SplitSeq(sshUrlEnv, `|`) {
 			uri = strings.TrimSpace(uri)
 
 			if uri == `` {
@@ -58,7 +58,7 @@ func TestRetrieveViaSSH_SSH(t *testing.T) {
 	var sshUrlEnv = os.Getenv(`TEST_GOSTOCKUTIL_RETRIEVE_VIA_SSH`)
 
 	if sshUrlEnv != `` {
-		for _, uri := range strings.Split(sshUrlEnv, `|`) {
+		for uri := range strings.SplitSeq(sshUrlEnv, `|`) {
 			uri = strings.TrimSpace(uri)
 
 			if uri == `` {

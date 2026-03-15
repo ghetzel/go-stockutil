@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"reflect"
+	"slices"
 	"strings"
 	"text/template"
 	"time"
@@ -348,13 +349,7 @@ func (self Variant) OrString(or ...any) string {
 
 func (self Variant) OrBool(or ...any) bool {
 	if self.Value == nil {
-		for _, orval := range or {
-			if Bool(orval) {
-				return true
-			}
-		}
-
-		return false
+		return slices.ContainsFunc(or, Bool)
 	} else {
 		return self.Bool()
 	}

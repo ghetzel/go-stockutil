@@ -33,7 +33,7 @@ type Location struct {
 	Latitude   float64           `json:"latitude,omitempty"`
 	Longitude  float64           `json:"longitude,omitempty"`
 	Bearing    float64           `json:"bearing,omitempty"`
-	Timestamp  time.Time         `json:"timestamp,omitempty"`
+	Timestamp  time.Time         `json:"timestamp"`
 	Altitude   Distance          `json:"altitude,omitempty"`
 	Speed      Speed             `json:"speed,omitempty"`
 	Accuracy   float64           `json:"accuracy,omitempty"`

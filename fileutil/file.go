@@ -423,8 +423,8 @@ func SetExt(path string, ext string, oldexts ...string) string {
 	oldext = strings.TrimPrefix(oldext, `.`)
 	ext = strings.TrimPrefix(ext, `.`)
 
-	if strings.HasSuffix(path, `.`+oldext) {
-		path = strings.TrimSuffix(path, `.`+oldext) + `.` + ext
+	if before, ok := strings.CutSuffix(path, `.`+oldext); ok {
+		path = before + `.` + ext
 	}
 
 	return path

@@ -24,7 +24,7 @@ func (self *Field) Kind() reflect.Kind {
 
 func (self *Field) Value() reflect.Value {
 	if src := self.Struct.srcval; src.IsValid() {
-		if src.Kind() == reflect.Ptr {
+		if src.Kind() == reflect.Pointer {
 			src = src.Elem()
 		}
 

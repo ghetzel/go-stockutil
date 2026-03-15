@@ -3,6 +3,7 @@ package utils
 import (
 	"encoding/json"
 	"fmt"
+	"maps"
 	"reflect"
 	"strings"
 	"time"
@@ -58,9 +59,7 @@ FieldLoop:
 	}
 
 	if len(extraData) > 0 && len(extraData[0]) > 0 {
-		for k, v := range extraData[0] {
-			output[k] = v
-		}
+		maps.Copy(output, extraData[0])
 	}
 
 	return json.Marshal(output)
@@ -80,7 +79,7 @@ func AppendError(base error, err error) error {
 // JSONPath description, syntax, and examples are available at http://goessner.net/articles/JsonPath/.
 func JSONPath(data any, query string, autowrap bool) (any, error) {
 	if reflect.TypeOf(data).Kind() == reflect.Map && query != `` {
-		for _, line := range strings.Split(query, "\n") {
+		for line := range strings.SplitSeq(query, "\n") {
 			line = strings.TrimSpace(line)
 
 			if line == `` {
