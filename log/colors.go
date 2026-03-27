@@ -55,6 +55,13 @@ func CSprint(messages ...any) string {
 	return csprintf(false, true, ``, ``, messages...)
 }
 
+// A version of fmt.Sprintln that supports terminal color expressions.
+func CSprintln(messages ...any) string {
+	return fmt.Sprintln(
+		csprintf(false, true, ``, ``, messages...),
+	)
+}
+
 // A version of fmt.Sprintf that supports terminal color expressions.
 func CSprintf(format string, args ...any) string {
 	return csprintf(false, true, format, ``, args...)
@@ -63,6 +70,11 @@ func CSprintf(format string, args ...any) string {
 // A version of fmt.Fprint that supports terminal color expressions.
 func CFprint(w io.Writer, messages ...any) (int, error) {
 	return fmt.Fprint(w, CSprint(messages...))
+}
+
+// A version of fmt.Fprintln that supports terminal color expressions.
+func CFprintln(w io.Writer, messages ...any) (int, error) {
+	return fmt.Fprintln(w, CSprint(messages...))
 }
 
 // A version of fmt.Fprintf that supports terminal color expressions.
@@ -78,6 +90,11 @@ func CFPrintf(w io.Writer, format string, args ...any) (int, error) {
 // A version of fmt.Print that supports terminal color expressions.
 func Cprint(messages ...any) (int, error) {
 	return CFprint(os.Stdout, messages...)
+}
+
+// A version of fmt.Println that supports terminal color expressions.
+func Cprintln(messages ...any) (int, error) {
+	return CFprintln(os.Stdout, messages...)
 }
 
 // A version of fmt.Printf that supports terminal color expressions.

@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.14.1
+                            v1.14.2
                         </li>
                     </ul>
                     
@@ -141,7 +141,7 @@
 	</span>
 </div>
 
-<span class="pull-right">Doc Coverage: 38%</span>
+<span class="pull-right">Doc Coverage: 40%</span>
 <h2 id="pkg-overview">package log</h2>
 
 <p>
@@ -334,6 +334,12 @@ ls.Run()
 	
     <li>
 		<strong>
+		<a href="#CFprintln">func CFprintln(w io.Writer, messages ...any) (int, error)</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
 		<a href="#CSprint">func CSprint(messages ...any) string</a>
 		</strong>
 	</li>
@@ -341,6 +347,12 @@ ls.Run()
     <li>
 		<strong>
 		<a href="#CSprintf">func CSprintf(format string, args ...any) string</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#CSprintln">func CSprintln(messages ...any) string</a>
 		</strong>
 	</li>
 	
@@ -371,6 +383,12 @@ ls.Run()
     <li>
 		<strong>
 		<a href="#Cprintf">func Cprintf(format string, args ...any) (int, error)</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#Cprintln">func Cprintln(messages ...any) (int, error)</a>
 		</strong>
 	</li>
 	
@@ -900,8 +918,8 @@ ls.Run()
 			
 		</td>
 		<td class="text-right">3KB</td>
-		<td class="text-right">66</td>
-		<td class="text-right">9</td>
+		<td class="text-right">77</td>
+		<td class="text-right">12</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right">2</td>
@@ -913,8 +931,8 @@ ls.Run()
 			<a href="colors_test.go">colors_test.go</a>
 			
 		</td>
-		<td class="text-right">4KB</td>
-		<td class="text-right">48</td>
+		<td class="text-right">6KB</td>
+		<td class="text-right">70</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1168,6 +1186,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </p>
 
 
+<h3 id="CFprintln" data-kind="f">
+	func <a title="View Source" href="">CFprintln</a>
+	<a class="permalink" href="#CFprintln">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func CFprintln(w io.Writer, messages ...any) (int, error)</pre>
+</div>
+
+
+<p><p>A version of fmt.Fprintln that supports terminal color expressions.</p>
+</p>
+
+
 <h3 id="CSprint" data-kind="f">
 	func <a title="View Source" href="">CSprint</a>
 	<a class="permalink" href="#CSprint">&#182;</a>
@@ -1193,6 +1225,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 
 
 <p><p>A version of fmt.Sprintf that supports terminal color expressions.</p>
+</p>
+
+
+<h3 id="CSprintln" data-kind="f">
+	func <a title="View Source" href="">CSprintln</a>
+	<a class="permalink" href="#CSprintln">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func CSprintln(messages ...any) string</pre>
+</div>
+
+
+<p><p>A version of fmt.Sprintln that supports terminal color expressions.</p>
 </p>
 
 
@@ -1260,6 +1306,20 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 
 
 <p><p>A version of fmt.Printf that supports terminal color expressions.</p>
+</p>
+
+
+<h3 id="Cprintln" data-kind="f">
+	func <a title="View Source" href="">Cprintln</a>
+	<a class="permalink" href="#Cprintln">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func Cprintln(messages ...any) (int, error)</pre>
+</div>
+
+
+<p><p>A version of fmt.Println that supports terminal color expressions.</p>
 </p>
 
 
