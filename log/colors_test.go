@@ -9,6 +9,15 @@ import (
 func TestCSprintf(t *testing.T) {
 	var assert = require.New(t)
 
+	assert.Equal("this \x1b[0;30mblack\x1b[0m word", CSprint("this ${black}black${reset} word"))
+	assert.Equal("this \x1b[0;31mred\x1b[0m word", CSprint("this ${red}red${reset} word"))
+	assert.Equal("this \x1b[0;32mgreen\x1b[0m word", CSprint("this ${green}green${reset} word"))
+	assert.Equal("this \x1b[0;33myellow\x1b[0m word", CSprint("this ${yellow}yellow${reset} word"))
+	assert.Equal("this \x1b[0;34mblue\x1b[0m word", CSprint("this ${blue}blue${reset} word"))
+	assert.Equal("this \x1b[0;35mmagenta\x1b[0m word", CSprint("this ${magenta}magenta${reset} word"))
+	assert.Equal("this \x1b[0;36mcyan\x1b[0m word", CSprint("this ${cyan}cyan${reset} word"))
+	assert.Equal("this \x1b[0;37mwhite\x1b[0m word", CSprint("this ${white}white${reset} word"))
+
 	assert.Equal("this \x1b[0;30mblack\x1b[0m word", CSprintf("this ${black}black${reset} word"))
 	assert.Equal("this \x1b[0;31mred\x1b[0m word", CSprintf("this ${red}red${reset} word"))
 	assert.Equal("this \x1b[0;32mgreen\x1b[0m word", CSprintf("this ${green}green${reset} word"))

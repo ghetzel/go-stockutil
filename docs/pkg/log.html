@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.13.3
+                            v1.14.1
                         </li>
                     </ul>
                     
@@ -141,7 +141,7 @@
 	</span>
 </div>
 
-<span class="pull-right">Doc Coverage: 31%</span>
+<span class="pull-right">Doc Coverage: 38%</span>
 <h2 id="pkg-overview">package log</h2>
 
 <p>
@@ -315,21 +315,39 @@ ls.Run()
 	</li>
 	
     <li>
-		
+		<strong>
 		<a href="#CFPrintf">func CFPrintf(w io.Writer, format string, args ...any) (int, error)</a>
-		
+		</strong>
 	</li>
 	
     <li>
-		
+		<strong>
+		<a href="#CFprint">func CFprint(w io.Writer, messages ...any) (int, error)</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#CFprintf">func CFprintf(w io.Writer, format string, args ...any) (int, error)</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#CSprint">func CSprint(messages ...any) string</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
 		<a href="#CSprintf">func CSprintf(format string, args ...any) string</a>
-		
+		</strong>
 	</li>
 	
     <li>
-		
+		<strong>
 		<a href="#CStripf">func CStripf(format string, args ...any) string</a>
-		
+		</strong>
 	</li>
 	
     <li>
@@ -341,6 +359,18 @@ ls.Run()
     <li>
 		<strong>
 		<a href="#Confirmf">func Confirmf(format string, args ...any) bool</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#Cprint">func Cprint(messages ...any) (int, error)</a>
+		</strong>
+	</li>
+	
+    <li>
+		<strong>
+		<a href="#Cprintf">func Cprintf(format string, args ...any) (int, error)</a>
 		</strong>
 	</li>
 	
@@ -869,9 +899,9 @@ ls.Run()
 			<a href="colors.go">colors.go</a>
 			
 		</td>
-		<td class="text-right">2KB</td>
-		<td class="text-right">43</td>
-		<td class="text-right">4</td>
+		<td class="text-right">3KB</td>
+		<td class="text-right">66</td>
+		<td class="text-right">9</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right">2</td>
@@ -883,8 +913,8 @@ ls.Run()
 			<a href="colors_test.go">colors_test.go</a>
 			
 		</td>
-		<td class="text-right">3KB</td>
-		<td class="text-right">40</td>
+		<td class="text-right">4KB</td>
+		<td class="text-right">48</td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
 		<td class="text-right"></td>
@@ -1106,6 +1136,51 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </div>
 
 
+<p><p>Alias of log.CFprintf</p>
+</p>
+
+
+<h3 id="CFprint" data-kind="f">
+	func <a title="View Source" href="">CFprint</a>
+	<a class="permalink" href="#CFprint">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func CFprint(w io.Writer, messages ...any) (int, error)</pre>
+</div>
+
+
+<p><p>A version of fmt.Fprint that supports terminal color expressions.</p>
+</p>
+
+
+<h3 id="CFprintf" data-kind="f">
+	func <a title="View Source" href="">CFprintf</a>
+	<a class="permalink" href="#CFprintf">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func CFprintf(w io.Writer, format string, args ...any) (int, error)</pre>
+</div>
+
+
+<p><p>A version of fmt.Fprintf that supports terminal color expressions.</p>
+</p>
+
+
+<h3 id="CSprint" data-kind="f">
+	func <a title="View Source" href="">CSprint</a>
+	<a class="permalink" href="#CSprint">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func CSprint(messages ...any) string</pre>
+</div>
+
+
+<p><p>A version of fmt.Sprint that supports terminal color expressions.</p>
+</p>
+
 
 <h3 id="CSprintf" data-kind="f">
 	func <a title="View Source" href="">CSprintf</a>
@@ -1117,6 +1192,9 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 </div>
 
 
+<p><p>A version of fmt.Sprintf that supports terminal color expressions.</p>
+</p>
+
 
 <h3 id="CStripf" data-kind="f">
 	func <a title="View Source" href="">CStripf</a>
@@ -1127,6 +1205,9 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 	<pre>func CStripf(format string, args ...any) string</pre>
 </div>
 
+
+<p><p>Return a string with all color expressions removed.</p>
+</p>
 
 
 <h3 id="Confirm" data-kind="f">
@@ -1151,6 +1232,34 @@ var <span id="TerminalEscapeSuffix">TerminalEscapeSuffix      </span> = `\]`
 
 
 <p><p>Present a confirmation prompt. The function returns true if the user interactively responds<br>with “yes” or “y”. Otherwise the function returns false.</p>
+</p>
+
+
+<h3 id="Cprint" data-kind="f">
+	func <a title="View Source" href="">Cprint</a>
+	<a class="permalink" href="#Cprint">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func Cprint(messages ...any) (int, error)</pre>
+</div>
+
+
+<p><p>A version of fmt.Print that supports terminal color expressions.</p>
+</p>
+
+
+<h3 id="Cprintf" data-kind="f">
+	func <a title="View Source" href="">Cprintf</a>
+	<a class="permalink" href="#Cprintf">&#182;</a>
+</h3>
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func Cprintf(format string, args ...any) (int, error)</pre>
+</div>
+
+
+<p><p>A version of fmt.Printf that supports terminal color expressions.</p>
 </p>
 
 

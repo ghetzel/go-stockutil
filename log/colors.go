@@ -3,6 +3,7 @@ package log
 import (
 	"fmt"
 	"io"
+	"os"
 	"regexp"
 
 	"github.com/ghetzel/go-stockutil/rxutil"
@@ -14,8 +15,16 @@ var rxColorExpr = regexp.MustCompile(`(\$\{(?P<color>[^\}]+)\})`) // ${color}, $
 var TerminalEscapePrefix = `\[`
 var TerminalEscapeSuffix = `\]`
 
-func csprintf(termEscape bool, colorEnabled bool, format string, args ...any) string {
-	var out = fmt.Sprintf(format, args...)
+func csprintf(termEscape bool, colorEnabled bool, format string, literal string, args ...any) string {
+	var out string
+
+	if literal != `` {
+		out = literal
+	} else if format != `` {
+		out = fmt.Sprintf(format, args...)
+	} else {
+		out = fmt.Sprint(args...)
+	}
 
 	for {
 		if match := rxutil.Match(rxColorExpr, out); match != nil {
@@ -41,20 +50,48 @@ func csprintf(termEscape bool, colorEnabled bool, format string, args ...any) st
 	return out
 }
 
-func CSprintf(format string, args ...any) string {
-	return csprintf(false, true, format, args...)
+// A version of fmt.Sprint that supports terminal color expressions.
+func CSprint(messages ...any) string {
+	return csprintf(false, true, ``, ``, messages...)
 }
 
-func CFPrintf(w io.Writer, format string, args ...any) (int, error) {
+// A version of fmt.Sprintf that supports terminal color expressions.
+func CSprintf(format string, args ...any) string {
+	return csprintf(false, true, format, ``, args...)
+}
+
+// A version of fmt.Fprint that supports terminal color expressions.
+func CFprint(w io.Writer, messages ...any) (int, error) {
+	return fmt.Fprint(w, CSprint(messages...))
+}
+
+// A version of fmt.Fprintf that supports terminal color expressions.
+func CFprintf(w io.Writer, format string, args ...any) (int, error) {
 	return fmt.Fprint(w, CSprintf(format, args...))
 }
 
+// Alias of log.CFprintf
+func CFPrintf(w io.Writer, format string, args ...any) (int, error) {
+	return CFprintf(w, format, args...)
+}
+
+// A version of fmt.Print that supports terminal color expressions.
+func Cprint(messages ...any) (int, error) {
+	return CFprint(os.Stdout, messages...)
+}
+
+// A version of fmt.Printf that supports terminal color expressions.
+func Cprintf(format string, args ...any) (int, error) {
+	return CFprintf(os.Stdout, format, args...)
+}
+
+// Return a string with all color expressions removed.
 func CStripf(format string, args ...any) string {
-	return csprintf(false, false, format, args...)
+	return csprintf(false, false, format, ``, args...)
 }
 
 // Same as CSprintf, but wraps all replaced color sequences with terminal escape sequences
 // as defined in TerminalEscapePrefix and TerminalEscapeSuffix
 func TermSprintf(format string, args ...any) string {
-	return csprintf(true, true, format, args...)
+	return csprintf(true, true, format, ``, args...)
 }
