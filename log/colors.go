@@ -11,7 +11,8 @@ import (
 	"github.com/mgutz/ansi"
 )
 
-var rxColorExpr = regexp.MustCompile(`(\$\{(?P<color>[^\}]+)\})`) // ${color}, ${color:mod1:mod2}
+// Specify a regexp.Regexp used to extract color expression tokens from a string. The pattern should specify a named capture group called "color" matching the color expression.
+var ColorExpressionTagRegexp = regexp.MustCompile(`(\$\{(?P<color>[^\}]+)\})`) // ${color}, ${color:mod1:mod2}
 var TerminalEscapePrefix = `\[`
 var TerminalEscapeSuffix = `\]`
 
@@ -27,7 +28,7 @@ func csprintf(termEscape bool, colorEnabled bool, format string, literal string,
 	}
 
 	for {
-		if match := rxutil.Match(rxColorExpr, out); match != nil {
+		if match := rxutil.Match(ColorExpressionTagRegexp, out); match != nil {
 			var colorExpr = match.Group(`color`)
 			var repl = ``
 
