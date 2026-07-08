@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.14.3
+                            v1.14.4
                         </li>
                     </ul>
                     
@@ -148,7 +148,7 @@
     &#34;GeneratorVersion&#34;: &#34;0.0.7&#34;,
     &#34;Title&#34;: &#34;go-stockutil&#34;,
     &#34;URL&#34;: &#34;https://github.com/ghetzel/go-stockutil&#34;,
-    &#34;Version&#34;: &#34;1.14.3&#34;
+    &#34;Version&#34;: &#34;1.14.4&#34;
   },
   &#34;Package&#34;: {
     &#34;CanonicalImportPath&#34;: &#34;github.com/ghetzel/go-stockutil&#34;,
@@ -156,10 +156,10 @@
     &#34;ConstantCount&#34;: 1,
     &#34;Constants&#34;: [
       {
-        &#34;Expression&#34;: &#34;`1.14.3`&#34;,
+        &#34;Expression&#34;: &#34;`1.14.4`&#34;,
         &#34;Immutable&#34;: true,
         &#34;Name&#34;: &#34;Version&#34;,
-        &#34;Value&#34;: &#34;1.14.3&#34;
+        &#34;Value&#34;: &#34;1.14.4&#34;
       }
     ],
     &#34;Files&#34;: [
@@ -436,25 +436,6 @@
           {
             &#34;Arguments&#34;: [
               {
-                &#34;Name&#34;: &#34;kelvin&#34;,
-                &#34;Type&#34;: &#34;int&#34;
-              }
-            ],
-            &#34;Comment&#34;: &#34;Takes a color temperature in degrees Kelvin and returns a valid Color for that temperature.\nThis function works best between 1000K and 40000K.&#34;,
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;KelvinToColor&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Name&#34;: &#34;color&#34;,
-                &#34;Type&#34;: &#34;Color&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;KelvinToColor(kelvin int) color Color&#34;,
-            &#34;Source&#34;: &#34;ewoJY29sb3IuYSA9IDEuMAoJdmFyIHJBLCByQiwgckMsIHJYIGZsb2F0NjQKCXZhciBnMUEsIGcxQiwgZzFDLCBnMVggZmxvYXQ2NAoJdmFyIGcyQSwgZzJCLCBnMkMsIGcyWCBmbG9hdDY0Cgl2YXIgYkEsIGJCLCBiQywgYlggZmxvYXQ2NAoJckEgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRBCglyQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX1JlZEIKCXJDID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfUmVkQwoJclggPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRYCglnMUEgPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuQQoJZzFCID0gaGVsbGFuZEJhcnRsZXR0VW5kZXI2NjAwS19HcmVlbkIKCWcxQyA9IGhlbGxhbmRCYXJ0bGV0dFVuZGVyNjYwMEtfR3JlZW5DCglnMVggPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuWAoJZzJBID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5BCglnMkIgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19HcmVlbkIKCWcyQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX0dyZWVuQwoJZzJYID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5YCgliQSA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVBCgliQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVCCgliQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVDCgliWCA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVYCgl2YXIgdGVtcCA9IGZsb2F0NjQoa2VsdmluKSAvIDEwMC4wCglpZiB0ZW1wIDwgNjYgewoJCWNvbG9yLnIgPSAxLjAKCX0gZWxzZSB7CgkJdmFyIHggPSAodGVtcCArIHJYKQoJCXZhciByMjU1ID0gKHJBICsgKHJCICogeCkgKyAockMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgcjI1NSA8IDAgewoJCQlyMjU1ID0gMAoJCX0gZWxzZSBpZiByMjU1ID4gMjU1IHsKCQkJcjI1NSA9IDI1NQoJCX0KCQljb2xvci5yID0gcjI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8IDY2IHsKCQl2YXIgeCA9ICh0ZW1wICsgZzFYKQoJCXZhciBnMjU1ID0gKGcxQSArIChnMUIgKiB4KSArIChnMUMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfSBlbHNlIHsKCQl2YXIgeCA9ICh0ZW1wICsgZzJYKQoJCXZhciBnMjU1ID0gKGcyQSArIChnMkIgKiB4KSArIChnMkMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8PSAyMCB7CgkJY29sb3IuYiA9IDAKCX0gZWxzZSBpZiB0ZW1wID49IDY2IHsKCQljb2xvci5iID0gMS4wCgl9IGVsc2UgewoJCXZhciB4ID0gKHRlbXAgKyBiWCkKCQl2YXIgYjI1NSA9IChiQSArIChiQiAqIHgpICsgKGJDICogbWF0aC5Mb2coeCkpKQoJCWlmIGIyNTUgPCAwIHsKCQkJYjI1NSA9IDAKCQl9IGVsc2UgaWYgYjI1NSA&#43;IDI1NSB7CgkJCWIyNTUgPSAyNTUKCQl9CgkJY29sb3IuYiA9IGIyNTUgLyAyNTUKCX0KCXJldHVybgp9Ly8gc2NhbGUgdGhlIHZhbHVlIHRvIG1ha2Ugd29ya2luZyB3aXRoIHNvbWUgb2YgdGhpcyBlYXNpZXIKLy8gYSArIGIqeCArIGMqbG4oeCkK&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
                 &#34;Name&#34;: &#34;r&#34;,
                 &#34;Type&#34;: &#34;float64&#34;
               },
@@ -493,7 +474,7 @@
         &#34;SourceLineCount&#34;: 1059,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 1,
+          &#34;HarmonicMean&#34;: 0,
           &#34;Maximum&#34;: 1,
           &#34;Mean&#34;: 0.7517,
           &#34;Median&#34;: 1,
@@ -1079,6 +1060,25 @@
                 ],
                 &#34;Signature&#34;: &#34;Mix(first any, second any) (Color, error)&#34;,
                 &#34;Source&#34;: &#34;ewoJcmV0dXJuIE1peE4oZmlyc3QsIHNlY29uZCwgMC41KQp9&#34;
+              },
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;kelvin&#34;,
+                    &#34;Type&#34;: &#34;int&#34;
+                  }
+                ],
+                &#34;Comment&#34;: &#34;Takes a color temperature in degrees Kelvin and returns a valid Color for that temperature.\nThis function works best between 1000K and 40000K.&#34;,
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;KelvinToColor&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;color&#34;,
+                    &#34;Type&#34;: &#34;Color&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;KelvinToColor(kelvin int) color Color&#34;,
+                &#34;Source&#34;: &#34;ewoJY29sb3IuYSA9IDEuMAoJdmFyIHJBLCByQiwgckMsIHJYIGZsb2F0NjQKCXZhciBnMUEsIGcxQiwgZzFDLCBnMVggZmxvYXQ2NAoJdmFyIGcyQSwgZzJCLCBnMkMsIGcyWCBmbG9hdDY0Cgl2YXIgYkEsIGJCLCBiQywgYlggZmxvYXQ2NAoJckEgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRBCglyQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX1JlZEIKCXJDID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfUmVkQwoJclggPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRYCglnMUEgPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuQQoJZzFCID0gaGVsbGFuZEJhcnRsZXR0VW5kZXI2NjAwS19HcmVlbkIKCWcxQyA9IGhlbGxhbmRCYXJ0bGV0dFVuZGVyNjYwMEtfR3JlZW5DCglnMVggPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuWAoJZzJBID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5BCglnMkIgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19HcmVlbkIKCWcyQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX0dyZWVuQwoJZzJYID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5YCgliQSA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVBCgliQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVCCgliQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVDCgliWCA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVYCgl2YXIgdGVtcCA9IGZsb2F0NjQoa2VsdmluKSAvIDEwMC4wCglpZiB0ZW1wIDwgNjYgewoJCWNvbG9yLnIgPSAxLjAKCX0gZWxzZSB7CgkJdmFyIHggPSAodGVtcCArIHJYKQoJCXZhciByMjU1ID0gKHJBICsgKHJCICogeCkgKyAockMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgcjI1NSA8IDAgewoJCQlyMjU1ID0gMAoJCX0gZWxzZSBpZiByMjU1ID4gMjU1IHsKCQkJcjI1NSA9IDI1NQoJCX0KCQljb2xvci5yID0gcjI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8IDY2IHsKCQl2YXIgeCA9ICh0ZW1wICsgZzFYKQoJCXZhciBnMjU1ID0gKGcxQSArIChnMUIgKiB4KSArIChnMUMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfSBlbHNlIHsKCQl2YXIgeCA9ICh0ZW1wICsgZzJYKQoJCXZhciBnMjU1ID0gKGcyQSArIChnMkIgKiB4KSArIChnMkMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8PSAyMCB7CgkJY29sb3IuYiA9IDAKCX0gZWxzZSBpZiB0ZW1wID49IDY2IHsKCQljb2xvci5iID0gMS4wCgl9IGVsc2UgewoJCXZhciB4ID0gKHRlbXAgKyBiWCkKCQl2YXIgYjI1NSA9IChiQSArIChiQiAqIHgpICsgKGJDICogbWF0aC5Mb2coeCkpKQoJCWlmIGIyNTUgPCAwIHsKCQkJYjI1NSA9IDAKCQl9IGVsc2UgaWYgYjI1NSA&#43;IDI1NSB7CgkJCWIyNTUgPSAyNTUKCQl9CgkJY29sb3IuYiA9IGIyNTUgLyAyNTUKCX0KCXJldHVybgp9Ly8gc2NhbGUgdGhlIHZhbHVlIHRvIG1ha2Ugd29ya2luZyB3aXRoIHNvbWUgb2YgdGhpcyBlYXNpZXIKLy8gYSArIGIqeCArIGMqbG4oeCkK&#34;
               }
             ],
             &#34;Name&#34;: &#34;Color&#34;,
@@ -2264,27 +2264,6 @@
           {
             &#34;Arguments&#34;: [
               {
-                &#34;Name&#34;: &#34;outlevel&#34;,
-                &#34;Type&#34;: &#34;log.Level&#34;
-              },
-              {
-                &#34;Name&#34;: &#34;errlevel&#34;,
-                &#34;Type&#34;: &#34;log.Level&#34;
-              }
-            ],
-            &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;LogOutput&#34;,
-            &#34;Returns&#34;: [
-              {
-                &#34;Type&#34;: &#34;OutputLineFunc&#34;
-              }
-            ],
-            &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
-            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
                 &#34;Name&#34;: &#34;line&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               },
@@ -3079,6 +3058,29 @@
             &#34;Source&#34;: &#34;dHlwZSBDb21tYW5kU3RhdHVzRnVuYyBmdW5jKFN0YXR1cyk=&#34;
           },
           &#34;OutputLineFunc&#34;: {
+            &#34;Methods&#34;: [
+              {
+                &#34;Arguments&#34;: [
+                  {
+                    &#34;Name&#34;: &#34;outlevel&#34;,
+                    &#34;Type&#34;: &#34;log.Level&#34;
+                  },
+                  {
+                    &#34;Name&#34;: &#34;errlevel&#34;,
+                    &#34;Type&#34;: &#34;log.Level&#34;
+                  }
+                ],
+                &#34;IsPackageLevel&#34;: true,
+                &#34;Name&#34;: &#34;LogOutput&#34;,
+                &#34;Returns&#34;: [
+                  {
+                    &#34;Type&#34;: &#34;OutputLineFunc&#34;
+                  }
+                ],
+                &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
+                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
+              }
+            ],
             &#34;Name&#34;: &#34;OutputLineFunc&#34;,
             &#34;Source&#34;: &#34;dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk=&#34;
           },
@@ -18160,7 +18162,7 @@
         &#34;SourceLineCount&#34;: 187,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 0,
+          &#34;HarmonicMean&#34;: 1,
           &#34;Maximum&#34;: 1,
           &#34;Mean&#34;: 0.3545,
           &#34;Median&#34;: 0,
@@ -23334,10 +23336,10 @@
                 &#34;PackageName&#34;: &#34;github.com/ghetzel/testify/require&#34;
               }
             ],
-            &#34;LineCount&#34;: 270,
+            &#34;LineCount&#34;: 283,
             &#34;Name&#34;: &#34;variant_test.go&#34;,
-            &#34;Size&#34;: 7489,
-            &#34;SourceLineCount&#34;: 233,
+            &#34;Size&#34;: 7792,
+            &#34;SourceLineCount&#34;: 244,
             &#34;TypeCount&#34;: 0,
             &#34;VariableCount&#34;: 0
           }
@@ -24422,11 +24424,11 @@
           }
         ],
         &#34;ImportPath&#34;: &#34;typeutil&#34;,
-        &#34;LineCount&#34;: 2832,
+        &#34;LineCount&#34;: 2845,
         &#34;MainFunction&#34;: false,
         &#34;Name&#34;: &#34;typeutil&#34;,
         &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-        &#34;SourceLineCount&#34;: 2302,
+        &#34;SourceLineCount&#34;: 2313,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0.949,
           &#34;HarmonicMean&#34;: 0,
@@ -24665,6 +24667,18 @@
             &#34;Name&#34;: &#34;TestOrTime&#34;,
             &#34;Signature&#34;: &#34;TestOrTime(t *testing.T)&#34;,
             &#34;Source&#34;: &#34;ewoJcmVxdWlyZS5UcnVlKHQsIE9yVGltZShgYCkuSXNaZXJvKCkpCglyZXF1aXJlLlRydWUodCwgT3JUaW1lKG5pbCwgYGAsIGZhbHNlLCBuaWwpLklzWmVybygpKQoJcmVxdWlyZS5GYWxzZSh0LCBPclRpbWUoYG5vd2ApLklzWmVybygpKQoJcmVxdWlyZS5FcXVhbCh0LCB0aW1lLlVuaXgoMCwgMCksIE9yVGltZSgwKSkKfQ==&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;t&#34;,
+                &#34;Type&#34;: &#34;*testing.T&#34;
+              }
+            ],
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;TestPackageLevel&#34;,
+            &#34;Signature&#34;: &#34;TestPackageLevel(t *testing.T)&#34;,
+            &#34;Source&#34;: &#34;ewoJdmFyIHMxICpzdHJpbmcKCXZhciBzMiBzdHJpbmcKCXZhciBzMyBzdHJpbmcgPSBgdGVzdGAKCXZhciBzNCAqc3RyaW5nID0gJnMzCglyZXF1aXJlLkVxdWFsKHQsIGBgLCBTdHJpbmcoczEpKQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKCZzMikpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKHMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoJnMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoczQpKQp9&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -25565,10 +25579,10 @@
                 &#34;PackageName&#34;: &#34;github.com/ghetzel/go-stockutil/rxutil&#34;
               }
             ],
-            &#34;LineCount&#34;: 607,
+            &#34;LineCount&#34;: 611,
             &#34;Name&#34;: &#34;convert.go&#34;,
-            &#34;Size&#34;: 13734,
-            &#34;SourceLineCount&#34;: 504,
+            &#34;Size&#34;: 13803,
+            &#34;SourceLineCount&#34;: 507,
             &#34;TypeCount&#34;: 2,
             &#34;VariableCount&#34;: 5
           },
@@ -25901,7 +25915,7 @@
               }
             ],
             &#34;Signature&#34;: &#34;ConvertTo(toType ConvertType, inI any) (any, error)&#34;,
-            &#34;Source&#34;: &#34;ewoJdmFyIGluUyBzdHJpbmcKCXZhciBpblNlcnIgZXJyb3IKCWlmIGluViwgb2sgOj0gaW5JLihyZWZsZWN0LlZhbHVlKTsgb2sgewoJCWlmIGluVi5DYW5JbnRlcmZhY2UoKSB7CgkJCWluSSA9IGluVi5JbnRlcmZhY2UoKQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoInJlZmxlY3QuVmFsdWUgZ2l2ZW4sIGJ1dCBjYW5ub3QgcmV0cmlldmUgaW50ZXJmYWNlIHZhbHVlIikKCQl9Cgl9CglpblMsIGluU2VyciA9IFRvU3RyaW5nKGluSSkKCXN3aXRjaCB0b1R5cGUgewoJY2FzZSBGbG9hdDoKCQlpZiBpblMgPT0gYGAgewoJCQlyZXR1cm4gZmxvYXQ2NCgwKSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oZmxvYXQzMik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGZsb2F0NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQ4KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MTYpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQzMik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDY0KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQ4KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDE2KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDY0KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIElzSGV4YWRlY2ltYWwoaW5JKSB7CgkJCXYsIGVyciA6PSBDb252ZXJ0SGV4VG9JbnRlZ2VyKGluSSkKCQkJcmV0dXJuIGZsb2F0NjQodiksIGVycgoJCX0KCQlyZXR1cm4gc3RyY29udi5QYXJzZUZsb2F0KGluUywgNjQpCgljYXNlIEludGVnZXI6CgkJaWYgaW5UaW1lLCBvayA6PSBpbkkuKHRpbWUuVGltZSk7IG9rIHsKCQkJcmV0dXJuIGludDY0KGluVGltZS5Vbml4TmFubygpKSwgbmlsCgkJfSBlbHNlIGlmIGluUyA9PSBgYCB7CgkJCXJldHVybiBpbnQ2NCgwKSwgbmlsCgkJfSBlbHNlIGlmIGxheW91dCA6PSBEZXRlY3RUaW1lRm9ybWF0KGluUyk7IGxheW91dCAhPSBgYCAmJiBsYXlvdXQgIT0gYGVwb2NoYCB7CgkJCWlmIHRtLCBlcnIgOj0gdGltZS5QYXJzZShsYXlvdXQsIGluUyk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHRtLlVuaXhOYW5vKCksIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCX0KCQl9IGVsc2UgaWYgSXNIZXhhZGVjaW1hbChpbkkpIHsKCQkJcmV0dXJuIENvbnZlcnRIZXhUb0ludGVnZXIoaW5JKQoJCX0KCQlpZiB2LCBvayA6PSBpbkkuKGludCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQ4KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDE2KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDMyKTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDY0KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDgpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDE2KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQzMik7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50NjQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfQoJCXJldHVybiBzdHJjb252LlBhcnNlSW50KGluUywgMTAsIDY0KQoJY2FzZSBCb29sZWFuOgoJCWlmIGluSSA9PSBuaWwgewoJCQlyZXR1cm4gZmFsc2UsIG5pbAoJCX0KCQlpZiBJc0Jvb2xlYW5UcnVlKGluUykgewoJCQlyZXR1cm4gdHJ1ZSwgbmlsCgkJfSBlbHNlIGlmIElzQm9vbGVhbkZhbHNlKGluUykgewoJCQlyZXR1cm4gZmFsc2UsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGZtdC5FcnJvcmYoIkNhbm5vdCBjb252ZXJ0ICclcycgaW50byBhIGJvb2xlYW4gdmFsdWUiLCBpblMpCgkJfQoJY2FzZSBUaW1lOgoJCWlmIGluVGltZSwgb2sgOj0gaW5JLih0aW1lLlRpbWUpOyBvayB7CgkJCXJldHVybiBpblRpbWUsIG5pbAoJCX0KCQlpblMgPSBzdHJpbmdzLlRyaW0oc3RyaW5ncy5UcmltU3BhY2UoaW5TKSwgYCInYCkKCQlpZiBEZXRlY3RUaW1lRm9ybWF0KGluUykgPT0gYGVwb2NoYCB7CgkJCWlmIHYsIGVyciA6PSBzdHJjb252LlBhcnNlSW50KGluUywgMTAsIDY0KTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdGltZS5Vbml4KHYsIDApLCBuaWwKCQkJfQoJCX0KCQlmb3IgXywgZm9ybWF0IDo9IHJhbmdlIFRpbWVGb3JtYXRzIHsKCQkJaWYgdG0sIGVyciA6PSB0aW1lLlBhcnNlKGZvcm1hdCwgc3RyaW5ncy5UcmltU3BhY2UoaW5TKSk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHRtLCBuaWwKCQkJfQoJCX0KCQlzd2l0Y2ggaW5TIHsKCQljYXNlIGBub3dgOgoJCQlyZXR1cm4gdGltZS5Ob3coKSwgbmlsCgkJZGVmYXVsdDoKCQkJdmFyIHRtUyA9IHN0cmluZ3MuTWFwKGZ1bmMociBydW5lKSBydW5lIHsKCQkJCXN3aXRjaCByIHsKCQkJCWNhc2UgJy0nLCAnOicsICcgJywgJ1QnLCAnWic6CgkJCQkJcmV0dXJuICcwJwoJCQkJfQoJCQkJcmV0dXJuIHIKCQkJfSwgaW5TKQoJCQlpZiB2LCBlcnIgOj0gc3RyY29udi5QYXJzZUludCh0bVMsIDEwLCA2NCk7IGVyciA9PSBuaWwgJiYgdiA9PSAwIHsKCQkJCXJldHVybiB0aW1lLlRpbWV7fSwgbmlsCgkJCX0KCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgJyVzJyBpbnRvIGEgZGF0ZS90aW1lIHZhbHVlIiwgaW5TKQoJCX0KCWNhc2UgQnl0ZXM6CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBbIC8vIGhhbmRsZSB0aW1lIHplcm8gdmFsdWVzCgkJCV1ieXRle30sIG5pbAoJCX0gZWxzZSBpZiBpblIsIG9rIDo9IGluSS4oaW8uUmVhZGVyKTsgb2sgewoJCQlpZiBkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChpblIpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBkYXRhLCBuaWwKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBgYCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgaW8uUmVhZGVyIHRvIFtdYnl0ZTogJXYiLCBlcnIpCgkJCX0KCQl9IGVsc2UgaWYgaW5CLCBvayA6PSBpbkkuKFtdYnl0ZSk7IG9rIHsKCQkJcmV0dXJuIGluQiwgbmlsCgkJfSBlbHNlIGlmIGluQiwgb2sgOj0gaW5JLihbXXVpbnQ4KTsgb2sgewoJCQl2YXIgb3V0QiA9IG1ha2UoW11ieXRlLCBsZW4oaW5CKSkKCQkJZm9yIGksIHYgOj0gcmFuZ2UgaW5CIHsKCQkJCW91dEJbaV0gPSBieXRlKHYpCgkJCX0KCQkJcmV0dXJuIG91dEIsIG5pbAoJCX0gZWxzZSBpZiBJc0tpbmQoaW5JLCByZWZsZWN0LlNsaWNlLCByZWZsZWN0LkFycmF5KSB7CgkJCXZhciBvdXRCID0gbWFrZShbXWJ5dGUsIDApCgkJCWlmIGVyciA6PSBTbGljZUVhY2goaW5JLCBmdW5jKGkgaW50LCB2YWx1ZSBhbnkpIGVycm9yIHsKCQkJCWlmIGJiLCBlcnIgOj0gQ29udmVydFRvSW50ZWdlcih2YWx1ZSk7IGVyciA9PSBuaWwgewoJCQkJCW91dEIgPSBhcHBlbmQob3V0QiwgYnl0ZShiYikpCgkJCQkJcmV0dXJuIG5pbAoJCQkJfSBlbHNlIHsKCQkJCQlyZXR1cm4gZXJyCgkJCQl9CgkJCX0pOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBvdXRCLCBuaWwKCQkJfSBlbHNlIHsKCQkJCXJldHVybiBuaWwsIGVycgoJCQl9CgkJfSBlbHNlIGlmIGluU2VyciA9PSBuaWwgewoJCQlyZXR1cm4gW11ieXRlKGluUyksIGluU2VycgoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGluU2VycgoJCX0KCWNhc2UgU3RyaW5nOgoJCWlmIGluSSA9PSBuaWwgewoJCQlyZXR1cm4gYGAsIG5pbAoJCX0gZWxzZSBpZiBpblIsIG9rIDo9IGluSS4oaW8uUmVhZGVyKTsgb2sgewoJCQlpZiBkYXRhLCBlcnIgOj0gaW8uUmVhZEFsbChpblIpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiBzdHJpbmcoZGF0YSksIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCBpby5SZWFkZXIgdG8gc3RyaW5nOiAldiIsIGVycikKCQkJfQoJCX0gZWxzZSBpZiBpbkIsIG9rIDo9IGluSS4oW11ieXRlKTsgb2sgewoJCQlyZXR1cm4gc3RyaW5nKGluQiksIG5pbAoJCX0gZWxzZSBpZiBpblNyLCBvayA6PSBpbkkuKGZtdC5TdHJpbmdlcik7IG9rIHsKCQkJcmV0dXJuIGluU3IuU3RyaW5nKCksIG5pbAoJCX0gZWxzZSBpZiBpblYgOj0gcmVmbGVjdC5WYWx1ZU9mKGluSSk7IGluVi5LaW5kKCkgPT0gcmVmbGVjdC5Qb2ludGVyIHsKCQkJaW5TLCBpblNlcnIgPSBUb1N0cmluZyhpblYuRWxlbSgpKQoJCX0KCQlyZXR1cm4gaW5TLCBpblNlcnIKCWRlZmF1bHQ6CgkJcmV0dXJuIGluSSwgbmlsCgl9Cn0=&#34;
+            &#34;Source&#34;: &#34;ewoJdmFyIGluUyBzdHJpbmcKCXZhciBpblNlcnIgZXJyb3IKCWlmIGluViwgb2sgOj0gaW5JLihyZWZsZWN0LlZhbHVlKTsgb2sgJiYgaW5WLklzVmFsaWQoKSB7CgkJaWYgaW5WLkNhbkludGVyZmFjZSgpIHsKCQkJaW5JID0gaW5WLkludGVyZmFjZSgpCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigicmVmbGVjdC5WYWx1ZSBnaXZlbiwgYnV0IGNhbm5vdCByZXRyaWV2ZSBpbnRlcmZhY2UgdmFsdWUiKQoJCX0KCX0KCWluUywgaW5TZXJyID0gVG9TdHJpbmcoaW5JKQoJc3dpdGNoIHRvVHlwZSB7CgljYXNlIEZsb2F0OgoJCWlmIGluUyA9PSBgYCB7CgkJCXJldHVybiBmbG9hdDY0KDApLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihmbG9hdDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oZmxvYXQ2NCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDgpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQxNik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDgpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MTYpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MzIpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgSXNIZXhhZGVjaW1hbChpbkkpIHsKCQkJdiwgZXJyIDo9IENvbnZlcnRIZXhUb0ludGVnZXIoaW5JKQoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgZXJyCgkJfQoJCXJldHVybiBzdHJjb252LlBhcnNlRmxvYXQoaW5TLCA2NCkKCWNhc2UgSW50ZWdlcjoKCQlpZiBpblRpbWUsIG9rIDo9IGluSS4odGltZS5UaW1lKTsgb2sgewoJCQlyZXR1cm4gaW50NjQoaW5UaW1lLlVuaXhOYW5vKCkpLCBuaWwKCQl9IGVsc2UgaWYgaW5TID09IGBgIHsKCQkJcmV0dXJuIGludDY0KDApLCBuaWwKCQl9IGVsc2UgaWYgbGF5b3V0IDo9IERldGVjdFRpbWVGb3JtYXQoaW5TKTsgbGF5b3V0ICE9IGBgICYmIGxheW91dCAhPSBgZXBvY2hgIHsKCQkJaWYgdG0sIGVyciA6PSB0aW1lLlBhcnNlKGxheW91dCwgaW5TKTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdG0uVW5peE5hbm8oKSwgbmlsCgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gbmlsLCBlcnIKCQkJfQoJCX0gZWxzZSBpZiBJc0hleGFkZWNpbWFsKGluSSkgewoJCQlyZXR1cm4gQ29udmVydEhleFRvSW50ZWdlcihpbkkpCgkJfQoJCWlmIHYsIG9rIDo9IGluSS4oaW50KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDgpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MTYpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MzIpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50NjQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50OCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MTYpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDMyKTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQ2NCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9CgkJcmV0dXJuIHN0cmNvbnYuUGFyc2VJbnQoaW5TLCAxMCwgNjQpCgljYXNlIEJvb2xlYW46CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBmYWxzZSwgbmlsCgkJfQoJCWlmIElzQm9vbGVhblRydWUoaW5TKSB7CgkJCXJldHVybiB0cnVlLCBuaWwKCQl9IGVsc2UgaWYgSXNCb29sZWFuRmFsc2UoaW5TKSB7CgkJCXJldHVybiBmYWxzZSwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgJyVzJyBpbnRvIGEgYm9vbGVhbiB2YWx1ZSIsIGluUykKCQl9CgljYXNlIFRpbWU6CgkJaWYgaW5UaW1lLCBvayA6PSBpbkkuKHRpbWUuVGltZSk7IG9rIHsKCQkJcmV0dXJuIGluVGltZSwgbmlsCgkJfQoJCWluUyA9IHN0cmluZ3MuVHJpbShzdHJpbmdzLlRyaW1TcGFjZShpblMpLCBgIidgKQoJCWlmIERldGVjdFRpbWVGb3JtYXQoaW5TKSA9PSBgZXBvY2hgIHsKCQkJaWYgdiwgZXJyIDo9IHN0cmNvbnYuUGFyc2VJbnQoaW5TLCAxMCwgNjQpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiB0aW1lLlVuaXgodiwgMCksIG5pbAoJCQl9CgkJfQoJCWZvciBfLCBmb3JtYXQgOj0gcmFuZ2UgVGltZUZvcm1hdHMgewoJCQlpZiB0bSwgZXJyIDo9IHRpbWUuUGFyc2UoZm9ybWF0LCBzdHJpbmdzLlRyaW1TcGFjZShpblMpKTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdG0sIG5pbAoJCQl9CgkJfQoJCXN3aXRjaCBpblMgewoJCWNhc2UgYG5vd2A6CgkJCXJldHVybiB0aW1lLk5vdygpLCBuaWwKCQlkZWZhdWx0OgoJCQl2YXIgdG1TID0gc3RyaW5ncy5NYXAoZnVuYyhyIHJ1bmUpIHJ1bmUgewoJCQkJc3dpdGNoIHIgewoJCQkJY2FzZSAnLScsICc6JywgJyAnLCAnVCcsICdaJzoKCQkJCQlyZXR1cm4gJzAnCgkJCQl9CgkJCQlyZXR1cm4gcgoJCQl9LCBpblMpCgkJCWlmIHYsIGVyciA6PSBzdHJjb252LlBhcnNlSW50KHRtUywgMTAsIDY0KTsgZXJyID09IG5pbCAmJiB2ID09IDAgewoJCQkJcmV0dXJuIHRpbWUuVGltZXt9LCBuaWwKCQkJfQoJCQlyZXR1cm4gbmlsLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCAnJXMnIGludG8gYSBkYXRlL3RpbWUgdmFsdWUiLCBpblMpCgkJfQoJY2FzZSBCeXRlczoKCQlpZiBpbkkgPT0gbmlsIHsKCQkJcmV0dXJuIFsgLy8gaGFuZGxlIHRpbWUgemVybyB2YWx1ZXMKCQkJXWJ5dGV7fSwgbmlsCgkJfSBlbHNlIGlmIGluUiwgb2sgOj0gaW5JLihpby5SZWFkZXIpOyBvayB7CgkJCWlmIGRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGluUik7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIGRhdGEsIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCBpby5SZWFkZXIgdG8gW11ieXRlOiAldiIsIGVycikKCQkJfQoJCX0gZWxzZSBpZiBpbkIsIG9rIDo9IGluSS4oW11ieXRlKTsgb2sgewoJCQlyZXR1cm4gaW5CLCBuaWwKCQl9IGVsc2UgaWYgaW5CLCBvayA6PSBpbkkuKFtddWludDgpOyBvayB7CgkJCXZhciBvdXRCID0gbWFrZShbXWJ5dGUsIGxlbihpbkIpKQoJCQlmb3IgaSwgdiA6PSByYW5nZSBpbkIgewoJCQkJb3V0QltpXSA9IGJ5dGUodikKCQkJfQoJCQlyZXR1cm4gb3V0QiwgbmlsCgkJfSBlbHNlIGlmIElzS2luZChpbkksIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuQXJyYXkpIHsKCQkJdmFyIG91dEIgPSBtYWtlKFtdYnl0ZSwgMCkKCQkJaWYgZXJyIDo9IFNsaWNlRWFjaChpbkksIGZ1bmMoaSBpbnQsIHZhbHVlIGFueSkgZXJyb3IgewoJCQkJaWYgYmIsIGVyciA6PSBDb252ZXJ0VG9JbnRlZ2VyKHZhbHVlKTsgZXJyID09IG5pbCB7CgkJCQkJb3V0QiA9IGFwcGVuZChvdXRCLCBieXRlKGJiKSkKCQkJCQlyZXR1cm4gbmlsCgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBlcnIKCQkJCX0KCQkJfSk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIG91dEIsIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCX0KCQl9IGVsc2UgaWYgaW5TZXJyID09IG5pbCB7CgkJCXJldHVybiBbXWJ5dGUoaW5TKSwgaW5TZXJyCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgaW5TZXJyCgkJfQoJY2FzZSBTdHJpbmc6CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBgYCwgbmlsCgkJfSBlbHNlIGlmIGluUiwgb2sgOj0gaW5JLihpby5SZWFkZXIpOyBvayB7CgkJCWlmIGRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGluUik7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHN0cmluZyhkYXRhKSwgbmlsCgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gYGAsIGZtdC5FcnJvcmYoIkNhbm5vdCBjb252ZXJ0IGlvLlJlYWRlciB0byBzdHJpbmc6ICV2IiwgZXJyKQoJCQl9CgkJfSBlbHNlIGlmIGluQiwgb2sgOj0gaW5JLihbXWJ5dGUpOyBvayB7CgkJCXJldHVybiBzdHJpbmcoaW5CKSwgbmlsCgkJfSBlbHNlIGlmIGluU3IsIG9rIDo9IGluSS4oZm10LlN0cmluZ2VyKTsgb2sgewoJCQlyZXR1cm4gaW5Tci5TdHJpbmcoKSwgbmlsCgkJfSBlbHNlIGlmIGluViA6PSByZWZsZWN0LlZhbHVlT2YoaW5JKTsgaW5WLktpbmQoKSA9PSByZWZsZWN0LlBvaW50ZXIgewoJCQlpblMsIGluU2VyciA9IFRvU3RyaW5nKGluVi5FbGVtKCkpCgkJCWlmIGluUyA9PSBgPGludmFsaWQgVmFsdWU&#43;YCB7CgkJCQlpblMgPSBgYAoJCQl9CgkJfQoJCXJldHVybiBpblMsIGluU2VycgoJZGVmYXVsdDoKCQlyZXR1cm4gaW5JLCBuaWwKCX0KfQ==&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -26389,11 +26403,11 @@
           }
         ],
         &#34;ImportPath&#34;: &#34;utils&#34;,
-        &#34;LineCount&#34;: 1517,
+        &#34;LineCount&#34;: 1521,
         &#34;MainFunction&#34;: false,
         &#34;Name&#34;: &#34;utils&#34;,
         &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-        &#34;SourceLineCount&#34;: 1230,
+        &#34;SourceLineCount&#34;: 1233,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
           &#34;HarmonicMean&#34;: 0,
@@ -26828,7 +26842,7 @@
       &#34;SourceLineCount&#34;: 1059,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 1,
+        &#34;HarmonicMean&#34;: 0,
         &#34;Maximum&#34;: 1,
         &#34;Mean&#34;: 0.7517,
         &#34;Median&#34;: 1,
@@ -27103,7 +27117,7 @@
       &#34;SourceLineCount&#34;: 187,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 0,
+        &#34;HarmonicMean&#34;: 1,
         &#34;Maximum&#34;: 1,
         &#34;Mean&#34;: 0.3545,
         &#34;Median&#34;: 0,
@@ -27246,11 +27260,11 @@
       &#34;ConstantCount&#34;: 3,
       &#34;FunctionCount&#34;: 99,
       &#34;ImportPath&#34;: &#34;typeutil&#34;,
-      &#34;LineCount&#34;: 2832,
+      &#34;LineCount&#34;: 2845,
       &#34;MainFunction&#34;: false,
       &#34;Name&#34;: &#34;typeutil&#34;,
       &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-      &#34;SourceLineCount&#34;: 2302,
+      &#34;SourceLineCount&#34;: 2313,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0.949,
         &#34;HarmonicMean&#34;: 0,
@@ -27271,11 +27285,11 @@
       &#34;ConstantCount&#34;: 12,
       &#34;FunctionCount&#34;: 46,
       &#34;ImportPath&#34;: &#34;utils&#34;,
-      &#34;LineCount&#34;: 1517,
+      &#34;LineCount&#34;: 1521,
       &#34;MainFunction&#34;: false,
       &#34;Name&#34;: &#34;utils&#34;,
       &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-      &#34;SourceLineCount&#34;: 1230,
+      &#34;SourceLineCount&#34;: 1233,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
         &#34;HarmonicMean&#34;: 0,

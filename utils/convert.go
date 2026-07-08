@@ -165,7 +165,7 @@ func ConvertTo(toType ConvertType, inI any) (any, error) {
 	var inS string
 	var inSerr error
 
-	if inV, ok := inI.(reflect.Value); ok {
+	if inV, ok := inI.(reflect.Value); ok && inV.IsValid() {
 		if inV.CanInterface() {
 			inI = inV.Interface()
 		} else {
@@ -361,6 +361,10 @@ func ConvertTo(toType ConvertType, inI any) (any, error) {
 		} else if inV := reflect.ValueOf(inI); inV.Kind() == reflect.Pointer {
 			// dereference pointers to strings and stringify the result
 			inS, inSerr = ToString(inV.Elem())
+
+			if inS == `<invalid Value>` {
+				inS = ``
+			}
 		}
 
 		return inS, inSerr

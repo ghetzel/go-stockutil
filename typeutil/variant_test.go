@@ -267,3 +267,16 @@ func TestSlices(t *testing.T) {
 	require.Len(t, Slice(1), 1)
 	require.Len(t, Slice([]int{1, 2, 3}), 3)
 }
+
+func TestPackageLevel(t *testing.T) {
+	var s1 *string
+	var s2 string
+	var s3 string = `test`
+	var s4 *string = &s3
+
+	require.Equal(t, ``, String(s1))
+	require.Equal(t, ``, String(&s2))
+	require.Equal(t, `test`, String(s3))
+	require.Equal(t, `test`, String(&s3))
+	require.Equal(t, `test`, String(s4))
+}

@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.14.3
+                            v1.14.4
                         </li>
                     </ul>
                     
@@ -194,12 +194,6 @@
     <li>
 		<strong>
 		<a href="#HsvToRgb">func HsvToRgb(hue float64, saturation float64, value float64) (uint8, uint8, uint8)</a>
-		</strong>
-	</li>
-	
-    <li>
-		<strong>
-		<a href="#KelvinToColor">func KelvinToColor(kelvin int) color Color</a>
 		</strong>
 	</li>
 	
@@ -337,6 +331,17 @@
 				<strong>
 				<a href="#Color.Mix">
 					func Mix(first any, second any) (Color, error)
+				</a>
+				</strong>
+			</li>
+			
+			
+			
+			
+			<li>
+				<strong>
+				<a href="#Color.KelvinToColor">
+					func KelvinToColor(kelvin int) color Color
 				</a>
 				</strong>
 			</li>
@@ -487,6 +492,8 @@
 				</a>
 				
 			</li>
+			
+			
 			
 			
 			
@@ -701,20 +708,6 @@ var <span id="ColorNames">ColorNames</span> =
 </p>
 
 
-<h3 id="KelvinToColor" data-kind="f">
-	func <a title="View Source" href="">KelvinToColor</a>
-	<a class="permalink" href="#KelvinToColor">&#182;</a>
-</h3>
-<div class="funcdecl decl">
-	<a title="View Source" href="">&#10070;</a>
-	<pre>func KelvinToColor(kelvin int) color Color</pre>
-</div>
-
-
-<p><p>Takes a color temperature in degrees Kelvin and returns a valid Color for that temperature.<br>This function works best between 1000K and 40000K.</p>
-</p>
-
-
 <h3 id="RgbToHsl" data-kind="f">
 	func <a title="View Source" href="">RgbToHsl</a>
 	<a class="permalink" href="#RgbToHsl">&#182;</a>
@@ -920,6 +913,22 @@ var <span id="ColorNames">ColorNames</span> =
 
 
 
+<h4 id="KelvinToColor" data-kind="f">
+	func <a title="View Source" href="">KelvinToColor</a>
+	<a class="permalink" href="#KelvinToColor">&#182;</a>
+</h4>
+
+<div class="funcdecl decl">
+	<a title="View Source" href="">&#10070;</a>
+	<pre>func KelvinToColor(kelvin int) color Color</pre>
+</div>
+
+<p><p>Takes a color temperature in degrees Kelvin and returns a valid Color for that temperature.<br>This function works best between 1000K and 40000K.</p>
+</p>
+
+
+
+
 
 
 
@@ -1120,6 +1129,8 @@ var <span id="ColorNames">ColorNames</span> =
 	<a title="View Source" href="">&#10070;</a>
 	<pre>func (self Color) StringRGBA() string</pre>
 </div>
+
+
 
 
 

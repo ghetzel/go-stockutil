@@ -7,8 +7,8 @@
     "Synopsis": "Helpers for type inflection and simplifying working with Golang generic interface types\n",
     "MainFunction": false,
     "CommentWordCount": 1133,
-    "LineCount": 2832,
-    "SourceLineCount": 2302,
+    "LineCount": 2845,
+    "SourceLineCount": 2313,
     "FunctionCount": 99,
     "TypeCount": 4,
     "ConstantCount": 3,
@@ -239,9 +239,9 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 7489,
-            "LineCount": 270,
-            "SourceLineCount": 233,
+            "Size": 7792,
+            "LineCount": 283,
+            "SourceLineCount": 244,
             "FunctionCount": 0,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -1576,6 +1576,18 @@
             ],
             "Signature": "TestOrTime(t *testing.T)",
             "Source": "ewoJcmVxdWlyZS5UcnVlKHQsIE9yVGltZShgYCkuSXNaZXJvKCkpCglyZXF1aXJlLlRydWUodCwgT3JUaW1lKG5pbCwgYGAsIGZhbHNlLCBuaWwpLklzWmVybygpKQoJcmVxdWlyZS5GYWxzZSh0LCBPclRpbWUoYG5vd2ApLklzWmVybygpKQoJcmVxdWlyZS5FcXVhbCh0LCB0aW1lLlVuaXgoMCwgMCksIE9yVGltZSgwKSkKfQ==",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "TestPackageLevel",
+            "Arguments": [
+                {
+                    "Name": "t",
+                    "Type": "*testing.T"
+                }
+            ],
+            "Signature": "TestPackageLevel(t *testing.T)",
+            "Source": "ewoJdmFyIHMxICpzdHJpbmcKCXZhciBzMiBzdHJpbmcKCXZhciBzMyBzdHJpbmcgPSBgdGVzdGAKCXZhciBzNCAqc3RyaW5nID0gJnMzCglyZXF1aXJlLkVxdWFsKHQsIGBgLCBTdHJpbmcoczEpKQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKCZzMikpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKHMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoJnMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoczQpKQp9",
             "IsPackageLevel": true
         },
         {

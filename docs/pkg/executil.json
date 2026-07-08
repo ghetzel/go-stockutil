@@ -475,27 +475,6 @@
             "IsPackageLevel": true
         },
         {
-            "Name": "LogOutput",
-            "Arguments": [
-                {
-                    "Name": "outlevel",
-                    "Type": "log.Level"
-                },
-                {
-                    "Name": "errlevel",
-                    "Type": "log.Level"
-                }
-            ],
-            "Returns": [
-                {
-                    "Type": "OutputLineFunc"
-                }
-            ],
-            "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
-            "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
-            "IsPackageLevel": true
-        },
-        {
             "Name": "LogOutputFunc",
             "Arguments": [
                 {
@@ -1276,6 +1255,29 @@
         },
         "OutputLineFunc": {
             "Name": "OutputLineFunc",
+            "Methods": [
+                {
+                    "Name": "LogOutput",
+                    "Arguments": [
+                        {
+                            "Name": "outlevel",
+                            "Type": "log.Level"
+                        },
+                        {
+                            "Name": "errlevel",
+                            "Type": "log.Level"
+                        }
+                    ],
+                    "Returns": [
+                        {
+                            "Type": "OutputLineFunc"
+                        }
+                    ],
+                    "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
+                    "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
+                    "IsPackageLevel": true
+                }
+            ],
             "Source": "dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk="
         },
         "Status": {
