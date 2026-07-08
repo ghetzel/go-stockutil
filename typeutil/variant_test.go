@@ -268,15 +268,31 @@ func TestSlices(t *testing.T) {
 	require.Len(t, Slice([]int{1, 2, 3}), 3)
 }
 
-func TestPackageLevel(t *testing.T) {
+func TestStringifyPointers(t *testing.T) {
 	var s1 *string
 	var s2 string
 	var s3 string = `test`
 	var s4 *string = &s3
+	var i1 *int
+	var i2 int
+	var i3 int = 3
+	var b1 *bool
+	var b2 bool
+	var b3 bool = true
 
 	require.Equal(t, ``, String(s1))
 	require.Equal(t, ``, String(&s2))
 	require.Equal(t, `test`, String(s3))
 	require.Equal(t, `test`, String(&s3))
 	require.Equal(t, `test`, String(s4))
+	require.Equal(t, ``, String(i1))
+	require.Equal(t, `0`, String(i2))
+	require.Equal(t, `0`, String(&i2))
+	require.Equal(t, `3`, String(i3))
+	require.Equal(t, `3`, String(&i3))
+	require.Equal(t, ``, String(b1))
+	require.Equal(t, `false`, String(b2))
+	require.Equal(t, `false`, String(&b2))
+	require.Equal(t, `true`, String(b3))
+	require.Equal(t, `true`, String(&b3))
 }

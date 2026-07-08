@@ -436,6 +436,25 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;kelvin&#34;,
+                &#34;Type&#34;: &#34;int&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Takes a color temperature in degrees Kelvin and returns a valid Color for that temperature.\nThis function works best between 1000K and 40000K.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;KelvinToColor&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Name&#34;: &#34;color&#34;,
+                &#34;Type&#34;: &#34;Color&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;KelvinToColor(kelvin int) color Color&#34;,
+            &#34;Source&#34;: &#34;ewoJY29sb3IuYSA9IDEuMAoJdmFyIHJBLCByQiwgckMsIHJYIGZsb2F0NjQKCXZhciBnMUEsIGcxQiwgZzFDLCBnMVggZmxvYXQ2NAoJdmFyIGcyQSwgZzJCLCBnMkMsIGcyWCBmbG9hdDY0Cgl2YXIgYkEsIGJCLCBiQywgYlggZmxvYXQ2NAoJckEgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRBCglyQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX1JlZEIKCXJDID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfUmVkQwoJclggPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRYCglnMUEgPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuQQoJZzFCID0gaGVsbGFuZEJhcnRsZXR0VW5kZXI2NjAwS19HcmVlbkIKCWcxQyA9IGhlbGxhbmRCYXJ0bGV0dFVuZGVyNjYwMEtfR3JlZW5DCglnMVggPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuWAoJZzJBID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5BCglnMkIgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19HcmVlbkIKCWcyQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX0dyZWVuQwoJZzJYID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5YCgliQSA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVBCgliQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVCCgliQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVDCgliWCA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVYCgl2YXIgdGVtcCA9IGZsb2F0NjQoa2VsdmluKSAvIDEwMC4wCglpZiB0ZW1wIDwgNjYgewoJCWNvbG9yLnIgPSAxLjAKCX0gZWxzZSB7CgkJdmFyIHggPSAodGVtcCArIHJYKQoJCXZhciByMjU1ID0gKHJBICsgKHJCICogeCkgKyAockMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgcjI1NSA8IDAgewoJCQlyMjU1ID0gMAoJCX0gZWxzZSBpZiByMjU1ID4gMjU1IHsKCQkJcjI1NSA9IDI1NQoJCX0KCQljb2xvci5yID0gcjI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8IDY2IHsKCQl2YXIgeCA9ICh0ZW1wICsgZzFYKQoJCXZhciBnMjU1ID0gKGcxQSArIChnMUIgKiB4KSArIChnMUMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfSBlbHNlIHsKCQl2YXIgeCA9ICh0ZW1wICsgZzJYKQoJCXZhciBnMjU1ID0gKGcyQSArIChnMkIgKiB4KSArIChnMkMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8PSAyMCB7CgkJY29sb3IuYiA9IDAKCX0gZWxzZSBpZiB0ZW1wID49IDY2IHsKCQljb2xvci5iID0gMS4wCgl9IGVsc2UgewoJCXZhciB4ID0gKHRlbXAgKyBiWCkKCQl2YXIgYjI1NSA9IChiQSArIChiQiAqIHgpICsgKGJDICogbWF0aC5Mb2coeCkpKQoJCWlmIGIyNTUgPCAwIHsKCQkJYjI1NSA9IDAKCQl9IGVsc2UgaWYgYjI1NSA&#43;IDI1NSB7CgkJCWIyNTUgPSAyNTUKCQl9CgkJY29sb3IuYiA9IGIyNTUgLyAyNTUKCX0KCXJldHVybgp9Ly8gc2NhbGUgdGhlIHZhbHVlIHRvIG1ha2Ugd29ya2luZyB3aXRoIHNvbWUgb2YgdGhpcyBlYXNpZXIKLy8gYSArIGIqeCArIGMqbG4oeCkK&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;r&#34;,
                 &#34;Type&#34;: &#34;float64&#34;
               },
@@ -1060,25 +1079,6 @@
                 ],
                 &#34;Signature&#34;: &#34;Mix(first any, second any) (Color, error)&#34;,
                 &#34;Source&#34;: &#34;ewoJcmV0dXJuIE1peE4oZmlyc3QsIHNlY29uZCwgMC41KQp9&#34;
-              },
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;kelvin&#34;,
-                    &#34;Type&#34;: &#34;int&#34;
-                  }
-                ],
-                &#34;Comment&#34;: &#34;Takes a color temperature in degrees Kelvin and returns a valid Color for that temperature.\nThis function works best between 1000K and 40000K.&#34;,
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;KelvinToColor&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;color&#34;,
-                    &#34;Type&#34;: &#34;Color&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;KelvinToColor(kelvin int) color Color&#34;,
-                &#34;Source&#34;: &#34;ewoJY29sb3IuYSA9IDEuMAoJdmFyIHJBLCByQiwgckMsIHJYIGZsb2F0NjQKCXZhciBnMUEsIGcxQiwgZzFDLCBnMVggZmxvYXQ2NAoJdmFyIGcyQSwgZzJCLCBnMkMsIGcyWCBmbG9hdDY0Cgl2YXIgYkEsIGJCLCBiQywgYlggZmxvYXQ2NAoJckEgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRBCglyQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX1JlZEIKCXJDID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfUmVkQwoJclggPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19SZWRYCglnMUEgPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuQQoJZzFCID0gaGVsbGFuZEJhcnRsZXR0VW5kZXI2NjAwS19HcmVlbkIKCWcxQyA9IGhlbGxhbmRCYXJ0bGV0dFVuZGVyNjYwMEtfR3JlZW5DCglnMVggPSBoZWxsYW5kQmFydGxldHRVbmRlcjY2MDBLX0dyZWVuWAoJZzJBID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5BCglnMkIgPSBoZWxsYW5kQmFydGxldHRPdmVyRXE2NjAwS19HcmVlbkIKCWcyQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXJFcTY2MDBLX0dyZWVuQwoJZzJYID0gaGVsbGFuZEJhcnRsZXR0T3ZlckVxNjYwMEtfR3JlZW5YCgliQSA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVBCgliQiA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVCCgliQyA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVDCgliWCA9IGhlbGxhbmRCYXJ0bGV0dE92ZXIyMDAwS19VbmRlcjY2MDBLX0JsdWVYCgl2YXIgdGVtcCA9IGZsb2F0NjQoa2VsdmluKSAvIDEwMC4wCglpZiB0ZW1wIDwgNjYgewoJCWNvbG9yLnIgPSAxLjAKCX0gZWxzZSB7CgkJdmFyIHggPSAodGVtcCArIHJYKQoJCXZhciByMjU1ID0gKHJBICsgKHJCICogeCkgKyAockMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgcjI1NSA8IDAgewoJCQlyMjU1ID0gMAoJCX0gZWxzZSBpZiByMjU1ID4gMjU1IHsKCQkJcjI1NSA9IDI1NQoJCX0KCQljb2xvci5yID0gcjI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8IDY2IHsKCQl2YXIgeCA9ICh0ZW1wICsgZzFYKQoJCXZhciBnMjU1ID0gKGcxQSArIChnMUIgKiB4KSArIChnMUMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfSBlbHNlIHsKCQl2YXIgeCA9ICh0ZW1wICsgZzJYKQoJCXZhciBnMjU1ID0gKGcyQSArIChnMkIgKiB4KSArIChnMkMgKiBtYXRoLkxvZyh4KSkpCgkJaWYgZzI1NSA8IDAgewoJCQlnMjU1ID0gMAoJCX0gZWxzZSBpZiBnMjU1ID4gMjU1IHsKCQkJZzI1NSA9IDI1NQoJCX0KCQljb2xvci5nID0gZzI1NSAvIDI1NQoJfQoJaWYgdGVtcCA8PSAyMCB7CgkJY29sb3IuYiA9IDAKCX0gZWxzZSBpZiB0ZW1wID49IDY2IHsKCQljb2xvci5iID0gMS4wCgl9IGVsc2UgewoJCXZhciB4ID0gKHRlbXAgKyBiWCkKCQl2YXIgYjI1NSA9IChiQSArIChiQiAqIHgpICsgKGJDICogbWF0aC5Mb2coeCkpKQoJCWlmIGIyNTUgPCAwIHsKCQkJYjI1NSA9IDAKCQl9IGVsc2UgaWYgYjI1NSA&#43;IDI1NSB7CgkJCWIyNTUgPSAyNTUKCQl9CgkJY29sb3IuYiA9IGIyNTUgLyAyNTUKCX0KCXJldHVybgp9Ly8gc2NhbGUgdGhlIHZhbHVlIHRvIG1ha2Ugd29ya2luZyB3aXRoIHNvbWUgb2YgdGhpcyBlYXNpZXIKLy8gYSArIGIqeCArIGMqbG4oeCkK&#34;
               }
             ],
             &#34;Name&#34;: &#34;Color&#34;,
@@ -2264,6 +2264,27 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;outlevel&#34;,
+                &#34;Type&#34;: &#34;log.Level&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;errlevel&#34;,
+                &#34;Type&#34;: &#34;log.Level&#34;
+              }
+            ],
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;LogOutput&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;OutputLineFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;line&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               },
@@ -3058,29 +3079,6 @@
             &#34;Source&#34;: &#34;dHlwZSBDb21tYW5kU3RhdHVzRnVuYyBmdW5jKFN0YXR1cyk=&#34;
           },
           &#34;OutputLineFunc&#34;: {
-            &#34;Methods&#34;: [
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;outlevel&#34;,
-                    &#34;Type&#34;: &#34;log.Level&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;errlevel&#34;,
-                    &#34;Type&#34;: &#34;log.Level&#34;
-                  }
-                ],
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;LogOutput&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;OutputLineFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
-              }
-            ],
             &#34;Name&#34;: &#34;OutputLineFunc&#34;,
             &#34;Source&#34;: &#34;dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk=&#34;
           },
@@ -4345,6 +4343,24 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;fns&#34;,
+                &#34;Type&#34;: &#34;...ReadManipulatorFunc&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Performs multiple sequential manipulations on an intercepted line of text from\nan io.Reader as its being read.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;ManipulateAll&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGVyciBlcnJvcgoJCWZvciBfLCBmbiA6PSByYW5nZSBmbnMgewoJCQlkYXRhLCBlcnIgPSBmbihkYXRhKQoJCQlpZiBlcnIgIT0gbmlsIHsKCQkJCWJyZWFrCgkJCX0KCQl9CgkJcmV0dXJuIGRhdGEsIGVycgoJfQp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;path&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               }
@@ -4664,6 +4680,94 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;needle&#34;,
+                &#34;Type&#34;: &#34;string&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that contain the given string.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;RemoveLinesContaining&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;RemoveLinesContaining(needle string) ReadManipulatorFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJaWYgc3RyaW5ncy5Db250YWlucyhzdHJpbmcoZGF0YSksIG5lZWRsZSkgewoJCQlyZXR1cm4gbmlsLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gZGF0YSwgbmlsCgkJfQoJfQp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;prefix&#34;,
+                &#34;Type&#34;: &#34;string&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;suffix&#34;,
+                &#34;Type&#34;: &#34;string&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;trimSpace&#34;,
+                &#34;Type&#34;: &#34;bool&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;RemoveLinesSurroundedBy&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSAmJiBzdHJpbmdzLkhhc1N1ZmZpeChsaW5lLCBzdWZmaXgpIHsKCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIGRhdGEsIG5pbAoJCX0KCX0KfQ==&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;prefix&#34;,
+                &#34;Type&#34;: &#34;string&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;trimSpace&#34;,
+                &#34;Type&#34;: &#34;bool&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given prefix.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;RemoveLinesWithPrefix&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;suffix&#34;,
+                &#34;Type&#34;: &#34;string&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;trimSpace&#34;,
+                &#34;Type&#34;: &#34;bool&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given suffix.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;RemoveLinesWithSuffix&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNTdWZmaXgobGluZSwgc3VmZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;scheme&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               }
@@ -4673,6 +4777,32 @@
             &#34;Name&#34;: &#34;RemoveOpenHandler&#34;,
             &#34;Signature&#34;: &#34;RemoveOpenHandler(scheme string)&#34;,
             &#34;Source&#34;: &#34;ewoJZGVsZXRlKG9wZW5IYW5kbGVycywgc2NoZW1lKQp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;find&#34;,
+                &#34;Type&#34;: &#34;string&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;replace&#34;,
+                &#34;Type&#34;: &#34;string&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;occurrences&#34;,
+                &#34;Type&#34;: &#34;int&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;A ReadManipulatorFunc for replacing text in an io.Reader as its being read.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;ReplaceWith&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlsaW5lID0gc3RyaW5ncy5SZXBsYWNlKGxpbmUsIGZpbmQsIHJlcGxhY2UsIG9jY3VycmVuY2VzKQoJCXJldHVybiBbXWJ5dGUobGluZSksIG5pbAoJfQp9&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -4952,7 +5082,7 @@
         &#34;SourceLineCount&#34;: 2505,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 0,
+          &#34;HarmonicMean&#34;: 1,
           &#34;Maximum&#34;: 1,
           &#34;Mean&#34;: 0.3478,
           &#34;Median&#34;: 0,
@@ -5757,140 +5887,6 @@
             &#34;Source&#34;: &#34;dHlwZSBSZWFkTWFuaXB1bGF0b3Igc3RydWN0IHsKCn0K&#34;
           },
           &#34;ReadManipulatorFunc&#34;: {
-            &#34;Methods&#34;: [
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;fns&#34;,
-                    &#34;Type&#34;: &#34;...ReadManipulatorFunc&#34;
-                  }
-                ],
-                &#34;Comment&#34;: &#34;Performs multiple sequential manipulations on an intercepted line of text from\nan io.Reader as its being read.&#34;,
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;ManipulateAll&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGVyciBlcnJvcgoJCWZvciBfLCBmbiA6PSByYW5nZSBmbnMgewoJCQlkYXRhLCBlcnIgPSBmbihkYXRhKQoJCQlpZiBlcnIgIT0gbmlsIHsKCQkJCWJyZWFrCgkJCX0KCQl9CgkJcmV0dXJuIGRhdGEsIGVycgoJfQp9&#34;
-              },
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;find&#34;,
-                    &#34;Type&#34;: &#34;string&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;replace&#34;,
-                    &#34;Type&#34;: &#34;string&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;occurrences&#34;,
-                    &#34;Type&#34;: &#34;int&#34;
-                  }
-                ],
-                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for replacing text in an io.Reader as its being read.&#34;,
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;ReplaceWith&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlsaW5lID0gc3RyaW5ncy5SZXBsYWNlKGxpbmUsIGZpbmQsIHJlcGxhY2UsIG9jY3VycmVuY2VzKQoJCXJldHVybiBbXWJ5dGUobGluZSksIG5pbAoJfQp9&#34;
-              },
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;needle&#34;,
-                    &#34;Type&#34;: &#34;string&#34;
-                  }
-                ],
-                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that contain the given string.&#34;,
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;RemoveLinesContaining&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;RemoveLinesContaining(needle string) ReadManipulatorFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJaWYgc3RyaW5ncy5Db250YWlucyhzdHJpbmcoZGF0YSksIG5lZWRsZSkgewoJCQlyZXR1cm4gbmlsLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gZGF0YSwgbmlsCgkJfQoJfQp9&#34;
-              },
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;prefix&#34;,
-                    &#34;Type&#34;: &#34;string&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;trimSpace&#34;,
-                    &#34;Type&#34;: &#34;bool&#34;
-                  }
-                ],
-                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given prefix.&#34;,
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;RemoveLinesWithPrefix&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
-              },
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;suffix&#34;,
-                    &#34;Type&#34;: &#34;string&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;trimSpace&#34;,
-                    &#34;Type&#34;: &#34;bool&#34;
-                  }
-                ],
-                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines that have a given suffix.&#34;,
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;RemoveLinesWithSuffix&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNTdWZmaXgobGluZSwgc3VmZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=&#34;
-              },
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;prefix&#34;,
-                    &#34;Type&#34;: &#34;string&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;suffix&#34;,
-                    &#34;Type&#34;: &#34;string&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;trimSpace&#34;,
-                    &#34;Type&#34;: &#34;bool&#34;
-                  }
-                ],
-                &#34;Comment&#34;: &#34;A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.&#34;,
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;RemoveLinesSurroundedBy&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;ReadManipulatorFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSAmJiBzdHJpbmdzLkhhc1N1ZmZpeChsaW5lLCBzdWZmaXgpIHsKCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIGRhdGEsIG5pbAoJCX0KCX0KfQ==&#34;
-              }
-            ],
             &#34;Name&#34;: &#34;ReadManipulatorFunc&#34;,
             &#34;Source&#34;: &#34;dHlwZSBSZWFkTWFuaXB1bGF0b3JGdW5jIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKQ==&#34;
           },
@@ -23336,10 +23332,10 @@
                 &#34;PackageName&#34;: &#34;github.com/ghetzel/testify/require&#34;
               }
             ],
-            &#34;LineCount&#34;: 283,
+            &#34;LineCount&#34;: 299,
             &#34;Name&#34;: &#34;variant_test.go&#34;,
-            &#34;Size&#34;: 7792,
-            &#34;SourceLineCount&#34;: 244,
+            &#34;Size&#34;: 8251,
+            &#34;SourceLineCount&#34;: 260,
             &#34;TypeCount&#34;: 0,
             &#34;VariableCount&#34;: 0
           }
@@ -24424,11 +24420,11 @@
           }
         ],
         &#34;ImportPath&#34;: &#34;typeutil&#34;,
-        &#34;LineCount&#34;: 2845,
+        &#34;LineCount&#34;: 2861,
         &#34;MainFunction&#34;: false,
         &#34;Name&#34;: &#34;typeutil&#34;,
         &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-        &#34;SourceLineCount&#34;: 2313,
+        &#34;SourceLineCount&#34;: 2329,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0.949,
           &#34;HarmonicMean&#34;: 0,
@@ -24676,18 +24672,6 @@
               }
             ],
             &#34;IsPackageLevel&#34;: true,
-            &#34;Name&#34;: &#34;TestPackageLevel&#34;,
-            &#34;Signature&#34;: &#34;TestPackageLevel(t *testing.T)&#34;,
-            &#34;Source&#34;: &#34;ewoJdmFyIHMxICpzdHJpbmcKCXZhciBzMiBzdHJpbmcKCXZhciBzMyBzdHJpbmcgPSBgdGVzdGAKCXZhciBzNCAqc3RyaW5nID0gJnMzCglyZXF1aXJlLkVxdWFsKHQsIGBgLCBTdHJpbmcoczEpKQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKCZzMikpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKHMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoJnMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoczQpKQp9&#34;
-          },
-          {
-            &#34;Arguments&#34;: [
-              {
-                &#34;Name&#34;: &#34;t&#34;,
-                &#34;Type&#34;: &#34;*testing.T&#34;
-              }
-            ],
-            &#34;IsPackageLevel&#34;: true,
             &#34;Name&#34;: &#34;TestParseSignatureString&#34;,
             &#34;Signature&#34;: &#34;TestParseSignatureString(t *testing.T)&#34;,
             &#34;Source&#34;: &#34;ewoJdmFyIGlkZW50LCBhcmdzLCByZXR1cm5zLCBlcnIgPSBQYXJzZVNpZ25hdHVyZVN0cmluZyhgdGVzdEZ1bmMoc3RyLGJvb2wsICp0ZXN0Q3VzdG9tVHlwZSkgKGJvb2wsZXJyb3IpYCkKCXJlcXVpcmUuTm9FcnJvcih0LCBlcnIpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0RnVuY2AsIGlkZW50KQoJcmVxdWlyZS5MZW4odCwgYXJncywgMykKCWFyZ3NbMF0uSXNTYW1lVHlwZUFzKGBleGFtcGxlIHN0cmluZ2ApCglhcmdzWzFdLklzU2FtZVR5cGVBcyh0cnVlKQoJYXJnc1syXS5Jc1NhbWVUeXBlQXMobmV3KHRlc3RDdXN0b21UeXBlKSkKCXJlcXVpcmUuTGVuKHQsIHJldHVybnMsIDIpCglyZXR1cm5zWzBdLklzU2FtZVR5cGVBcyh0cnVlKQoJcmV0dXJuc1sxXS5Jc1NhbWVUeXBlQXMoZXJyb3JzLk5ldyhgdGVzdCBlcnJvcmApKQoJaWRlbnQsIGFyZ3MsIHJldHVybnMsIGVyciA9IFBhcnNlU2lnbmF0dXJlU3RyaW5nKGBmdW5jKClgKQoJcmVxdWlyZS5Ob0Vycm9yKHQsIGVycikKCXJlcXVpcmUuRXF1YWwodCwgYChhbm9ueW1vdXMpYCwgaWRlbnQpCglyZXF1aXJlLkxlbih0LCBhcmdzLCAwKQoJcmVxdWlyZS5MZW4odCwgcmV0dXJucywgMCkKCWlkZW50LCBhcmdzLCByZXR1cm5zLCBlcnIgPSBQYXJzZVNpZ25hdHVyZVN0cmluZyhgdGVzdEZ1bmMoKSBlcnJvcmApCglyZXF1aXJlLk5vRXJyb3IodCwgZXJyKQoJcmVxdWlyZS5FcXVhbCh0LCBgdGVzdEZ1bmNgLCBpZGVudCkKCXJlcXVpcmUuTGVuKHQsIGFyZ3MsIDApCglyZXF1aXJlLkxlbih0LCByZXR1cm5zLCAxKQoJcmV0dXJuc1swXS5Jc1NhbWVUeXBlQXMoZXJyb3JzLk5ldyhgdGVzdCBlcnJvcmApKQoJaWRlbnQsIGFyZ3MsIHJldHVybnMsIGVyciA9IFBhcnNlU2lnbmF0dXJlU3RyaW5nKGB0ZXN0RnVuYyhib29sKSAoZXJyb3IpYCkKCXJlcXVpcmUuTm9FcnJvcih0LCBlcnIpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0RnVuY2AsIGlkZW50KQoJcmVxdWlyZS5MZW4odCwgYXJncywgMSkKCWFyZ3NbMF0uSXNTYW1lVHlwZUFzKGZhbHNlKQoJcmVxdWlyZS5MZW4odCwgcmV0dXJucywgMSkKCXJldHVybnNbMF0uSXNTYW1lVHlwZUFzKGVycm9ycy5OZXcoYHRlc3QgZXJyb3JgKSkKfS8vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQo=&#34;
@@ -24739,6 +24723,18 @@
             &#34;Name&#34;: &#34;TestSlices&#34;,
             &#34;Signature&#34;: &#34;TestSlices(t *testing.T)&#34;,
             &#34;Source&#34;: &#34;ewoJcmVxdWlyZS5MZW4odCwgU2xpY2UobmlsKSwgMCkKCXJlcXVpcmUuTGVuKHQsIFNsaWNlKDEpLCAxKQoJcmVxdWlyZS5MZW4odCwgU2xpY2UoW11pbnR7MSwgMiwgM30pLCAzKQp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;t&#34;,
+                &#34;Type&#34;: &#34;*testing.T&#34;
+              }
+            ],
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;TestStringifyPointers&#34;,
+            &#34;Signature&#34;: &#34;TestStringifyPointers(t *testing.T)&#34;,
+            &#34;Source&#34;: &#34;ewoJdmFyIHMxICpzdHJpbmcKCXZhciBzMiBzdHJpbmcKCXZhciBzMyBzdHJpbmcgPSBgdGVzdGAKCXZhciBzNCAqc3RyaW5nID0gJnMzCgl2YXIgaTEgKmludAoJdmFyIGkyIGludAoJdmFyIGkzIGludCA9IDMKCXZhciBiMSAqYm9vbAoJdmFyIGIyIGJvb2wKCXZhciBiMyBib29sID0gdHJ1ZQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKHMxKSkKCXJlcXVpcmUuRXF1YWwodCwgYGAsIFN0cmluZygmczIpKQoJcmVxdWlyZS5FcXVhbCh0LCBgdGVzdGAsIFN0cmluZyhzMykpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKCZzMykpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKHM0KSkKCXJlcXVpcmUuRXF1YWwodCwgYGAsIFN0cmluZyhpMSkpCglyZXF1aXJlLkVxdWFsKHQsIGAwYCwgU3RyaW5nKGkyKSkKCXJlcXVpcmUuRXF1YWwodCwgYDBgLCBTdHJpbmcoJmkyKSkKCXJlcXVpcmUuRXF1YWwodCwgYDNgLCBTdHJpbmcoaTMpKQoJcmVxdWlyZS5FcXVhbCh0LCBgM2AsIFN0cmluZygmaTMpKQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKGIxKSkKCXJlcXVpcmUuRXF1YWwodCwgYGZhbHNlYCwgU3RyaW5nKGIyKSkKCXJlcXVpcmUuRXF1YWwodCwgYGZhbHNlYCwgU3RyaW5nKCZiMikpCglyZXF1aXJlLkVxdWFsKHQsIGB0cnVlYCwgU3RyaW5nKGIzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRydWVgLCBTdHJpbmcoJmIzKSkKfQ==&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -25579,10 +25575,10 @@
                 &#34;PackageName&#34;: &#34;github.com/ghetzel/go-stockutil/rxutil&#34;
               }
             ],
-            &#34;LineCount&#34;: 611,
+            &#34;LineCount&#34;: 618,
             &#34;Name&#34;: &#34;convert.go&#34;,
-            &#34;Size&#34;: 13803,
-            &#34;SourceLineCount&#34;: 507,
+            &#34;Size&#34;: 14024,
+            &#34;SourceLineCount&#34;: 513,
             &#34;TypeCount&#34;: 2,
             &#34;VariableCount&#34;: 5
           },
@@ -25915,7 +25911,7 @@
               }
             ],
             &#34;Signature&#34;: &#34;ConvertTo(toType ConvertType, inI any) (any, error)&#34;,
-            &#34;Source&#34;: &#34;ewoJdmFyIGluUyBzdHJpbmcKCXZhciBpblNlcnIgZXJyb3IKCWlmIGluViwgb2sgOj0gaW5JLihyZWZsZWN0LlZhbHVlKTsgb2sgJiYgaW5WLklzVmFsaWQoKSB7CgkJaWYgaW5WLkNhbkludGVyZmFjZSgpIHsKCQkJaW5JID0gaW5WLkludGVyZmFjZSgpCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigicmVmbGVjdC5WYWx1ZSBnaXZlbiwgYnV0IGNhbm5vdCByZXRyaWV2ZSBpbnRlcmZhY2UgdmFsdWUiKQoJCX0KCX0KCWluUywgaW5TZXJyID0gVG9TdHJpbmcoaW5JKQoJc3dpdGNoIHRvVHlwZSB7CgljYXNlIEZsb2F0OgoJCWlmIGluUyA9PSBgYCB7CgkJCXJldHVybiBmbG9hdDY0KDApLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihmbG9hdDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oZmxvYXQ2NCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDgpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQxNik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDgpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MTYpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MzIpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgSXNIZXhhZGVjaW1hbChpbkkpIHsKCQkJdiwgZXJyIDo9IENvbnZlcnRIZXhUb0ludGVnZXIoaW5JKQoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgZXJyCgkJfQoJCXJldHVybiBzdHJjb252LlBhcnNlRmxvYXQoaW5TLCA2NCkKCWNhc2UgSW50ZWdlcjoKCQlpZiBpblRpbWUsIG9rIDo9IGluSS4odGltZS5UaW1lKTsgb2sgewoJCQlyZXR1cm4gaW50NjQoaW5UaW1lLlVuaXhOYW5vKCkpLCBuaWwKCQl9IGVsc2UgaWYgaW5TID09IGBgIHsKCQkJcmV0dXJuIGludDY0KDApLCBuaWwKCQl9IGVsc2UgaWYgbGF5b3V0IDo9IERldGVjdFRpbWVGb3JtYXQoaW5TKTsgbGF5b3V0ICE9IGBgICYmIGxheW91dCAhPSBgZXBvY2hgIHsKCQkJaWYgdG0sIGVyciA6PSB0aW1lLlBhcnNlKGxheW91dCwgaW5TKTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdG0uVW5peE5hbm8oKSwgbmlsCgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gbmlsLCBlcnIKCQkJfQoJCX0gZWxzZSBpZiBJc0hleGFkZWNpbWFsKGluSSkgewoJCQlyZXR1cm4gQ29udmVydEhleFRvSW50ZWdlcihpbkkpCgkJfQoJCWlmIHYsIG9rIDo9IGluSS4oaW50KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDgpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MTYpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MzIpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50NjQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50OCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MTYpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDMyKTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQ2NCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9CgkJcmV0dXJuIHN0cmNvbnYuUGFyc2VJbnQoaW5TLCAxMCwgNjQpCgljYXNlIEJvb2xlYW46CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBmYWxzZSwgbmlsCgkJfQoJCWlmIElzQm9vbGVhblRydWUoaW5TKSB7CgkJCXJldHVybiB0cnVlLCBuaWwKCQl9IGVsc2UgaWYgSXNCb29sZWFuRmFsc2UoaW5TKSB7CgkJCXJldHVybiBmYWxzZSwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgJyVzJyBpbnRvIGEgYm9vbGVhbiB2YWx1ZSIsIGluUykKCQl9CgljYXNlIFRpbWU6CgkJaWYgaW5UaW1lLCBvayA6PSBpbkkuKHRpbWUuVGltZSk7IG9rIHsKCQkJcmV0dXJuIGluVGltZSwgbmlsCgkJfQoJCWluUyA9IHN0cmluZ3MuVHJpbShzdHJpbmdzLlRyaW1TcGFjZShpblMpLCBgIidgKQoJCWlmIERldGVjdFRpbWVGb3JtYXQoaW5TKSA9PSBgZXBvY2hgIHsKCQkJaWYgdiwgZXJyIDo9IHN0cmNvbnYuUGFyc2VJbnQoaW5TLCAxMCwgNjQpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiB0aW1lLlVuaXgodiwgMCksIG5pbAoJCQl9CgkJfQoJCWZvciBfLCBmb3JtYXQgOj0gcmFuZ2UgVGltZUZvcm1hdHMgewoJCQlpZiB0bSwgZXJyIDo9IHRpbWUuUGFyc2UoZm9ybWF0LCBzdHJpbmdzLlRyaW1TcGFjZShpblMpKTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdG0sIG5pbAoJCQl9CgkJfQoJCXN3aXRjaCBpblMgewoJCWNhc2UgYG5vd2A6CgkJCXJldHVybiB0aW1lLk5vdygpLCBuaWwKCQlkZWZhdWx0OgoJCQl2YXIgdG1TID0gc3RyaW5ncy5NYXAoZnVuYyhyIHJ1bmUpIHJ1bmUgewoJCQkJc3dpdGNoIHIgewoJCQkJY2FzZSAnLScsICc6JywgJyAnLCAnVCcsICdaJzoKCQkJCQlyZXR1cm4gJzAnCgkJCQl9CgkJCQlyZXR1cm4gcgoJCQl9LCBpblMpCgkJCWlmIHYsIGVyciA6PSBzdHJjb252LlBhcnNlSW50KHRtUywgMTAsIDY0KTsgZXJyID09IG5pbCAmJiB2ID09IDAgewoJCQkJcmV0dXJuIHRpbWUuVGltZXt9LCBuaWwKCQkJfQoJCQlyZXR1cm4gbmlsLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCAnJXMnIGludG8gYSBkYXRlL3RpbWUgdmFsdWUiLCBpblMpCgkJfQoJY2FzZSBCeXRlczoKCQlpZiBpbkkgPT0gbmlsIHsKCQkJcmV0dXJuIFsgLy8gaGFuZGxlIHRpbWUgemVybyB2YWx1ZXMKCQkJXWJ5dGV7fSwgbmlsCgkJfSBlbHNlIGlmIGluUiwgb2sgOj0gaW5JLihpby5SZWFkZXIpOyBvayB7CgkJCWlmIGRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGluUik7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIGRhdGEsIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCBpby5SZWFkZXIgdG8gW11ieXRlOiAldiIsIGVycikKCQkJfQoJCX0gZWxzZSBpZiBpbkIsIG9rIDo9IGluSS4oW11ieXRlKTsgb2sgewoJCQlyZXR1cm4gaW5CLCBuaWwKCQl9IGVsc2UgaWYgaW5CLCBvayA6PSBpbkkuKFtddWludDgpOyBvayB7CgkJCXZhciBvdXRCID0gbWFrZShbXWJ5dGUsIGxlbihpbkIpKQoJCQlmb3IgaSwgdiA6PSByYW5nZSBpbkIgewoJCQkJb3V0QltpXSA9IGJ5dGUodikKCQkJfQoJCQlyZXR1cm4gb3V0QiwgbmlsCgkJfSBlbHNlIGlmIElzS2luZChpbkksIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuQXJyYXkpIHsKCQkJdmFyIG91dEIgPSBtYWtlKFtdYnl0ZSwgMCkKCQkJaWYgZXJyIDo9IFNsaWNlRWFjaChpbkksIGZ1bmMoaSBpbnQsIHZhbHVlIGFueSkgZXJyb3IgewoJCQkJaWYgYmIsIGVyciA6PSBDb252ZXJ0VG9JbnRlZ2VyKHZhbHVlKTsgZXJyID09IG5pbCB7CgkJCQkJb3V0QiA9IGFwcGVuZChvdXRCLCBieXRlKGJiKSkKCQkJCQlyZXR1cm4gbmlsCgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBlcnIKCQkJCX0KCQkJfSk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIG91dEIsIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCX0KCQl9IGVsc2UgaWYgaW5TZXJyID09IG5pbCB7CgkJCXJldHVybiBbXWJ5dGUoaW5TKSwgaW5TZXJyCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgaW5TZXJyCgkJfQoJY2FzZSBTdHJpbmc6CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBgYCwgbmlsCgkJfSBlbHNlIGlmIGluUiwgb2sgOj0gaW5JLihpby5SZWFkZXIpOyBvayB7CgkJCWlmIGRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGluUik7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHN0cmluZyhkYXRhKSwgbmlsCgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gYGAsIGZtdC5FcnJvcmYoIkNhbm5vdCBjb252ZXJ0IGlvLlJlYWRlciB0byBzdHJpbmc6ICV2IiwgZXJyKQoJCQl9CgkJfSBlbHNlIGlmIGluQiwgb2sgOj0gaW5JLihbXWJ5dGUpOyBvayB7CgkJCXJldHVybiBzdHJpbmcoaW5CKSwgbmlsCgkJfSBlbHNlIGlmIGluU3IsIG9rIDo9IGluSS4oZm10LlN0cmluZ2VyKTsgb2sgewoJCQlyZXR1cm4gaW5Tci5TdHJpbmcoKSwgbmlsCgkJfSBlbHNlIGlmIGluViA6PSByZWZsZWN0LlZhbHVlT2YoaW5JKTsgaW5WLktpbmQoKSA9PSByZWZsZWN0LlBvaW50ZXIgewoJCQlpblMsIGluU2VyciA9IFRvU3RyaW5nKGluVi5FbGVtKCkpCgkJCWlmIGluUyA9PSBgPGludmFsaWQgVmFsdWU&#43;YCB7CgkJCQlpblMgPSBgYAoJCQl9CgkJfQoJCXJldHVybiBpblMsIGluU2VycgoJZGVmYXVsdDoKCQlyZXR1cm4gaW5JLCBuaWwKCX0KfQ==&#34;
+            &#34;Source&#34;: &#34;ewoJdmFyIGluUyBzdHJpbmcKCXZhciBpblNlcnIgZXJyb3IKCWlmIGluViwgb2sgOj0gaW5JLihyZWZsZWN0LlZhbHVlKTsgb2sgJiYgaW5WLklzVmFsaWQoKSB7CgkJaWYgaW5WLkNhbkludGVyZmFjZSgpIHsKCQkJaW5JID0gaW5WLkludGVyZmFjZSgpCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigicmVmbGVjdC5WYWx1ZSBnaXZlbiwgYnV0IGNhbm5vdCByZXRyaWV2ZSBpbnRlcmZhY2UgdmFsdWUiKQoJCX0KCX0KCWluUywgaW5TZXJyID0gVG9TdHJpbmcoaW5JKQoJc3dpdGNoIHRvVHlwZSB7CgljYXNlIEZsb2F0OgoJCWlmIGluUyA9PSBgYCB7CgkJCXJldHVybiBmbG9hdDY0KDApLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihmbG9hdDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oZmxvYXQ2NCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludCk7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDgpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLihpbnQxNik7IG9rIHsKCQkJcmV0dXJuIGZsb2F0NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDMyKTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50KTsgb2sgewoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDgpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MTYpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MzIpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50NjQpOyBvayB7CgkJCXJldHVybiBmbG9hdDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgSXNIZXhhZGVjaW1hbChpbkkpIHsKCQkJdiwgZXJyIDo9IENvbnZlcnRIZXhUb0ludGVnZXIoaW5JKQoJCQlyZXR1cm4gZmxvYXQ2NCh2KSwgZXJyCgkJfQoJCXJldHVybiBzdHJjb252LlBhcnNlRmxvYXQoaW5TLCA2NCkKCWNhc2UgSW50ZWdlcjoKCQlpZiBpblRpbWUsIG9rIDo9IGluSS4odGltZS5UaW1lKTsgb2sgewoJCQlyZXR1cm4gaW50NjQoaW5UaW1lLlVuaXhOYW5vKCkpLCBuaWwKCQl9IGVsc2UgaWYgaW5TID09IGBgIHsKCQkJcmV0dXJuIGludDY0KDApLCBuaWwKCQl9IGVsc2UgaWYgbGF5b3V0IDo9IERldGVjdFRpbWVGb3JtYXQoaW5TKTsgbGF5b3V0ICE9IGBgICYmIGxheW91dCAhPSBgZXBvY2hgIHsKCQkJaWYgdG0sIGVyciA6PSB0aW1lLlBhcnNlKGxheW91dCwgaW5TKTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdG0uVW5peE5hbm8oKSwgbmlsCgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gbmlsLCBlcnIKCQkJfQoJCX0gZWxzZSBpZiBJc0hleGFkZWNpbWFsKGluSSkgewoJCQlyZXR1cm4gQ29udmVydEhleFRvSW50ZWdlcihpbkkpCgkJfQoJCWlmIHYsIG9rIDo9IGluSS4oaW50KTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKGludDgpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MTYpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50MzIpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4oaW50NjQpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50OCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9IGVsc2UgaWYgdiwgb2sgOj0gaW5JLih1aW50MTYpOyBvayB7CgkJCXJldHVybiBpbnQ2NCh2KSwgbmlsCgkJfSBlbHNlIGlmIHYsIG9rIDo9IGluSS4odWludDMyKTsgb2sgewoJCQlyZXR1cm4gaW50NjQodiksIG5pbAoJCX0gZWxzZSBpZiB2LCBvayA6PSBpbkkuKHVpbnQ2NCk7IG9rIHsKCQkJcmV0dXJuIGludDY0KHYpLCBuaWwKCQl9CgkJcmV0dXJuIHN0cmNvbnYuUGFyc2VJbnQoaW5TLCAxMCwgNjQpCgljYXNlIEJvb2xlYW46CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBmYWxzZSwgbmlsCgkJfQoJCWlmIElzQm9vbGVhblRydWUoaW5TKSB7CgkJCXJldHVybiB0cnVlLCBuaWwKCQl9IGVsc2UgaWYgSXNCb29sZWFuRmFsc2UoaW5TKSB7CgkJCXJldHVybiBmYWxzZSwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgZm10LkVycm9yZigiQ2Fubm90IGNvbnZlcnQgJyVzJyBpbnRvIGEgYm9vbGVhbiB2YWx1ZSIsIGluUykKCQl9CgljYXNlIFRpbWU6CgkJaWYgaW5UaW1lLCBvayA6PSBpbkkuKHRpbWUuVGltZSk7IG9rIHsKCQkJcmV0dXJuIGluVGltZSwgbmlsCgkJfQoJCWluUyA9IHN0cmluZ3MuVHJpbShzdHJpbmdzLlRyaW1TcGFjZShpblMpLCBgIidgKQoJCWlmIERldGVjdFRpbWVGb3JtYXQoaW5TKSA9PSBgZXBvY2hgIHsKCQkJaWYgdiwgZXJyIDo9IHN0cmNvbnYuUGFyc2VJbnQoaW5TLCAxMCwgNjQpOyBlcnIgPT0gbmlsIHsKCQkJCXJldHVybiB0aW1lLlVuaXgodiwgMCksIG5pbAoJCQl9CgkJfQoJCWZvciBfLCBmb3JtYXQgOj0gcmFuZ2UgVGltZUZvcm1hdHMgewoJCQlpZiB0bSwgZXJyIDo9IHRpbWUuUGFyc2UoZm9ybWF0LCBzdHJpbmdzLlRyaW1TcGFjZShpblMpKTsgZXJyID09IG5pbCB7CgkJCQlyZXR1cm4gdG0sIG5pbAoJCQl9CgkJfQoJCXN3aXRjaCBpblMgewoJCWNhc2UgYG5vd2A6CgkJCXJldHVybiB0aW1lLk5vdygpLCBuaWwKCQlkZWZhdWx0OgoJCQl2YXIgdG1TID0gc3RyaW5ncy5NYXAoZnVuYyhyIHJ1bmUpIHJ1bmUgewoJCQkJc3dpdGNoIHIgewoJCQkJY2FzZSAnLScsICc6JywgJyAnLCAnVCcsICdaJzoKCQkJCQlyZXR1cm4gJzAnCgkJCQl9CgkJCQlyZXR1cm4gcgoJCQl9LCBpblMpCgkJCWlmIHYsIGVyciA6PSBzdHJjb252LlBhcnNlSW50KHRtUywgMTAsIDY0KTsgZXJyID09IG5pbCAmJiB2ID09IDAgewoJCQkJcmV0dXJuIHRpbWUuVGltZXt9LCBuaWwKCQkJfQoJCQlyZXR1cm4gbmlsLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCAnJXMnIGludG8gYSBkYXRlL3RpbWUgdmFsdWUiLCBpblMpCgkJfQoJY2FzZSBCeXRlczoKCQlpZiBpbkkgPT0gbmlsIHsKCQkJcmV0dXJuIFsgLy8gaGFuZGxlIHRpbWUgemVybyB2YWx1ZXMKCQkJXWJ5dGV7fSwgbmlsCgkJfSBlbHNlIGlmIGluUiwgb2sgOj0gaW5JLihpby5SZWFkZXIpOyBvayB7CgkJCWlmIGRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGluUik7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIGRhdGEsIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIGBgLCBmbXQuRXJyb3JmKCJDYW5ub3QgY29udmVydCBpby5SZWFkZXIgdG8gW11ieXRlOiAldiIsIGVycikKCQkJfQoJCX0gZWxzZSBpZiBpbkIsIG9rIDo9IGluSS4oW11ieXRlKTsgb2sgewoJCQlyZXR1cm4gaW5CLCBuaWwKCQl9IGVsc2UgaWYgaW5CLCBvayA6PSBpbkkuKFtddWludDgpOyBvayB7CgkJCXZhciBvdXRCID0gbWFrZShbXWJ5dGUsIGxlbihpbkIpKQoJCQlmb3IgaSwgdiA6PSByYW5nZSBpbkIgewoJCQkJb3V0QltpXSA9IGJ5dGUodikKCQkJfQoJCQlyZXR1cm4gb3V0QiwgbmlsCgkJfSBlbHNlIGlmIElzS2luZChpbkksIHJlZmxlY3QuU2xpY2UsIHJlZmxlY3QuQXJyYXkpIHsKCQkJdmFyIG91dEIgPSBtYWtlKFtdYnl0ZSwgMCkKCQkJaWYgZXJyIDo9IFNsaWNlRWFjaChpbkksIGZ1bmMoaSBpbnQsIHZhbHVlIGFueSkgZXJyb3IgewoJCQkJaWYgYmIsIGVyciA6PSBDb252ZXJ0VG9JbnRlZ2VyKHZhbHVlKTsgZXJyID09IG5pbCB7CgkJCQkJb3V0QiA9IGFwcGVuZChvdXRCLCBieXRlKGJiKSkKCQkJCQlyZXR1cm4gbmlsCgkJCQl9IGVsc2UgewoJCQkJCXJldHVybiBlcnIKCQkJCX0KCQkJfSk7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIG91dEIsIG5pbAoJCQl9IGVsc2UgewoJCQkJcmV0dXJuIG5pbCwgZXJyCgkJCX0KCQl9IGVsc2UgaWYgaW5TZXJyID09IG5pbCB7CgkJCXJldHVybiBbXWJ5dGUoaW5TKSwgaW5TZXJyCgkJfSBlbHNlIHsKCQkJcmV0dXJuIG5pbCwgaW5TZXJyCgkJfQoJY2FzZSBTdHJpbmc6CgkJaWYgaW5JID09IG5pbCB7CgkJCXJldHVybiBgYCwgbmlsCgkJfSBlbHNlIGlmIGluUiwgb2sgOj0gaW5JLihpby5SZWFkZXIpOyBvayB7CgkJCWlmIGRhdGEsIGVyciA6PSBpby5SZWFkQWxsKGluUik7IGVyciA9PSBuaWwgewoJCQkJcmV0dXJuIHN0cmluZyhkYXRhKSwgbmlsCgkJCX0gZWxzZSB7CgkJCQlyZXR1cm4gYGAsIGZtdC5FcnJvcmYoIkNhbm5vdCBjb252ZXJ0IGlvLlJlYWRlciB0byBzdHJpbmc6ICV2IiwgZXJyKQoJCQl9CgkJfSBlbHNlIGlmIGluQiwgb2sgOj0gaW5JLihbXWJ5dGUpOyBvayB7CgkJCXJldHVybiBzdHJpbmcoaW5CKSwgbmlsCgkJfSBlbHNlIGlmIGluU3IsIG9rIDo9IGluSS4oZm10LlN0cmluZ2VyKTsgb2sgewoJCQlyZXR1cm4gaW5Tci5TdHJpbmcoKSwgbmlsCgkJfSBlbHNlIGlmIGluViA6PSByZWZsZWN0LlZhbHVlT2YoaW5JKTsgaW5WLktpbmQoKSA9PSByZWZsZWN0LlBvaW50ZXIgewoJCQlpZiBlbCA6PSBpblYuRWxlbSgpOyBlbC5Jc1ZhbGlkKCkgJiYgZWwuQ2FuSW50ZXJmYWNlKCkgewoJCQkJaW5TLCBpblNlcnIgPSBUb1N0cmluZyhlbC5JbnRlcmZhY2UoKSkKCQkJfSBlbHNlIGlmIGVsLklzVmFsaWQoKSAmJiBlbC5Jc1plcm8oKSB7CgkJCQlpblMsIGluU2VyciA9IFRvU3RyaW5nKHJlZmxlY3QuWmVybyhlbC5UeXBlKCkpKQoJCQl9IGVsc2UgewoJCQkJaW5TLCBpblNlcnIgPSBUb1N0cmluZyhlbCkKCQkJCWlmIHN0cmluZ3MuSGFzU3VmZml4KGluUywgYCBWYWx1ZT5gKSB7CgkJCQkJaW5TID0gYGAKCQkJCX0KCQkJfQoJCX0KCQlyZXR1cm4gaW5TLCBpblNlcnIKCWRlZmF1bHQ6CgkJcmV0dXJuIGluSSwgbmlsCgl9Cn0=&#34;
           },
           {
             &#34;Arguments&#34;: [
@@ -26403,11 +26399,11 @@
           }
         ],
         &#34;ImportPath&#34;: &#34;utils&#34;,
-        &#34;LineCount&#34;: 1521,
+        &#34;LineCount&#34;: 1528,
         &#34;MainFunction&#34;: false,
         &#34;Name&#34;: &#34;utils&#34;,
         &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-        &#34;SourceLineCount&#34;: 1233,
+        &#34;SourceLineCount&#34;: 1239,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
           &#34;HarmonicMean&#34;: 0,
@@ -26917,7 +26913,7 @@
       &#34;SourceLineCount&#34;: 2505,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 0,
+        &#34;HarmonicMean&#34;: 1,
         &#34;Maximum&#34;: 1,
         &#34;Mean&#34;: 0.3478,
         &#34;Median&#34;: 0,
@@ -27260,11 +27256,11 @@
       &#34;ConstantCount&#34;: 3,
       &#34;FunctionCount&#34;: 99,
       &#34;ImportPath&#34;: &#34;typeutil&#34;,
-      &#34;LineCount&#34;: 2845,
+      &#34;LineCount&#34;: 2861,
       &#34;MainFunction&#34;: false,
       &#34;Name&#34;: &#34;typeutil&#34;,
       &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-      &#34;SourceLineCount&#34;: 2313,
+      &#34;SourceLineCount&#34;: 2329,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0.949,
         &#34;HarmonicMean&#34;: 0,
@@ -27285,11 +27281,11 @@
       &#34;ConstantCount&#34;: 12,
       &#34;FunctionCount&#34;: 46,
       &#34;ImportPath&#34;: &#34;utils&#34;,
-      &#34;LineCount&#34;: 1521,
+      &#34;LineCount&#34;: 1528,
       &#34;MainFunction&#34;: false,
       &#34;Name&#34;: &#34;utils&#34;,
       &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-      &#34;SourceLineCount&#34;: 1233,
+      &#34;SourceLineCount&#34;: 1239,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
         &#34;HarmonicMean&#34;: 0,

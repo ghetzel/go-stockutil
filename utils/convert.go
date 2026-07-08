@@ -360,11 +360,18 @@ func ConvertTo(toType ConvertType, inI any) (any, error) {
 
 		} else if inV := reflect.ValueOf(inI); inV.Kind() == reflect.Pointer {
 			// dereference pointers to strings and stringify the result
-			inS, inSerr = ToString(inV.Elem())
+			if el := inV.Elem(); el.IsValid() && el.CanInterface() {
+				inS, inSerr = ToString(el.Interface())
+			} else if el.IsValid() && el.IsZero() {
+				inS, inSerr = ToString(reflect.Zero(el.Type()))
+			} else {
+				inS, inSerr = ToString(el)
 
-			if inS == `<invalid Value>` {
-				inS = ``
+				if strings.HasSuffix(inS, ` Value>`) {
+					inS = ``
+				}
 			}
+
 		}
 
 		return inS, inSerr

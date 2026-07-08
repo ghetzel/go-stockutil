@@ -7,8 +7,8 @@
     "Synopsis": "Helpers for type inflection and simplifying working with Golang generic interface types\n",
     "MainFunction": false,
     "CommentWordCount": 1133,
-    "LineCount": 2845,
-    "SourceLineCount": 2313,
+    "LineCount": 2861,
+    "SourceLineCount": 2329,
     "FunctionCount": 99,
     "TypeCount": 4,
     "ConstantCount": 3,
@@ -239,9 +239,9 @@
                     "Alias": "require"
                 }
             ],
-            "Size": 7792,
-            "LineCount": 283,
-            "SourceLineCount": 244,
+            "Size": 8251,
+            "LineCount": 299,
+            "SourceLineCount": 260,
             "FunctionCount": 0,
             "TypeCount": 0,
             "ConstantCount": 0,
@@ -1579,18 +1579,6 @@
             "IsPackageLevel": true
         },
         {
-            "Name": "TestPackageLevel",
-            "Arguments": [
-                {
-                    "Name": "t",
-                    "Type": "*testing.T"
-                }
-            ],
-            "Signature": "TestPackageLevel(t *testing.T)",
-            "Source": "ewoJdmFyIHMxICpzdHJpbmcKCXZhciBzMiBzdHJpbmcKCXZhciBzMyBzdHJpbmcgPSBgdGVzdGAKCXZhciBzNCAqc3RyaW5nID0gJnMzCglyZXF1aXJlLkVxdWFsKHQsIGBgLCBTdHJpbmcoczEpKQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKCZzMikpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKHMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoJnMzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRlc3RgLCBTdHJpbmcoczQpKQp9",
-            "IsPackageLevel": true
-        },
-        {
             "Name": "TestParseSignatureString",
             "Arguments": [
                 {
@@ -1648,6 +1636,18 @@
             ],
             "Signature": "TestSlices(t *testing.T)",
             "Source": "ewoJcmVxdWlyZS5MZW4odCwgU2xpY2UobmlsKSwgMCkKCXJlcXVpcmUuTGVuKHQsIFNsaWNlKDEpLCAxKQoJcmVxdWlyZS5MZW4odCwgU2xpY2UoW11pbnR7MSwgMiwgM30pLCAzKQp9",
+            "IsPackageLevel": true
+        },
+        {
+            "Name": "TestStringifyPointers",
+            "Arguments": [
+                {
+                    "Name": "t",
+                    "Type": "*testing.T"
+                }
+            ],
+            "Signature": "TestStringifyPointers(t *testing.T)",
+            "Source": "ewoJdmFyIHMxICpzdHJpbmcKCXZhciBzMiBzdHJpbmcKCXZhciBzMyBzdHJpbmcgPSBgdGVzdGAKCXZhciBzNCAqc3RyaW5nID0gJnMzCgl2YXIgaTEgKmludAoJdmFyIGkyIGludAoJdmFyIGkzIGludCA9IDMKCXZhciBiMSAqYm9vbAoJdmFyIGIyIGJvb2wKCXZhciBiMyBib29sID0gdHJ1ZQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKHMxKSkKCXJlcXVpcmUuRXF1YWwodCwgYGAsIFN0cmluZygmczIpKQoJcmVxdWlyZS5FcXVhbCh0LCBgdGVzdGAsIFN0cmluZyhzMykpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKCZzMykpCglyZXF1aXJlLkVxdWFsKHQsIGB0ZXN0YCwgU3RyaW5nKHM0KSkKCXJlcXVpcmUuRXF1YWwodCwgYGAsIFN0cmluZyhpMSkpCglyZXF1aXJlLkVxdWFsKHQsIGAwYCwgU3RyaW5nKGkyKSkKCXJlcXVpcmUuRXF1YWwodCwgYDBgLCBTdHJpbmcoJmkyKSkKCXJlcXVpcmUuRXF1YWwodCwgYDNgLCBTdHJpbmcoaTMpKQoJcmVxdWlyZS5FcXVhbCh0LCBgM2AsIFN0cmluZygmaTMpKQoJcmVxdWlyZS5FcXVhbCh0LCBgYCwgU3RyaW5nKGIxKSkKCXJlcXVpcmUuRXF1YWwodCwgYGZhbHNlYCwgU3RyaW5nKGIyKSkKCXJlcXVpcmUuRXF1YWwodCwgYGZhbHNlYCwgU3RyaW5nKCZiMikpCglyZXF1aXJlLkVxdWFsKHQsIGB0cnVlYCwgU3RyaW5nKGIzKSkKCXJlcXVpcmUuRXF1YWwodCwgYHRydWVgLCBTdHJpbmcoJmIzKSkKfQ==",
             "IsPackageLevel": true
         },
         {
