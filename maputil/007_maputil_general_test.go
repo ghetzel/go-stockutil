@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 type MyTestThing struct {

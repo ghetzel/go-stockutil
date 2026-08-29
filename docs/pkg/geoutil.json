@@ -43,15 +43,15 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/maputil",
-                    "Alias": "maputil"
-                },
-                {
                     "PackageName": "github.com/kellydunn/golang-geo",
                     "Alias": "geo"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-stockutil/maputil",
+                    "Alias": "maputil"
                 }
             ],
-            "Size": 4059,
+            "Size": 4053,
             "LineCount": 157,
             "SourceLineCount": 119,
             "FunctionCount": 10,
@@ -67,15 +67,15 @@
                     "Alias": "strings"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
                     "Alias": "stringutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 46905,
+            "Size": 46893,
             "LineCount": 2027,
             "SourceLineCount": 2014,
             "FunctionCount": 2,
@@ -91,11 +91,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/assert",
+                    "PackageName": "github.com/stretchr/testify/assert",
                     "Alias": "assert"
                 }
             ],
-            "Size": 530,
+            "Size": 531,
             "LineCount": 18,
             "SourceLineCount": 13,
             "FunctionCount": 0,
@@ -133,15 +133,15 @@
                     "Alias": "strings"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                    "PackageName": "go.gary.cool/go-stockutil/rxutil",
                     "Alias": "rxutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 3585,
+            "Size": 3573,
             "LineCount": 163,
             "SourceLineCount": 133,
             "FunctionCount": 10,
@@ -161,11 +161,11 @@
                     "Alias": "fmt"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 1606,
+            "Size": 1600,
             "LineCount": 89,
             "SourceLineCount": 70,
             "FunctionCount": 6,
@@ -195,11 +195,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 3268,
+            "Size": 3269,
             "LineCount": 84,
             "SourceLineCount": 65,
             "FunctionCount": 0,

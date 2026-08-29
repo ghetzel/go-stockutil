@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/typeutil"
 	"github.com/jackpal/gateway"
 	"github.com/phayes/freeport"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 var DefaultWaitForOpenConnectionTimeout = 5 * time.Second

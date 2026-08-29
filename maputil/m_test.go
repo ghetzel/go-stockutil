@@ -9,9 +9,9 @@ import (
 	"time"
 
 	"github.com/alecthomas/assert"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 type testMstruct struct {

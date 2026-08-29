@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/sliceutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
 	"github.com/mattn/go-shellwords"
 	"github.com/melbahja/goph"
 	"github.com/pkg/sftp"
+	"go.gary.cool/go-stockutil/sliceutil"
+	"go.gary.cool/go-stockutil/typeutil"
 	"golang.org/x/crypto/ssh"
 )
 

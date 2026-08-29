@@ -8,8 +8,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ghetzel/go-stockutil/stringutil"
 	"github.com/h2non/filetype"
+	"go.gary.cool/go-stockutil/stringutil"
 )
 
 var once sync.Once // guards InitMime

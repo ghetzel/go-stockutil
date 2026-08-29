@@ -71,11 +71,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 3391,
+            "Size": 3392,
             "LineCount": 102,
             "SourceLineCount": 86,
             "FunctionCount": 0,

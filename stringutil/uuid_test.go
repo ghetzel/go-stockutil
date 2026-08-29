@@ -3,7 +3,7 @@ package stringutil
 import (
 	"testing"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 func TestUUID(t *testing.T) {

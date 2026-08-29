@@ -1,9 +1,9 @@
 package httputil
 
 import (
-	"github.com/ghetzel/go-stockutil/fileutil"
-	"github.com/ghetzel/go-stockutil/sliceutil"
 	"github.com/jdxcode/netrc"
+	"go.gary.cool/go-stockutil/fileutil"
+	"go.gary.cool/go-stockutil/sliceutil"
 )
 
 var NetrcFile = `~/.netrc`

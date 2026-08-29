@@ -8,9 +8,9 @@ import (
 	"math"
 	"strings"
 
-	"github.com/ghetzel/go-stockutil/mathutil"
-	"github.com/ghetzel/go-stockutil/rxutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/mathutil"
+	"go.gary.cool/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/stringutil"
 	"k8s.io/apimachinery/pkg/util/json"
 )
 

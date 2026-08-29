@@ -1,6 +1,6 @@
 package executil
 
-import "github.com/ghetzel/go-stockutil/log"
+import "go.gary.cool/go-stockutil/log"
 
 func LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc {
 	return func(line string, err bool) {

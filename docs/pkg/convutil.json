@@ -31,19 +31,19 @@
                     "Alias": "fmt"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/mathutil",
+                    "PackageName": "github.com/martinlindhe/unit",
+                    "Alias": "unit"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-stockutil/mathutil",
                     "Alias": "mathutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
                     "Alias": "stringutil"
-                },
-                {
-                    "PackageName": "github.com/martinlindhe/unit",
-                    "Alias": "unit"
                 }
             ],
-            "Size": 3641,
+            "Size": 3629,
             "LineCount": 192,
             "SourceLineCount": 161,
             "FunctionCount": 4,
@@ -59,11 +59,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/assert",
+                    "PackageName": "github.com/stretchr/testify/assert",
                     "Alias": "assert"
                 }
             ],
-            "Size": 2576,
+            "Size": 2577,
             "LineCount": 66,
             "SourceLineCount": 51,
             "FunctionCount": 0,
@@ -79,15 +79,15 @@
                     "Alias": "fmt"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/mathutil",
+                    "PackageName": "go.gary.cool/go-stockutil/mathutil",
                     "Alias": "mathutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 3022,
+            "Size": 3010,
             "LineCount": 128,
             "SourceLineCount": 110,
             "FunctionCount": 5,

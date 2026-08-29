@@ -8,11 +8,11 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ghetzel/go-stockutil/fileutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
-	"github.com/ghetzel/testify/assert"
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"go.gary.cool/go-stockutil/fileutil"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 func testHttpServer() *httptest.Server {

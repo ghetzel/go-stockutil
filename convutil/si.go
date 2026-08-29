@@ -3,8 +3,8 @@ package convutil
 import (
 	"fmt"
 
-	"github.com/ghetzel/go-stockutil/mathutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/mathutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 type SIExponents int

@@ -6,10 +6,10 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
-	"github.com/ghetzel/go-stockutil/utils"
 	"github.com/juliangruber/go-intersect"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/utils"
 )
 
 var Stop = utils.Stop

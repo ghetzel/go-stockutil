@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 func env(name string, fallback ...any) typeutil.Variant {

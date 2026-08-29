@@ -3,7 +3,7 @@ package fileutil
 import (
 	"io"
 
-	"github.com/ghetzel/go-stockutil/log"
+	"go.gary.cool/go-stockutil/log"
 )
 
 type CloserFunc = func(io.ReadCloser) error

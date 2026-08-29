@@ -17,7 +17,7 @@
         "Mean": 0.3545,
         "StdDev": 0.4707,
         "GeometricMean": 0,
-        "HarmonicMean": 1,
+        "HarmonicMean": 0,
         "Median": 0,
         "Minimum": 0,
         "Maximum": 1
@@ -81,11 +81,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 1965,
+            "Size": 1966,
             "LineCount": 71,
             "SourceLineCount": 52,
             "FunctionCount": 0,

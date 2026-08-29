@@ -71,27 +71,27 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/log",
+                    "PackageName": "github.com/mattn/go-shellwords",
+                    "Alias": "go-shellwords"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-stockutil/log",
                     "Alias": "log"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                    "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                     "Alias": "sliceutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
                     "Alias": "stringutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
-                },
-                {
-                    "PackageName": "github.com/mattn/go-shellwords",
-                    "Alias": "go-shellwords"
                 }
             ],
-            "Size": 13478,
+            "Size": 13454,
             "LineCount": 589,
             "SourceLineCount": 447,
             "FunctionCount": 22,
@@ -115,15 +115,15 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
-                    "Alias": "stringutil"
+                    "PackageName": "github.com/stretchr/testify/assert",
+                    "Alias": "assert"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/assert",
-                    "Alias": "assert"
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
+                    "Alias": "stringutil"
                 }
             ],
-            "Size": 3709,
+            "Size": 3704,
             "LineCount": 141,
             "SourceLineCount": 114,
             "FunctionCount": 0,
@@ -143,11 +143,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
                 }
             ],
-            "Size": 882,
+            "Size": 876,
             "LineCount": 43,
             "SourceLineCount": 33,
             "FunctionCount": 6,
@@ -183,27 +183,27 @@
                     "Alias": "strings"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/fileutil",
+                    "PackageName": "github.com/mattn/go-shellwords",
+                    "Alias": "go-shellwords"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-stockutil/fileutil",
                     "Alias": "fileutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                    "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                     "Alias": "sliceutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
                     "Alias": "stringutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
-                },
-                {
-                    "PackageName": "github.com/mattn/go-shellwords",
-                    "Alias": "go-shellwords"
                 }
             ],
-            "Size": 3917,
+            "Size": 3893,
             "LineCount": 159,
             "SourceLineCount": 115,
             "FunctionCount": 11,
@@ -223,11 +223,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 1778,
+            "Size": 1779,
             "LineCount": 80,
             "SourceLineCount": 57,
             "FunctionCount": 0,
@@ -239,11 +239,11 @@
             "Name": "log.go",
             "Imports": [
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/log",
+                    "PackageName": "go.gary.cool/go-stockutil/log",
                     "Alias": "log"
                 }
             ],
-            "Size": 365,
+            "Size": 359,
             "LineCount": 22,
             "SourceLineCount": 18,
             "FunctionCount": 2,
@@ -472,27 +472,6 @@
             ],
             "Signature": "Join(in any) string",
             "Source": "ewoJdmFyIGFyZ3MgW11zdHJpbmcKCWlmIGNtZCwgb2sgOj0gaW4uKCpleGVjLkNtZCk7IG9rIHsKCQlhcmdzID0gY21kLkFyZ3MKCX0gZWxzZSBpZiB0eXBldXRpbC5Jc0FycmF5KGluKSB7CgkJYXJncyA9IHNsaWNldXRpbC5TdHJpbmdpZnkoaW4pCgl9IGVsc2UgewoJCXJldHVybiBgYAoJfQoJZm9yIGksIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlpZiBzdHJpbmdzLkNvbnRhaW5zKGFyZywgYCBgKSB7CgkJCWFyZ3NbaV0gPSBzdHJpbmd1dGlsLldyYXAoYXJnLCBgJ2AsIGAnYCkKCQl9Cgl9CglyZXR1cm4gc3RyaW5ncy5Kb2luKGFyZ3MsIGAgYCkKfQ==",
-            "IsPackageLevel": true
-        },
-        {
-            "Name": "LogOutput",
-            "Arguments": [
-                {
-                    "Name": "outlevel",
-                    "Type": "log.Level"
-                },
-                {
-                    "Name": "errlevel",
-                    "Type": "log.Level"
-                }
-            ],
-            "Returns": [
-                {
-                    "Type": "OutputLineFunc"
-                }
-            ],
-            "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
-            "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
             "IsPackageLevel": true
         },
         {
@@ -1276,6 +1255,29 @@
         },
         "OutputLineFunc": {
             "Name": "OutputLineFunc",
+            "Methods": [
+                {
+                    "Name": "LogOutput",
+                    "Arguments": [
+                        {
+                            "Name": "outlevel",
+                            "Type": "log.Level"
+                        },
+                        {
+                            "Name": "errlevel",
+                            "Type": "log.Level"
+                        }
+                    ],
+                    "Returns": [
+                        {
+                            "Type": "OutputLineFunc"
+                        }
+                    ],
+                    "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
+                    "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
+                    "IsPackageLevel": true
+                }
+            ],
             "Source": "dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk="
         },
         "Status": {

@@ -3,7 +3,7 @@ package maputil
 import (
 	"testing"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 func TestMapMerge(t *testing.T) {

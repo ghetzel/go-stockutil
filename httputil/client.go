@@ -14,10 +14,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/fileutil"
-	"github.com/ghetzel/go-stockutil/log"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/fileutil"
+	"go.gary.cool/go-stockutil/log"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 var DebugOutputBoxWidth = 60
@@ -111,7 +111,7 @@ func NewClient(baseURI string) (*Client, error) {
 		client.uri = new(url.URL)
 	}
 
-	if log.VeryDebugging(`github.com/ghetzel/go-stockutil/httputil`) {
+	if log.VeryDebugging(`go.gary.cool/go-stockutil/httputil`) {
 		client.SetPreRequestHook(func(req *http.Request) (any, error) {
 			if data, err := gohttputil.DumpRequest(req, true); err == nil {
 				log.Debugf("httputil ${blue}\u256d\u2500[ HTTP Request ]%s\u2504\u2504\u2504${reset}", strings.Repeat("\u2500", DebugOutputBoxWidth-17))

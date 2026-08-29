@@ -3,7 +3,7 @@ package structutil
 import (
 	"testing"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 type tStructBase struct {

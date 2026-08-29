@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ghetzel/go-stockutil/fileutil"
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
+	"go.gary.cool/go-stockutil/fileutil"
 )
 
 func TestNetrcPositive(t *testing.T) {

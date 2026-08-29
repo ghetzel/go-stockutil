@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/ghetzel/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 var SpeedDisplayUnit = MeasurementSystem(Imperial)

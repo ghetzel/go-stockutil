@@ -6,7 +6,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/ghetzel/testify/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestRetrieveViaFilesystem(t *testing.T) {

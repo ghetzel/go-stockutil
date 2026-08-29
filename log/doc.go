@@ -95,7 +95,7 @@ lines being written to the WritableLogger to be parsed, rewritten, and given a l
 
 	import (
 		"os/exec"
-		"github.com/ghetzel/go-stockutil/log"
+		"go.gary.cool/go-stockutil/log"
 	)
 
 	var wr = log.NewWritableLogger(log.INFO, `ls: `)

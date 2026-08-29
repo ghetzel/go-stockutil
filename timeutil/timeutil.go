@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/utils"
+	"go.gary.cool/go-stockutil/utils"
 )
 
 // Return the standard Golang reference time (2006-01-02T15:04:05.999999999Z07:00)

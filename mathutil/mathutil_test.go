@@ -3,7 +3,7 @@ package mathutil
 import (
 	"testing"
 
-	"github.com/ghetzel/testify/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestClamp(t *testing.T) {

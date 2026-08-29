@@ -103,27 +103,27 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-defaults",
+                    "PackageName": "github.com/grandcat/zeroconf",
+                    "Alias": "zeroconf"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-defaults",
                     "Alias": "go-defaults"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                    "PackageName": "go.gary.cool/go-stockutil/rxutil",
                     "Alias": "rxutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
                     "Alias": "stringutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
-                },
-                {
-                    "PackageName": "github.com/grandcat/zeroconf",
-                    "Alias": "zeroconf"
                 }
             ],
-            "Size": 5445,
+            "Size": 5421,
             "LineCount": 214,
             "SourceLineCount": 174,
             "FunctionCount": 5,
@@ -171,19 +171,19 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
-                    "Alias": "typeutil"
-                },
-                {
                     "PackageName": "github.com/jackpal/gateway",
                     "Alias": "gateway"
                 },
                 {
                     "PackageName": "github.com/phayes/freeport",
                     "Alias": "freeport"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
+                    "Alias": "typeutil"
                 }
             ],
-            "Size": 5151,
+            "Size": 5145,
             "LineCount": 198,
             "SourceLineCount": 141,
             "FunctionCount": 9,
@@ -193,7 +193,7 @@
         },
         {
             "Name": "netutil_test.go",
-            "Size": 1741,
+            "Size": 1742,
             "LineCount": 63,
             "SourceLineCount": 1,
             "FunctionCount": 0,

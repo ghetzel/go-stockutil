@@ -6,9 +6,9 @@ import (
 	"os"
 	"regexp"
 
-	"github.com/ghetzel/go-stockutil/rxutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
 	"github.com/mgutz/ansi"
+	"go.gary.cool/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/stringutil"
 )
 
 // Specify a regexp.Regexp used to extract color expression tokens from a string. The pattern should specify a named capture group called "color" matching the color expression.

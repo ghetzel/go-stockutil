@@ -13,7 +13,7 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"github.com/ghetzel/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/rxutil"
 )
 
 var rxExtendedDurations = regexp.MustCompile(`(?i)((?P<number>[\d\.]+)(?P<suffix>[^\d]+))`)

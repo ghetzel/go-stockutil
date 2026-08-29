@@ -43,11 +43,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 18116,
+            "Size": 18117,
             "LineCount": 626,
             "SourceLineCount": 492,
             "FunctionCount": 0,
@@ -79,11 +79,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 7179,
+            "Size": 7180,
             "LineCount": 320,
             "SourceLineCount": 250,
             "FunctionCount": 0,
@@ -103,11 +103,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 2764,
+            "Size": 2765,
             "LineCount": 125,
             "SourceLineCount": 99,
             "FunctionCount": 0,
@@ -167,11 +167,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 6419,
+            "Size": 6420,
             "LineCount": 246,
             "SourceLineCount": 195,
             "FunctionCount": 0,
@@ -219,23 +219,23 @@
                     "Alias": "unicode"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                    "PackageName": "github.com/jdkato/prose/tokenize",
+                    "Alias": "tokenize"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-stockutil/rxutil",
                     "Alias": "rxutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                    "PackageName": "go.gary.cool/go-stockutil/utils",
                     "Alias": "utils"
-                },
-                {
-                    "PackageName": "github.com/jdkato/prose/tokenize",
-                    "Alias": "tokenize"
                 }
             ],
-            "Size": 24521,
+            "Size": 24503,
             "LineCount": 1020,
             "SourceLineCount": 769,
             "FunctionCount": 73,
@@ -255,15 +255,15 @@
                     "Alias": "hex"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/uuid",
-                    "Alias": "uuid"
-                },
-                {
                     "PackageName": "github.com/jbenet/go-base58",
                     "Alias": "go-base58"
+                },
+                {
+                    "PackageName": "go.gary.cool/uuid",
+                    "Alias": "uuid"
                 }
             ],
-            "Size": 1022,
+            "Size": 1016,
             "LineCount": 64,
             "SourceLineCount": 52,
             "FunctionCount": 8,
@@ -279,11 +279,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 607,
+            "Size": 608,
             "LineCount": 28,
             "SourceLineCount": 21,
             "FunctionCount": 0,

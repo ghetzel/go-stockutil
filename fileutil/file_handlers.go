@@ -10,9 +10,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/pathutil"
 	"github.com/jlaffaye/ftp"
 	"github.com/pkg/sftp"
+	"go.gary.cool/go-stockutil/pathutil"
 	"golang.org/x/crypto/ssh"
 )
 

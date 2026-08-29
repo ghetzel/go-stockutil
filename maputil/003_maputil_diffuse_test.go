@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ghetzel/go-stockutil/sliceutil"
+	"go.gary.cool/go-stockutil/sliceutil"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 func TestDiffuseOneTierScalar(t *testing.T) {

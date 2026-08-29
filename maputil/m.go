@@ -12,10 +12,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/sliceutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
-	utilutil "github.com/ghetzel/go-stockutil/utils"
+	"go.gary.cool/go-stockutil/sliceutil"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
+	utilutil "go.gary.cool/go-stockutil/utils"
 )
 
 var MapXmlRootTagName = `data`

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 type traceTest struct{}
@@ -18,14 +18,14 @@ func (self *traceTest) do(t *testing.T) {
 	require.Equal(t, trace[0].PackageName, `runtime`)
 	require.Equal(t, trace[0].Receiver, ``)
 
-	require.Equal(t, trace[1].Function, `github.com/ghetzel/go-stockutil/log.StackTrace`)
+	require.Equal(t, trace[1].Function, `go.gary.cool/go-stockutil/log.StackTrace`)
 	require.Equal(t, trace[1].FunctionName, `StackTrace`)
-	require.Equal(t, trace[1].PackageName, `github.com/ghetzel/go-stockutil/log`)
+	require.Equal(t, trace[1].PackageName, `go.gary.cool/go-stockutil/log`)
 	require.Equal(t, trace[1].Receiver, ``)
 
-	require.Equal(t, trace[2].Function, `github.com/ghetzel/go-stockutil/log.(*traceTest).do`)
+	require.Equal(t, trace[2].Function, `go.gary.cool/go-stockutil/log.(*traceTest).do`)
 	require.Equal(t, trace[2].FunctionName, `do`)
-	require.Equal(t, trace[2].PackageName, `github.com/ghetzel/go-stockutil/log`)
+	require.Equal(t, trace[2].PackageName, `go.gary.cool/go-stockutil/log`)
 	require.Equal(t, trace[2].Receiver, `(*traceTest)`)
 }
 

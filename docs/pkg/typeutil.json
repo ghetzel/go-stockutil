@@ -59,11 +59,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 2631,
+            "Size": 2632,
             "LineCount": 79,
             "SourceLineCount": 62,
             "FunctionCount": 0,
@@ -135,11 +135,11 @@
                     "Alias": "spew"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                    "PackageName": "go.gary.cool/go-stockutil/utils",
                     "Alias": "utils"
                 }
             ],
-            "Size": 10483,
+            "Size": 10477,
             "LineCount": 424,
             "SourceLineCount": 303,
             "FunctionCount": 25,
@@ -167,11 +167,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 8744,
+            "Size": 8745,
             "LineCount": 354,
             "SourceLineCount": 254,
             "FunctionCount": 0,
@@ -211,11 +211,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                    "PackageName": "go.gary.cool/go-stockutil/utils",
                     "Alias": "utils"
                 }
             ],
-            "Size": 13237,
+            "Size": 13231,
             "LineCount": 627,
             "SourceLineCount": 455,
             "FunctionCount": 67,
@@ -235,11 +235,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 8251,
+            "Size": 8252,
             "LineCount": 299,
             "SourceLineCount": 260,
             "FunctionCount": 0,

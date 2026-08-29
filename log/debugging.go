@@ -5,8 +5,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/ghetzel/go-stockutil/stringutil"
 	"github.com/gobwas/glob"
+	"go.gary.cool/go-stockutil/stringutil"
 )
 
 var MaxStackTraceDepth = 32

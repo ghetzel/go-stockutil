@@ -9,7 +9,7 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
-	"github.com/ghetzel/go-stockutil/utils"
+	"go.gary.cool/go-stockutil/utils"
 )
 
 type TypeConvertFunc = utils.TypeConvertFunc

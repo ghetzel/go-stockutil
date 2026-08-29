@@ -1,4 +1,4 @@
-module github.com/ghetzel/go-stockutil
+module go.gary.cool/go-stockutil
 
 go 1.25.0
 
@@ -7,9 +7,6 @@ require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/dsnet/compress v0.0.1
 	github.com/fatih/structs v1.1.0
-	github.com/ghetzel/go-defaults v1.2.0
-	github.com/ghetzel/testify v1.4.1
-	github.com/ghetzel/uuid v0.0.0-20171129191014-dec09d789f3d
 	github.com/gobwas/glob v0.2.3
 	github.com/grandcat/zeroconf v1.0.0
 	github.com/h2non/filetype v1.1.3
@@ -30,7 +27,10 @@ require (
 	github.com/op/go-logging v0.0.0-20160315200505-970db520ece7
 	github.com/phayes/freeport v0.0.0-20220201140144-74d24b5ae9f5
 	github.com/pkg/sftp v1.13.10
+	github.com/stretchr/testify v1.11.1
 	github.com/urfave/negroni v1.0.0
+	go.gary.cool/go-defaults v1.3.0
+	go.gary.cool/uuid v0.0.0-20171129191014-dec09d789f3d
 	golang.org/x/crypto v0.49.0
 	golang.org/x/net v0.52.0
 	k8s.io/apimachinery v0.35.2
@@ -52,7 +52,6 @@ require (
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/sergi/go-diff v1.3.1 // indirect
 	github.com/stretchr/objx v0.5.3 // indirect
-	github.com/stretchr/testify v1.11.1 // indirect
 	github.com/ziutek/mymysql v1.5.4 // indirect
 	golang.org/x/mod v0.34.0 // indirect
 	golang.org/x/sync v0.20.0 // indirect
@@ -60,7 +59,6 @@ require (
 	golang.org/x/term v0.41.0 // indirect
 	golang.org/x/tools v0.43.0 // indirect
 	gopkg.in/neurosnap/sentences.v1 v1.0.7 // indirect
-	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	sigs.k8s.io/json v0.0.0-20250730193827-2d320260d730 // indirect
 )

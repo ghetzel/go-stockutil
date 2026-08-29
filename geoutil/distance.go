@@ -6,8 +6,8 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/ghetzel/go-stockutil/rxutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 var rxDistanceExtract = regexp.MustCompile(`^(?P<number>\d+(?:\.\d+)?)\s*(?P<unit>[\w\s]+)\W*$`)

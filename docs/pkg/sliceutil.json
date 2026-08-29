@@ -39,23 +39,23 @@
                     "Alias": "strings"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                    "PackageName": "github.com/juliangruber/go-intersect",
+                    "Alias": "go-intersect"
+                },
+                {
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
                     "Alias": "stringutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                    "PackageName": "go.gary.cool/go-stockutil/typeutil",
                     "Alias": "typeutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                    "PackageName": "go.gary.cool/go-stockutil/utils",
                     "Alias": "utils"
-                },
-                {
-                    "PackageName": "github.com/juliangruber/go-intersect",
-                    "Alias": "go-intersect"
                 }
             ],
-            "Size": 11518,
+            "Size": 11500,
             "LineCount": 502,
             "SourceLineCount": 342,
             "FunctionCount": 34,
@@ -79,11 +79,11 @@
                     "Alias": "assert"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 14007,
+            "Size": 14008,
             "LineCount": 556,
             "SourceLineCount": 448,
             "FunctionCount": 0,

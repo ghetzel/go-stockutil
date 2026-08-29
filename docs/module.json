@@ -1,7 +1,7 @@
 {
     "Metadata": {
         "Title": "go-stockutil",
-        "Version": "1.14.4",
+        "Version": "1.15.0",
         "GeneratorVersion": "0.0.7",
         "URL": "https://github.com/ghetzel/go-stockutil"
     },
@@ -100,7 +100,7 @@
                 "Mean": 0.3478,
                 "StdDev": 0.4615,
                 "GeometricMean": 0,
-                "HarmonicMean": 1,
+                "HarmonicMean": 0,
                 "Median": 0,
                 "Minimum": 0,
                 "Maximum": 1
@@ -150,7 +150,7 @@
                 "Mean": 0.6609,
                 "StdDev": 0.4482,
                 "GeometricMean": 0,
-                "HarmonicMean": 0,
+                "HarmonicMean": 0.963,
                 "Median": 1,
                 "Minimum": 0,
                 "Maximum": 1
@@ -162,7 +162,7 @@
             "ImportPath": "log",
             "ParentPackage": "stockutil",
             "URL": "https://github.com/ghetzel/go-stockutil",
-            "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"github.com/ghetzel/go-stockutil/log\"\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
+            "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"go.gary.cool/go-stockutil/log\"\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
             "MainFunction": false,
             "CommentWordCount": 1417,
             "LineCount": 1186,
@@ -300,7 +300,7 @@
                 "Mean": 0.3545,
                 "StdDev": 0.4707,
                 "GeometricMean": 0,
-                "HarmonicMean": 1,
+                "HarmonicMean": 0,
                 "Median": 0,
                 "Minimum": 0,
                 "Maximum": 1
@@ -522,8 +522,8 @@
             {
                 "Name": "Version",
                 "Immutable": true,
-                "Expression": "`1.14.4`",
-                "Value": "1.14.4"
+                "Expression": "`1.15.0`",
+                "Value": "1.15.0"
             }
         ],
         "Packages": [
@@ -590,11 +590,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2496,
+                        "Size": 2497,
                         "LineCount": 89,
                         "SourceLineCount": 76,
                         "FunctionCount": 1,
@@ -626,15 +626,15 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/mathutil",
+                                "PackageName": "go.gary.cool/go-stockutil/mathutil",
                                 "Alias": "mathutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
                                 "Alias": "rxutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
@@ -642,7 +642,7 @@
                                 "Alias": "json"
                             }
                         ],
-                        "Size": 15045,
+                        "Size": 15027,
                         "LineCount": 630,
                         "SourceLineCount": 470,
                         "FunctionCount": 25,
@@ -662,15 +662,15 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 12443,
+                        "Size": 12445,
                         "LineCount": 377,
                         "SourceLineCount": 283,
                         "FunctionCount": 0,
@@ -1473,19 +1473,19 @@
                                 "Alias": "fmt"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/mathutil",
+                                "PackageName": "github.com/martinlindhe/unit",
+                                "Alias": "unit"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/mathutil",
                                 "Alias": "mathutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
-                            },
-                            {
-                                "PackageName": "github.com/martinlindhe/unit",
-                                "Alias": "unit"
                             }
                         ],
-                        "Size": 3641,
+                        "Size": 3629,
                         "LineCount": 192,
                         "SourceLineCount": 161,
                         "FunctionCount": 4,
@@ -1501,11 +1501,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             }
                         ],
-                        "Size": 2576,
+                        "Size": 2577,
                         "LineCount": 66,
                         "SourceLineCount": 51,
                         "FunctionCount": 0,
@@ -1521,15 +1521,15 @@
                                 "Alias": "fmt"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/mathutil",
+                                "PackageName": "go.gary.cool/go-stockutil/mathutil",
                                 "Alias": "mathutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 3022,
+                        "Size": 3010,
                         "LineCount": 128,
                         "SourceLineCount": 110,
                         "FunctionCount": 5,
@@ -2241,27 +2241,27 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/log",
+                                "PackageName": "github.com/mattn/go-shellwords",
+                                "Alias": "go-shellwords"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/log",
                                 "Alias": "log"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
-                            },
-                            {
-                                "PackageName": "github.com/mattn/go-shellwords",
-                                "Alias": "go-shellwords"
                             }
                         ],
-                        "Size": 13478,
+                        "Size": 13454,
                         "LineCount": 589,
                         "SourceLineCount": 447,
                         "FunctionCount": 22,
@@ -2285,15 +2285,15 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
-                                "Alias": "stringutil"
+                                "PackageName": "github.com/stretchr/testify/assert",
+                                "Alias": "assert"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
-                                "Alias": "assert"
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
+                                "Alias": "stringutil"
                             }
                         ],
-                        "Size": 3709,
+                        "Size": 3704,
                         "LineCount": 141,
                         "SourceLineCount": 114,
                         "FunctionCount": 0,
@@ -2313,11 +2313,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 882,
+                        "Size": 876,
                         "LineCount": 43,
                         "SourceLineCount": 33,
                         "FunctionCount": 6,
@@ -2353,27 +2353,27 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/fileutil",
+                                "PackageName": "github.com/mattn/go-shellwords",
+                                "Alias": "go-shellwords"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/fileutil",
                                 "Alias": "fileutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
-                            },
-                            {
-                                "PackageName": "github.com/mattn/go-shellwords",
-                                "Alias": "go-shellwords"
                             }
                         ],
-                        "Size": 3917,
+                        "Size": 3893,
                         "LineCount": 159,
                         "SourceLineCount": 115,
                         "FunctionCount": 11,
@@ -2393,11 +2393,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 1778,
+                        "Size": 1779,
                         "LineCount": 80,
                         "SourceLineCount": 57,
                         "FunctionCount": 0,
@@ -2409,11 +2409,11 @@
                         "Name": "log.go",
                         "Imports": [
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/log",
+                                "PackageName": "go.gary.cool/go-stockutil/log",
                                 "Alias": "log"
                             }
                         ],
-                        "Size": 365,
+                        "Size": 359,
                         "LineCount": 22,
                         "SourceLineCount": 18,
                         "FunctionCount": 2,
@@ -2642,27 +2642,6 @@
                         ],
                         "Signature": "Join(in any) string",
                         "Source": "ewoJdmFyIGFyZ3MgW11zdHJpbmcKCWlmIGNtZCwgb2sgOj0gaW4uKCpleGVjLkNtZCk7IG9rIHsKCQlhcmdzID0gY21kLkFyZ3MKCX0gZWxzZSBpZiB0eXBldXRpbC5Jc0FycmF5KGluKSB7CgkJYXJncyA9IHNsaWNldXRpbC5TdHJpbmdpZnkoaW4pCgl9IGVsc2UgewoJCXJldHVybiBgYAoJfQoJZm9yIGksIGFyZyA6PSByYW5nZSBhcmdzIHsKCQlpZiBzdHJpbmdzLkNvbnRhaW5zKGFyZywgYCBgKSB7CgkJCWFyZ3NbaV0gPSBzdHJpbmd1dGlsLldyYXAoYXJnLCBgJ2AsIGAnYCkKCQl9Cgl9CglyZXR1cm4gc3RyaW5ncy5Kb2luKGFyZ3MsIGAgYCkKfQ==",
-                        "IsPackageLevel": true
-                    },
-                    {
-                        "Name": "LogOutput",
-                        "Arguments": [
-                            {
-                                "Name": "outlevel",
-                                "Type": "log.Level"
-                            },
-                            {
-                                "Name": "errlevel",
-                                "Type": "log.Level"
-                            }
-                        ],
-                        "Returns": [
-                            {
-                                "Type": "OutputLineFunc"
-                            }
-                        ],
-                        "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
-                        "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
                         "IsPackageLevel": true
                     },
                     {
@@ -3446,6 +3425,29 @@
                     },
                     "OutputLineFunc": {
                         "Name": "OutputLineFunc",
+                        "Methods": [
+                            {
+                                "Name": "LogOutput",
+                                "Arguments": [
+                                    {
+                                        "Name": "outlevel",
+                                        "Type": "log.Level"
+                                    },
+                                    {
+                                        "Name": "errlevel",
+                                        "Type": "log.Level"
+                                    }
+                                ],
+                                "Returns": [
+                                    {
+                                        "Type": "OutputLineFunc"
+                                    }
+                                ],
+                                "Signature": "LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc",
+                                "Source": "ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==",
+                                "IsPackageLevel": true
+                            }
+                        ],
                         "Source": "dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk="
                     },
                     "Status": {
@@ -3532,7 +3534,7 @@
                     "Mean": 0.3478,
                     "StdDev": 0.4615,
                     "GeometricMean": 0,
-                    "HarmonicMean": 1,
+                    "HarmonicMean": 0,
                     "Median": 0,
                     "Minimum": 0,
                     "Maximum": 1
@@ -3570,11 +3572,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 2484,
+                        "Size": 2478,
                         "LineCount": 93,
                         "SourceLineCount": 65,
                         "FunctionCount": 3,
@@ -3642,11 +3644,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             }
                         ],
-                        "Size": 424,
+                        "Size": 425,
                         "LineCount": 26,
                         "SourceLineCount": 19,
                         "FunctionCount": 0,
@@ -3686,19 +3688,19 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/maputil",
+                                "PackageName": "go.gary.cool/go-stockutil/maputil",
                                 "Alias": "maputil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 1939,
+                        "Size": 1921,
                         "LineCount": 89,
                         "SourceLineCount": 63,
                         "FunctionCount": 1,
@@ -3730,11 +3732,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             }
                         ],
-                        "Size": 817,
+                        "Size": 818,
                         "LineCount": 45,
                         "SourceLineCount": 32,
                         "FunctionCount": 0,
@@ -3778,14 +3780,6 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
-                                "Alias": "sliceutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
-                                "Alias": "typeutil"
-                            },
-                            {
                                 "PackageName": "github.com/mattn/go-shellwords",
                                 "Alias": "go-shellwords"
                             },
@@ -3798,11 +3792,19 @@
                                 "Alias": "sftp"
                             },
                             {
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
+                                "Alias": "sliceutil"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
+                                "Alias": "typeutil"
+                            },
+                            {
                                 "PackageName": "golang.org/x/crypto/ssh",
                                 "Alias": "ssh"
                             }
                         ],
-                        "Size": 5107,
+                        "Size": 5095,
                         "LineCount": 184,
                         "SourceLineCount": 126,
                         "FunctionCount": 1,
@@ -3842,7 +3844,7 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             },
                             {
@@ -3850,7 +3852,7 @@
                                 "Alias": "ssh"
                             }
                         ],
-                        "Size": 1987,
+                        "Size": 1988,
                         "LineCount": 96,
                         "SourceLineCount": 68,
                         "FunctionCount": 0,
@@ -3890,23 +3892,23 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/maputil",
+                                "PackageName": "github.com/stretchr/testify/assert",
+                                "Alias": "assert"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/maputil",
                                 "Alias": "maputil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/testify/assert",
-                                "Alias": "assert"
                             }
                         ],
-                        "Size": 1378,
+                        "Size": 1361,
                         "LineCount": 58,
                         "SourceLineCount": 47,
                         "FunctionCount": 0,
@@ -3922,11 +3924,11 @@
                                 "Alias": "io"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/log",
+                                "PackageName": "go.gary.cool/go-stockutil/log",
                                 "Alias": "log"
                             }
                         ],
-                        "Size": 1329,
+                        "Size": 1323,
                         "LineCount": 58,
                         "SourceLineCount": 42,
                         "FunctionCount": 5,
@@ -3994,11 +3996,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 1934,
+                        "Size": 1935,
                         "LineCount": 89,
                         "SourceLineCount": 69,
                         "FunctionCount": 0,
@@ -4022,11 +4024,11 @@
                                 "Alias": "sync"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/log",
+                                "PackageName": "go.gary.cool/go-stockutil/log",
                                 "Alias": "log"
                             }
                         ],
-                        "Size": 1432,
+                        "Size": 1426,
                         "LineCount": 76,
                         "SourceLineCount": 60,
                         "FunctionCount": 3,
@@ -4050,11 +4052,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 987,
+                        "Size": 988,
                         "LineCount": 44,
                         "SourceLineCount": 31,
                         "FunctionCount": 0,
@@ -4102,23 +4104,23 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/convutil",
+                                "PackageName": "github.com/mattn/go-isatty",
+                                "Alias": "isatty"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/convutil",
                                 "Alias": "convutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/pathutil",
+                                "PackageName": "go.gary.cool/go-stockutil/pathutil",
                                 "Alias": "pathutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
-                            },
-                            {
-                                "PackageName": "github.com/mattn/go-isatty",
-                                "Alias": "isatty"
                             }
                         ],
-                        "Size": 13493,
+                        "Size": 13475,
                         "LineCount": 536,
                         "SourceLineCount": 416,
                         "FunctionCount": 26,
@@ -4162,10 +4164,6 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/pathutil",
-                                "Alias": "pathutil"
-                            },
-                            {
                                 "PackageName": "github.com/jlaffaye/ftp",
                                 "Alias": "ftp"
                             },
@@ -4174,11 +4172,15 @@
                                 "Alias": "sftp"
                             },
                             {
+                                "PackageName": "go.gary.cool/go-stockutil/pathutil",
+                                "Alias": "pathutil"
+                            },
+                            {
                                 "PackageName": "golang.org/x/crypto/ssh",
                                 "Alias": "ssh"
                             }
                         ],
-                        "Size": 5498,
+                        "Size": 5492,
                         "LineCount": 214,
                         "SourceLineCount": 177,
                         "FunctionCount": 5,
@@ -4202,11 +4204,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3025,
+                        "Size": 3026,
                         "LineCount": 100,
                         "SourceLineCount": 79,
                         "FunctionCount": 0,
@@ -4282,11 +4284,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2067,
+                        "Size": 2068,
                         "LineCount": 98,
                         "SourceLineCount": 71,
                         "FunctionCount": 1,
@@ -4358,11 +4360,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3277,
+                        "Size": 3278,
                         "LineCount": 110,
                         "SourceLineCount": 85,
                         "FunctionCount": 0,
@@ -4398,15 +4400,15 @@
                                 "Alias": "sync"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
-                                "Alias": "stringutil"
-                            },
-                            {
                                 "PackageName": "github.com/h2non/filetype",
                                 "Alias": "filetype"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
+                                "Alias": "stringutil"
                             }
                         ],
-                        "Size": 28979,
+                        "Size": 28973,
                         "LineCount": 592,
                         "SourceLineCount": 569,
                         "FunctionCount": 3,
@@ -4422,11 +4424,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 625,
+                        "Size": 626,
                         "LineCount": 21,
                         "SourceLineCount": 16,
                         "FunctionCount": 0,
@@ -4832,24 +4834,6 @@
                         "IsPackageLevel": true
                     },
                     {
-                        "Name": "ManipulateAll",
-                        "Comment": "Performs multiple sequential manipulations on an intercepted line of text from\nan io.Reader as its being read.",
-                        "Arguments": [
-                            {
-                                "Name": "fns",
-                                "Type": "...ReadManipulatorFunc"
-                            }
-                        ],
-                        "Returns": [
-                            {
-                                "Type": "ReadManipulatorFunc"
-                            }
-                        ],
-                        "Signature": "ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc",
-                        "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGVyciBlcnJvcgoJCWZvciBfLCBmbiA6PSByYW5nZSBmbnMgewoJCQlkYXRhLCBlcnIgPSBmbihkYXRhKQoJCQlpZiBlcnIgIT0gbmlsIHsKCQkJCWJyZWFrCgkJCX0KCQl9CgkJcmV0dXJuIGRhdGEsIGVycgoJfQp9",
-                        "IsPackageLevel": true
-                    },
-                    {
                         "Name": "MustExpandUser",
                         "Arguments": [
                             {
@@ -5169,94 +5153,6 @@
                         "IsPackageLevel": true
                     },
                     {
-                        "Name": "RemoveLinesContaining",
-                        "Comment": "A ReadManipulatorFunc for removing lines that contain the given string.",
-                        "Arguments": [
-                            {
-                                "Name": "needle",
-                                "Type": "string"
-                            }
-                        ],
-                        "Returns": [
-                            {
-                                "Type": "ReadManipulatorFunc"
-                            }
-                        ],
-                        "Signature": "RemoveLinesContaining(needle string) ReadManipulatorFunc",
-                        "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJaWYgc3RyaW5ncy5Db250YWlucyhzdHJpbmcoZGF0YSksIG5lZWRsZSkgewoJCQlyZXR1cm4gbmlsLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gZGF0YSwgbmlsCgkJfQoJfQp9",
-                        "IsPackageLevel": true
-                    },
-                    {
-                        "Name": "RemoveLinesSurroundedBy",
-                        "Comment": "A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.",
-                        "Arguments": [
-                            {
-                                "Name": "prefix",
-                                "Type": "string"
-                            },
-                            {
-                                "Name": "suffix",
-                                "Type": "string"
-                            },
-                            {
-                                "Name": "trimSpace",
-                                "Type": "bool"
-                            }
-                        ],
-                        "Returns": [
-                            {
-                                "Type": "ReadManipulatorFunc"
-                            }
-                        ],
-                        "Signature": "RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc",
-                        "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSAmJiBzdHJpbmdzLkhhc1N1ZmZpeChsaW5lLCBzdWZmaXgpIHsKCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIGRhdGEsIG5pbAoJCX0KCX0KfQ==",
-                        "IsPackageLevel": true
-                    },
-                    {
-                        "Name": "RemoveLinesWithPrefix",
-                        "Comment": "A ReadManipulatorFunc for removing lines that have a given prefix.",
-                        "Arguments": [
-                            {
-                                "Name": "prefix",
-                                "Type": "string"
-                            },
-                            {
-                                "Name": "trimSpace",
-                                "Type": "bool"
-                            }
-                        ],
-                        "Returns": [
-                            {
-                                "Type": "ReadManipulatorFunc"
-                            }
-                        ],
-                        "Signature": "RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc",
-                        "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=",
-                        "IsPackageLevel": true
-                    },
-                    {
-                        "Name": "RemoveLinesWithSuffix",
-                        "Comment": "A ReadManipulatorFunc for removing lines that have a given suffix.",
-                        "Arguments": [
-                            {
-                                "Name": "suffix",
-                                "Type": "string"
-                            },
-                            {
-                                "Name": "trimSpace",
-                                "Type": "bool"
-                            }
-                        ],
-                        "Returns": [
-                            {
-                                "Type": "ReadManipulatorFunc"
-                            }
-                        ],
-                        "Signature": "RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc",
-                        "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNTdWZmaXgobGluZSwgc3VmZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=",
-                        "IsPackageLevel": true
-                    },
-                    {
                         "Name": "RemoveOpenHandler",
                         "Comment": "Removes a registered URL scheme handler.",
                         "Arguments": [
@@ -5267,32 +5163,6 @@
                         ],
                         "Signature": "RemoveOpenHandler(scheme string)",
                         "Source": "ewoJZGVsZXRlKG9wZW5IYW5kbGVycywgc2NoZW1lKQp9",
-                        "IsPackageLevel": true
-                    },
-                    {
-                        "Name": "ReplaceWith",
-                        "Comment": "A ReadManipulatorFunc for replacing text in an io.Reader as its being read.",
-                        "Arguments": [
-                            {
-                                "Name": "find",
-                                "Type": "string"
-                            },
-                            {
-                                "Name": "replace",
-                                "Type": "string"
-                            },
-                            {
-                                "Name": "occurrences",
-                                "Type": "int"
-                            }
-                        ],
-                        "Returns": [
-                            {
-                                "Type": "ReadManipulatorFunc"
-                            }
-                        ],
-                        "Signature": "ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc",
-                        "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlsaW5lID0gc3RyaW5ncy5SZXBsYWNlKGxpbmUsIGZpbmQsIHJlcGxhY2UsIG9jY3VycmVuY2VzKQoJCXJldHVybiBbXWJ5dGUobGluZSksIG5pbAoJfQp9",
                         "IsPackageLevel": true
                     },
                     {
@@ -6362,6 +6232,140 @@
                     },
                     "ReadManipulatorFunc": {
                         "Name": "ReadManipulatorFunc",
+                        "Methods": [
+                            {
+                                "Name": "ManipulateAll",
+                                "Comment": "Performs multiple sequential manipulations on an intercepted line of text from\nan io.Reader as its being read.",
+                                "Arguments": [
+                                    {
+                                        "Name": "fns",
+                                        "Type": "...ReadManipulatorFunc"
+                                    }
+                                ],
+                                "Returns": [
+                                    {
+                                        "Type": "ReadManipulatorFunc"
+                                    }
+                                ],
+                                "Signature": "ManipulateAll(fns ...ReadManipulatorFunc) ReadManipulatorFunc",
+                                "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGVyciBlcnJvcgoJCWZvciBfLCBmbiA6PSByYW5nZSBmbnMgewoJCQlkYXRhLCBlcnIgPSBmbihkYXRhKQoJCQlpZiBlcnIgIT0gbmlsIHsKCQkJCWJyZWFrCgkJCX0KCQl9CgkJcmV0dXJuIGRhdGEsIGVycgoJfQp9",
+                                "IsPackageLevel": true
+                            },
+                            {
+                                "Name": "ReplaceWith",
+                                "Comment": "A ReadManipulatorFunc for replacing text in an io.Reader as its being read.",
+                                "Arguments": [
+                                    {
+                                        "Name": "find",
+                                        "Type": "string"
+                                    },
+                                    {
+                                        "Name": "replace",
+                                        "Type": "string"
+                                    },
+                                    {
+                                        "Name": "occurrences",
+                                        "Type": "int"
+                                    }
+                                ],
+                                "Returns": [
+                                    {
+                                        "Type": "ReadManipulatorFunc"
+                                    }
+                                ],
+                                "Signature": "ReplaceWith(find string, replace string, occurrences int) ReadManipulatorFunc",
+                                "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlsaW5lID0gc3RyaW5ncy5SZXBsYWNlKGxpbmUsIGZpbmQsIHJlcGxhY2UsIG9jY3VycmVuY2VzKQoJCXJldHVybiBbXWJ5dGUobGluZSksIG5pbAoJfQp9",
+                                "IsPackageLevel": true
+                            },
+                            {
+                                "Name": "RemoveLinesContaining",
+                                "Comment": "A ReadManipulatorFunc for removing lines that contain the given string.",
+                                "Arguments": [
+                                    {
+                                        "Name": "needle",
+                                        "Type": "string"
+                                    }
+                                ],
+                                "Returns": [
+                                    {
+                                        "Type": "ReadManipulatorFunc"
+                                    }
+                                ],
+                                "Signature": "RemoveLinesContaining(needle string) ReadManipulatorFunc",
+                                "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJaWYgc3RyaW5ncy5Db250YWlucyhzdHJpbmcoZGF0YSksIG5lZWRsZSkgewoJCQlyZXR1cm4gbmlsLCBuaWwKCQl9IGVsc2UgewoJCQlyZXR1cm4gZGF0YSwgbmlsCgkJfQoJfQp9",
+                                "IsPackageLevel": true
+                            },
+                            {
+                                "Name": "RemoveLinesWithPrefix",
+                                "Comment": "A ReadManipulatorFunc for removing lines that have a given prefix.",
+                                "Arguments": [
+                                    {
+                                        "Name": "prefix",
+                                        "Type": "string"
+                                    },
+                                    {
+                                        "Name": "trimSpace",
+                                        "Type": "bool"
+                                    }
+                                ],
+                                "Returns": [
+                                    {
+                                        "Type": "ReadManipulatorFunc"
+                                    }
+                                ],
+                                "Signature": "RemoveLinesWithPrefix(prefix string, trimSpace bool) ReadManipulatorFunc",
+                                "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=",
+                                "IsPackageLevel": true
+                            },
+                            {
+                                "Name": "RemoveLinesWithSuffix",
+                                "Comment": "A ReadManipulatorFunc for removing lines that have a given suffix.",
+                                "Arguments": [
+                                    {
+                                        "Name": "suffix",
+                                        "Type": "string"
+                                    },
+                                    {
+                                        "Name": "trimSpace",
+                                        "Type": "bool"
+                                    }
+                                ],
+                                "Returns": [
+                                    {
+                                        "Type": "ReadManipulatorFunc"
+                                    }
+                                ],
+                                "Signature": "RemoveLinesWithSuffix(suffix string, trimSpace bool) ReadManipulatorFunc",
+                                "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNTdWZmaXgobGluZSwgc3VmZml4KSB7CgkJCXJldHVybiBuaWwsIG5pbAoJCX0gZWxzZSB7CgkJCXJldHVybiBkYXRhLCBuaWwKCQl9Cgl9Cn0=",
+                                "IsPackageLevel": true
+                            },
+                            {
+                                "Name": "RemoveLinesSurroundedBy",
+                                "Comment": "A ReadManipulatorFunc for removing lines surrounded by a given prefix and suffix.",
+                                "Arguments": [
+                                    {
+                                        "Name": "prefix",
+                                        "Type": "string"
+                                    },
+                                    {
+                                        "Name": "suffix",
+                                        "Type": "string"
+                                    },
+                                    {
+                                        "Name": "trimSpace",
+                                        "Type": "bool"
+                                    }
+                                ],
+                                "Returns": [
+                                    {
+                                        "Type": "ReadManipulatorFunc"
+                                    }
+                                ],
+                                "Signature": "RemoveLinesSurroundedBy(prefix string, suffix string, trimSpace bool) ReadManipulatorFunc",
+                                "Source": "ewoJcmV0dXJuIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKSB7CgkJdmFyIGxpbmUgPSBzdHJpbmcoZGF0YSkKCQlpZiB0cmltU3BhY2UgewoJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQl9CgkJaWYgc3RyaW5ncy5IYXNQcmVmaXgobGluZSwgcHJlZml4KSAmJiBzdHJpbmdzLkhhc1N1ZmZpeChsaW5lLCBzdWZmaXgpIHsKCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSBlbHNlIHsKCQkJcmV0dXJuIGRhdGEsIG5pbAoJCX0KCX0KfQ==",
+                                "IsPackageLevel": true
+                            }
+                        ],
                         "Source": "dHlwZSBSZWFkTWFuaXB1bGF0b3JGdW5jIGZ1bmMoZGF0YSBbXWJ5dGUpIChbXWJ5dGUsIGVycm9yKQ=="
                     },
                     "RetrieveHandlerFunc": {
@@ -6494,15 +6498,15 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/maputil",
-                                "Alias": "maputil"
-                            },
-                            {
                                 "PackageName": "github.com/kellydunn/golang-geo",
                                 "Alias": "geo"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/maputil",
+                                "Alias": "maputil"
                             }
                         ],
-                        "Size": 4059,
+                        "Size": 4053,
                         "LineCount": 157,
                         "SourceLineCount": 119,
                         "FunctionCount": 10,
@@ -6518,15 +6522,15 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 46905,
+                        "Size": 46893,
                         "LineCount": 2027,
                         "SourceLineCount": 2014,
                         "FunctionCount": 2,
@@ -6542,11 +6546,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             }
                         ],
-                        "Size": 530,
+                        "Size": 531,
                         "LineCount": 18,
                         "SourceLineCount": 13,
                         "FunctionCount": 0,
@@ -6584,15 +6588,15 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
                                 "Alias": "rxutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 3585,
+                        "Size": 3573,
                         "LineCount": 163,
                         "SourceLineCount": 133,
                         "FunctionCount": 10,
@@ -6612,11 +6616,11 @@
                                 "Alias": "fmt"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 1606,
+                        "Size": 1600,
                         "LineCount": 89,
                         "SourceLineCount": 70,
                         "FunctionCount": 6,
@@ -6646,11 +6650,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3268,
+                        "Size": 3269,
                         "LineCount": 84,
                         "SourceLineCount": 65,
                         "FunctionCount": 0,
@@ -9052,7 +9056,7 @@
                     "Mean": 0.6609,
                     "StdDev": 0.4482,
                     "GeometricMean": 0,
-                    "HarmonicMean": 0,
+                    "HarmonicMean": 0.963,
                     "Median": 1,
                     "Minimum": 0,
                     "Maximum": 1
@@ -9110,23 +9114,23 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/fileutil",
+                                "PackageName": "go.gary.cool/go-stockutil/fileutil",
                                 "Alias": "fileutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/log",
+                                "PackageName": "go.gary.cool/go-stockutil/log",
                                 "Alias": "log"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 16389,
+                        "Size": 16359,
                         "LineCount": 574,
                         "SourceLineCount": 413,
                         "FunctionCount": 35,
@@ -9162,27 +9166,27 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/fileutil",
-                                "Alias": "fileutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
-                                "Alias": "stringutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
-                                "Alias": "typeutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/fileutil",
+                                "Alias": "fileutil"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
+                                "Alias": "stringutil"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
+                                "Alias": "typeutil"
                             }
                         ],
-                        "Size": 5632,
+                        "Size": 5616,
                         "LineCount": 226,
                         "SourceLineCount": 173,
                         "FunctionCount": 0,
@@ -9226,15 +9230,15 @@
                                 "Alias": "os"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/maputil",
+                                "PackageName": "go.gary.cool/go-stockutil/maputil",
                                 "Alias": "maputil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 3900,
+                        "Size": 3888,
                         "LineCount": 144,
                         "SourceLineCount": 114,
                         "FunctionCount": 4,
@@ -9254,11 +9258,11 @@
                                 "Alias": "http"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 609,
+                        "Size": 603,
                         "LineCount": 25,
                         "SourceLineCount": 18,
                         "FunctionCount": 2,
@@ -9278,11 +9282,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 624,
+                        "Size": 625,
                         "LineCount": 24,
                         "SourceLineCount": 17,
                         "FunctionCount": 0,
@@ -9336,7 +9340,7 @@
                     },
                     {
                         "Name": "decoders_test.go",
-                        "Size": 1999,
+                        "Size": 2000,
                         "LineCount": 71,
                         "SourceLineCount": 1,
                         "FunctionCount": 0,
@@ -9368,19 +9372,19 @@
                         "Name": "netrc.go",
                         "Imports": [
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/fileutil",
+                                "PackageName": "github.com/jdxcode/netrc",
+                                "Alias": "netrc"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/fileutil",
                                 "Alias": "fileutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
-                            },
-                            {
-                                "PackageName": "github.com/jdxcode/netrc",
-                                "Alias": "netrc"
                             }
                         ],
-                        "Size": 982,
+                        "Size": 970,
                         "LineCount": 35,
                         "SourceLineCount": 25,
                         "FunctionCount": 1,
@@ -9400,15 +9404,15 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/fileutil",
-                                "Alias": "fileutil"
+                                "PackageName": "github.com/stretchr/testify/require",
+                                "Alias": "require"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
-                                "Alias": "require"
+                                "PackageName": "go.gary.cool/go-stockutil/fileutil",
+                                "Alias": "fileutil"
                             }
                         ],
-                        "Size": 844,
+                        "Size": 839,
                         "LineCount": 43,
                         "SourceLineCount": 30,
                         "FunctionCount": 0,
@@ -9436,23 +9440,23 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/timeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/timeutil",
                                 "Alias": "timeutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 3942,
+                        "Size": 3918,
                         "LineCount": 164,
                         "SourceLineCount": 118,
                         "FunctionCount": 13,
@@ -9472,11 +9476,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 1461,
+                        "Size": 1462,
                         "LineCount": 72,
                         "SourceLineCount": 51,
                         "FunctionCount": 0,
@@ -9540,23 +9544,23 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/log",
+                                "PackageName": "go.gary.cool/go-stockutil/log",
                                 "Alias": "log"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/maputil",
+                                "PackageName": "go.gary.cool/go-stockutil/maputil",
                                 "Alias": "maputil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             }
                         ],
-                        "Size": 5014,
+                        "Size": 4990,
                         "LineCount": 176,
                         "SourceLineCount": 126,
                         "FunctionCount": 12,
@@ -9576,11 +9580,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 1713,
+                        "Size": 1714,
                         "LineCount": 62,
                         "SourceLineCount": 54,
                         "FunctionCount": 0,
@@ -9644,23 +9648,23 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/fileutil",
+                                "PackageName": "go.gary.cool/go-stockutil/fileutil",
                                 "Alias": "fileutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 4482,
+                        "Size": 4458,
                         "LineCount": 158,
                         "SourceLineCount": 123,
                         "FunctionCount": 6,
@@ -9688,11 +9692,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3043,
+                        "Size": 3044,
                         "LineCount": 111,
                         "SourceLineCount": 76,
                         "FunctionCount": 0,
@@ -11192,7 +11196,7 @@
                                     }
                                 ],
                                 "Signature": "NewClient(baseURI string) (*Client, error)",
-                                "Source": "ewoJdmFyIGNsaWVudCA9ICZDbGllbnR7ZW5jb2RlcjogSlNPTkVuY29kZXIsIGRlY29kZXI6IEpTT05EZWNvZGVyLCBoZWFkZXJzOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgcGFyYW1zOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgaHR0cENsaWVudDogaHR0cC5EZWZhdWx0Q2xpZW50fQoJaWYgYmFzZVVSSSAhPSBgYCB7CgkJaWYgdXJpLCBlcnIgOj0gdXJsLlBhcnNlKGJhc2VVUkkpOyBlcnIgPT0gbmlsIHsKCQkJY2xpZW50LnVyaSA9IHVyaQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGVycgoJCX0KCX0gZWxzZSB7CgkJY2xpZW50LnVyaSA9IG5ldyh1cmwuVVJMKQoJfQoJaWYgbG9nLlZlcnlEZWJ1Z2dpbmcoYGdpdGh1Yi5jb20vZ2hldHplbC9nby1zdG9ja3V0aWwvaHR0cHV0aWxgKSB7CgkJY2xpZW50LlNldFByZVJlcXVlc3RIb29rKGZ1bmMocmVxICpodHRwLlJlcXVlc3QpIChhbnksIGVycm9yKSB7CgkJCWlmIGRhdGEsIGVyciA6PSBnb2h0dHB1dGlsLkR1bXBSZXF1ZXN0KHJlcSwgdHJ1ZSk7IGVyciA9PSBuaWwgewoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU2ZFx1MjUwMFsgSFRUUCBSZXF1ZXN0IF0lc1x1MjUwNFx1MjUwNFx1MjUwNCR7cmVzZXR9Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTcpKQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjUwMiR7cmVzZXR9IFx1MjFjOSAldiIsIHJlcS5VUkwpCgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0iKQoJCQkJZm9yIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0gJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU3MCVzXHUyNTA0XHUyNTA0XHUyNTA0JHtyZXNldH0iLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSkKCQljbGllbnQuU2V0UG9zdFJlcXVlc3RIb29rKGZ1bmMocmVzICpodHRwLlJlc3BvbnNlLCBfIGFueSkgZXJyb3IgewoJCQlpZiBkYXRhLCBlcnIgOj0gZ29odHRwdXRpbC5EdW1wUmVzcG9uc2UocmVzLCB0cnVlKTsgZXJyID09IG5pbCB7CgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1NmRcdTI1MDBbIEhUVFAgUmVzcG9uc2UgXSVzXHUyNTA0XHUyNTA0XHUyNTA0Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTgpKQoJCQkJaWYgcmVzLlJlcXVlc3QgIT0gbmlsIHsKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke3JlZH1cdTI1MDIke3Jlc2V0fSBcdTIxYzcgJXYiLCByZXMuUmVxdWVzdC5VUkwpCgkJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtyZWR9XHUyNTAyJHtyZXNldH0iKQoJCQkJfQoJCQkJZm9yIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1MDIgJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgXHUyNTcwJXNcdTI1MDRcdTI1MDRcdTI1MDQiLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbAoJCX0pCgl9CglyZXR1cm4gY2xpZW50LCBuaWwKfQ==",
+                                "Source": "ewoJdmFyIGNsaWVudCA9ICZDbGllbnR7ZW5jb2RlcjogSlNPTkVuY29kZXIsIGRlY29kZXI6IEpTT05EZWNvZGVyLCBoZWFkZXJzOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgcGFyYW1zOiBtYWtlKG1hcFtzdHJpbmddYW55KSwgaHR0cENsaWVudDogaHR0cC5EZWZhdWx0Q2xpZW50fQoJaWYgYmFzZVVSSSAhPSBgYCB7CgkJaWYgdXJpLCBlcnIgOj0gdXJsLlBhcnNlKGJhc2VVUkkpOyBlcnIgPT0gbmlsIHsKCQkJY2xpZW50LnVyaSA9IHVyaQoJCX0gZWxzZSB7CgkJCXJldHVybiBuaWwsIGVycgoJCX0KCX0gZWxzZSB7CgkJY2xpZW50LnVyaSA9IG5ldyh1cmwuVVJMKQoJfQoJaWYgbG9nLlZlcnlEZWJ1Z2dpbmcoYGdvLmdhcnkuY29vbC9nby1zdG9ja3V0aWwvaHR0cHV0aWxgKSB7CgkJY2xpZW50LlNldFByZVJlcXVlc3RIb29rKGZ1bmMocmVxICpodHRwLlJlcXVlc3QpIChhbnksIGVycm9yKSB7CgkJCWlmIGRhdGEsIGVyciA6PSBnb2h0dHB1dGlsLkR1bXBSZXF1ZXN0KHJlcSwgdHJ1ZSk7IGVyciA9PSBuaWwgewoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU2ZFx1MjUwMFsgSFRUUCBSZXF1ZXN0IF0lc1x1MjUwNFx1MjUwNFx1MjUwNCR7cmVzZXR9Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTcpKQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjUwMiR7cmVzZXR9IFx1MjFjOSAldiIsIHJlcS5VUkwpCgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0iKQoJCQkJZm9yIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke2JsdWV9XHUyNTAyJHtyZXNldH0gJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtibHVlfVx1MjU3MCVzXHUyNTA0XHUyNTA0XHUyNTA0JHtyZXNldH0iLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbCwgbmlsCgkJfSkKCQljbGllbnQuU2V0UG9zdFJlcXVlc3RIb29rKGZ1bmMocmVzICpodHRwLlJlc3BvbnNlLCBfIGFueSkgZXJyb3IgewoJCQlpZiBkYXRhLCBlcnIgOj0gZ29odHRwdXRpbC5EdW1wUmVzcG9uc2UocmVzLCB0cnVlKTsgZXJyID09IG5pbCB7CgkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1NmRcdTI1MDBbIEhUVFAgUmVzcG9uc2UgXSVzXHUyNTA0XHUyNTA0XHUyNTA0Iiwgc3RyaW5ncy5SZXBlYXQoIlx1MjUwMCIsIERlYnVnT3V0cHV0Qm94V2lkdGgtMTgpKQoJCQkJaWYgcmVzLlJlcXVlc3QgIT0gbmlsIHsKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCAke3JlZH1cdTI1MDIke3Jlc2V0fSBcdTIxYzcgJXYiLCByZXMuUmVxdWVzdC5VUkwpCgkJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgJHtyZWR9XHUyNTAyJHtyZXNldH0iKQoJCQkJfQoJCQkJZm9yIGxpbmUgOj0gcmFuZ2Ugc3RyaW5ncy5TcGxpdFNlcShzdHJpbmcoZGF0YSksICJcbiIpIHsKCQkJCQlsaW5lID0gc3RyaW5ncy5UcmltU3BhY2UobGluZSkKCQkJCQlsb2cuRGVidWdmKCJodHRwdXRpbCBcdTI1MDIgJXYiLCBsaW5lKQoJCQkJfQoJCQkJbG9nLkRlYnVnZigiaHR0cHV0aWwgXHUyNTcwJXNcdTI1MDRcdTI1MDRcdTI1MDQiLCBzdHJpbmdzLlJlcGVhdCgiXHUyNTAwIiwgRGVidWdPdXRwdXRCb3hXaWR0aCkpCgkJCX0KCQkJcmV0dXJuIG5pbAoJCX0pCgl9CglyZXR1cm4gY2xpZW50LCBuaWwKfQ==",
                                 "IsPackageLevel": true
                             },
                             {
@@ -11763,7 +11767,7 @@
                 "ImportPath": "log",
                 "ParentPackage": "stockutil",
                 "URL": "https://github.com/ghetzel/go-stockutil",
-                "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"github.com/ghetzel/go-stockutil/log\"\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
+                "Synopsis": "Package log package provides convenient and flexible utilities for logging messages.\n\n# Overview\n\nLogging is done by calling functions in this package that correspond to the\nseverity of the log message being output.  At the package level, a minimum\nseverity can be set.  Messages less severe than this minimum logging level will\nnot be output.\n\n# Color Expressions\n\nIn addition to the standard printf-style formatting options (as defined in the\nstandard fmt package), this package supports inline expressions that control the\noutput of ANSI terminal escape sequences.  These expressions allow for a simple\nmechanism to colorize log output, as well as applying graphical effects like\nbold, underline, and blinking text (for terminals that support it).\n\nBy default, color expressions will only be honored if os.Stdin is attached to a\npseudoterminal.  This is the case when the program is run on the command line\nand is not piped or redirected to another file.  This default ensures that the\ncolors are visible only in a visual context, but do not corrupt files or\npipelines with ANSI escape sequences.  Color sequences can be explicitly enabled\nor disabled by setting the EnableColorExpressions package variable.\n\nUsing color expressions in format strings is done by wrapping the expression in\n${expr}.  The general format for color expressions is:\n\n\tforegroundColor[+attributes[:backgroundColor[+attributes]]]\n\nColors (foreground and background):\n\n\tblack\n\tred\n\tgreen\n\tyellow\n\tblue\n\tmagenta\n\tcyan\n\twhite\n\t[0-255]: numeric 8-bit color (for 256 color terminals)\n\treset: Reset all color and graphics attributes to their defaults\n\nForeground Attributes:\n\n\tb: bold text\n\tB: blinking text\n\th: high-intensity (bright text)\n\ti: inverted/reverse colors\n\ts: strikethrough\n\tu: underline\n\nBackground Attributes:\n\n\th: high-intensity (bright text)\n\n# Examples\n\nBelow are some examples showing various formatting options for logs.\n\n\tlog.Info(\"Hello, world!\")\n\t// [11:22:33 0001] INFO Hello, world!\n\n\tlog.Warningf(\"The %q operation could not be completed.\", \"add\")\n\t// [11:22:33 0002] WARN The \"add\" operation could not be completed.\n\n\tlog.Errorf(\"There was an ${red}error${reset} opening file ${blue+b:white}%s${reset}\", filename)\n\t// [11:22:33 0003] ERRO There was an error opening file /tmp/file.txt\n\t//                                   ^^^^^              ^^^^^^^^^^^^^\n\t//                                   red text           blue text on white background\n\n# Log Interception\n\nIt is sometimes useful to be able to act on logs as they are emitted, especially in cases where this\npackage is used in other projects that are imported.  Log Interceptors are called before each log\nline is emitted.  The LogInterceptFunc is called with the level the message was emitted with, the\nmessage itself as a string, and a stack trace struct that defines exactly where the log was emitted\nfrom.\n\n\t// print a complete stack trace before every debug-level message that is encountered\n\tlog.AddLogIntercept(func(level log.Level, line string, stack log.StackItems){\n\t\tif level == log.DEBUG {\n\t\t\tfor _, item := range stack {\n\t\t\t\tfmt.Println(item.String())\n\t\t\t}\n\t\t}\n\t})\n\n# Writable Logger\n\nThe WritableLogger implements the io.Writer interface, acting as a bridge between byte streams from\nvarious sources and the log package.  This is frequently useful in situations like parsing the\noutput of other programs.  A WritableLogger accepts a custom LogParseFunc that allows individual\nlines being written to the WritableLogger to be parsed, rewritten, and given a log severity level.\n\n\timport (\n\t\t\"os/exec\"\n\t\t\"go.gary.cool/go-stockutil/log\"\n\t)\n\n\tvar wr = log.NewWritableLogger(log.INFO, `ls: `)\n\n\twr.SetParserFunc(func(line string) (log.Level, string) {\n\t\tif strings.Contains(line, `root`) {\n\t\t\t// root-owned files show up as errors\n\t\t\treturn log.ERROR, line\n\t\t} else if strings.Contains(line, os.Getenv(`USER`)) {\n\t\t\t// current user files are notices\n\t\t\treturn log.NOTICE, line\n\t\t} else {\n\t\t\t// all other lines are not logged at all\n\t\t\treturn log.DEBUG, ``\n\t\t}\n\t})\n\n\tvar ls = exec.Command(`ls`, `-l`)\n\tls.Stdout = wr\n\tls.Run()\n",
                 "MainFunction": false,
                 "CommentWordCount": 1417,
                 "LineCount": 1186,
@@ -11802,19 +11806,19 @@
                                 "Alias": "regexp"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                                "PackageName": "github.com/mgutz/ansi",
+                                "Alias": "ansi"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
                                 "Alias": "rxutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
-                            },
-                            {
-                                "PackageName": "github.com/mgutz/ansi",
-                                "Alias": "ansi"
                             }
                         ],
-                        "Size": 3443,
+                        "Size": 3431,
                         "LineCount": 116,
                         "SourceLineCount": 77,
                         "FunctionCount": 12,
@@ -11834,11 +11838,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 5673,
+                        "Size": 5674,
                         "LineCount": 84,
                         "SourceLineCount": 70,
                         "FunctionCount": 0,
@@ -11862,15 +11866,15 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
-                                "Alias": "stringutil"
-                            },
-                            {
                                 "PackageName": "github.com/gobwas/glob",
                                 "Alias": "glob"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
+                                "Alias": "stringutil"
                             }
                         ],
-                        "Size": 2723,
+                        "Size": 2717,
                         "LineCount": 127,
                         "SourceLineCount": 98,
                         "FunctionCount": 5,
@@ -11880,7 +11884,7 @@
                     },
                     {
                         "Name": "doc.go",
-                        "Size": 4114,
+                        "Size": 4108,
                         "LineCount": 121,
                         "SourceLineCount": 84,
                         "FunctionCount": 0,
@@ -11896,11 +11900,11 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 1340,
+                        "Size": 1334,
                         "LineCount": 50,
                         "SourceLineCount": 36,
                         "FunctionCount": 3,
@@ -11920,11 +11924,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2247,
+                        "Size": 2224,
                         "LineCount": 78,
                         "SourceLineCount": 63,
                         "FunctionCount": 0,
@@ -11980,18 +11984,6 @@
                                 "Alias": "sync"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
-                                "Alias": "sliceutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
-                                "Alias": "stringutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
-                                "Alias": "typeutil"
-                            },
-                            {
                                 "PackageName": "github.com/hashicorp/go-multierror",
                                 "Alias": "multierror"
                             },
@@ -12002,9 +11994,21 @@
                             {
                                 "PackageName": "github.com/op/go-logging",
                                 "Alias": "go-logging"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
+                                "Alias": "sliceutil"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
+                                "Alias": "stringutil"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
+                                "Alias": "typeutil"
                             }
                         ],
-                        "Size": 10751,
+                        "Size": 10733,
                         "LineCount": 456,
                         "SourceLineCount": 332,
                         "FunctionCount": 44,
@@ -13544,11 +13548,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 5746,
+                        "Size": 5747,
                         "LineCount": 274,
                         "SourceLineCount": 217,
                         "FunctionCount": 0,
@@ -13564,11 +13568,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 5150,
+                        "Size": 5151,
                         "LineCount": 191,
                         "SourceLineCount": 146,
                         "FunctionCount": 0,
@@ -13588,15 +13592,15 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3568,
+                        "Size": 3563,
                         "LineCount": 178,
                         "SourceLineCount": 124,
                         "FunctionCount": 0,
@@ -13616,15 +13620,15 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 5080,
+                        "Size": 5075,
                         "LineCount": 207,
                         "SourceLineCount": 158,
                         "FunctionCount": 0,
@@ -13656,11 +13660,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3430,
+                        "Size": 3431,
                         "LineCount": 145,
                         "SourceLineCount": 109,
                         "FunctionCount": 0,
@@ -13688,11 +13692,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 8398,
+                        "Size": 8399,
                         "LineCount": 386,
                         "SourceLineCount": 304,
                         "FunctionCount": 0,
@@ -13712,11 +13716,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 5796,
+                        "Size": 5797,
                         "LineCount": 253,
                         "SourceLineCount": 194,
                         "FunctionCount": 0,
@@ -13732,11 +13736,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2549,
+                        "Size": 2550,
                         "LineCount": 160,
                         "SourceLineCount": 147,
                         "FunctionCount": 0,
@@ -13752,11 +13756,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 4038,
+                        "Size": 4039,
                         "LineCount": 181,
                         "SourceLineCount": 127,
                         "FunctionCount": 0,
@@ -13808,23 +13812,23 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                                "PackageName": "go.gary.cool/go-stockutil/utils",
                                 "Alias": "utilutil"
                             }
                         ],
-                        "Size": 15931,
+                        "Size": 15907,
                         "LineCount": 683,
                         "SourceLineCount": 493,
                         "FunctionCount": 46,
@@ -13864,19 +13868,19 @@
                                 "Alias": "assert"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "github.com/stretchr/testify/require",
+                                "Alias": "require"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/testify/require",
-                                "Alias": "require"
                             }
                         ],
-                        "Size": 12159,
+                        "Size": 12148,
                         "LineCount": 455,
                         "SourceLineCount": 373,
                         "FunctionCount": 0,
@@ -13936,31 +13940,31 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                                "PackageName": "github.com/mitchellh/mapstructure",
+                                "Alias": "mapstructure"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
                                 "Alias": "rxutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                                "PackageName": "go.gary.cool/go-stockutil/utils",
                                 "Alias": "utils"
-                            },
-                            {
-                                "PackageName": "github.com/mitchellh/mapstructure",
-                                "Alias": "mapstructure"
                             }
                         ],
-                        "Size": 27330,
+                        "Size": 27300,
                         "LineCount": 1079,
                         "SourceLineCount": 790,
                         "FunctionCount": 38,
@@ -13976,23 +13980,23 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
-                                "Alias": "rxutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/go-stockutil/timeutil",
-                                "Alias": "timeutil"
-                            },
-                            {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
+                                "Alias": "rxutil"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/timeutil",
+                                "Alias": "timeutil"
                             }
                         ],
-                        "Size": 7025,
+                        "Size": 7015,
                         "LineCount": 300,
                         "SourceLineCount": 258,
                         "FunctionCount": 0,
@@ -16872,11 +16876,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/assert",
+                                "PackageName": "github.com/stretchr/testify/assert",
                                 "Alias": "assert"
                             }
                         ],
-                        "Size": 1600,
+                        "Size": 1601,
                         "LineCount": 51,
                         "SourceLineCount": 41,
                         "FunctionCount": 0,
@@ -17158,27 +17162,27 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-defaults",
+                                "PackageName": "github.com/grandcat/zeroconf",
+                                "Alias": "zeroconf"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-defaults",
                                 "Alias": "go-defaults"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
                                 "Alias": "rxutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
-                            },
-                            {
-                                "PackageName": "github.com/grandcat/zeroconf",
-                                "Alias": "zeroconf"
                             }
                         ],
-                        "Size": 5445,
+                        "Size": 5421,
                         "LineCount": 214,
                         "SourceLineCount": 174,
                         "FunctionCount": 5,
@@ -17226,19 +17230,19 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
-                                "Alias": "typeutil"
-                            },
-                            {
                                 "PackageName": "github.com/jackpal/gateway",
                                 "Alias": "gateway"
                             },
                             {
                                 "PackageName": "github.com/phayes/freeport",
                                 "Alias": "freeport"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
+                                "Alias": "typeutil"
                             }
                         ],
-                        "Size": 5151,
+                        "Size": 5145,
                         "LineCount": 198,
                         "SourceLineCount": 141,
                         "FunctionCount": 9,
@@ -17248,7 +17252,7 @@
                     },
                     {
                         "Name": "netutil_test.go",
-                        "Size": 1741,
+                        "Size": 1742,
                         "LineCount": 63,
                         "SourceLineCount": 1,
                         "FunctionCount": 0,
@@ -17881,11 +17885,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3391,
+                        "Size": 3392,
                         "LineCount": 102,
                         "SourceLineCount": 86,
                         "FunctionCount": 0,
@@ -18352,7 +18356,7 @@
                     "Mean": 0.3545,
                     "StdDev": 0.4707,
                     "GeometricMean": 0,
-                    "HarmonicMean": 1,
+                    "HarmonicMean": 0,
                     "Median": 0,
                     "Minimum": 0,
                     "Maximum": 1
@@ -18416,11 +18420,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 1965,
+                        "Size": 1966,
                         "LineCount": 71,
                         "SourceLineCount": 52,
                         "FunctionCount": 0,
@@ -18795,23 +18799,23 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "github.com/juliangruber/go-intersect",
+                                "Alias": "go-intersect"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                                "PackageName": "go.gary.cool/go-stockutil/utils",
                                 "Alias": "utils"
-                            },
-                            {
-                                "PackageName": "github.com/juliangruber/go-intersect",
-                                "Alias": "go-intersect"
                             }
                         ],
-                        "Size": 11518,
+                        "Size": 11500,
                         "LineCount": 502,
                         "SourceLineCount": 342,
                         "FunctionCount": 34,
@@ -18835,11 +18839,11 @@
                                 "Alias": "assert"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 14007,
+                        "Size": 14008,
                         "LineCount": 556,
                         "SourceLineCount": 448,
                         "FunctionCount": 0,
@@ -19965,11 +19969,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 18116,
+                        "Size": 18117,
                         "LineCount": 626,
                         "SourceLineCount": 492,
                         "FunctionCount": 0,
@@ -20001,11 +20005,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 7179,
+                        "Size": 7180,
                         "LineCount": 320,
                         "SourceLineCount": 250,
                         "FunctionCount": 0,
@@ -20025,11 +20029,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2764,
+                        "Size": 2765,
                         "LineCount": 125,
                         "SourceLineCount": 99,
                         "FunctionCount": 0,
@@ -20089,11 +20093,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 6419,
+                        "Size": 6420,
                         "LineCount": 246,
                         "SourceLineCount": 195,
                         "FunctionCount": 0,
@@ -20141,23 +20145,23 @@
                                 "Alias": "unicode"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                                "PackageName": "github.com/jdkato/prose/tokenize",
+                                "Alias": "tokenize"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
                                 "Alias": "rxutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                                "PackageName": "go.gary.cool/go-stockutil/utils",
                                 "Alias": "utils"
-                            },
-                            {
-                                "PackageName": "github.com/jdkato/prose/tokenize",
-                                "Alias": "tokenize"
                             }
                         ],
-                        "Size": 24521,
+                        "Size": 24503,
                         "LineCount": 1020,
                         "SourceLineCount": 769,
                         "FunctionCount": 73,
@@ -20177,15 +20181,15 @@
                                 "Alias": "hex"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/uuid",
-                                "Alias": "uuid"
-                            },
-                            {
                                 "PackageName": "github.com/jbenet/go-base58",
                                 "Alias": "go-base58"
+                            },
+                            {
+                                "PackageName": "go.gary.cool/uuid",
+                                "Alias": "uuid"
                             }
                         ],
-                        "Size": 1022,
+                        "Size": 1016,
                         "LineCount": 64,
                         "SourceLineCount": 52,
                         "FunctionCount": 8,
@@ -20201,11 +20205,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 607,
+                        "Size": 608,
                         "LineCount": 28,
                         "SourceLineCount": 21,
                         "FunctionCount": 0,
@@ -22710,23 +22714,23 @@
                                 "Alias": "strings"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/maputil",
+                                "PackageName": "go.gary.cool/go-stockutil/maputil",
                                 "Alias": "maputil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/sliceutil",
+                                "PackageName": "go.gary.cool/go-stockutil/sliceutil",
                                 "Alias": "sliceutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                                "PackageName": "go.gary.cool/go-stockutil/stringutil",
                                 "Alias": "stringutil"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 3488,
+                        "Size": 3464,
                         "LineCount": 171,
                         "SourceLineCount": 135,
                         "FunctionCount": 10,
@@ -22742,11 +22746,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2804,
+                        "Size": 2805,
                         "LineCount": 126,
                         "SourceLineCount": 107,
                         "FunctionCount": 0,
@@ -22770,11 +22774,11 @@
                                 "Alias": "reflect"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/typeutil",
+                                "PackageName": "go.gary.cool/go-stockutil/typeutil",
                                 "Alias": "typeutil"
                             }
                         ],
-                        "Size": 4007,
+                        "Size": 4001,
                         "LineCount": 165,
                         "SourceLineCount": 126,
                         "FunctionCount": 3,
@@ -22794,11 +22798,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 1092,
+                        "Size": 1093,
                         "LineCount": 74,
                         "SourceLineCount": 60,
                         "FunctionCount": 0,
@@ -23197,11 +23201,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                                "PackageName": "go.gary.cool/go-stockutil/utils",
                                 "Alias": "utils"
                             }
                         ],
-                        "Size": 1592,
+                        "Size": 1586,
                         "LineCount": 59,
                         "SourceLineCount": 34,
                         "FunctionCount": 5,
@@ -23225,11 +23229,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2803,
+                        "Size": 2804,
                         "LineCount": 132,
                         "SourceLineCount": 96,
                         "FunctionCount": 0,
@@ -23495,11 +23499,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 2631,
+                        "Size": 2632,
                         "LineCount": 79,
                         "SourceLineCount": 62,
                         "FunctionCount": 0,
@@ -23571,11 +23575,11 @@
                                 "Alias": "spew"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                                "PackageName": "go.gary.cool/go-stockutil/utils",
                                 "Alias": "utils"
                             }
                         ],
-                        "Size": 10483,
+                        "Size": 10477,
                         "LineCount": 424,
                         "SourceLineCount": 303,
                         "FunctionCount": 25,
@@ -23603,11 +23607,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 8744,
+                        "Size": 8745,
                         "LineCount": 354,
                         "SourceLineCount": 254,
                         "FunctionCount": 0,
@@ -23647,11 +23651,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                                "PackageName": "go.gary.cool/go-stockutil/utils",
                                 "Alias": "utils"
                             }
                         ],
-                        "Size": 13237,
+                        "Size": 13231,
                         "LineCount": 627,
                         "SourceLineCount": 455,
                         "FunctionCount": 67,
@@ -23671,11 +23675,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 8251,
+                        "Size": 8252,
                         "LineCount": 299,
                         "SourceLineCount": 260,
                         "FunctionCount": 0,
@@ -25883,11 +25887,11 @@
                                 "Alias": "utf8"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                                "PackageName": "go.gary.cool/go-stockutil/rxutil",
                                 "Alias": "rxutil"
                             }
                         ],
-                        "Size": 14024,
+                        "Size": 14018,
                         "LineCount": 618,
                         "SourceLineCount": 513,
                         "FunctionCount": 18,
@@ -25903,11 +25907,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 4057,
+                        "Size": 4058,
                         "LineCount": 131,
                         "SourceLineCount": 105,
                         "FunctionCount": 0,
@@ -25951,11 +25955,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 3459,
+                        "Size": 3460,
                         "LineCount": 121,
                         "SourceLineCount": 107,
                         "FunctionCount": 0,
@@ -26015,11 +26019,11 @@
                                 "Alias": "testing"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 255,
+                        "Size": 256,
                         "LineCount": 16,
                         "SourceLineCount": 11,
                         "FunctionCount": 0,
@@ -26107,11 +26111,11 @@
                                 "Alias": "time"
                             },
                             {
-                                "PackageName": "github.com/ghetzel/testify/require",
+                                "PackageName": "github.com/stretchr/testify/require",
                                 "Alias": "require"
                             }
                         ],
-                        "Size": 886,
+                        "Size": 887,
                         "LineCount": 54,
                         "SourceLineCount": 44,
                         "FunctionCount": 0,

@@ -61,11 +61,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 2496,
+            "Size": 2497,
             "LineCount": 89,
             "SourceLineCount": 76,
             "FunctionCount": 1,
@@ -97,15 +97,15 @@
                     "Alias": "strings"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/mathutil",
+                    "PackageName": "go.gary.cool/go-stockutil/mathutil",
                     "Alias": "mathutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/rxutil",
+                    "PackageName": "go.gary.cool/go-stockutil/rxutil",
                     "Alias": "rxutil"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/stringutil",
+                    "PackageName": "go.gary.cool/go-stockutil/stringutil",
                     "Alias": "stringutil"
                 },
                 {
@@ -113,7 +113,7 @@
                     "Alias": "json"
                 }
             ],
-            "Size": 15045,
+            "Size": 15027,
             "LineCount": 630,
             "SourceLineCount": 470,
             "FunctionCount": 25,
@@ -133,15 +133,15 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/assert",
+                    "PackageName": "github.com/stretchr/testify/assert",
                     "Alias": "assert"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 12443,
+            "Size": 12445,
             "LineCount": 377,
             "SourceLineCount": 283,
             "FunctionCount": 0,

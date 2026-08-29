@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 func TestLocationSpeedFrom(t *testing.T) {

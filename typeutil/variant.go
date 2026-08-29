@@ -9,7 +9,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/utils"
+	"go.gary.cool/go-stockutil/utils"
 )
 
 // Represents an interface type with helper functions for making it easy to do

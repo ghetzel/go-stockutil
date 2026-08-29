@@ -3,7 +3,7 @@ package log
 import (
 	"strings"
 
-	"github.com/ghetzel/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 func precheck(err error, message any) (string, string, bool) {

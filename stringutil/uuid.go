@@ -4,8 +4,8 @@ import (
 	"encoding/base64"
 	"encoding/hex"
 
-	"github.com/ghetzel/uuid"
 	"github.com/jbenet/go-base58"
+	"go.gary.cool/uuid"
 )
 
 type Uuid struct {

@@ -15,12 +15,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/rxutil"
-	"github.com/ghetzel/go-stockutil/sliceutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
-	"github.com/ghetzel/go-stockutil/utils"
 	"github.com/mitchellh/mapstructure"
+	"go.gary.cool/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/sliceutil"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/utils"
 )
 
 var rxJsonPathExpr = regexp.MustCompile(`\{.*?\}`)

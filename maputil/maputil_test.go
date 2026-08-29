@@ -3,10 +3,10 @@ package maputil
 import (
 	"testing"
 
-	"github.com/ghetzel/go-stockutil/rxutil"
-	"github.com/ghetzel/go-stockutil/timeutil"
-	"github.com/ghetzel/testify/assert"
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"go.gary.cool/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/timeutil"
 )
 
 var testJsonPathData = map[string]any{

@@ -63,11 +63,11 @@
                     "Alias": "testing"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/assert",
+                    "PackageName": "github.com/stretchr/testify/assert",
                     "Alias": "assert"
                 }
             ],
-            "Size": 1600,
+            "Size": 1601,
             "LineCount": 51,
             "SourceLineCount": 41,
             "FunctionCount": 0,

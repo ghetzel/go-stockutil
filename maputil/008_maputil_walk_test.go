@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/require"
 )
 
 type fnCallSignature struct {

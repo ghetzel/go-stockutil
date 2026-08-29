@@ -11,10 +11,10 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/ghetzel/go-stockutil/convutil"
-	"github.com/ghetzel/go-stockutil/pathutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
 	isatty "github.com/mattn/go-isatty"
+	"go.gary.cool/go-stockutil/convutil"
+	"go.gary.cool/go-stockutil/pathutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 // Alias functions from pathutil as a convenience

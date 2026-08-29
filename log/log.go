@@ -9,12 +9,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/ghetzel/go-stockutil/sliceutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
 	multierror "github.com/hashicorp/go-multierror"
 	isatty "github.com/mattn/go-isatty"
 	"github.com/op/go-logging"
+	"go.gary.cool/go-stockutil/sliceutil"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 var EnableColorExpressions = func() bool {

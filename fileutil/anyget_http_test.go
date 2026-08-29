@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ghetzel/testify/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestRetrieveViaHTTP(t *testing.T) {

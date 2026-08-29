@@ -5,8 +5,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/testify/assert"
+	"github.com/stretchr/testify/assert"
+	"go.gary.cool/go-stockutil/stringutil"
 )
 
 func incr(value *int) CommandStatusFunc {

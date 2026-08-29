@@ -3,9 +3,9 @@ package convutil
 import (
 	"fmt"
 
-	"github.com/ghetzel/go-stockutil/mathutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
 	"github.com/martinlindhe/unit"
+	"go.gary.cool/go-stockutil/mathutil"
+	"go.gary.cool/go-stockutil/stringutil"
 )
 
 var ConvertRoundToPlaces = 6

@@ -39,11 +39,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/go-stockutil/utils",
+                    "PackageName": "go.gary.cool/go-stockutil/utils",
                     "Alias": "utils"
                 }
             ],
-            "Size": 1592,
+            "Size": 1586,
             "LineCount": 59,
             "SourceLineCount": 34,
             "FunctionCount": 5,
@@ -67,11 +67,11 @@
                     "Alias": "time"
                 },
                 {
-                    "PackageName": "github.com/ghetzel/testify/require",
+                    "PackageName": "github.com/stretchr/testify/require",
                     "Alias": "require"
                 }
             ],
-            "Size": 2803,
+            "Size": 2804,
             "LineCount": 132,
             "SourceLineCount": 96,
             "FunctionCount": 0,

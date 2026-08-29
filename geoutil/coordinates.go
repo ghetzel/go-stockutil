@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/maputil"
 	geo "github.com/kellydunn/golang-geo"
+	"go.gary.cool/go-stockutil/maputil"
 )
 
 const EarthRadius Distance = geo.EARTH_RADIUS * Kilometer

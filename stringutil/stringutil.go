@@ -12,10 +12,10 @@ import (
 	"time"
 	"unicode"
 
-	"github.com/ghetzel/go-stockutil/rxutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
-	"github.com/ghetzel/go-stockutil/utils"
 	"github.com/jdkato/prose/tokenize"
+	"go.gary.cool/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/utils"
 )
 
 var rxHexadecimal = regexp.MustCompile(`^[0-9a-fA-F]+$`)

@@ -5,7 +5,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/ghetzel/go-stockutil/log"
+	"go.gary.cool/go-stockutil/log"
 )
 
 type ExtendableReader struct {

@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ghetzel/go-stockutil/maputil"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
-	"github.com/ghetzel/testify/assert"
+	"github.com/stretchr/testify/assert"
+	"go.gary.cool/go-stockutil/maputil"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 func testHttpServer(t *testing.T, mustHeaders ...map[string]any) *httptest.Server {

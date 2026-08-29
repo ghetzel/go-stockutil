@@ -4,7 +4,7 @@ import (
 	"context"
 	"net/http"
 
-	"github.com/ghetzel/go-stockutil/typeutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 // attach an arbitrary value to the context of a given request.

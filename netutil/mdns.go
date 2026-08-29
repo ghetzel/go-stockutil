@@ -9,11 +9,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ghetzel/go-defaults"
-	"github.com/ghetzel/go-stockutil/rxutil"
-	"github.com/ghetzel/go-stockutil/stringutil"
-	"github.com/ghetzel/go-stockutil/typeutil"
 	"github.com/grandcat/zeroconf"
+	"go.gary.cool/go-defaults"
+	"go.gary.cool/go-stockutil/rxutil"
+	"go.gary.cool/go-stockutil/stringutil"
+	"go.gary.cool/go-stockutil/typeutil"
 )
 
 var registered sync.Map

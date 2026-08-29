@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ghetzel/testify/assert"
+	"github.com/stretchr/testify/assert"
 	"golang.org/x/crypto/ssh"
 )
 

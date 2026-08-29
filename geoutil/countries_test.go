@@ -3,7 +3,7 @@ package geoutil
 import (
 	"testing"
 
-	"github.com/ghetzel/testify/assert"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestCountriesGet(t *testing.T) {

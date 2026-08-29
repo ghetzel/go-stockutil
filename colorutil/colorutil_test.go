@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/ghetzel/testify/assert"
-	"github.com/ghetzel/testify/require"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func assertHslToRgb(t *testing.T, h, s, l, r, g, b float64) {
