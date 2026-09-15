@@ -56,3 +56,27 @@ func DurationHMS(d time.Duration) (int, int, int) {
 
 	return int(h), int(m), int(s)
 }
+
+// Round the given time strictly downward to the nearest rounding interval. For example, 1:17 rounded to the prior
+// 30 minute duration will become 1:00.
+func RoundFloor(t time.Time, roundTo time.Duration) time.Time {
+	if round := t.Round(roundTo); round.After(t) {
+		t = t.Add(-roundTo).Round(roundTo)
+	} else {
+		t = round
+	}
+
+	return t
+}
+
+// Round the given time strictly upward to the nearest rounding interval. For example, 1:17 rounded to the next
+// 30 minute duration will become 1:30.
+func RoundCeil(t time.Time, roundTo time.Duration) time.Time {
+	if round := t.Round(roundTo); round.Before(t) {
+		t = t.Add(roundTo).Round(roundTo)
+	} else {
+		t = round
+	}
+
+	return t
+}

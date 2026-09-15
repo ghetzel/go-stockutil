@@ -129,3 +129,67 @@ func ExampleFormatTimer_complete() {
 	fmt.Print(FormatTimer(23*time.Hour + 4*time.Minute + 13*time.Second))
 	// Output: 23:04:13
 }
+
+func tm(tm string) time.Time {
+	var t, _ = time.Parse(time.RFC3339, tm)
+	return t
+}
+
+func TestRoundFloor(t *testing.T) {
+	var assert = require.New(t)
+
+	type refRoundWanted struct {
+		Ref   time.Time
+		Round time.Duration
+		Want  time.Time
+		NEq   bool
+	}
+
+	for _, rrw := range []refRoundWanted{
+		{tm(`2014-08-17T00:17:34Z`), time.Minute, tm(`2014-08-17T00:17:00Z`), false},
+		{tm(`2014-08-17T00:17:34Z`), time.Minute, tm(`2014-08-17T00:18:00Z`), true},
+		{tm(`2014-08-17T00:17:34Z`), 5 * time.Minute, tm(`2014-08-17T00:15:00Z`), false},
+		{tm(`2014-08-17T00:17:34Z`), 5 * time.Minute, tm(`2014-08-17T00:20:00Z`), true},
+		{tm(`2014-08-17T00:17:34Z`), 30 * time.Second, tm(`2014-08-17T00:17:30Z`), false},
+		{tm(`2014-08-17T00:17:34Z`), 30 * time.Second, tm(`2014-08-17T00:17:20Z`), true},
+		{tm(`2014-12-31T23:17:34Z`), time.Hour, tm(`2014-12-31T23:00:00Z`), false},
+		{tm(`2014-12-31T23:17:34Z`), 24 * time.Hour, tm(`2014-12-31T00:00:00Z`), false},
+		{tm(`2014-12-31T19:17:34-04:00`), 24 * time.Hour, tm(`2014-12-30T20:00:00-04:00`), false},
+	} {
+		if !rrw.NEq {
+			assert.Equal(rrw.Want, RoundFloor(rrw.Ref, rrw.Round))
+		} else {
+			assert.NotEqual(rrw.Want, RoundFloor(rrw.Ref, rrw.Round))
+		}
+	}
+}
+
+func TestRoundCeil(t *testing.T) {
+	var assert = require.New(t)
+
+	type refRoundWanted struct {
+		Ref   time.Time
+		Round time.Duration
+		Want  time.Time
+		NEq   bool
+	}
+
+	for _, rrw := range []refRoundWanted{
+		{tm(`2014-08-17T00:17:34Z`), time.Minute, tm(`2014-08-17T00:18:00Z`), false},
+		{tm(`2014-08-17T00:17:34Z`), time.Minute, tm(`2014-08-17T00:20:00Z`), true},
+		{tm(`2014-08-17T00:17:34Z`), 5 * time.Minute, tm(`2014-08-17T00:20:00Z`), false},
+		{tm(`2014-08-17T00:17:34Z`), 5 * time.Minute, tm(`2014-08-17T00:18:00Z`), true},
+		{tm(`2014-08-17T00:17:34Z`), 10 * time.Second, tm(`2014-08-17T00:17:40Z`), false},
+		{tm(`2014-08-17T00:17:34Z`), 10 * time.Second, tm(`2014-08-17T00:17:20Z`), true},
+		{tm(`2014-12-31T23:17:34Z`), time.Hour, tm(`2015-01-01T00:00:00Z`), false},
+		{tm(`2014-12-31T23:17:34Z`), 24 * time.Hour, tm(`2015-01-01T00:00:00Z`), false},
+		{tm(`2014-12-31T19:17:34-04:00`), 24 * time.Hour, tm(`2014-12-31T20:00:00-04:00`), false},
+		{tm(`2014-12-31T23:17:34-04:00`), 24 * time.Hour, tm(`2015-01-01T20:00:00-04:00`), false},
+	} {
+		if !rrw.NEq {
+			assert.Equal(rrw.Want, RoundCeil(rrw.Ref, rrw.Round))
+		} else {
+			assert.NotEqual(rrw.Want, RoundCeil(rrw.Ref, rrw.Round))
+		}
+	}
+}

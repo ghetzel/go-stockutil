@@ -117,7 +117,7 @@
                     
                     <ul class="nav navbar-nav navbar-right">
                         <li class="navbar-text">
-                            v1.15.0
+                            v1.15.1
                         </li>
                     </ul>
                     
@@ -148,7 +148,7 @@
     &#34;GeneratorVersion&#34;: &#34;0.0.7&#34;,
     &#34;Title&#34;: &#34;go-stockutil&#34;,
     &#34;URL&#34;: &#34;https://github.com/ghetzel/go-stockutil&#34;,
-    &#34;Version&#34;: &#34;1.15.0&#34;
+    &#34;Version&#34;: &#34;1.15.1&#34;
   },
   &#34;Package&#34;: {
     &#34;CanonicalImportPath&#34;: &#34;github.com/ghetzel/go-stockutil&#34;,
@@ -156,10 +156,10 @@
     &#34;ConstantCount&#34;: 1,
     &#34;Constants&#34;: [
       {
-        &#34;Expression&#34;: &#34;`1.15.0`&#34;,
+        &#34;Expression&#34;: &#34;`1.15.1`&#34;,
         &#34;Immutable&#34;: true,
         &#34;Name&#34;: &#34;Version&#34;,
-        &#34;Value&#34;: &#34;1.15.0&#34;
+        &#34;Value&#34;: &#34;1.15.1&#34;
       }
     ],
     &#34;Files&#34;: [
@@ -2264,6 +2264,27 @@
           {
             &#34;Arguments&#34;: [
               {
+                &#34;Name&#34;: &#34;outlevel&#34;,
+                &#34;Type&#34;: &#34;log.Level&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;errlevel&#34;,
+                &#34;Type&#34;: &#34;log.Level&#34;
+              }
+            ],
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;LogOutput&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;OutputLineFunc&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
+            &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
                 &#34;Name&#34;: &#34;line&#34;,
                 &#34;Type&#34;: &#34;string&#34;
               },
@@ -3058,29 +3079,6 @@
             &#34;Source&#34;: &#34;dHlwZSBDb21tYW5kU3RhdHVzRnVuYyBmdW5jKFN0YXR1cyk=&#34;
           },
           &#34;OutputLineFunc&#34;: {
-            &#34;Methods&#34;: [
-              {
-                &#34;Arguments&#34;: [
-                  {
-                    &#34;Name&#34;: &#34;outlevel&#34;,
-                    &#34;Type&#34;: &#34;log.Level&#34;
-                  },
-                  {
-                    &#34;Name&#34;: &#34;errlevel&#34;,
-                    &#34;Type&#34;: &#34;log.Level&#34;
-                  }
-                ],
-                &#34;IsPackageLevel&#34;: true,
-                &#34;Name&#34;: &#34;LogOutput&#34;,
-                &#34;Returns&#34;: [
-                  {
-                    &#34;Type&#34;: &#34;OutputLineFunc&#34;
-                  }
-                ],
-                &#34;Signature&#34;: &#34;LogOutput(outlevel log.Level, errlevel log.Level) OutputLineFunc&#34;,
-                &#34;Source&#34;: &#34;ewoJcmV0dXJuIGZ1bmMobGluZSBzdHJpbmcsIGVyciBib29sKSB7CgkJaWYgZXJyIHsKCQkJbG9nLkxvZyhvdXRsZXZlbCwgbGluZSkKCQl9IGVsc2UgewoJCQlsb2cuTG9nKGVycmxldmVsLCBsaW5lKQoJCX0KCX0KfQ==&#34;
-              }
-            ],
             &#34;Name&#34;: &#34;OutputLineFunc&#34;,
             &#34;Source&#34;: &#34;dHlwZSBPdXRwdXRMaW5lRnVuYyBmdW5jKHN0cmluZywgYm9vbCk=&#34;
           },
@@ -10424,7 +10422,7 @@
         &#34;SourceLineCount&#34;: 1462,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 0.963,
+          &#34;HarmonicMean&#34;: 0,
           &#34;Maximum&#34;: 1,
           &#34;Mean&#34;: 0.6609,
           &#34;Median&#34;: 1,
@@ -18162,7 +18160,7 @@
         &#34;SourceLineCount&#34;: 187,
         &#34;Statistics&#34;: {
           &#34;GeometricMean&#34;: 0,
-          &#34;HarmonicMean&#34;: 0,
+          &#34;HarmonicMean&#34;: 1,
           &#34;Maximum&#34;: 1,
           &#34;Mean&#34;: 0.3545,
           &#34;Median&#34;: 0,
@@ -22815,7 +22813,7 @@
       },
       {
         &#34;CanonicalImportPath&#34;: &#34;github.com/ghetzel/go-stockutil/timeutil&#34;,
-        &#34;CommentWordCount&#34;: 135,
+        &#34;CommentWordCount&#34;: 187,
         &#34;ConstantCount&#34;: 0,
         &#34;Examples&#34;: [
           {
@@ -22878,7 +22876,7 @@
         &#34;Files&#34;: [
           {
             &#34;ConstantCount&#34;: 0,
-            &#34;FunctionCount&#34;: 5,
+            &#34;FunctionCount&#34;: 7,
             &#34;Imports&#34;: [
               {
                 &#34;Alias&#34;: &#34;fmt&#34;,
@@ -22897,10 +22895,10 @@
                 &#34;PackageName&#34;: &#34;go.gary.cool/go-stockutil/utils&#34;
               }
             ],
-            &#34;LineCount&#34;: 59,
+            &#34;LineCount&#34;: 83,
             &#34;Name&#34;: &#34;timeutil.go&#34;,
-            &#34;Size&#34;: 1586,
-            &#34;SourceLineCount&#34;: 34,
+            &#34;Size&#34;: 2268,
+            &#34;SourceLineCount&#34;: 50,
             &#34;TypeCount&#34;: 0,
             &#34;VariableCount&#34;: 0
           },
@@ -22925,15 +22923,15 @@
                 &#34;PackageName&#34;: &#34;github.com/stretchr/testify/require&#34;
               }
             ],
-            &#34;LineCount&#34;: 132,
+            &#34;LineCount&#34;: 196,
             &#34;Name&#34;: &#34;timeutil_test.go&#34;,
-            &#34;Size&#34;: 2804,
-            &#34;SourceLineCount&#34;: 96,
+            &#34;Size&#34;: 5219,
+            &#34;SourceLineCount&#34;: 153,
             &#34;TypeCount&#34;: 0,
             &#34;VariableCount&#34;: 0
           }
         ],
-        &#34;FunctionCount&#34;: 5,
+        &#34;FunctionCount&#34;: 7,
         &#34;Functions&#34;: [
           {
             &#34;Arguments&#34;: [
@@ -23031,22 +23029,66 @@
             ],
             &#34;Signature&#34;: &#34;ReferenceTime() time.Time&#34;,
             &#34;Source&#34;: &#34;ewoJcmV0dXJuIHV0aWxzLlJlZmVyZW5jZVRpbWUKfQ==&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;t&#34;,
+                &#34;Type&#34;: &#34;time.Time&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;roundTo&#34;,
+                &#34;Type&#34;: &#34;time.Duration&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Round the given time strictly upward to the nearest rounding interval. For example, 1:17 rounded to the next\n30 minute duration will become 1:30.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;RoundCeil&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;time.Time&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;RoundCeil(t time.Time, roundTo time.Duration) time.Time&#34;,
+            &#34;Source&#34;: &#34;ewoJaWYgcm91bmQgOj0gdC5Sb3VuZChyb3VuZFRvKTsgcm91bmQuQmVmb3JlKHQpIHsKCQl0ID0gdC5BZGQocm91bmRUbykuUm91bmQocm91bmRUbykKCX0gZWxzZSB7CgkJdCA9IHJvdW5kCgl9CglyZXR1cm4gdAp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;t&#34;,
+                &#34;Type&#34;: &#34;time.Time&#34;
+              },
+              {
+                &#34;Name&#34;: &#34;roundTo&#34;,
+                &#34;Type&#34;: &#34;time.Duration&#34;
+              }
+            ],
+            &#34;Comment&#34;: &#34;Round the given time strictly downward to the nearest rounding interval. For example, 1:17 rounded to the prior\n30 minute duration will become 1:00.&#34;,
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;RoundFloor&#34;,
+            &#34;Returns&#34;: [
+              {
+                &#34;Type&#34;: &#34;time.Time&#34;
+              }
+            ],
+            &#34;Signature&#34;: &#34;RoundFloor(t time.Time, roundTo time.Duration) time.Time&#34;,
+            &#34;Source&#34;: &#34;ewoJaWYgcm91bmQgOj0gdC5Sb3VuZChyb3VuZFRvKTsgcm91bmQuQWZ0ZXIodCkgewoJCXQgPSB0LkFkZCgtcm91bmRUbykuUm91bmQocm91bmRUbykKCX0gZWxzZSB7CgkJdCA9IHJvdW5kCgl9CglyZXR1cm4gdAp9&#34;
           }
         ],
         &#34;ImportPath&#34;: &#34;timeutil&#34;,
-        &#34;LineCount&#34;: 191,
+        &#34;LineCount&#34;: 279,
         &#34;MainFunction&#34;: false,
         &#34;Name&#34;: &#34;timeutil&#34;,
         &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-        &#34;SourceLineCount&#34;: 130,
+        &#34;SourceLineCount&#34;: 203,
         &#34;Statistics&#34;: {
-          &#34;GeometricMean&#34;: 0.9791,
-          &#34;HarmonicMean&#34;: 0.9783,
+          &#34;GeometricMean&#34;: 0.9851,
+          &#34;HarmonicMean&#34;: 0.9844,
           &#34;Maximum&#34;: 1,
-          &#34;Mean&#34;: 0.98,
+          &#34;Mean&#34;: 0.9857,
           &#34;Median&#34;: 1,
           &#34;Minimum&#34;: 0.9,
-          &#34;StdDev&#34;: 0.04
+          &#34;StdDev&#34;: 0.035
         },
         &#34;Synopsis&#34;: &#34;Utilities for messing with time.\n&#34;,
         &#34;Tests&#34;: [
@@ -23085,6 +23127,30 @@
             &#34;Name&#34;: &#34;TestParseDuration&#34;,
             &#34;Signature&#34;: &#34;TestParseDuration(t *testing.T)&#34;,
             &#34;Source&#34;: &#34;ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl2LCBlcnIgOj0gUGFyc2VEdXJhdGlvbihgYCkKCWFzc2VydC5Ob0Vycm9yKGVycikKCWFzc2VydC5aZXJvKHYpCglmb3IgaW4sIG91dCA6PSByYW5nZSBtYXBbc3RyaW5nXXRpbWUuRHVyYXRpb257YDRoYDogdGltZS5EdXJhdGlvbig0ICogdGltZS5Ib3VyKSwgYDRIYDogdGltZS5EdXJhdGlvbig0ICogdGltZS5Ib3VyKSwgYDFkYDogdGltZS5EdXJhdGlvbigyNCAqIHRpbWUuSG91ciksIGAxZGF5YDogdGltZS5EdXJhdGlvbigyNCAqIHRpbWUuSG91ciksIGAxZGF5c2A6IHRpbWUuRHVyYXRpb24oMjQgKiB0aW1lLkhvdXIpLCBgNSB5ZWFycyA0IHdlZWtzIDMgZGF5cyAyIGhvdXJzIDEgbWludXRlYDogdGltZS5EdXJhdGlvbig0NDU0Nip0aW1lLkhvdXIpICsgdGltZS5NaW51dGUsIGAxZDFoYDogdGltZS5EdXJhdGlvbigyNSAqIHRpbWUuSG91ciksIGAxZCAxaGA6IHRpbWUuRHVyYXRpb24oMjUgKiB0aW1lLkhvdXIpfSB7CgkJdiwgZXJyIDo9IFBhcnNlRHVyYXRpb24oaW4pCgkJYXNzZXJ0Lk5vRXJyb3IoZXJyKQoJCWFzc2VydC5FcXVhbChvdXQsIHYsIGZtdC5TcHJpbnRmKCJpbj0ldiIsIGluKSkKCX0KfQ==&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;t&#34;,
+                &#34;Type&#34;: &#34;*testing.T&#34;
+              }
+            ],
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;TestRoundCeil&#34;,
+            &#34;Signature&#34;: &#34;TestRoundCeil(t *testing.T)&#34;,
+            &#34;Source&#34;: &#34;ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl0eXBlIHJlZlJvdW5kV2FudGVkIHN0cnVjdCB7CgkJUmVmICAgdGltZS5UaW1lCgkJUm91bmQgdGltZS5EdXJhdGlvbgoJCVdhbnQgIHRpbWUuVGltZQoJCU5FcSAgIGJvb2wKCX0KCWZvciBfLCBycncgOj0gcmFuZ2UgW11yZWZSb3VuZFdhbnRlZHt7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIHRpbWUuTWludXRlLCB0bShgMjAxNC0wOC0xN1QwMDoxODowMFpgKSwgZmFsc2V9LCB7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIHRpbWUuTWludXRlLCB0bShgMjAxNC0wOC0xN1QwMDoyMDowMFpgKSwgdHJ1ZX0sIHt0bShgMjAxNC0wOC0xN1QwMDoxNzozNFpgKSwgNSAqIHRpbWUuTWludXRlLCB0bShgMjAxNC0wOC0xN1QwMDoyMDowMFpgKSwgZmFsc2V9LCB7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIDUgKiB0aW1lLk1pbnV0ZSwgdG0oYDIwMTQtMDgtMTdUMDA6MTg6MDBaYCksIHRydWV9LCB7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIDEwICogdGltZS5TZWNvbmQsIHRtKGAyMDE0LTA4LTE3VDAwOjE3OjQwWmApLCBmYWxzZX0sIHt0bShgMjAxNC0wOC0xN1QwMDoxNzozNFpgKSwgMTAgKiB0aW1lLlNlY29uZCwgdG0oYDIwMTQtMDgtMTdUMDA6MTc6MjBaYCksIHRydWV9LCB7dG0oYDIwMTQtMTItMzFUMjM6MTc6MzRaYCksIHRpbWUuSG91ciwgdG0oYDIwMTUtMDEtMDFUMDA6MDA6MDBaYCksIGZhbHNlfSwge3RtKGAyMDE0LTEyLTMxVDIzOjE3OjM0WmApLCAyNCAqIHRpbWUuSG91ciwgdG0oYDIwMTUtMDEtMDFUMDA6MDA6MDBaYCksIGZhbHNlfSwge3RtKGAyMDE0LTEyLTMxVDE5OjE3OjM0LTA0OjAwYCksIDI0ICogdGltZS5Ib3VyLCB0bShgMjAxNC0xMi0zMVQyMDowMDowMC0wNDowMGApLCBmYWxzZX0sIHt0bShgMjAxNC0xMi0zMVQyMzoxNzozNC0wNDowMGApLCAyNCAqIHRpbWUuSG91ciwgdG0oYDIwMTUtMDEtMDFUMjA6MDA6MDAtMDQ6MDBgKSwgZmFsc2V9fSB7CgkJaWYgIXJydy5ORXEgewoJCQlhc3NlcnQuRXF1YWwocnJ3LldhbnQsIFJvdW5kQ2VpbChycncuUmVmLCBycncuUm91bmQpKQoJCX0gZWxzZSB7CgkJCWFzc2VydC5Ob3RFcXVhbChycncuV2FudCwgUm91bmRDZWlsKHJydy5SZWYsIHJydy5Sb3VuZCkpCgkJfQoJfQp9&#34;
+          },
+          {
+            &#34;Arguments&#34;: [
+              {
+                &#34;Name&#34;: &#34;t&#34;,
+                &#34;Type&#34;: &#34;*testing.T&#34;
+              }
+            ],
+            &#34;IsPackageLevel&#34;: true,
+            &#34;Name&#34;: &#34;TestRoundFloor&#34;,
+            &#34;Signature&#34;: &#34;TestRoundFloor(t *testing.T)&#34;,
+            &#34;Source&#34;: &#34;ewoJdmFyIGFzc2VydCA9IHJlcXVpcmUuTmV3KHQpCgl0eXBlIHJlZlJvdW5kV2FudGVkIHN0cnVjdCB7CgkJUmVmICAgdGltZS5UaW1lCgkJUm91bmQgdGltZS5EdXJhdGlvbgoJCVdhbnQgIHRpbWUuVGltZQoJCU5FcSAgIGJvb2wKCX0KCWZvciBfLCBycncgOj0gcmFuZ2UgW11yZWZSb3VuZFdhbnRlZHt7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIHRpbWUuTWludXRlLCB0bShgMjAxNC0wOC0xN1QwMDoxNzowMFpgKSwgZmFsc2V9LCB7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIHRpbWUuTWludXRlLCB0bShgMjAxNC0wOC0xN1QwMDoxODowMFpgKSwgdHJ1ZX0sIHt0bShgMjAxNC0wOC0xN1QwMDoxNzozNFpgKSwgNSAqIHRpbWUuTWludXRlLCB0bShgMjAxNC0wOC0xN1QwMDoxNTowMFpgKSwgZmFsc2V9LCB7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIDUgKiB0aW1lLk1pbnV0ZSwgdG0oYDIwMTQtMDgtMTdUMDA6MjA6MDBaYCksIHRydWV9LCB7dG0oYDIwMTQtMDgtMTdUMDA6MTc6MzRaYCksIDMwICogdGltZS5TZWNvbmQsIHRtKGAyMDE0LTA4LTE3VDAwOjE3OjMwWmApLCBmYWxzZX0sIHt0bShgMjAxNC0wOC0xN1QwMDoxNzozNFpgKSwgMzAgKiB0aW1lLlNlY29uZCwgdG0oYDIwMTQtMDgtMTdUMDA6MTc6MjBaYCksIHRydWV9LCB7dG0oYDIwMTQtMTItMzFUMjM6MTc6MzRaYCksIHRpbWUuSG91ciwgdG0oYDIwMTQtMTItMzFUMjM6MDA6MDBaYCksIGZhbHNlfSwge3RtKGAyMDE0LTEyLTMxVDIzOjE3OjM0WmApLCAyNCAqIHRpbWUuSG91ciwgdG0oYDIwMTQtMTItMzFUMDA6MDA6MDBaYCksIGZhbHNlfSwge3RtKGAyMDE0LTEyLTMxVDE5OjE3OjM0LTA0OjAwYCksIDI0ICogdGltZS5Ib3VyLCB0bShgMjAxNC0xMi0zMFQyMDowMDowMC0wNDowMGApLCBmYWxzZX19IHsKCQlpZiAhcnJ3Lk5FcSB7CgkJCWFzc2VydC5FcXVhbChycncuV2FudCwgUm91bmRGbG9vcihycncuUmVmLCBycncuUm91bmQpKQoJCX0gZWxzZSB7CgkJCWFzc2VydC5Ob3RFcXVhbChycncuV2FudCwgUm91bmRGbG9vcihycncuUmVmLCBycncuUm91bmQpKQoJCX0KCX0KfQ==&#34;
           }
         ],
         &#34;TypeCount&#34;: 0,
@@ -26967,7 +27033,7 @@
       &#34;SourceLineCount&#34;: 1462,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 0.963,
+        &#34;HarmonicMean&#34;: 0,
         &#34;Maximum&#34;: 1,
         &#34;Mean&#34;: 0.6609,
         &#34;Median&#34;: 1,
@@ -27117,7 +27183,7 @@
       &#34;SourceLineCount&#34;: 187,
       &#34;Statistics&#34;: {
         &#34;GeometricMean&#34;: 0,
-        &#34;HarmonicMean&#34;: 0,
+        &#34;HarmonicMean&#34;: 1,
         &#34;Maximum&#34;: 1,
         &#34;Mean&#34;: 0.3545,
         &#34;Median&#34;: 0,
@@ -27231,23 +27297,23 @@
     },
     {
       &#34;CanonicalImportPath&#34;: &#34;github.com/ghetzel/go-stockutil/timeutil&#34;,
-      &#34;CommentWordCount&#34;: 135,
+      &#34;CommentWordCount&#34;: 187,
       &#34;ConstantCount&#34;: 0,
-      &#34;FunctionCount&#34;: 5,
+      &#34;FunctionCount&#34;: 7,
       &#34;ImportPath&#34;: &#34;timeutil&#34;,
-      &#34;LineCount&#34;: 191,
+      &#34;LineCount&#34;: 279,
       &#34;MainFunction&#34;: false,
       &#34;Name&#34;: &#34;timeutil&#34;,
       &#34;ParentPackage&#34;: &#34;stockutil&#34;,
-      &#34;SourceLineCount&#34;: 130,
+      &#34;SourceLineCount&#34;: 203,
       &#34;Statistics&#34;: {
-        &#34;GeometricMean&#34;: 0.9791,
-        &#34;HarmonicMean&#34;: 0.9783,
+        &#34;GeometricMean&#34;: 0.9851,
+        &#34;HarmonicMean&#34;: 0.9844,
         &#34;Maximum&#34;: 1,
-        &#34;Mean&#34;: 0.98,
+        &#34;Mean&#34;: 0.9857,
         &#34;Median&#34;: 1,
         &#34;Minimum&#34;: 0.9,
-        &#34;StdDev&#34;: 0.04
+        &#34;StdDev&#34;: 0.035
       },
       &#34;Synopsis&#34;: &#34;Utilities for messing with time.\n&#34;,
       &#34;TypeCount&#34;: 0,
